@@ -11,8 +11,9 @@ documentation in `docs/`.
 
 ## Documentation
 
-Open [`docs/index.html`](docs/index.html) in a browser to navigate the available
-sections, including:
+Browse the generated documentation at
+[atlehahn.github.io/Felix-Formalizations/docs/index.html](https://atlehahn.github.io/Felix-Formalizations/docs/index.html),
+which includes:
 
 - Topological spaces
 - Basis and order topologies
