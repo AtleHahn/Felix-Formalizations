@@ -1,0 +1,9 @@
+I worked through more than 20 local shortening rounds after line `20392`. In this region, the obvious wrapper/contradiction shortenings were not stable: several candidates produced countermodels or prover timeouts, so I left those proofs unchanged.
+
+The only retained edit is a local strengthening in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:20997), where I replaced the timed-out one-line proof of `\dom{U}\subseteq\naturalsPlus` with an explicit subproof. That removes a baseline verification timeout in the final theorem.
+
+Verification now passes with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+(`python` is not available in this environment, so I used `python3` for the same module.)

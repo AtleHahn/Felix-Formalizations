@@ -1,0 +1,10 @@
+Shortenings are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18893). I completed 20 rounds focused only on material after line `18731`, kept the prover-stable reductions, and left the witness-heavy product/subspace blocks unchanged when compression caused timeouts.
+
+Key reductions:
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18893) compresses the inner monotonicity subproof in `nested_countable_basis` into quantified intermediate facts plus the final subset step.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18930) removes an unused intermediate basis witness and one redundant restatement in `closure_implies_sequence_first_countable`.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19064) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19075) replace two `byCase` wrappers in `second_countability_implies_first` with explicit quantified premises followed by direct conclusions.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19138) shortens `countable_basis_elem_neighborhood` to `Follows by`.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19166) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19344) remove redundant local restatements in the product and subspace arguments.
+
+Verification passed with the required module: `quick_verifications` succeeded on `formalizations.tex`. The shell here had no `python` executable, so I ran the same module via `python3 -m quick_verifications -f formalizations.tex`.

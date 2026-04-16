@@ -1,0 +1,9 @@
+I shortened the safe proof wrappers after line `9840` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:9986). The stable changes are:
+- In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:9986), two closure-membership subproof wrappers were replaced by direct subset statements.
+- In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10022), the union coverage step in `connected_subspace_in_separation` was shortened to a direct subset statement, and the final by-case split was compressed to a single disjunction step.
+- In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10038), `subspace_subspace_topology` was reduced to the two direct subset inclusions.
+- In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10497), the coverage of `I` by `A_0 \union B_0` was shortened to a direct subset statement.
+
+I also completed more than 30 local review/shortening rounds over the proofs after line `9840`. Several more aggressive compressions were tested and then reverted because they caused either parser issues or prover timeouts, so the remaining proofs were left unchanged.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not installed in this workspace.

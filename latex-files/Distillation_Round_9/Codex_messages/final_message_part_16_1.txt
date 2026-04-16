@@ -1,0 +1,5 @@
+I shortened the target region conservatively and kept only the changes that stayed verifier-stable after 20 micro-batch rounds. The surviving edits are small proof compressions in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:12559), [12694](/local/atle/Codex-Run/formalizations.tex:12694), [12744](/local/atle/Codex-Run/formalizations.tex:12744), [12761](/local/atle/Codex-Run/formalizations.tex:12761), [12763](/local/atle/Codex-Run/formalizations.tex:12763), [12886](/local/atle/Codex-Run/formalizations.tex:12886), [13041](/local/atle/Codex-Run/formalizations.tex:13041), and [13085](/local/atle/Codex-Run/formalizations.tex:13085). These mostly remove redundant explicit subset/open-covering conjuncts while preserving the local proof structure.
+
+I also tested several larger subproof-wrapper eliminations in this region, but they either caused parser issues, countermodels, or prover timeouts, so I reverted them and left those proofs unchanged.
+
+Verification passed at the end with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

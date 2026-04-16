@@ -1,0 +1,5 @@
+I shortened the post-`15516` section in the places that were safely reducible without destabilizing Naproche.
+
+The verified shortenings are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16197), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16210), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16242), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16335). Concretely, I removed three induction-wrapper subproof shells and collapsed the `g` right-uniqueness argument to a single quantified line. I reviewed all `35` candidate `Show that ...` blocks after line `15516`; the rest are contradiction-, witness-, or case-sensitive, and the attempted extra flattenings either timed out or broke proof scoping, so I left those unchanged.
+
+Verification passed successfully with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available on this PATH.

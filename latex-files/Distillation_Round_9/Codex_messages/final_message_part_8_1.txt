@@ -1,0 +1,7 @@
+Applied 20+ local shortening passes after line `5764` and kept only the changes that verified cleanly.
+
+The main reductions are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5774), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5971), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5998), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6026), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6288), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6448). I shortened the coordinate-sequence “is a function” lemmas by inlining the right-uniqueness wrapper, collapsed one pointwise-equality subproof in the Cauchy-Schwarz proof, and removed a few redundant extensionality setup lines where `\funs{J}{\reals}` already supplied the needed function/domain facts.
+
+I also tested further shortenings in the larger induction/algebra blocks, but those produced countermodels or timeouts, so I left those proofs unchanged.
+
+Final verification passed with `python3 -m quick_verifications -f formalizations.tex` because this environment has no `python` executable.

@@ -1,0 +1,5 @@
+Shortened the proofs after line `22029` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22031) where the reductions were mechanically safe, and left the more brittle witness-producing case splits intact.
+
+Key successful shortenings are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22166), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22363), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22464), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22705), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22789). I also tried a few more aggressive wrapper collapses in the large admissibility proof and in `urysohn_unit_interval_f_funs`; those failed verification and were reverted, so the remaining longer blocks appear not to admit further non-trivial safe shortening in this region.
+
+Verification is green. I ran `python3 -m quick_verifications -f formalizations.tex` repeatedly, since `python` is not installed under that name here, and the final run succeeded.

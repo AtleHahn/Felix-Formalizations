@@ -1,0 +1,3 @@
+I shortened the post-`9840` region conservatively in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:9868) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10210). The main change is in `connected_iff_clopen`, where I replaced the explicit case split with a direct contradiction argument. In `connected_product_finite`, I removed two intermediate names and stated the connected subspaces directly.
+
+I reviewed well over 20 candidate blocks after line `9840` and tried a few additional compressions, but the prover timed out on those, so I reverted them. Verification passes with the environment’s available interpreter: `python3 -m quick_verifications -f formalizations.tex` succeeded.

@@ -1,0 +1,5 @@
+I shortened the region after line `3404` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3549) and kept only the changes that stayed verifier-safe. The main reductions were three local helper lemmas for repeated arguments, then replacing duplicated coordinate-subset and disjointness subproofs in the Hausdorff/product-closure section, for example around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3685), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3810), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3935), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:4052).
+
+I also did more than 20 local review/shortening rounds on the post-`3404` proofs. Two additional shortening attempts were reverted because they introduced prover timeouts, so I stopped at the current verified boundary rather than forcing riskier edits.
+
+Verification passed. In this shell `python` is unavailable, so I ran the same verifier module with `python3 -m quick_verifications -f formalizations.tex`, and the final run was successful.

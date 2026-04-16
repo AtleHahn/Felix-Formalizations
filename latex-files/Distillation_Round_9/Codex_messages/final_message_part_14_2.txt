@@ -1,0 +1,12 @@
+I shortened the proofs after line `10711` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) and kept the scope to that tail section. The successful changes were:
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11247): both ray-complement lemmas were collapsed to single-line `Follows by ...` proofs.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11290): the closed-interval proof was shortened by replacing the temporary family `\{A,B\}` argument with a direct `A \inter B` argument.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11433): the final endpoint-computation subproof in `path_reverse` was inlined.
+
+I also checked the remaining proofs after `10711` in more than 20 local shortening rounds. One extra shortening attempt in `component_relation_reflexive` caused a prover timeout, so I reverted it and left that proof unchanged.
+
+Verification finished successfully with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+The environment has no `python` binary, so `python3` was the working equivalent here.

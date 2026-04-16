@@ -1,0 +1,5 @@
+I completed 30+ shortening rounds after line `17921` and kept the rest only where the prover stayed stable.
+
+In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18282) I shortened two wrapper subproofs in `one_point_compactification_uniqueness` to direct quantified lines with explicit `\cref` support, and in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18185) I collapsed the `U \inter X \subseteq C` argument in `one_point_compactification_existence_reverse` to a single line. I also tested a few additional local compressions and left them out when they made the prover brittle.
+
+Final verification passed. In this environment `python` is unavailable, so I ran the same module as `python3 -m quick_verifications -f formalizations.tex`, and it finished successfully.

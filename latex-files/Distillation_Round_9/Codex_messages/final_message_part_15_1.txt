@@ -1,0 +1,9 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) after line `11459` and kept only the shortenings that stayed prover-friendly. The main reduction was in `path_concatenation`, where I introduced two local helper lemmas, `real_add_sub_cancel_right` and `real_add_sub_sub_cancel`, and used them to replace repeated endpoint-arithmetic expansions. I also kept a few smaller safe compressions later on, including direct range/subset statements in `path_component_path_connected` and a shorter witness step in `locally_path_connected_iff_components_open`.
+
+I went through 30+ local shortening passes over the post-`11459` proofs. A few more aggressive wrapper-to-subset compressions caused countermodels or timeouts, so I reverted those and left the remaining case-heavy/existential subproofs unchanged.
+
+Verification passed successfully with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` was not available in this shell, so I used `python3` for the same module run.

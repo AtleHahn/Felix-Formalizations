@@ -1,0 +1,5 @@
+I shortened the post-`22029` proofs in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22031), with the main reductions in [the `r_1 < 1` admissibility proof](/local/atle/Codex-Run/formalizations.tex:22045), [the infimum-function proof](/local/atle/Codex-Run/formalizations.tex:22276), and [the first-good-pair proof](/local/atle/Codex-Run/formalizations.tex:22360). The biggest gain was collapsing repeated case-by-case uniqueness and order-contradiction subproofs in `urysohn_u1_lt1_admissible` into direct lines that the prover still accepts.
+
+I also removed a redundant pair unpacking step in `unit_rational_pos`, inlined one local abbreviation in the codomain proof for `f`, and simplified a few small dispatch steps where the original proof only existed to feed already available lemmas. I went through more than 20 local review/shortening rounds after line `22029`; the remaining larger case blocks were left in place because nearby stronger compressions started causing timeouts or proof-search failures.
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because this environment does not provide a `python` executable.

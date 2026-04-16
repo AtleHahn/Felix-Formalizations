@@ -1,0 +1,5 @@
+I shortened the proofs after line 13773 in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex), working only in that tail section. I completed 20 shortening rounds, with local edits plus immediate re-verification after each round. The successful changes were mostly low-risk compressions: merged existential conclusions in the two surjectivity subproofs, collapsed one metric-ball subset argument to a single cited conclusion, removed several redundant set-builder “is a pair” lines, and shortened a few repetitive steps in the final boundedness argument.
+
+I also tested several additional wrapper eliminations, but those either caused prover timeouts or parser issues, so I reverted them. At this point the remaining obvious candidates in this region look prover-critical rather than safely shorten-able.
+
+Verification is green: `quick_verifications` passed on `formalizations.tex` (run as `python3 -m quick_verifications -f formalizations.tex` because `python` is not available on this shell).

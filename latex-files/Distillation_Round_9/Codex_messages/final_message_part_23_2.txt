@@ -1,0 +1,11 @@
+I shortened the proofs after line `17921` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:17923) with repeated local passes and stopped once the remaining candidates were mostly `byCase` or contradiction-sensitive blocks that had poor parser/prover tolerance.
+
+The stable shortenings are in:
+[formalizations.tex:17951](/local/atle/Codex-Run/formalizations.tex:17951),
+[formalizations.tex:17986](/local/atle/Codex-Run/formalizations.tex:17986),
+[formalizations.tex:18113](/local/atle/Codex-Run/formalizations.tex:18113),
+[formalizations.tex:18288](/local/atle/Codex-Run/formalizations.tex:18288),
+[formalizations.tex:18590](/local/atle/Codex-Run/formalizations.tex:18590),
+[formalizations.tex:18622](/local/atle/Codex-Run/formalizations.tex:18622).
+
+Verification passed. The environment has no `python` binary, so I used the minimal equivalent `python3 -m quick_verifications -f formalizations.tex`, and the final run was successful.

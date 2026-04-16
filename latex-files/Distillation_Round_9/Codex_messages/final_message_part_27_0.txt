@@ -1,0 +1,14 @@
+I shortened the suffix after line `21327` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21363), and kept the later large Urysohn case-split proofs unchanged after review because they no longer had safe non-trivial shortening potential.
+
+The main successful changes are:
+- Added two reusable helper lemmas at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21363) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21383), then used them to compress the repetitive openness and coverage subproofs inside `metrizable_normal` at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21426).
+- Slightly compressed the `A = \emptyset` branch of `compact_hausdorff_normal` at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21536).
+- Added one explicit witness subproof in `compact_hausdorff_normal` at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21561) because the original bare choice step timed out under verification; this was necessary to keep the file green while still achieving a net shortening overall.
+
+I went through the full proof tail after `21327`, including the later proofs in §33, and did more than 20 local review/attempt rounds. Several additional wrapper-compression attempts were tested and reverted immediately when they caused prover timeouts.
+
+Verification is currently successful with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` was not available in this environment, so I used `python3` to run the same verification module.

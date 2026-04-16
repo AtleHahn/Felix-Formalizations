@@ -1,0 +1,5 @@
+Adjusted one verified shortening in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:20429): in `second_countable_countable_dense_subset`, the inner neighborhood-intersection subproof is now the shorter two-line quantified form, keeping the explicit existential step that Naproche needs and removing the nested wrapper block.
+
+I reviewed the full remainder of the file after line `20392`, covering well over 20 candidate subproof/case blocks. The others were either already near-minimal or failed under shortening attempts with a countermodel/timeout, so I left them unchanged.
+
+Verification passed for `formalizations.tex`. This shell does not provide `python`, so I ran the same required module with `python3 -m quick_verifications -f formalizations.tex`.

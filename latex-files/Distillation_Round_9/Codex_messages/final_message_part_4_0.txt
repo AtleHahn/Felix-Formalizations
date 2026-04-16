@@ -1,0 +1,5 @@
+I shortened the stable parts I could find after line `2563` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3267). The surviving changes are in the indexed-product section: I inlined the `\dom{U_3} = \dom{X}` subproof at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3267), shortened the witness-construction wrapper in `box_basis_from_bases` at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3379), and removed a few redundant intermediate lines in the `B_3`/`C_1` membership arguments at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3280) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3389).
+
+I also tried further shortenings in `subspace_hausdorff`, `continuous_at_implies_continuous`, `continuous_local`, and related local blocks, but those caused prover timeouts and were reverted. After 30+ local shortening rounds, I did not find additional non-trivial shortenings in the target range that remained verifier-stable.
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this environment.

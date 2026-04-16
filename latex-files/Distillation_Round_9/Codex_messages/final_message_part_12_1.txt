@@ -1,0 +1,8 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:9174) after more than 20 shortening rounds on proofs after line `9023`, keeping only the changes that were a clear net win and verifier-stable.
+
+The effective shortenings were:
+- [open_or_closed_surjection_quotient](/local/atle/Codex-Run/formalizations.tex:9165): replaced the `byCase` proof with two direct conditional lines plus the final conclusion.
+- [surj_factor_of_surj_composite](/local/atle/Codex-Run/formalizations.tex:9608): added one helper lemma for the repeated surjectivity argument.
+- Reused that helper in [quotient_map_induced_map_quotient](/local/atle/Codex-Run/formalizations.tex:9643) and [corollary_quotient_space_induced_bijection](/local/atle/Codex-Run/formalizations.tex:9724), removing two longer subproofs.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell. I stopped there because the remaining candidates after line `9023` were prover-fragile or not a clear net shortening.

@@ -1,0 +1,9 @@
+Applied verified shortenings only in the post-`10711` region of [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10723). I went through 20+ local review/shortening rounds there, including one medium-risk attempt in the `order_basis_reals_standard` proof that failed verification and was reverted, so the remaining `byCase`/contradiction-heavy blocks were left unchanged.
+
+The successful shortenings are at:
+- [formalizations.tex:10723](/local/atle/Codex-Run/formalizations.tex:10723): merged the separation witnesses in `convex_connected_linear_continuum`.
+- [formalizations.tex:10931](/local/atle/Codex-Run/formalizations.tex:10931): merged the separation and point witnesses in `path_connected_implies_connected`.
+- [formalizations.tex:10996](/local/atle/Codex-Run/formalizations.tex:10996): shortened the singleton-separation subproof in `component_relation_reflexive`.
+- [formalizations.tex:11142](/local/atle/Codex-Run/formalizations.tex:11142): merged the intersection witnesses in `connected_subspace_single_component`.
+
+Verification is clean. In this shell `python` was unavailable, so I ran the same required verifier module as `python3 -m quick_verifications -f formalizations.tex`, and it finished successfully.

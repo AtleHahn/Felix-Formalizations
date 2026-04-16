@@ -1,0 +1,8 @@
+I shortened three proof fragments in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14484), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14773), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14802), all after line `13773`. The changes remove wrapper subproofs around:
+- `h` being a function on `F`
+- the two relation inclusions used to prove `k \circ g = \piIndex{X_1}{i}\circ j`
+- the final open-cover compactness wrapper for `\productFamily{Y}`
+
+I also made several additional local shortening attempts in the suffix and kept only the ones that verified cleanly; the earlier successor-product proof is prover-sensitive, so I left the remaining candidate blocks unchanged once they started causing timeouts.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because this environment has no `python` executable.

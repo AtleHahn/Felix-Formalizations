@@ -1,0 +1,5 @@
+Shortened the prover-friendly wrapper subproofs after line `17093` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:17223). The surviving edits are at the finite-range subsequence case and the later compactness construction: the two function-typing wrappers at `17223` and `17234`, the metric-ball neighborhood wrapper at `17255`, the codomain wrapper for `g` at `17358`, the composition/evaluation wrappers for `u` and `t` at `17365` and `17454`, and the `g : V_0 \to \pow{C}` wrapper at `17638`.
+
+I also ran several additional shortening rounds on deeper witness-heavy blocks in the same region, but those consistently caused parser issues or prover timeouts, so I restored them and left those proofs explicit. At this point the remaining subproofs after `17093` do not look like easy non-trivial shortenings under the current verification limit.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

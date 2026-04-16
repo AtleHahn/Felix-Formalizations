@@ -1,0 +1,5 @@
+Shortened the proof region after line `1761` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2157) by collapsing a few safe wrapper blocks without changing the underlying arguments. The successful reductions are in `closure_iff_intersects_open` ([line 2169](/local/atle/Codex-Run/formalizations.tex:2169)), `closure_iff_intersects_basis` ([line 2199](/local/atle/Codex-Run/formalizations.tex:2199)), `closure_union_limit_points` ([line 2250](/local/atle/Codex-Run/formalizations.tex:2250)), and `limit_point_infinite_neighborhood` ([lines 2373](/local/atle/Codex-Run/formalizations.tex:2373), [2397](/local/atle/Codex-Run/formalizations.tex:2397)). These are all structural shortenings: replacing implication subproofs with chained `If ... then ...` steps, or removing redundant subproof nesting.
+
+I also did more than 20 review/shortening passes over the post-`1761` section. More aggressive compressions in some contradiction-heavy blocks caused prover timeouts or syntax issues, so I left those unchanged.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` (`python` is not available in this shell).

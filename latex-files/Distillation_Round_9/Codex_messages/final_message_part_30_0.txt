@@ -1,0 +1,3 @@
+Shortenings were applied in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) only after line `23406`. I completed 20 verified micro-batches, mostly by inlining wrapper subproofs, collapsing symmetric case branches, and removing redundant intermediate typing/equality steps. Across those rounds, the post-`23406` proof text was reduced by about 59 net lines.
+
+Verification passed on the final state with the required module invocation; `python` was not available in this environment, so I used `python3 -m quick_verifications -f formalizations.tex` to run the same verifier module. After a final scan, the remaining blocks after `23406` are mostly higher-risk case-heavy or contradiction-heavy arguments, so I left them unchanged.

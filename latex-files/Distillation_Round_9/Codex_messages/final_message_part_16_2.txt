@@ -1,0 +1,5 @@
+Applied verified shortenings in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:12438), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:12482), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:12723), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:13015). The main change was to replace outer wrapper subproofs with direct `It suffices to show ...` plus `Fix ...` where that was stable, and to shorten one inner implication in `compact_subspace_open_covering` the same way.
+
+I also went through the remaining post-`12271` candidates in multiple rounds and left the prover-sensitive ones unchanged, especially the component/path-component contradiction block and the compact/Hausdorff witness-construction blocks, because direct shortenings there produced timeouts or syntax failures.
+
+`formalizations.tex` passes verification successfully with `python3 -m quick_verifications -f formalizations.tex`.

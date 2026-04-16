@@ -1,0 +1,5 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) after line 4204 only. I completed 39 local shortening rounds and kept the remaining post-4204 proofs unchanged where the remaining opportunities were no longer easy safe shortenings.
+
+The main reductions were in the metric-topology and bounded-metric section: I flattened nested membership subproofs in `metric_basis_is_basis`, inlined wrapper implications in `metric_open_iff`, compressed parts of `discrete_metric_is_metric` and `standard_metric_is_metric` into quantified one-liners, and added three small bounded-metric helper lemmas (`bounded_metric_leq_one`, `bounded_metric_apply_lt_one`, `bounded_metric_apply_geq_one`) to remove repeated case-split boilerplate from `bounded_metric_is_metric`.
+
+Verification passes with `python3 -m quick_verifications -f formalizations.tex` in this environment, because `python` itself is not installed here.

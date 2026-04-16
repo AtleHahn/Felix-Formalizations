@@ -1,0 +1,5 @@
+Shortenings were applied in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6281), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6439), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6467). The changes are conservative: I merged adjacent low-risk affirmations with compatible justifications and kept the proof structure intact where the parser/prover was sensitive.
+
+I also reviewed the full suffix after line `5764` in more than 20 local shortening passes. Two more aggressive attempts were tested and rolled back because one triggered `MismatchedAssume` and another caused a prover timeout in the inductive zero-sum proof, so I left those blocks unchanged.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

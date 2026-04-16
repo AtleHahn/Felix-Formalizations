@@ -1,0 +1,6 @@
+In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) after line `19551`, I went through 20+ local shortening rounds. Most direct subproof compressions in the pairing and countable-product proofs triggered prover timeouts, so I left those blocks unchanged. The prover-stable shortenings were:
+
+- Replaced the dummy witness form `Take ... such that f = f` with `Take f such that f∈...` in the finite-sequence coding proofs around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19753), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19809), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19815), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19888).
+- Shortened the domain subproof for `h` by eliminating an intermediate witness set and taking `k` directly from `u∈S` around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19844).
+
+Final verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

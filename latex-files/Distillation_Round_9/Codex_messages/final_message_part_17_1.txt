@@ -1,0 +1,7 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:13423) after 20 micro-rounds of shortening and re-verification. The surviving shortenings are concentrated in the ordered-interval theorem and the final helper proofs.
+
+The main changes were:
+- Removed four redundant nested existential wrapper subproofs in the `ordered_closed_interval_compact` proof around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:13423) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:13584).
+- Compressed the tail proofs around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:13710): `real_closed_interval_compact`, `real_four_sum_bound`, `real_intervalclosed_compact_standard`, and `projection_map_indexed_continuous`.
+
+I also tried several additional shortenings after line `13105`, but reverted them when they caused parser errors, timeouts, or countermodels. The file finishes in a verified state. Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available on this machine.

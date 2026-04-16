@@ -1,0 +1,9 @@
+Applied several verified shortenings in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14873) after line `14798`. The main wins were:
+- collapsing two nested case-heavy “largest element of `G`” branches into quantified lines in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14873)
+- replacing two redundant connex case splits in the extreme value proof with direct order conclusions in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14983)
+- collapsing two contradiction branches of the form “either `<` or `=`; both contradict asymmetry” in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14960)
+- shortening the open-cover membership wrapper in the uniform continuity proof in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:15386)
+
+I made more than 20 local shortening passes over the post-`14798` proofs. I left the remaining `Show that` blocks in place where they still depend on local witness extraction or deeper nested case reasoning and are more likely to trigger prover timeouts than give a meaningful shortening.
+
+Verification passed at the end with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available on this machine’s `PATH`.

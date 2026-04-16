@@ -1,0 +1,9 @@
+Shortenings were applied in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:14930), mainly in `extreme_value_theorem` and one local case-split in `point_set_distance_continuous`. I inlined the safe quantifier-wrapper subproofs, collapsed the two `a_0\notin U` contradiction wrappers, merged a couple of finite/inhabited image steps, and removed one redundant final case split in the metric argument.
+
+I also made a few additional shortening attempts in the metric proof, but those caused prover timeouts, so I reverted them and stopped there; the remaining post-`14798` blocks look prover-sensitive rather than easy wins.
+
+Verification passes with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` was not available in this shell, so I used `python3` for the required verifier.

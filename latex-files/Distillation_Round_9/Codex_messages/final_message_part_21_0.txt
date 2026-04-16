@@ -1,0 +1,7 @@
+I shortened the proofs after line `16353` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex), completing 20 successful shortening rounds. The changes are concentrated in `sequentially_compact_lebesgue`, `iteration_sequence_naturalsplus`, and `sequentially_compact_finite_ball_cover`: I removed wrapper subproofs that only restated their conclusion, compressed several quantified/subset arguments into direct lines, and flattened a few nested open/neighborhood arguments. I left the remaining blocks that are still `Fix`-driven, contradiction-heavy, or tightly tied to `byCase` structure, since the prover was sensitive there and a few aggressive attempts either timed out or broke parsing.
+
+Verification passes on the final file. In this environment `python` is not on `PATH`, so I used the available equivalent:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+Result: `Verification successful.`

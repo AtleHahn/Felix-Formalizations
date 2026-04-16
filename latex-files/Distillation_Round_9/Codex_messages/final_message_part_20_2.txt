@@ -1,0 +1,5 @@
+I shortened the successful low-risk/medium-risk targets in [`formalizations.tex`](/local/atle/Codex-Run/formalizations.tex:15996), [`formalizations.tex`](/local/atle/Codex-Run/formalizations.tex:16035), and [`formalizations.tex`](/local/atle/Codex-Run/formalizations.tex:16052). These were case splits inside `infinite_naturalsplus_has_strictly_increasing_sequence` where both branches proved the same arithmetic contradiction, so I replaced the explicit `byCase` blocks with direct `Hence ... by \cref{...}` steps.
+
+I also reviewed the remaining proof blocks after line `15516` in multiple local shortening passes. I tried a more aggressive shortening in `compact_implies_limit_point_compact`, but it caused prover timeouts, so I reverted it. The remaining blocks in this range are mostly witness-sensitive or induction-heavy, and did not look like safe further shortenings under the current prover margin.
+
+Verification is green: `python3 -m quick_verifications -f formalizations.tex` succeeded. I used `python3` because `python` is not available on this shell’s `PATH`.

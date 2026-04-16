@@ -1,0 +1,8 @@
+I shortened the safe proof blocks after line 5005 in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5019). The surviving changes are:
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5269): `metric_topology_finer_iff` now replaces the inner `x \in U` subproof with the two-line quantified form.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5396): `real_abs_lt_from_interval` now replaces the redundant case split by a direct trichotomy line.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5019): I renamed the later duplicate label to `bounded_metric_apply_value_lt_one` and updated its local reference so the file verifies.
+
+I went through more than 20 local shortening rounds on the suffix. The remaining candidates are mostly induction steps or witness-extraction blocks; when tested, the analogous compressions timed out, so I reverted them and stopped at the last verified state.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not installed in this environment.

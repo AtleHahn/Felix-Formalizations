@@ -1,0 +1,5 @@
+I shortened one safe wrapper proof in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6946): the first `metric_topology_finer_iff` witness block is now a direct quantified statement with `by \cref{...}` instead of an explicit subproof.
+
+I also did more than 20 localized review/shortening rounds after line `6556`. I tested several other obvious wrapper compressions in the same tail section, but they produced prover timeouts, so I reverted them and left those proofs explicit.
+
+Verification is currently green: `quick_verifications` succeeded on `formalizations.tex`. The shell here has no `python` executable, so I ran `python3 -m quick_verifications -f formalizations.tex`.

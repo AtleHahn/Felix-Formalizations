@@ -1,0 +1,9 @@
+I shortened the proofs after line `1761` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:1799) where the reductions were low-risk and verifier-stable.
+
+- In `closed_inters` and `closed_in_subspace_iff`, I removed wrapper subproofs that could be stated directly, including the empty-intersection case at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:1799) and the two membership implications at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:1960).
+- In the order-topology helper lemmas, I collapsed both open-ray proofs to the existing subbasis argument at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2444) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2462).
+- In `product_hausdorff`, I folded the intermediate subset checks into the `product_basis` step in both branches at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2565) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2583).
+
+I also tried additional local shortenings and rolled back the ones that caused prover timeouts, so the remaining blocks after this pass look prover-sensitive rather than easy wins.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

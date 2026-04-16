@@ -1,0 +1,3 @@
+I shortened proofs after line `16353` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex), completing well over 20 micro-rounds of edits and re-verification. The successful reductions were mainly wrapper eliminations, direct negation rewrites, collapsed contradiction subproofs, a flattened arithmetic subproof, simplified singleton-membership arguments, and one nested case split reduced to a single trichotomy split. A few riskier compressions caused parser/prover failures or timeouts, and I reverted those immediately.
+
+Verification is green. In this shell `python` was unavailable, so I ran `python3 -m quick_verifications -f formalizations.tex`, and the final run succeeded.

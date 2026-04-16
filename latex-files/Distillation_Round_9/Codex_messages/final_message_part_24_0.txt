@@ -1,0 +1,5 @@
+After more than 20 local shortening rounds on proofs after line `18731`, the safe reductions that survived verification are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18951) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19312).
+
+At `18951`, I shortened the eventual-neighborhood part of `closure_implies_sequence_first_countable` by replacing a wrapper subproof with two direct lines. At `19312`, I inlined the tiny subproof that established `F` is inhabited inside `countable_product_first_countable`.
+
+I tested after each batch. The remaining obvious wrappers in this region were tried selectively, but they led to countermodels or timeouts, so I left them unchanged. Verification now passes with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

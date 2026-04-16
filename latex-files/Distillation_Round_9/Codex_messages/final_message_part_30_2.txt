@@ -1,0 +1,9 @@
+I shortened the proofs after line `23406` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex), mainly by replacing manual subproofs with existing helper lemmas and collapsing safe case splits. The biggest gains were in the `urysohn_unit_interval_value_B` proof, the `f(x) \leq 1` subproof inside `urysohn_unit_interval`, the arithmetic bounds in `urysohn_lemma`, and the `1 < p` branch in `urysohn_unit_interval_extend_lt1`.
+
+I also re-scanned the remaining subproofs after those changes. The ones left are the nested `byCase` blocks in the `r < 1` extension proof and a few outer wrappers that still need local variables; after testing one more contradiction-style cleanup there, they look prover-sensitive or structurally necessary, so I left them as is.
+
+Verification succeeded on the final version with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` itself is not installed in this workspace, but the required verification module passed successfully under `python3`.

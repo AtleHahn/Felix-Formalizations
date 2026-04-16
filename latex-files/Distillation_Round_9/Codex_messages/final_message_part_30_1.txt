@@ -1,0 +1,5 @@
+Applied the safe shortenings after line `23406` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:23543). The main reductions are at [23543](/local/atle/Codex-Run/formalizations.tex:23543), [23953](/local/atle/Codex-Run/formalizations.tex:23953), [23988](/local/atle/Codex-Run/formalizations.tex:23988), and [24157](/local/atle/Codex-Run/formalizations.tex:24157): I collapsed a domain wrapper in the `r < 1` extension proof, shortened a trivial `{0}` branch, merged a redundant `U(p)=t(p)`/`t(p)=X` step, and replaced the final `for all x in A/B` subproof wrappers with quantified lines.
+
+I also did a full post-`23406` pass in more than 30 review rounds and left the remaining blocks unchanged where they were not safely shortenable without introducing fragile case-split or contradiction issues.
+
+Verification passed. In this shell `python` is not installed, so I ran `python3 -m quick_verifications -f formalizations.tex`, which completed successfully.

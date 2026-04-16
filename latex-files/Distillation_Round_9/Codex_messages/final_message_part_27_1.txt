@@ -1,0 +1,5 @@
+Shortened the verified easy proofs after line `21327` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21813). The surviving changes are in `urysohn_u1_eq1` and `urysohn_u1_gt1`: I collapsed the `u_1` right-uniqueness arguments into direct quantified lines and removed one unnecessary outer wrapper in `urysohn_u1_gt1`, so it now goes straight from admissibility to the existential conclusion.
+
+I reviewed the whole post-`21327` region in 30+ local passes. I also tried more aggressive wrapper shortenings in the compactness and `continuous_subspace_range` proofs, but those caused prover timeouts, so I reverted them and left the remaining proofs as-is.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` in this environment (`python` is not installed).

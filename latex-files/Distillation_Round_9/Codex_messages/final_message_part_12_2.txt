@@ -1,0 +1,16 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) after line `9023` and completed 20 shortening/review rounds. I kept only the reductions that were verifier-stable and left the remaining witness-heavy or timeout-prone blocks unchanged.
+
+The successful shortenings were concentrated in:
+- `saturated_iff_preimg`
+- `quotient_map_saturated_open_iff`
+- `quotient_map_composite`
+- `surj_factor_of_surj_composite`
+- `quotient_map_induced_map`
+- `quotient_map_restriction_open_or_closed`
+- `corollary_quotient_space_homeomorphism`
+
+Final verification passed with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` was not available in the shell, so I used `python3` for the same module invocation.

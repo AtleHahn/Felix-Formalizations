@@ -1,0 +1,5 @@
+I completed 20+ shortening-review rounds on the proofs after line `12271` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex).
+
+I tested the lowest-risk candidates first, mainly the repeated witness-wrapper subproofs in `compact_subspace_closed` / `compact_hausdorff_separation` and the small covering wrapper in `closed_subspace_compact`. Those reductions either produced prover countermodels or timed out, so I reverted them. After the final pass, I did not find another non-trivial shortening in this section that looked safe.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` (`python` is not available in this shell). The file is left in a verified state with no net changes.

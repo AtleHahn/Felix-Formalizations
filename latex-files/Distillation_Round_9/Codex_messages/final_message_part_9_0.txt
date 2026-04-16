@@ -1,0 +1,5 @@
+I shortened three proof fragments after line `6556` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6589). The main change is in the Minkowski proof, where the case split for `0 \leq r_1 \rmul r_2` is replaced by a shorter absolute-value argument at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6589). I also compressed the Euclidean metric nonnegativity subproof at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6859) and removed an intermediate equality step in the symmetry subproof at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6874).
+
+I went through more than 20 localized shortening rounds in the region after `6556`. The remaining obvious wrapper compressions were not easy: several caused prover timeouts or countermodels, so I left those proofs explicit.
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because `python` is not available in this shell.

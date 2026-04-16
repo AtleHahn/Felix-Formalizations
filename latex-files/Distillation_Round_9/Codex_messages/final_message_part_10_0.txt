@@ -1,0 +1,9 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:7423) only after line `7396`, reviewed the post-`7396` proof blocks and local subproof candidates, and stopped once the remaining `Show that ...` blocks were substantive rather than easy wrappers.
+
+The accepted shortenings are:
+- collapsed the `b`, `F`, and `B` right-unique/function setup in the metrizable-closure proof;
+- compressed the `f \circ s` image-sequence step in `sequential_implies_continuous_metrizable`;
+- added the helper lemma [real_half_of_positive](/local/atle/Codex-Run/formalizations.tex:7644) and used it to remove duplicated epsilon-halving arithmetic from the addition and subtraction continuity proofs;
+- replaced one algebraic wrapper subproof in the multiplication proof with a direct line.
+
+Verification passes on the final file with `python3 -m quick_verifications -f formalizations.tex` (`python` is not installed in this shell).

@@ -1,0 +1,5 @@
+Shortened the safe proof wrappers after line `3404` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3481), mainly in `replace_coordinate_function`, `replace_coordinate_function_subset`, and the later part of `continuous_map_into_indexed_product` around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:4151). The successful changes were the low-risk ones from `subproof_shortening.md`: collapsing wrapper subproofs into direct quantified statements, inlining a finite-image argument, and removing a few local equality/subset wrappers.
+
+I went through more than 30 shortening rounds on the region after line `3404`. I also tried a more aggressive compression in the continuity proof, but it caused a prover timeout, so I reverted it and left the remaining larger Hausdorff/closure blocks unchanged.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` in this environment; `python` itself was not available.

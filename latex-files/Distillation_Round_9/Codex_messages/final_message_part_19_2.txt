@@ -1,0 +1,9 @@
+I shortened the `uniform_continuity_theorem` proof in three verified spots in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:15338):
+
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:15338): removed the intermediate `x\mathrel{R}g(x)` line and derived `0 < g(x)` directly from the choice-function facts.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:15392): removed the separate `x\mathrel{R}g(x)` assertion and derived `(x,g(x))\in R` directly.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:15393): removed the explicit `(x,g(x))\in X\times\reals` line before the `fst/snd` step.
+
+I also made more than 20 local shortening passes over all proofs after line `14798`. The other candidate shortenings in `finite_inhabited_largest_element`, `extreme_value_theorem`, `point_set_distance_continuous`, and `real_closed_interval_uncountable` consistently caused countermodels, timeouts, or parser-boundary issues, so I left those blocks unchanged.
+
+Verification: `python3 -m quick_verifications -f formalizations.tex` succeeded.

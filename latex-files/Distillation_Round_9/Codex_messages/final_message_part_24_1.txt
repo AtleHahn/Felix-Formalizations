@@ -1,0 +1,14 @@
+I reviewed all proofs after line `18731` in more than 20 local shortening passes and kept the only change that survived verification.
+
+The verified shortening is in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:18995), inside `sequential_implies_continuous_first_countable`. I compressed the inner argument by:
+- removing a redundant setup line for `f`,
+- reusing the already established first-countable analogue of the metrizable proof pattern,
+- collapsing the `f ∘ s` codomain/sequence steps into the shorter verified form.
+
+I tried additional wrapper removals later in the suffix, but those introduced either parser failures, prover timeouts, or countermodels, so I reverted them. Final verification passed with:
+
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+
+`python` was not available in this shell, so I used the same module via `python3`.

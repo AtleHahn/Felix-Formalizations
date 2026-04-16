@@ -1,0 +1,9 @@
+I shortened three proof fragments in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:4489), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:4905), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5000):
+
+- Replaced the inner `z`-subproof in `discrete_metric_topology` with a direct quantified line.
+- Replaced the `p \in X\times X \Rightarrow p \in \dom(e)` wrapper in `bounded_metric_is_metric` with a one-line quantified proof.
+- Replaced the nested `e(p_3) \le d(p_3)` case subproof in `bounded_metric_is_metric` with a direct line using the helper lemmas.
+
+I reviewed more than 20 candidate shortening rounds after line `4204`. Two additional aggressive shortenings caused prover failure or timeout, so I reverted those and left the remaining proofs unchanged because they are not easy safe shortenings.
+
+Final verification passed with `python3 -m quick_verifications -f formalizations.tex` (the shell does not provide a `python` executable).

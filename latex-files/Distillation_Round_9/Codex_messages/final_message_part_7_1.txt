@@ -1,0 +1,14 @@
+I shortened the easy post-`5005` proofs in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5033) and left the prover-fragile ones alone after testing them in 30+ local inspection/edit/verification rounds.
+
+The successful shortenings are at [formalizations.tex:5162](/local/atle/Codex-Run/formalizations.tex:5162), [formalizations.tex:5217](/local/atle/Codex-Run/formalizations.tex:5217), [formalizations.tex:5312](/local/atle/Codex-Run/formalizations.tex:5312), and [formalizations.tex:5364](/local/atle/Codex-Run/formalizations.tex:5364):
+- `sum_finite_sequence_unique`: collapsed the induction-step subproof to one quantified line.
+- `metric_topology_finer_iff`: compressed the whole proof to two direct implication lines.
+- `square_metric_function`: replaced the wrapper subproof with one direct quantified step.
+- `sum_finite_sequence_nonneg`: collapsed the induction-step subproof to one quantified line.
+
+I also tested additional shortenings after `5005` and reverted the ones that were not easy in practice:
+- `initial_segment_finite`: replacing `Show that ...` before a `subproof` caused a parser error.
+- `sum_finite_sequence_leq_n_times`: flattening the induction step caused a prover timeout.
+- The remaining `Show that` blocks are either structurally necessary in Naproche-ZF or not obviously compressible without similar proof-search risk.
+
+Final verification passed with `python3 -m quick_verifications -f formalizations.tex` in this environment (`python` is not available here).

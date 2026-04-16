@@ -1,0 +1,9 @@
+I shortened the proofs after line 3404 in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex), working in 20 verified micro-rounds. The main reductions were:
+- inlining trivial wrapper subproofs,
+- adding `indexed_product_subset_from_coordinate_subsets` to compress repeated product-inclusion arguments,
+- replacing the four repeated `W_1/W_2 ⊆ productFamily(X)` subproofs in `product_hausdorff_box`,
+- shortening parts of the continuity proof while keeping the previously timeout-prone equality explicit enough to verify.
+
+I also stopped at the point where the remaining candidates were mostly witness-heavy or `byCase`-heavy blocks; a few stronger compressions were tested and reverted when they caused prover timeouts.
+
+Verification passes successfully with `python3 -m quick_verifications -f formalizations.tex` in this environment (`python` is not installed here).

@@ -1,0 +1,8 @@
+Shortenings were applied only after line `6556` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6570). The successful reductions were:
+
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6724): `real_sub_add_chain` was collapsed to a one-line `Follows by ...`.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6810): `coord_square_sequence_diff` was collapsed to a one-line extensionality proof.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6825): `coord_diff_sequence_sum` was collapsed to a one-line extensionality proof.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:6845): the nonnegativity wrapper in `euclidean_metric_is_metric` was shortened to a direct quantified line.
+
+I also made a broader pass over the remaining proofs after line `6556` and stopped where the structure was no longer cheaply compressible without prover instability; one attempted shortening in the product-topology proof caused a timeout and was reverted immediately. Final verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because this environment has no `python` executable.

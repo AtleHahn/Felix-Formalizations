@@ -1,0 +1,8 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:5019) only after line `5005` and kept the remaining long induction/arithmetic proofs unchanged once local shortenings started causing prover timeouts.
+
+The successful shortenings were:
+- In [bounded_metric_topology](/local/atle/Codex-Run/formalizations.tex:5033), the first inclusion now uses the minimum of `{\epsilon,1}` instead of a three-case split.
+- [square_metric_function](/local/atle/Codex-Run/formalizations.tex:5297) is reduced to a one-line proof.
+- Minor safe cleanup in [coord_diff_set_finite](/local/atle/Codex-Run/formalizations.tex:5273) and [square_metric_value_exists](/local/atle/Codex-Run/formalizations.tex:5466) removed unnecessary setup.
+
+Verification passed with `python3 -m quick_verifications -f formalizations.tex` because this environment does not have a `python` executable.

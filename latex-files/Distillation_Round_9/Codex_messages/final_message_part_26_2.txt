@@ -1,0 +1,10 @@
+I shortened the post-`20392` region in one place that stayed prover-stable: in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:20994) I replaced the `dom(U) ⊆ naturalsPlus` subproof with the direct line
+`For all $n$ such that $n\in\dom{U}$ we have $n\in\naturalsPlus$ by \cref{dom_iff,union_iff,pair_eq_iff,setminus_elim_left}.`
+
+I also went through the remaining proofs after `20392` for more easy shortenings and tried several local compressions, but the other plausible candidates either produced countermodels or timed out under verification, so I reverted them. At this point I do not see further non-trivial safe shortenings in that suffix using the `subproof_shortening.md` approach.
+
+Verification succeeded with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` was not available in this shell, so I used `python3` for the same module invocation.

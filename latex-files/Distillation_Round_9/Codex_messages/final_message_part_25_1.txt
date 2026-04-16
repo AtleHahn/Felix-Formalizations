@@ -1,0 +1,5 @@
+I shortened one proof wrapper in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:19922): the subproof showing `for all n∈naturalsPlus, q(n)∈S` is now a direct one-line argument.
+
+I also inspected well over 20 candidate subproofs after line `19551`. The remaining ones in this suffix were not easy shortenings in practice: the natural inline rewrites consistently led to prover timeouts or countermodels, so I left those blocks unchanged.
+
+Verification passes: `quick_verifications` succeeded on `formalizations.tex` in the final state.

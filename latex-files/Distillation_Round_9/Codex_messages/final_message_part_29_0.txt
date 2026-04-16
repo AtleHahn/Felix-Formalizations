@@ -1,0 +1,12 @@
+Shortenings were applied in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22619) only after line `22625`, with several prover-sensitive attempts reverted when they caused `MismatchedAssume`, countermodels, or timeouts. The stable reductions are in these spots:
+
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22619): `urysohn_infimum_value` collapsed to a one-line proof.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22651): `urysohn_infimum_lt_rational_in_union` had redundant intermediate lines removed.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:23115): `urysohn_unit_interval_continuous_reals` collapsed to a one-line proof.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:23126): `urysohn_admissible_above_one` was shortened to two lines.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:23156): `urysohn_unit_interval_extend_in_dom` had the outer domain-equality wrapper inlined.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:23212): `urysohn_unit_interval_extend_gt1_setup` was shortened by replacing explicit singleton-function scaffolding with a direct function step.
+
+I went through more than 30 local shortening rounds on the post-`22625` region. The remaining proofs in that tail are mostly nested `byCase` or contradiction-sensitive blocks, and the promising extra compressions were not stable under verification, so I left them as is.
+
+Final verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because this shell has no `python` alias.

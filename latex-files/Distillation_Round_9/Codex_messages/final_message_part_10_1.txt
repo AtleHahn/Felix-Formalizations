@@ -1,0 +1,8 @@
+I shortened the easy proof steps I found in the multiplication-continuity proof in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:7947). The verified changes are:
+- collapsed the multi-line domain proof of `\realMultiplication` to one `\dom{f} = \reals\times\reals` step,
+- collapsed the three-line derivation of `f(p) = x_0 \rmul y_0` to one step,
+- shortened the neighborhood setup around `V`, `\epsilon`, `U_1`, `U_2`, and the product-basis membership of `U`.
+
+I also did a full review pass over the proof material after line `7396` and checked 31 local proof blocks/candidates there. The remaining subproof wrappers were left unchanged because the obvious eliminations are not safe in Naproche-ZF here: the surrounding goals are not universal, so direct `Fix`-based shortening fails.
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` (the environment has `python3`, not `python`).

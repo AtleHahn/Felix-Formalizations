@@ -1,0 +1,17 @@
+I shortened the proofs after line `2563` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2693) with a series of conservative reductions that survived verification. The successful changes were all low-risk proof cleanups: removing redundant derived facts and trimming citations where the needed premises were already explicit.
+
+The verified shortenings are in these spots:
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2693): removed an unused local fact in `closure_image_subset_implies_preimg_closed`.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2880): shortened `continuous_restrict_domain` by dropping an unnecessary derived fact.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:2910): shortened the `f\in\funs{X}{Z}` step in `continuous_restrict_range`.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3001): shortened `pasting_lemma` by removing redundant function facts and pruning follow-up citations.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3036): shortened the `\dom{h}=X` step.
+- [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3067) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:3096): reduced both projection-to-`funs` steps to `by \cref{funs_intro}`.
+
+I also made more aggressive shortening attempts on the remaining subproof wrappers after line `2563`, but those repeatedly caused prover timeouts or countermodels, so I reverted them. After 30+ local passes, these were the safe non-trivial shortenings left in this region.
+
+Verification passed with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` is not available in this shell, so I used `python3` for the required verifier module.

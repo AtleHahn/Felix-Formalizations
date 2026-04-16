@@ -1,0 +1,15 @@
+Updated [formalizations.tex](/local/atle/Codex-Run/formalizations.tex) after line `15516`. I reviewed the `13` proofs in that suffix and worked through more than `20` candidate shortening points, keeping only the changes that stayed prover-stable.
+
+The successful shortenings were all low-risk structural ones:
+- compressed induction-step wrapper subproofs in `iteration_sequence_unique` and in the long proof of `infinite_naturalsplus_has_strictly_increasing_sequence`
+- replaced the trivial `A \neq \emptyset` contradiction wrapper with a direct line
+- inlined the `t \in \funs{\naturalsPlus}{A}` argument in `finite_sequence_constant_subsequence`
+- removed two outer proof shells whose bodies already proved the target directly
+
+I left the remaining blocks unchanged because they are case-heavy or contradiction-heavy, and one attempted shortening in the `B_A` coverage argument caused a verifier timeout, so I reverted it.
+
+Verification succeeded with the required module invocation:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+(`python` is not available in this shell; `python3` was the working equivalent.)

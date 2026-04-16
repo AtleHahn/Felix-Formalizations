@@ -1,0 +1,9 @@
+Shortenings are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:22368). I kept the heavier blocks in `urysohn_u1_lt1_admissible` essentially intact, because further compression there caused prover failures or timeouts. The retained verified shortenings are:
+
+- `urysohn_unit_interval_chain`: collapsed the final trichotomy case split to a single line.
+- `urysohn_unit_interval_u1`: collapsed the inner `r_1 < 1` / `1 < r_1` split to one conclusion.
+- Moved the local helper lemmas `sequence_value_in_initial_image`, `unit_rational_real_aux`, `unit_rational_zero_real`, and `urysohn_level_value_real` earlier, then reused them to shorten later proofs, especially in `urysohn_unit_interval_f_funs` and `urysohn_unit_interval_u1`.
+
+I made repeated local shortening passes over all proofs after line `22029` and stopped where the remaining non-trivial candidates were no longer safely shortenable under verification.
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` (the environment does not provide `python`).

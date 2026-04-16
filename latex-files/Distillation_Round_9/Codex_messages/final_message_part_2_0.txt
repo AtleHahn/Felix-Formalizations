@@ -1,0 +1,5 @@
+I shortened the proofs after line `856` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:859) where the verifier tolerated it. The successful reductions are at [min_of_two_elements](/local/atle/Codex-Run/formalizations.tex:859), the three interval/ray equality lemmas [here](/local/atle/Codex-Run/formalizations.tex:1014), [here](/local/atle/Codex-Run/formalizations.tex:1022), and [here](/local/atle/Codex-Run/formalizations.tex:1031), plus two branch equalities in the convex-subspace proof [here](/local/atle/Codex-Run/formalizations.tex:1670) and [here](/local/atle/Codex-Run/formalizations.tex:1704), and one intersection-equality compression in the order-basis branch [here](/local/atle/Codex-Run/formalizations.tex:1742).
+
+I also went through well over 30 local shortening rounds on the suffix after line `856`; several additional wrapper eliminations were tried and immediately rolled back because they introduced prover timeouts, so I left those proofs in their more explicit form.
+
+Verification passed at the end with `python3 -m quick_verifications -f formalizations.tex` (`python` is not available in this shell).

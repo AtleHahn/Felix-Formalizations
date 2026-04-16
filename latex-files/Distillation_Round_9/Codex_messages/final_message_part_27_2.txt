@@ -1,0 +1,9 @@
+I completed more than 20 shortening rounds on the suffix of `formalizations.tex` after line `21327` and kept only the changes that remained verifier-stable.
+
+The final shortenings are in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21561) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:21847):
+- In `compact_hausdorff_normal`, I replaced the wrapper subproof for `forall U in G exists V ...` with an inline quantified argument.
+- In `urysohn_u1_eq1`, I shortened the `{0,1}` order subproof to the direct `p = 0` and `q = 1` conclusion, and compressed the vacuous `1 < p` tail condition to a two-line argument.
+
+I also tested a few additional shortenings in `continuous_subspace_range`, `compact_hausdorff_normal`, and `urysohn_u1_gt1`, but those caused timeouts or a countermodel, so I reverted them and left those proofs unchanged.
+
+Verification passes. The environment has no `python` binary, so I ran `python3 -m quick_verifications -f formalizations.tex`, which finished successfully.

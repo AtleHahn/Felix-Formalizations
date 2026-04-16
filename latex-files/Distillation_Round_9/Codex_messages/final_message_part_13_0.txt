@@ -1,0 +1,9 @@
+Shortenings were applied only after line `9840` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:9868). The main gains were from removing wrapper subproofs and converting micro-subproofs into direct quantified or subset statements in the connectedness section and the later product/convexity arguments, including the blocks around [§23 connected proofs](/local/atle/Codex-Run/formalizations.tex:9898), [continuous images and finite products](/local/atle/Codex-Run/formalizations.tex:10157), and [the convex separation contradiction lemma](/local/atle/Codex-Run/formalizations.tex:10534).
+
+I ran well over 20 edit/verify cycles, including immediate rollback of a few attempted compressions that caused prover timeouts or a `byCase` parser issue. The remaining `Show that ...` blocks after this pass are the higher-risk ones; the obvious safe shortenings are exhausted.
+
+Verification passed with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+`python` is not available in this environment, so I used `python3` for the same verifier module.

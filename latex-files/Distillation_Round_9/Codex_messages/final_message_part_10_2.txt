@@ -1,0 +1,7 @@
+I shortened the proofs after line `7396` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:7399), with the clean reductions concentrated in:
+- [real_half_of_positive](/local/atle/Codex-Run/formalizations.tex:7645), where several adjacent arithmetic wrapper steps were collapsed.
+- [real_addition_continuous](/local/atle/Codex-Run/formalizations.tex:7668), [real_subtraction_continuous](/local/atle/Codex-Run/formalizations.tex:7770), and [real_multiplication_continuous](/local/atle/Codex-Run/formalizations.tex:7926), where repeated product-basis/open-set wrappers and duplicated basis/topology conclusion blocks were shortened.
+
+I completed 20 shortening/verification rounds. I also tested a few more aggressive compressions in the later algebraic proofs, but reverted the ones the prover rejected; the remaining unshortened parts are the fragile long algebra/case-split blocks.
+
+Final verification passed with `python3 -m quick_verifications -f formalizations.tex` in this environment because `python` itself is not installed.

@@ -1,0 +1,10 @@
+I completed a 30-round shortening sweep over the proofs after line 3 in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:1), and only kept shortenings that still verified.
+
+Key reductions:
+- Added reusable helper lemmas for `n\in\naturalsPlus => 0<n` and `1/n\in\reals`, then used them to shorten repeated arithmetic subarguments around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:345), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:377), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:540), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:590).
+- Shortened `subbasis_finite_intersections_basis` by removing a repeated embedded copy of the already established intersection property at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:623).
+- Collapsed `max_of_two_elements` to a one-line proof at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:878).
+
+I also tested more aggressive flattenings in `basis_topology_is_topology`, `basis_topology_unions`, and `standard_basis_is_basis`, but those caused prover timeouts, so I left them structured.
+
+Verification passed at the end with `python3 -m quick_verifications -f formalizations.tex` (the shell here does not have `python`).

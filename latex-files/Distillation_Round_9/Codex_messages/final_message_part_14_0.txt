@@ -1,0 +1,9 @@
+Shortened the proofs after line `10711` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10721). The main changes were:
+- Replaced the outer “there exists no separation” wrapper in the convex-connected lemma with a direct contradiction proof at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:10721).
+- Merged repeated quantified facts in the component proofs at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11061) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11100).
+- Collapsed `components_disjoint` to the equivalence-class disjointness lemma at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11123).
+- Compressed the ray complement and closed-ray proofs at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11269), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11282), [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11296), and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11308).
+
+I completed well over 20 shortening passes over the post-`10711` region and stopped where the remaining candidates were mostly nested `byCase`/`subproof` arguments with no clear low-risk nontrivial shortening, especially around [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11212) and [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:11367).
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex` because this environment does not provide a `python` executable.

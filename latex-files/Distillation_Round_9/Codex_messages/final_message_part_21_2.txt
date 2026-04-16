@@ -1,0 +1,5 @@
+I completed 20+ shortening passes over the proofs after line `16353` and kept only the changes that remained verifier-stable.
+
+In [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16645) I shortened the proof of `iteration_sequence_naturalsplus` by removing an unnecessary relation step, inlining the `\initialSegment{1}` domain inclusion, and simplifying the comparability argument for elements of `F` at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16793). I also made the union-of-functions step explicit at [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:16830). I tested additional shortenings later in the tail section, but they caused prover timeouts, so I reverted those.
+
+Verification succeeded with `python3 -m quick_verifications -f formalizations.tex`. I used `python3` because `python` is not available in this environment.

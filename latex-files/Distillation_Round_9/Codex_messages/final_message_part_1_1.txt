@@ -1,0 +1,5 @@
+I shortened four proofs in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex): the two contradiction wrappers in the strict-fineness lemmas at [line 504](/local/atle/Codex-Run/formalizations.tex:504) and [line 529](/local/atle/Codex-Run/formalizations.tex:529), and the endpoint-equality subarguments in the order-topology lemmas at [line 766](/local/atle/Codex-Run/formalizations.tex:766) and [line 808](/local/atle/Codex-Run/formalizations.tex:808).
+
+I also went through 20+ shortening/verification rounds on the remaining post-line-3 proofs. The other obvious candidates either caused prover timeouts, produced parser restrictions like `MismatchedAssume`, or required the original local witness structure, so I left them unchanged.
+
+Verification passed at the end with `python3 -m quick_verifications -f formalizations.tex` because this environment has no `python` binary.

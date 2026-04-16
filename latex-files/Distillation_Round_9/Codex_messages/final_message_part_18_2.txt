@@ -1,0 +1,5 @@
+I worked through the proofs after line `13773` in [formalizations.tex](/local/atle/Codex-Run/formalizations.tex:13775), doing 20 shortening/review passes. I kept only the shortenings that stayed verifier-friendly and left the remaining case-heavy or arithmetic-heavy blocks unchanged after review. The surviving changes are small but safe: a direct quantified replacement in the surjectivity part of the successor-step proof, two subspace-topology equalities collapsed to one line, a few pointwise-equality subproof endings shortened, one witness-selection step tightened in the metric-topology comparison, and one arithmetic step in the compact-interval argument compressed.
+
+I also tested several more aggressive flattenings, but reverted them because they caused prover timeouts or a failed proof search, so those blocks were left as-is.
+
+Verification: `python` was not available in the shell, so I used `python3 -m quick_verifications -f formalizations.tex`. The final run completed successfully.
