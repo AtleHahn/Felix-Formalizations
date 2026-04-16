@@ -9,19 +9,6 @@ The project focuses on material from James R. Munkres'
 with source LaTeX artifacts in `latex-files/` and generated HTML
 documentation in `docs/`.
 
-## Contents
-
-- `docs/index.html` provides the main entry point for the generated documentation.
-- The `docs/` directory includes formalized sections from Munkres' topology text.
-- The same directory also contains standard-library reference material used by the
-  formalizations.
-- [`latex-files/Readme.md`](latex-files/Readme.md) describes the LaTeX source
-  files used for the current documentation.
-- `latex-files/` stores LaTeX source files from multiple distillation rounds of
-  the formalization process.
-- `latex-files/Distillation_Round_9/Codex_messages/` contains archived Codex
-  output fragments associated with that round.
-
 ## Documentation
 
 Open [`docs/index.html`](docs/index.html) in a browser to navigate the available
@@ -55,6 +42,4 @@ source material and iteration history.
 ## Scope
 
 These files represent ongoing, preliminary work on autoformalizing textbook
-mathematics in Felix. The repository is intended as a record of the latest
-experiment outputs, source artifacts, and generated documentation rather than a
-polished software package.
+mathematics in Felix.
