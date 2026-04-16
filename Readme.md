@@ -15,8 +15,10 @@ documentation in `docs/`.
 - The `docs/` directory includes formalized sections from Munkres' topology text.
 - The same directory also contains standard-library reference material used by the
   formalizations.
-- `latex-files/` stores LaTeX source files from distillation rounds of the
-  formalization process.
+- [`latex-files/Readme.md`](latex-files/Readme.md) describes the LaTeX source
+  files used for the current documentation.
+- `latex-files/` stores LaTeX source files from multiple distillation rounds of
+  the formalization process.
 - `latex-files/Distillation_Round_9/Codex_messages/` contains archived Codex
   output fragments associated with that round.
 
@@ -34,7 +36,15 @@ sections, including:
 ## LaTeX Sources
 
 The `latex-files/` directory collects intermediate and distilled LaTeX versions
-of the formalizations, including:
+of the formalizations. See [`latex-files/Readme.md`](latex-files/Readme.md) for
+the folder-specific overview.
+
+The current HTML documentation is based on:
+
+- `latex-files/naprochelibrary.tex`
+- `latex-files/Distillation_Round_8/formalizations_shortened_8_times_after_elaboration_and_adaption_to_new_felix_version.tex`
+
+Additional source material is preserved in:
 
 - `Distillation_Round_8`
 - `Distillation_Round_9`
