@@ -30,7 +30,7 @@ the folder-specific overview.
 The current HTML documentation is based on:
 
 - `latex-files/naprochelibrary.tex`
-- `latex-files/Distillation_Round_8/formalizations_shortened_8_times_after_elaboration_and_adaption_to_new_felix_version.tex`
+- `latex-files/Distillation_Round_9/formalizations_shortened_9_times_and_elaborated.tex`
 
 Additional source material is preserved in:
 
