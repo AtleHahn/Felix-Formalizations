@@ -7,11 +7,11 @@ autoformalization experiments with the proof assistant
 The project focuses on material from James R. Munkres'
 [*Topology* (2nd ed.)](https://www.amazon.com/Topology-2nd-James-Munkres/dp/0131816292),
 with source LaTeX artifacts in `latex-files/` and generated HTML
-documentation in `docs/`.
+files in `docs/`.
 
-## Documentation
+## Html Files
 
-Browse the generated documentation at
+Browse the generated Html files at
 [atlehahn.github.io/Felix-Formalizations/docs/index.html](https://atlehahn.github.io/Felix-Formalizations/docs/index.html),
 which includes:
 
