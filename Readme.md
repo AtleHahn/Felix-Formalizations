@@ -44,3 +44,10 @@ source material and iteration history.
 
 These files represent ongoing, preliminary work on autoformalizing textbook
 mathematics in Felix.
+
+---
+
+**Contributors:**  
+Adrian De Lon, Atle Hahn, and Josef Urban (AI4REASON, Czechia)
+
+---
