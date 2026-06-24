@@ -24,21 +24,11 @@ which includes:
 ## LaTeX Sources
 
 The `latex-files/` directory collects intermediate and distilled LaTeX versions
-of the formalizations. See [`latex-files/Readme.md`](latex-files/Readme.md) for
-the folder-specific overview.
+of the formalizations.
 
-The current HTML documentation is based on:
+The current version of the HTML files was generated from the two files in 
 
-- `latex-files/naprochelibrary.tex`
-- `latex-files/Distillation_Round_9/formalizations_shortened_9_times_and_elaborated.tex`
-
-Additional source material is preserved in:
-
-- `Distillation_Round_8`
-- `Distillation_Round_9`
-
-These files complement the HTML output in `docs/` by preserving the underlying
-source material and iteration history.
+- `latex-files/version2`
 
 ## Scope
 
