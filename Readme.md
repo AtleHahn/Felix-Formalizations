@@ -23,10 +23,9 @@ which includes:
 
 ## LaTeX Sources
 
-The `latex-files/` directory collects intermediate and distilled LaTeX versions
-of the formalizations.
+The `latex-files/` directory contains the LaTeX source files of our autoformalization experiments.
 
-The current version of the HTML files was generated from the two files in 
+The current version of the HTML files was generated from the two LaTeX files in 
 
 - `latex-files/version2`
 
