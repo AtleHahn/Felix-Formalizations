@@ -1,3 +1,6 @@
 
-Version of `formalizations.tex` obtained after applying 9 distillation rounds
-to the file `formalization.tex` in version0 
+# Version 1
+
+This directory contains the version of `formalizations.tex` obtained
+after applying nine distillation rounds to the `formalizations.tex`
+file in `version0`.
