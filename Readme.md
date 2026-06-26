@@ -27,7 +27,7 @@ The `latex-files/` directory contains the LaTeX source files of our autoformaliz
 
 The current version of the HTML files was generated from the two LaTeX files in 
 
-- `latex-files/version2`
+- `latex-files/version3`
 
 ## Scope
 
