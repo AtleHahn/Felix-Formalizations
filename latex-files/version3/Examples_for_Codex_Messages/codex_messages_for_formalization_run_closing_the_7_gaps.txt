@@ -1,0 +1,204 @@
+================================================================================
+
+Section 20, Iteration 1 (main):
+I completed and verified theorem 30, and the file currently passes
+
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+
+Section 20 is not finished yet. Two `Omitted.` proofs remain in [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex:9265) and [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex:9273): theorem 32 (`omega_metric_is_metric`) and theorem 33 (`omega_metric_product_topology`).
+
+I did not want to claim completion while those are still open.
+
+----------------------------------------
+
+Section 20, Iteration 1 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` completed successfully. There were no prover-related errors or proof-block syntax errors, so I did not change `formalizations.tex`.
+
+The verifier reported `Verification successful.` and created a verification commit: `07ebe6c`.
+
+----------------------------------------
+
+Section 20, Iteration 2 (main):
+Section 20 is complete in [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex). I replaced the remaining `Omitted.` proofs for `omega_metric_is_metric` and `omega_metric_product_topology`, and added the necessary Section 20 helper lemmas to support the formalization.
+
+Verification passed with:
+
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+
+There are no remaining `Omitted.` stubs in Section 20.
+
+----------------------------------------
+
+Section 20, Iteration 2 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` completed successfully.
+
+Result: `Verification successful.`
+
+There were no prover-related errors and no syntax errors inside proof blocks, so I did not modify `formalizations.tex`.
+
+----------------------------------------
+
+Section 20, Iteration 3 (main):
+`formalizations.tex` already satisfies the §20 requirement as checked in the current workspace: there are no occurrences of `Omitted.` in Section 20, and in fact none anywhere in the file.
+
+I ran the required verification command:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+It completed successfully with `Verification successful.`
+
+No edits were needed.
+
+----------------------------------------
+
+Section 20, Iteration 3 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` completed successfully.
+
+No Prover-related errors or proof-block syntax errors were reported, so I did not change `formalizations.tex`. The verifier output ended with `Verification successful.`
+
+================================================================================
+
+Section 27, Iteration 1 (main):
+I did not finish Section 27.
+
+Current state:
+- `lebesgue_number_lemma` is fully formalized and verified.
+- The earlier helper `open_set_shrink_away_point` remains verified.
+- I replaced the broken predecessor helper with verified groundwork:
+  - `countable_nonempty_surj_naturals`
+  - `natural_subseteq_naturals`
+  - `natural_is_ordinal`
+  - `natural_comparability`
+  - `finite_inhabited_naturals_largest`
+  - `shrinking_sequence_upto` definition
+- `python3 -m quick_verifications -f formalizations.tex` currently succeeds with that state.
+
+What remains unfinished:
+- `compact_hausdorff_no_isolated_uncountable` is still `Omitted.`
+- I have not yet added the shrinking-sequence existence/compatibility lemmas or the final theorem proof.
+
+So the AGENTS.md termination condition for `N=27` is not yet satisfied.
+
+----------------------------------------
+
+Section 27, Iteration 1 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` passed cleanly.
+
+Result: `Verification successful.`  
+There were no prover-related errors and no syntax errors inside proof blocks, so no changes were needed.
+
+----------------------------------------
+
+Section 27, Iteration 2 (main):
+I did not complete Section 27.
+
+Current state:
+- Added and verified `% from §27 helper lemma 18` `shrinking_sequence_exists`.
+- Added and verified `% from §27 helper lemma 19` `shrinking_sequence_restriction`.
+- Started `% from §27 helper lemma 20` `shrinking_sequence_unique`, but it is not yet verified.
+- `compact_hausdorff_no_isolated_uncountable` is still `Omitted.`.
+- `formalizations.tex` does not currently pass `python3 -m quick_verifications -f formalizations.tex`.
+
+Last blocker:
+- In `shrinking_sequence_unique`, the first failing obligation is a missing explicit domain-subset step before applying `fun_subseteq` in the base case. The verifier is currently failing around [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex:20475).
+
+If you want, I can continue from this exact state and finish the remaining helper lemmas and the theorem proof.
+
+----------------------------------------
+
+Section 27, Iteration 2 (clean-up):
+Replaced the failing proof of [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex) for `\cref{shrinking_sequence_unique}` with `Omitted.` and reran the verifier.
+
+`python3 -m quick_verifications -f formalizations.tex` now finishes successfully with `Verification successful.`
+
+----------------------------------------
+
+Section 27, Iteration 3 (main):
+Updated [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex) to complete Section 27. I filled the proofs of `shrinking_sequence_unique` and `compact_hausdorff_no_isolated_uncountable`, and added one helper lemma `shrinking_sequence_terms_nested` to support the finite-intersection argument.
+
+`python3 -m quick_verifications -f formalizations.tex` now passes, and there are no remaining `Omitted.` stubs in Section 27.
+
+----------------------------------------
+
+Section 27, Iteration 3 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` passes as-is.
+
+Result: `Verification successful.` No Prover-related errors or proof-block syntax errors were reported, so no edits were needed.
+
+================================================================================
+
+Section 32, Iteration 1 (main):
+Completed §32 in [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex:27852). The remaining proof of `well_ordered_normal` is now fully formalized, with four annotated helper lemmas added in §32 and the case split around the smallest element completed.
+
+I also fixed a duplicate label by renaming the second `naturalsplus_reciprocal_antitone` occurrence to `naturalsplus_reciprocal_antitone_alt`.
+
+Verification passed with:
+
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+
+There are no remaining `Omitted.` stubs in §32.
+
+----------------------------------------
+
+Section 32, Iteration 1 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` completed successfully.
+
+Result:
+```text
+Start of verification.
+Verification successful.
+```
+
+No prover-related errors or proof-block syntax errors were reported, so I made no edits.
+
+----------------------------------------
+
+Section 32, Iteration 2 (main):
+Section 32 already satisfies the AGENTS requirements as checked in the current workspace: there are no `Omitted.` stubs in `§32`, and no edits were needed.
+
+I ran the required verification command:
+
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+
+Result: `Verification successful.`
+
+----------------------------------------
+
+Section 32, Iteration 2 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` completed successfully.
+
+No prover-related errors or proof-block syntax errors were reported, so I made no edits. Output ended with `Verification successful.`
+
+----------------------------------------
+
+Section 32, Iteration 3 (main):
+Section 32 in [formalizations.tex](/local/atle/Experiments/Run7a/formalizations.tex:26960) already satisfies the AGENTS.md termination condition. There are no `Omitted.` stubs in that section, and I did not need to change any definitions or proofs.
+
+Verification passed with:
+```bash
+python3 -m quick_verifications -f formalizations.tex
+```
+Result: `Verification successful.`
+
+----------------------------------------
+
+Section 32, Iteration 3 (clean-up):
+`python3 -m quick_verifications -f formalizations.tex` passed without prover-related or in-proof syntax errors.
+
+Result:
+```text
+Start of verification.
+Verification successful.
+```
+
+No file changes were needed.
+
+
