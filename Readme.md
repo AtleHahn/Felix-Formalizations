@@ -45,6 +45,8 @@ The current version of the HTML files was generated from the two LaTeX files in
 
 - `latex-files/version4`
 
+See the Readme files in the subfolders `version0` - `version4` of `latex-files` for more info.
+
 ## Scope
 
 These files represent ongoing, preliminary work on autoformalizing textbook
