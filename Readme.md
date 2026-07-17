@@ -20,6 +20,22 @@ which includes:
 - Product, subspace, metric, and quotient topologies
 - Connectedness, compactness, countability, and separation axioms
 - The Urysohn lemma
+- The Urysohn metrization theorem
+- The Tietze extension theorem
+- Imbeddings of manifolds
+- The Tychonoff theorem
+- The Stone-Čech compactification
+- Local finiteness
+- The Nagata-Smirnov metrization theorem
+- Paracompactness
+- The Smirnov metrization theorem
+- Complete metric spaces
+- A space-filling curve
+- Compactness in metric spaces
+- Pointwise and compact convergence
+- Ascoli's theorem
+- Baire spaces
+- A nowhere-differentiable function
 
 ## LaTeX Sources
 
@@ -27,7 +43,7 @@ The `latex-files/` directory contains the LaTeX source files of our autoformaliz
 
 The current version of the HTML files was generated from the two LaTeX files in 
 
-- `latex-files/version3`
+- `latex-files/version4`
 
 ## Scope
 
