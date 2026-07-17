@@ -43,9 +43,9 @@ The `latex-files/` directory contains the LaTeX source files of our autoformaliz
 
 The current version of the HTML files was generated from the two LaTeX files in 
 
-- `latex-files/version4`
+- `latex-files/version4`,
 
-See the Readme files in the subfolders `version0` - `version4` of `latex-files` for more info.
+see the Readme file in `latex-files/version4` for more info.
 
 ## Scope
 
