@@ -1,17 +1,17 @@
 # Felix Formalizations
 
-This repository contains the most recent versions of our preliminary
+This repository contains the current versions of our preliminary
 autoformalization experiments with the proof assistant
 [Felix (Naproche/ZF)](https://github.com/adelon/felix).
 
 The project focuses on material from James R. Munkres'
 [*Topology* (2nd ed.)](https://www.amazon.com/Topology-2nd-James-Munkres/dp/0131816292),
-with source LaTeX artifacts in `latex-files/` and generated HTML
+with LaTeX source files in `latex-files/` and generated HTML
 files in `docs/`.
 
-## Html Files
+## HTML Files
 
-Browse the generated Html files at
+Browse the generated HTML files at
 [atlehahn.github.io/Felix-Formalizations/docs/index.html](https://atlehahn.github.io/Felix-Formalizations/docs/index.html),
 which includes:
 
@@ -39,13 +39,13 @@ which includes:
 
 ## LaTeX Sources
 
-The `latex-files/` directory contains the LaTeX source files of our autoformalization experiments.
+The `latex-files/` directory contains the LaTeX source files for our
+autoformalization experiments.
 
-The current version of the HTML files was generated from the two LaTeX files in 
+The current HTML files were generated from the two LaTeX files in
+`latex-files/version4`.
 
-- `latex-files/version4`,
-
-see the Readme file in `latex-files/version4` for more info.
+See the Readme file in `latex-files/version4` for more information.
 
 ## Scope
 
@@ -56,5 +56,3 @@ mathematics in Felix.
 
 **Contributors:**  
 Adrian De Lon, Atle Hahn, and Josef Urban (AI4REASON, Czechia)
-
----
