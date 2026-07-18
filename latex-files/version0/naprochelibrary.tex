@@ -1,5 +1,5 @@
 
-\section{Sets}
+\section{Standard Library: Sets}
 
 \begin{abbreviation}\label{ni}
     $A\ni a$ iff $a\in A$.
@@ -1470,7 +1470,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
 %    for all $A\in P$ there exists $a\in A$ such that
 %    $X\inter A = \{a\}$.
 %\end{definition}
-\section{Filters}
+\section{Standard Library: Filters}
 
 \subsection{Definition and basic properties of filters}
 
@@ -1614,7 +1614,8 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
     Hence $\emptyset\in F'$ by \cref{filter}.
     Follows by \hyperref[filter]{contradiction to the definition of a filter}.
 \end{proof}
-\section{Relations}
+
+\section{Standard Library: Relations}
 
 \begin{definition}\label{relation}
     $R$ is a relation iff
@@ -3326,9 +3327,9 @@ This lets us use the same symbol for composition of functions.
 
 \begin{abbreviation}\label{surjective}
     $R$ is surjective on $B$ iff $R$ is right-total on $B$.
-\end{abbreviation}\section{Functions}
+\end{abbreviation}
 
-
+\section{Standard Library: Functions}
 
 \begin{abbreviation}\label{function}
     $f$ is a function iff $f$ is right-unique and $f$ is a relation.
@@ -4160,7 +4161,8 @@ This lets us use the same symbol for composition of functions.
     Now $a' \in B$ iff $a' \notin f(a') = B$.
     Contradiction.
 \end{proof}
-\section{Regularity}
+
+\section{Standard Library: Regularity}
 
 \begin{abbreviation}\label{elemminimal}
     $a$ is an \in-minimal element of $A$ iff
@@ -4293,7 +4295,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{suc,subset,subseteq,subset_witness,suc_elim}.
 \end{proof}
 
-\section{Transitive sets}
+\section{Standard Library: Transitive sets}
 
 We use the word \emph{transitive} to talk about sets as relations,
 so we will explicitly talk about \emph{\in-transitivity} here.
@@ -4406,7 +4408,7 @@ so we will explicitly talk about \emph{\in-transitivity} here.
 \end{proof}
 
 
-\section{Ordinals}
+\section{Standard Library: Ordinals}
 
 \begin{definition}\label{ordinal}
     $\alpha$ is an ordinal iff
@@ -4861,7 +4863,7 @@ Then $\alpha\subseteq\beta$.
 \end{proof}
 
 
-\section{Magmas}
+\section{Standard Library: Magmas}
 
 \begin{struct}\label{magma}
     A magma $A$ is a onesorted structure equipped with
@@ -4959,7 +4961,8 @@ Then $\alpha\subseteq\beta$.
     Thus $x\cdot e\in\LeftOrb{f}{A}$ by assumption.
     Take $y\in\carrier[A]$ such that $x\cdot e = y\cdot f$ by \cref{left_orbit}.
 \end{proof}
-\section{Semigroups}
+
+\section{Standard Library: Semigroups}
 
 \begin{struct}\label{semigroup}
     A semigroup $A$ is a magma such that
@@ -4971,7 +4974,7 @@ Then $\alpha\subseteq\beta$.
 
 
 
-\section{Regular semigroups}
+\section{Standard Library: Regular semigroups}
 
 
 \begin{struct}\label{regularsemigroup}
@@ -4984,7 +4987,7 @@ Then $\alpha\subseteq\beta$.
 
 
 
-\section{Inverse semigroups}
+\section{Standard Library: Inverse semigroups}
 
 \begin{struct}\label{inversesemigroup}
     An inverse semigroup $A$ is a regular semigroup such that
@@ -5038,7 +5041,10 @@ Then $\alpha\subseteq\beta$.
             &= f
                 \explanation{by assumption}
     \end{align*}
-\end{proof}\section{Monoid}\label{form_sec_monoid}
+\end{proof}
+
+\section{Standard Library: Monoid}
+\label{form_sec_monoid}
 
 \begin{struct}\label{monoid}
     A monoid $A$ is a semigroup equipped with
@@ -5055,7 +5061,9 @@ Then $\alpha\subseteq\beta$.
 
 \begin{corollary}\label{monoid_implies_semigroup}
     Let $A$ be a monoid. Then $A$ is a semigroup.
-\end{corollary}\section{Order}
+\end{corollary}
+
+\section{Standard Library: Order}
 
 % also called "(partial) ordering" or "partial order" to contrast with connex (i.e. "total") orders.
 \begin{abbreviation}\label{order}
@@ -5157,7 +5165,7 @@ Then $\alpha\subseteq\beta$.
 \end{proof}
 
 
-\section{Natural numbers}
+\section{Standard Library: Natural numbers}
 
 \begin{abbreviation}\label{num_inductive_set}
     $A$ is an inductive set iff $\emptyset\in A$ and for all $a\in A$ we have $\suc{a}\in A$.
@@ -5206,7 +5214,7 @@ Then $\alpha\subseteq\beta$.
 
 
 
-\section{Cardinality}\label{form_sec_cardinality}
+\section{Standard Library: Cardinality}\label{form_sec_cardinality}
 
 \begin{definition}\label{finite}
     $X$ is finite iff there exists a natural number $k$ such that
@@ -5261,7 +5269,7 @@ Then $\alpha\subseteq\beta$.
     Then there exists $f$ such that $f$ is a function on $A$ and for all $x\in A$ we have $x\mathrel{R} f(x)$.
 \end{axiom}
 
-\section{The real numbers}
+\section{Standard Library: The real numbers}
 
 \begin{signature} \label{sig1}
     $\reals$ is a set.
@@ -8396,7 +8404,7 @@ from §5 Item 20: definition of the integers
 \end{definition}
 
 
-\section{Cardinality, revisited} 
+\section{Standard Library: Cardinality, revisited} 
 
 \begin{lemma}\label{finite_real_maximum}
     Suppose $A\subseteq\reals$.
