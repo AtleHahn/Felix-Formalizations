@@ -1470,6 +1470,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
 %    for all $A\in P$ there exists $a\in A$ such that
 %    $X\inter A = \{a\}$.
 %\end{definition}
+
 \section{Standard Library: Filters}
 
 \subsection{Definition and basic properties of filters}
@@ -4162,6 +4163,12 @@ This lets us use the same symbol for composition of functions.
     Contradiction.
 \end{proof}
 
+\begin{axiom}\label{axiom_of_choice}
+    Suppose $R$ is a relation.
+    Suppose for all $x\in A$ there exists $y$ such that $x\mathrel{R} y$.
+    Then there exists $f$ such that $f$ is a function on $A$ and for all $x\in A$ we have $x\mathrel{R} f(x)$.
+\end{axiom}
+
 \section{Standard Library: Regularity}
 
 \begin{abbreviation}\label{elemminimal}
@@ -4227,6 +4234,7 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}[Proof by \in-induction on $a$]
     Straightforward.
 \end{proof}
+
 \subsection{Ordinal successor}
 
 \begin{definition}\label{suc}
@@ -4406,7 +4414,6 @@ so we will explicitly talk about \emph{\in-transitivity} here.
 \begin{proof}
     Follows by \cref{transitiveset,inters,unions_family_of_transitiveset_is_transitiveset}.
 \end{proof}
-
 
 \section{Standard Library: Ordinals}
 
@@ -4863,205 +4870,202 @@ Then $\alpha\subseteq\beta$.
 \end{proof}
 
 
-\section{Standard Library: Magmas}
+% \section{Standard Library: Magmas}
 
-\begin{struct}\label{magma}
-    A magma $A$ is a onesorted structure equipped with
-    \begin{enumerate}
-        \item $\mul$
-    \end{enumerate}
-    such that
-    \begin{enumerate}
-        \item\label{magma_welldef} for all $a, b\in \carrier[A]$ we have $\mul[A](a,b)\in \carrier[A]$.
-    \end{enumerate}
-\end{struct}
+% \begin{struct}\label{magma}
+%     A magma $A$ is a onesorted structure equipped with
+%     \begin{enumerate}
+%         \item $\mul$
+%     \end{enumerate}
+%     such that
+%     \begin{enumerate}
+%         \item\label{magma_welldef} for all $a, b\in \carrier[A]$ we have $\mul[A](a,b)\in \carrier[A]$.
+%     \end{enumerate}
+% \end{struct}
 
-\begin{abbreviation}\label{cdot}
-    $a\cdot b = \mul(a,b)$.
-\end{abbreviation}
+% \begin{abbreviation}\label{cdot}
+%     $a\cdot b = \mul(a,b)$.
+% \end{abbreviation}
 
-\begin{abbreviation}\label{idempotentelement}
-    $a$ is an idempotent element of $A$ iff
-    $a\in\carrier[A]$ and
-    $\mul[A](a,a) = a$.
-\end{abbreviation}
-
-
-\begin{definition}\label{idempotents}
-    $\idempotents{A} = \{a\in\carrier[A]\mid \mul[A](a,a) = a\}$.
-\end{definition}
-
-%\begin{definition}\label{rightinternalorbit}
-%    $\rightinternalorbit{a}{A} = \{\mul[A](a,a') \mid a'\in\carrier[A]\}$.
-%\end{definition}
-
-\begin{abbreviation}\label{commutes}
-    $a$ commutes with $b$ iff $a\cdot b = b\cdot a$.
-\end{abbreviation}
-
-\begin{definition}\label{submagma}
-    $A$ is a submagma of $B$ iff
-        $A$ is a magma and
-        $B$ is a magma and
-        $\carrier[A]\subseteq \carrier[B]$ and
-        $\mul[A]\subseteq \mul[B]$.
-\end{definition}
-
-\begin{proposition}\label{submagma_transitive}
-    Suppose $A$ is a submagma of $B$.
-    Suppose $B$ is a submagma of $C$.
-    Then $A$ is a submagma of $C$.
-\end{proposition}
-\begin{proof}
-    Follows by \cref{submagma,subseteq_transitive}.
-\end{proof}
-
-\begin{struct}\label{unitalmagma}
-    A unital magma $A$ is a magma equipped with
-    \begin{enumerate}
-        \item $\neutral$
-    \end{enumerate}
-    such that
-    \begin{enumerate}
-        \item\label{unitalmagma_type} $\neutral[A]\in \carrier[A]$.
-        \item\label{unitalmagma_right} for all $a\in \carrier[A]$ we have $\mul[A](a,\neutral[A]) = a$.
-        \item\label{unitalmagma_left} for all $a\in \carrier[A]$ we have $\mul[A](\neutral[A], a) = a$.
-    \end{enumerate}
-\end{struct}
-
-\begin{proposition}\label{unitalmagma_mul_neutral_neutral}
-    Let $A$ be a unital magma.
-    Then $\mul(\neutral,\neutral) = \neutral$.
-\end{proposition}
-
-\begin{proposition}\label{unitalmagma_neutral_unique}
-    Let $A$ be a unital magma.
-    Let $e$ be a set such that $e\in A$ and for all $x\in A$ we have $\mul(x, e) = x = \mul(e, x)$.
-    Then $e = \neutral$.
-\end{proposition}
-\begin{proof}
-    Follows by \cref{unitalmagma_type,unitalmagma_left}.
-\end{proof}
+% \begin{abbreviation}\label{idempotentelement}
+%     $a$ is an idempotent element of $A$ iff
+%     $a\in\carrier[A]$ and
+%     $\mul[A](a,a) = a$.
+% \end{abbreviation}
 
 
+% \begin{definition}\label{idempotents}
+%     $\idempotents{A} = \{a\in\carrier[A]\mid \mul[A](a,a) = a\}$.
+% \end{definition}
 
-\begin{definition}[Left orbit]\label{left_orbit}
-    $\LeftOrb{x}{A} = \{\mul[A](a,x) \mid a\in\carrier[A] \}$.
-\end{definition}
+% %\begin{definition}\label{rightinternalorbit}
+% %    $\rightinternalorbit{a}{A} = \{\mul[A](a,a') \mid a'\in\carrier[A]\}$.
+% %\end{definition}
 
-\begin{proposition}\label{eq_left_orbit_witness}
-    Let $A$ be a magma.
-    Let $e,f\in\carrier[A]$.
-    Suppose $\LeftOrb{e}{A} = \LeftOrb{f}{A}$.
-    Let $x\in\carrier[A]$.
-    Then there exists $y\in\carrier[A]$ such that $x\cdot e = y\cdot f$.
-\end{proposition}
-\begin{proof}
-    We have $x\cdot e\in \LeftOrb{e}{A}$ by \cref{left_orbit}.
-    Thus $x\cdot e\in\LeftOrb{f}{A}$ by assumption.
-    Take $y\in\carrier[A]$ such that $x\cdot e = y\cdot f$ by \cref{left_orbit}.
-\end{proof}
+% \begin{abbreviation}\label{commutes}
+%     $a$ commutes with $b$ iff $a\cdot b = b\cdot a$.
+% \end{abbreviation}
 
-\section{Standard Library: Semigroups}
+% \begin{definition}\label{submagma}
+%     $A$ is a submagma of $B$ iff
+%         $A$ is a magma and
+%         $B$ is a magma and
+%         $\carrier[A]\subseteq \carrier[B]$ and
+%         $\mul[A]\subseteq \mul[B]$.
+% \end{definition}
 
-\begin{struct}\label{semigroup}
-    A semigroup $A$ is a magma such that
-    \begin{enumerate}
-        %\item for all $a, b, c\in \carrier[A]$ we have $\mul[A](a,\mul[A](b,c)) = \mul[A](\mul[A](a,b),c)$.
-        \item\label{semigroup_assoc} for all $a, b, c$ we have $\mul[A](a,\mul[A](b,c)) = \mul[A](\mul[A](a,b),c)$.
-    \end{enumerate}
-\end{struct}
+% \begin{proposition}\label{submagma_transitive}
+%     Suppose $A$ is a submagma of $B$.
+%     Suppose $B$ is a submagma of $C$.
+%     Then $A$ is a submagma of $C$.
+% \end{proposition}
+% \begin{proof}
+%     Follows by \cref{submagma,subseteq_transitive}.
+% \end{proof}
+
+% \begin{struct}\label{unitalmagma}
+%     A unital magma $A$ is a magma equipped with
+%     \begin{enumerate}
+%         \item $\neutral$
+%     \end{enumerate}
+%     such that
+%     \begin{enumerate}
+%         \item\label{unitalmagma_type} $\neutral[A]\in \carrier[A]$.
+%         \item\label{unitalmagma_right} for all $a\in \carrier[A]$ we have $\mul[A](a,\neutral[A]) = a$.
+%         \item\label{unitalmagma_left} for all $a\in \carrier[A]$ we have $\mul[A](\neutral[A], a) = a$.
+%     \end{enumerate}
+% \end{struct}
+
+% \begin{proposition}\label{unitalmagma_mul_neutral_neutral}
+%     Let $A$ be a unital magma.
+%     Then $\mul(\neutral,\neutral) = \neutral$.
+% \end{proposition}
+
+% \begin{proposition}\label{unitalmagma_neutral_unique}
+%     Let $A$ be a unital magma.
+%     Let $e$ be a set such that $e\in A$ and for all $x\in A$ we have $\mul(x, e) = x = \mul(e, x)$.
+%     Then $e = \neutral$.
+% \end{proposition}
+% \begin{proof}
+%     Follows by \cref{unitalmagma_type,unitalmagma_left}.
+% \end{proof}
 
 
 
-\section{Standard Library: Regular semigroups}
+% \begin{definition}[Left orbit]\label{left_orbit}
+%     $\LeftOrb{x}{A} = \{\mul[A](a,x) \mid a\in\carrier[A] \}$.
+% \end{definition}
+
+% \begin{proposition}\label{eq_left_orbit_witness}
+%     Let $A$ be a magma.
+%     Let $e,f\in\carrier[A]$.
+%     Suppose $\LeftOrb{e}{A} = \LeftOrb{f}{A}$.
+%     Let $x\in\carrier[A]$.
+%     Then there exists $y\in\carrier[A]$ such that $x\cdot e = y\cdot f$.
+% \end{proposition}
+% \begin{proof}
+%     We have $x\cdot e\in \LeftOrb{e}{A}$ by \cref{left_orbit}.
+%     Thus $x\cdot e\in\LeftOrb{f}{A}$ by assumption.
+%     Take $y\in\carrier[A]$ such that $x\cdot e = y\cdot f$ by \cref{left_orbit}.
+% \end{proof}
+
+% \section{Standard Library: Semigroups}
+
+% \begin{struct}\label{semigroup}
+%     A semigroup $A$ is a magma such that
+%     \begin{enumerate}
+%         %\item for all $a, b, c\in \carrier[A]$ we have $\mul[A](a,\mul[A](b,c)) = \mul[A](\mul[A](a,b),c)$.
+%         \item\label{semigroup_assoc} for all $a, b, c$ we have $\mul[A](a,\mul[A](b,c)) = \mul[A](\mul[A](a,b),c)$.
+%     \end{enumerate}
+% \end{struct}
+
+% \section{Standard Library: Regular semigroups}
+
+% \begin{struct}\label{regularsemigroup}
+%     A regular semigroup $A$ is a semigroup such that
+%     \begin{enumerate}
+%         %\item for all $a\in \carrier[A]$ there exists $b\in\carrier[A]$ such that $\mul[A](a, \mul[A](b, a)) = a$.
+%         \item\label{regularsemigroup_regular} for all $a$ there exists $b\in\carrier[A]$ such that $\mul[A](a, \mul[A](b, a)) = a$.
+%     \end{enumerate}
+% \end{struct}
 
 
-\begin{struct}\label{regularsemigroup}
-    A regular semigroup $A$ is a semigroup such that
-    \begin{enumerate}
-        %\item for all $a\in \carrier[A]$ there exists $b\in\carrier[A]$ such that $\mul[A](a, \mul[A](b, a)) = a$.
-        \item\label{regularsemigroup_regular} for all $a$ there exists $b\in\carrier[A]$ such that $\mul[A](a, \mul[A](b, a)) = a$.
-    \end{enumerate}
-\end{struct}
+% \section{Standard Library: Inverse semigroups}
+
+% \begin{struct}\label{inversesemigroup}
+%     An inverse semigroup $A$ is a regular semigroup such that
+%     \begin{enumerate}
+%         \item\label{inversesemigroup_comm} for all $a,b\in\idempotents{A}$ we have $\mul[A](a, b) = \mul[A](b, a)$.
+%     \end{enumerate}
+% \end{struct}
+
+% \begin{proposition}\label{inversesemigroup_is_semigroup}
+%     Suppose $A$ is an inverse semigroup.
+%     Then $A$ is a semigroup.
+% \end{proposition}
+
+% \begin{proposition}\label{inversesemigroup_is_regularsemigroup}
+%     Suppose $A$ is an inverse semigroup.
+%     Then $A$ is a regular semigroup.
+% \end{proposition}
+
+% \begin{proposition}\label{idempotentelems_eq_iff_orbits_eq}
+%     Let $A$ be an inverse semigroup.
+%     Let $e,f\in\idempotents{A}$.
+%     % TODO use Orbits explicitly?
+%     Suppose for all $x\in\carrier[A]$ there exists $y\in\carrier[A]$
+%     such that $x\cdot e = y\cdot f$.
+%     Suppose for all $x\in\carrier[A]$ there exists $y\in\carrier[A]$
+%     such that $x\cdot f = y\cdot e$.
+%     Then $e = f$.
+% \end{proposition}
+% \begin{proof}
+%     Take $x, y\in\carrier[A]$ such that $e = x\cdot f$ and $f = y\cdot e$ by \cref{idempotents}.
+%     %
+%     \begin{align*}
+%         e
+%             &= x \cdot f
+%                 \explanation{by assumption}\\
+%             &= x\cdot (f\cdot f)
+%                 \explanation{by \cref{idempotents}}\\
+%             &= (x\cdot f)\cdot f
+%                 \explanation{by \cref{semigroup_assoc,inversesemigroup_is_semigroup}}\\
+%             &= e\cdot f
+%             \explanation{by assumption}\\
+%             &= f\cdot e
+%                 \explanation{by \hyperref[inversesemigroup_comm]{commutativity of idempotent elements}}\\
+%             &= (y\cdot e)\cdot e
+%                 \explanation{by assumption}\\
+%             &= y\cdot (e\cdot e)
+%                 \explanation{by \cref{semigroup_assoc,inversesemigroup_is_semigroup}}\\
+%             &= y \cdot e
+%                 \explanation{by \cref{idempotents}}\\
+%             &= f
+%                 \explanation{by assumption}
+%     \end{align*}
+% \end{proof}
 
 
+% \section{Standard Library: Monoid}
+% \label{form_sec_monoid}
 
-\section{Standard Library: Inverse semigroups}
+% \begin{struct}\label{monoid}
+%     A monoid $A$ is a semigroup equipped with
+%     \begin{enumerate}
+%         \item $\neutral$
+%     \end{enumerate}
+%     such that
+%     \begin{enumerate}
+%         \item\label{monoid_type} $\neutral[A]\in \carrier[A]$.
+%         \item\label{monoid_right} for all $a\in \carrier[A]$ we have $\mul[A](a,\neutral[A]) = a$.
+%         \item\label{monoid_left} for all $a\in \carrier[A]$ we have $\mul[A](\neutral[A], a) = a$.
+%     \end{enumerate}
+% \end{struct}
 
-\begin{struct}\label{inversesemigroup}
-    An inverse semigroup $A$ is a regular semigroup such that
-    \begin{enumerate}
-        \item\label{inversesemigroup_comm} for all $a,b\in\idempotents{A}$ we have $\mul[A](a, b) = \mul[A](b, a)$.
-    \end{enumerate}
-\end{struct}
+% \begin{corollary}\label{monoid_implies_semigroup}
+%     Let $A$ be a monoid. Then $A$ is a semigroup.
+% \end{corollary}
 
-\begin{proposition}\label{inversesemigroup_is_semigroup}
-    Suppose $A$ is an inverse semigroup.
-    Then $A$ is a semigroup.
-\end{proposition}
-
-
-\begin{proposition}\label{inversesemigroup_is_regularsemigroup}
-    Suppose $A$ is an inverse semigroup.
-    Then $A$ is a regular semigroup.
-\end{proposition}
-
-\begin{proposition}\label{idempotentelems_eq_iff_orbits_eq}
-    Let $A$ be an inverse semigroup.
-    Let $e,f\in\idempotents{A}$.
-    % TODO use Orbits explicitly?
-    Suppose for all $x\in\carrier[A]$ there exists $y\in\carrier[A]$
-    such that $x\cdot e = y\cdot f$.
-    Suppose for all $x\in\carrier[A]$ there exists $y\in\carrier[A]$
-    such that $x\cdot f = y\cdot e$.
-    Then $e = f$.
-\end{proposition}
-\begin{proof}
-    Take $x, y\in\carrier[A]$ such that $e = x\cdot f$ and $f = y\cdot e$ by \cref{idempotents}.
-    %
-    \begin{align*}
-        e
-            &= x \cdot f
-                \explanation{by assumption}\\
-            &= x\cdot (f\cdot f)
-                \explanation{by \cref{idempotents}}\\
-            &= (x\cdot f)\cdot f
-                \explanation{by \cref{semigroup_assoc,inversesemigroup_is_semigroup}}\\
-            &= e\cdot f
-            \explanation{by assumption}\\
-            &= f\cdot e
-                \explanation{by \hyperref[inversesemigroup_comm]{commutativity of idempotent elements}}\\
-            &= (y\cdot e)\cdot e
-                \explanation{by assumption}\\
-            &= y\cdot (e\cdot e)
-                \explanation{by \cref{semigroup_assoc,inversesemigroup_is_semigroup}}\\
-            &= y \cdot e
-                \explanation{by \cref{idempotents}}\\
-            &= f
-                \explanation{by assumption}
-    \end{align*}
-\end{proof}
-
-\section{Standard Library: Monoid}
-\label{form_sec_monoid}
-
-\begin{struct}\label{monoid}
-    A monoid $A$ is a semigroup equipped with
-    \begin{enumerate}
-        \item $\neutral$
-    \end{enumerate}
-    such that
-    \begin{enumerate}
-        \item\label{monoid_type} $\neutral[A]\in \carrier[A]$.
-        \item\label{monoid_right} for all $a\in \carrier[A]$ we have $\mul[A](a,\neutral[A]) = a$.
-        \item\label{monoid_left} for all $a\in \carrier[A]$ we have $\mul[A](\neutral[A], a) = a$.
-    \end{enumerate}
-\end{struct}
-
-\begin{corollary}\label{monoid_implies_semigroup}
-    Let $A$ be a monoid. Then $A$ is a semigroup.
-\end{corollary}
 
 \section{Standard Library: Order}
 
@@ -5164,110 +5168,6 @@ Then $\alpha\subseteq\beta$.
     $\subseteqrel{A}$ is antisymmetric by \cref{subseteqrel_antisymmetric}.
 \end{proof}
 
-
-\section{Standard Library: Natural numbers}
-
-\begin{abbreviation}\label{num_inductive_set}
-    $A$ is an inductive set iff $\emptyset\in A$ and for all $a\in A$ we have $\suc{a}\in A$.
-\end{abbreviation}
-
-\begin{axiom}\label{num_naturals_inductive_set}
-    $\naturals$ is an inductive set.
-\end{axiom}
-
-\begin{axiom}\label{num_naturals_smallest_inductive_set}
-    Let $A$ be an inductive set.
-    Then $\naturals\subseteq A$.
-\end{axiom}
-
-\begin{abbreviation}\label{num_naturalnumber}
-    $n$ is a natural number iff $n\in \naturals$.
-\end{abbreviation}
-
-\begin{lemma}\label{num_emptyset_in_naturals}
-    $\emptyset\in\naturals$.    
-\end{lemma}
-
-\begin{signature}\label{num_addition_is_set}
-    $x+y$ is a set.
-\end{signature}
-
-\begin{axiom}\label{num_addition_on_naturals}
-    If $x$ and $y$ are natural numbers, then $x + y$ is a natural number.
-\end{axiom}
-
-\begin{abbreviation}\label{num_zero_is_emptyset}
-    $\zero = \emptyset$.
-\end{abbreviation}
-
-\begin{axiom}\label{num_addition_axiom_1}
-    For all $x \in \naturals$ $x + \zero = \zero + x = x$.
-\end{axiom}
-
-\begin{axiom}\label{num_addition_axiom_2}
-    For all $x, y \in \naturals$ $x + \suc{y} = \suc{x} + y = \suc{x+y}$.
-\end{axiom}
-
-\begin{lemma}\label{num_naturals_is_equal_to_two_times_naturals}
-    $\{x+y \mid x \in \naturals, y \in \naturals \} = \naturals$.
-\end{lemma}
-
-
-
-\section{Standard Library: Cardinality}\label{form_sec_cardinality}
-
-\begin{definition}\label{finite}
-    $X$ is finite iff there exists a natural number $k$ such that
-        there exists a bijection from $k$ to $X$.
-\end{definition}
-
-
-\begin{lemma} \label{emptyset_is_finite}
-    $\emptyset$ is finite.
-\end{lemma}
-\begin{proof}
-   % Omitted.
-\end{proof}
-
-\begin{lemma} \label{pair_is_finite}
-    Assume that $x$ is a set and assume that $y$ is a set.
-    Then $\{x,y\}$ is finite.
-\end{lemma}
-\begin{proof}
- Omitted.
-\end{proof}
-
-\begin{lemma} \label{subseteq_finite_is_finite}
-    Suppose $A\subseteq B$.
-    Suppose $B$ is finite.
-    Then $A$ is finite.
-\end{lemma}
-\begin{proof}
-    Omitted.
-\end{proof}
-
-\begin{lemma} \label{union_of_finite_is_finite}
-    Suppose $A$ is finite and $B$ is finite.
-    Then $A\union B$ is finite.
-\end{lemma}
-\begin{proof}
-    Omitted.
-\end{proof}
-
-\begin{abbreviation}\label{infinite}
-    $X$ is infinite iff $X$ is not finite.
-\end{abbreviation}
-
-\begin{definition}\label{cardinality}
-    $X$ has cardinality $k$ iff $k$ is a natural number and
-    there exists a bijection from $k$ to $X$.
-\end{definition}
-
-\begin{axiom}\label{axiom_of_choice}
-    Suppose $R$ is a relation.
-    Suppose for all $x\in A$ there exists $y$ such that $x\mathrel{R} y$.
-    Then there exists $f$ such that $f$ is a function on $A$ and for all $x\in A$ we have $x\mathrel{R} f(x)$.
-\end{axiom}
 
 \section{Standard Library: The real numbers}
 
@@ -8403,9 +8303,104 @@ from §5 Item 20: definition of the integers
     $x = s(n)$.
 \end{definition}
 
+\section{Standard Library: Natural numbers}
 
-\section{Standard Library: Cardinality, revisited} 
+\begin{abbreviation}\label{num_inductive_set}
+    $A$ is an inductive set iff $\emptyset\in A$ and for all $a\in A$ we have $\suc{a}\in A$.
+\end{abbreviation}
 
+\begin{axiom}\label{num_naturals_inductive_set}
+    $\naturals$ is an inductive set.
+\end{axiom}
+
+\begin{axiom}\label{num_naturals_smallest_inductive_set}
+    Let $A$ be an inductive set.
+    Then $\naturals\subseteq A$.
+\end{axiom}
+
+\begin{abbreviation}\label{num_naturalnumber}
+    $n$ is a natural number iff $n\in \naturals$.
+\end{abbreviation}
+
+\begin{lemma}\label{num_emptyset_in_naturals}
+    $\emptyset\in\naturals$.    
+\end{lemma}
+
+\begin{signature}\label{num_addition_is_set}
+    $x+y$ is a set.
+\end{signature}
+
+\begin{axiom}\label{num_addition_on_naturals}
+    If $x$ and $y$ are natural numbers, then $x + y$ is a natural number.
+\end{axiom}
+
+\begin{abbreviation}\label{num_zero_is_emptyset}
+    $\zero = \emptyset$.
+\end{abbreviation}
+
+\begin{axiom}\label{num_addition_axiom_1}
+    For all $x \in \naturals$ $x + \zero = \zero + x = x$.
+\end{axiom}
+
+\begin{axiom}\label{num_addition_axiom_2}
+    For all $x, y \in \naturals$ $x + \suc{y} = \suc{x} + y = \suc{x+y}$.
+\end{axiom}
+
+\begin{lemma}\label{num_naturals_is_equal_to_two_times_naturals}
+    $\{x+y \mid x \in \naturals, y \in \naturals \} = \naturals$.
+\end{lemma}
+
+
+\section{Standard Library: Cardinality}\label{form_sec_cardinality}
+
+\begin{definition}\label{finite}
+    $X$ is finite iff there exists a natural number $k$ such that
+        there exists a bijection from $k$ to $X$.
+\end{definition}
+
+
+\begin{lemma} \label{emptyset_is_finite}
+    $\emptyset$ is finite.
+\end{lemma}
+\begin{proof}
+   % Omitted.
+\end{proof}
+
+\begin{lemma} \label{pair_is_finite}
+    Assume that $x$ is a set and assume that $y$ is a set.
+    Then $\{x,y\}$ is finite.
+\end{lemma}
+\begin{proof}
+ Omitted.
+\end{proof}
+
+\begin{lemma} \label{subseteq_finite_is_finite}
+    Suppose $A\subseteq B$.
+    Suppose $B$ is finite.
+    Then $A$ is finite.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{lemma} \label{union_of_finite_is_finite}
+    Suppose $A$ is finite and $B$ is finite.
+    Then $A\union B$ is finite.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{abbreviation}\label{infinite}
+    $X$ is infinite iff $X$ is not finite.
+\end{abbreviation}
+
+\begin{definition}\label{cardinality}
+    $X$ has cardinality $k$ iff $k$ is a natural number and
+    there exists a bijection from $k$ to $X$.
+\end{definition}
+
+ 
 \begin{lemma}\label{finite_real_maximum}
     Suppose $A\subseteq\reals$.
     Suppose $A$ is finite.
