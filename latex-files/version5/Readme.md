@@ -1,8 +1,8 @@
 
 # Version 5
 
-This directory contains the version of `formalizations.tex` and `naprorchlibrary.tex` obtained
-from version 4 after shortening `naprorchlibrary.tex` and slightly adapting `formalizations.tex`
+This directory contains the version of `formalizations.tex` and `naprochelibrary.tex` obtained
+from version 4 after shortening `naprochelibrary.tex` and slightly adapting `formalizations.tex`
 
 ## Terminology
 
@@ -11,9 +11,6 @@ Many other authors would use the term `open neighborhood` for what
 Munkres calls a `neighborhood`.
 
 ## Coverage
-
-Compared with version 3, this version adds coverage of sections
-§34-§49 of Munkres' book.
 
 There are currently only two instances of `Omitted.` in
 `formalizations.tex`, namely in the proofs of theorems
