@@ -43,9 +43,9 @@ The `latex-files/` directory contains the LaTeX source files for our
 autoformalization experiments.
 
 The current HTML files were generated from the two LaTeX files in
-`latex-files/version4`.
+`latex-files/version5`.
 
-See the Readme file in `latex-files/version4` for more information.
+See the Readme file in `latex-files/version5` for more information.
 
 ## Scope
 
