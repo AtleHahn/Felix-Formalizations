@@ -26,13 +26,13 @@ There are currently only two instances of `Omitted.` in
 `well_ordering_theorem_local_finiteness`, which formalize versions of
 Zorn's lemma and the well-ordering theorem.
 
-In version 5, we plan to move both results, including their proofs, to
+In version 6, we plan to move both results, including their proofs, to
 the standard library in `naprochelibrary.tex`.
 
 ## Note on Section §50
 
 Section §50, the final section on set-theoretic topology, is not yet
-included. We plan to include it in version 5 after modifying
+included. We plan to include it in version 6 after modifying
 `naprochelibrary.tex`.
 
 At present, `naprochelibrary.tex` contains two notions of natural
