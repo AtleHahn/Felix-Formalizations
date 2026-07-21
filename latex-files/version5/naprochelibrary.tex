@@ -5259,62 +5259,28 @@ This lets us use the same symbol for composition of functions.
 \end{axiom}
 
 % from §5 Item 12: uniqueness of additive identity
-\begin{theorem}\label{real_add_ident_unique}
+\begin{proposition}\label{real_add_ident_unique}
     Suppose $c\in\reals$ and for all $a\in\reals$ we have $c + a = a$.
     Then $c = 0$.
-\end{theorem}
-\begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    Then $c + 0 = 0$ by assumption.
-    $c + 0 = 0 + c$ by \cref{real_add_comm}.
-    $0 + c = c$ by \cref{real_add_ident}.
-    Thus $c = 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 13: uniqueness of multiplicative identity
-\begin{theorem}\label{real_mul_ident_unique}
+\begin{proposition}\label{real_mul_ident_unique}
     Suppose $c\in\reals$ and for all $a\in\reals$ we have $c \rmul a = a$.
     Then $c = 1$.
-\end{theorem}
-\begin{proof}
-    $1\in\reals$ by \cref{real_mul_ident}.
-    Then $c \rmul 1 = 1$ by assumption.
-    $c \rmul 1 = 1 \rmul c$ by \cref{real_mul_comm}.
-    $1 \rmul c = c$ by \cref{real_mul_ident}.
-    Thus $c = 1$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 14: uniqueness of additive inverses
-\begin{theorem}\label{real_add_inverse_unique}
+\begin{proposition}\label{real_add_inverse_unique}
     Suppose $a\in\reals$ and $b\in\reals$ and $a + b = 0$.
     Then $b = \neg{a}$.
-\end{theorem}
-\begin{proof}
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $b = b + 0$ by \cref{real_add_ident,real_add_comm}.
-    $b + 0 = b + (a + \neg{a})$ by \cref{real_add_inverse}.
-    $b + (a + \neg{a}) = (b + a) + \neg{a}$ by \cref{real_add_assoc}.
-    $(b + a) + \neg{a} = (a + b) + \neg{a}$ by \cref{real_add_comm}.
-    $(a + b) + \neg{a} = 0 + \neg{a}$ by assumption.
-    $0 + \neg{a} = \neg{a}$ by \cref{real_add_ident}.
-    Thus $b = \neg{a}$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 15: uniqueness of multiplicative inverses
-\begin{theorem}\label{real_mul_inverse_unique}
+\begin{proposition}\label{real_mul_inverse_unique}
     Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $a \rmul b = 1$.
     Then $b = \inv{a}$.
-\end{theorem}
-\begin{proof}
-    $\inv{a}\in\reals$ by \cref{real_mul_inverse}.
-    $b = b \rmul 1$ by \cref{real_mul_ident,real_mul_comm}.
-    $b \rmul 1 = b \rmul (a \rmul \inv{a})$ by \cref{real_mul_inverse}.
-    $b \rmul (a \rmul \inv{a}) = (b \rmul a) \rmul \inv{a}$ by \cref{real_mul_assoc}.
-    $(b \rmul a) \rmul \inv{a} = (a \rmul b) \rmul \inv{a}$ by \cref{real_mul_comm}.
-    $(a \rmul b) \rmul \inv{a} = 1 \rmul \inv{a}$ by assumption.
-    $1 \rmul \inv{a} = \inv{a}$ by \cref{real_mul_ident}.
-    Thus $b = \inv{a}$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 16: naturals are real numbers
 \begin{axiom}\label{real_naturals_subset_reals}
@@ -5350,18 +5316,12 @@ This lets us use the same symbol for composition of functions.
 \end{axiom}
 
 % from §5 Item 19: induction principle
-\begin{theorem}\label{real_naturals_induction}
+\begin{proposition}\label{real_naturals_induction}
     Suppose $A\subseteq\naturalsPlus$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
     Then for all $n\in\naturalsPlus$ we have $n\in A$.
-\end{theorem}
-\begin{proof}
-    $\naturalsPlus \subseteq \reals$ by \cref{real_naturals_subset_reals}.
-    Thus $A\subseteq\reals$ by \cref{subseteq_transitive}.
-    Thus $\naturalsPlus \subseteq A$ by \cref{real_naturals_smallest}.
-    Thus for all $n\in\naturalsPlus$ we have $n\in A$ by \cref{subseteq}.
-\end{proof}
+\end{proposition}
 
-from §5 Item 20: definition of the integers
+% from §5 Item 20: definition of the integers
 \begin{axiom}\label{real_integers}
     For all $x$ we have $x\in\integers$ iff
     $x\in\naturalsPlus$ or $x=0$ or there exists $n\in\naturalsPlus$ such that $x + n = 0$.
@@ -5418,103 +5378,47 @@ from §5 Item 20: definition of the integers
 \end{abbreviation}
 
 % from §5 Item 29: adding the same number preserves equality
-\begin{theorem}\label{real_add_eq_subst}
+\begin{proposition}\label{real_add_eq_subst}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a = b$.
     Then $a + c = b + c$.
-\end{theorem}
-\begin{proof}
-    Follows by assumption.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 30: additive cancellation
-\begin{theorem}\label{real_add_cancel}
+\begin{proposition}\label{real_add_cancel}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a + c = b + c$.
     Then $a = b$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\neg{c}\in\reals$ by \cref{real_add_inverse}.
-    $(a + c) + \neg{c} = (b + c) + \neg{c}$ by assumption.
-    $a + (c + \neg{c}) = b + (c + \neg{c})$ by \cref{real_add_assoc}.
-    $c + \neg{c} = 0$ by \cref{real_add_inverse}.
-    $a + 0 = b + 0$.
-    $a = b$ by \cref{real_add_ident,real_add_comm}.
+    Follows by \cref{real_add_inverse,real_add_assoc,real_add_ident,real_add_comm}.
 \end{proof}
 
 % from §5 Item 31: multiplication by zero
-\begin{theorem}\label{real_mul_zero}
+\begin{proposition}\label{real_mul_zero}
     Suppose $a\in\reals$.
     Then $0 \rmul a = 0$.
-\end{theorem}
-\begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    $0 + 0 = 0$ by \cref{real_add_ident}.
-    $a \rmul 0 = a \rmul (0 + 0)$ by \cref{real_add_ident}.
-    $a \rmul (0 + 0) = (a \rmul 0) + (a \rmul 0)$ by \cref{real_distrib}.
-    Thus $a \rmul 0 = (a \rmul 0) + (a \rmul 0)$.
-    $0 \rmul a = a \rmul 0$ by \cref{real_mul_comm}.
-    Thus $0 \rmul a = 0 \rmul a + 0 \rmul a$.
-    $0 \rmul a\in\reals$ by \cref{real_mul_closed}.
-    $0 + (0 \rmul a) = 0 \rmul a + 0 \rmul a$ by \cref{real_add_ident}.
-    Thus $0 = 0 \rmul a$ by \cref{real_add_cancel}.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 32: $-a = (-1)a$
-\begin{theorem}\label{real_neg_as_mul}
+\begin{proposition}\label{real_neg_as_mul}
     Suppose $a\in\reals$.
     Then $\neg{a} = \neg{1} \rmul a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $1\in\reals$ by \cref{real_mul_ident}.
-    Then $\neg{1}\in\reals$ by \cref{real_add_inverse}.
-    $1 + \neg{1}\in\reals$ by \cref{real_add_closed}.
-    $0 \rmul a = (1 + \neg{1}) \rmul a$ by \cref{real_add_inverse}.
-    $(1 + \neg{1}) \rmul a = a \rmul (1 + \neg{1})$ by \cref{real_mul_comm}.
-    $a \rmul (1 + \neg{1}) = (a \rmul 1) + (a \rmul \neg{1})$ by \cref{real_distrib}.
-    $a \rmul \neg{1} = \neg{1} \rmul a$ by \cref{real_mul_comm}.
-    $a \rmul 1 = 1 \rmul a$ by \cref{real_mul_comm}.
-    $1 \rmul a = a$ by \cref{real_mul_ident}.
-    Thus $a \rmul 1 = a$.
-    $0 \rmul a = 0$ by \cref{real_mul_zero}.
-    Thus $a + (\neg{1} \rmul a) = 0$.
-    $\neg{1} \rmul a\in\reals$ by \cref{real_mul_closed}.
-    Hence $\neg{1} \rmul a = \neg{a}$ by \cref{real_add_inverse_unique}.
+    Follows by \cref{real_mul_ident,real_add_inverse,real_add_closed,real_mul_comm,real_distrib,real_mul_zero,real_mul_closed,real_add_inverse_unique}.
 \end{proof}
 
 % from §5 Item 33: $(-1)^2 = 1$
-\begin{theorem}\label{real_neg_one_square}
+\begin{proposition}\label{real_neg_one_square}
     $\exp{\neg{1}}{1+1} = 1$.
-\end{theorem}
-\begin{proof}
-    $1\in\reals$ by \cref{real_mul_ident}.
-    Then $\neg{1}\in\reals$ by \cref{real_add_inverse}.
-    $1 + \neg{1}\in\reals$ by \cref{real_add_closed}.
-    $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-    $\exp{\neg{1}}{1+1} = \exp{\neg{1}}{1} \rmul \neg{1}$ by \cref{real_pow_succ}.
-    $\exp{\neg{1}}{1} = \neg{1}$ by \cref{real_pow_one}.
-    Thus $\exp{\neg{1}}{1+1} = \neg{1} \rmul \neg{1}$.
-    $0 \rmul \neg{1} = (1 + \neg{1}) \rmul \neg{1}$ by \cref{real_add_inverse}.
-    $(1 + \neg{1}) \rmul \neg{1} = \neg{1} \rmul (1 + \neg{1})$ by \cref{real_mul_comm}.
-    $\neg{1} \rmul (1 + \neg{1}) = (\neg{1} \rmul 1) + (\neg{1} \rmul \neg{1})$ by \cref{real_distrib}.
-    $\neg{1} \rmul 1 = 1 \rmul \neg{1}$ by \cref{real_mul_comm}.
-    $1 \rmul \neg{1} = \neg{1}$ by \cref{real_mul_ident}.
-    $0 \rmul \neg{1} = 0$ by \cref{real_mul_zero}.
-    Thus $\neg{1} + (\neg{1} \rmul \neg{1}) = 0$.
-    $\neg{1} \rmul \neg{1}\in\reals$ by \cref{real_mul_closed}.
-    Hence $\neg{1} \rmul \neg{1} = \neg{(\neg{1})}$ by \cref{real_add_inverse_unique}.
-    $\neg{1} + 1 = 0$ by \cref{real_add_inverse,real_add_comm}.
-    Hence $\neg{(\neg{1})} = 1$ by \cref{real_add_inverse_unique}.
-    Thus $\exp{\neg{1}}{1+1} = 1$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 34: double negation
-\begin{theorem}\label{real_neg_neg}
+\begin{proposition}\label{real_neg_neg}
     Suppose $a\in\reals$.
     Then $\neg{(\neg{a})} = a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a} + a = 0$ by \cref{real_add_inverse,real_add_comm}.
-    Thus $\neg{(\neg{a})} = a$ by \cref{real_add_inverse_unique}.
+    Follows by \cref{real_add_inverse,real_add_comm,real_add_inverse_unique}.
 \end{proof}
 
 % from §5 helper lemma 1: nonzero left factor of a unit product
@@ -5523,58 +5427,34 @@ from §5 Item 20: definition of the integers
     Then $a \neq 0$.
 \end{lemma}
 \begin{proof}
-    Suppose not.
-    Then $a = 0$.
-    $a \rmul b = 0$ by \cref{real_mul_zero,real_mul_comm}.
-    Thus $1 = 0$.
-    Contradiction by \cref{real_mul_ident}.
+    Follows by \cref{real_mul_zero,real_mul_ident}.
 \end{proof}
 
 % from §5 Item 35: inverse of an inverse
-\begin{theorem}\label{real_inv_inv}
+\begin{proposition}\label{real_inv_inv}
     Suppose $a\in\reals$ and $a\neq 0$.
     Then $\inv{\inv{a}} = a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\inv{a}\in\reals$ by \cref{real_mul_inverse}.
-    $\inv{a} \rmul a = 1$ by \cref{real_mul_inverse,real_mul_comm}.
-    Thus $\inv{a} \neq 0$ by \cref{real_mul_unit_left_nonzero}.
-    Thus $\inv{\inv{a}} = a$ by \cref{real_mul_inverse_unique}.
+    Follows by \cref{real_mul_inverse,real_mul_comm,real_mul_unit_left_nonzero,real_mul_inverse_unique}.
 \end{proof}
 
 % from §5 Item 36: multiplicative cancellation
-\begin{theorem}\label{real_mul_cancel}
+\begin{proposition}\label{real_mul_cancel}
     Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $c\in\reals$ and $a \rmul b = a \rmul c$.
     Then $b = c$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\inv{a}\in\reals$ by \cref{real_mul_inverse}.
-    $\inv{a} \rmul (a \rmul b) = \inv{a} \rmul (a \rmul c)$ by assumption.
-    $(\inv{a} \rmul a) \rmul b = (\inv{a} \rmul a) \rmul c$ by \cref{real_mul_assoc}.
-    $\inv{a} \rmul a = 1$ by \cref{real_mul_inverse,real_mul_comm}.
-    $1 \rmul b = 1 \rmul c$.
-    Thus $b = c$ by \cref{real_mul_ident}.
+    Follows by \cref{real_mul_inverse,real_mul_assoc,real_mul_comm,real_mul_ident}.
 \end{proof}
 
 % from §5 Item 37: zero product property
-\begin{theorem}\label{real_mul_zero_product}
+\begin{proposition}\label{real_mul_zero_product}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b = 0$.
     Then $a = 0$ or $b = 0$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    \begin{byCase}
-    \caseOf{$a = 0$.} Trivial.
-    \caseOf{$a \neq 0$.}
-        $\inv{a}\in\reals$ by \cref{real_mul_inverse}.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $\inv{a} \rmul (a \rmul b) = \inv{a} \rmul 0$ by assumption.
-        $(\inv{a} \rmul a) \rmul b = \inv{a} \rmul 0$ by \cref{real_mul_assoc}.
-        $\inv{a} \rmul a = 1$ by \cref{real_mul_inverse,real_mul_comm}.
-        $1 \rmul b = \inv{a} \rmul 0$.
-        $\inv{a} \rmul 0 = 0 \rmul \inv{a}$ by \cref{real_mul_comm}.
-        $0 \rmul \inv{a} = 0$ by \cref{real_mul_zero}.
-        Thus $b = 0$ by \cref{real_mul_ident}.
-    \end{byCase}
+    Follows by \cref{real_mul_inverse,real_mul_assoc,real_mul_zero,real_mul_ident}.
 \end{proof}
 
 
@@ -5584,11 +5464,7 @@ from §5 Item 20: definition of the integers
     Then $(a + b) \rmul c = (a \rmul c) + (b \rmul c)$.
 \end{lemma}
 \begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    $a + b\in\reals$ by \cref{real_add_closed}.
-    $(a + b) \rmul c = c \rmul (a + b)$ by \cref{real_mul_comm}.
-    $c \rmul (a + b) = (c \rmul a) + (c \rmul b)$ by \cref{real_distrib}.
-    $(c \rmul a) + (c \rmul b) = (a \rmul c) + (b \rmul c)$ by \cref{real_mul_comm}.
+    Follows by \cref{real_add_closed,real_mul_comm,real_distrib}.
 \end{proof}
 
 % from §5 helper lemma 3: multiplication by a negative
@@ -5597,16 +5473,7 @@ from §5 Item 20: definition of the integers
     Then $a \rmul \neg{b} = \neg{(a \rmul b)}$.
 \end{lemma}
 \begin{proof}
-    $1\in\reals$ by \cref{real_mul_ident}.
-    Then $\neg{1}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b} = \neg{1} \rmul b$ by \cref{real_neg_as_mul}.
-    $a \rmul \neg{b} = a \rmul (\neg{1} \rmul b)$.
-    $a \rmul (\neg{1} \rmul b) = (a \rmul \neg{1}) \rmul b$ by \cref{real_mul_assoc}.
-    $a \rmul \neg{1} = \neg{1} \rmul a$ by \cref{real_mul_comm}.
-    $(\neg{1} \rmul a) \rmul b = \neg{1} \rmul (a \rmul b)$ by \cref{real_mul_assoc}.
-    $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-    $\neg{(a \rmul b)} = \neg{1} \rmul (a \rmul b)$ by \cref{real_neg_as_mul}.
-    Thus $a \rmul \neg{b} = \neg{(a \rmul b)}$.
+    Follows by \cref{real_neg_as_mul,real_mul_ident,real_add_inverse,real_mul_assoc,real_mul_comm,real_mul_closed}.
 \end{proof}
 
 % from §5 helper lemma 4: regrouping sums
@@ -5615,60 +5482,18 @@ from §5 Item 20: definition of the integers
     Then $(x + y) + (z + w) = (x + (y + z)) + w$.
 \end{lemma}
 \begin{proof}
-    $z + w\in\reals$ by \cref{real_add_closed}.
-    $y + z\in\reals$ by \cref{real_add_closed}.
-    $y + (z + w)\in\reals$ by \cref{real_add_closed}.
-    $(x + y) + (z + w) = x + (y + (z + w))$ by \cref{real_add_assoc}.
-    $y + (z + w) = (y + z) + w$ by \cref{real_add_assoc}.
-    Thus $(x + y) + (z + w) = x + ((y + z) + w)$.
-    $x + (y + z)\in\reals$ by \cref{real_add_closed}.
-    $x + ((y + z) + w) = (x + (y + z)) + w$ by \cref{real_add_assoc}.
+    Follows by \cref{real_add_closed,real_add_assoc}.
 \end{proof}
 
 % from §5 Item 38: difference of squares
-\begin{theorem}\label{real_diff_squares}
+\begin{proposition}\label{real_diff_squares}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $a + b\in\reals$ by \cref{real_add_closed}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $a - b = a + \neg{b}$ by \cref{real_sub}.
-    Thus $(a + b) \rmul (a - b) = (a + b) \rmul (a + \neg{b})$.
-    $(a + b) \rmul (a + \neg{b}) = (a + b) \rmul a + (a + b) \rmul \neg{b}$ by \cref{real_distrib}.
-    $(a + b) \rmul a = (a \rmul a) + (b \rmul a)$ by \cref{real_right_distrib}.
-    $(a + b) \rmul \neg{b} = (a \rmul \neg{b}) + (b \rmul \neg{b})$ by \cref{real_right_distrib}.
-    $b \rmul a = a \rmul b$ by \cref{real_mul_comm}.
-    $a \rmul \neg{b} = \neg{(a \rmul b)}$ by \cref{real_mul_neg_right}.
-    $b \rmul \neg{b} = \neg{(b \rmul b)}$ by \cref{real_mul_neg_right}.
-    $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-    $a \rmul a\in\reals$ by \cref{real_mul_closed}.
-    $b \rmul a\in\reals$ by \cref{real_mul_closed}.
-    $a \rmul \neg{b}\in\reals$ by \cref{real_mul_closed}.
-    $b \rmul \neg{b}\in\reals$ by \cref{real_mul_closed}.
-    $\neg{(a \rmul b)}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{(b \rmul b)}\in\reals$ by \cref{real_add_inverse}.
-    $(a \rmul b) + \neg{(a \rmul b)} = 0$ by \cref{real_add_inverse}.
-    Thus $(a + b) \rmul (a - b) = (a \rmul a) + ((b \rmul a) + (a \rmul \neg{b})) + (b \rmul \neg{b})$
-        by \cref{real_add_regroup}.
-    Thus $(a + b) \rmul (a - b) = (a \rmul a) + ((a \rmul b) + \neg{(a \rmul b)}) + \neg{(b \rmul b)}$
-        by \cref{real_mul_comm,real_mul_neg_right}.
-    $(a \rmul a) + ((a \rmul b) + \neg{(a \rmul b)}) = (a \rmul a) + 0$ by \cref{real_add_inverse}.
-    Thus $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$ by \cref{real_add_assoc}.
-    $a \rmul a\in\reals$ by \cref{real_mul_closed}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $(a \rmul a) + 0 = 0 + (a \rmul a)$ by \cref{real_add_comm}.
-    $0 + (a \rmul a) = a \rmul a$ by \cref{real_add_ident}.
-    Thus $(a + b) \rmul (a - b) = (a \rmul a) + \neg{(b \rmul b)}$ by \cref{real_add_assoc}.
-    $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-    $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-    $\exp{a}{1} = a$ by \cref{real_pow_one}.
-    Thus $\exp{a}{1+1} = a \rmul a$.
-    $\exp{b}{1+1} = \exp{b}{1} \rmul b$ by \cref{real_pow_succ}.
-    $\exp{b}{1} = b$ by \cref{real_pow_one}.
-    Thus $\exp{b}{1+1} = b \rmul b$.
-    Hence $(a + b) \rmul (a - b) = \exp{a}{1+1} + \neg{(\exp{b}{1+1})}$.
-    Thus $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$ by \cref{real_sub}.
+    We have $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$
+        by \cref{real_sub,real_add_closed,real_add_inverse,real_distrib,real_mul_closed,real_right_distrib,real_add_regroup,real_mul_comm,real_mul_neg_right}.
+    Thus $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$ by \cref{real_mul_closed,real_add_ident,real_add_inverse,real_add_assoc,real_one_in_naturals,real_pow_succ,real_pow_one,real_sub}.
 \end{proof}
 
 % from §5 Item 39: order relation
@@ -5742,111 +5567,59 @@ from §5 Item 20: definition of the integers
 \end{abbreviation}
 
 % from §5 Item 52: sum of positives is positive
-\begin{theorem}\label{real_pos_add}
+\begin{proposition}\label{real_pos_add}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a + b$ is positive.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $a > 0$.
-    Then $0 < a$.
-    $b > 0$.
-    Then $0 < b$.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $0 + b < a + b$ by \cref{real_lt_add}.
-    $0 + b = b$ by \cref{real_add_ident}.
-    Thus $b < a + b$.
-    $a + b\in\reals$ by \cref{real_add_closed}.
-    Thus $0 < a + b$ by \cref{real_lt_trans}.
-    Thus $a + b > 0$.
-    Hence $a + b$ is positive.
+    Follows by \cref{real_add_ident,real_add_closed,real_lt_add,real_lt_trans}.
 \end{proof}
 
 % from §5 Item 53: sum of negatives is negative
-\begin{theorem}\label{real_neg_add}
+\begin{proposition}\label{real_neg_add}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
     Then $a + b$ is negative.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $a < 0$.
-    $b < 0$.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $b + a < 0 + a$ by \cref{real_lt_add}.
-    $0 + a = a$ by \cref{real_add_ident}.
-    Thus $b + a < a$.
-    $b + a = a + b$ by \cref{real_add_comm}.
-    Thus $a + b < a$.
-    $a + b\in\reals$ by \cref{real_add_closed}.
-    Thus $a + b < 0$ by \cref{real_lt_trans}.
-    Hence $a + b$ is negative.
+    Follows by \cref{real_add_ident,real_add_closed,real_lt_add,real_lt_trans}.
 \end{proof}
 
 % from §5 Item 54: adding inequalities
-\begin{theorem}\label{real_lt_add_two}
+\begin{proposition}\label{real_lt_add_two}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $d\in\reals$ and $a < b$ and $c < d$.
     Then $a + c < b + d$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $a + c\in\reals$ by \cref{real_add_closed}.
-    $b + c\in\reals$ by \cref{real_add_closed}.
-    $b + d\in\reals$ by \cref{real_add_closed}.
-    $a + c < b + c$ by \cref{real_lt_add}.
-    $c + b < d + b$ by \cref{real_lt_add}.
-    $c + b = b + c$ by \cref{real_add_comm}.
-    $d + b = b + d$ by \cref{real_add_comm}.
-    Thus $b + c < b + d$.
-    Thus $a + c < b + d$ by \cref{real_lt_trans}.
+    Follows by \cref{real_lt_add,real_add_comm,real_add_closed,real_lt_trans}.
 \end{proof}
 
 % from §5 Item 55: sign change (forward)
-\begin{theorem}\label{real_pos_imp_neg}
+\begin{proposition}\label{real_pos_imp_neg}
     Suppose $a\in\reals$ and $a > 0$.
     Then $\neg{a} < 0$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Then $0 < a$.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $0 + \neg{a} < a + \neg{a}$ by \cref{real_lt_add}.
-    $0 + \neg{a} = \neg{a}$ by \cref{real_add_ident}.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    Thus $\neg{a} < 0$.
+    Follows by \cref{real_add_inverse,real_add_ident,real_lt_add}.
 \end{proof}
 
 % from §5 Item 56: sign change (backward)
-\begin{theorem}\label{real_neg_imp_pos}
+\begin{proposition}\label{real_neg_imp_pos}
     Suppose $a\in\reals$ and $\neg{a} < 0$.
     Then $a > 0$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $\neg{a} + a < 0 + a$ by \cref{real_lt_add}.
-    $\neg{a} + a = a + \neg{a}$ by \cref{real_add_comm}.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    $0 + a = a$ by \cref{real_add_ident}.
-    Thus $0 < a$.
-    Hence $a > 0$.
+    Follows by \cref{real_add_inverse,real_add_ident,real_lt_add,real_add_comm}.
 \end{proof}
 
 % from §5 Item 57: multiplying inequalities
-\begin{theorem}\label{real_lt_mul_pos_two}
+\begin{proposition}\label{real_lt_mul_pos_two}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $d\in\reals$.
     Suppose $a$ is positive and $b$ is positive and $c$ is positive and $d$ is positive.
     Suppose $a < b$ and $c < d$.
     Then $a \rmul c < b \rmul d$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $a \rmul c\in\reals$ by \cref{real_mul_closed}.
-    $b \rmul c\in\reals$ by \cref{real_mul_closed}.
-    $b \rmul d\in\reals$ by \cref{real_mul_closed}.
-    $0 < c$.
-    $a \rmul c < b \rmul c$ by \cref{real_lt_mul_pos}.
-    $0 < b$.
-    $c \rmul b < d \rmul b$ by \cref{real_lt_mul_pos}.
-    $c \rmul b = b \rmul c$ by \cref{real_mul_comm}.
-    $d \rmul b = b \rmul d$ by \cref{real_mul_comm}.
-    Thus $b \rmul c < b \rmul d$.
-    Thus $a \rmul c < b \rmul d$ by \cref{real_lt_trans}.
+    Follows by \cref{real_lt_mul_pos,real_mul_comm,real_mul_closed,real_lt_trans}.
 \end{proof}
 
 % from §5 helper lemma 5: product of positives
@@ -5855,13 +5628,7 @@ from §5 Item 20: definition of the integers
     Then $a \rmul b$ is positive.
 \end{lemma}
 \begin{proof}
-    $0 < a$.
-    $0 < b$.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $0 \rmul b < a \rmul b$ by \cref{real_lt_mul_pos}.
-    $0 \rmul b = 0$ by \cref{real_mul_zero}.
-    Thus $0 < a \rmul b$.
-    Hence $a \rmul b$ is positive.
+    Follows by \cref{real_add_ident,real_lt_mul_pos,real_mul_zero}.
 \end{proof}
 
 % from §5 helper lemma 6: positive times negative is negative
@@ -5870,19 +5637,7 @@ from §5 Item 20: definition of the integers
     Then $a \rmul b$ is negative.
 \end{lemma}
 \begin{proof}
-    $b < 0$.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $b = \neg{(\neg{b})}$ by \cref{real_neg_neg}.
-    Thus $\neg{(\neg{b})} < 0$.
-    Hence $\neg{b} > 0$ by \cref{real_neg_imp_pos}.
-    Thus $a \rmul \neg{b}$ is positive by \cref{real_mul_pos_pos}.
-    $a \rmul \neg{b} = \neg{(a \rmul b)}$ by \cref{real_mul_neg_right}.
-    $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-    $\neg{(a \rmul b)}\in\reals$ by \cref{real_add_inverse}.
-    Thus $\neg{(a \rmul b)}$ is positive.
-    Hence $\neg{(\neg{(a \rmul b)})} < 0$ by \cref{real_pos_imp_neg}.
-    $\neg{(\neg{(a \rmul b)})} = a \rmul b$ by \cref{real_neg_neg}.
-    Thus $a \rmul b$ is negative.
+    Follows by \cref{real_add_inverse,real_neg_neg,real_neg_imp_pos,real_mul_pos_pos,real_mul_neg_right,real_mul_closed,real_pos_imp_neg}.
 \end{proof}
 
 % from §5 helper lemma 7: product of negatives
@@ -5891,23 +5646,7 @@ from §5 Item 20: definition of the integers
     Then $a \rmul b$ is positive.
 \end{lemma}
 \begin{proof}
-    $a < 0$.
-    $b < 0$.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $a = \neg{(\neg{a})}$ by \cref{real_neg_neg}.
-    $b = \neg{(\neg{b})}$ by \cref{real_neg_neg}.
-    Thus $\neg{a} > 0$ by \cref{real_neg_imp_pos}.
-    Thus $\neg{b} > 0$ by \cref{real_neg_imp_pos}.
-    Thus $\neg{a} \rmul \neg{b}$ is positive by \cref{real_mul_pos_pos}.
-    $\neg{a} \rmul \neg{b} = \neg{(\neg{a} \rmul b)}$ by \cref{real_mul_neg_right}.
-    $\neg{a} \rmul b = b \rmul \neg{a}$ by \cref{real_mul_comm}.
-    $b \rmul \neg{a} = \neg{(b \rmul a)}$ by \cref{real_mul_neg_right}.
-    $b \rmul a = a \rmul b$ by \cref{real_mul_comm}.
-    Thus $\neg{a} \rmul \neg{b} = \neg{(\neg{(a \rmul b)})}$.
-    $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-    $\neg{(\neg{(a \rmul b)})} = a \rmul b$ by \cref{real_neg_neg}.
-    Hence $a \rmul b$ is positive.
+    Follows by \cref{real_add_inverse,real_neg_neg,real_neg_imp_pos,real_mul_pos_pos,real_mul_neg_right,real_mul_comm}.
 \end{proof}
 
 % from §5 helper lemma 8: irreflexivity of <
@@ -5921,422 +5660,147 @@ from §5 Item 20: definition of the integers
     Suppose $a\in\reals$ and $a > 0$.
     Then $a \neq 0$.
 \end{lemma}
-\begin{proof}
-    Suppose not.
-    Then $a = 0$.
-    $0 < a$.
-    Thus $0 < 0$.
-    Contradiction by \cref{real_lt_irreflexive}.
-\end{proof}
 
 % from §5 helper lemma 10: negative implies nonzero
 \begin{lemma}\label{real_neg_nonzero}
     Suppose $a\in\reals$ and $a < 0$.
     Then $a \neq 0$.
 \end{lemma}
-\begin{proof}
-    Suppose not.
-    Then $a = 0$.
-    $a < 0$.
-    Thus $0 < 0$.
-    Contradiction by \cref{real_lt_irreflexive}.
-\end{proof}
 
 % from §5 Item 58: product of positives is positive
-\begin{theorem}\label{real_mul_pos_pos_gt}
+\begin{proposition}\label{real_mul_pos_pos_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a \rmul b > 0$.
-\end{theorem}
-\begin{proof}
-    Thus $a \rmul b$ is positive by \cref{real_mul_pos_pos}.
-    Hence $a \rmul b > 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 59: product of negatives is positive
-\begin{theorem}\label{real_mul_neg_neg_gt}
+\begin{proposition}\label{real_mul_neg_neg_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
     Then $a \rmul b > 0$.
-\end{theorem}
-\begin{proof}
-    Thus $a \rmul b$ is positive by \cref{real_mul_neg_neg}.
-    Hence $a \rmul b > 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 60: product positive (backward)
-\begin{theorem}\label{real_mul_pos_same_sign_rev}
+\begin{proposition}\label{real_mul_pos_same_sign_rev}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b > 0$.
     Then either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Suppose not.
-    Then it is wrong that either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
-    $0\in\reals$ by \cref{real_add_ident}.
-    If $a = 0$ then
-        $a \rmul b = b \rmul a$ by \cref{real_mul_comm}.
-        $b \rmul a = b \rmul 0$.
-        $b \rmul 0 = 0 \rmul b$ by \cref{real_mul_comm}.
-        $0 \rmul b = 0$ by \cref{real_mul_zero}.
-        Thus $a \rmul b = 0$.
-        $0 < a \rmul b$.
-        Thus $0 < 0$.
-        Contradiction by \cref{real_lt_irreflexive}.
-    Thus $a \neq 0$.
     If $b = 0$ then
-        $a \rmul b = b \rmul a$ by \cref{real_mul_comm}.
-        $b \rmul a = 0 \rmul a$.
-        $0 \rmul a = 0$ by \cref{real_mul_zero}.
-        Thus $a \rmul b = 0$.
-        $0 < a \rmul b$.
+        $a \rmul b = 0$ by \cref{real_mul_comm,real_mul_zero}.
         Thus $0 < 0$.
-        Contradiction by \cref{real_lt_irreflexive}.
-    Thus $b \neq 0$.
-    Either $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-    It is wrong that $a < 0$ and $0 < a$ by \cref{real_lt_trichotomy}.
-    Either $b < 0$ or $0 < b$ by \cref{real_lt_trichotomy}.
-    It is wrong that $b < 0$ and $0 < b$ by \cref{real_lt_trichotomy}.
+        Contradiction by \cref{real_add_ident,real_lt_irreflexive}.
     \begin{byCase}
     \caseOf{$0 < a$ and $0 < b$.}
-        Thus $a > 0$ and $b > 0$.
         Contradiction.
     \caseOf{$0 < a$ and $b < 0$.}
-        Thus $a \rmul b$ is negative by \cref{real_mul_pos_neg}.
-        Thus $a \rmul b < 0$.
-        $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-        Thus $a \rmul b \neq 0$ by \cref{real_neg_nonzero}.
-        Thus it is wrong that $0 < a \rmul b$ by \cref{real_lt_asym}.
-        $0 < a \rmul b$.
-        Contradiction.
+        Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
     \caseOf{$a < 0$ and $0 < b$.}
-        Thus $b$ is positive.
-        Thus $b \rmul a$ is negative by \cref{real_mul_pos_neg}.
-        $b \rmul a = a \rmul b$ by \cref{real_mul_comm}.
-        Thus $a \rmul b < 0$.
-        $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-        Thus $a \rmul b \neq 0$ by \cref{real_neg_nonzero}.
-        Thus it is wrong that $0 < a \rmul b$ by \cref{real_lt_asym}.
-        $0 < a \rmul b$.
-        Contradiction.
+        Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
     \caseOf{$a < 0$ and $b < 0$.}
-        Thus $a < 0$ and $b < 0$.
         Contradiction.
     \end{byCase}
 \end{proof}
 
 % from §5 Item 61: product negative (forward, left)
-\begin{theorem}\label{real_mul_neg_opposite_sign_left}
+\begin{proposition}\label{real_mul_neg_opposite_sign_left}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < 0$ and $0 < b$.
     Then $a \rmul b < 0$.
-\end{theorem}
-\begin{proof}
-    Thus $b$ is positive.
-    Thus $a$ is negative.
-    Thus $b \rmul a$ is negative by \cref{real_mul_pos_neg}.
-    $b \rmul a = a \rmul b$ by \cref{real_mul_comm}.
-    Hence $a \rmul b < 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 62: product negative (forward, right)
-\begin{theorem}\label{real_mul_neg_opposite_sign_right}
+\begin{proposition}\label{real_mul_neg_opposite_sign_right}
     Suppose $a\in\reals$ and $b\in\reals$ and $b < 0$ and $0 < a$.
     Then $a \rmul b < 0$.
-\end{theorem}
-\begin{proof}
-    Thus $a$ is positive.
-    Thus $b$ is negative.
-    Thus $a \rmul b$ is negative by \cref{real_mul_pos_neg}.
-    Hence $a \rmul b < 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 63: product negative (backward)
-\begin{theorem}\label{real_mul_neg_opposite_sign_rev}
+\begin{proposition}\label{real_mul_neg_opposite_sign_rev}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b < 0$.
     Then either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Show either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
-    \begin{subproof}
-        Suppose not.
-        Then it is wrong that either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-        Thus $a \rmul b \neq 0$ by \cref{real_neg_nonzero}.
-        \begin{byCase}
-        \caseOf{$a = 0$.}
-            $a \rmul b = 0 \rmul b$.
-            $0 \rmul b = 0$ by \cref{real_mul_zero}.
-            Thus $a \rmul b = 0$.
-            Contradiction.
-        \caseOf{$0 < a$.}
-            \begin{byCase}
-            \caseOf{$0 < b$.}
-                Thus $a$ is positive.
-                Thus $b$ is positive.
-                Thus $a \rmul b > 0$ by \cref{real_mul_pos_pos_gt}.
-                Thus it is wrong that $a \rmul b < 0$ by \cref{real_lt_asym}.
-                Contradiction.
-            \caseOf{$b < 0$.}
-                Thus $b < 0$ and $0 < a$.
-                Thus either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
-                Contradiction.
-            \end{byCase}
-        \caseOf{$a < 0$.}
-            \begin{byCase}
-            \caseOf{$b < 0$.}
-                Thus $a$ is negative.
-                Thus $b$ is negative.
-                Thus $a \rmul b > 0$ by \cref{real_mul_neg_neg_gt}.
-                Thus it is wrong that $a \rmul b < 0$ by \cref{real_lt_asym}.
-                Contradiction.
-            \caseOf{$0 < b$.}
-                Thus $a < 0$ and $0 < b$.
-                Thus either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
-                Contradiction.
-            \end{byCase}
-        \end{byCase}
-    \end{subproof}
+    Suppose not.
+    Thus $a \rmul b \neq 0$ by \cref{real_mul_closed,real_neg_nonzero}.
+    \begin{byCase}
+    \caseOf{$0 < a$ and $0 < b$.}
+        Contradiction by \cref{real_mul_pos_pos_gt,real_add_ident,real_mul_closed,real_lt_asym}.
+    \caseOf{$0 < a$ and $b < 0$.}
+        Contradiction.
+    \caseOf{$a < 0$ and $b < 0$.}
+        Contradiction by \cref{real_mul_neg_neg_gt,real_add_ident,real_mul_closed,real_lt_asym}.
+    \caseOf{$a < 0$ and $0 < b$.}
+        Contradiction.
+    \end{byCase}
 \end{proof}
 
 % from §5 Item 64: order preserved by squaring positives
-\begin{theorem}\label{real_pos_lt_iff_sq_lt}
+\begin{proposition}\label{real_pos_lt_iff_sq_lt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a < b$ iff $\exp{a}{1+1} < \exp{b}{1+1}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Show if $a < b$ then $\exp{a}{1+1} < \exp{b}{1+1}$.
     \begin{subproof}
         Assume $a < b$.
-        $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-        $a + \neg{a} < b + \neg{a}$ by \cref{real_lt_add}.
-        $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-        $b + \neg{a} = b - a$ by \cref{real_sub}.
-        Thus $0 < b - a$.
-        Thus $b - a$ is positive.
-        Thus $a + b$ is positive by \cref{real_pos_add}.
-        $a + b\in\reals$ by \cref{real_add_closed}.
-        $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-        Thus $(b - a) \rmul (a + b) > 0$ by \cref{real_mul_pos_pos_gt}.
-        $(b - a) \rmul (a + b) = (a + b) \rmul (b - a)$ by \cref{real_mul_comm}.
-        $b + a = a + b$ by \cref{real_add_comm}.
-        $(b + a) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_diff_squares}.
-        Thus $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$.
-        Thus $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
-        $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-        $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-        $\exp{a}{1} = a$ by \cref{real_pow_one}.
-        Thus $\exp{a}{1+1} = a \rmul a$.
-        Thus $\exp{a}{1+1}\in\reals$ by \cref{real_mul_closed}.
-        $\exp{b}{1+1} = \exp{b}{1} \rmul b$ by \cref{real_pow_succ}.
-        $\exp{b}{1} = b$ by \cref{real_pow_one}.
-        Thus $\exp{b}{1+1} = b \rmul b$.
-        Thus $\exp{b}{1+1}\in\reals$ by \cref{real_mul_closed}.
-        $\neg{(\exp{a}{1+1})}\in\reals$ by \cref{real_add_inverse}.
-        $\exp{b}{1+1} + \neg{(\exp{a}{1+1})}\in\reals$ by \cref{real_add_closed}.
-        $\exp{b}{1+1} - \exp{a}{1+1} = \exp{b}{1+1} + \neg{(\exp{a}{1+1})}$ by \cref{real_sub}.
-        Thus $\exp{b}{1+1} - \exp{a}{1+1}\in\reals$.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $0 + \exp{a}{1+1} < \exp{b}{1+1} - \exp{a}{1+1} + \exp{a}{1+1}$ by \cref{real_lt_add}.
-        $\exp{b}{1+1} + \neg{(\exp{a}{1+1})} + \exp{a}{1+1} = \exp{b}{1+1} + (\neg{(\exp{a}{1+1})} + \exp{a}{1+1})$ by \cref{real_add_assoc}.
-        $\neg{(\exp{a}{1+1})} + \exp{a}{1+1} = 0$ by \cref{real_add_inverse,real_add_comm}.
-        $\exp{b}{1+1} + 0 = 0 + \exp{b}{1+1}$ by \cref{real_add_comm}.
-        $0 + \exp{b}{1+1} = \exp{b}{1+1}$ by \cref{real_add_ident}.
-        Thus $\exp{b}{1+1} - \exp{a}{1+1} + \exp{a}{1+1} = \exp{b}{1+1}$.
-        $0 + \exp{a}{1+1} = \exp{a}{1+1}$ by \cref{real_add_ident}.
-        Thus $\exp{a}{1+1} < \exp{b}{1+1}$.
+        Thus $(b - a) \rmul (a + b) > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
+        Hence $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_add_comm,real_diff_squares}.
+        Therefore $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
+        We have $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
     \end{subproof}
     Show if $\exp{a}{1+1} < \exp{b}{1+1}$ then $a < b$.
     \begin{subproof}
         Assume $\exp{a}{1+1} < \exp{b}{1+1}$.
-        $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-        $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-        $\exp{a}{1} = a$ by \cref{real_pow_one}.
-        Thus $\exp{a}{1+1} = a \rmul a$.
-        Thus $\exp{a}{1+1}\in\reals$ by \cref{real_mul_closed}.
-        $\exp{b}{1+1} = \exp{b}{1} \rmul b$ by \cref{real_pow_succ}.
-        $\exp{b}{1} = b$ by \cref{real_pow_one}.
-        Thus $\exp{b}{1+1} = b \rmul b$.
-        Thus $\exp{b}{1+1}\in\reals$ by \cref{real_mul_closed}.
-        $\neg{(\exp{a}{1+1})}\in\reals$ by \cref{real_add_inverse}.
-        $\exp{a}{1+1} + \neg{(\exp{a}{1+1})} < \exp{b}{1+1} + \neg{(\exp{a}{1+1})}$ by \cref{real_lt_add}.
-        $\exp{a}{1+1} + \neg{(\exp{a}{1+1})} = 0$ by \cref{real_add_inverse}.
-        $\exp{b}{1+1} + \neg{(\exp{a}{1+1})} = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_sub}.
-        Thus $0 < \exp{b}{1+1} - \exp{a}{1+1}$.
-        Thus $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
-        $a + b$ is positive by \cref{real_pos_add}.
-        $a + b\in\reals$ by \cref{real_add_closed}.
-        $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-        $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-        $(a + b) \rmul (b - a) = (b + a) \rmul (b - a)$ by \cref{real_add_comm}.
-        $(b + a) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_diff_squares}.
-        Thus $(a + b) \rmul (b - a) > 0$.
         Show $0 < b - a$.
         \begin{subproof}
             Suppose not.
-            Then it is wrong that $0 < b - a$.
-            Thus either $a + b > 0$ and $b - a > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{real_mul_pos_same_sign_rev}.
+            Thus either $a + b > 0$ and $b - a > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
             \begin{byCase}
             \caseOf{$a + b > 0$ and $b - a > 0$.}
-                Thus $0 < b - a$.
                 Contradiction.
             \caseOf{$a + b < 0$ and $b - a < 0$.}
-                $0 < a + b$.
-                $0\in\reals$ by \cref{real_add_ident}.
-                $a + b\in\reals$ by \cref{real_add_closed}.
-                Thus $a + b \neq 0$ by \cref{real_pos_nonzero}.
-                Thus it is wrong that $a + b < 0$ by \cref{real_lt_asym}.
-                Contradiction.
+                Contradiction by \cref{real_pos_add,real_add_ident,real_add_closed,real_pos_nonzero,real_lt_asym}.
             \end{byCase}
         \end{subproof}
-        $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $a\in\reals$.
-        $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-        $0 < b - a$.
-        $0 + a < (b - a) + a$ by \cref{real_lt_add}.
-        $b - a = b + \neg{a}$ by \cref{real_sub}.
-        $0 + a = a$ by \cref{real_add_ident}.
-        $b + \neg{a} + a = b + (\neg{a} + a)$ by \cref{real_add_assoc}.
-        $\neg{a} + a = 0$ by \cref{real_add_inverse,real_add_comm}.
-        $b + 0 = 0 + b$ by \cref{real_add_comm}.
-        $0 + b = b$ by \cref{real_add_ident}.
-        Thus $a < b$.
+        Thus $a < b$ by \cref{real_add_ident,real_add_inverse,real_sub,real_add_closed,real_lt_add,real_add_assoc,real_add_comm}.
     \end{subproof}
 \end{proof}
 
 % from §5 Item 65: squares are nonnegative
-\begin{theorem}\label{real_sq_nonnegative}
+\begin{proposition}\label{real_sq_nonnegative}
     Suppose $a\in\reals$.
     Then $\exp{a}{1+1} \geq 0$.
-\end{theorem}
-\begin{proof}
-    \begin{byCase}
-    \caseOf{$a = 0$.}
-        $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-        $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-        $\exp{a}{1} = a$ by \cref{real_pow_one}.
-        Thus $\exp{a}{1+1} = 0$.
-        Thus $0 = \exp{a}{1+1}$.
-        Thus $0 \leq \exp{a}{1+1}$.
-        Thus $\exp{a}{1+1} \geq 0$.
-    \caseOf{$a \neq 0$.}
-        $0\in\reals$ by \cref{real_add_ident}.
-        Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$0 < a$.}
-            Thus $a$ is positive.
-            Thus $a \rmul a > 0$ by \cref{real_mul_pos_pos_gt}.
-            $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-            $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-            $\exp{a}{1} = a$ by \cref{real_pow_one}.
-            Thus $\exp{a}{1+1} = a \rmul a$.
-            Thus $0 < \exp{a}{1+1}$.
-            Thus $0 < \exp{a}{1+1}$ or $0 = \exp{a}{1+1}$.
-            Thus $0 \leq \exp{a}{1+1}$.
-            Thus $\exp{a}{1+1} \geq 0$.
-        \caseOf{$a < 0$.}
-            Thus $a$ is negative.
-            Thus $a \rmul a > 0$ by \cref{real_mul_neg_neg_gt}.
-            $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-            $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-            $\exp{a}{1} = a$ by \cref{real_pow_one}.
-            Thus $\exp{a}{1+1} = a \rmul a$.
-            Thus $0 < \exp{a}{1+1}$.
-            Thus $0 < \exp{a}{1+1}$ or $0 = \exp{a}{1+1}$.
-            Thus $0 \leq \exp{a}{1+1}$.
-            Thus $\exp{a}{1+1} \geq 0$.
-        \end{byCase}
-    \end{byCase}
-\end{proof}
+\end{proposition}
+% \begin{proof} Trivial. \end{proof}
 
 % from §5 Item 66: zero is less than one
-\begin{theorem}\label{real_zero_lt_one}
-    Then $0 < 1$.
-\end{theorem}
-\begin{proof}
-    Suppose not.
-    Then $1 < 0$.
-    $1\in\reals$ by \cref{real_mul_ident}.
-    Thus $1$ is negative.
-    Thus $1 \rmul 1 > 0$ by \cref{real_mul_neg_neg_gt}.
-    $1 \rmul 1 = 1$ by \cref{real_mul_ident}.
-    Thus $0 < 1$.
-    Thus it is wrong that $1 < 0$ by \cref{real_lt_asym}.
-    Contradiction.
-\end{proof}
+\begin{proposition}\label{real_zero_lt_one}
+    $0 < 1$.
+\end{proposition}
 
 % from §5 Item 67: inverse of a positive number
-\begin{theorem}\label{real_inv_pos}
+\begin{proposition}\label{real_inv_pos}
     Suppose $a\in\reals$ and $a > 0$.
     Then $\inv{a} > 0$.
-\end{theorem}
-\begin{proof}
-    Thus $a \neq 0$ by \cref{real_pos_nonzero}.
-    $\inv{a}\in\reals$ by \cref{real_mul_inverse}.
-    $a \rmul \inv{a} = 1$ by \cref{real_mul_inverse}.
-    $0 < 1$ by \cref{real_zero_lt_one}.
-    Thus $0 < a \rmul \inv{a}$.
-    Thus either $a > 0$ and $\inv{a} > 0$ or $a < 0$ and $\inv{a} < 0$ by \cref{real_mul_pos_same_sign_rev}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    Thus it is wrong that $a < 0$ by \cref{real_lt_asym}.
-    Thus $\inv{a} > 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 68: inverse of a negative number
-\begin{theorem}\label{real_inv_neg}
+\begin{proposition}\label{real_inv_neg}
     Suppose $a\in\reals$ and $a < 0$.
     Then $\inv{a} < 0$.
-\end{theorem}
-\begin{proof}
-    Thus $a \neq 0$ by \cref{real_neg_nonzero}.
-    $\inv{a}\in\reals$ by \cref{real_mul_inverse}.
-    $a \rmul \inv{a} = 1$ by \cref{real_mul_inverse}.
-    $0 < 1$ by \cref{real_zero_lt_one}.
-    Thus $0 < a \rmul \inv{a}$.
-    Thus either $a > 0$ and $\inv{a} > 0$ or $a < 0$ and $\inv{a} < 0$ by \cref{real_mul_pos_same_sign_rev}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    Thus it is wrong that $a > 0$ by \cref{real_lt_asym}.
-    Thus $\inv{a} < 0$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 69: order reversal by negation
-\begin{theorem}\label{real_lt_neg}
+\begin{proposition}\label{real_lt_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
     Then $\neg{b} < \neg{a}$.
-\end{theorem}
-\begin{proof}
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a} + \neg{b}\in\reals$ by \cref{real_add_closed}.
-    $a + (\neg{a} + \neg{b}) < b + (\neg{a} + \neg{b})$ by \cref{real_lt_add}.
-    $a + (\neg{a} + \neg{b}) = (a + \neg{a}) + \neg{b}$ by \cref{real_add_assoc}.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    $0 + \neg{b} = \neg{b}$ by \cref{real_add_ident}.
-    Thus $a + (\neg{a} + \neg{b}) = \neg{b}$.
-    $b + (\neg{a} + \neg{b}) = (b + \neg{b}) + \neg{a}$ by \cref{real_add_assoc,real_add_comm}.
-    $b + \neg{b} = 0$ by \cref{real_add_inverse}.
-    $0 + \neg{a} = \neg{a}$ by \cref{real_add_ident}.
-    Thus $b + (\neg{a} + \neg{b}) = \neg{a}$.
-    Thus $\neg{b} < \neg{a}$.
-\end{proof}
+\end{proposition}
 
 % from §5 helper lemma 13: order reversal under negation
 \begin{lemma}\label{real_leq_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \leq b$.
     Then $\neg{b} \leq \neg{a}$.
 \end{lemma}
-\begin{proof}
-    \begin{byCase}
-    \caseOf{$a = b$.}
-        Thus $\neg{a} = \neg{b}$.
-        Thus $\neg{b} < \neg{a}$ or $\neg{b} = \neg{a}$.
-        Thus $\neg{b} \leq \neg{a}$.
-    \caseOf{$a \neq b$.}
-        Thus $a < b$ or $a = b$.
-        Thus $a < b$.
-        Thus $\neg{b} < \neg{a}$ by \cref{real_lt_neg}.
-        Thus $\neg{b} < \neg{a}$ or $\neg{b} = \neg{a}$.
-        Thus $\neg{b} \leq \neg{a}$.
-    \end{byCase}
-\end{proof}
 
 % from §5 helper lemma 14: transitivity of $\leq$
 \begin{lemma}\label{real_leq_trans}
@@ -6344,28 +5808,6 @@ from §5 Item 20: definition of the integers
     Suppose $a \leq b$ and $b \leq c$.
     Then $a \leq c$.
 \end{lemma}
-\begin{proof}
-    Thus $a < b$ or $a = b$.
-    Thus $b < c$ or $b = c$.
-    \begin{byCase}
-    \caseOf{$a = b$ and $b = c$.}
-        Thus $a = c$.
-        Thus $a < c$ or $a = c$.
-        Thus $a \leq c$.
-    \caseOf{$a = b$ and $b < c$.}
-        Thus $a < c$.
-        Thus $a < c$ or $a = c$.
-        Thus $a \leq c$.
-    \caseOf{$a < b$ and $b = c$.}
-        Thus $a < c$.
-        Thus $a < c$ or $a = c$.
-        Thus $a \leq c$.
-    \caseOf{$a < b$ and $b < c$.}
-        Thus $a < c$ by \cref{real_lt_trans}.
-        Thus $a < c$ or $a = c$.
-        Thus $a \leq c$.
-    \end{byCase}
-\end{proof}
 
 % from §5 helper lemma 15: monotonicity of addition for $\leq$
 \begin{lemma}\label{real_leq_add}
@@ -6373,20 +5815,6 @@ from §5 Item 20: definition of the integers
     Suppose $a \leq b$.
     Then $a + c \leq b + c$.
 \end{lemma}
-\begin{proof}
-    \begin{byCase}
-    \caseOf{$a = b$.}
-        Thus $a + c = b + c$.
-        Thus $a + c < b + c$ or $a + c = b + c$.
-        Thus $a + c \leq b + c$.
-    \caseOf{$a \neq b$.}
-        Thus $a < b$ or $a = b$.
-        Thus $a < b$.
-        Thus $a + c < b + c$ by \cref{real_lt_add}.
-        Thus $a + c < b + c$ or $a + c = b + c$.
-        Thus $a + c \leq b + c$.
-    \end{byCase}
-\end{proof}
 
 % from §5 helper lemma 17: antisymmetry of $\leq$
 \begin{lemma}\label{real_leq_antisym}
@@ -6394,118 +5822,39 @@ from §5 Item 20: definition of the integers
     Suppose $a \leq b$ and $b \leq a$.
     Then $a = b$.
 \end{lemma}
-\begin{proof}
-    Suppose not.
-    Thus $a \neq b$.
-    Thus $a < b$ or $a = b$.
-    Thus $a < b$.
-    Thus $b < a$ or $b = a$.
-    Thus $b < a$.
-    Thus it is wrong that $a < b$ by \cref{real_lt_asym}.
-    Contradiction.
-\end{proof}
 
 % from §5 helper lemma 16: negation of a sum
 \begin{lemma}\label{real_neg_addition}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\neg{(a + b)} = \neg{a} + \neg{b}$.
 \end{lemma}
-\begin{proof}
-    $a + b\in\reals$ by \cref{real_add_closed}.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a} + \neg{b}\in\reals$ by \cref{real_add_closed}.
-    $(a + b) + (\neg{a} + \neg{b}) = a + (b + (\neg{a} + \neg{b}))$ by \cref{real_add_assoc}.
-    $b + (\neg{a} + \neg{b}) = (b + \neg{a}) + \neg{b}$ by \cref{real_add_assoc}.
-    $b + \neg{a} = \neg{a} + b$ by \cref{real_add_comm}.
-    $(b + \neg{a}) + \neg{b} = (\neg{a} + b) + \neg{b}$ by \cref{real_add_comm}.
-    $(\neg{a} + b) + \neg{b} = \neg{a} + (b + \neg{b})$ by \cref{real_add_assoc}.
-    $b + \neg{b} = 0$ by \cref{real_add_inverse}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $\neg{a} + 0 = 0 + \neg{a}$ by \cref{real_add_comm}.
-    $0 + \neg{a} = \neg{a}$ by \cref{real_add_ident}.
-    Thus $b + (\neg{a} + \neg{b}) = \neg{a}$.
-    Thus $(a + b) + (\neg{a} + \neg{b}) = a + \neg{a}$.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    Thus $(a + b) + (\neg{a} + \neg{b}) = 0$.
-    Hence $\neg{(a + b)} = \neg{a} + \neg{b}$ by \cref{real_add_inverse_unique}.
-\end{proof}
 
 % from §5 helper lemma 18: positive difference
 \begin{lemma}\label{real_lt_imp_pos_diff}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
     Then $0 < b - a$.
 \end{lemma}
-\begin{proof}
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $a + \neg{a} < b + \neg{a}$ by \cref{real_lt_add}.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    $b + \neg{a} = b - a$ by \cref{real_sub}.
-    Thus $0 < b - a$.
-\end{proof}
 
 % from §5 helper lemma 19: subtracting a positive number decreases
 \begin{lemma}\label{real_sub_pos_lt}
     Suppose $a\in\reals$ and $b\in\reals$ and $0 < b$.
     Then $a - b < a$.
 \end{lemma}
-\begin{proof}
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b} < 0$ by \cref{real_pos_imp_neg}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $\neg{b} + a < 0 + a$ by \cref{real_lt_add}.
-    $\neg{b} + a = a + \neg{b}$ by \cref{real_add_comm}.
-    $0 + a = a$ by \cref{real_add_ident}.
-    $a + \neg{b} = a - b$ by \cref{real_sub}.
-    Thus $a - b < a$.
-\end{proof}
 
 % from §5 helper lemma 20: subtracting a difference
 \begin{lemma}\label{real_sub_sub_cancel}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $a - (a - b) = b$.
 \end{lemma}
-\begin{proof}
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $a - b\in\reals$ by \cref{real_sub,real_add_closed}.
-    $a - (a - b) = a + \neg{(a - b)}$ by \cref{real_sub}.
-    $a - b = a + \neg{b}$ by \cref{real_sub}.
-    $\neg{(a - b)} = \neg{a} + \neg{(\neg{b})}$ by \cref{real_neg_addition}.
-    $\neg{(\neg{b})} = b$ by \cref{real_neg_neg}.
-    Thus $\neg{(a - b)} = \neg{a} + b$.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $a + (\neg{a} + b) = (a + \neg{a}) + b$ by \cref{real_add_assoc}.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    $0 + b = b$ by \cref{real_add_ident}.
-    Thus $a - (a - b) = b$.
-\end{proof}
 
 % from §5 Item 70: multiplication by a negative number
-\begin{theorem}\label{real_lt_mul_neg}
+\begin{proposition}\label{real_lt_mul_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
     Suppose $a < b$ and $c < 0$.
     Then $b \rmul c < a \rmul c$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    $0 + 0 = 0$ by \cref{real_add_ident}.
-    Thus $\neg{0} = 0$ by \cref{real_add_inverse_unique}.
-    $\neg{c}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{0} < \neg{c}$ by \cref{real_lt_neg}.
-    Thus $0 < \neg{c}$.
-    Thus $\neg{c} > 0$.
-    $a \rmul \neg{c} < b \rmul \neg{c}$ by \cref{real_lt_mul_pos}.
-    $a \rmul \neg{c} = \neg{(a \rmul c)}$ by \cref{real_mul_neg_right}.
-    $b \rmul \neg{c} = \neg{(b \rmul c)}$ by \cref{real_mul_neg_right}.
-    Thus $\neg{(a \rmul c)} < \neg{(b \rmul c)}$.
-    $a \rmul c\in\reals$ by \cref{real_mul_closed}.
-    $b \rmul c\in\reals$ by \cref{real_mul_closed}.
-    $\neg{(a \rmul c)}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{(b \rmul c)}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{(\neg{(b \rmul c)})} < \neg{(\neg{(a \rmul c)})}$ by \cref{real_lt_neg}.
-    $\neg{(\neg{(b \rmul c)})} = b \rmul c$ by \cref{real_neg_neg}.
-    $\neg{(\neg{(a \rmul c)})} = a \rmul c$ by \cref{real_neg_neg}.
-    Thus $b \rmul c < a \rmul c$.
+    Follows by \cref{real_add_ident,real_lt_neg,real_add_inverse,real_lt_mul_pos,real_mul_neg_right,real_mul_closed,real_neg_neg}.
 \end{proof}
 
 % from §5 Item 71: absolute value signature
@@ -6526,632 +5875,146 @@ from §5 Item 20: definition of the integers
 \end{axiom}
 
 % from §5 Item 73: absolute value is nonnegative
-\begin{theorem}\label{real_abs_nonnegative}
+\begin{proposition}\label{real_abs_nonnegative}
     Suppose $a\in\reals$.
     Then $\abs{a} \geq 0$.
-\end{theorem}
-\begin{proof}
-    \begin{byCase}
-    \caseOf{$a \geq 0$.}
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a} \geq 0$.
-    \caseOf{$a < 0$.}
-        Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-        $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-        $\neg{(\neg{a})} = a$ by \cref{real_neg_neg}.
-        Thus $\neg{(\neg{a})} < 0$.
-        Thus $\neg{a} > 0$ by \cref{real_neg_imp_pos}.
-        Thus $0 < \neg{a}$.
-        Thus $0 < \abs{a}$.
-        Thus $0 < \abs{a}$ or $0 = \abs{a}$.
-        Thus $0 \leq \abs{a}$.
-        Thus $\abs{a} \geq 0$.
-    \end{byCase}
-\end{proof}
+\end{proposition}
 
 % from §5 Item 74: absolute value zero only at zero
-\begin{theorem}\label{real_abs_eq_zero}
+\begin{proposition}\label{real_abs_eq_zero}
     Suppose $a\in\reals$ and $\abs{a} = 0$.
     Then $a = 0$.
-\end{theorem}
-\begin{proof}
-    Suppose not.
-    Thus $a \neq 0$.
-    $0\in\reals$ by \cref{real_add_ident}.
-    Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-    \begin{byCase}
-    \caseOf{$a < 0$.}
-        Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-        Thus $\neg{a} = 0$.
-        $a = \neg{(\neg{a})}$ by \cref{real_neg_neg}.
-        Thus $a = \neg{0}$.
-        $0 + 0 = 0$ by \cref{real_add_ident}.
-        Thus $\neg{0} = 0$ by \cref{real_add_inverse_unique}.
-        Thus $a = 0$.
-        Contradiction.
-    \caseOf{$0 < a$.}
-        Thus $0 < a$ or $0 = a$.
-        Thus $0 \leq a$.
-        Thus $a \geq 0$.
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $a = 0$.
-        Contradiction.
-    \end{byCase}
-\end{proof}
+\end{proposition}
 
 % from §5 helper lemma 11: subtraction swap
 \begin{lemma}\label{real_sub_swap_neg}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $b - a = \neg{(a - b)}$.
 \end{lemma}
-\begin{proof}
-    $a - b = a + \neg{b}$ by \cref{real_sub}.
-    $b - a = b + \neg{a}$ by \cref{real_sub}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $a - b\in\reals$ by \cref{real_sub,real_add_closed}.
-    $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-    $(a - b) + (b - a) = (a + \neg{b}) + (b + \neg{a})$ by \cref{real_sub}.
-    $(a + \neg{b}) + (b + \neg{a}) = a + (\neg{b} + (b + \neg{a}))$ by \cref{real_add_assoc}.
-    $\neg{b} + (b + \neg{a}) = (\neg{b} + b) + \neg{a}$ by \cref{real_add_assoc}.
-    $\neg{b} + b = 0$ by \cref{real_add_inverse,real_add_comm}.
-    $0 + \neg{a} = \neg{a}$ by \cref{real_add_ident}.
-    Thus $(a - b) + (b - a) = a + \neg{a}$.
-    $a + \neg{a} = 0$ by \cref{real_add_inverse}.
-    Thus $(a - b) + (b - a) = 0$.
-    Hence $b - a = \neg{(a - b)}$ by \cref{real_add_inverse_unique}.
-\end{proof}
 
 % from §5 Item 75: absolute value is symmetric
-\begin{theorem}\label{real_abs_sub_swap}
+\begin{proposition}\label{real_abs_sub_swap}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a - b} = \abs{b - a}$.
-\end{theorem}
-\begin{proof}
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $a - b\in\reals$ by \cref{real_sub,real_add_closed}.
-    $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    \begin{byCase}
-    \caseOf{$a - b = 0$.}
-        $b - a = \neg{(a - b)}$ by \cref{real_sub_swap_neg}.
-        Thus $b - a = \neg{0}$.
-        $0 + 0 = 0$ by \cref{real_add_ident}.
-        Thus $\neg{0} = 0$ by \cref{real_add_inverse_unique}.
-        Thus $b - a = 0$.
-        Thus $0 < a - b$ or $0 = a - b$.
-        Thus $0 \leq a - b$.
-        Thus $a - b \geq 0$.
-        Thus $\abs{a - b} = a - b$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a - b} = 0$.
-        Thus $0 < b - a$ or $0 = b - a$.
-        Thus $0 \leq b - a$.
-        Thus $b - a \geq 0$.
-        Thus $\abs{b - a} = b - a$ by \cref{real_abs_nonneg}.
-        Thus $\abs{b - a} = 0$.
-        Thus $\abs{a - b} = \abs{b - a}$.
-    \caseOf{$a - b \neq 0$.}
-        Thus $a - b < 0$ or $0 < a - b$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$a - b < 0$.}
-            Thus $\abs{a - b} = \neg{(a - b)}$ by \cref{real_abs_neg}.
-            $b - a = \neg{(a - b)}$ by \cref{real_sub_swap_neg}.
-            $\neg{(a - b)}\in\reals$ by \cref{real_add_inverse}.
-            $\neg{(\neg{(a - b)})} = a - b$ by \cref{real_neg_neg}.
-            Thus $\neg{(\neg{(a - b)})} < 0$.
-            Thus $\neg{(a - b)} > 0$ by \cref{real_neg_imp_pos}.
-            Thus $0 < \neg{(a - b)}$.
-            Thus $0 < b - a$.
-            Thus $0 < b - a$ or $0 = b - a$.
-            Thus $0 \leq b - a$.
-            Thus $b - a \geq 0$.
-            Thus $\abs{b - a} = b - a$ by \cref{real_abs_nonneg}.
-            Thus $\abs{b - a} = \abs{a - b}$.
-        \caseOf{$0 < a - b$.}
-            Thus $0 < a - b$ or $0 = a - b$.
-            Thus $0 \leq a - b$.
-            Thus $a - b \geq 0$.
-            Thus $\abs{a - b} = a - b$ by \cref{real_abs_nonneg}.
-            Thus $\neg{(a - b)} < 0$ by \cref{real_pos_imp_neg}.
-            $b - a = \neg{(a - b)}$ by \cref{real_sub_swap_neg}.
-            Thus $b - a < 0$.
-            Thus $\abs{b - a} = \neg{(b - a)}$ by \cref{real_abs_neg}.
-            $\neg{(b - a)} = \neg{(\neg{(a - b)})}$ by \cref{real_sub_swap_neg}.
-            $\neg{(\neg{(a - b)})} = a - b$ by \cref{real_neg_neg}.
-            Thus $\abs{b - a} = a - b$.
-            Thus $\abs{b - a} = \abs{a - b}$.
-        \end{byCase}
-    \end{byCase}
-\end{proof}
+\end{proposition}
 
 % from §5 helper lemma 12: absolute value is real
 \begin{lemma}\label{real_abs_in_reals}
     Suppose $a\in\reals$.
     Then $\abs{a}\in\reals$.
 \end{lemma}
-\begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    \begin{byCase}
-    \caseOf{$a = 0$.}
-        Thus $0 < a$ or $0 = a$.
-        Thus $0 \leq a$.
-        Thus $a \geq 0$.
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a} = 0$.
-        Thus $\abs{a}\in\reals$.
-    \caseOf{$a \neq 0$.}
-        Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$a < 0$.}
-            Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-            Thus $\abs{a}\in\reals$ by \cref{real_add_inverse}.
-        \caseOf{$0 < a$.}
-            Thus $0 < a$ or $0 = a$.
-            Thus $0 \leq a$.
-            Thus $a \geq 0$.
-            Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-            Thus $\abs{a}\in\reals$.
-        \end{byCase}
-    \end{byCase}
-\end{proof}
 
 % from §5 Item 76: absolute value of a product
-\begin{theorem}\label{real_abs_mul}
+\begin{proposition}\label{real_abs_mul}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
     \begin{byCase}
-    \caseOf{$a = 0$.}
-        $a \rmul b = 0$ by \cref{real_mul_zero}.
-        Thus $a \rmul b = 0$.
-        Thus $0 < a$ or $0 = a$.
-        Thus $0 \leq a$.
-        Thus $a \geq 0$.
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a} = 0$.
-        $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
-        Thus $\abs{a} \rmul \abs{b} = 0 \rmul \abs{b}$.
-        Thus $\abs{a} \rmul \abs{b} = 0$ by \cref{real_mul_zero}.
-        Thus $0 < a \rmul b$ or $0 = a \rmul b$.
-        Thus $0 \leq a \rmul b$.
-        Thus $a \rmul b \geq 0$.
-        Thus $\abs{a \rmul b} = a \rmul b$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-    \caseOf{$a \neq 0$.}
-        \begin{byCase}
-        \caseOf{$b = 0$.}
-            $a \rmul b = 0$ by \cref{real_mul_zero,real_mul_comm}.
-            Thus $a \rmul b = 0$.
-            Thus $0 < b$ or $0 = b$.
-            Thus $0 \leq b$.
-            Thus $b \geq 0$.
-            Thus $\abs{b} = b$ by \cref{real_abs_nonneg}.
-            Thus $\abs{b} = 0$.
-            $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-            Thus $\abs{a} \rmul \abs{b} = \abs{b} \rmul \abs{a}$ by \cref{real_mul_comm}.
-            Thus $\abs{a} \rmul \abs{b} = 0 \rmul \abs{a}$.
-            Thus $\abs{a} \rmul \abs{b} = 0$ by \cref{real_mul_zero}.
-            Thus $0 < a \rmul b$ or $0 = a \rmul b$.
-            Thus $0 \leq a \rmul b$.
-            Thus $a \rmul b \geq 0$.
-            Thus $\abs{a \rmul b} = a \rmul b$ by \cref{real_abs_nonneg}.
-            Thus $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-        \caseOf{$b \neq 0$.}
-            Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-            Thus $b < 0$ or $0 < b$ by \cref{real_lt_trichotomy}.
-            \begin{byCase}
-            \caseOf{$a < 0$ and $b < 0$.}
-                Thus $a$ is negative.
-                Thus $b$ is negative.
-                $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-                $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-                Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-                Thus $\abs{b} = \neg{b}$ by \cref{real_abs_neg}.
-                $\neg{a} \rmul \neg{b} = \neg{(\neg{a} \rmul b)}$ by \cref{real_mul_neg_right}.
-                $\neg{a} \rmul b = b \rmul \neg{a}$ by \cref{real_mul_comm}.
-                $b \rmul \neg{a} = \neg{(b \rmul a)}$ by \cref{real_mul_neg_right}.
-                $b \rmul a = a \rmul b$ by \cref{real_mul_comm}.
-                Thus $\neg{a} \rmul \neg{b} = \neg{(\neg{(a \rmul b)})}$.
-                $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-                $\neg{(\neg{(a \rmul b)})} = a \rmul b$ by \cref{real_neg_neg}.
-                Thus $\abs{a} \rmul \abs{b} = a \rmul b$.
-                Thus $a \rmul b$ is positive by \cref{real_mul_neg_neg}.
-                Thus $0 < a \rmul b$.
-                Thus $0 < a \rmul b$ or $0 = a \rmul b$.
-                Thus $0 \leq a \rmul b$.
-                Thus $a \rmul b \geq 0$.
-                Thus $\abs{a \rmul b} = a \rmul b$ by \cref{real_abs_nonneg}.
-                Thus $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-            \caseOf{$a < 0$ and $0 < b$.}
-                Thus $a$ is negative.
-                Thus $b$ is positive.
-                $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-                Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-                Thus $0 < b$ or $0 = b$.
-                Thus $0 \leq b$.
-                Thus $b \geq 0$.
-                Thus $\abs{b} = b$ by \cref{real_abs_nonneg}.
-                $\neg{a} \rmul b = b \rmul \neg{a}$ by \cref{real_mul_comm}.
-                $b \rmul \neg{a} = \neg{(b \rmul a)}$ by \cref{real_mul_neg_right}.
-                $b \rmul a = a \rmul b$ by \cref{real_mul_comm}.
-                Thus $\abs{a} \rmul \abs{b} = \neg{(a \rmul b)}$.
-                Thus $a \rmul b$ is negative by \cref{real_mul_pos_neg,real_mul_comm}.
-                Thus $a \rmul b < 0$.
-                $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-                Thus $\abs{a \rmul b} = \neg{(a \rmul b)}$ by \cref{real_abs_neg}.
-                Thus $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-            \caseOf{$0 < a$ and $b < 0$.}
-                Thus $a$ is positive.
-                Thus $b$ is negative.
-                $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-                Thus $0 < a$ or $0 = a$.
-                Thus $0 \leq a$.
-                Thus $a \geq 0$.
-                Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-                Thus $\abs{b} = \neg{b}$ by \cref{real_abs_neg}.
-                $a \rmul \neg{b} = \neg{(a \rmul b)}$ by \cref{real_mul_neg_right}.
-                Thus $\abs{a} \rmul \abs{b} = \neg{(a \rmul b)}$.
-                Thus $a \rmul b$ is negative by \cref{real_mul_pos_neg}.
-                Thus $a \rmul b < 0$.
-                $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-                Thus $\abs{a \rmul b} = \neg{(a \rmul b)}$ by \cref{real_abs_neg}.
-                Thus $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-            \caseOf{$0 < a$ and $0 < b$.}
-                Thus $a$ is positive.
-                Thus $b$ is positive.
-                Thus $0 < a$ or $0 = a$.
-                Thus $0 \leq a$.
-                Thus $a \geq 0$.
-                Thus $0 < b$ or $0 = b$.
-                Thus $0 \leq b$.
-                Thus $b \geq 0$.
-                Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-                Thus $\abs{b} = b$ by \cref{real_abs_nonneg}.
-                Thus $\abs{a} \rmul \abs{b} = a \rmul b$.
-                Thus $a \rmul b$ is positive by \cref{real_mul_pos_pos}.
-                Thus $0 < a \rmul b$.
-                Thus $0 < a \rmul b$ or $0 = a \rmul b$.
-                Thus $0 \leq a \rmul b$.
-                Thus $a \rmul b \geq 0$.
-                $a \rmul b\in\reals$ by \cref{real_mul_closed}.
-                Thus $\abs{a \rmul b} = a \rmul b$ by \cref{real_abs_nonneg}.
-                Thus $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-            \end{byCase}
-        \end{byCase}
+    \caseOf{$a \geq 0$ and $b \geq 0$.}
+        Trivial.
+    \caseOf{$a \geq 0$ and $b < 0$.}
+        Trivial.
+    \caseOf{$a < 0$ and $b \geq 0$.}
+        Trivial.
+    \caseOf{$a < 0$ and $b < 0$.}
+        Trivial.
     \end{byCase}
 \end{proof}
 
 % from §5 Item 77: absolute value bounded by a two-sided bound
-\begin{theorem}\label{real_abs_leq_if_pm_leq}
+\begin{proposition}\label{real_abs_leq_if_pm_leq}
     Suppose $a\in\reals$ and $b\in\reals$.
     Suppose $a \leq b$ and $\neg{a} \leq b$.
     Then $\abs{a} \leq b$.
-\end{theorem}
-\begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    \begin{byCase}
-    \caseOf{$a = 0$.}
-        Thus $0 < a$ or $0 = a$.
-        Thus $0 \leq a$.
-        Thus $a \geq 0$.
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a} \leq b$.
-    \caseOf{$a \neq 0$.}
-        Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$a < 0$.}
-            Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-            Thus $\abs{a} \leq b$.
-        \caseOf{$0 < a$.}
-            Thus $0 < a$ or $0 = a$.
-            Thus $0 \leq a$.
-            Thus $a \geq 0$.
-            Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-            Thus $\abs{a} \leq b$.
-        \end{byCase}
-    \end{byCase}
-\end{proof}
+\end{proposition}
 
 % from §5 Item 78: absolute value squared
-\begin{theorem}\label{real_abs_square}
+\begin{proposition}\label{real_abs_square}
     Suppose $a\in\reals$.
     Then $\exp{\abs{a}}{1+1} = \exp{a}{1+1}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    $\exp{\abs{a}}{1+1} = \exp{\abs{a}}{1} \rmul \abs{a}$ by \cref{real_pow_succ}.
-    $\exp{\abs{a}}{1} = \abs{a}$ by \cref{real_pow_one}.
-    Thus $\exp{\abs{a}}{1+1} = \abs{a} \rmul \abs{a}$.
-    $\exp{a}{1+1} = \exp{a}{1} \rmul a$ by \cref{real_pow_succ}.
-    $\exp{a}{1} = a$ by \cref{real_pow_one}.
-    Thus $\exp{a}{1+1} = a \rmul a$.
-    $\abs{a \rmul a} = \abs{a} \rmul \abs{a}$ by \cref{real_abs_mul}.
-    Thus $\abs{a} \rmul \abs{a} = \abs{a \rmul a}$.
-    Thus $\exp{\abs{a}}{1+1} = \abs{a \rmul a}$.
-    $\exp{a}{1+1} \geq 0$ by \cref{real_sq_nonnegative}.
-    Thus $a \rmul a \geq 0$.
-    $a \rmul a\in\reals$ by \cref{real_mul_closed}.
-    Thus $\abs{a \rmul a} = a \rmul a$ by \cref{real_abs_nonneg}.
-    Thus $\exp{\abs{a}}{1+1} = a \rmul a$.
-    Thus $\exp{\abs{a}}{1+1} = \exp{a}{1+1}$.
+    Follows by \cref{real_abs_mul,real_abs_in_reals,real_abs_nonnegative,real_abs_nonneg,real_sq_nonnegative,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed}.
 \end{proof}
 
 % from §5 Item 79: absolute value dominates
-\begin{theorem}\label{real_leq_abs}
+\begin{proposition}\label{real_leq_abs}
     Suppose $a\in\reals$.
     Then $a \leq \abs{a}$.
-\end{theorem}
-\begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    \begin{byCase}
-    \caseOf{$a = 0$.}
-        Thus $0 < a$ or $0 = a$.
-        Thus $0 \leq a$.
-        Thus $a \geq 0$.
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $a = \abs{a}$.
-        Thus $a < \abs{a}$ or $a = \abs{a}$.
-        Thus $a \leq \abs{a}$.
-    \caseOf{$a \neq 0$.}
-        Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$a < 0$.}
-            Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-            $a < 0$.
-            $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-            $\neg{0} = 0$ by \cref{real_add_inverse_unique,real_add_ident}.
-            $\neg{0} < \neg{a}$ by \cref{real_lt_neg}.
-            Thus $0 < \neg{a}$.
-            Thus $a < \neg{a}$ by \cref{real_lt_trans}.
-            Thus $a < \abs{a}$.
-            Thus $a < \abs{a}$ or $a = \abs{a}$.
-            Thus $a \leq \abs{a}$.
-        \caseOf{$0 < a$.}
-            Thus $0 < a$ or $0 = a$.
-            Thus $0 \leq a$.
-            Thus $a \geq 0$.
-            Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-            Thus $a = \abs{a}$.
-            Thus $a < \abs{a}$ or $a = \abs{a}$.
-            Thus $a \leq \abs{a}$.
-        \end{byCase}
-    \end{byCase}
-\end{proof}
+\end{proposition}
 
 % from §5 Item 79: negative is at most absolute value
-\begin{theorem}\label{real_neg_leq_abs}
+\begin{proposition}\label{real_neg_leq_abs}
     Suppose $a\in\reals$.
     Then $\neg{a} \leq \abs{a}$.
-\end{theorem}
-\begin{proof}
-    $0\in\reals$ by \cref{real_add_ident}.
-    \begin{byCase}
-    \caseOf{$a = 0$.}
-        Thus $0 < a$ or $0 = a$.
-        Thus $0 \leq a$.
-        Thus $a \geq 0$.
-        Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-        Thus $\abs{a} = 0$.
-        $0 + 0 = 0$ by \cref{real_add_ident}.
-        Thus $\neg{0} = 0$ by \cref{real_add_inverse_unique}.
-        Thus $\neg{a} = 0$.
-        Thus $\neg{a} = \abs{a}$.
-        Thus $\neg{a} < \abs{a}$ or $\neg{a} = \abs{a}$.
-        Thus $\neg{a} \leq \abs{a}$.
-    \caseOf{$a \neq 0$.}
-        Thus $a < 0$ or $0 < a$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$a < 0$.}
-            Thus $\abs{a} = \neg{a}$ by \cref{real_abs_neg}.
-            Thus $\neg{a} = \abs{a}$.
-            Thus $\neg{a} < \abs{a}$ or $\neg{a} = \abs{a}$.
-            Thus $\neg{a} \leq \abs{a}$.
-        \caseOf{$0 < a$.}
-            Thus $0 < a$ or $0 = a$.
-            Thus $0 \leq a$.
-            Thus $a \geq 0$.
-            Thus $\abs{a} = a$ by \cref{real_abs_nonneg}.
-            $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-            $\neg{0} = 0$ by \cref{real_add_inverse_unique,real_add_ident}.
-            $\neg{a} < \neg{0}$ by \cref{real_lt_neg}.
-            Thus $\neg{a} < 0$.
-            Thus $\neg{a} < a$ by \cref{real_lt_trans}.
-            Thus $\neg{a} < \abs{a}$.
-            Thus $\neg{a} < \abs{a}$ or $\neg{a} = \abs{a}$.
-            Thus $\neg{a} \leq \abs{a}$.
-        \end{byCase}
-    \end{byCase}
-\end{proof}
+\end{proposition}
 
 % from §5 Item 80: absolute value bound implies right bound
-\begin{theorem}\label{real_abs_leq_imp_right_bound}
+\begin{proposition}\label{real_abs_leq_imp_right_bound}
     Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a} \leq r$.
     Then $a \leq r$.
-\end{theorem}
-\begin{proof}
-    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    $a \leq \abs{a}$ by \cref{real_leq_abs}.
-    Thus $a \leq r$ by \cref{real_leq_trans}.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 80: absolute value bound implies left bound
-\begin{theorem}\label{real_abs_leq_imp_left_bound}
+\begin{proposition}\label{real_abs_leq_imp_left_bound}
     Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a} \leq r$.
     Then $\neg{r} \leq a$.
-\end{theorem}
-\begin{proof}
-    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a} \leq \abs{a}$ by \cref{real_neg_leq_abs}.
-    Thus $\neg{a} \leq r$ by \cref{real_leq_trans}.
-    Thus $\neg{r} \leq \neg{(\neg{a})}$ by \cref{real_leq_neg}.
-    $\neg{(\neg{a})} = a$ by \cref{real_neg_neg}.
-    Thus $\neg{r} \leq a$.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 80: two-sided bound implies absolute value bound
-\begin{theorem}\label{real_abs_leq_from_bounds}
+\begin{proposition}\label{real_abs_leq_from_bounds}
     Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\neg{r} \leq a$ and $a \leq r$.
     Then $\abs{a} \leq r$.
-\end{theorem}
-\begin{proof}
-    $\neg{r}\in\reals$ by \cref{real_add_inverse}.
-    Thus $\neg{a} \leq \neg{(\neg{r})}$ by \cref{real_leq_neg}.
-    $\neg{(\neg{r})} = r$ by \cref{real_neg_neg}.
-    Thus $\neg{a} \leq r$.
-    Thus $\abs{a} \leq r$ by \cref{real_abs_leq_if_pm_leq}.
-\end{proof}
+\end{proposition}
 
 % from §5 Item 81: absolute value bound implies left translated bound
-\begin{theorem}\label{real_abs_sub_leq_imp_left_bound}
+\begin{proposition}\label{real_abs_sub_leq_imp_left_bound}
     Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a - b} \leq r$.
     Then $b - r \leq a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $a - b\in\reals$ by \cref{real_sub,real_add_closed}.
-    $\neg{r}\in\reals$ by \cref{real_add_inverse}.
-    Thus $\neg{r} \leq a - b$ by \cref{real_abs_leq_imp_left_bound}.
-    $\neg{r} + b \leq (a - b) + b$ by \cref{real_leq_add}.
-    $b - r = b + \neg{r}$ by \cref{real_sub}.
-    $\neg{r} + b = b + \neg{r}$ by \cref{real_add_comm}.
-    Thus $b - r = \neg{r} + b$.
-    $a - b = a + \neg{b}$ by \cref{real_sub}.
-    $(a - b) + b = (a + \neg{b}) + b$ by \cref{real_sub}.
-    $(a + \neg{b}) + b = a + (\neg{b} + b)$ by \cref{real_add_assoc}.
-    $\neg{b} + b = 0$ by \cref{real_add_inverse,real_add_comm}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $a + 0 = 0 + a$ by \cref{real_add_comm}.
-    $0 + a = a$ by \cref{real_add_ident}.
-    Thus $(a - b) + b = a$.
-    Thus $b - r \leq a$.
+    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_left_bound,real_leq_add,real_add_comm,real_add_assoc,real_add_ident}.
 \end{proof}
 
 % from §5 Item 81: absolute value bound implies right translated bound
-\begin{theorem}\label{real_abs_sub_leq_imp_right_bound}
+\begin{proposition}\label{real_abs_sub_leq_imp_right_bound}
     Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a - b} \leq r$.
     Then $a \leq b + r$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $a - b\in\reals$ by \cref{real_sub,real_add_closed}.
-    Thus $a - b \leq r$ by \cref{real_abs_leq_imp_right_bound}.
-    $(a - b) + b \leq r + b$ by \cref{real_leq_add}.
-    $a - b = a + \neg{b}$ by \cref{real_sub}.
-    $(a - b) + b = (a + \neg{b}) + b$ by \cref{real_sub}.
-    $(a + \neg{b}) + b = a + (\neg{b} + b)$ by \cref{real_add_assoc}.
-    $\neg{b} + b = 0$ by \cref{real_add_inverse,real_add_comm}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $a + 0 = 0 + a$ by \cref{real_add_comm}.
-    $0 + a = a$ by \cref{real_add_ident}.
-    Thus $(a - b) + b = a$.
-    $r + b = b + r$ by \cref{real_add_comm}.
-    Thus $a \leq b + r$.
+    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_right_bound,real_leq_add,real_add_assoc,real_add_comm,real_add_ident}.
 \end{proof}
 
 % from §5 Item 82: Triangle Inequality
-\begin{theorem}\label{real_triangle_inequality}
+\begin{proposition}\label{real_triangle_inequality}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a + b} \leq \abs{a} + \abs{b}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
-    $\abs{a} + \abs{b}\in\reals$ by \cref{real_add_closed}.
-    $a + b\in\reals$ by \cref{real_add_closed}.
-    $a \leq \abs{a}$ by \cref{real_leq_abs}.
-    Thus $a + b \leq \abs{a} + b$ by \cref{real_leq_add}.
-    $\abs{a} + b\in\reals$ by \cref{real_add_closed}.
-    $b \leq \abs{b}$ by \cref{real_leq_abs}.
-    Thus $b + \abs{a} \leq \abs{b} + \abs{a}$ by \cref{real_leq_add}.
-    $b + \abs{a}\in\reals$ by \cref{real_add_closed}.
-    $\abs{a} + b = b + \abs{a}$ by \cref{real_add_comm}.
-    $\abs{b} + \abs{a} = \abs{a} + \abs{b}$ by \cref{real_add_comm}.
-    Thus $\abs{a} + b \leq \abs{a} + \abs{b}$.
-    Thus $a + b \leq \abs{a} + \abs{b}$ by \cref{real_leq_trans}.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a} \leq \abs{a}$ by \cref{real_neg_leq_abs}.
-    Thus $\neg{a} + \neg{b} \leq \abs{a} + \neg{b}$ by \cref{real_leq_add}.
-    $\neg{a} + \neg{b}\in\reals$ by \cref{real_add_closed}.
-    $\abs{a} + \neg{b}\in\reals$ by \cref{real_add_closed}.
-    $\neg{b} \leq \abs{b}$ by \cref{real_neg_leq_abs}.
-    Thus $\neg{b} + \abs{a} \leq \abs{b} + \abs{a}$ by \cref{real_leq_add}.
-    $\neg{b} + \abs{a}\in\reals$ by \cref{real_add_closed}.
-    $\abs{a} + \neg{b} = \neg{b} + \abs{a}$ by \cref{real_add_comm}.
-    Thus $\abs{a} + \neg{b} \leq \abs{a} + \abs{b}$.
-    Thus $\neg{a} + \neg{b} \leq \abs{a} + \abs{b}$ by \cref{real_leq_trans}.
-    $\neg{(a + b)} = \neg{a} + \neg{b}$ by \cref{real_neg_addition}.
-    Thus $\neg{(a + b)} \leq \abs{a} + \abs{b}$.
-    Thus $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_leq_if_pm_leq}.
+    We have $\neg{(a + b)} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_add_inverse,real_neg_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_neg_addition}.
+    Hence $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
 \end{proof}
 
 % from §5 Item 83: Reverse Triangle Inequality
-\begin{theorem}\label{real_reverse_triangle_inequality}
+\begin{proposition}\label{real_reverse_triangle_inequality}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a - b} \geq \abs{\abs{a} - \abs{b}}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
-    $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $a - b\in\reals$ by \cref{real_sub,real_add_closed}.
-    $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-    $\abs{a - b}\in\reals$ by \cref{real_abs_in_reals}.
+    Now $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
+    $\abs{a - b}\in\reals$ by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_in_reals}.
     $\abs{b - a} = \abs{a - b}$ by \cref{real_abs_sub_swap}.
-    $\abs{(a - b) + b} \leq \abs{a - b} + \abs{b}$ by \cref{real_triangle_inequality}.
-    $a - b = a + \neg{b}$ by \cref{real_sub}.
-    $(a - b) + b = (a + \neg{b}) + b$ by \cref{real_sub}.
-    $(a + \neg{b}) + b = a + (\neg{b} + b)$ by \cref{real_add_assoc}.
-    $\neg{b} + b = 0$ by \cref{real_add_inverse,real_add_comm}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $a + 0 = 0 + a$ by \cref{real_add_comm}.
-    $0 + a = a$ by \cref{real_add_ident}.
-    Thus $(a - b) + b = a$.
-    Thus $\abs{a} \leq \abs{a - b} + \abs{b}$.
-    $\neg{\abs{b}}\in\reals$ by \cref{real_add_inverse}.
-    $\abs{a - b} + \abs{b}\in\reals$ by \cref{real_add_closed}.
-    Thus $\abs{a} + \neg{\abs{b}} \leq (\abs{a - b} + \abs{b}) + \neg{\abs{b}}$ by \cref{real_leq_add}.
-    $\abs{b} + \neg{\abs{b}} = 0$ by \cref{real_add_inverse}.
-    $(\abs{a - b} + \abs{b}) + \neg{\abs{b}} = \abs{a - b} + (\abs{b} + \neg{\abs{b}})$ by \cref{real_add_assoc}.
-    $\abs{a - b} + 0 = 0 + \abs{a - b}$ by \cref{real_add_comm}.
-    $0 + \abs{a - b} = \abs{a - b}$ by \cref{real_add_ident}.
-    Thus $\abs{a} + \neg{\abs{b}} \leq \abs{a - b}$.
-    Thus $\abs{a} - \abs{b} \leq \abs{a - b}$ by \cref{real_sub}.
-    $\abs{(b - a) + a} \leq \abs{b - a} + \abs{a}$ by \cref{real_triangle_inequality}.
-    $b - a = b + \neg{a}$ by \cref{real_sub}.
-    $(b - a) + a = (b + \neg{a}) + a$ by \cref{real_sub}.
-    $(b + \neg{a}) + a = b + (\neg{a} + a)$ by \cref{real_add_assoc}.
-    $\neg{a} + a = 0$ by \cref{real_add_inverse,real_add_comm}.
-    $b + 0 = 0 + b$ by \cref{real_add_comm}.
-    $0 + b = b$ by \cref{real_add_ident}.
-    Thus $(b - a) + a = b$.
-    Thus $\abs{b} \leq \abs{b - a} + \abs{a}$.
-    $\neg{\abs{a}}\in\reals$ by \cref{real_add_inverse}.
-    $\abs{b - a} + \abs{a}\in\reals$ by \cref{real_add_closed}.
-    Thus $\abs{b} + \neg{\abs{a}} \leq (\abs{b - a} + \abs{a}) + \neg{\abs{a}}$ by \cref{real_leq_add}.
-    $\abs{a} + \neg{\abs{a}} = 0$ by \cref{real_add_inverse}.
-    $(\abs{b - a} + \abs{a}) + \neg{\abs{a}} = \abs{b - a} + (\abs{a} + \neg{\abs{a}})$ by \cref{real_add_assoc}.
-    $\abs{b - a} + 0 = 0 + \abs{b - a}$ by \cref{real_add_comm}.
-    $0 + \abs{b - a} = \abs{b - a}$ by \cref{real_add_ident}.
-    Thus $\abs{b} + \neg{\abs{a}} \leq \abs{b - a}$.
-    Thus $\abs{b} + \neg{\abs{a}} \leq \abs{a - b}$ by \cref{real_abs_sub_swap}.
-    Thus $\abs{b} - \abs{a} \leq \abs{a - b}$ by \cref{real_sub}.
-    $\abs{a} - \abs{b}\in\reals$ by \cref{real_sub,real_add_closed}.
-    $\neg{(\abs{a} - \abs{b})} = \abs{b} - \abs{a}$ by \cref{real_sub_swap_neg}.
-    Thus $\neg{(\abs{a} - \abs{b})} \leq \abs{a - b}$.
-    $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_abs_leq_if_pm_leq}.
-    Thus $\abs{a - b} \geq \abs{\abs{a} - \abs{b}}$.
+    $\abs{(a - b) + b} \leq \abs{a - b} + \abs{b}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
+    $\abs{(b - a) + a} \leq \abs{b - a} + \abs{a}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
+    Thus $\abs{b} + \neg{\abs{a}} \leq \abs{b - a}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add}.
+    Therefore $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
 \end{proof}
 
 % from §5 Item 84: upper bound
@@ -7190,35 +6053,21 @@ from §5 Item 20: definition of the integers
 \end{definition}
 
 % from §5 Item 91: uniqueness of supremum
-\begin{theorem}\label{real_supremum_unique}
+\begin{proposition}\label{real_supremum_unique}
     Suppose $p$ is a supremum of $A$ and $q$ is a supremum of $A$.
     Then $p = q$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Thus $p$ is an upper bound of $A$.
-    Thus $q$ is an upper bound of $A$.
-    Thus $p \leq q$ by \cref{real_supremum}.
-    Thus $q \leq p$ by \cref{real_supremum}.
-    $p\in\reals$ by \cref{real_upper_bound}.
-    $q\in\reals$ by \cref{real_upper_bound}.
-    Thus $p = q$ by \cref{real_leq_antisym}.
+    Follows by \cref{real_supremum,real_upper_bound,real_leq_antisym}.
 \end{proof}
 
 % from §5 Item 91: uniqueness of infimum
-\begin{theorem}\label{real_infimum_unique}
+\begin{proposition}\label{real_infimum_unique}
     Suppose $p$ is an infimum of $A$ and $q$ is an infimum of $A$.
     Then $p = q$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Thus $p$ is a lower bound of $A$.
-    Thus $q$ is a lower bound of $A$.
-    Thus $p \geq q$ by \cref{real_infimum}.
-    Thus $q \geq p$ by \cref{real_infimum}.
-    Thus $q \leq p$.
-    Thus $p \leq q$.
-    $p\in\reals$ by \cref{real_lower_bound}.
-    $q\in\reals$ by \cref{real_lower_bound}.
-    Thus $p = q$ by \cref{real_leq_antisym}.
+    Follows by \cref{real_infimum,real_lower_bound,real_leq_antisym}.
 \end{proof}
 
 % from §5 Item 96: maximum
@@ -7232,118 +6081,50 @@ from §5 Item 20: definition of the integers
 \end{definition}
 
 % from §5 Item 98: maximum implies supremum
-\begin{theorem}\label{real_maximum_is_supremum}
+\begin{proposition}\label{real_maximum_is_supremum}
     Suppose $A\subseteq\reals$ and $m$ is a maximum of $A$.
     Then $m$ is a supremum of $A$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Thus $m\in A$ and for all $a\in A$ we have $a \leq m$.
-    $m\in\reals$ by \cref{subseteq}.
-    Thus $m$ is an upper bound of $A$ by \cref{real_upper_bound}.
-    Show that for all $b$ such that $b$ is an upper bound of $A$ we have $m \leq b$.
-    \begin{subproof}
-        Fix $b$.
-        Assume $b$ is an upper bound of $A$.
-        Thus $m \leq b$ by \cref{real_upper_bound}.
-    \end{subproof}
-    Thus $m$ is a supremum of $A$ by \cref{real_supremum}.
+    Follows by \cref{subseteq,real_maximum,real_upper_bound,real_supremum}.
 \end{proof}
 
 % from §5 Item 99: supremum in set implies maximum
-\begin{theorem}\label{real_supremum_in_set_is_maximum}
+\begin{proposition}\label{real_supremum_in_set_is_maximum}
     Suppose $A\subseteq\reals$ and $p$ is a supremum of $A$ and $p\in A$.
     Then $p$ is a maximum of $A$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Thus $p$ is an upper bound of $A$ by \cref{real_supremum}.
-    Thus for all $a\in A$ we have $a \leq p$ by \cref{real_upper_bound}.
-    Thus $p$ is a maximum of $A$ by \cref{real_maximum}.
+    Follows by \cref{real_supremum,real_upper_bound,real_maximum}.
 \end{proof}
 
 % from §5 Item 100: maximum equals supremum
-\begin{theorem}\label{real_maximum_eq_supremum}
+\begin{proposition}\label{real_maximum_eq_supremum}
     Suppose $A\subseteq\reals$ and $m$ is a maximum of $A$.
     Suppose $p$ is a supremum of $A$ and $p\in A$.
     Then $m = p$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Thus $m$ is a supremum of $A$ by \cref{real_maximum_is_supremum}.
-    Thus $m = p$ by \cref{real_supremum_unique}.
+    Follows by \cref{real_maximum_is_supremum,real_supremum_unique}.
 \end{proof}
 
 % from §5 Item 101: characterization of supremum
-\begin{theorem}\label{real_supremum_characterization}
+\begin{proposition}\label{real_supremum_characterization}
     Suppose $A\subseteq\reals$ and $A$ is bounded above and $b$ is an upper bound of $A$.
     Then $b$ is a supremum of $A$ iff for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Show if $b$ is a supremum of $A$ then for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
     \begin{subproof}
         Assume $b$ is a supremum of $A$.
         Fix $\epsilon$.
         Assume $\epsilon\in\reals$ and $0 < \epsilon$.
-        $b\in\reals$ by \cref{real_upper_bound}.
-        $\neg{\epsilon}\in\reals$ by \cref{real_add_inverse}.
-        $b - \epsilon\in\reals$ by \cref{real_sub,real_add_closed}.
-        Suppose not.
-        Thus for all $a\in A$ it is wrong that $b - \epsilon < a$.
-        Show that $b - \epsilon$ is an upper bound of $A$.
-        \begin{subproof}
-            Show that for all $a\in A$ we have $a \leq b - \epsilon$.
-            \begin{subproof}
-                Fix $a$.
-                Assume $a\in A$.
-                \begin{byCase}
-                \caseOf{$a = b - \epsilon$.}
-                    Thus $a < b - \epsilon$ or $a = b - \epsilon$.
-                    Thus $a \leq b - \epsilon$.
-                \caseOf{$a \neq b - \epsilon$.}
-                    $a\in\reals$ by \cref{subseteq}.
-                    Thus $a < b - \epsilon$ or $b - \epsilon < a$ by \cref{real_lt_trichotomy}.
-                    Thus $a < b - \epsilon$.
-                    Thus $a < b - \epsilon$ or $a = b - \epsilon$.
-                    Thus $a \leq b - \epsilon$.
-                \end{byCase}
-            \end{subproof}
-            $b - \epsilon\in\reals$ by \cref{real_sub,real_add_closed}.
-            Thus $b - \epsilon$ is an upper bound of $A$ by \cref{real_upper_bound}.
-        \end{subproof}
-        Thus $b \leq b - \epsilon$ by \cref{real_supremum}.
-        Thus $b < b - \epsilon$ or $b = b - \epsilon$.
-        $b - \epsilon < b$ by \cref{real_sub_pos_lt}.
-        Thus $b \neq b - \epsilon$.
-        Thus $b < b - \epsilon$.
-        Thus it is wrong that $b < b - \epsilon$ by \cref{real_lt_asym}.
-        Contradiction.
+        Follows by \cref{subseteq,real_supremum,real_upper_bound,real_add_inverse,real_sub,real_add_closed,real_lt_trichotomy,real_sub_pos_lt,real_lt_irreflexive,real_lt_asym}.
     \end{subproof}
     Show if for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$ then $b$ is a supremum of $A$.
     \begin{subproof}
         Assume for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
-        Show that for all $c$ such that $c$ is an upper bound of $A$ we have $b \leq c$.
-        \begin{subproof}
-            Fix $c$.
-            Assume $c$ is an upper bound of $A$.
-            $b\in\reals$ by \cref{real_upper_bound}.
-            $c\in\reals$ by \cref{real_upper_bound}.
-            $\neg{c}\in\reals$ by \cref{real_add_inverse}.
-            Suppose not.
-            Thus $b \neq c$.
-            Thus $b < c$ or $c < b$ by \cref{real_lt_trichotomy}.
-            Thus $c < b$.
-            Thus $0 < b - c$ by \cref{real_lt_imp_pos_diff}.
-            Take $a\in A$ such that $b - (b - c) < a$.
-            $b - (b - c) = c$ by \cref{real_sub_sub_cancel}.
-            Thus $c < a$.
-            $a\in\reals$ by \cref{subseteq}.
-            Thus $a \leq c$ by \cref{real_upper_bound}.
-            Thus $a < c$ or $a = c$.
-            Thus $c \neq a$ by \cref{real_lt_irreflexive}.
-            Thus it is wrong that $a < c$ by \cref{real_lt_asym}.
-            Thus $a = c$.
-            Thus it is wrong that $c < a$ by \cref{real_lt_irreflexive}.
-            Contradiction.
-        \end{subproof}
-        Thus $b$ is a supremum of $A$ by \cref{real_supremum}.
+        Follows by \cref{subseteq,real_upper_bound,real_lt_trichotomy,real_add_inverse,real_sub,real_add_closed,real_lt_imp_pos_diff,real_sub_sub_cancel,real_lt_asym,real_supremum}.
     \end{subproof}
 \end{proof}
 
@@ -7354,202 +6135,49 @@ from §5 Item 20: definition of the integers
 \end{axiom}
 
 % from §5 Item 103: existence of infimum
-\begin{theorem}\label{real_infimum_exists}
+\begin{proposition}\label{real_infimum_exists}
     Suppose $A\subseteq\reals$ and $A\neq \emptyset$ and $A$ is bounded below.
     Then there exists $p$ such that $p$ is an infimum of $A$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Let $L = \{ x\in\reals \mid \text{$x$ is a lower bound of $A$}\}$.
-    Show that $L\subseteq\reals$.
-    \begin{subproof}
-        Show that for all $x\in L$ we have $x\in\reals$.
-        \begin{subproof}
-            Fix $x$.
-            Assume $x\in L$.
-            Thus $x\in\reals$.
-        \end{subproof}
-        Thus $L\subseteq\reals$ by \cref{subseteq}.
-    \end{subproof}
     Take $l$ such that $l$ is a lower bound of $A$.
-    Thus $l\in L$.
     Thus $L\neq \emptyset$.
     Take $a$ such that $a\in A$.
-    Show that $a$ is an upper bound of $L$.
-    \begin{subproof}
-        Show that for all $x\in L$ we have $x \leq a$.
-        \begin{subproof}
-            Fix $x$.
-            Assume $x\in L$.
-            Thus $x$ is a lower bound of $A$.
-            Thus $x \leq a$.
-        \end{subproof}
-        $a\in\reals$ by \cref{subseteq}.
-        Thus $a$ is an upper bound of $L$.
-    \end{subproof}
-    Thus there exists $b$ such that $b$ is an upper bound of $L$.
-    Thus $L$ is bounded above by \cref{real_bounded_above}.
-    Take $p$ such that $p$ is a supremum of $L$ by \cref{real_completeness_axiom}.
-    Show that $p$ is an infimum of $A$.
-    \begin{subproof}
-        Show that $p$ is a lower bound of $A$.
-        \begin{subproof}
-            Show that for all $a\in A$ we have $p \leq a$.
-            \begin{subproof}
-                Fix $y$.
-                Assume $y\in A$.
-                Show that $y$ is an upper bound of $L$.
-                \begin{subproof}
-                    Show that for all $x\in L$ we have $x \leq y$.
-                    \begin{subproof}
-                        Fix $x$.
-                        Assume $x\in L$.
-                        Thus $x$ is a lower bound of $A$.
-                        Thus $x \leq y$.
-                    \end{subproof}
-                    $y\in\reals$ by \cref{subseteq}.
-                    Thus $y$ is an upper bound of $L$.
-                \end{subproof}
-                Thus $p \leq y$.
-            \end{subproof}
-            Thus $p\in\reals$.
-            Thus $p$ is a lower bound of $A$.
-        \end{subproof}
-        Show that for all $b$ such that $b$ is a lower bound of $A$ we have $p \geq b$.
-        \begin{subproof}
-            Fix $c$.
-            Assume $c$ is a lower bound of $A$.
-            Thus $c\in L$.
-            Thus $c \leq p$.
-            Thus $p \geq c$.
-        \end{subproof}
-        Thus $p$ is an infimum of $A$.
-    \end{subproof}
-    Thus there exists $q$ such that $q$ is an infimum of $A$.
+    Follows by \cref{subseteq,real_lower_bound,real_upper_bound,real_bounded_above,real_completeness_axiom,real_supremum,real_infimum}.
 \end{proof}
 
 % from §5 Item 104: Archimedean Property
-\begin{theorem}\label{real_archimedean_property}
+\begin{proposition}\label{real_archimedean_property}
     Suppose $x\in\reals$.
     Then there exists $n\in\naturalsPlus$ such that $x < n$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     Suppose not.
-    Thus for all $n\in\naturalsPlus$ it is wrong that $x < n$.
     Let $A = \naturalsPlus$.
-    Show that for all $n\in A$ we have $n \leq x$.
-    \begin{subproof}
-        Fix $n$.
-        Assume $n\in A$.
-        Thus it is wrong that $x < n$.
-        $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-        \begin{byCase}
-        \caseOf{$n = x$.}
-            Thus $n < x$ or $n = x$.
-            Thus $n \leq x$.
-        \caseOf{$n \neq x$.}
-            Thus $n < x$ or $x < n$ by \cref{real_lt_trichotomy}.
-            Thus $n < x$.
-            Thus $n \leq x$.
-        \end{byCase}
-    \end{subproof}
-    $A\subseteq\reals$ by \cref{real_naturals_subset_reals}.
-    Thus $x$ is an upper bound of $A$ by \cref{real_upper_bound}.
-    Thus $A$ is bounded above by \cref{real_bounded_above}.
     $1\in A$ by \cref{real_one_in_naturals}.
     Thus $A\neq \emptyset$.
-    Take $p$ such that $p$ is a supremum of $A$ by \cref{real_completeness_axiom}.
-    Thus $p$ is an upper bound of $A$ by \cref{real_supremum}.
-    $1\in\reals$ by \cref{real_mul_ident}.
-    $0 < 1$ by \cref{real_zero_lt_one}.
-    Take $n\in A$ such that $p - 1 < n$ by \cref{real_supremum_characterization}.
-    Thus $n\in\naturalsPlus$.
-    Thus $n + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-    Thus $n + 1\in A$.
-    Thus $n + 1 \leq p$ by \cref{real_upper_bound}.
-    $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    $p\in\reals$ by \cref{real_upper_bound}.
-    $p - 1 = p + \neg{1}$ by \cref{real_sub}.
-    $\neg{1}\in\reals$ by \cref{real_add_inverse}.
-    $p + \neg{1}\in\reals$ by \cref{real_add_closed}.
-    Thus $p - 1\in\reals$.
-    $n + 1\in\reals$ by \cref{real_add_closed}.
-    $(p - 1) + 1 < n + 1$ by \cref{real_lt_add}.
-    $(p - 1) + 1 = (p + \neg{1}) + 1$ by \cref{real_sub}.
-    $(p + \neg{1}) + 1 = p + (\neg{1} + 1)$ by \cref{real_add_assoc}.
-    $\neg{1} + 1 = 0$ by \cref{real_add_inverse,real_add_comm}.
-    $p + 0 = p$ by \cref{real_add_ident,real_add_comm}.
-    Thus $(p - 1) + 1 = p$.
-    Thus $p < n + 1$.
-    Show that $n + 1 \neq p$.
-    \begin{subproof}
-        Suppose not.
-        Thus $n + 1 = p$.
-        Thus $p < p$.
-        Thus it is wrong that $p < p$ by \cref{real_lt_irreflexive}.
-        Contradiction.
-    \end{subproof}
-    Thus $n + 1 < p$ or $n + 1 = p$.
-    Thus $n + 1 < p$.
-    Thus it is wrong that $p < n + 1$ by \cref{real_lt_asym}.
-    Contradiction.
+    Take $p$ such that $p$ is a supremum of $A$ by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy,real_upper_bound,real_bounded_above,real_completeness_axiom}.
+    Take $n\in A$ such that $p - 1 < n$ by \cref{real_naturals_subset_reals,real_bounded_above,real_supremum,real_mul_ident,real_zero_lt_one,real_supremum_characterization}.
+    Contradiction by \cref{subseteq,real_supremum,real_naturals_closed_succ,real_upper_bound,real_mul_ident,real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_ident,real_add_comm,real_lt_asym}.
 \end{proof}
 
 % from §5 Item 105: Generalized Archimedean Property
-\begin{theorem}\label{real_generalized_archimedean_property}
+\begin{proposition}\label{real_generalized_archimedean_property}
     Suppose $x\in\reals$.
     Then there exist $k, n$ such that $k\in\integers$ and $n\in\integers$ and $k < x$ and $x < n$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Take $n\in\naturalsPlus$ such that $x < n$ by \cref{real_archimedean_property}.
-    Thus $n\in\integers$ by \cref{real_integers}.
-    $\neg{x}\in\reals$ by \cref{real_add_inverse}.
-    Take $m\in\naturalsPlus$ such that $\neg{x} < m$ by \cref{real_archimedean_property}.
-    $m\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    Thus $\neg{m} < \neg{(\neg{x})}$ by \cref{real_lt_neg}.
-    Thus $\neg{m} < x$ by \cref{real_neg_neg}.
-    $\neg{m} + m = 0$ by \cref{real_add_inverse,real_add_comm}.
-    Thus $\neg{m}\in\integers$ by \cref{real_integers}.
-    Let $k = \neg{m}$.
-    Thus $k\in\integers$ and $k < x$ and $x < n$.
-    Thus there exist $i, j$ such that $i\in\integers$ and $j\in\integers$ and $i < x$ and $x < j$.
+    Follows by \cref{real_archimedean_property,real_add_inverse,real_naturals_subset_reals,subseteq,real_lt_neg,real_integers,real_neg_neg}.
 \end{proof}
 
 % from §5 Item 106: small reciprocal of a positive real
-\begin{theorem}\label{real_small_reciprocal}
+\begin{proposition}\label{real_small_reciprocal}
     Suppose $x\in\reals$ and $x$ is positive.
     Then there exists $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < x$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Thus $0 < x$.
-    Thus $x \neq 0$ by \cref{real_pos_nonzero}.
-    Thus $\inv{x}\in\reals$ by \cref{real_mul_inverse}.
-    Thus $0 < \inv{x}$ by \cref{real_inv_pos}.
-    Take $N\in\naturalsPlus$ such that $\inv{x} < N$ by \cref{real_archimedean_property}.
-    $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    Thus $\inv{x} \rmul x < N \rmul x$ by \cref{real_lt_mul_pos}.
-    $\inv{x} \rmul x = x \rmul \inv{x}$ by \cref{real_mul_comm}.
-    $x \rmul \inv{x} = 1$ by \cref{real_mul_inverse}.
-    Thus $1 < N \rmul x$.
-    $0\in\reals$ by \cref{real_add_ident}.
-    Thus $0 < N$ by \cref{real_lt_trans}.
-    Thus $N \neq 0$ by \cref{real_pos_nonzero}.
-    Thus $\inv{N}\in\reals$ by \cref{real_mul_inverse}.
-    Thus $0 < \inv{N}$ by \cref{real_inv_pos}.
-    $1\in\reals$ by \cref{real_mul_ident}.
-    $N \rmul x\in\reals$ by \cref{real_mul_closed}.
-    Thus $1 \rmul \inv{N} < (N \rmul x) \rmul \inv{N}$ by \cref{real_lt_mul_pos}.
-    $1 \rmul \inv{N} = \inv{N}$ by \cref{real_mul_ident}.
-    $(N \rmul x) \rmul \inv{N} = (x \rmul N) \rmul \inv{N}$ by \cref{real_mul_comm}.
-    $(x \rmul N) \rmul \inv{N} = x \rmul (N \rmul \inv{N})$ by \cref{real_mul_assoc}.
-    $N \rmul \inv{N} = 1$ by \cref{real_mul_inverse,real_mul_comm}.
-    $x \rmul 1 = 1 \rmul x$ by \cref{real_mul_comm}.
-    $1 \rmul x = x$ by \cref{real_mul_ident}.
-    Thus $x \rmul 1 = x$.
-    Thus $\inv{N} < x$.
-    $1 / N = 1 \rmul \inv{N}$ by \cref{real_div}.
-    $1 \rmul \inv{N} = \inv{N}$ by \cref{real_mul_ident}.
-    Thus $1 / N = \inv{N}$.
-    Thus $0 < 1 / N$ and $1 / N < x$.
+    Take $N\in\naturalsPlus$ such that $\inv{x} < N$ by \cref{real_pos_nonzero,real_mul_inverse,real_archimedean_property}. Thus $0 < 1 / N$ and $1 / N < x$ by \cref{real_naturals_subset_reals,subseteq,real_add_ident,real_pos_nonzero,real_mul_inverse,real_inv_pos,real_lt_trans,real_mul_ident,real_mul_closed,real_lt_mul_pos,real_mul_comm,real_mul_assoc,real_div}.
 \end{proof}
 
 % from §5 Item 107: least element of nonempty subset of naturals
@@ -7561,13 +6189,7 @@ from §5 Item 20: definition of the integers
     Then there exists $b\in A$ such that $b \leq n$.
 \end{lemma}
 \begin{proof}
-    Take $a$ such that $a\in A$ and $a \leq n + 1$.
-    $a\in\naturalsPlus$ by \cref{subseteq}.
-    Thus $a \rless n + 1$ or $a = n + 1$.
-    Thus $a \rless n$ or $a = n$ or $a = n + 1$ by \cref{real_succ_discrete}.
-    Thus $a \leq n$ or $a = n + 1$.
-    Thus $a \leq n$.
-    Thus there exists $b\in A$ such that $b \leq n$.
+    Follows by \cref{subseteq,real_succ_discrete}.
 \end{proof}
 
 % from §5 helper lemma 22: succ leq elimination
@@ -7576,12 +6198,6 @@ from §5 Item 20: definition of the integers
     Suppose $a \leq n + 1$ and $a \neq n + 1$.
     Then $a \leq n$.
 \end{lemma}
-\begin{proof}
-    $a \rless n + 1$ or $a = n + 1$.
-    Thus $a \rless n$ or $a = n$ or $a = n + 1$ by \cref{real_succ_discrete}.
-    Thus $a \leq n$ or $a = n + 1$.
-    Thus $a \leq n$.
-\end{proof}
 
 % from §5 helper lemma 22: minimum at successor
 \begin{lemma}\label{real_naturals_minimum_at_succ}
@@ -7590,130 +6206,15 @@ from §5 Item 20: definition of the integers
     Then for all $b\in A$ we have $n + 1 \leq b$.
 \end{lemma}
 \begin{proof}
-    Fix $b$.
-    Assume $b\in A$.
-    \begin{byCase}
-    \caseOf{$b = n + 1$.}
-        Thus $n + 1 \leq b$.
-    \caseOf{$b \neq n + 1$.}
-        $b\in\naturalsPlus$ by \cref{subseteq}.
-        Thus $b\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-        $n + 1\in\reals$ by \cref{real_naturals_subset_reals,real_naturals_closed_succ,subseteq}.
-        Thus $b < n + 1$ or $n + 1 < b$ by \cref{real_lt_trichotomy}.
-        Show that it is wrong that $b < n + 1$.
-        \begin{subproof}
-            Suppose not.
-            Thus $b < n + 1$.
-            Thus $b \leq n$ by \cref{real_naturals_leq_succ_elim}.
-            Thus it is wrong that $b \leq n$.
-            Contradiction.
-        \end{subproof}
-        Thus $n + 1 < b$.
-        Thus $n + 1 \leq b$.
-    \end{byCase}
+    Follows by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy,real_naturals_leq_succ_elim}.
 \end{proof}
 
-\begin{theorem}\label{real_naturals_least_element}
+\begin{proposition}\label{real_naturals_least_element}
     Suppose $A\subseteq\naturalsPlus$ and $A\neq \emptyset$.
     Then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
-    Let $S = \{ n\in\naturalsPlus \mid \text{if there exists $a\in A$ such that $a \leq n$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$}\}$.
-    Show that for all $n\in\naturalsPlus$ we have $n\in S$.
-    \begin{subproof}
-        Show that $S\subseteq\naturalsPlus$.
-        \begin{subproof}
-            Show that for all $n\in S$ we have $n\in\naturalsPlus$.
-            \begin{subproof}
-                Fix $n$.
-                Assume $n\in S$.
-                Thus $n\in\naturalsPlus$.
-            \end{subproof}
-            Thus $S\subseteq\naturalsPlus$ by \cref{subseteq}.
-        \end{subproof}
-        Show that $1\in S$.
-        \begin{subproof}
-            Show that if there exists $a\in A$ such that $a \leq 1$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
-            \begin{subproof}
-                Assume there exists $a\in A$ such that $a \leq 1$.
-                Take $a$ such that $a\in A$ and $a \leq 1$.
-                $a\in\naturalsPlus$ by \cref{subseteq}.
-                Thus $1 \rless a$ or $1 = a$ by \cref{real_one_leq_naturalsplus}.
-                Thus $1 \leq a$.
-                $a\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-                $1\in\reals$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq}.
-                Thus $a = 1$ by \cref{real_leq_antisym}.
-                Thus $1\in A$.
-                Show that for all $b\in A$ we have $1 \leq b$.
-                \begin{subproof}
-                    Fix $b$.
-                    Assume $b\in A$.
-                    Thus $b\in\naturalsPlus$ by \cref{subseteq}.
-                    Thus $1 \rless b$ or $1 = b$ by \cref{real_one_leq_naturalsplus}.
-                    Thus $1 \leq b$.
-                \end{subproof}
-                Thus there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
-            \end{subproof}
-            Thus $1\in S$.
-        \end{subproof}
-        Show that for all $n\in S$ we have $n + 1\in S$.
-        \begin{subproof}
-            Fix $n$.
-            Assume $n\in S$.
-            Thus if there exists $a\in A$ such that $a \leq n$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
-            Thus $n\in\naturalsPlus$.
-            Thus $n + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-            Show that if there exists $a\in A$ such that $a \leq n + 1$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
-            \begin{subproof}
-                Assume there exists $a\in A$ such that $a \leq n + 1$.
-                \begin{byCase}
-                \caseOf{There exists $a\in A$ such that $a \leq n$.}
-                    Thus there exists $b\in A$ such that for all $a\in A$ we have $b \leq a$.
-                \caseOf{It is wrong that there exists $a\in A$ such that $a \leq n$.}
-                    Show that for all $a\in A$ we have it is wrong that $a \leq n$.
-                    \begin{subproof}
-                        Fix $a$.
-                        Assume $a\in A$.
-                        Show that it is wrong that $a \leq n$.
-                        \begin{subproof}
-                            Suppose not.
-                            Thus $a \leq n$.
-                            Thus there exists $a_0\in A$ such that $a_0 \leq n$.
-                            It is wrong that there exists $a\in A$ such that $a \leq n$.
-                            Contradiction.
-                        \end{subproof}
-                    \end{subproof}
-                    Take $a$ such that $a\in A$ and $a \leq n + 1$.
-                    $a\in\naturalsPlus$ by \cref{subseteq}.
-                    Show that $a = n + 1$.
-                    \begin{subproof}
-                        Suppose not.
-                        Thus $a \neq n + 1$.
-                        Thus $a \leq n$ by \cref{real_naturals_leq_succ_elim}.
-                        It is wrong that $a \leq n$.
-                        Contradiction.
-                    \end{subproof}
-                    Thus $a = n + 1$.
-                    Thus $n + 1\in A$.
-                    Thus for all $b\in A$ we have $n + 1 \leq b$ by \cref{real_naturals_minimum_at_succ}.
-                    Take $m$ such that $m = n + 1$.
-                    Thus $m\in A$.
-                    Thus for all $a\in A$ we have $m \leq a$.
-                    Thus there exists $b\in A$ such that for all $a\in A$ we have $b \leq a$.
-                \end{byCase}
-            \end{subproof}
-            Thus $n + 1\in S$.
-        \end{subproof}
-        Thus for all $n\in\naturalsPlus$ we have $n\in S$ by \cref{real_naturals_induction}.
-    \end{subproof}
-    Take $a$ such that $a\in A$ by \cref{nonempty_inhabited}.
-    Thus $a\in\naturalsPlus$ by \cref{subseteq}.
-    Thus $a\in S$.
-    Thus if there exists $a_0\in A$ such that $a_0 \leq a$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
-    Thus $a = a$.
-    Thus $a \leq a$.
-    Thus there exists $b\in A$ such that $b \leq a$.
-    Thus there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
+    Let $S = \{ n\in\naturalsPlus \mid \text{if there exists $a\in A$ such that $a \leq n$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$}\}$. Follows by \cref{real_one_leq_naturalsplus,real_naturals_subset_reals,real_one_in_naturals,real_leq_antisym,real_naturals_split_succ,real_naturals_minimum_at_succ,real_naturals_closed_succ,real_naturals_induction,nonempty_inhabited,subseteq}.
 \end{proof}
 
 % Next 6 defs are from the old file numbers.tex
@@ -7748,37 +6249,7 @@ from §5 Item 20: definition of the integers
     Then $n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$.
 \end{lemma}
 \begin{proof}
-    Let $A = \{ n\in\naturalsPlus \mid \text{$n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$}\}$.
-    Show that for all $n\in\naturalsPlus$ we have $n\in A$.
-    \begin{subproof}
-        Show that $A\subseteq\naturalsPlus$.
-        \begin{subproof}
-            Show that for all $n\in A$ we have $n\in\naturalsPlus$.
-            \begin{subproof}
-                Fix $k$.
-                Assume $k\in A$.
-                Thus $k\in\naturalsPlus$.
-            \end{subproof}
-            Thus $A\subseteq\naturalsPlus$ by \cref{subseteq}.
-        \end{subproof}
-        Show that $1\in A$.
-        \begin{subproof}
-            $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-            Thus $1\in A$.
-        \end{subproof}
-        Show that for all $n\in A$ we have $n + 1\in A$.
-        \begin{subproof}
-            Fix $k$.
-            Assume $k\in A$.
-            Thus $k\in\naturalsPlus$.
-            Thus $k + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-            Let $m = k$.
-            Thus $k + 1 = m + 1$.
-            Thus $k + 1\in A$.
-        \end{subproof}
-        Thus for all $n\in\naturalsPlus$ we have $n\in A$ by \cref{real_naturals_induction}.
-    \end{subproof}
-    Thus $n\in A$.
+    Let $A = \{ n\in\naturalsPlus \mid \text{$n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$}\}$. Follows by \cref{subseteq,real_one_in_naturals,real_naturals_closed_succ,real_naturals_induction}.
 \end{proof}
 
 
@@ -7789,110 +6260,41 @@ from §5 Item 20: definition of the integers
 \end{lemma}
 \begin{proof}
     Let $S = \{ n\in\naturalsPlus \mid x < n\}$.
-    Show that $S\subseteq\naturalsPlus$.
-    \begin{subproof}
-        Show that for all $n\in S$ we have $n\in\naturalsPlus$.
-        \begin{subproof}
-            Fix $n$.
-            Assume $n\in S$.
-            Thus $n\in\naturalsPlus$.
-        \end{subproof}
-        Thus $S\subseteq\naturalsPlus$ by \cref{subseteq}.
-    \end{subproof}
     Take $N\in\naturalsPlus$ such that $x < N$ by \cref{real_archimedean_property}.
-    Thus $N\in S$.
     Thus $S\neq \emptyset$.
-    Take $m\in S$ such that for all $a\in S$ we have $m \leq a$ by \cref{real_naturals_least_element}.
+    Take $m\in S$ such that for all $a\in S$ we have $m \leq a$ by \cref{subseteq,real_naturals_least_element}.
     Thus $x < m$.
     \begin{byCase}
     \caseOf{$m = 1$.}
         Take $n$ such that $n = 0$.
         $n\in\integers$ by \cref{real_integers}.
-        Thus $n \leq x$.
-        $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-        $1\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-        $0 + 1 = 1$ by \cref{real_add_ident}.
-        Thus $x < n + 1$.
-        Thus $n = 0$ or $n\in\naturalsPlus$.
-        Thus there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
+        Thus $x < n + 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+        Hence there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
     \caseOf{$m \neq 1$.}
         Take $p\in\naturalsPlus$ such that $m = p + 1$ by \cref{real_naturals_predecessor}.
-        Show that it is wrong that $x < p$.
-        \begin{subproof}
-            Suppose not.
-            Thus $x < p$.
-            Thus $p\in S$.
-            Thus $m \leq p$.
-            $p\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            $1\in\reals$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq}.
-            $0\in\reals$ by \cref{real_add_ident}.
-            $0 < 1$ by \cref{real_zero_lt_one}.
-            Thus $0 + p < 1 + p$ by \cref{real_lt_add}.
-            $0 + p = p + 0$ by \cref{real_add_comm}.
-            $1 + p = p + 1$ by \cref{real_add_comm}.
-            Thus $p + 0 < p + 1$.
-            $p + 0 = p$ by \cref{real_add_ident,real_add_comm}.
-            Thus $p < p + 1$.
-            Thus $p < m$.
-            Thus $p \leq m$.
-            $m\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            Thus $m = p$ by \cref{real_leq_antisym}.
-            Thus $p < p$.
-            Thus it is wrong that $p < p$ by \cref{real_lt_irreflexive}.
-            Contradiction.
-        \end{subproof}
-        Show that $p \leq x$.
-        \begin{subproof}
-            Suppose not.
-            Thus it is wrong that $p < x$.
-            Thus it is wrong that $p = x$.
-            Thus $p \neq x$.
-            $p\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            Thus $x < p$ or $p < x$ by \cref{real_lt_trichotomy}.
-            Thus $x < p$.
-            It is wrong that $x < p$.
-            Contradiction.
-        \end{subproof}
+        Thus it is wrong that $x < p$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_ident,real_zero_lt_one,real_lt_add,real_add_comm,real_lt_trans,real_leq_antisym,real_lt_irreflexive}.
         Take $n$ such that $n = p$.
         $n\in\integers$ by \cref{real_integers}.
-        Thus $n \leq x$.
-        Thus $x < p + 1$.
-        Thus $x < n + 1$.
-        Thus $n\in\naturalsPlus$.
-        Thus $n = 0$ or $n\in\naturalsPlus$.
-        Thus there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
+        Thus $n \leq x$ by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy}.
+        Therefore there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
     \end{byCase}
 \end{proof}
 
 % from §5 Item 108: consecutive integers
-\begin{theorem}\label{real_consecutive_integers}
+\begin{proposition}\label{real_consecutive_integers}
     Suppose $x\in\reals$.
     Then there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     \begin{byCase}
     \caseOf{$0 \leq x$.}
-        Take $n$ such that $n\in\integers$ and $n \leq x$ and $x < n + 1$ and either $n = 0$ or $n\in\naturalsPlus$ by \cref{real_consecutive_integers_nonneg}.
-        Thus there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$.
+        Follows by \cref{real_consecutive_integers_nonneg}.
     \caseOf{$x < 0$.}
         Let $y = \neg{x}$.
         $y\in\reals$ by \cref{real_add_inverse}.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $0 + 0 = 0$ by \cref{real_add_ident}.
-        Thus $0 = \neg{0}$ by \cref{real_add_inverse_unique}.
-        Thus $0 < y$ by \cref{real_lt_neg}.
-        Thus $0 \leq y$.
+        Thus $0 < y$ by \cref{real_add_ident,real_add_inverse_unique,real_lt_neg}.
         Take $t$ such that $t\in\integers$ and $t \leq y$ and $y < t + 1$ and either $t = 0$ or $t\in\naturalsPlus$ by \cref{real_consecutive_integers_nonneg}.
-        Show that $t\in\reals$.
-        \begin{subproof}
-            \begin{byCase}
-            \caseOf{$t = 0$.}
-                Thus $t\in\reals$ by \cref{real_add_ident}.
-            \caseOf{$t \neq 0$.}
-                Thus $t\in\naturalsPlus$.
-                Thus $t\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            \end{byCase}
-        \end{subproof}
+        Hence $t\in\reals$ by \cref{real_add_ident,real_naturals_subset_reals,subseteq}.
         Show that $t + 1\in\naturalsPlus$.
         \begin{subproof}
             \begin{byCase}
@@ -7900,62 +6302,17 @@ from §5 Item 20: definition of the integers
                 $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
                 Thus $t + 1\in\naturalsPlus$.
             \caseOf{$t \neq 0$.}
-                Thus $t\in\naturalsPlus$.
-                Thus $t + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
+                $t + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
             \end{byCase}
         \end{subproof}
         Let $k = \neg{(t + 1)}$.
-        $t + 1\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-        Thus $k\in\reals$ by \cref{real_add_inverse}.
-        $(t + 1) + k = 0$ by \cref{real_add_inverse}.
-        $k + (t + 1) = (t + 1) + k$ by \cref{real_add_comm}.
-        Thus $k + (t + 1) = 0$.
-        Thus $k\in\integers$ by \cref{real_integers}.
-        $y < t + 1$.
-        Thus $k < \neg{y}$ by \cref{real_lt_neg}.
-        $\neg{y} = x$ by \cref{real_neg_neg}.
-        Thus $k < x$.
-        $t \leq y$.
-        Thus $\neg{y} \leq \neg{t}$ by \cref{real_leq_neg}.
-        Thus $x \leq \neg{t}$.
-        Show that $k + 1 = \neg{t}$.
-        \begin{subproof}
-            $1\in\reals$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq}.
-            $\neg{(t + 1)} = \neg{t} + \neg{1}$ by \cref{real_neg_addition}.
-            Thus $k = \neg{t} + \neg{1}$.
-            $\neg{t}\in\reals$ by \cref{real_add_inverse}.
-            $\neg{1}\in\reals$ by \cref{real_add_inverse}.
-            Thus $k + 1 = (\neg{t} + \neg{1}) + 1$.
-            $(\neg{t} + \neg{1}) + 1 = \neg{t} + (\neg{1} + 1)$ by \cref{real_add_assoc}.
-            $\neg{1} + 1 = 0$ by \cref{real_add_inverse,real_add_comm}.
-            Thus $k + 1 = \neg{t} + 0$.
-            $\neg{t} + 0 = 0 + \neg{t}$ by \cref{real_add_comm}.
-            $0 + \neg{t} = \neg{t}$ by \cref{real_add_ident}.
-            Thus $k + 1 = \neg{t}$.
-        \end{subproof}
-        Thus $x \leq k + 1$.
+        Thus $k\in\integers$ by \cref{real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_integers}.
+        Hence $k + 1 = \neg{t}$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_neg_addition,real_add_inverse,real_add_assoc,real_add_comm,real_add_ident}.
         \begin{byCase}
         \caseOf{$x = k + 1$.}
-            Thus $x = \neg{t}$.
-            $x + t = 0$ by \cref{real_add_inverse,real_add_comm}.
-            Thus $x\in\integers$ by \cref{real_integers}.
-            $0\in\reals$ by \cref{real_add_ident}.
-            $1\in\reals$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq}.
-            $0 < 1$ by \cref{real_zero_lt_one}.
-            Thus $0 + x < 1 + x$ by \cref{real_lt_add}.
-            $0 + x = x + 0$ by \cref{real_add_comm}.
-            $1 + x = x + 1$ by \cref{real_add_comm}.
-            Thus $x + 0 < x + 1$.
-            $x + 0 = x$ by \cref{real_add_ident,real_add_comm}.
-            Thus $x < x + 1$.
-            Thus there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$.
+            There exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_add_comm,real_integers,real_add_ident,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_zero_lt_one,real_lt_add}.
         \caseOf{$x \neq k + 1$.}
-            $1\in\reals$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq}.
-            $k + 1\in\reals$ by \cref{real_add_closed}.
-            Thus $x < k + 1$ or $k + 1 < x$ by \cref{real_lt_trichotomy}.
-            Thus $x < k + 1$.
-            Thus $k \leq x$.
-            Thus there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$.
+            There exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_leq_neg,real_neg_neg,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_closed,real_lt_trichotomy}.
         \end{byCase}
     \end{byCase}
 \end{proof}
@@ -7967,288 +6324,62 @@ from §5 Item 20: definition of the integers
 \end{lemma}
 \begin{proof}
     $0 < b - a$ by \cref{real_lt_imp_pos_diff}.
-    $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-    $b - a = b + \neg{a}$ by \cref{real_sub}.
-    $b + \neg{a}\in\reals$ by \cref{real_add_closed}.
-    Thus $b - a\in\reals$.
-    Take $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < b - a$ by \cref{real_small_reciprocal}.
-    $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    Show that $0 < N$.
-    \begin{subproof}
-        $1\in\reals$ by \cref{real_mul_ident}.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $0 < 1$ by \cref{real_zero_lt_one}.
-        $1 < N$ or $1 = N$ by \cref{real_one_leq_naturalsplus}.
-        \begin{byCase}
-        \caseOf{$1 = N$.}
-            Thus $0 < N$.
-        \caseOf{$1 < N$.}
-            Thus $1 < N$.
-            Thus $0 < N$ by \cref{real_lt_trans}.
-        \end{byCase}
-    \end{subproof}
-    Thus $N\neq 0$ by \cref{real_pos_nonzero}.
-    $\inv{N}\in\reals$ by \cref{real_mul_inverse}.
-    Thus $0 < \inv{N}$ by \cref{real_inv_pos}.
-    $0\in\reals$ by \cref{real_add_ident}.
-    $1\in\reals$ by \cref{real_mul_ident}.
-    $1 / N = 1 \rmul \inv{N}$ by \cref{real_div}.
-    $1 \rmul \inv{N}\in\reals$ by \cref{real_mul_closed}.
-    Thus $1 / N\in\reals$.
-    $a + 1 / N\in\reals$ by \cref{real_add_closed}.
+    Take $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < b - a$ by \cref{real_add_inverse,real_sub,real_add_closed,real_small_reciprocal}.
+    Thus $0 < N$ by \cref{real_naturals_subset_reals,subseteq,real_mul_ident,real_add_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans}.
+    Hence $N\neq 0$ by \cref{real_naturals_subset_reals,subseteq,real_pos_nonzero}.
+    Therefore $0 < \inv{N}$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_inv_pos}.
     Let $S = \{ n\in\naturalsPlus \mid a < n / N\}$.
-    Show that $S\subseteq\naturalsPlus$.
-    \begin{subproof}
-        Show that for all $n\in S$ we have $n\in\naturalsPlus$.
-        \begin{subproof}
-            Fix $n$.
-            Assume $n\in S$.
-            Thus $n\in\naturalsPlus$.
-        \end{subproof}
-        Thus $S\subseteq\naturalsPlus$ by \cref{subseteq}.
-    \end{subproof}
-    $a \rmul N\in\reals$ by \cref{real_mul_closed}.
-    Take $n\in\naturalsPlus$ such that $a \rmul N < n$ by \cref{real_archimedean_property}.
-    $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    $(a \rmul N) \rmul \inv{N} < n \rmul \inv{N}$ by \cref{real_lt_mul_pos}.
-    $(a \rmul N) \rmul \inv{N} = a \rmul (N \rmul \inv{N})$ by \cref{real_mul_assoc}.
-    $N \rmul \inv{N} = 1$ by \cref{real_mul_inverse,real_mul_comm}.
-    $1\in\reals$ by \cref{real_mul_ident}.
-    $a \rmul 1 = 1 \rmul a$ by \cref{real_mul_comm}.
-    $1 \rmul a = a$ by \cref{real_mul_ident}.
-    Thus $a \rmul 1 = a$.
-    Thus $(a \rmul N) \rmul \inv{N} = a$.
-    $n \rmul \inv{N} = n / N$ by \cref{real_div}.
-    Thus $a < n / N$.
-    Thus $n\in S$.
-    Thus $S\neq \emptyset$.
-    Take $k\in S$ such that for all $m\in S$ we have $k \leq m$ by \cref{real_naturals_least_element}.
-    Thus $k\in\naturalsPlus$ by \cref{subseteq}.
+    Take $n\in\naturalsPlus$ such that $a \rmul N < n$ by \cref{real_naturals_subset_reals,subseteq,real_mul_closed,real_archimedean_property}.
+    $(a \rmul N) \rmul \inv{N} < n \rmul \inv{N}$ by \cref{real_mul_inverse,real_mul_closed,real_naturals_subset_reals,subseteq,real_lt_mul_pos}.
+    Thus $a < n / N$ by \cref{real_naturals_subset_reals,subseteq,real_mul_assoc,real_mul_inverse,real_mul_comm,real_mul_ident,real_div}.
+    Hence $S\neq \emptyset$.
+    Take $k\in S$ such that for all $m\in S$ we have $k \leq m$ by \cref{subseteq,real_naturals_least_element}.
     Let $p = k / N$.
-    $k\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    $p = k \rmul \inv{N}$ by \cref{real_div}.
-    Thus $p\in\reals$ by \cref{real_mul_closed}.
-    Thus $a < p$.
-    Show that $a + 1 / N < b$.
-    \begin{subproof}
-        $b - a\in\reals$ by \cref{real_sub,real_add_closed}.
-        $1\in\reals$ by \cref{real_mul_ident}.
-        $1 / N = 1 \rmul \inv{N}$ by \cref{real_div}.
-        $1 \rmul \inv{N}\in\reals$ by \cref{real_mul_closed}.
-        Thus $1 / N\in\reals$.
-        $1 / N + a < (b - a) + a$ by \cref{real_lt_add}.
-        $1 / N + a = a + 1 / N$ by \cref{real_add_comm}.
-        $b - a = b + \neg{a}$ by \cref{real_sub}.
-        $(b - a) + a = (b + \neg{a}) + a$ by \cref{real_sub}.
-        $(b + \neg{a}) + a = b + (\neg{a} + a)$ by \cref{real_add_assoc}.
-        $\neg{a} + a = 0$ by \cref{real_add_inverse,real_add_comm}.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $b + 0 = 0 + b$ by \cref{real_add_comm}.
-        $0 + b = b$ by \cref{real_add_ident}.
-        Thus $b + 0 = b$.
-        Thus $(b - a) + a = b$.
-        Thus $a + 1 / N < b$.
-    \end{subproof}
+    We have $p\in\reals$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_mul_closed}.
+    We have $a + 1 / N < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_sub,real_add_closed,real_lt_add,real_add_comm,real_add_assoc,real_add_inverse,real_add_ident}.
     Show that $p < b$.
     \begin{subproof}
         \begin{byCase}
         \caseOf{$k = 1$.}
-            $p = 1 / N$.
-            \begin{byCase}
-            \caseOf{$a = 0$.}
-                Thus $p = a + 1 / N$.
-                Thus $p < b$.
-            \caseOf{$a \neq 0$.}
-                Thus $0 < a$ or $a < 0$ by \cref{real_lt_trichotomy}.
-                Thus $0 < a$.
-                $0 + 1 / N < a + 1 / N$ by \cref{real_lt_add}.
-                $0 + 1 / N = 1 / N$ by \cref{real_add_ident}.
-                Thus $1 / N < a + 1 / N$.
-                Thus $p < b$ by \cref{real_lt_trans}.
-            \end{byCase}
+            We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_add_ident,real_lt_trans}.
         \caseOf{$k \neq 1$.}
             Take $m\in\naturalsPlus$ such that $k = m + 1$ by \cref{real_naturals_predecessor}.
             Show that it is wrong that $a < m / N$.
             \begin{subproof}
                 Suppose not.
-                Thus $a < m / N$.
-                Thus $m\in S$.
-                Thus $k \leq m$.
-                Thus $k < m$ or $k = m$.
                 Thus $k \neq m + 1$.
                 Contradiction.
             \end{subproof}
-            $m\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            $m / N\in\reals$ by \cref{real_div,real_mul_closed}.
-            Show that $m / N \leq a$.
-            \begin{subproof}
-                \begin{byCase}
-                \caseOf{$m / N = a$.}
-                    Thus $m / N \leq a$.
-                \caseOf{$m / N \neq a$.}
-                    Thus $m / N < a$ or $a < m / N$ by \cref{real_lt_trichotomy}.
-                    Thus $m / N < a$.
-                    Thus $m / N \leq a$.
-                \end{byCase}
-            \end{subproof}
-            $p = (m + 1) / N$.
-            $(m + 1) / N = (m + 1) \rmul \inv{N}$ by \cref{real_div}.
-            $(m + 1) \rmul \inv{N} = (m \rmul \inv{N}) + (1 \rmul \inv{N})$ by \cref{real_right_distrib}.
-            $m \rmul \inv{N} = m / N$ by \cref{real_div}.
-            $1 \rmul \inv{N} = 1 / N$ by \cref{real_div,real_mul_ident}.
-            Thus $p = m / N + 1 / N$.
             \begin{byCase}
             \caseOf{$m / N = a$.}
-                Thus $p = a + 1 / N$.
-                Thus $p < b$.
+                We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_right_distrib,real_mul_ident}.
             \caseOf{$m / N \neq a$.}
-                Thus $m / N < a$ or $a < m / N$ by \cref{real_lt_trichotomy}.
-                Thus $m / N < a$.
-                Thus $m / N + 1 / N < a + 1 / N$ by \cref{real_lt_add}.
-                Thus $p < b$ by \cref{real_lt_trans}.
+                We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_right_distrib,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_lt_trans}.
             \end{byCase}
         \end{byCase}
     \end{subproof}
-    Thus $p\in\intervalopen{a}{b}$.
-    Thus there exist $i, j$ such that $i\in\naturalsPlus$ and $j\in\naturalsPlus$ and $i / j\in\intervalopen{a}{b}$.
+    Thus there exist $i, j$ such that $i\in\naturalsPlus$ and $j\in\naturalsPlus$ and $i / j\in\intervalopen{a}{b}$ by \cref{subseteq,intervalopen}.
 \end{proof}
 
 % from §5 Item 109: rational in an open interval
-\begin{theorem}\label{real_rational_open_interval}
+\begin{proposition}\label{real_rational_open_interval}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
     Then there exists $p\in\rationals$ such that $p\in\intervalopen{a}{b}$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
     \begin{byCase}
     \caseOf{$0 < b$.}
         \begin{byCase}
         \caseOf{$a < 0$.}
-            Let $p = 0$.
-            $0\in\reals$ by \cref{real_add_ident}.
-            $p\in\reals$.
-            $0\in\integers$ by \cref{real_integers}.
-            $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-            $1\in\integers$ by \cref{real_integers}.
-            $1\neq 0$ by \cref{real_mul_ident}.
-            Show that $1\notin\{0\}$.
-            \begin{subproof}
-                Suppose not.
-                Thus $1\in\{0\}$.
-                Thus $1 = 0$ by \cref{singleton_iff}.
-                Contradiction.
-            \end{subproof}
-            Thus $1\in\integers\setminus\{0\}$ by \cref{setminus_intro}.
-            $1\in\reals$ by \cref{real_mul_ident}.
-            $\inv{1}\in\reals$ by \cref{real_mul_inverse}.
-            $0 / 1 = 0 \rmul \inv{1}$ by \cref{real_div}.
-            $0 \rmul \inv{1} = 0$ by \cref{real_mul_zero}.
-            Thus $0 / 1 = 0$.
-            Thus $p = 0 / 1$.
-            Thus $p\in\rationals$ by \cref{real_rationals}.
-            Thus $a < p$.
-            Thus $p < b$.
-            Thus $p\in\intervalopen{a}{b}$.
-            Thus there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$.
+            There exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_integers,real_one_in_naturals,real_mul_ident,singleton_iff,setminus_intro,real_add_ident,real_mul_inverse,real_div,real_mul_zero,real_rationals,intervalopen}.
         \caseOf{$0 \leq a$.}
-            Take $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{a}{b}$ by \cref{real_rationals_nonneg_interval}.
-            Let $p = n / N$.
-            $n\in\integers$ by \cref{real_integers}.
-            $N\in\integers$ by \cref{real_integers}.
-            Show that $0 < N$.
-            \begin{subproof}
-                $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-                $1\in\reals$ by \cref{real_mul_ident}.
-                $0\in\reals$ by \cref{real_add_ident}.
-                $0 < 1$ by \cref{real_zero_lt_one}.
-                $1 < N$ or $1 = N$ by \cref{real_one_leq_naturalsplus}.
-                \begin{byCase}
-                \caseOf{$1 = N$.}
-                    Thus $0 < N$.
-                \caseOf{$1 < N$.}
-                    Thus $0 < N$ by \cref{real_lt_trans}.
-                \end{byCase}
-            \end{subproof}
-            $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            Thus $N\neq 0$ by \cref{real_pos_nonzero}.
-            Show that $N\notin\{0\}$.
-            \begin{subproof}
-                Suppose not.
-                Thus $N\in\{0\}$.
-                Thus $N = 0$ by \cref{singleton_iff}.
-                Contradiction.
-            \end{subproof}
-            Thus $N\in\integers\setminus\{0\}$ by \cref{setminus_intro}.
-            Thus $p\in\rationals$ by \cref{real_rationals}.
-            Thus $p\in\intervalopen{a}{b}$.
-            Thus there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$.
+            There exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_rationals_nonneg_interval,real_integers,real_naturals_subset_reals,subseteq,real_mul_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_rationals}.
         \end{byCase}
     \caseOf{$b \leq 0$.}
-        $\neg{a}\in\reals$ by \cref{real_add_inverse}.
-        $\neg{b}\in\reals$ by \cref{real_add_inverse}.
-        $0\in\reals$ by \cref{real_add_ident}.
-        $0 + 0 = 0$ by \cref{real_add_ident}.
-        Thus $0 = \neg{0}$ by \cref{real_add_inverse_unique}.
-        Thus $\neg{0} \leq \neg{b}$ by \cref{real_leq_neg}.
-        Thus $0 \leq \neg{b}$.
-        Thus $\neg{b} < \neg{a}$ by \cref{real_lt_neg}.
-        Take $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{\neg{b}}{\neg{a}}$ by \cref{real_rationals_nonneg_interval}.
-        Let $q = n / N$.
-        Thus $q\in\reals$ and $\neg{b} < q$ and $q < \neg{a}$ by \cref{intervalopen}.
-        Let $p = \neg{q}$.
-        $p\in\reals$ by \cref{real_add_inverse}.
-        $\neg{(\neg{a})} = a$ by \cref{real_neg_neg}.
-        Thus $a < p$ by \cref{real_lt_neg}.
-        $\neg{(\neg{b})} = b$ by \cref{real_neg_neg}.
-        $\neg{q} < \neg{(\neg{b})}$ by \cref{real_lt_neg}.
-        Thus $p < b$.
-        Show that $p\in\rationals$.
-        \begin{subproof}
-            $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            $\neg{n}\in\reals$ by \cref{real_add_inverse}.
-            $n + \neg{n} = 0$ by \cref{real_add_inverse}.
-            $\neg{n} + n = 0$ by \cref{real_add_comm}.
-            Thus $\neg{n}\in\integers$ by \cref{real_integers}.
-            $N\in\integers$ by \cref{real_integers}.
-            Show that $0 < N$.
-            \begin{subproof}
-                $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-                $1\in\reals$ by \cref{real_mul_ident}.
-                $0\in\reals$ by \cref{real_add_ident}.
-                $0 < 1$ by \cref{real_zero_lt_one}.
-                $1 < N$ or $1 = N$ by \cref{real_one_leq_naturalsplus}.
-                \begin{byCase}
-                \caseOf{$1 = N$.}
-                    Thus $0 < N$.
-                \caseOf{$1 < N$.}
-                    Thus $0 < N$ by \cref{real_lt_trans}.
-                \end{byCase}
-            \end{subproof}
-            $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-            Thus $N\neq 0$ by \cref{real_pos_nonzero}.
-            Show that $N\notin\{0\}$.
-            \begin{subproof}
-                Suppose not.
-                Thus $N\in\{0\}$.
-                Thus $N = 0$ by \cref{singleton_iff}.
-                Contradiction.
-            \end{subproof}
-            Thus $N\in\integers\setminus\{0\}$ by \cref{setminus_intro}.
-            $q = n / N$.
-            $q = n \rmul \inv{N}$ by \cref{real_div}.
-            $\inv{N}\in\reals$ by \cref{real_mul_inverse}.
-            $n \rmul \inv{N}\in\reals$ by \cref{real_mul_closed}.
-            $\neg{q} = \neg{(n \rmul \inv{N})}$.
-            $n \rmul \inv{N} = \inv{N} \rmul n$ by \cref{real_mul_comm}.
-            $\inv{N} \rmul \neg{n} = \neg{(\inv{N} \rmul n)}$ by \cref{real_mul_neg_right}.
-            $\inv{N} \rmul n = n \rmul \inv{N}$ by \cref{real_mul_comm}.
-            Thus $\neg{q} = \inv{N} \rmul \neg{n}$.
-            $\inv{N} \rmul \neg{n} = \neg{n} \rmul \inv{N}$ by \cref{real_mul_comm}.
-            Thus $\neg{q} = \neg{n} \rmul \inv{N}$.
-            Thus $p = (\neg{n}) / N$ by \cref{real_div}.
-            Thus $p\in\rationals$ by \cref{real_rationals}.
-        \end{subproof}
-        Thus $p\in\intervalopen{a}{b}$.
-        Thus there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$.
+        Take $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{\neg{b}}{\neg{a}}$ by \cref{real_add_inverse,real_add_ident,real_add_inverse_unique,real_leq_neg,real_lt_neg,real_rationals_nonneg_interval}.
+        Let $p = \neg{(n / N)}$.
+        Thus $p\in\rationals$ by \cref{real_integers,real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_div,real_mul_inverse,real_mul_closed,real_mul_comm,real_mul_neg_right,real_rationals}.
+        Hence there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_add_inverse,intervalopen,real_neg_neg,real_lt_neg}.
     \end{byCase}
 \end{proof}
 
