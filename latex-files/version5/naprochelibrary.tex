@@ -1422,7 +1422,6 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
 %    Suppose $A$ and $\{b\}$ bipartition $\cons{b}{C}$.
 %    Then $A = C$.
 %\end{proposition}
-
 \subsection{Partitions}
 
 \begin{definition}\label{partition}
@@ -1471,6 +1470,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
 %    for all $A\in P$ there exists $a\in A$ such that
 %    $X\inter A = \{a\}$.
 %\end{definition}
+
 
 \section{Standard Library: Relations}
 
@@ -3958,7 +3958,6 @@ This lets us use the same symbol for composition of functions.
     $\identity{A}$ is injective by \cref{identity_injective}.
     Follows by \cref{bijections}.
 \end{proof}
-
 \subsection{Fixpoints}
 
 % NOTE: we need to explicitly require that a is an element of the domain,
@@ -4581,7 +4580,7 @@ This lets us use the same symbol for composition of functions.
     Then $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$.
 \end{proposition}
 \begin{proof}
-    Thus $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$
+    We have $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$
         by \cref{real_sub,real_add_closed,real_add_inverse,real_distrib,real_mul_closed,real_right_distrib,real_add_regroup,real_mul_comm,real_mul_neg_right}.
     Thus $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$ by \cref{real_mul_closed,real_add_ident,real_add_inverse,real_add_assoc,real_one_in_naturals,real_pow_succ,real_pow_one,real_sub}.
 \end{proof}
@@ -4834,9 +4833,9 @@ This lets us use the same symbol for composition of functions.
     \begin{subproof}
         Assume $a < b$.
         Thus $(b - a) \rmul (a + b) > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
-        Thus $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_add_comm,real_diff_squares}.
-        Thus $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
-        Thus $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
+        Hence $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_add_comm,real_diff_squares}.
+        Therefore $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
+        We have $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
     \end{subproof}
     Show if $\exp{a}{1+1} < \exp{b}{1+1}$ then $a < b$.
     \begin{subproof}
@@ -4861,6 +4860,7 @@ This lets us use the same symbol for composition of functions.
     Suppose $a\in\reals$.
     Then $\exp{a}{1+1} \geq 0$.
 \end{proposition}
+% \begin{proof} Trivial. \end{proof}
 
 % from §5 Item 66: zero is less than one
 \begin{proposition}\label{real_zero_lt_one}
@@ -5086,8 +5086,8 @@ This lets us use the same symbol for composition of functions.
     Then $\abs{a + b} \leq \abs{a} + \abs{b}$.
 \end{proposition}
 \begin{proof}
-    Thus $\neg{(a + b)} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_add_inverse,real_neg_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_neg_addition}.
-    Thus $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
+    We have $\neg{(a + b)} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_add_inverse,real_neg_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_neg_addition}.
+    Hence $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
 \end{proof}
 
 % from §5 Item 83: Reverse Triangle Inequality
@@ -5097,13 +5097,13 @@ This lets us use the same symbol for composition of functions.
 \end{proposition}
 \begin{proof}
     $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
+    Now $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
     $\abs{a - b}\in\reals$ by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_in_reals}.
     $\abs{b - a} = \abs{a - b}$ by \cref{real_abs_sub_swap}.
     $\abs{(a - b) + b} \leq \abs{a - b} + \abs{b}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
     $\abs{(b - a) + a} \leq \abs{b - a} + \abs{a}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
     Thus $\abs{b} + \neg{\abs{a}} \leq \abs{b - a}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add}.
-    $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
+    Therefore $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
 \end{proof}
 
 % from §5 Item 84: upper bound
@@ -5358,14 +5358,14 @@ This lets us use the same symbol for composition of functions.
         Take $n$ such that $n = 0$.
         $n\in\integers$ by \cref{real_integers}.
         Thus $x < n + 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
-        Thus there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
+        Hence there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
     \caseOf{$m \neq 1$.}
         Take $p\in\naturalsPlus$ such that $m = p + 1$ by \cref{real_naturals_predecessor}.
         Thus it is wrong that $x < p$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_ident,real_zero_lt_one,real_lt_add,real_add_comm,real_lt_trans,real_leq_antisym,real_lt_irreflexive}.
         Take $n$ such that $n = p$.
         $n\in\integers$ by \cref{real_integers}.
         Thus $n \leq x$ by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy}.
-        Thus there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
+        Therefore there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
     \end{byCase}
 \end{proof}
 
@@ -5383,7 +5383,7 @@ This lets us use the same symbol for composition of functions.
         $y\in\reals$ by \cref{real_add_inverse}.
         Thus $0 < y$ by \cref{real_add_ident,real_add_inverse_unique,real_lt_neg}.
         Take $t$ such that $t\in\integers$ and $t \leq y$ and $y < t + 1$ and either $t = 0$ or $t\in\naturalsPlus$ by \cref{real_consecutive_integers_nonneg}.
-        Thus $t\in\reals$ by \cref{real_add_ident,real_naturals_subset_reals,subseteq}.
+        Hence $t\in\reals$ by \cref{real_add_ident,real_naturals_subset_reals,subseteq}.
         Show that $t + 1\in\naturalsPlus$.
         \begin{subproof}
             \begin{byCase}
@@ -5391,17 +5391,17 @@ This lets us use the same symbol for composition of functions.
                 $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
                 Thus $t + 1\in\naturalsPlus$.
             \caseOf{$t \neq 0$.}
-                Thus $t + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
+                $t + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
             \end{byCase}
         \end{subproof}
         Let $k = \neg{(t + 1)}$.
         Thus $k\in\integers$ by \cref{real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_integers}.
-        Thus $k + 1 = \neg{t}$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_neg_addition,real_add_inverse,real_add_assoc,real_add_comm,real_add_ident}.
+        Hence $k + 1 = \neg{t}$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_neg_addition,real_add_inverse,real_add_assoc,real_add_comm,real_add_ident}.
         \begin{byCase}
         \caseOf{$x = k + 1$.}
-            Thus there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_add_comm,real_integers,real_add_ident,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_zero_lt_one,real_lt_add}.
+            There exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_add_comm,real_integers,real_add_ident,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_zero_lt_one,real_lt_add}.
         \caseOf{$x \neq k + 1$.}
-            Thus there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_leq_neg,real_neg_neg,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_closed,real_lt_trichotomy}.
+            There exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_leq_neg,real_neg_neg,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_closed,real_lt_trichotomy}.
         \end{byCase}
     \end{byCase}
 \end{proof}
@@ -5415,22 +5415,22 @@ This lets us use the same symbol for composition of functions.
     $0 < b - a$ by \cref{real_lt_imp_pos_diff}.
     Take $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < b - a$ by \cref{real_add_inverse,real_sub,real_add_closed,real_small_reciprocal}.
     Thus $0 < N$ by \cref{real_naturals_subset_reals,subseteq,real_mul_ident,real_add_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans}.
-    Thus $N\neq 0$ by \cref{real_naturals_subset_reals,subseteq,real_pos_nonzero}.
-    Thus $0 < \inv{N}$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_inv_pos}.
+    Hence $N\neq 0$ by \cref{real_naturals_subset_reals,subseteq,real_pos_nonzero}.
+    Therefore $0 < \inv{N}$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_inv_pos}.
     Let $S = \{ n\in\naturalsPlus \mid a < n / N\}$.
     Take $n\in\naturalsPlus$ such that $a \rmul N < n$ by \cref{real_naturals_subset_reals,subseteq,real_mul_closed,real_archimedean_property}.
     $(a \rmul N) \rmul \inv{N} < n \rmul \inv{N}$ by \cref{real_mul_inverse,real_mul_closed,real_naturals_subset_reals,subseteq,real_lt_mul_pos}.
     Thus $a < n / N$ by \cref{real_naturals_subset_reals,subseteq,real_mul_assoc,real_mul_inverse,real_mul_comm,real_mul_ident,real_div}.
-    Thus $S\neq \emptyset$.
+    Hence $S\neq \emptyset$.
     Take $k\in S$ such that for all $m\in S$ we have $k \leq m$ by \cref{subseteq,real_naturals_least_element}.
     Let $p = k / N$.
-    Thus $p\in\reals$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_mul_closed}.
-    Thus $a + 1 / N < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_sub,real_add_closed,real_lt_add,real_add_comm,real_add_assoc,real_add_inverse,real_add_ident}.
+    We have $p\in\reals$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_mul_closed}.
+    We have $a + 1 / N < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_sub,real_add_closed,real_lt_add,real_add_comm,real_add_assoc,real_add_inverse,real_add_ident}.
     Show that $p < b$.
     \begin{subproof}
         \begin{byCase}
         \caseOf{$k = 1$.}
-            Thus $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_add_ident,real_lt_trans}.
+            We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_add_ident,real_lt_trans}.
         \caseOf{$k \neq 1$.}
             Take $m\in\naturalsPlus$ such that $k = m + 1$ by \cref{real_naturals_predecessor}.
             Show that it is wrong that $a < m / N$.
@@ -5441,9 +5441,9 @@ This lets us use the same symbol for composition of functions.
             \end{subproof}
             \begin{byCase}
             \caseOf{$m / N = a$.}
-                Thus $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_right_distrib,real_mul_ident}.
+                We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_right_distrib,real_mul_ident}.
             \caseOf{$m / N \neq a$.}
-                Thus $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_right_distrib,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_lt_trans}.
+                We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_right_distrib,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_lt_trans}.
             \end{byCase}
         \end{byCase}
     \end{subproof}
@@ -5460,15 +5460,15 @@ This lets us use the same symbol for composition of functions.
     \caseOf{$0 < b$.}
         \begin{byCase}
         \caseOf{$a < 0$.}
-            Thus there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_integers,real_one_in_naturals,real_mul_ident,singleton_iff,setminus_intro,real_add_ident,real_mul_inverse,real_div,real_mul_zero,real_rationals,intervalopen}.
+            There exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_integers,real_one_in_naturals,real_mul_ident,singleton_iff,setminus_intro,real_add_ident,real_mul_inverse,real_div,real_mul_zero,real_rationals,intervalopen}.
         \caseOf{$0 \leq a$.}
-            Thus there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_rationals_nonneg_interval,real_integers,real_naturals_subset_reals,subseteq,real_mul_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_rationals}.
+            There exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_rationals_nonneg_interval,real_integers,real_naturals_subset_reals,subseteq,real_mul_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_rationals}.
         \end{byCase}
     \caseOf{$b \leq 0$.}
         Take $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{\neg{b}}{\neg{a}}$ by \cref{real_add_inverse,real_add_ident,real_add_inverse_unique,real_leq_neg,real_lt_neg,real_rationals_nonneg_interval}.
         Let $p = \neg{(n / N)}$.
         Thus $p\in\rationals$ by \cref{real_integers,real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_div,real_mul_inverse,real_mul_closed,real_mul_comm,real_mul_neg_right,real_rationals}.
-        Thus there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_add_inverse,intervalopen,real_neg_neg,real_lt_neg}.
+        Hence there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_add_inverse,intervalopen,real_neg_neg,real_lt_neg}.
     \end{byCase}
 \end{proof}
 
