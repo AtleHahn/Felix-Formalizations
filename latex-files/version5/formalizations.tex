@@ -426,7 +426,10 @@
     Let $p = \neg{(1 / N)}$.
     Hence $p\in\intervalopen{a}{0}$ by \cref{real_add_inverse,real_lt_neg,real_neg_zero,real_lt_subst_right,real_lt_subst_left,real_neg_neg,intervalopen}.
     $1\in\naturalsPlus$ and $1\in\reals$ by \cref{real_one_in_naturals,real_mul_ident}.
-    Then $\neg{1}\in\integers$ and $N\in\integers$ by \cref{real_add_inverse,real_add_comm,real_integers}.
+    $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
+    $\neg{1}\in\reals$ and $\neg{\neg{1}} = 1$ by \cref{real_add_inverse,real_neg_neg}.
+    Then $\neg{1}\in\integers$ by \cref{real_integers}.
+    Then $N\in\integers$ by \cref{real_integers}.
     Hence $N\in\integers\setminus\{0\}$ by \cref{real_pos_nonzero,singleton_iff,setminus_intro}.
     $\inv{N}\in\reals$ by \cref{real_naturals_subset_reals,subseteq,real_pos_nonzero,real_mul_inverse}.
     Then $p = \neg{1} \rmul \inv{N}$ by \cref{real_add_inverse,real_div,real_mul_neg_right,real_mul_comm}.

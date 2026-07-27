@@ -4260,15 +4260,10 @@ This lets us use the same symbol for composition of functions.
     $\subseteqrel{A}$ is antisymmetric by \cref{subseteqrel_antisymmetric}.
 \end{proof}
 
-
 \section{Standard Library: The real numbers}
 
 \begin{signature} \label{sig1}
     $\reals$ is a set.
-\end{signature}
-
-\begin{signature} \label{sig2}
-    $\naturalsPlus$ is a set.
 \end{signature}
 
 \begin{signature} \label{sig3}
@@ -4279,200 +4274,445 @@ This lets us use the same symbol for composition of functions.
     $x \rmul y$ is a set.
 \end{signature}
 
-\begin{signature} \label{sig5}
-    $x - y$ is a set.
-\end{signature}
-
-\begin{signature} \label{sig6}
-    $x / y$ is a set.
-\end{signature}
-
-\begin{signature} \label{sig7}
-    $\exp{x}{y}$ is a set.
-\end{signature}
-
-% from §5 Item 1: closure of addition
+% closure of addition
 \begin{axiom}\label{real_add_closed}
     For all $a, b\in\reals$ we have $a + b\in\reals$.
 \end{axiom}
 
-% from §5 Item 2: closure of multiplication
+% closure of multiplication
 \begin{axiom}\label{real_mul_closed}
     For all $a, b\in\reals$ we have $a \rmul b\in\reals$.
 \end{axiom}
 
-% from §5 Item 3: associativity of addition
+% associativity of addition
 \begin{axiom}\label{real_add_assoc}
     For all $a, b, c\in\reals$ we have $(a + b) + c = a + (b + c)$.
 \end{axiom}
 
-% from §5 Item 4: commutativity of addition
+% commutativity of addition
 \begin{axiom}\label{real_add_comm}
     For all $a, b\in\reals$ we have $a + b = b + a$.
 \end{axiom}
 
-% from §5 Item 5: additive identity
+% additive identity
 \begin{axiom}\label{real_add_ident}
     $0\in\reals$ and for all $a\in\reals$ we have $0 + a = a$.
 \end{axiom}
 
-% from §5 Item 6: additive inverses
+% additive inverses
 \begin{axiom}\label{real_add_inverse}
     For all $a\in\reals$ we have $\neg{a}\in\reals$ and $a + \neg{a} = 0$.
 \end{axiom}
 
-% from §5 Item 7: associativity of multiplication
+% associativity of multiplication
 \begin{axiom}\label{real_mul_assoc}
     For all $a, b, c\in\reals$ we have $(a \rmul b) \rmul c = a \rmul (b \rmul c)$.
 \end{axiom}
 
-% from §5 Item 8: commutativity of multiplication
+% commutativity of multiplication
 \begin{axiom}\label{real_mul_comm}
     For all $a, b\in\reals$ we have $a \rmul b = b \rmul a$.
 \end{axiom}
 
-% from §5 Item 9: multiplicative identity
+% multiplicative identity
 \begin{axiom}\label{real_mul_ident}
     $1\in\reals$ and $1\neq 0$ and for all $a\in\reals$ we have $1 \rmul a = a$.
 \end{axiom}
 
-% from §5 Item 10: multiplicative inverses
+% multiplicative inverses
 \begin{axiom}\label{real_mul_inverse}
     Suppose $a\in\reals$ and $a\neq 0$.
     Then $\inv{a}\in\reals$ and $a \rmul \inv{a} = 1$.
 \end{axiom}
 
-% from §5 Item 11: distributive property
+% distributive property
 \begin{axiom}\label{real_distrib}
     For all $a, b, c\in\reals$ we have $a \rmul (b + c) = (a \rmul b) + (a \rmul c)$.
 \end{axiom}
 
-% from §5 Item 12: uniqueness of additive identity
+% uniqueness of additive identity
 \begin{proposition}\label{real_add_ident_unique}
     Suppose $c\in\reals$ and for all $a\in\reals$ we have $c + a = a$.
     Then $c = 0$.
 \end{proposition}
 
-% from §5 Item 13: uniqueness of multiplicative identity
+% uniqueness of multiplicative identity
 \begin{proposition}\label{real_mul_ident_unique}
     Suppose $c\in\reals$ and for all $a\in\reals$ we have $c \rmul a = a$.
     Then $c = 1$.
 \end{proposition}
 
-% from §5 Item 14: uniqueness of additive inverses
+% uniqueness of additive inverses
 \begin{proposition}\label{real_add_inverse_unique}
     Suppose $a\in\reals$ and $b\in\reals$ and $a + b = 0$.
     Then $b = \neg{a}$.
 \end{proposition}
 
-% from §5 Item 15: uniqueness of multiplicative inverses
+% uniqueness of multiplicative inverses
 \begin{proposition}\label{real_mul_inverse_unique}
     Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $a \rmul b = 1$.
     Then $b = \inv{a}$.
 \end{proposition}
 
-% from §5 Item 16: naturals are real numbers
+% subtraction
+\begin{definition}\label{real_sub}
+    $a - b = a + \neg{b}$.
+\end{definition}
+
+% division
+\begin{definition}\label{real_div}
+    $a / b = a \rmul \inv{b}$.
+\end{definition}
+
+\subsection{Number literals}
+
+\begin{axiom} \label{def_of_2}
+    $2 = 1 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_3}
+     $3 = 2 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_4}
+    $4 = 3 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_5}
+    $5 = 4 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_6}
+    $6 = 5 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_7}
+    $7 = 6 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_8}
+    $8 = 7 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_9}
+    $9 = 8 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_10}
+    $10 = 9 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_100}
+    $100 = 10 \rmul 10$.
+\end{axiom}    
+
+\subsection{Order relation}
+
+The next abbreviation is a hack. The symbol "<" cannot be introduced by axioms.
+By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF. 
+
+\begin{abbreviation}\label{real_lt}
+    $a < b$ iff $a \rless b$.
+\end{abbreviation}
+
+
+% trichotomy law
+\begin{axiom}\label{real_lt_trichotomy}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a\neq b$.
+    Then $a < b$ or $b < a$.
+\end{axiom}
+
+% asymmetry for distinct points
+\begin{axiom}\label{real_lt_asym}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a\neq b$ and $a < b$.
+    Then it is wrong that $b < a$.
+\end{axiom}
+
+% transitivity of the order
+\begin{axiom}\label{real_lt_trans}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$ and $b < c$.
+    Then $a < c$.
+\end{axiom}
+
+% translation preserves order
+\begin{axiom}\label{real_lt_add}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$.
+    Then $a + c < b + c$.
+\end{axiom}
+
+% multiplication by a positive preserves order
+\begin{axiom}\label{real_lt_mul_pos}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$ and $0 < c$.
+    Then $a \rmul c < b \rmul c$.
+\end{axiom}
+
+% irreflexivity of <
+\begin{axiom}\label{real_lt_irreflexive}
+    Suppose $a\in\reals$.
+    Then it is wrong that $a < a$.
+\end{axiom}
+
+% greater than
+\begin{abbreviation}\label{real_gt}
+    $a > b$ iff $b < a$.
+\end{abbreviation}
+
+% at most
+\begin{abbreviation}\label{real_at_most}
+    $a \leq b$ iff $a < b$ or $a = b$.
+\end{abbreviation}
+
+% at least
+\begin{abbreviation}\label{real_at_least}
+    $a \geq b$ iff $b \leq a$.
+\end{abbreviation}
+
+% positive
+\begin{abbreviation}\label{real_positive}
+    $a$ is positive iff $a > 0$.
+\end{abbreviation}
+
+% nonnegative
+\begin{abbreviation}\label{real_nonnegative}
+    $a$ is nonnegative iff $a \geq 0$.
+\end{abbreviation}
+
+% negative
+\begin{abbreviation}\label{real_negative}
+    $a$ is negative iff $a < 0$.
+\end{abbreviation}
+
+% nonpositive
+\begin{abbreviation}\label{real_nonpositive}
+    $a$ is nonpositive iff $a \leq 0$.
+\end{abbreviation}
+
+
+% upper bound
+\begin{definition}\label{real_upper_bound}
+    $b$ is an upper bound of $A$ iff $b\in\reals$ and $A\subseteq\reals$ and for all $a\in A$ we have $a \leq b$.
+\end{definition}
+
+% bounded above
+\begin{definition}\label{real_bounded_above}
+    $A$ is bounded above iff there exists $b$ such that $b$ is an upper bound of $A$.
+\end{definition}
+
+% lower bound
+\begin{definition}\label{real_lower_bound}
+    $b$ is a lower bound of $A$ iff $b\in\reals$ and $A\subseteq\reals$ and for all $a\in A$ we have $b \leq a$.
+\end{definition}
+
+% bounded below
+\begin{definition}\label{real_bounded_below}
+    $A$ is bounded below iff there exists $b$ such that $b$ is a lower bound of $A$.
+\end{definition}
+
+% bounded set
+\begin{definition}\label{real_bounded}
+    $A$ is bounded iff $A$ is bounded above and $A$ is bounded below.
+\end{definition}
+
+% supremum
+\begin{definition}\label{real_supremum}
+    $p$ is a supremum of $A$ iff $p$ is an upper bound of $A$ and for all $b$ such that $b$ is an upper bound of $A$ we have $p \leq b$.
+\end{definition}
+
+% infimum
+\begin{definition}\label{real_infimum}
+    $p$ is an infimum of $A$ iff $p$ is a lower bound of $A$ and for all $b$ such that $b$ is a lower bound of $A$ we have $p \geq b$.
+\end{definition}
+
+% Completeness Axiom
+\begin{axiom}\label{real_completeness_axiom}
+    Suppose $A\subseteq\reals$ and $A\neq \emptyset$ and $A$ is bounded above.
+    Then there exists $p$ such that $p$ is a supremum of $A$.
+\end{axiom}
+
+% maximum
+\begin{definition}\label{real_maximum}
+    $m$ is a maximum of $A$ iff $m\in A$ and for all $a\in A$ we have $a \leq m$.
+\end{definition}
+
+% minimum
+\begin{definition}\label{real_minimum}
+    $m$ is a minimum of $A$ iff $m\in A$ and for all $a\in A$ we have $m \leq a$.
+\end{definition}
+
+\begin{definition}\label{intervalclosed}
+    $\intervalclosed{a}{b} = \{x \in \reals \mid a \leq x \leq b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalopen}
+    $\intervalopen{a}{b} = \{ x \in \reals \mid a < x < b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalopen_infinite_left}
+    $\intervalopenInfiniteLeft{b} = \{ x \in \reals \mid x < b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalopen_infinite_right}
+    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x > a\}$.
+\end{definition}
+
+\begin{definition}\label{intervalclosed_infinite_left}
+    $\intervalclosedInfiniteLeft{b} = \{ x \in \reals \mid x \leq b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalclosed_infinite_right}
+    $\intervalclosedInfiniteRight{a} = \{ x \in \reals \mid x \geq a\}$.
+\end{definition}
+
+\subsection{Natural numbers}
+
+\begin{signature} \label{sig2}
+    $\naturalsPlus$ is a set.
+\end{signature}
+
+% naturals are real numbers
 \begin{axiom}\label{real_naturals_subset_reals}
     $\naturalsPlus \subseteq \reals$.
 \end{axiom}
 
-% from §5 Item 17: $1$ is a natural number
+% $1$ is a natural number
 \begin{axiom}\label{real_one_in_naturals}
     $1\in\naturalsPlus$.
 \end{axiom}
 
-% from §5 Item 17c: $1$ is the least positive natural
+
+% $1$ is the least positive natural
 \begin{axiom}\label{real_one_leq_naturalsplus}
-    For all $n\in\naturalsPlus$ we have $1 \rless n$ or $1 = n$.
+    For all $n\in\naturalsPlus$ we have $1 < n$ or $1 = n$.
 \end{axiom}
 
-% from §5 Item 17d: successor discreteness
+% successor discreteness
 \begin{axiom}\label{real_succ_discrete}
     Suppose $a\in\naturalsPlus$ and $n\in\naturalsPlus$.
-    Suppose $a \rless n + 1$ or $a = n + 1$.
-    Then $a \rless n$ or $a = n$ or $a = n + 1$.
+    Suppose $a < n + 1$ or $a = n + 1$.
+    Then $a < n$ or $a = n$ or $a = n + 1$.
 \end{axiom}
 
-% from §5 Item 18: closure of naturals under $+1$
+% closure of naturals under $+1$
 \begin{axiom}\label{real_naturals_closed_succ}
     For all $n\in\naturalsPlus$ we have $n + 1\in\naturalsPlus$.
 \end{axiom} 
 
-% from §5 Item 19: naturals are the smallest such subset of $\reals$
+% naturals are the smallest such subset of $\reals$
 \begin{axiom}\label{real_naturals_smallest}
     Suppose $A\subseteq\reals$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
     Then $\naturalsPlus \subseteq A$.
 \end{axiom}
 
-% from §5 Item 19: induction principle
+% induction principle
 \begin{proposition}\label{real_naturals_induction}
     Suppose $A\subseteq\naturalsPlus$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
     Then for all $n\in\naturalsPlus$ we have $n\in A$.
 \end{proposition}
 
-% from §5 Item 20: definition of the integers
-\begin{axiom}\label{real_integers}
-    For all $x$ we have $x\in\integers$ iff
-    $x\in\naturalsPlus$ or $x=0$ or there exists $n\in\naturalsPlus$ such that $x + n = 0$.
+% \subsection{Integers}
+
+% former way of introducing the integers
+% \begin{axiom}\label{real_integers}
+%     For all $x$ we have $x\in\integers$ iff
+%     $x\in\naturalsPlus$ or $x=0$ or there exists $n\in\naturalsPlus$ such that $x + n = 0$.
+% \end{axiom}
+ 
+\subsection{Integers}
+ 
+% definition of integers
+\begin{definition}\label{real_integers}
+  $\integers = \{x \in \reals \mid \text{$x \in \naturalsPlus$ or $x=0$ or $\neg{x} \in \naturalsPlus$}\}$.
+\end{definition}
+
+% definition of integer attribute
+\begin{abbreviation}\label{real_integer}
+    $x$ is an integer iff $x\in\integers$.
+\end{abbreviation}
+
+\subsection{Rational numbers}
+
+% definition of rationals
+\begin{definition}\label{real_rationals}
+    $\rationals = \{ a / b \mid a\in\integers, b\in\integers\setminus\{0\}\}$.
+\end{definition}
+
+% definition of rational attribute
+\begin{abbreviation}\label{real_rational}
+    $x$ is rational iff $x\in\rationals$.
+\end{abbreviation}
+
+% definition of irrational numbers
+\begin{abbreviation}\label{real_irrational}
+    $x$ is irrational iff $x\in\reals$ and $x\notin\rationals$.
+\end{abbreviation}
+
+\subsection{Absolute values}
+
+% absolute value signature
+\begin{signature} \label{sig8}
+    $\abs{a}$ is a set.
+\end{signature}
+
+% absolute value
+\begin{axiom}\label{real_abs_nonneg}
+    Suppose $a\in\reals$ and $a \geq 0$.
+    Then $\abs{a} = a$.
 \end{axiom}
 
-% ToDo: Activate this and make proofs go through
-% \begin{definition}\label{real_integers}
-%     $\integers = \{x \in \reals \mid \text{$x \in \naturalsPlus$ or $x=0$ or $\neg{x} \in \naturalsPlus$}\}$.
-% \end{definition}
+% absolute value (negative case)
+\begin{axiom}\label{real_abs_neg}
+    Suppose $a\in\reals$ and $a < 0$.
+    Then $\abs{a} = \neg{a}$.
+\end{axiom}
 
-% from §5 Item 21: subtraction
-\begin{definition}\label{real_sub}
-    $a - b = a + \neg{b}$.
-\end{definition}
+\subsection{Integer powers}
 
-% from §5 Item 22: division
-\begin{definition}\label{real_div}
-    $a / b = a \rmul \inv{b}$.
-\end{definition}
+\begin{signature} \label{sig7}
+    $\exp{x}{y}$ is a set.
+\end{signature}
 
-
-% from §5 Item 23: power with exponent $1$
+% power with exponent $1$
 \begin{axiom}\label{real_pow_one}
     For all $a\in\reals$ we have $\exp{a}{1} = a$.
 \end{axiom}
 
-
-% from §5 Item 24: power with positive exponents
+% power with positive exponents
 \begin{axiom}\label{real_pow_succ}
     For all $a, n$ such that $a\in\reals$ and $n\in\naturalsPlus$ we have $\exp{a}{n+1} = \exp{a}{n} \rmul a$.
 \end{axiom}
 
-% from §5 Item 25: power with exponent $0$
+% power with exponent $0$
 \begin{axiom}\label{real_pow_zero}
     Suppose $a\in\reals$ and $a\neq 0$.
     Then $\exp{a}{0} = 1$.
 \end{axiom}
 
-
-% from §5 Item 26: power with negative exponents
+% power with negative exponents
 \begin{axiom}\label{real_pow_neg}
     Suppose $a\in\reals$ and $a\neq 0$ and $n\in\naturalsPlus$.
     Then $\exp{a}{\neg{n}} = 1 / (\exp{a}{n})$. 
 \end{axiom}
 
-% from §5 Item 27: definition of the rationals
-\begin{definition}\label{real_rationals}
-    $\rationals = \{ a / b \mid a\in\integers, b\in\integers\setminus\{0\}\}$.
-\end{definition}
+\subsection{Square roots}
 
-% from §5 Item 28: definition of irrational numbers
-\begin{abbreviation}\label{real_irrational}
-    $x$ is irrational iff $x\in\reals$ and $x\notin\rationals$.
-\end{abbreviation}
+\begin{signature} \label{sig9}
+    $\sqrt{x}$ is a set.
+\end{signature}
 
-% from §5 Item 29: adding the same number preserves equality
+\begin{axiom} \label{positive_square_root}
+    Suppose that $x \in\reals$ and $x \geq 0$.
+    Then $\sqrt{x} \in \reals$ and $\sqrt{x} \geq 0$ and $\sqrt{x} \rmul \sqrt{x} = x$.
+\end{axiom}    
+
+\subsection{Simple consequences of the axioms}
+
+% adding the same number preserves equality
 \begin{proposition}\label{real_add_eq_subst}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a = b$.
     Then $a + c = b + c$.
 \end{proposition}
 
-% from §5 Item 30: additive cancellation
+% additive cancellation
 \begin{proposition}\label{real_add_cancel}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a + c = b + c$.
     Then $a = b$.
@@ -4481,13 +4721,13 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_add_assoc,real_add_ident,real_add_comm}.
 \end{proof}
 
-% from §5 Item 31: multiplication by zero
+% multiplication by zero
 \begin{proposition}\label{real_mul_zero}
     Suppose $a\in\reals$.
     Then $0 \rmul a = 0$.
 \end{proposition}
 
-% from §5 Item 32: $-a = (-1)a$
+% $-a = (-1)a$
 \begin{proposition}\label{real_neg_as_mul}
     Suppose $a\in\reals$.
     Then $\neg{a} = \neg{1} \rmul a$.
@@ -4496,12 +4736,12 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_mul_ident,real_add_inverse,real_add_closed,real_mul_comm,real_distrib,real_mul_zero,real_mul_closed,real_add_inverse_unique}.
 \end{proof}
 
-% from §5 Item 33: $(-1)^2 = 1$
+% $(-1)^2 = 1$
 \begin{proposition}\label{real_neg_one_square}
     $\exp{\neg{1}}{1+1} = 1$.
 \end{proposition}
 
-% from §5 Item 34: double negation
+% double negation
 \begin{proposition}\label{real_neg_neg}
     Suppose $a\in\reals$.
     Then $\neg{(\neg{a})} = a$.
@@ -4510,7 +4750,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_add_comm,real_add_inverse_unique}.
 \end{proof}
 
-% from §5 helper lemma 1: nonzero left factor of a unit product
+% helper lemma 1: nonzero left factor of a unit product
 \begin{lemma}\label{real_mul_unit_left_nonzero}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b = 1$.
     Then $a \neq 0$.
@@ -4519,7 +4759,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_mul_zero,real_mul_ident}.
 \end{proof}
 
-% from §5 Item 35: inverse of an inverse
+% inverse of an inverse
 \begin{proposition}\label{real_inv_inv}
     Suppose $a\in\reals$ and $a\neq 0$.
     Then $\inv{\inv{a}} = a$.
@@ -4528,7 +4768,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_mul_inverse,real_mul_comm,real_mul_unit_left_nonzero,real_mul_inverse_unique}.
 \end{proof}
 
-% from §5 Item 36: multiplicative cancellation
+% multiplicative cancellation
 \begin{proposition}\label{real_mul_cancel}
     Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $c\in\reals$ and $a \rmul b = a \rmul c$.
     Then $b = c$.
@@ -4537,7 +4777,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_mul_inverse,real_mul_assoc,real_mul_comm,real_mul_ident}.
 \end{proof}
 
-% from §5 Item 37: zero product property
+% zero product property
 \begin{proposition}\label{real_mul_zero_product}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b = 0$.
     Then $a = 0$ or $b = 0$.
@@ -4546,8 +4786,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_mul_inverse,real_mul_assoc,real_mul_zero,real_mul_ident}.
 \end{proof}
 
-
-% from §5 helper lemma 2: right distributive law
+% helper lemma 2: right distributive law
 \begin{lemma}\label{real_right_distrib}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
     Then $(a + b) \rmul c = (a \rmul c) + (b \rmul c)$.
@@ -4556,7 +4795,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_closed,real_mul_comm,real_distrib}.
 \end{proof}
 
-% from §5 helper lemma 3: multiplication by a negative
+% helper lemma 3: multiplication by a negative
 \begin{lemma}\label{real_mul_neg_right}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $a \rmul \neg{b} = \neg{(a \rmul b)}$.
@@ -4565,7 +4804,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_neg_as_mul,real_mul_ident,real_add_inverse,real_mul_assoc,real_mul_comm,real_mul_closed}.
 \end{proof}
 
-% from §5 helper lemma 4: regrouping sums
+% helper lemma 4: regrouping sums
 \begin{lemma}\label{real_add_regroup}
     Suppose $x\in\reals$ and $y\in\reals$ and $z\in\reals$ and $w\in\reals$.
     Then $(x + y) + (z + w) = (x + (y + z)) + w$.
@@ -4574,7 +4813,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_closed,real_add_assoc}.
 \end{proof}
 
-% from §5 Item 38: difference of squares
+% difference of squares
 \begin{proposition}\label{real_diff_squares}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$.
@@ -4585,77 +4824,8 @@ This lets us use the same symbol for composition of functions.
     Thus $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$ by \cref{real_mul_closed,real_add_ident,real_add_inverse,real_add_assoc,real_one_in_naturals,real_pow_succ,real_pow_one,real_sub}.
 \end{proof}
 
-% from §5 Item 39: order relation
-\begin{abbreviation}\label{real_lt}
-    $a < b$ iff $a \rless b$.
-\end{abbreviation}
 
-% from §5 Item 40: trichotomy law
-\begin{axiom}\label{real_lt_trichotomy}
-    Suppose $a\in\reals$ and $b\in\reals$ and $a\neq b$.
-    Then $a < b$ or $b < a$.
-\end{axiom}
-
-% from §5 Item 41: asymmetry for distinct points
-\begin{axiom}\label{real_lt_asym}
-    Suppose $a\in\reals$ and $b\in\reals$ and $a\neq b$ and $a < b$.
-    Then it is wrong that $b < a$.
-\end{axiom}
-
-% from §5 Item 42: transitivity of the order
-\begin{axiom}\label{real_lt_trans}
-    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$ and $b < c$.
-    Then $a < c$.
-\end{axiom}
-
-% from §5 Item 43: translation preserves order
-\begin{axiom}\label{real_lt_add}
-    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$.
-    Then $a + c < b + c$.
-\end{axiom}
-
-% from §5 Item 44: multiplication by a positive preserves order
-\begin{axiom}\label{real_lt_mul_pos}
-    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$ and $0 < c$.
-    Then $a \rmul c < b \rmul c$.
-\end{axiom}
-
-% from §5 Item 45: greater than
-\begin{abbreviation}\label{real_gt}
-    $a > b$ iff $b < a$.
-\end{abbreviation}
-
-% from §5 Item 46: at most
-\begin{abbreviation}\label{real_at_most}
-    $a \leq b$ iff $a < b$ or $a = b$.
-\end{abbreviation}
-
-% from §5 Item 47: at least
-\begin{abbreviation}\label{real_at_least}
-    $a \geq b$ iff $b \leq a$.
-\end{abbreviation}
-
-% from §5 Item 48: positive
-\begin{abbreviation}\label{real_positive}
-    $a$ is positive iff $a > 0$.
-\end{abbreviation}
-
-% from §5 Item 49: nonnegative
-\begin{abbreviation}\label{real_nonnegative}
-    $a$ is nonnegative iff $a \geq 0$.
-\end{abbreviation}
-
-% from §5 Item 50: negative
-\begin{abbreviation}\label{real_negative}
-    $a$ is negative iff $a < 0$.
-\end{abbreviation}
-
-% from §5 Item 51: nonpositive
-\begin{abbreviation}\label{real_nonpositive}
-    $a$ is nonpositive iff $a \leq 0$.
-\end{abbreviation}
-
-% from §5 Item 52: sum of positives is positive
+% sum of positives is positive
 \begin{proposition}\label{real_pos_add}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a + b$ is positive.
@@ -4664,7 +4834,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_ident,real_add_closed,real_lt_add,real_lt_trans}.
 \end{proof}
 
-% from §5 Item 53: sum of negatives is negative
+% sum of negatives is negative
 \begin{proposition}\label{real_neg_add}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
     Then $a + b$ is negative.
@@ -4673,7 +4843,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_ident,real_add_closed,real_lt_add,real_lt_trans}.
 \end{proof}
 
-% from §5 Item 54: adding inequalities
+% adding inequalities
 \begin{proposition}\label{real_lt_add_two}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $d\in\reals$ and $a < b$ and $c < d$.
     Then $a + c < b + d$.
@@ -4682,7 +4852,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_lt_add,real_add_comm,real_add_closed,real_lt_trans}.
 \end{proof}
 
-% from §5 Item 55: sign change (forward)
+% sign change (forward)
 \begin{proposition}\label{real_pos_imp_neg}
     Suppose $a\in\reals$ and $a > 0$.
     Then $\neg{a} < 0$.
@@ -4691,7 +4861,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_add_ident,real_lt_add}.
 \end{proof}
 
-% from §5 Item 56: sign change (backward)
+% sign change (backward)
 \begin{proposition}\label{real_neg_imp_pos}
     Suppose $a\in\reals$ and $\neg{a} < 0$.
     Then $a > 0$.
@@ -4700,7 +4870,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_add_ident,real_lt_add,real_add_comm}.
 \end{proof}
 
-% from §5 Item 57: multiplying inequalities
+% multiplying inequalities
 \begin{proposition}\label{real_lt_mul_pos_two}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $d\in\reals$.
     Suppose $a$ is positive and $b$ is positive and $c$ is positive and $d$ is positive.
@@ -4711,7 +4881,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_lt_mul_pos,real_mul_comm,real_mul_closed,real_lt_trans}.
 \end{proof}
 
-% from §5 helper lemma 5: product of positives
+% helper lemma 5: product of positives
 \begin{lemma}\label{real_mul_pos_pos}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a \rmul b$ is positive.
@@ -4720,7 +4890,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_ident,real_lt_mul_pos,real_mul_zero}.
 \end{proof}
 
-% from §5 helper lemma 6: positive times negative is negative
+% helper lemma 6: positive times negative is negative
 \begin{lemma}\label{real_mul_pos_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is negative.
     Then $a \rmul b$ is negative.
@@ -4729,7 +4899,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_neg_neg,real_neg_imp_pos,real_mul_pos_pos,real_mul_neg_right,real_mul_closed,real_pos_imp_neg}.
 \end{proof}
 
-% from §5 helper lemma 7: product of negatives
+% helper lemma 7: product of negatives
 \begin{lemma}\label{real_mul_neg_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
     Then $a \rmul b$ is positive.
@@ -4738,72 +4908,67 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_neg_neg,real_neg_imp_pos,real_mul_pos_pos,real_mul_neg_right,real_mul_comm}.
 \end{proof}
 
-% from §5 helper lemma 8: irreflexivity of <
-\begin{axiom}\label{real_lt_irreflexive}
-    Suppose $a\in\reals$.
-    Then it is wrong that $a < a$.
-\end{axiom}
 
-% from §5 helper lemma 9: positive implies nonzero
+% helper lemma 9: positive implies nonzero
 \begin{lemma}\label{real_pos_nonzero}
     Suppose $a\in\reals$ and $a > 0$.
     Then $a \neq 0$.
 \end{lemma}
 
-% from §5 helper lemma 10: negative implies nonzero
+% helper lemma 10: negative implies nonzero
 \begin{lemma}\label{real_neg_nonzero}
     Suppose $a\in\reals$ and $a < 0$.
     Then $a \neq 0$.
 \end{lemma}
 
-% from §5 Item 58: product of positives is positive
+% product of positives is positive
 \begin{proposition}\label{real_mul_pos_pos_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a \rmul b > 0$.
 \end{proposition}
 
-% from §5 Item 59: product of negatives is positive
+% product of negatives is positive
 \begin{proposition}\label{real_mul_neg_neg_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
     Then $a \rmul b > 0$.
 \end{proposition}
 
-% from §5 Item 60: product positive (backward)
+% product positive (backward)
 \begin{proposition}\label{real_mul_pos_same_sign_rev}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b > 0$.
     Then either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
 \end{proposition}
-\begin{proof}
-    Suppose not.
-    If $b = 0$ then
-        $a \rmul b = 0$ by \cref{real_mul_comm,real_mul_zero}.
-        Thus $0 < 0$.
-        Contradiction by \cref{real_add_ident,real_lt_irreflexive}.
-    \begin{byCase}
-    \caseOf{$0 < a$ and $0 < b$.}
-        Contradiction.
-    \caseOf{$0 < a$ and $b < 0$.}
-        Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
-    \caseOf{$a < 0$ and $0 < b$.}
-        Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
-    \caseOf{$a < 0$ and $b < 0$.}
-        Contradiction.
-    \end{byCase}
-\end{proof}
+% \begin{proof}
+%     Suppose not.
+%     If $b = 0$ then
+%         $a \rmul b = 0$ by \cref{real_mul_comm,real_mul_zero}.
+%         Thus $0 < 0$.
+%         Contradiction by \cref{real_add_ident,real_lt_irreflexive}.
+%     \begin{byCase}
+%     \caseOf{$0 < a$ and $0 < b$.}
+%         Contradiction.
+%     \caseOf{$0 < a$ and $b < 0$.}
+%         Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
+%     \caseOf{$a < 0$ and $0 < b$.}
+%         Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
+%     \caseOf{$a < 0$ and $b < 0$.}
+%         Contradiction.
+%     \end{byCase}
+% \end{proof}
 
-% from §5 Item 61: product negative (forward, left)
+% product negative (forward, left)
 \begin{proposition}\label{real_mul_neg_opposite_sign_left}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < 0$ and $0 < b$.
     Then $a \rmul b < 0$.
 \end{proposition}
 
-% from §5 Item 62: product negative (forward, right)
+% product negative (forward, right)
 \begin{proposition}\label{real_mul_neg_opposite_sign_right}
     Suppose $a\in\reals$ and $b\in\reals$ and $b < 0$ and $0 < a$.
     Then $a \rmul b < 0$.
 \end{proposition}
 
-% from §5 Item 63: product negative (backward)
+% product negative (backward)
 \begin{proposition}\label{real_mul_neg_opposite_sign_rev}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b < 0$.
     Then either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
@@ -4823,7 +4988,7 @@ This lets us use the same symbol for composition of functions.
     \end{byCase}
 \end{proof}
 
-% from §5 Item 64: order preserved by squaring positives
+% order preserved by squaring positives
 \begin{proposition}\label{real_pos_lt_iff_sq_lt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
     Then $a < b$ iff $\exp{a}{1+1} < \exp{b}{1+1}$.
@@ -4855,88 +5020,88 @@ This lets us use the same symbol for composition of functions.
     \end{subproof}
 \end{proof}
 
-% from §5 Item 65: squares are nonnegative
+% squares are nonnegative
 \begin{proposition}\label{real_sq_nonnegative}
     Suppose $a\in\reals$.
     Then $\exp{a}{1+1} \geq 0$.
 \end{proposition}
 % \begin{proof} Trivial. \end{proof}
 
-% from §5 Item 66: zero is less than one
+% zero is less than one
 \begin{proposition}\label{real_zero_lt_one}
     $0 < 1$.
 \end{proposition}
 
-% from §5 Item 67: inverse of a positive number
+% inverse of a positive number
 \begin{proposition}\label{real_inv_pos}
     Suppose $a\in\reals$ and $a > 0$.
     Then $\inv{a} > 0$.
 \end{proposition}
 
-% from §5 Item 68: inverse of a negative number
+% inverse of a negative number
 \begin{proposition}\label{real_inv_neg}
     Suppose $a\in\reals$ and $a < 0$.
     Then $\inv{a} < 0$.
 \end{proposition}
 
-% from §5 Item 69: order reversal by negation
+% order reversal by negation
 \begin{proposition}\label{real_lt_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
     Then $\neg{b} < \neg{a}$.
 \end{proposition}
 
-% from §5 helper lemma 13: order reversal under negation
+% helper lemma 13: order reversal under negation
 \begin{lemma}\label{real_leq_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $a \leq b$.
     Then $\neg{b} \leq \neg{a}$.
 \end{lemma}
 
-% from §5 helper lemma 14: transitivity of $\leq$
+% helper lemma 14: transitivity of $\leq$
 \begin{lemma}\label{real_leq_trans}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
     Suppose $a \leq b$ and $b \leq c$.
     Then $a \leq c$.
 \end{lemma}
 
-% from §5 helper lemma 15: monotonicity of addition for $\leq$
+% helper lemma 15: monotonicity of addition for $\leq$
 \begin{lemma}\label{real_leq_add}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
     Suppose $a \leq b$.
     Then $a + c \leq b + c$.
 \end{lemma}
 
-% from §5 helper lemma 17: antisymmetry of $\leq$
+% helper lemma 17: antisymmetry of $\leq$
 \begin{lemma}\label{real_leq_antisym}
     Suppose $a\in\reals$ and $b\in\reals$.
     Suppose $a \leq b$ and $b \leq a$.
     Then $a = b$.
 \end{lemma}
 
-% from §5 helper lemma 16: negation of a sum
+% helper lemma 16: negation of a sum
 \begin{lemma}\label{real_neg_addition}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\neg{(a + b)} = \neg{a} + \neg{b}$.
 \end{lemma}
 
-% from §5 helper lemma 18: positive difference
+% helper lemma 18: positive difference
 \begin{lemma}\label{real_lt_imp_pos_diff}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
     Then $0 < b - a$.
 \end{lemma}
 
-% from §5 helper lemma 19: subtracting a positive number decreases
+% helper lemma 19: subtracting a positive number decreases
 \begin{lemma}\label{real_sub_pos_lt}
     Suppose $a\in\reals$ and $b\in\reals$ and $0 < b$.
     Then $a - b < a$.
 \end{lemma}
 
-% from §5 helper lemma 20: subtracting a difference
+% helper lemma 20: subtracting a difference
 \begin{lemma}\label{real_sub_sub_cancel}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $a - (a - b) = b$.
 \end{lemma}
 
-% from §5 Item 70: multiplication by a negative number
+% multiplication by a negative number
 \begin{proposition}\label{real_lt_mul_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
     Suppose $a < b$ and $c < 0$.
@@ -4946,54 +5111,37 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_ident,real_lt_neg,real_add_inverse,real_lt_mul_pos,real_mul_neg_right,real_mul_closed,real_neg_neg}.
 \end{proof}
 
-% from §5 Item 71: absolute value signature
-\begin{signature} \label{sig8}
-    $\abs{a}$ is a set.
-\end{signature}
-
-% from §5 Item 72: absolute value
-\begin{axiom}\label{real_abs_nonneg}
-    Suppose $a\in\reals$ and $a \geq 0$.
-    Then $\abs{a} = a$.
-\end{axiom}
-
-% from §5 Item 72: absolute value (negative case)
-\begin{axiom}\label{real_abs_neg}
-    Suppose $a\in\reals$ and $a < 0$.
-    Then $\abs{a} = \neg{a}$.
-\end{axiom}
-
-% from §5 Item 73: absolute value is nonnegative
+% absolute value is nonnegative
 \begin{proposition}\label{real_abs_nonnegative}
     Suppose $a\in\reals$.
     Then $\abs{a} \geq 0$.
 \end{proposition}
 
-% from §5 Item 74: absolute value zero only at zero
+% absolute value zero only at zero
 \begin{proposition}\label{real_abs_eq_zero}
     Suppose $a\in\reals$ and $\abs{a} = 0$.
     Then $a = 0$.
 \end{proposition}
 
-% from §5 helper lemma 11: subtraction swap
+% helper lemma 11: subtraction swap
 \begin{lemma}\label{real_sub_swap_neg}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $b - a = \neg{(a - b)}$.
 \end{lemma}
 
-% from §5 Item 75: absolute value is symmetric
+% absolute value is symmetric
 \begin{proposition}\label{real_abs_sub_swap}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a - b} = \abs{b - a}$.
 \end{proposition}
 
-% from §5 helper lemma 12: absolute value is real
+% helper lemma 12: absolute value is real
 \begin{lemma}\label{real_abs_in_reals}
     Suppose $a\in\reals$.
     Then $\abs{a}\in\reals$.
 \end{lemma}
 
-% from §5 Item 76: absolute value of a product
+% absolute value of a product
 \begin{proposition}\label{real_abs_mul}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
@@ -5011,14 +5159,14 @@ This lets us use the same symbol for composition of functions.
     \end{byCase}
 \end{proof}
 
-% from §5 Item 77: absolute value bounded by a two-sided bound
+% absolute value bounded by a two-sided bound
 \begin{proposition}\label{real_abs_leq_if_pm_leq}
     Suppose $a\in\reals$ and $b\in\reals$.
     Suppose $a \leq b$ and $\neg{a} \leq b$.
     Then $\abs{a} \leq b$.
 \end{proposition}
 
-% from §5 Item 78: absolute value squared
+% absolute value squared
 \begin{proposition}\label{real_abs_square}
     Suppose $a\in\reals$.
     Then $\exp{\abs{a}}{1+1} = \exp{a}{1+1}$.
@@ -5027,40 +5175,40 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_abs_mul,real_abs_in_reals,real_abs_nonnegative,real_abs_nonneg,real_sq_nonnegative,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed}.
 \end{proof}
 
-% from §5 Item 79: absolute value dominates
+% absolute value dominates
 \begin{proposition}\label{real_leq_abs}
     Suppose $a\in\reals$.
     Then $a \leq \abs{a}$.
 \end{proposition}
 
-% from §5 Item 79: negative is at most absolute value
+% negative is at most absolute value
 \begin{proposition}\label{real_neg_leq_abs}
     Suppose $a\in\reals$.
     Then $\neg{a} \leq \abs{a}$.
 \end{proposition}
 
-% from §5 Item 80: absolute value bound implies right bound
+% absolute value bound implies right bound
 \begin{proposition}\label{real_abs_leq_imp_right_bound}
     Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a} \leq r$.
     Then $a \leq r$.
 \end{proposition}
 
-% from §5 Item 80: absolute value bound implies left bound
+% absolute value bound implies left bound
 \begin{proposition}\label{real_abs_leq_imp_left_bound}
     Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a} \leq r$.
     Then $\neg{r} \leq a$.
 \end{proposition}
 
-% from §5 Item 80: two-sided bound implies absolute value bound
+% two-sided bound implies absolute value bound
 \begin{proposition}\label{real_abs_leq_from_bounds}
     Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\neg{r} \leq a$ and $a \leq r$.
     Then $\abs{a} \leq r$.
 \end{proposition}
 
-% from §5 Item 81: absolute value bound implies left translated bound
+% absolute value bound implies left translated bound
 \begin{proposition}\label{real_abs_sub_leq_imp_left_bound}
     Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a - b} \leq r$.
@@ -5070,7 +5218,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_left_bound,real_leq_add,real_add_comm,real_add_assoc,real_add_ident}.
 \end{proof}
 
-% from §5 Item 81: absolute value bound implies right translated bound
+% absolute value bound implies right translated bound
 \begin{proposition}\label{real_abs_sub_leq_imp_right_bound}
     Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
     Suppose $\abs{a - b} \leq r$.
@@ -5080,7 +5228,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_right_bound,real_leq_add,real_add_assoc,real_add_comm,real_add_ident}.
 \end{proof}
 
-% from §5 Item 82: Triangle Inequality
+% Triangle Inequality
 \begin{proposition}\label{real_triangle_inequality}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a + b} \leq \abs{a} + \abs{b}$.
@@ -5090,7 +5238,7 @@ This lets us use the same symbol for composition of functions.
     Hence $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
 \end{proof}
 
-% from §5 Item 83: Reverse Triangle Inequality
+% Reverse Triangle Inequality
 \begin{proposition}\label{real_reverse_triangle_inequality}
     Suppose $a\in\reals$ and $b\in\reals$.
     Then $\abs{a - b} \geq \abs{\abs{a} - \abs{b}}$.
@@ -5106,42 +5254,7 @@ This lets us use the same symbol for composition of functions.
     Therefore $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
 \end{proof}
 
-% from §5 Item 84: upper bound
-\begin{definition}\label{real_upper_bound}
-    $b$ is an upper bound of $A$ iff $b\in\reals$ and $A\subseteq\reals$ and for all $a\in A$ we have $a \leq b$.
-\end{definition}
-
-% from §5 Item 85: bounded above
-\begin{definition}\label{real_bounded_above}
-    $A$ is bounded above iff there exists $b$ such that $b$ is an upper bound of $A$.
-\end{definition}
-
-% from §5 Item 86: lower bound
-\begin{definition}\label{real_lower_bound}
-    $b$ is a lower bound of $A$ iff $b\in\reals$ and $A\subseteq\reals$ and for all $a\in A$ we have $b \leq a$.
-\end{definition}
-
-% from §5 Item 87: bounded below
-\begin{definition}\label{real_bounded_below}
-    $A$ is bounded below iff there exists $b$ such that $b$ is a lower bound of $A$.
-\end{definition}
-
-% from §5 Item 88: bounded set
-\begin{definition}\label{real_bounded}
-    $A$ is bounded iff $A$ is bounded above and $A$ is bounded below.
-\end{definition}
-
-% from §5 Item 89: supremum
-\begin{definition}\label{real_supremum}
-    $p$ is a supremum of $A$ iff $p$ is an upper bound of $A$ and for all $b$ such that $b$ is an upper bound of $A$ we have $p \leq b$.
-\end{definition}
-
-% from §5 Item 90: infimum
-\begin{definition}\label{real_infimum}
-    $p$ is an infimum of $A$ iff $p$ is a lower bound of $A$ and for all $b$ such that $b$ is a lower bound of $A$ we have $p \geq b$.
-\end{definition}
-
-% from §5 Item 91: uniqueness of supremum
+% uniqueness of supremum
 \begin{proposition}\label{real_supremum_unique}
     Suppose $p$ is a supremum of $A$ and $q$ is a supremum of $A$.
     Then $p = q$.
@@ -5150,7 +5263,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_supremum,real_upper_bound,real_leq_antisym}.
 \end{proof}
 
-% from §5 Item 91: uniqueness of infimum
+% uniqueness of infimum
 \begin{proposition}\label{real_infimum_unique}
     Suppose $p$ is an infimum of $A$ and $q$ is an infimum of $A$.
     Then $p = q$.
@@ -5159,17 +5272,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_infimum,real_lower_bound,real_leq_antisym}.
 \end{proof}
 
-% from §5 Item 96: maximum
-\begin{definition}\label{real_maximum}
-    $m$ is a maximum of $A$ iff $m\in A$ and for all $a\in A$ we have $a \leq m$.
-\end{definition}
-
-% from §5 Item 97: minimum
-\begin{definition}\label{real_minimum}
-    $m$ is a minimum of $A$ iff $m\in A$ and for all $a\in A$ we have $m \leq a$.
-\end{definition}
-
-% from §5 Item 98: maximum implies supremum
+% maximum implies supremum
 \begin{proposition}\label{real_maximum_is_supremum}
     Suppose $A\subseteq\reals$ and $m$ is a maximum of $A$.
     Then $m$ is a supremum of $A$.
@@ -5178,7 +5281,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{subseteq,real_maximum,real_upper_bound,real_supremum}.
 \end{proof}
 
-% from §5 Item 99: supremum in set implies maximum
+% supremum in set implies maximum
 \begin{proposition}\label{real_supremum_in_set_is_maximum}
     Suppose $A\subseteq\reals$ and $p$ is a supremum of $A$ and $p\in A$.
     Then $p$ is a maximum of $A$.
@@ -5187,7 +5290,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_supremum,real_upper_bound,real_maximum}.
 \end{proof}
 
-% from §5 Item 100: maximum equals supremum
+% maximum equals supremum
 \begin{proposition}\label{real_maximum_eq_supremum}
     Suppose $A\subseteq\reals$ and $m$ is a maximum of $A$.
     Suppose $p$ is a supremum of $A$ and $p\in A$.
@@ -5197,7 +5300,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_maximum_is_supremum,real_supremum_unique}.
 \end{proof}
 
-% from §5 Item 101: characterization of supremum
+% characterization of supremum
 \begin{proposition}\label{real_supremum_characterization}
     Suppose $A\subseteq\reals$ and $A$ is bounded above and $b$ is an upper bound of $A$.
     Then $b$ is a supremum of $A$ iff for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
@@ -5217,13 +5320,7 @@ This lets us use the same symbol for composition of functions.
     \end{subproof}
 \end{proof}
 
-% from §5 Item 102: Completeness Axiom
-\begin{axiom}\label{real_completeness_axiom}
-    Suppose $A\subseteq\reals$ and $A\neq \emptyset$ and $A$ is bounded above.
-    Then there exists $p$ such that $p$ is a supremum of $A$.
-\end{axiom}
-
-% from §5 Item 103: existence of infimum
+% existence of infimum
 \begin{proposition}\label{real_infimum_exists}
     Suppose $A\subseteq\reals$ and $A\neq \emptyset$ and $A$ is bounded below.
     Then there exists $p$ such that $p$ is an infimum of $A$.
@@ -5236,7 +5333,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{subseteq,real_lower_bound,real_upper_bound,real_bounded_above,real_completeness_axiom,real_supremum,real_infimum}.
 \end{proof}
 
-% from §5 Item 104: Archimedean Property
+% Archimedean Property
 \begin{proposition}\label{real_archimedean_property}
     Suppose $x\in\reals$.
     Then there exists $n\in\naturalsPlus$ such that $x < n$.
@@ -5251,7 +5348,7 @@ This lets us use the same symbol for composition of functions.
     Contradiction by \cref{subseteq,real_supremum,real_naturals_closed_succ,real_upper_bound,real_mul_ident,real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_ident,real_add_comm,real_lt_asym}.
 \end{proof}
 
-% from §5 Item 105: Generalized Archimedean Property
+% Generalized Archimedean Property
 \begin{proposition}\label{real_generalized_archimedean_property}
     Suppose $x\in\reals$.
     Then there exist $k, n$ such that $k\in\integers$ and $n\in\integers$ and $k < x$ and $x < n$.
@@ -5260,7 +5357,7 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{real_archimedean_property,real_add_inverse,real_naturals_subset_reals,subseteq,real_lt_neg,real_integers,real_neg_neg}.
 \end{proof}
 
-% from §5 Item 106: small reciprocal of a positive real
+% small reciprocal of a positive real
 \begin{proposition}\label{real_small_reciprocal}
     Suppose $x\in\reals$ and $x$ is positive.
     Then there exists $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < x$.
@@ -5269,8 +5366,8 @@ This lets us use the same symbol for composition of functions.
     Take $N\in\naturalsPlus$ such that $\inv{x} < N$ by \cref{real_pos_nonzero,real_mul_inverse,real_archimedean_property}. Thus $0 < 1 / N$ and $1 / N < x$ by \cref{real_naturals_subset_reals,subseteq,real_add_ident,real_pos_nonzero,real_mul_inverse,real_inv_pos,real_lt_trans,real_mul_ident,real_mul_closed,real_lt_mul_pos,real_mul_comm,real_mul_assoc,real_div}.
 \end{proof}
 
-% from §5 Item 107: least element of nonempty subset of naturals
-% from §5 helper lemma 21: split at successor
+% least element of nonempty subset of naturals
+% helper lemma 21: split at successor
 \begin{lemma}\label{real_naturals_split_succ}
     Suppose $A\subseteq\naturalsPlus$ and $n\in\naturalsPlus$.
     Suppose there exists $a\in A$ such that $a \leq n + 1$.
@@ -5281,14 +5378,14 @@ This lets us use the same symbol for composition of functions.
     Follows by \cref{subseteq,real_succ_discrete}.
 \end{proof}
 
-% from §5 helper lemma 22: succ leq elimination
+% helper lemma 22: succ leq elimination
 \begin{lemma}\label{real_naturals_leq_succ_elim}
     Suppose $a\in\naturalsPlus$ and $n\in\naturalsPlus$.
     Suppose $a \leq n + 1$ and $a \neq n + 1$.
     Then $a \leq n$.
 \end{lemma}
 
-% from §5 helper lemma 22: minimum at successor
+% helper lemma 22: minimum at successor
 \begin{lemma}\label{real_naturals_minimum_at_succ}
     Suppose $A\subseteq\naturalsPlus$ and $n\in\naturalsPlus$ and $n + 1\in A$.
     Suppose for all $a\in A$ we have it is wrong that $a \leq n$.
@@ -5306,33 +5403,8 @@ This lets us use the same symbol for composition of functions.
     Let $S = \{ n\in\naturalsPlus \mid \text{if there exists $a\in A$ such that $a \leq n$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$}\}$. Follows by \cref{real_one_leq_naturalsplus,real_naturals_subset_reals,real_one_in_naturals,real_leq_antisym,real_naturals_split_succ,real_naturals_minimum_at_succ,real_naturals_closed_succ,real_naturals_induction,nonempty_inhabited,subseteq}.
 \end{proof}
 
-% Next 6 defs are from the old file numbers.tex
-\begin{definition}\label{intervalclosed}
-    $\intervalclosed{a}{b} = \{x \in \reals \mid a \leq x \leq b\}$.
-\end{definition}
 
-\begin{definition}\label{intervalopen}
-    $\intervalopen{a}{b} = \{ x \in \reals \mid a < x < b\}$.
-\end{definition}
-
-\begin{definition}\label{intervalopen_infinite_left}
-    $\intervalopenInfiniteLeft{b} = \{ x \in \reals \mid x < b\}$.
-\end{definition}
-
-\begin{definition}\label{intervalopen_infinite_right}
-    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x > a\}$.
-\end{definition}
-
-\begin{definition}\label{intervalclosed_infinite_left}
-    $\intervalclosedInfiniteLeft{b} = \{ x \in \reals \mid x \leq b\}$.
-\end{definition}
-
-\begin{definition}\label{intervalclosed_infinite_right}
-    $\intervalclosedInfiniteRight{a} = \{ x \in \reals \mid x \geq a\}$.
-\end{definition}
-
-
-% from §5 helper lemma 1: predecessor of naturals
+% helper lemma 1: predecessor of naturals
 \begin{lemma}\label{real_naturals_predecessor}
     Suppose $n\in\naturalsPlus$.
     Then $n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$.
@@ -5342,7 +5414,7 @@ This lets us use the same symbol for composition of functions.
 \end{proof}
 
 
-% from §5 helper lemma 2: consecutive integer for nonnegative reals
+% helper lemma 2: consecutive integer for nonnegative reals
 \begin{lemma}\label{real_consecutive_integers_nonneg}
     Suppose $x\in\reals$ and $0 \leq x$.
     Then there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ and either $n = 0$ or $n\in\naturalsPlus$.
@@ -5356,6 +5428,7 @@ This lets us use the same symbol for composition of functions.
     \begin{byCase}
     \caseOf{$m = 1$.}
         Take $n$ such that $n = 0$.
+        $n \in \reals$.
         $n\in\integers$ by \cref{real_integers}.
         Thus $x < n + 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
         Hence there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
@@ -5363,13 +5436,14 @@ This lets us use the same symbol for composition of functions.
         Take $p\in\naturalsPlus$ such that $m = p + 1$ by \cref{real_naturals_predecessor}.
         Thus it is wrong that $x < p$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_ident,real_zero_lt_one,real_lt_add,real_add_comm,real_lt_trans,real_leq_antisym,real_lt_irreflexive}.
         Take $n$ such that $n = p$.
+        $n \in \reals$.
         $n\in\integers$ by \cref{real_integers}.
         Thus $n \leq x$ by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy}.
         Therefore there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
     \end{byCase}
 \end{proof}
 
-% from §5 Item 108: consecutive integers
+% consecutive integers
 \begin{proposition}\label{real_consecutive_integers}
     Suppose $x\in\reals$.
     Then there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$.
@@ -5395,7 +5469,8 @@ This lets us use the same symbol for composition of functions.
             \end{byCase}
         \end{subproof}
         Let $k = \neg{(t + 1)}$.
-        Thus $k\in\integers$ by \cref{real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_integers}.
+        $k\in\reals$.
+        Thus $k\in\integers$. % by \cref{real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_integers}.
         Hence $k + 1 = \neg{t}$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_neg_addition,real_add_inverse,real_add_assoc,real_add_comm,real_add_ident}.
         \begin{byCase}
         \caseOf{$x = k + 1$.}
@@ -5406,7 +5481,7 @@ This lets us use the same symbol for composition of functions.
     \end{byCase}
 \end{proof}
   
-% from §5 helper lemma 3: rationals in nonnegative intervals
+% helper lemma 3: rationals in nonnegative intervals
 \begin{lemma}\label{real_rationals_nonneg_interval}
     Suppose $a\in\reals$ and $b\in\reals$ and $0 \leq a$ and $a < b$.
     Then there exist $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{a}{b}$.
@@ -5450,7 +5525,7 @@ This lets us use the same symbol for composition of functions.
     Thus there exist $i, j$ such that $i\in\naturalsPlus$ and $j\in\naturalsPlus$ and $i / j\in\intervalopen{a}{b}$ by \cref{subseteq,intervalopen}.
 \end{proof}
 
-% from §5 Item 109: rational in an open interval
+% rational in an open interval
 \begin{proposition}\label{real_rational_open_interval}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
     Then there exists $p\in\rationals$ such that $p\in\intervalopen{a}{b}$.
@@ -5467,22 +5542,31 @@ This lets us use the same symbol for composition of functions.
     \caseOf{$b \leq 0$.}
         Take $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{\neg{b}}{\neg{a}}$ by \cref{real_add_inverse,real_add_ident,real_add_inverse_unique,real_leq_neg,real_lt_neg,real_rationals_nonneg_interval}.
         Let $p = \neg{(n / N)}$.
-        Thus $p\in\rationals$ by \cref{real_integers,real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_div,real_mul_inverse,real_mul_closed,real_mul_comm,real_mul_neg_right,real_rationals}.
+        $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
+        $\neg{n}\in\reals$ by \cref{real_add_inverse}.
+        $\neg{\neg{n}} = n$ by \cref{real_naturals_subset_reals,subseteq,real_neg_neg}.
+        $\neg{n}\in\integers$ by \cref{real_integers,real_naturals_subset_reals,subseteq,real_add_inverse}.
+        $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
+        $0 < N$ by \cref{real_add_ident,real_mul_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans}.
+        $N\neq 0$ by \cref{real_pos_nonzero}.
+        $\inv{N}\in\reals$ by \cref{real_mul_inverse}.
+        $N\in\integers$ by \cref{real_integers}.
+        $N\in\integers\setminus\{0\}$ by \cref{singleton_iff,setminus_intro}.
+        $(\neg{n}) / N = p$ by \cref{real_div,real_mul_comm,real_mul_neg_right}.
+        Thus $p\in\rationals$ by \cref{real_rationals}.
         Hence there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_add_inverse,intervalopen,real_neg_neg,real_lt_neg}.
     \end{byCase}
 \end{proof}
 
-\subsection{Square roots}
+% helper lemma 1:
+\begin{lemma} \label{lemma_4_eq_2_times_2}
+    $4 = 2 \rmul 2$.
+\end{lemma}    
 
-\begin{signature} \label{sig9}
-    $\sqrt{x}$ is a set.
-\end{signature}
-
-\begin{axiom} \label{positive_square_root}
-    Suppose that $x \in\reals$ and $x \geq 0$.
-    Then $\sqrt{x} \in \reals$ and $\sqrt{x} \geq 0$ and $\sqrt{x} \rmul \sqrt{x} = x$.
-\end{axiom}    
-
+% helper lemma 2:
+\begin{lemma} \label{lemma_6_eq_3_times_2}
+    $6 = 3 \rmul 2$.
+\end{lemma}    
 
 \subsection{Sequences and finite sums}
 
@@ -5525,6 +5609,7 @@ This lets us use the same symbol for composition of functions.
     $s(k + 1) = s(k) + a(k + 1)$ and
     $x = s(n)$.
 \end{definition}
+
 
 \section{Standard Library: Natural numbers}
 
