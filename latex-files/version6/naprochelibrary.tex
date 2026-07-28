@@ -1,0 +1,5721 @@
+
+\section{Standard Library: Sets}
+
+\begin{abbreviation}\label{ni}
+    $A\ni a$ iff $a\in A$.
+\end{abbreviation}
+
+\subsection{Extensionality}
+
+The axiom of set extensionality says that sets are determined by their \textit{extension},
+that is, two sets are equal iff they have the same elements.
+%
+\begin{axiom}[Set extensionality]\label{setext}
+    Suppose for all $a$ we have $a\in A$ iff $a\in B$.
+    Then $A = B$.
+\end{axiom}
+
+This axiom is also available as the justification “{\ldots\ by set extensionality}”,
+which applies it to goals of the form “$A = B$” and  “$A \neq B$”.
+
+\begin{proposition}[Witness for disequality]%
+\label{neq_witness}
+    Suppose $A\neq B$.
+    Then there exists $c$ such that
+    either $c\in A$ and $c\not\in B$
+    or $c\not\in A$ and $c\in B$.
+\end{proposition}
+\begin{proof}
+    Suppose not. Then $A = B$ by set extensionality. Contradiction.
+\end{proof}
+
+
+\subsection{Subsets}
+
+\begin{definition}\label{subseteq}
+    $A\subseteq B$ iff
+    for all $a\in A$ we have $a\in B$.
+\end{definition}
+
+\begin{abbreviation}\label{is_subset}
+    $A$ is a subset of $B$ iff $A\subseteq B$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{supseteq}
+    $B\supseteq A$ iff $A\subseteq B$.
+\end{abbreviation}
+
+\begin{proposition}%
+\label{subseteq_refl}
+    $A\subseteq A$.
+\end{proposition}
+
+\begin{proposition}%
+\label{subseteq_antisymmetric}
+    Suppose $A\subseteq B\subseteq A$.
+    Then $A = B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{elem_subseteq}
+    Suppose $a\in A\subseteq B$.
+    Then $a\in B$.
+\end{proposition}
+
+\begin{proposition}%
+\label{not_in_subseteq}
+    Suppose $A\subseteq B$ and $c\notin B$.
+    Then $c\notin A$.
+\end{proposition}
+
+\begin{proposition}%
+\label{subseteq_transitive}
+    Suppose $A\subseteq B\subseteq C$.
+    Then $A\subseteq C$.
+\end{proposition}
+
+\begin{definition}\label{subset}
+    $A\subset B$ iff
+    $A\subseteq B$ and $A\neq B$.
+\end{definition}
+
+\begin{proposition}\label{subset_irrefl}
+    $A\not\subset A$.
+\end{proposition}
+
+\begin{proposition}\label{subset_transitive}
+    Suppose $A\subseteq B\subseteq C$.
+    Then $A\subseteq C$.
+\end{proposition}
+
+\begin{proposition}\label{subset_witness}
+    Suppose $A\subset B$.
+    Then there exists $b\in B$ such that $b\notin A$.
+\end{proposition}
+\begin{proof}
+    $A\subseteq B$ and $A\neq B$.
+\end{proof}
+
+\begin{abbreviation}\label{family_of_subsets}
+    $F$ is a family of subsets of $X$ iff
+    for all $A\in F$ we have $A\subseteq X$.
+\end{abbreviation}
+
+
+\subsection{The empty set}
+
+\begin{axiom}\label{emptyset}
+    For all $a$ we have $a\notin\emptyset$.
+\end{axiom}
+
+\begin{abbreviation}\label{inhabited}
+    $A$ is inhabited iff
+    there exists $a$ such that $a\in A$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{empty}
+    $A$ is empty iff for all $x$ we have $x\notin A$.
+\end{abbreviation}
+
+\begin{proposition}\label{nonempty_inhabited}
+    Suppose $A\neq\emptyset$. Then $A$ is inhabited.
+\end{proposition}
+
+\begin{proposition}\label{emptyset_subseteq}
+    For all $a$ we have $\emptyset \subseteq a$.
+\end{proposition}
+
+\begin{proposition}%
+\label{subseteq_emptyset_iff}
+    $A\subseteq \emptyset$ iff $A = \emptyset$.
+\end{proposition}
+
+
+\subsection{Disjointness of sets}
+
+\begin{definition}\label{disjoint}
+    $A$ is disjoint from $B$ iff there exists no $a$ such that $a\in A, B$.
+\end{definition}
+
+\begin{abbreviation}\label{notmeets}
+    $A\notmeets B$ iff $A$ is disjoint from $B$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{meets}
+    $A\meets B$ iff $A$ is not disjoint from $B$.
+\end{abbreviation}
+
+\begin{proposition}%
+\label{disjoint_symmetric}
+    If $A$ is disjoint from $B$, then $B$ is disjoint from $A$.
+\end{proposition}
+
+
+
+
+
+\subsection{Unordered pairing and set adjunction}
+
+Finite set expressions are desugared to
+iterated application of $\operatorname{\textsf{cons}}$ to $\emptyset$.
+Thus $\{x,y,z\}$ is an abbreviaton of
+$\cons{x}{\cons{y}{\cons{z}{\emptyset}}}$.
+The $\operatorname{\textsf{cons}}$ operation is determined by the following axiom:
+%
+\begin{axiom}\label{cons_iff}
+    $x\in \cons{y}{X}$ iff $x = y$ or $x\in X$.
+\end{axiom}
+
+\begin{proposition}\label{cons_left}
+    $x\in \cons{x}{X}$.
+\end{proposition}
+
+\begin{proposition}\label{cons_right}
+    If $y\in X$, then $y\in \cons{x}{X}$.
+\end{proposition}
+
+
+% Unordered pairs:
+
+\begin{proposition}\label{upair_intro_left}
+    $a\in\{a,b\}$.
+\end{proposition}
+
+\begin{proposition}\label{upair_intro_right}
+    $b\in\{a,b\}$.
+\end{proposition}
+
+\begin{proposition}\label{upair_elim}
+    Suppose $c\in\{a,b\}$. Then $a = c$ or $b = c$.
+\end{proposition}
+
+\begin{proposition}\label{upair_iff}
+    $c\in\{a,b\}$ iff $a = c$ or $b = c$.
+\end{proposition}
+
+
+% Singletons:
+
+\begin{proposition}\label{singleton_intro}
+    $a\in\{a\}$.
+\end{proposition}
+
+\begin{proposition}\label{singleton_elim}
+    If $a\in\{b\}$, then $a = b$.
+\end{proposition}
+
+\begin{proposition}\label{singleton_iff}
+    $a\in\{b\}$ iff $a = b$.
+\end{proposition}
+
+\begin{abbreviation}\label{subsingleton}
+    $A$ is a subsingleton iff for all $a, b\in A$ we have $a = b$.
+\end{abbreviation}
+
+\begin{proposition}\label{singleton_inhabited}
+    $\{a\}$ is inhabited.
+\end{proposition}
+
+\begin{proposition}\label{singleton_iff_inhabited_subsingleton}
+    Let $A$ be a subsingleton.
+    Let $a\in A$.
+    Then $A = \{a\}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{singleton_subset_intro}
+    Suppose $a\in C$.
+    Then $\{a\}\subseteq C$.
+\end{proposition}
+
+\begin{proposition}\label{singleton_subset_elim}
+    Suppose $\{a\}\subseteq C$.
+    Then $a\in C$.
+\end{proposition}
+
+
+\subsection{Union and intersection}
+
+\subsubsection{Union of a set}
+
+\begin{axiom}\label{unions_iff}
+    $z\in\unions{X}$ iff there exists $Y\in X$ such that $z\in Y$.
+\end{axiom}
+
+
+\begin{proposition}%
+\label{unions_intro}
+    Suppose $A\in B\in C$.
+    Then $A\in\unions{C}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{unions_iff}.
+\end{proof}
+
+\begin{proposition}\label{unions_emptyset}
+    $\unions{\emptyset} = \emptyset$.
+\end{proposition}
+
+\begin{proposition}\label{unions_family}
+    Let $F$ be a family of subsets of $X$.
+    Then $\unions{F}\subseteq X$.
+\end{proposition}
+
+\begin{abbreviation}\label{closedunderunions}
+    $T$ is closed under arbitrary unions
+    iff for every subset $M$ of $T$ we have $\unions{M}\in T$.
+\end{abbreviation}
+
+\subsubsection{Intersection of a set}
+
+\begin{definition}\label{inters}
+    $\inters{A} = \{ x\in\unions{A}\mid \text{for all $a\in A$ we have $x\in a$} \}$.
+\end{definition}
+
+\begin{proposition}\label{inters_iff_forall}
+    $z\in\inters{X}$ iff $X$ is inhabited and for all $Y\in X$ we have $z\in Y$.
+\end{proposition}
+
+\begin{proposition}%
+\label{inters_intro}
+    Suppose $C$ is inhabited.
+    Suppose for all $B\in C$ we have $A\in B$.
+    Then $A\in\inters{C}$.
+\end{proposition}
+
+\begin{proposition}\label{inters_destr}
+    Suppose $A\in\inters{C}$.
+    Suppose $B\in C$.
+    Then $A\in B$.
+\end{proposition}
+
+\begin{proposition}\label{inters_greatest}
+    Suppose $A$ is inhabited.
+    Suppose for all $a\in A$ we have $C\subseteq a$.
+    Then $C\subseteq\inters{A}$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_inters_iff}
+    Suppose $A$ is inhabited.
+    Then $C\subseteq\inters{A}$ iff for all $a\in A$ we have $C\subseteq a$.
+\end{proposition}
+
+\begin{proposition}\label{inters_subseteq_elem}
+    Let $B\in A$.
+    Then $\inters{A}\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{inters_singleton}
+    $\inters{\{a\}} = a$.
+\end{proposition}
+\begin{proof}
+    Every element of $a$ is an element of $\inters{\{a\}}$
+        by \cref{inters_iff_forall,singleton_iff,singleton_inhabited}.
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inters_emptyset}
+    $\inters{\{\emptyset\}} = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\subsubsection{Binary union}
+
+\begin{axiom}\label{union_iff}
+    Let $A, B$ be sets.
+    $a\in A\union B$ iff $a\in A$ or $a\in B$.
+\end{axiom}
+
+\begin{proposition}\label{union_intro_left}
+    If $c\in A$, then $c\in A\union B$.
+\end{proposition}
+
+\begin{proposition}\label{union_intro_right}
+    If $c\in B$, then $c\in A\union B$.
+\end{proposition}
+
+\begin{proposition}\label{union_as_unions}
+    $\unions{\{x,y\}} = x\union y$.
+\end{proposition}
+\begin{proof}
+    For all $z$ we have
+    \begin{align*}
+        z\in \unions{\{x,y\}}
+        &\iff \exists Z\in\{x,y\}. z\in Z
+        &\iff z\in x \lor z\in y
+        &\iff z\in x\union y.
+    \end{align*}
+    Follows by \cref{setext}.
+    %Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}[Commutativity of union]%
+\label{union_comm}
+    $A\union B = B\union A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}[Associativity of union]%
+\label{union_assoc}
+    $(A\union B)\union C = A\union (B\union C)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}[Idempotence of union]%
+\label{union_idempotent}
+    $A\union A = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_subsets_is_subset}
+    Suppose $A\subseteq C$ and $B\subseteq C$.
+    Then $A\union B\subseteq C$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_union_iff}
+    $A\union B\subseteq C$ iff $A\subseteq C$ and $B\subseteq C$.
+\end{proposition}
+
+\begin{proposition}\label{union_upper_left}
+    $A\subseteq A\union B$.
+\end{proposition}
+
+\begin{proposition}\label{union_upper_right}
+    $B\subseteq A\union B$.
+\end{proposition}
+
+\begin{proposition}\label{union_subseteq_union}
+    Suppose $A\subseteq C$ and $B\subseteq D$.
+    Then $A\union B\subseteq C\union D$.
+\end{proposition}
+
+\begin{proposition}%
+\label{union_emptyset}
+    $A\union\emptyset = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+
+\begin{proposition}%
+\label{union_emptyset_intro}
+    Suppose $A = \emptyset$ and $B = \emptyset$. Then $A\union B = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{union_emptyset_elim_left}
+    Suppose $A\union B = \emptyset$. Then $A = \emptyset$.
+\end{proposition}
+\begin{proof}
+    We have $A\subseteq\emptyset$ by \cref{union_upper_left}.
+    Follows by \cref{subseteq_emptyset_iff}.
+\end{proof}
+
+\begin{proposition}%
+\label{union_emptyset_elim_right}
+    Suppose $A\union B = \emptyset$. Then $B = \emptyset$.
+\end{proposition}
+\begin{proof}
+    We have $B\subseteq\emptyset$ by \cref{union_upper_right}.
+    Follows by \cref{subseteq_emptyset_iff}.
+\end{proof}
+
+\begin{proposition}%
+\label{union_absorb_subseteq_left}
+    Suppose $A\subseteq B$. Then $A\union B = B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{union_absorb_subseteq_right}
+    Suppose $A\subseteq B$. Then $B\union A = B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{union_eq_self_implies_subseteq}
+    If $A\union B = B$, then $A\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{unions_cons}
+    $\unions{\cons{b}{A}} = b\union\unions{A}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_cons}
+    $\cons{b}{A} \union C = \cons{b}{A\union C}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_absorb_left}
+    $A\union (A\union B) = A\union B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_absorb_right}
+    $(A\union B)\union B = A\union B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_comm_left}
+    $A\union (B\union C) = B\union (A\union C)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{abbreviation}\label{closedunderunion}
+    $T$ is closed under binary unions
+    iff for every $U,V\in T$ we have $U\union V\in T$.
+\end{abbreviation}
+
+
+\subsubsection{Binary intersection}
+
+\begin{definition}\label{inter}
+    $A\inter B = \{ a \in A \mid a\in B\}$.
+\end{definition}
+
+\begin{proposition}\label{inter_intro}
+    If $c\in A, B$, then $c\in A\inter B$.
+\end{proposition}
+
+\begin{proposition}\label{inter_elim_left}
+    If $c\in A\inter B$, then $c\in A$.
+\end{proposition}
+
+\begin{proposition}\label{inter_elim_right}
+    If $c\in A\inter B$, then $c\in B$.
+\end{proposition}
+
+\begin{proposition}\label{inter_as_inters}
+    $\inters{\{A,B\}} = A\inter B$.
+\end{proposition}
+\begin{proof}
+    $\{A,B\}$ is inhabited.
+    Thus for all $c$ we have $c\in\inters{\{A,B\}}$ iff $c\in A\inter B$
+        by \cref{inters_iff_forall,inter,upair_iff}.
+    %Thus $\inters{\{A,B\}} = A\inter B$ by \hyperref[setext]{extensionality}.
+    Follows by \hyperref[setext]{extensionality}.
+\end{proof}
+
+
+\begin{proposition}[Commutativity of intersection]%
+\label{inter_comm}
+    $A\inter B = B\inter A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}[Associativity of intersection]%
+\label{inter_assoc}
+    $(A\inter B)\inter C = A\inter (B\inter C)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}[Idempotence of intersection]%
+\label{inter_idempotent}
+    $A\inter A = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inter_emptyset}
+    $A\inter\emptyset = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{inter_absorb_supseteq_right}
+    Suppose $A\subseteq B$. Then $A\inter B = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{inter_absorb_supseteq_left}
+    Suppose $A\subseteq B$. Then $B\inter A = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{inter_eq_left_implies_subseteq}
+    Suppose $A\inter B = A$. Then $A\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_inter_iff}
+    $C\subseteq A\inter B$ iff $C\subseteq A$ and $C\subseteq B$.
+\end{proposition}
+
+\begin{proposition}%
+\label{inter_lower_left}
+    $A\inter B \subseteq A$.
+\end{proposition}
+
+\begin{proposition}%
+\label{inter_lower_right}
+    $A\inter B \subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{inter_absorb_left}
+    $A\inter (A\inter B) = A\inter B$.
+\end{proposition}
+\begin{proof} Follows by set extensionality. \end{proof}
+
+\begin{proposition}%
+\label{inter_absorb_right}
+    $(A\inter B) \inter B = A\inter B$.
+\end{proposition}
+\begin{proof} Follows by set extensionality. \end{proof}
+
+\begin{proposition}\label{inter_comm_left}
+    $A\inter (B\inter C) = B\inter (A\inter C)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inter_subseteq}
+    Suppose $A,B\subseteq C$.
+    Then $A\inter B\subseteq C$.
+\end{proposition}
+
+\begin{abbreviation}\label{closedunderinter}
+    $T$ is closed under binary intersections
+    iff for every $U,V\in T$ we have $U\inter V\in T$.
+\end{abbreviation}
+
+\subsubsection{Interaction of union and intersection}
+
+\begin{proposition}[Binary intersection over binary union]%
+\label{inter_distrib_union}
+    $A\inter (B\union C) = (A\inter B)\union (A\inter C)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}[Binary union over binary intersection]%
+\label{union_distrib_inter}
+    $x\union (y\inter z) = (x\union y)\inter (x\union z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+% Halmos, Naive Set Theory, page 16
+\begin{proposition}\label{union_inter_assoc_intro}
+    Suppose $C\subseteq A$.
+    Then $A\inter (B\union C) = (A\inter B)\union C$.
+\end{proposition}
+\begin{proof}
+    \begin{align*}
+        A\inter (B\union C) &= (A\inter B)\union (A\inter C) \explanation{by \cref{inter_distrib_union}}\\
+        &= (A\inter B)\union C \explanation{by \cref{inter_absorb_supseteq_left}}
+    \end{align*}
+\end{proof}
+
+% Halmos, Naive Set Theory, page 16
+\begin{proposition}\label{union_inter_assoc_elim}
+    Suppose $(A\inter B)\union C = A\inter (B\union C)$.
+    Then $C\subseteq A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{union_upper_right,union_upper_left,subseteq_union_iff,subseteq_antisymmetric,subseteq_inter_iff}.
+\end{proof}
+
+% From Isabelle/ZF equalities theory
+\begin{proposition}\label{union_inter_crazy}
+    $(A\inter B)\union (B\inter C)\union (C\inter A)
+    =
+    (A\union B)\inter (B\union C)\inter (C\union A)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+
+\begin{proposition}[Intersection over binary union]\label{inters_distrib_union}
+    Suppose $A$ and $B$ are inhabited.
+    Then $\inters{A\union B} = (\inters{A})\inter\inters{B}$.
+\end{proposition}
+\begin{proof}
+    $A\union B$ is inhabited.
+    Thus for all $c$ we have $c\in\inters{A\union B}$ iff $c\in(\inters{A})\inter\inters{B}$
+        by \cref{inter,union_iff,inters_iff_forall}.
+    Follows by \hyperref[setext]{set extensionality}. % We only need the actual setext axiom here, not the tactic.
+\end{proof}
+
+\subsection{Set difference}
+
+\begin{definition}\label{setminus}
+    $A\setminus B = \{ a \in A \mid a\not\in B\}$.
+\end{definition}
+
+\begin{proposition}\label{setminus_intro}
+    If $a\in A$ and $a\notin B$, then $a\in A\setminus B$.
+\end{proposition}
+
+\begin{proposition}\label{setminus_elim_left}
+    If $a\in A\setminus B$, then $a\in A$.
+\end{proposition}
+
+\begin{proposition}\label{setminus_elim_right}
+    If $a\in A\setminus B$, then $a\notin B$.
+\end{proposition}
+
+\begin{proposition}\label{setminus_emptyset}
+    $x\setminus \emptyset = x$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{emptyset_setminus}
+    $\emptyset\setminus x = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{setminus_self}
+    $x\setminus x = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+% NOTE: This theorem tends to show up spuriously in ATP proofs!
+% Getting rid of it via explicit \cref{..} can save time.
+\begin{proposition}\label{setminus_setminus}
+    $x\setminus (x\setminus y) = x\inter y$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{double_relative_complement}
+    Suppose $y\subseteq x$.
+    $x\setminus (x\setminus y) = y$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{setminus_setminus,inter_absorb_supseteq_left}.
+\end{proof}
+
+\begin{proposition}\label{setminus_inter}
+    $x\setminus (y\inter z) = (x\setminus y)\union (x\setminus z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{setminus_union}
+    $x\setminus (y\union z) = (x\setminus y)\inter (x\setminus z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inter_setminus}
+    $x\inter (y\setminus z) = (x\inter y)\setminus (x\inter z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{difference_with_proper_subset_is_inhabited}
+    Let $A, B$ be sets.
+    Suppose $A\subset B$.
+    Then $B\setminus A$ is inhabited.
+\end{proposition}
+\begin{proof}
+    Take $b$ such that $b\in B$ and $b\notin A$.
+    Then $b\in B\setminus A$.
+\end{proof}
+
+\begin{proposition}\label{setminus_subseteq}
+    $B\setminus A\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_setminus}
+    Suppose $C\subseteq A$.
+    Suppose $C\inter B = \emptyset$.
+    Then $C\subseteq A\setminus B$.
+\end{proposition}
+
+
+\begin{proposition}\label{subseteq_implies_setminus_supseteq}
+    Suppose $A\subseteq B$.
+    Then $C\setminus A\supseteq C\setminus B$.
+\end{proposition}
+
+\begin{proposition}\label{setminus_absorb_right}
+    Suppose $A\inter B = \emptyset$.
+    Then $A\setminus B = A$.
+\end{proposition}
+
+\begin{proposition}\label{setminus_eq_emptyset_iff_subseteq}
+    $A\setminus B = \emptyset$ iff $A\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_setminus_cons_intro}
+    Suppose $B\subseteq A\setminus C$ and $c\notin B$. Then $B\subseteq A\setminus\cons{c}{C}$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_setminus_cons_elim}
+    Suppose $B\subseteq A\setminus\cons{c}{C}$. Then $B\subseteq A\setminus C$ and $c\notin B$.
+\end{proposition}
+
+\begin{proposition}\label{setminus_cons}
+    $A\setminus \cons{a}{B} = (A\setminus \{a\})\setminus B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+\begin{proposition}\label{setminus_cons_flip}
+    $A\setminus \cons{a}{B} = (A\setminus B)\setminus \{a\}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{setminus_disjoint}
+    $A\inter (B\setminus A) = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{setminus_partition}
+    Suppose $A\subseteq B$.
+    $A\union (B\setminus A) = B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{subseteq_union_setminus}
+    $A\subseteq B\union (A\setminus B)$.
+\end{proposition}
+
+\begin{proposition}\label{double_complement}
+    Suppose $A\subseteq B\subseteq C$.
+    Then $B\setminus (C\setminus A) = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{double_complement_union}
+    Then $(A\union B)\setminus (B\setminus A) = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{setminus_eq_inter_complement}
+    Suppose $A, B\subseteq C$.
+    Then $A\setminus B = A\inter (C\setminus B)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\subsection{Tuples}
+
+As with unordered pairs,
+orderd pairs are a primitive construct and
+$n$-tuples desugar to iterated applications of the
+primitive operator $({-},{-})$.
+For example $(a, b, c, d)$ equals $(a, (b, (c, d)))$ by definition.
+While ordered pairs could be encoded set-theoretically, %(choosing Kuratowski's, Hausdorff's, or Wiener's encoding),
+we simply postulate the defining property to prevent misguiding
+proof automation.
+
+\begin{axiom}\label{pair_eq_iff}
+    $(a, b) = (a', b')$ iff $a = a'\land b = b'$.
+\end{axiom}
+
+\begin{axiom}\label{pair_neq_emptyset}
+    $(a, b) \neq \emptyset$.
+\end{axiom}
+
+\begin{axiom}\label{pair_neq_fst}
+    $(a, b) \neq a$.
+\end{axiom}
+
+\begin{axiom}\label{pair_neq_snd}
+    $(a, b) \neq b$.
+\end{axiom}
+
+Repeated application of the defining property of pairs yields the defining property of
+all tuples.
+
+\begin{proposition}\label{triple_eq_iff}
+    $(a, b, c) = (a', b', c')$ iff $a = a' \land b = b'\land c = c'$.
+\end{proposition}
+
+There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following axioms.
+
+\begin{axiom}\label{fst_eq}
+    $\fst{(a, b)} = a$.
+\end{axiom}
+
+\begin{axiom}\label{snd_eq}
+    $\snd{(a, b)} = b$.
+\end{axiom}
+
+\begin{proposition}\label{pair_eq_pair_of_proj}
+    $(a, b) = (\fst{(a,b)},\snd{(a,b)})$.
+\end{proposition}
+
+
+\begin{definition}\label{times}
+    $A\times B = \{ (a,b) \mid a\in A, b\in B \}$.
+\end{definition}
+
+\begin{proposition}\label{times_tuple_elim}
+    Suppose $(x, y)\in X\times Y$. Then $x\in X$ and $y\in Y$.
+\end{proposition}
+\begin{proof}
+    Take $x', y'$ such that $x'\in X\land y'\in Y \land (x, y) = (x', y')$
+        by \cref{times}.
+    Then $x = x'$ and $y = y'$ by \cref{pair_eq_iff}.
+\end{proof}
+
+\begin{proposition}\label{times_tuple_intro}
+    Suppose $x\in X$ and $y\in Y$. Then $(x, y)\in X\times Y$.
+\end{proposition}
+
+\begin{proposition}\label{times_empty_left}
+    $\emptyset\times Y = \emptyset$.
+\end{proposition}
+
+\begin{proposition}\label{times_empty_right}
+    $X\times \emptyset = \emptyset$.
+\end{proposition}
+
+\begin{proposition}\label{times_empty_iff}
+    $X\times Y$ is empty iff $X$ is empty or $Y$ is empty.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{times}.
+\end{proof}
+
+\begin{proposition}\label{fst_type}
+    Suppose $c\in A\times B$. Then $\fst{c}\in A$.
+\end{proposition}
+\begin{proof}
+    Take $a, b$ such that $c = (a, b)$ and $a\in A$
+        by \cref{times}.
+    Follows by \cref{fst_eq}.
+    %$a = \fst{c}$ by \cref{fst_eq}.
+\end{proof}
+
+\begin{proposition}\label{snd_type}
+    Suppose $c\in A\times B$. Then $\snd{c}\in B$.
+\end{proposition}
+\begin{proof}
+    Take $a, b$ such that $c = (a, b)$ and $b\in B$
+        by \cref{times}.
+    Follows by \cref{snd_eq}.
+    %$b = \snd{c}$ by \cref{snd_eq}.
+\end{proof}
+
+\begin{proposition}\label{times_elem_is_tuple}
+    Suppose $p\in X\times Y$. Then there exist $x, y$
+    such that $x\in X$ and $y\in Y$ and $p = (x, y)$.
+\end{proposition}
+
+
+\begin{proposition}\label{times_proj_elim}
+    Suppose $p\in X\times Y$. Then $\fst{p}\in X$ and $\snd{p}\in Y$.
+\end{proposition}
+\subsection{Additional results about cons}
+
+\begin{proposition}\label{cons_subseteq_intro}
+    Suppose $x\in X$.
+    Suppose $Y\subseteq X$.
+    Then $\cons{x}{Y}\subseteq X$.
+\end{proposition}
+
+\begin{proposition}\label{cons_subseteq_elim}
+    Suppose $\cons{x}{Y}\subseteq X$.
+    Then $x\in X$ and $Y\subseteq X$.
+\end{proposition}
+
+\begin{proposition}\label{cons_subseteq_iff}
+    $\cons{x}{Y}\subseteq X$ iff $x\in X$ and $Y\subseteq X$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_cons_right}
+    If $C\subseteq B$, then $C\subseteq \cons{a}{B}$.
+\end{proposition}
+
+\begin{corollary}\label{subseteq_cons_self}
+    $X\subseteq \cons{y}{X}$.
+\end{corollary}
+
+\begin{abbreviation}\label{remove_point}
+    $\remove{a}{B} = B\setminus\{a\}$.
+\end{abbreviation}
+
+\begin{proposition}\label{subseteq_cons_intro_left}
+    Suppose $a\in C \land \remove{a}{C} \subseteq B$.
+    Then $C\subseteq \cons{a}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{setminus_cons,setminus_eq_emptyset_iff_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{subseteq_cons_intro_right}
+    Suppose $C \subseteq B$.
+    Then $C\subseteq \cons{a}{B}$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_cons_elim}
+    Suppose $C\subseteq \cons{a}{B}$.
+    Then $C\subseteq B \lor (a\in C \land \remove{a}{C} \subseteq B)$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{setminus_cons,subseteq,cons_iff,setminus_eq_emptyset_iff_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{subseteq_cons_iff}
+    $C\subseteq \cons{a}{B}$ iff $C\subseteq B \lor (a\in C \land \remove{a}{C}\subseteq B)$.
+\end{proposition}
+
+
+\begin{proposition}\label{remove_point_eq_setminus_singleton}
+    $\remove{a}{B} = B\setminus\{a\}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+
+\begin{proposition}\label{union_eq_cons}
+    $\{a\}\union B = \cons{a}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{cons_comm}
+    $\cons{a}{\cons{b}{C}} = \cons{b}{\cons{a}{C}}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{cons_absorb}
+    Suppose $a\in A$.
+    Then $\cons{a}{A} = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{cons_remove}
+    Suppose $a\in A$.
+    Then $\cons{a}{A\setminus\{a\}} = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{cons_idempotent}
+    Then $\cons{a}{\cons{a}{B}} = \cons{a}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inters_cons}
+    Suppose $B$ is inhabited.
+    Then $\inters{\cons{a}{B}} = a\inter\inters{B}$.
+\end{proposition}
+\begin{proof}
+    $\cons{a}{B}$ is inhabited.
+    Thus for all $c$ we have $c\in\inters{\cons{a}{B}}$ iff $c\in a\inter \inters{B}$
+        by \cref{inters_iff_forall,cons_iff,inter}.
+    Follows by \hyperref[setext]{extensionality}.
+\end{proof}\subsection{Symmetric difference}
+
+
+\begin{definition}\label{symdiff}
+    $x\symdiff y = (x\setminus y)\union (y\setminus x)$.
+\end{definition}
+
+\begin{proposition}%
+\label{symdiff_as_setdiff}
+    $x\symdiff y = (x\union y)\setminus (y\inter x)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{symdiff_implies_xor_in}
+    If $z\in x\symdiff y$, then either $z\in x$ or $z\in y$.
+\end{proposition}
+
+\begin{proposition}%
+\label{xor_in_implies_symdiff}
+    If either $z\in x$ or $z\in y$, then $z\in x\symdiff y$.
+\end{proposition}
+\begin{proof}
+    If $z\in x$ and $z\not\in y$, then $z\in x\setminus y$.
+    If $z\not\in x$ and $z\in y$, then $z\in y\setminus x$.
+\end{proof}
+
+\begin{proposition}%
+\label{symdiff_assoc}
+    $x\symdiff (y\symdiff z) = (x\symdiff y)\symdiff z$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}%
+\label{symdiff_comm}
+    $x\symdiff y = y\symdiff x$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+\begin{proposition}\label{times_subseteq_left}
+    Suppose $A\subseteq C$. Then $A\times B\subseteq C\times B$.
+\end{proposition}
+\begin{proof}
+    It suffices to show that for all $w\in A\times B$ we have $w\in C\times B$.
+\end{proof}
+
+\begin{proposition}\label{times_subseteq_right}
+    Suppose $B\subseteq D$. Then $A\times B\subseteq A\times D$.
+\end{proposition}
+\begin{proof}
+    It suffices to show that for all $w\in A\times B$ we have $w\in A\times D$.
+\end{proof}
+
+\begin{proposition}\label{inter_times_intro}
+    Suppose $w\in(A\inter B)\times (C\inter D)$.
+    Then $w\in(A\times C)\inter (B\times D)$.
+\end{proposition}
+\begin{proof}
+    Take $a,c$ such that $w = (a, c)$
+        by \cref{times_elem_is_tuple}.
+    Then $a\in A, B$ and $c\in C,D$
+        by \cref{times_tuple_elim,inter}.
+    Thus $w\in (A\times C), (B\times D)$.
+\end{proof}
+
+\begin{proposition}\label{inter_times_elim}
+    Suppose $w\in(A\times C)\inter (B\times D)$.
+    Then $w\in(A\inter B)\times (C\inter D)$.
+\end{proposition}
+\begin{proof}
+    $w\in A\times C$.
+    Take $a, c$ such that $w = (a, c)$.
+    $a\in A, B$ by \cref{inter,times_tuple_elim}.
+    $c\in C, D$ by \cref{inter,times_tuple_elim}.
+    Thus $(a,c) \in (A\inter B)\times (C\inter D)$ by \cref{times,inter_intro}.
+\end{proof}
+
+\begin{proposition}\label{inter_times}
+    $(A\inter B)\times (C\inter D) = (A\times C)\inter (B\times D)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inter_times_right}
+    $(X\inter Y)\times Z = (X\times Z)\inter (Y\times Z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inter_times_left}
+    $X\times (Y\inter Z) = (X\times Y)\inter (X\times Z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_times_intro}
+    Suppose $w\in(A\union B)\times (C\union D)$.
+    Then $w\in(A\times C)\union (B\times D)\union (A\times D)\union (B\times C)$.
+\end{proposition}
+\begin{proof}
+    Take $a,c$ such that $w = (a, c)$.
+    $a\in A$ or $a\in B$ by \cref{union_iff,times_tuple_elim}.
+    $c\in C$ or $c\in D$ by \cref{union_iff,times_tuple_elim}.
+    Thus $(a, c)\in (A\times C)$ or $(a, c)\in (B\times D)$ or $(a, c)\in (A\times D)$ or $(a, c)\in (B\times C)$.
+    Thus $(a, c)\in (A\times C)\union (B\times D)\union (A\times D)\union (B\times C)$.
+\end{proof}
+
+\begin{proposition}\label{union_times_elim}
+    Suppose $w\in(A\times C)\union (B\times D)\union (A\times D)\union (B\times C)$.
+    Then $w\in(A\union B)\times (C\union D)$.
+\end{proposition}
+\begin{proof}
+    \begin{byCase}
+        \caseOf{$w\in(A\times C)$.}
+            Take $a, c$ such that $w = (a, c) \land a\in A\land c\in C$ by \cref{times}.
+            Then $a\in A\union B$ and $c\in C\union D$.
+            Follows by \cref{times_tuple_intro}.
+        \caseOf{$w\in(B\times D)$.}
+            Take $b, d$ such that $w = (b, d) \land b\in B\land d\in D$ by \cref{times}.
+            Then $b\in A\union B$ and $d\in C\union D$.
+            Follows by \cref{times_tuple_intro}.
+        \caseOf{$w\in(A\times D)$.}
+            Take $a, d$ such that $w = (a, d) \land a\in A\land d\in D$ by \cref{times}.
+            Then $a\in A\union B$ and $d\in C\union D$.
+            Follows by \cref{times_tuple_intro}.
+        \caseOf{$w\in(B\times C)$.}
+            Take $b, c$ such that $w = (b, c) \land b\in B\land c\in C$ by \cref{times}.
+            Then $b\in A\union B$ and $c\in C\union D$.
+            Follows by \cref{times_tuple_intro}.
+    \end{byCase}
+\end{proof}
+
+\begin{proposition}\label{union_times}
+    $(A\union B)\times (C\union D) = (A\times C)\union (B\times D)\union (A\times D)\union (B\times C)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_times_left}
+    $(X\union Y)\times Z = (X\times Z)\union (Y\times Z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_times_right}
+    $X\times (Y\union Z) = (X\times Y)\union (X\times Z)$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+\subsection{Powerset}
+
+\begin{abbreviation}\label{powerset_of}
+    The powerset of $X$ denotes $\pow{X}$.
+\end{abbreviation}
+
+\begin{axiom}\label{pow_iff}
+    $B\in\pow{A}$ iff $B\subseteq A$.
+\end{axiom}
+
+\begin{proposition}\label{powerset_intro}
+    Suppose $A\subseteq B$.
+    Then $A\in\pow{B}$.
+\end{proposition}
+
+\begin{proposition}\label{powerset_elim}
+    Let $A\in\pow{B}$.
+    Then $A\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{powerset_bottom}
+    $\emptyset\in\pow{A}$.
+\end{proposition}
+
+\begin{proposition}\label{powerset_top}
+    $A\in\pow{A}$.
+\end{proposition}
+
+\begin{proposition}\label{unions_subseteq_of_powerset_is_subseteq}
+    Let $A$ be a set.
+    Let $B$ be a subset of $\pow{A}$.
+    Then $\unions{B}\subseteq A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,powerset_elim,unions_iff}.
+\end{proof}
+
+\begin{corollary}\label{powerset_closed_unions}
+    Let $A$ be a set.
+    Let $B$ be a subset of $\pow{A}$.
+    Then $\unions{B}\in\pow{A}$.
+\end{corollary}
+\begin{proof}
+    Follows by \cref{pow_iff,unions_subseteq_of_powerset_is_subseteq}.
+\end{proof}
+
+
+\begin{proposition}\label{inter_powerset}
+    Let $A,B\in\pow{C}$.
+    Then $A\inter B\in\pow{C}$.
+\end{proposition}
+\begin{proof}
+    We have $A,B\subseteq C$ by \cref{pow_iff}.
+    $A\inter B\subseteq C$ by \cref{inter_subseteq}.
+    Follows by \cref{pow_iff}.
+\end{proof}
+
+\begin{proposition}\label{unions_powerset}
+    $\unions{\pow{A}} = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{inters_powerset}
+    $\inters{\pow{A}} = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{union_powersets_subseteq}
+    $\pow{A}\union\pow{B} \subseteq \pow{A\union B}$.
+\end{proposition}
+\begin{proof}
+    $\pow{A}\subseteq \pow{A}\union\pow{B}$ by \cref{union_upper_left}.
+    $\pow{B}\subseteq \pow{A}\union\pow{B}$ by \cref{union_upper_right}.
+    Follows by \cref{subseteq,pow_iff,powerset_elim,union_iff,subset_transitive}.
+\end{proof}
+
+\begin{proposition}\label{powerset_emptyset}
+    $\pow{\emptyset} = \{\emptyset\}$.
+\end{proposition}
+
+% LATER
+%\begin{proposition}\label{powerset_cons}
+%    $\pow{\cons{b}{A}} = \pow{A}\union \{\cons{b}{B}\mid B\in\pow{A}\}$.
+%\end{proposition}
+
+\begin{proposition}\label{powerset_union_subseteq}
+    $\pow{A}\union\pow{B}\subseteq \pow{A\union B}$.
+\end{proposition}
+
+\begin{proposition}\label{subseteq_pow_unions}
+    $A\subseteq\pow{\unions{A}}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,pow_iff,unions_intro}.
+\end{proof}
+
+\begin{proposition}\label{unions_pow}
+    $\unions{\pow{A}} = A$.
+\end{proposition}
+
+
+\begin{proposition}\label{unions_elem_pow_iff}
+    $\unions{A}\in\pow{B}$ iff $A\in\pow{\pow{B}}$.
+\end{proposition}
+
+\begin{proposition}\label{pow_inter}
+    $\pow{A\inter B} = \pow{A}\inter\pow{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{setext,inter,pow_iff,subseteq_inter_iff}.
+\end{proof}% The theory of splitting sets into two (inhabited, disjoint) partitions.
+
+% See also "bisections" here: https://isarmathlib.org/Partitions_ZF.html
+
+
+\subsection{Bipartitions}
+
+\begin{abbreviation}\label{bipartitions}
+    $C$ is partitioned by $A$ and $B$ iff $A,B\neq\emptyset$ and $A$ is disjoint from $B$ and $A\union B = C$.
+\end{abbreviation}
+
+\begin{definition}\label{bipartitions_of_a_set}
+    $\bipartitions{X} = \{ p\in\pow{X}\times\pow{X}\mid \text{$X$ is partitioned by $\fst{p}$ and $\snd{p}$}\}$.
+\end{definition}
+
+\begin{abbreviation}\label{is_a_bipartition_of}
+    $P$ is a bipartition of $X$ iff $P\in\bipartitions{X}$.
+\end{abbreviation}
+
+\begin{proposition}\label{bipartition_intro}
+    Suppose $C$ is partitioned by $A$ and $B$.
+    Then $(A, B)$ is a bipartition of $C$.
+\end{proposition}
+\begin{proof}
+    $(A,B)\in\pow{C}\times\pow{C}$.
+    $C$ is partitioned by $\fst{(A,B)}$ and $\snd{(A,B)}$.
+    Thus $(A, B)$ is a bipartition of $C$ by \cref{bipartitions_of_a_set}.
+\end{proof}
+
+\begin{proposition}\label{bipartition_elim}
+    Suppose $(A, B)$ is a bipartition of $C$.
+    Then $C$ is partitioned by $A$ and $B$.
+\end{proposition}
+\begin{proof}
+    $\fst{(A, B)} = A$.
+    $\snd{(A, B)} = B$.
+\end{proof}
+
+\begin{proposition}\label{bipartitions_emptyset}
+    $\bipartitions{\emptyset}$ is empty.
+\end{proposition}
+
+\begin{proposition}\label{union_eq_cons_implies_union_remove_eq}
+    Suppose $d\notin C$.
+    Suppose $A\union B = \cons{d}{C}$.
+    Suppose $A, B\neq \{d\}$.
+    Then $\remove{d}{A}\union \remove{d}{B} = C$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{bipartitions_cons}
+    Suppose $d\notin C$.
+    Suppose $\cons{d}{C}$ is partitioned by $A$ and $B$.
+    Suppose $A, B\neq \{d\}$.
+    Then $C$ is partitioned by $\remove{d}{A}$ and $\remove{d}{B}$.
+\end{proposition}
+\begin{proof}
+    $\remove{d}{A},\remove{d}{B}\neq\emptyset$.
+    $\remove{d}{A}\union \remove{d}{B} = C$ by \cref{union_eq_cons_implies_union_remove_eq}.
+\end{proof}
+
+% TODO
+%\begin{proposition}\label{singleton_bipartition}
+%    Suppose $b\notin A$.
+%    Suppose $A$ and $\{b\}$ bipartition $\cons{b}{C}$.
+%    Then $A = C$.
+%\end{proposition}
+\subsection{Partitions}
+
+\begin{definition}\label{partition}
+    $P$ is a partition iff
+    $\emptyset\notin P$ and
+    for all $B, C\in P$ such that $B\neq C$ we have $B$ is disjoint from $C$.
+\end{definition}
+
+\begin{abbreviation}\label{partition_of}
+    $P$ is a partition of $A$ iff
+    $P$ is a partition and
+    $\unions{P} = A$.
+\end{abbreviation}
+
+\begin{proposition}\label{partition_emptyset}
+    $\emptyset$ is a partition of $\emptyset$.
+\end{proposition}
+
+\begin{definition}\label{partition_refinement}
+    $P'$ is a refinement of $P$ iff
+    for every $A'\in P'$ there exists
+    $A\in P$ such that $A'\subseteq A$.
+\end{definition}
+
+\begin{abbreviation}\label{partition_refines}
+    $P'\refines P$ iff
+    $P'$ is a refinement of $P$.
+\end{abbreviation}
+
+\begin{proposition}\label{partition_refinement_transitive}
+    Suppose $P''\refines P'\refines P$.
+    Then $P''\refines P$.
+\end{proposition}
+\begin{proof}
+    It suffices to show that for all $A''\in P''$ there exists $A\in P$ such that $A''\subseteq A$.
+    Fix $A''\in P''$.
+    Take $A'\in P'$ such that $A''\subseteq A'$
+        by \cref{partition_refinement}.
+    Take $A\in P$ such that $A'\subseteq A$.
+    Then $A''\subseteq A$.
+    Follows by definition. %i.e. A will do for the current existential goal.
+\end{proof}
+
+%\begin{definition}\label{set_of_representatives}
+%    $X$ is a set of representatives for $P$ iff
+%    for all $A\in P$ there exists $a\in A$ such that
+%    $X\inter A = \{a\}$.
+%\end{definition}
+
+
+\section{Standard Library: Relations}
+
+\begin{definition}\label{relation}
+    $R$ is a relation iff
+    for all $w\in R$ there exists $x, y$ such that $w = (x, y)$.
+\end{definition}
+
+\begin{definition}\label{comparable}
+    $a$ is comparable with $b$ in $R$ iff $a\mathrel{R}b$ or $b\mathrel{R}a$.
+\end{definition}
+
+\begin{proposition}\label{relext}
+    Let $R, S$ be relations.
+    Suppose for all $x,y$ we have $x\mathrel{R} y$ iff $x\mathrel{S} y$.
+    Then $R = S$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{abbreviation}\label{family_of_relations}
+    $F$ is a family of relations iff
+    every element of $F$ is a relation.
+\end{abbreviation}
+
+\begin{proposition}\label{unions_of_family_of_relations_is_relation}
+    Let $F$ be a family of relations.
+    Then $\unions{F}$ is a relation.
+\end{proposition}
+
+\begin{proposition}\label{inters_of_family_of_relations_is_relation}
+    Let $F$ be a family of relations.
+    Then $\inters{F}$ is a relation.
+\end{proposition}
+
+\begin{proposition}\label{union_relations_is_relation}
+    Let $R, S$ be relations.
+    Then $R\union S$ is a relation.
+\end{proposition}
+
+\begin{proposition}\label{union_relations_is_relation_type}
+    Suppose $R\subseteq A\times B$.
+    Suppose $S\subseteq C\times D$.
+    Then $R\union S\subseteq (A\union C)\times (B\union D)$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,union_times_elim,union_iff,union_subseteq_union}.
+\end{proof}
+
+\begin{proposition}\label{inter_relations_is_relation}
+    Let $R, S$ be relations.
+    Then $R\inter S$ is a relation.
+\end{proposition}
+
+\begin{proposition}\label{setminus_relations_is_relation}
+    Let $R, S$ be relations.
+    Then $R\setminus S$ is a relation.
+\end{proposition}
+
+
+
+\subsection{Converse of a relation}
+
+\begin{definition}\label{converse_relation}
+    $\converse{R} = \{ z\mid \exists w\in R. \exists x, y. w = (x, y)\land z = (y, x)\}$.
+\end{definition}
+
+\begin{proposition}\label{converse_intro}
+    If $y\mathrel{R} x$, then $x\mathrel{\converse{R}} y$.
+\end{proposition}
+
+\begin{proposition}\label{converse_elim}
+    If $x\mathrel{\converse{R}} y$, then $y\mathrel{R} x$.
+\end{proposition}
+
+\begin{proposition}\label{converse_iff}
+    $x\mathrel{\converse{R}} y$ iff $y\mathrel{R} x$.
+\end{proposition}
+
+
+\begin{proposition}\label{converse_is_relation}
+    $\converse{R}$ is a relation.
+\end{proposition}
+
+
+\begin{proposition}\label{converse_converse_iff}
+    $x \mathrel{\converse{\converse{R}}} y$ iff $x\mathrel{R} y$.
+\end{proposition}
+
+% Only works if the starting set was a relation (i.e. only has pairs as elements).
+\begin{proposition}\label{converse_converse_eq}
+    Let $R$ be a relation.
+    Then $\converse{\converse{R}} = R$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{converse_type}
+    Suppose $R\subseteq A\times B$.
+    Then $\converse{R}\subseteq B\times A$.
+\end{proposition}
+\begin{proof}
+    It suffices to show that every element of $\converse{R}$ is an element of $B\times A$
+        by \cref{subseteq}.
+    Fix $w\in\converse{R}$.
+    Take $x, y$ such that $w = (y, x)$ and $x\mathrel{R} y$ by \cref{converse_relation}.
+    Now $(x,y)\in A\times B$ by \cref{subseteq}.
+    Thus $x\in A$ and $y\in B$ by \cref{times_tuple_elim}.
+    Hence $(y,x)\in B\times A$ by \cref{times_tuple_intro}.
+\end{proof}
+
+\begin{proposition}\label{converse_times}
+    Then $\converse{B\times A} = A\times B$.
+\end{proposition}
+\begin{proof}
+    For all $w$ we have $w\in\converse{B\times A}$ iff $w\in A\times B$
+        by \cref{converse_relation,times,times_elem_is_tuple,times_tuple_elim}.
+    Follows by \hyperref[setext]{extensionality}.
+    %Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{converse_emptyset}
+    Then $\converse{\emptyset} = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{converse_subseteq_intro}
+    Let $R$ be a relation.
+    If $R\subseteq S$, then $\converse{R}\subseteq\converse{S}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,converse_relation,relation}.
+\end{proof}
+
+\begin{proposition}\label{converse_subseteq_elim}
+    Let $R$ be a relation.
+    If $\converse{R}\subseteq\converse{S}$, then $R\subseteq S$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,converse_relation,relation,converse_subseteq_intro,converse_converse_iff}.
+\end{proof}
+
+\begin{proposition}\label{converse_subseteq_iff}
+    Let $R$ be a relation.
+    $\converse{R}\subseteq\converse{S}$ iff $R\subseteq S$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{converse_subseteq_elim,converse_subseteq_intro}.
+\end{proof}
+
+\begin{proposition}\label{converse_union}
+    $\converse{(R\union S)} = \converse{R}\union\converse{S}$.
+\end{proposition}
+\begin{proof}
+    $\converse{(R\union S)}$ is a relation by \cref{converse_is_relation}.
+    $\converse{R}\union\converse{S}$ is a relation by \cref{converse_is_relation,union_relations_is_relation}.
+    For all $a,b$ we have $(a,b)\in\converse{(R\union S)}$ iff $(a,b)\in\converse{R}\union\converse{S}$
+        by \cref{union_iff,converse_iff}.
+    Follows by \hyperref[relext]{extensionality}.
+\end{proof}
+
+\begin{proposition}\label{converse_inter}
+    $\converse{(R\inter S)} = \converse{R}\inter\converse{S}$.
+\end{proposition}
+\begin{proof}
+    $\converse{(R\inter S)}$ is a relation by \cref{converse_is_relation}.
+    $\converse{R}\inter\converse{S}$ is a relation by \cref{converse_is_relation,inter_relations_is_relation}.
+    For all $a,b$ we have $(a,b)\in\converse{(R\inter S)}$ iff $(a,b)\in\converse{R}\inter\converse{S}$
+        by \cref{inter,converse_iff}.
+    Follows by \hyperref[relext]{extensionality}.
+\end{proof}
+
+\begin{proposition}\label{converse_setminus}
+    $\converse{(R\setminus S)} = \converse{R}\setminus\converse{S}$.
+\end{proposition}
+\begin{proof}
+    $\converse{(R\setminus S)}$ is a relation by \cref{converse_is_relation}.
+    $\converse{R}\setminus\converse{S}$ is a relation by \cref{converse_is_relation,setminus_relations_is_relation}.
+    For all $a,b$ we have $(a,b)\in\converse{(R\setminus S)}$ iff $(a,b)\in\converse{R}\setminus\converse{S}$.
+    Follows by \hyperref[relext]{extensionality}.
+\end{proof}
+
+
+
+\subsubsection{Domain of a relation}
+
+\begin{definition}\label{dom}
+    $\dom{R} = \{ x\mid \exists w\in R. \exists y. w = (x, y)\}$.
+\end{definition}
+
+\begin{proposition}\label{dom_iff}
+    $a\in\dom{R}$ iff there exists $b$ such that $a\mathrel{R} b$.
+\end{proposition}
+
+\begin{proposition}\label{dom_intro}
+    Suppose $a\mathrel{R} b$.
+    Then $a\in\dom{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{dom_iff}.
+\end{proof}
+
+\begin{proposition}\label{dom_emptyset}
+    $\dom{\emptyset} = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{dom_times}
+    $\dom{(A\times B)}\subseteq A$.
+\end{proposition}
+
+\begin{proposition}\label{dom_times_inhabited}
+    Suppose $b\in B$.
+    $\dom{(A\times B)} = A$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{dom_cons}
+    $\dom{\cons{(a,b)}{R}} = \cons{a}{\dom{R}}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{dom_union}
+    $\dom{(A\union B)} = \dom{A}\union\dom{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{dom_inter}
+    $\dom{(A\inter B)}\subseteq \dom{A}\inter\dom{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,inter,dom_iff}.
+\end{proof}
+
+\begin{proposition}\label{dom_setminus}
+    $\dom{(A\setminus B)}\supseteq \dom{A}\setminus\dom{B}$.
+\end{proposition}
+
+% TODO (also needs to import set/cons)
+%\begin{proposition}\label{dom_remove_invariant}
+%    Suppose $a\mathrel{R}b$.
+%    Suppose $b\neq c$.
+%    Then $\dom{\remove{(a,b)}{R}} = \dom{R}$.
+%\end{proposition}
+
+\subsubsection{Range of a relation}
+
+\begin{definition}\label{ran}
+    $\ran{R} = \{ y\mid \exists w\in R. \exists x. w = (x, y)\}$.
+\end{definition}
+
+\begin{proposition}\label{ran_iff}
+    $b\in\ran{R}$ iff there exists $a$ such that $a\mathrel{R} b$.
+\end{proposition}
+
+\begin{proposition}\label{ran_intro}
+    Suppose $a\mathrel{R} b$.
+    Then $b\in\ran{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{ran_iff}.
+\end{proof}
+
+\begin{proposition}\label{ran_emptyset}
+    $\ran{\emptyset} = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_times}
+    $\ran{(A\times B)}\subseteq B$.
+\end{proposition}
+
+\begin{proposition}\label{ran_times_inhabited}
+    Suppose $a\in A$.
+    $\ran{(A\times B)} = B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_cons}
+    $\ran{(\cons{(a,b)}{R})} = \cons{b}{\ran{R}}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_union}
+    $\ran{(A\union B)} = \ran{A}\union\ran{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_inter}
+    $\ran{(A\inter B)}\subseteq \ran{A}\inter\ran{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,inter,ran_iff}.
+\end{proof}
+
+\begin{proposition}\label{ran_setminus}
+    $\ran{(A\setminus B)}\supseteq \ran{A}\setminus\ran{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,setminus,ran_iff}.
+\end{proof}
+
+\subsubsection{Domain and range of converse}
+
+\begin{proposition}\label{dom_converse}
+    $\dom{\converse{R}} = \ran{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_converse}
+    $\ran{\converse{R}} = \dom{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+
+\subsubsection{Field of a relation}
+
+% We ues fld for the label instead of field so that field stays available for the
+% algebraic structure.
+\begin{definition}\label{fld}
+    $\fld{R} = \dom{R}\union\ran{R}$.
+\end{definition}
+
+\begin{proposition}\label{fld_iff}
+    $c\in\fld{R}$ iff there exists $d$ such that $c\mathrel{R}d$ or $d\mathrel{R}c$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,dom_iff,ran_iff,union_iff}.
+\end{proof}
+
+\begin{proposition}\label{fld_intro_left}
+    Suppose $(a,b)\in R$.
+    Then $a\in\fld{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,dom,union_iff}.
+\end{proof}
+
+\begin{proposition}\label{fld_intro_right}
+    Suppose $(a,b)\in R$.
+    Then $b\in\fld{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,ran,union_iff}.
+\end{proof}
+
+\begin{proposition}\label{dom_subseteq_fld}
+    Then $\dom{R}\subseteq\fld{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,union_upper_left}.
+\end{proof}
+
+\begin{proposition}\label{ran_subseteq_fld}
+    Then $\ran{R}\subseteq\fld{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,union_upper_right}.
+\end{proof}
+
+\begin{proposition}\label{fld_times}
+    $\fld{(A\times B)}\subseteq A\union B$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,dom_times,ran_times,union_subseteq_union}.
+\end{proof}
+
+\begin{proposition}\label{relation_elem_times_fld}
+    Let $R$ be a relation.
+    Suppose $w\in R$.
+    Then $w\in\fld{R}\times\fld{R}$.
+\end{proposition}
+\begin{proof}
+    Take $a,b$ such that $w = (a, b)$ by \cref{relation}.
+    Then $a,b\in\fld{R}$ by \cref{fld_iff}.
+    Thus $(a,b)\in\fld{R}\times\fld{R}$ by \cref{times_tuple_intro}.
+\end{proof}
+
+\begin{proposition}\label{relation_subseteq_times_fld}
+    Let $R$ be a relation.
+    Then $R\subseteq\fld{R}\times\fld{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{relation_elem_times_fld,subseteq}.
+\end{proof}
+
+\begin{proposition}\label{fld_universal}
+    $\fld{(A\times A)} = A$.
+\end{proposition}
+
+\begin{proposition}\label{fld_emptyset}
+    $\fld{\emptyset} = \emptyset$.
+\end{proposition}
+
+\begin{proposition}\label{fld_cons}
+    $\fld{(\cons{(a,b)}{R})} = \cons{a}{\cons{b}{\fld{R}}}$.
+\end{proposition}
+\begin{proof}
+    \begin{align*}
+        \fld{(\cons{(a,b)}{R})}
+        &= \dom{(\cons{(a,b)}{R})}\union\ran{(\cons{(a,b)}{R})}
+            \explanation{by \cref{fld}}\\
+        &= \cons{a}{\dom{R}}\union\cons{b}{\ran{R}}
+            \explanation{by \cref{dom_cons,ran_cons}}\\
+        &= \cons{a}{\cons{b}{\dom{R}\union\ran{R}}}
+            \explanation{by \cref{union_cons,union_comm}}\\
+        &= \cons{a}{\cons{b}{\fld{R}}}
+          \explanation{by \cref{fld}}
+    \end{align*}
+\end{proof}
+
+\begin{proposition}\label{fld_union}
+    $\fld{(A\union B)} = \fld{A}\union\fld{B}$.
+\end{proposition}
+\begin{proof}
+    \begin{align*}
+        \fld{(A\union B)}
+        &= \dom{(A\union B)}\union\ran{(A\union B)}
+            \explanation{by \cref{fld}}\\
+        &= (\dom{A}\union\dom{B})\union(\ran{A}\union\ran{B})
+            \explanation{by \cref{dom_union,ran_union}}\\
+        &= (\dom{A}\union\ran{A})\union(\dom{B}\union\ran{B})
+            \explanation{by \cref{union_comm,union_assoc}}\\
+        &= \fld{A}\union\fld{B}
+        \explanation{by \cref{fld}}
+    \end{align*}
+\end{proof}
+
+\begin{proposition}\label{fld_inter}
+    $\fld{(A\inter B)}\subseteq \fld{A}\inter\fld{B}$.
+\end{proposition}
+\begin{proof}
+    % LATER this is surprisingly slow because the ATP can generate lots of nested intersection terms.
+    Follows by \cref{subseteq,fld_iff,subseteq_inter_iff}.
+\end{proof}
+
+\begin{proposition}\label{fld_setminus}
+    $\fld{(A\setminus B)}\supseteq \fld{A}\setminus\fld{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{setminus_subseteq,fld_iff,subseteq,setminus}.
+\end{proof}
+
+\begin{proposition}\label{fld_converse}
+    $\fld{\converse{R}} = \fld{R}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{fld,dom_converse,ran_converse,union_comm}.
+\end{proof}
+
+
+\subsection{Image}
+
+\begin{definition}\label{img}
+    $\img{R}{A} = \{b\in\ran{R} \mid \exists a\in A. a\mathrel{R} b \}$.
+\end{definition}
+
+\begin{proposition}\label{img_elem_intro}
+    Suppose $a\in A$ and $a\mathrel{R} b$.
+    Then $b\in\img{R}{A}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{img,ran}.
+\end{proof}
+
+\begin{proposition}\label{img_iff}
+    $b\in\img{R}{A}$ iff there exists $a\in A$ such that $a\mathrel{R} b$.
+\end{proposition}
+
+\begin{proposition}\label{img_subseteq}
+    Suppose $A\subseteq B$.
+    Then $\img{R}{A}\subseteq \img{R}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,img_iff}.
+\end{proof}
+
+\begin{proposition}\label{img_subseteq_ran}
+    Then $\img{R}{A}\subseteq \ran{R}$.
+\end{proposition}
+
+\begin{proposition}\label{img_dom}
+    Then $\img{R}{\dom{R}} = \ran{R}$.
+\end{proposition}
+
+\begin{proposition}\label{img_union}
+    $\img{R}{A\union B} = \img{R}{A}\union\img{R}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{setext,union_iff,img_iff}.
+\end{proof}
+
+\begin{proposition}\label{img_inter}
+    % Equality does not hold in general
+    $\img{R}{A\inter B}\subseteq \img{R}{A}\inter\img{R}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{img_iff,subseteq,inter}.
+\end{proof}
+
+\begin{proposition}\label{img_setminus}
+    % Equality does not hold in general
+    $\img{R}{A\setminus B}\supseteq \img{R}{A}\setminus\img{R}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{img_iff,subseteq,setminus}.
+\end{proof}
+
+\begin{proposition}\label{img_singleton_iff}
+    $b\in \img{R}{\{a\}}$ iff $a\mathrel{R}b$.
+\end{proposition}
+
+\begin{proposition}\label{img_singleton_intro}
+    Suppose $b\in\img{R}{\{a\}}$.
+    Then $b\in\ran{R}$ and $(a,b)\in R$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{img_iff,singleton_iff,img_subseteq_ran,elem_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{img_singleton}
+    $\img{R}{\{a\}} = \{b\in\ran{R}\mid (a,b)\in R \}$.
+\end{proposition}
+
+\begin{proposition}\label{img_emptyset}
+    $\img{R}{\emptyset} = \emptyset$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\subsection{Preimage}
+
+\begin{definition}\label{preimg}
+    $\preimg{R}{B} = \{a\in\dom{R} \mid \exists b\in B. a\mathrel{R} b \}$.
+\end{definition}
+
+\begin{proposition}\label{preimg_iff}
+    $a\in\preimg{R}{B}$ iff there exists $b\in B$ such that $a\mathrel{R} b$.
+\end{proposition}
+
+\begin{proposition}\label{preim_eq_img_of_converse}
+    $\preimg{R}{B} = \img{\converse{R}}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{preimg_subseteq}
+    Suppose $A\subseteq B$.
+    Then $\preimg{R}{A}\subseteq \preimg{R}{B}$.
+\end{proposition}
+
+\begin{proposition}\label{preimg_subseteq_dom}
+    Then $\preimg{R}{A}\subseteq \dom{R}$.
+\end{proposition}
+
+\begin{proposition}\label{preimg_union}
+    $\preimg{R}{A\union B} = \preimg{R}{A}\union\preimg{R}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{preimg_inter}
+    % Equality does not hold in general
+    $\preimg{R}{A\inter B}\subseteq \preimg{R}{A}\inter\preimg{R}{B}$.
+\end{proposition}
+
+\begin{proposition}\label{preimg_setminus}
+    % Equality does not hold in general
+    $\preimg{R}{A\setminus B}\supseteq \preimg{R}{A}\setminus\preimg{R}{B}$.
+\end{proposition}
+
+\subsection{Upward and downward closure}
+
+\begin{definition}\label{upward_closure}
+    $\upward{R}{a} = \{b\in\ran{R} \mid a\mathrel{R}b \}$.
+\end{definition}
+
+\begin{definition}\label{downward_closure}
+    $\downward{R}{b} = \{a\in\dom{R} \mid a\mathrel{R}b \}$.
+\end{definition}
+
+\begin{proposition}\label{downward_closure_iff}
+    $a\in\downward{R}{b}$ iff $a\mathrel{R}b$.
+\end{proposition}
+
+\subsection{Relation (and later also function) composition}
+
+Composition ignores the non-relational parts of sets.
+Note that the order is flipped from usual relation composition.
+This lets us use the same symbol for composition of functions.
+
+\begin{definition}\label{circ}
+    $S\circ R = \{ (x,z)\mid x\in\dom{R}, z\in\ran{S}\mid \exists y.\  x\mathrel{R}y\mathrel{S}z \}$.
+\end{definition}
+
+\begin{proposition}\label{circ_is_relation}
+    $S\circ R$ is a relation.
+\end{proposition}
+
+\begin{proposition}\label{circ_elem_intro}
+    Suppose $x\mathrel{R} y\mathrel{S} z$.
+    Then $x\mathrel{(S\circ R)} z$.
+\end{proposition}
+\begin{proof}
+    $x\in\dom{R}$ and $z\in\ran{S}$.
+    Then $(x, z)\in S\circ R$ by \cref{circ}.
+\end{proof}
+
+\begin{proposition}\label{circ_elem_elim}
+    Suppose $x\mathrel{(S\circ R)} z$.
+    Then there exists $y$ such that $x\mathrel{R} y\mathrel{S} z$.
+\end{proposition}
+\begin{proof}
+    %$x\in\dom{R}$ and $z\in\ran{S}$.
+    There exists $y$ such that $x\mathrel{R} y\mathrel{S} z$ by \cref{circ,pair_eq_iff}.
+    Follows by assumption.
+\end{proof}
+
+\begin{proposition}\label{circ_iff}
+    $x\mathrel{(S\circ R)} z$ iff there exists $y$ such that $x\mathrel{R} y\mathrel{S} z$.
+\end{proposition}
+
+\begin{proposition}\label{circ_assoc}
+    $(T\circ S)\circ R = T\circ (S\circ R)$.
+\end{proposition}
+\begin{proof}
+    For all $a, b$ we have
+        $(a,b)\in (T\circ S)\circ R$ iff $(a,b)\in T\circ (S\circ R)$
+        by \cref{circ_iff}.
+    Now $(T\circ S)\circ R$ is a relation and $T\circ (S\circ R)$ is a relation by
+        \cref{circ_is_relation}.
+    Follows by \hyperref[relext]{relation extensionality}.
+\end{proof}
+
+\begin{proposition}\label{circ_converse_intro_tuple}
+    Suppose $(a, c) \in\converse{R}\circ\converse{S}$.
+    Then $(a,c)\in \converse{(S\circ R)}$.
+\end{proposition}
+\begin{proof}
+    Take $b$ such that $a\mathrel{\converse{S}} b\mathrel{\converse{R}} c$.
+    Now $c\mathrel{R}b\mathrel{S} a$ by \cref{converse_iff}.
+    Hence $c\mathrel{(S\circ R)} a$.
+    Thus $a\mathrel{\converse{(S\circ R)}} c$.
+\end{proof}
+
+\begin{proposition}\label{circ_converse_elim}
+    Suppose $(a,c)\in \converse{(S\circ R)}$.
+    Then $(a, c) \in\converse{R}\circ\converse{S}$.
+\end{proposition}
+\begin{proof}
+    $c\mathrel{(S\circ R)} a$.
+    Take $b$ such that  $c\mathrel{R}b\mathrel{S} a$.
+    Now $a\mathrel{\converse{S}} b\mathrel{\converse{R}} c$.
+\end{proof}
+
+\begin{proposition}\label{circ_converse}
+    $\converse{(S\circ R)} = \converse{R}\circ\converse{S}$.
+\end{proposition}
+\begin{proof}
+    $\converse{(S\circ R)}$ is a relation.
+    $\converse{R}\circ\converse{S}$ is a relation.
+    For all $x, y $ we have $(x,y)\in \converse{(S\circ R)}$ iff $(x, y) \in\converse{R}\circ\converse{S}$.
+    Thus $\converse{(S\circ R)} = \converse{R}\circ\converse{S}$ by \cref{relext}.
+\end{proof}
+
+\subsection{Restriction}
+
+\begin{definition}%
+\label{restrl}
+    $\restrl{R}{X} = \{ w\in R \mid \exists x, y. x\in X \land w = (x, y) \}$.
+\end{definition}
+
+\begin{proposition}\label{restrl_iff}
+    $a \mathrel{\restrl{R}{X}} b$ iff $a\mathrel{R}b$ and $a\in X$.
+\end{proposition}
+
+\begin{proposition}\label{restrl_subseteq}
+    $\restrl{R}{X}\subseteq R$.
+\end{proposition}
+
+\begin{proposition}%
+\label{elem_dom_of_restrl_implies_elem_dom_and_restr}
+    Suppose $x\in \dom{\restrl{R}{X}}$.
+    Then $x\in \dom{R}, X$.
+\end{proposition}
+\begin{proof}
+    Take $y$ such that $x\in X$ and $(x, y)\in \restrl{R}{X}$.
+    Then $(x, y)\in R$. Thus $x\in\dom{R}$.
+\end{proof}
+
+\begin{proposition}%
+\label{elem_dom_and_restr_implies_elem_of_restr}
+    Suppose $x\in \dom{R}, X$.
+    Then $x\in \dom{\restrl{R}{X}}$.
+\end{proposition}
+\begin{proof}
+    Take $y$ such that $(x, y)\in R$ by \cref{dom_iff}.
+    Then $(x, y)\in \restrl{R}{X}$.
+    Thus $x\in\dom{\restrl{R}{X}}$.
+\end{proof}
+
+\begin{proposition}\label{restrl_eq_inter}
+    Suppose $R$ is a relation.
+    $\restrl{R}{X} = R\inter (X\times \ran{R})$.
+\end{proposition}
+\begin{proof}
+    For all $a$ we have $a\in R\inter (X\times \ran{R})$ iff $a\in \restrl{R}{X}$
+        by \cref{inter,restrl,ran_iff,times_elem_is_tuple,times_tuple_intro}.
+    Follows by \hyperref[setext]{extensionality}.
+\end{proof}
+
+\begin{corollary}%
+\label{dom_of_restrl_eq_inter}
+    Suppose $R$ is a relation.
+    $\dom{\restrl{R}{X}} = \dom{R}\inter X$.
+\end{corollary}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{restrl_restrl}
+    Suppose $V\subseteq U$.
+    Then $\restrl{\restrl{R}{U}}{V} = \restrl{R}{V}$.
+\end{proposition}
+\begin{proof}
+    For all $w$ we have $w\in\restrl{\restrl{R}{U}}{V}$ iff $w\in\restrl{R}{V}$
+        by \cref{restrl,subseteq}.
+    Follows by \hyperref[setext]{extensionality}.
+\end{proof}
+
+\begin{proposition}\label{restrl_by_dom}
+    Let $R$ be a relation.
+    Then $\restrl{R}{\dom{R}} = R$.
+\end{proposition}
+\begin{proof}
+    For all $w$ we have $w\in\restrl{R}{\dom{R}}$ iff $w\in R$
+        by \cref{dom,restrl,relation}.
+    Follows by \hyperref[setext]{extensionality}.
+\end{proof}
+
+\begin{proposition}\label{restrl_dom}
+    Then $\dom{\restrl{R}{X}}\subseteq X$.
+\end{proposition}
+
+\begin{proposition}\label{restrl_ran_elim}
+    Suppose $X\subseteq\dom{R}$.
+    Let $b\in\ran{\restrl{R}{X}}$.
+    Then $b\in\img{R}{X}$.
+\end{proposition}
+\begin{proof}
+    Take $a\in X$ such that $(a, b)\in \restrl{R}{X}$
+        by \cref{dom,ran,restrl_dom,subseteq}.
+    Then $a\mathrel{R} b$ and $b\in\ran{R}$.
+    Thus $b\in\img{R}{X}$ by \cref{img}.
+\end{proof}
+
+\begin{proposition}\label{restrl_ran_intro}
+    Suppose $X\subseteq\dom{R}$.
+    Let $b\in\img{R}{X}$.
+    Then $b\in\ran{\restrl{R}{X}}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{img,ran_intro,restrl_iff}.
+\end{proof}
+
+\begin{proposition}\label{restrl_ran}
+    Suppose $X\subseteq\dom{R}$.
+    Then $\ran{\restrl{R}{X}} = \img{R}{X}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{restrl_img}
+    Suppose $X\subseteq\dom{R}$.
+    Then $\img{\restrl{R}{X}}{A} = \img{R}{X\inter A}$.
+\end{proposition}
+\begin{proof}
+    For all $b$ we have $b\in\img{\restrl{R}{X}}{A}$ iff $b\in \img{R}{X\inter A}$
+        by \cref{restrl_iff,img_iff,inter}.
+    Follows by \hyperref[setext]{extensionality}.
+    %Follows by set extensionality.
+\end{proof}
+
+
+
+\subsection{Set of relations}
+
+% Also called "homogeneous relation" or "endorelation".
+\begin{abbreviation}\label{binary_relation_on}
+    $R$ is a binary relation on $X$ iff $R\subseteq X\times X$.
+\end{abbreviation}
+
+\begin{proposition}\label{relation_subseteq_intro_elem}
+    Let $R$ be a relation.
+    Suppose $\ran{R}\subseteq B$.
+    Suppose $\dom{R}\subseteq A$.
+    Suppose $w\in R$.
+    Then $w\in A\times B$.
+\end{proposition}
+\begin{proof}
+    Take $a, b$ such that $(a, b) = w$.
+    Then $a\in\dom{R}$ and $b\in\ran{R}$.
+    Thus $a\in A$ and $b\in B$.
+    Thus $(a, b)\in A\times B$.
+\end{proof}
+
+\begin{proposition}\label{relation_subseteq_intro}
+    Let $R$ be a relation.
+    Suppose $\ran{R}\subseteq B$.
+    Suppose $\dom{R}\subseteq A$.
+    Then $R\subseteq A\times B$.
+\end{proposition}
+
+\begin{proposition}\label{relation_subseteq_implies_dom_subseteq_elem}
+    Suppose $R\subseteq A\times B$.
+    Suppose $a\in\dom{R}$.
+    Then $a\in A$.
+\end{proposition}
+\begin{proof}
+    Take $w, b$ such that $w\in R$ and $w = (a, b)$.
+    Follows by \cref{dom,times_tuple_elim,elem_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{relation_subseteq_implies_dom_subseteq}
+    Suppose $R\subseteq A\times B$.
+    Then $\dom{R}\subseteq A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,relation_subseteq_implies_dom_subseteq_elem}.
+\end{proof}
+
+\begin{proposition}\label{relation_subseteq_implies_ran_subseteq_elem}
+    Suppose $R\subseteq A\times B$.
+    Suppose $b\in\ran{R}$.
+    Then $b\in B$.
+\end{proposition}
+\begin{proof}
+    Take $w, a$ such that $w\in R$ and $w = (a, b)$.
+    Follows by \cref{ran,elem_subseteq,times_tuple_elim}.
+\end{proof}
+
+\begin{proposition}\label{relation_subseteq_implies_ran_subseteq}
+    Suppose $R\subseteq A\times B$.
+    Then $\ran{R}\subseteq B$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,relation_subseteq_implies_ran_subseteq_elem}.
+\end{proof}
+
+\begin{definition}\label{rels}
+    $\rels{A}{B} = \pow{A\times B}$.
+\end{definition}
+
+\begin{proposition}\label{rels_intro}
+    Suppose $R\subseteq A\times B$.
+    Then $R\in\rels{A}{B}$.
+\end{proposition}
+
+\begin{proposition}\label{rels_intro_dom_and_ran}
+    Let $R$ be a relation.
+    Suppose $\dom{R}\subseteq A$.
+    Suppose $\ran{R}\subseteq B$.
+    Then $R\in\rels{A}{B}$.
+\end{proposition}
+\begin{proof}
+    $R\subseteq A\times B$.
+\end{proof}
+
+\begin{proposition}\label{rels_elim}
+    Suppose $R\in\rels{A}{B}$.
+    Then $R\subseteq A\times B$.
+\end{proposition}
+
+\begin{proposition}\label{rels_dom_subseteq}
+    Suppose $R\in\rels{A}{B}$.
+    Then $\dom{R}\subseteq A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{rels_elim,relation_subseteq_implies_dom_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{rels_ran_subseteq}
+    Suppose $R\in\rels{A}{B}$.
+    Then $\ran{R}\subseteq B$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{rels_elim,relation_subseteq_implies_ran_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{rels_is_relation}
+    Let $R\in\rels{A}{B}$.
+    Then $R$ is a relation.
+\end{proposition}
+\begin{proof}
+    It suffices to show that for all $w\in R$ there exists $x, y$ such that $w = (x, y)$.
+    Fix $w\in R$.
+    Now $R\subseteq A\times B$ by \cref{rels_elim}.
+    Thus $w\in A\times B$.
+\end{proof}
+
+\begin{proposition}\label{rels_weaken_dom}
+    Let $R\in\rels{A}{B}$.
+    Suppose $A\subseteq C$.
+    Then $R\in\rels{C}{B}$.
+\end{proposition}
+\begin{proof}
+    $R\subseteq A\times B\subseteq C\times B$.
+    Thus $R\subseteq C\times B$.
+\end{proof}
+
+\begin{proposition}\label{rels_weaken_codom}
+    Let $R\in\rels{A}{B}$.
+    Suppose $B\subseteq D$.
+    Then $R\in\rels{A}{D}$.
+\end{proposition}
+\begin{proof}
+    $R\subseteq A\times B\subseteq A\times D$.
+    Thus $R\subseteq A\times D$.
+\end{proof}
+
+\begin{proposition}\label{rels_type}
+    Let $R\in\rels{A}{B}$.
+    Suppose $(a,b)\in R$.
+    Then $(a,b)\in A\times B$.
+\end{proposition}
+\begin{proof}
+    $R\subseteq A\times B$ by \cref{rels_elim}.
+\end{proof}
+
+\begin{proposition}\label{rels_type_dom}
+    Let $R\in\rels{A}{B}$.
+    Suppose $(a,b)\in R$.
+    Then $a\in A$.
+\end{proposition}
+\begin{proof}
+    $(a,b)\in A\times B$ by \cref{rels_type}.
+\end{proof}
+
+\begin{proposition}\label{rels_type_ran}
+    Let $R\in\rels{A}{B}$.
+    Suppose $(a,b)\in R$.
+    Then $b\in B$.
+\end{proposition}
+\begin{proof}
+    $(a,b)\in A\times B$ by \cref{rels_type}.
+\end{proof}
+
+\begin{proposition}\label{rels_restrict_dom}
+    Let $R\in\rels{A}{B}$.
+    Then $R\in\rels{\dom{R}}{B}$.
+\end{proposition}
+\begin{proof}
+    $R$ is a relation by \cref{rels_is_relation}.
+    $\dom{R}\subseteq \dom{R}$ by \cref{subseteq_refl}.
+    $\ran{R}\subseteq B$.
+    Follows by \cref{rels_intro_dom_and_ran}.
+\end{proof}
+
+\begin{proposition}\label{rels_restrict_ran}
+    Let $R\in\rels{A}{B}$.
+    Then $R\in\rels{A}{\ran{R}}$.
+\end{proposition}
+\begin{proof}
+    $R$ is a relation by \cref{rels_is_relation}.
+    $\dom{R}\subseteq A$.
+    $\ran{R}\subseteq \ran{R}$ by \cref{subseteq_refl}.
+    Follows by \cref{rels_intro_dom_and_ran}.
+\end{proof}
+
+\subsection{Identity relation}
+
+\begin{definition}\label{id}
+    $\identity{A} = \{(a,a)\mid a\in A\}$.
+\end{definition}
+
+\begin{proposition}\label{id_iff}
+    $a\mathrel{\identity{A}}b$ iff $a = b\in A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{id,pair_eq_iff}.
+\end{proof}
+
+\begin{proposition}\label{id_elem_intro}
+    Suppose $a\in A$.
+    Then $(a, a) \in\identity{A}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{id}.
+\end{proof}
+
+\begin{proposition}\label{id_elem_inspect}
+    Suppose $w\in\identity{A}$.
+    Then there exists $a\in A$ such that $w = (a, a)$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{id}.
+\end{proof}
+
+\begin{proposition}\label{id_is_relation}
+    $\identity{A}$ is a relation.
+\end{proposition}
+
+\begin{proposition}\label{id_dom}
+    $\dom{\identity{A}} = A$.
+\end{proposition}
+\begin{proof}
+    For every $a\in A$ we have $(a, a)\in \identity{A}$.
+    $\dom{\identity{A}} = A$ by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{id_ran}
+    $\ran{\identity{A}} = A$.
+\end{proposition}
+\begin{proof}
+    For every $a$ we have $a\in \ran{\identity{A}}$ iff $a\in A$
+        by \cref{ran_iff,id_iff}.
+    For every $a\in A$ we have $(a, a)\in \identity{A}$.
+    $\ran{\identity{A}} = A$ by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{id_img}
+    $\img{\identity{A}}{B} = A\inter B$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{id_elem_rels}
+    $\identity{A}\in\rels{A}{A}$.
+\end{proposition}
+
+\subsection{Membership relation}
+
+\begin{definition}\label{memrel}
+    $\memrel{A} = \{(a, b)\mid a\in A, b\in A \mid a\in b\}$.
+\end{definition}
+
+\begin{proposition}\label{memrel_elem_intro}
+    Suppose $a, b\in A$.
+    Suppose $a\in b$.
+    Then $(a, b) \in\memrel{A}$.
+\end{proposition}
+
+\begin{proposition}\label{memrel_elem_inspect}
+    Suppose $w\in\memrel{A}$.
+    Then there exists $a, b\in A$ such that $w = (a, b)$ and $a\in b$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{memrel}.
+\end{proof}
+
+\begin{proposition}\label{memrel_is_relation}
+    $\memrel{A}$ is a relation.
+\end{proposition}
+
+\subsection{Subset relation}
+
+\begin{definition}\label{subseteqrel}
+    $\subseteqrel{A} = \{(a, b)\mid a\in A, b\in A \mid a\subseteq b\}$.
+\end{definition}
+
+\begin{proposition}\label{subseteqrel_is_relation}
+    $\subseteqrel{A}$ is a relation.
+\end{proposition}
+\subsection{Properties of relations}
+
+\begin{definition}\label{left_quasireflexive}
+    $R$ is left quasireflexive iff
+    for all $x, y$ such that $x\mathrel{R} y$
+    we have $x\mathrel{R}x$.
+\end{definition}
+
+\begin{definition}\label{right_quasireflexive}
+    $R$ is right quasireflexive iff
+    for all $x, y$ such that $x\mathrel{R} y$
+    we have $y\mathrel{R}y$.
+\end{definition}
+
+\begin{definition}\label{quasireflexive}
+    $R$ is quasireflexive iff
+    for all $x, y$ such that $x\mathrel{R} y$
+    we have $x\mathrel{R}x$ and $y\mathrel{R}y$.
+\end{definition}
+
+\begin{definition}\label{coreflexive}
+    $R$ is coreflexive iff
+    for all $x, y$ such that $x\mathrel{R} y$
+    we have $x = y$.
+\end{definition}
+
+\begin{definition}\label{reflexive_on}
+    $R$ is reflexive on $X$ iff
+    for all $x\in X$
+    we have $x\mathrel{R}x$.
+\end{definition}
+
+\begin{definition}\label{irreflexive}
+    $R$ is irreflexive iff
+    for all $x$ we have $(x,x)\notin R$.
+\end{definition}
+
+
+\begin{proposition}\label{quasireflexive_implies_reflexive_on_fld}
+    Suppose $R$ is quasireflexive.
+    Then $R$ is reflexive on $\fld{R}$.
+\end{proposition}
+
+\begin{proposition}\label{reflexive_on_fld_impliesquasireflexive}
+    Suppose $R$ is reflexive on $\fld{R}$.
+    Then $R$ is quasireflexive.
+\end{proposition}
+
+\begin{proposition}\label{inters_of_family_of_reflexive_relations_is_reflexive}
+    Let $F$ be an inhabited family of relations.
+    Suppose every element of $F$ is reflexive on $A$.
+    Then $\inters{F}$ is reflexive on $A$.
+\end{proposition}
+\begin{proof}
+    For all $a\in A$ we have for all $R\in F$ we have $a\mathrel{R} a$.
+    Thus for all $a\in A$ we have $a\mathrel{(\inters{F})} a$.
+\end{proof}
+
+\begin{definition}\label{antisymmetric}
+    $R$ is antisymmetric iff
+    for all $x, y$ such that $x\mathrel{R}y\mathrel{R}x$
+    we have $x = y$.
+\end{definition}
+
+\begin{definition}[Symmetry]\label{symmetric}
+    $R$ is symmetric iff
+    for all $x, y$ we have
+    $x\mathrel{R} y \iff y\mathrel{R}x$.
+\end{definition}
+
+\begin{definition}\label{asymmetric}
+    $R$ is asymmetric iff
+    for all $x, y$ such that
+    $x\mathrel{R} y$ we have $y\not\mathrel{R}x$.
+\end{definition}
+
+\begin{proposition}\label{asymmetric_implies_irreflexive}
+    Suppose $R$ is asymmetric.
+    Then $R$ is irreflexive.
+\end{proposition}
+
+\begin{proposition}\label{asymmetric_implies_antisymmetric}
+    Suppose $R$ is asymmetric.
+    Then $R$ is antisymmetric.
+\end{proposition}
+
+\begin{proposition}\label{antisymmetric_and_irreflexive_implies_asymmetric}
+    Suppose $R$ is antisymmetric.
+    Suppose $R$ is irreflexive.
+    Then $R$ is asymmetric.
+\end{proposition}
+
+% TODO
+%\begin{proposition}\label{symmetric_relation_eq_converse}
+%    Let $R$ be a symmetric relation.
+%    Then $\converse{R} = R$.
+%\end{proposition}
+%\begin{proof}
+%    Follows by set extensionality.
+%\end{proof}
+
+\begin{definition}[Transitivity]\label{transitive}
+    $R$ is transitive iff
+    for all $x, y, z$ such that $x\mathrel{R}y\mathrel{R}z$
+        we have $x\mathrel{R} z$.
+\end{definition}
+
+\begin{proposition}\label{transitive_downward_elem}
+    Suppose $R$ is transitive.
+    Suppose $a\in\downward{R}{b}$.
+    Suppose $c\in\downward{R}{a}$.
+    Then $c\in \downward{R}{b}$.
+\end{proposition}
+\begin{proof}
+    $c\mathrel{R} a\mathrel{R}b$.
+    Thus $c\mathrel{R} b$ by \hyperref[transitive]{transitivity}.
+\end{proof}
+
+\begin{proposition}\label{transitive_downward_subseteq}
+    Suppose $R$ is transitive.
+    Suppose $a\in\downward{R}{b}$.
+    Then $\downward{R}{a}\subseteq \downward{R}{b}$.
+\end{proposition}
+
+\begin{definition}\label{dense}
+    $R$ is dense iff
+    for all $x, z$ such that $x\mathrel{R}z$
+        there exists $y$ such that $x\mathrel{R}y\mathrel{R}z$.
+\end{definition}
+
+% Variation of connexity that does not depend on a carrier.
+\begin{definition}\label{quasiconnex}
+    $R$ is quasiconnex iff
+    for all $x, y\in\fld{R}$ such that $x\neq y$ we have
+        $x\mathrel{R}y$ or $y\mathrel{R}x$.
+\end{definition}
+
+% Also called "connected" (here reserved for topology),
+% "complete" (heavily overloaded), and total" (also overloaded).
+\begin{definition}\label{connex}
+    $R$ is connex on $X$ iff
+    for all $x, y\in X$ such that $x\neq y$ we have
+        $x\mathrel{R}y$ or $y\mathrel{R}x$.
+\end{definition}
+
+\begin{definition}\label{strongly_quasiconnex}
+    $R$ is strongly quasiconnex iff
+    for all $x, y\in\fld{R}$ we have
+        $x\mathrel{R}y$ or $y\mathrel{R}x$.
+\end{definition}
+
+\begin{definition}\label{strongly_connex}
+    $R$ is strongly connex on $X$ iff
+    for all $x, y\in X$ we have
+        $x\mathrel{R}y$ or $y\mathrel{R}x$.
+\end{definition}
+
+%\begin{proposition}\label{strongly_quasiconnex_implies_quasiconnex_and_quasireflexive}
+%    Suppose $R$ is strongly quasiconnex.
+%    Then $R$ is quasiconnex and quasireflexive.
+%\end{proposition}
+
+%\begin{proposition}\label{quasiconnex_and_quasireflexive_implies_strongly_quasiconnex}
+%    Suppose $R$ is quasiconnex and quasireflexive.
+%    Then $R$ is strongly quasiconnex.
+%\end{proposition}
+
+\begin{proposition}\label{strongly_quasiconnex_iff_quasiconnex_and_quasireflexive}
+    $R$ is strongly quasiconnex iff
+    $R$ is quasiconnex and quasireflexive.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{quasiconnex,strongly_quasiconnex,quasireflexive_implies_reflexive_on_fld,reflexive_on,fld,reflexive_on_fld_impliesquasireflexive}.
+\end{proof}
+
+\begin{proposition}\label{connex_reaches_all_or_all_but_one}
+    Suppose $R$ is connex on $A$.
+    Let $a, b\in A\setminus\ran{R}$.
+    Then $a = b$.
+\end{proposition}
+\begin{proof}
+    Suppose not.
+    $a, b\in A$.
+    Then $(a, b)\in R$ or $(b,a)\in R$ by \cref{connex}.
+    $(a, b)\notin R$.
+    $(b, a)\notin R$.
+    Thus $a = b$.
+\end{proof}
+
+
+\begin{definition}\label{righteuclidean}
+    $R$ is right Euclidean iff
+    for all $a,b,c$ such that $a\mathrel{R}b,c$ we have $b\mathrel{R}c$.
+\end{definition}
+
+\begin{definition}\label{lefteuclidean}
+    $R$ is left Euclidean iff
+    for all $a,b,c$ such that $a,b\mathrel{R}c$ we have $a\mathrel{R}b$.
+\end{definition}
+\subsection{Quasiorders}
+
+% also called preorder
+\begin{abbreviation}\label{quasiorder}
+    $R$ is a quasiorder iff
+    $R$ is quasireflexive and transitive.
+\end{abbreviation}
+
+% also called preorder
+\begin{abbreviation}\label{quasiorder_on}
+    $R$ is a quasiorder on $A$ iff
+        $R$ is a binary relation on $A$ and
+        $R$ is reflexive on $A$ and transitive.
+\end{abbreviation}
+
+\begin{struct}\label{quasiordered_set}
+    A quasiordered set $X$ is a onesorted structure
+    equipped with
+        \begin{enumerate}
+            \item $\lt$
+        \end{enumerate}
+    such that
+    \begin{enumerate}
+        \item\label{quasiorder_type} $\lt[X]$ is a binary relation on $\carrier[X]$.
+        \item\label{quasiorder_refl} $\lt[X]$ is reflexive on $\carrier[X]$.
+        \item\label{quasiorder_tran} $\lt[X]$ is transitive.
+    \end{enumerate}
+\end{struct}
+
+\begin{lemma}\label{quasiorder_transitive_double}
+    Let $X$ be a quasiordered set.
+    Let $a, b, c, d \in X$.
+    Suppose $a\mathrel{\lt[X]} b\mathrel{\lt[X]} c\mathrel{\lt[X]} d$.
+    Then $a\mathrel{\lt[X]} d$.
+\end{lemma}
+\begin{proof}
+    $\lt[X]$ is transitive.
+    Thus $a\mathrel{\lt[X]} c\mathrel{\lt[X]} d$ by \hyperref[transitive]{transitivity}.
+    Hence $a\mathrel{\lt[X]} d$ by \hyperref[transitive]{transitivity}.
+\end{proof}
+
+\begin{proposition}\label{subseteqrel_is_quasiorder}
+    $\subseteqrel{A}$ is a quasiorder on $A$.
+\end{proposition}
+\begin{proof}
+    $\subseteqrel{A}$ is reflexive on $A$.
+    $\subseteqrel{A}$ is transitive.
+\end{proof}
+
+\subsection{Equivalences}
+
+% Sometimes also called "restricted equivalence".
+\begin{abbreviation}\label{partialequivalence}
+    $E$ is a partial equivalence iff
+    $E$ is transitive and symmetric.
+\end{abbreviation}
+
+\begin{proposition}\label{partialequivalence_is_quasireflexive}
+    Let $E$ be a partial equivalence.
+    Then $E$ is quasireflexive.
+\end{proposition}
+
+\begin{abbreviation}\label{equivalence}
+    $E$ is an equivalence iff
+    $E$ is a symmetric quasiorder.
+\end{abbreviation}
+
+\begin{abbreviation}\label{equivalence_on}
+    $E$ is an equivalence on $A$ iff
+    $E$ is a symmetric quasiorder on $A$.
+\end{abbreviation}
+
+\begin{proposition}\label{inters_of_family_of_equivalences_is_equivalence}
+    Let $F$ be a family of relations.
+    Suppose every element of $F$ is an equivalence.
+    Then $\inters{F}$ is an equivalence.
+\end{proposition}
+\begin{proof}
+    $\inters{F}$ is quasireflexive by \cref{quasireflexive,inters_destr,inters_iff_forall}.
+    $\inters{F}$ is symmetric by \cref{symmetric,inters_iff_forall,inters_destr}.
+    $\inters{F}$ is transitive by \cref{transitive,inters_iff_forall,inters_destr}.
+\end{proof}
+
+\begin{proposition}\label{inters_of_family_of_equivalences_on_a_set_is_equivalence_on_that_set}
+    Let $F$ be an inhabited family of relations.
+    Suppose every element of $F$ is an equivalence on $A$.
+    Then $\inters{F}$ is an equivalence on $A$.
+\end{proposition}
+\begin{proof}
+    $\inters{F}$ is reflexive on $A$ by \cref{inters_of_family_of_reflexive_relations_is_reflexive}.
+    $\inters{F}$ is symmetric.
+    $\inters{F}$ is transitive.
+\end{proof}
+% NOTE: the union of a family of equivalence relations is not necessarily an
+% equivalence relation because a binary union of transitive relations is not
+% necessarily transitive.
+
+
+\subsubsection{Equivalence classes}
+
+\begin{abbreviation}\label{equiv_class}
+    $\equivalenceClass{E}{a} = \downward{E}{a}$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{equivclass_abbr}
+    The $E$-equivalence class of $a$ is $\equivalenceClass{E}{a}$.
+\end{abbreviation}
+
+\begin{proposition}\label{equivclasses_inhabited}
+    Let $E$ be an equivalence.
+    Let $a\in \fld{E}$.
+    Then $a\in\equivalenceClass{E}{a}$.
+\end{proposition}
+\begin{proof}
+    $a\mathrel{E} a$ by \cref{reflexive_on,quasireflexive_implies_reflexive_on_fld}.
+\end{proof}
+
+\begin{proposition}\label{equivclasses_inhabited_equivalenceon}
+    Let $E$ be an equivalence on $A$.
+    Let $a\in A$.
+    Then $a\in\equivalenceClass{E}{a}$.
+\end{proposition}
+\begin{proof}
+    $a\mathrel{E} a$ by \cref{reflexive_on}.
+\end{proof}
+
+\begin{proposition}\label{equiv_implies_equivanlence_classes_eq}
+    Let $E$ be an equivalence on $A$.
+    Let $a, b\in A$.
+    Suppose $a\mathrel{E} b$.
+    Then $\equivalenceClass{E}{a} = \equivalenceClass{E}{b}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{equivclasses_eq_implies_equiv}
+    Let $E$ be an equivalence on $A$.
+    Let $a, b\in A$.
+    Suppose $\equivalenceClass{E}{a} = \equivalenceClass{E}{b}$.
+    Then $a\mathrel{E} b$.
+\end{proposition}
+
+\begin{proposition}\label{equiv_iff_equivclasses_eq}
+    Let $E$ be an equivalence on $A$.
+    Let $a, b\in A$.
+    Then $a\mathrel{E} b$ iff $\equivalenceClass{E}{a} = \equivalenceClass{E}{b}$.
+\end{proposition}
+
+\begin{proposition}\label{equivclasses_diseq_implies_disjoint}
+    Let $E$ be a partial equivalence.
+    Suppose $\equivalenceClass{E}{a}\neq \equivalenceClass{E}{b}$.
+    Then $\equivalenceClass{E}{a}$ is disjoint from $\equivalenceClass{E}{b}$.
+\end{proposition}
+\begin{proof}
+    Suppose not.
+    Take $c$ such that $c\in \equivalenceClass{E}{a},\equivalenceClass{E}{b}$.
+    Then $c\mathrel{E} a$ and
+         $c\mathrel{E} b$.
+    $E$ is symmetric.
+    Thus $a\mathrel{E} c$ by \hyperref[symmetric]{symmetry}.
+    $E$ is transitive.
+    Thus $a\mathrel{E} b$ by \hyperref[transitive]{transitivity}.
+    Then $b\mathrel{E} a$ by \hyperref[symmetric]{symmetry}.
+    %
+    Thus $a\in \equivalenceClass{E}{b}$ and $b\in \equivalenceClass{E}{a}$
+        by \cref{downward_closure_iff}.
+    Hence $\equivalenceClass{E}{a}\subseteq \equivalenceClass{E}{b}\subseteq \equivalenceClass{E}{a}$
+        by \cref{transitive_downward_subseteq}.
+    Contradiction by \cref{subseteq_antisymmetric}.
+\end{proof}
+
+\begin{corollary}\label{equivalence_equivclasses_diseq_implies_disjoint}
+    Let $E$ be an equivalence.
+    Suppose $\equivalenceClass{E}{a}\neq \equivalenceClass{E}{b}$.
+    Then $\equivalenceClass{E}{a}$ is disjoint from $\equivalenceClass{E}{b}$.
+\end{corollary}
+\begin{proof}
+    Follows by \cref{equivclasses_diseq_implies_disjoint}.
+\end{proof}
+
+\begin{corollary}\label{equivalenceon_equivclasses_diseq_implies_disjoint}
+    Let $E$ be an equivalence on $A$.
+    Suppose $\equivalenceClass{E}{a}\neq \equivalenceClass{E}{b}$.
+    Then $\equivalenceClass{E}{a}$ is disjoint from $\equivalenceClass{E}{b}$.
+\end{corollary}
+\begin{proof}
+    Follows by \cref{equivclasses_diseq_implies_disjoint}.
+\end{proof}
+
+
+\subsubsection{Quotients}
+
+\begin{definition}\label{quotient}
+    $\quotient{A}{E} = \{\equivalenceClass{E}{a}\mid a\in A\}$.
+\end{definition}
+
+%\begin{definition}\label{equivalenceclasses}
+%    $\equivalenceClasses{E} = \{\equivalenceClass{E}{a}\mid a\in\dom{E}\}$.
+%\end{definition}
+
+\begin{proposition}\label{quotient_emptyset}
+    $\quotient{\emptyset}{\emptyset} = \emptyset$.
+\end{proposition}
+
+
+\begin{proposition}\label{quotient_elems_disjoint}
+    Let $E$ be an equivalence on $A$.
+    Suppose $B,C\in\quotient{A}{E}$ and $B\neq C$.
+    Then $B$ is disjoint from $C$.
+\end{proposition}
+\begin{proof}
+    Take $b$ such that $B = \equivalenceClass{E}{b}$.
+    Take $c$ such that $C = \equivalenceClass{E}{c}$.
+    Then $B$ is disjoint from $C$ by \cref{equivalenceon_equivclasses_diseq_implies_disjoint}.
+\end{proof}
+
+\begin{proposition}\label{quotient_elems_inhabited}
+    Let $E$ be an equivalence on $A$.
+    Suppose $C\in\quotient{A}{E}$.
+    Then $C$ is inhabited.
+\end{proposition}
+\begin{proof}
+    Take $a\in A$ such that $C = \equivalenceClass{E}{a}$.
+    Then $a\in \equivalenceClass{E}{a}$.
+    $C$ is inhabited by \cref{quotient,equivclasses_inhabited}.
+\end{proof}
+
+\begin{proposition}\label{quotient_elems_type}
+    Let $E$ be an equivalence on $A$.
+    Suppose $a\in C\in\quotient{A}{E}$.
+    Then $a\in A$.
+\end{proposition}
+\begin{proof}
+    Take $b\in A$ such that $C = \equivalenceClass{E}{b}$
+        by \cref{quotient}.
+    Then $a\mathrel{E} b$.
+    Thus $a\in A$ by \cref{times_tuple_elim,subseteq}.
+\end{proof}
+
+
+\begin{corollary}\label{quotient_notni_emptyset}
+    Let $E$ be an equivalence on $A$.
+    $\emptyset\notin\quotient{A}{E}$.
+\end{corollary}
+
+\begin{proposition}\label{quotient_partition}
+    Let $E$ be an equivalence on $A$.
+    $\quotient{A}{E}$ is a partition.
+\end{proposition}
+\begin{proof}
+    $\emptyset\notin\quotient{A}{E}$.
+    For all $B, C\in \quotient{A}{E}$ such that $B\neq C$ we have $B$ is disjoint from $C$.
+\end{proof}
+
+\begin{proposition}\label{quotient_partition_of}
+    Let $E$ be an equivalence on $A$.
+    $\quotient{A}{E}$ is a partition of $A$.
+\end{proposition}
+\begin{proof}
+    $\unions{(\quotient{A}{E})} = A$ by set extensionality.
+\end{proof}
+
+
+
+\begin{definition}\label{equivalence_from_partition}
+    $\equivfrompartition{P}{A} = \{(a, b)\mid a\in A, b\in A\mid \exists C\in P.\ a, b\in C\}$.
+\end{definition}
+
+\begin{proposition}\label{equivalence_from_partition_intro}
+    Let $P$ be a partition of $A$.
+    Let $a,b\in A$.
+    Suppose $a,b\in C\in P$.
+    Then $a\mathrel{\equivfrompartition{P}{A}} b$.
+\end{proposition}
+
+\begin{proposition}\label{equivalence_from_partition_reflexive}
+    Let $P$ be a partition of $A$.
+    $\equivfrompartition{P}{A}$ is reflexive on $A$.
+\end{proposition}
+
+\begin{proposition}\label{equivalence_from_partition_symmetric}
+    Let $P$ be a partition.
+    $\equivfrompartition{P}{A}$ is symmetric.
+\end{proposition}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{proposition}\label{equivalence_from_partition_transitive}
+    Let $P$ be a partition.
+    $\equivfrompartition{P}{A}$ is transitive.
+\end{proposition}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{proposition}\label{equivalence_from_partition_is_equivalence}
+    Let $P$ be a partition of $A$.
+    $\equivfrompartition{P}{A}$ is an equivalence on $A$.
+\end{proposition}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{proposition}\label{equivalence_from_quotient}
+    Let $E$ be an equivalence on $A$.
+    Then $\equivfrompartition{\quotient{A}{E}}{A} = E$.
+\end{proposition}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{proposition}\label{partition_eq_quotient_by_equivalence_from_partition}
+    Let $P$ be a partition of $A$.
+    Then $\quotient{A}{\equivfrompartition{P}{A}} = P$.
+\end{proposition}
+\begin{proof}
+    Omitted.
+\end{proof}
+\subsection{Closure operations on relations}
+
+\begin{definition}\label{reflexive_closure}
+    $\reflexiveClosure{X}{R} = R\union\identity{X}$.
+\end{definition}
+
+% reflexive closure of R is the smallest reflexive relation containing R
+\begin{proposition}\label{reflexive_closure_is_reflexive}
+    $\reflexiveClosure{X}{R}$ is reflexive on $X$.
+\end{proposition}
+
+\begin{definition}\label{reflexive_reduction}
+    $\reflexiveReduction{X}{R} = R\setminus\identity{X}$.
+\end{definition}
+
+\begin{definition}\label{symmetric_closure}
+    $\symmetricClosure{R} = R\union\converse{R}$.
+\end{definition}
+
+
+% LATER transitive closure
+
+% LATER reflexive transitive closure
+
+% LATER equivalence closure
+
+\subsection{Injective relations}
+
+% Injective relations are also called "left-unique"
+\begin{definition}\label{injective}
+    $R$ is injective iff for all $a,a',b$ such that $a, a'\mathrel{R} b$ we have $a = a'$.
+\end{definition}
+
+\begin{abbreviation}\label{leftunique}
+    $R$ is left-unique iff $R$ is injective.
+\end{abbreviation}
+
+\begin{proposition}\label{subseteq_of_injective_is_injective}
+    Suppose $S\subseteq R$.
+    Suppose $R$ is injective.
+    Then $S$ is injective.
+\end{proposition}
+
+\begin{proposition}\label{restrl_injective}
+    Suppose $R$ is injective.
+    Then $\restrl{R}{A}$ is injective.
+\end{proposition}
+\begin{proof}
+    $\restrl{R}{A}\subseteq R$.
+\end{proof}
+
+\begin{proposition}\label{circ_injective}
+    Suppose $R$ and $S$ are injective.
+    Then $S\circ R$ is injective.
+\end{proposition}
+
+\begin{proposition}\label{identity_injective}
+    Then $\identity{A}$ is injective.
+\end{proposition}
+
+\subsection{Right-unique relations}
+
+% also called "functional" or "univalent"
+\begin{definition}\label{rightunique}
+    $R$ is right-unique iff
+    for all $a,b,b'$ such that $a\mathrel{R} b, b'$ we have $b = b'$.
+\end{definition}
+
+\begin{abbreviation}\label{onetoone}
+    $R$ is one-to-one iff $R$ is right-unique and injective.
+\end{abbreviation}
+
+\begin{proposition}\label{subseteq_of_rightunique_is_rightunique}
+    Suppose $S\subseteq R$.
+    Suppose $R$ is right-unique.
+    Then $S$ is right-unique.
+\end{proposition}
+
+\begin{proposition}\label{circ_rightunique}
+    Suppose $R$ and $S$ are right-unique.
+    Then $S\circ R$ is right-unique.
+\end{proposition}
+
+
+
+\subsection{Left-total relations}
+
+\begin{definition}\label{lefttotal}
+    $R$ is left-total on $A$ iff
+    for all $a\in A$ there exists $b$ such that $a\mathrel{R} b$.
+\end{definition}
+
+
+\subsection{Right-total relations}
+
+\begin{definition}\label{righttotal}
+    $R$ is right-total on $B$ iff
+    for all $b\in B$ there exists $a$ such that $a\mathrel{R} b$.
+\end{definition}
+
+\begin{abbreviation}\label{surjective}
+    $R$ is surjective on $B$ iff $R$ is right-total on $B$.
+\end{abbreviation}
+
+\section{Standard Library: Functions}
+
+\begin{abbreviation}\label{function}
+    $f$ is a function iff $f$ is right-unique and $f$ is a relation.
+\end{abbreviation}
+
+% The builtin "-(-)" notation desugars to "\apply{-}{-}".
+\begin{definition}\label{apply}
+    $\apply{f}{x} = \unions{\img{f}{\{x\}}}$.
+\end{definition}
+
+\begin{proposition}\label{function_rightunique}
+    Let $f$ be a function.
+    Suppose $(a,b), (a, b')\in f$.
+    Then $b = b'$.
+\end{proposition}
+\begin{proof}
+    Follows by \hyperref[rightunique]{right-uniqueness}.
+\end{proof}
+
+\begin{proposition}\label{function_apply_intro}
+    Let $f$ be a function.
+    Suppose $(a,b)\in f$.
+    Then $f(a) = b$.
+\end{proposition}
+\begin{proof}
+    Let $B = \img{f}{\{a\}}$.
+    $B = \{b'\in\ran{f}\mid (a,b')\in f \}$ by \cref{img_singleton}.
+    $b\in\ran{f}$.
+    For all $b'\in  B$ we have $(a, b')\in f$.
+    For all $b', b''\in  B$ we have $b' = b''$ by \hyperref[rightunique]{right-uniqueness}.
+    Then $B = \{b\}$ by \cref{singleton_iff_inhabited_subsingleton}.
+    Then $\unions{B} = b$.
+    Thus $f(a) = b$ by \cref{apply}.
+\end{proof}
+
+\begin{proposition}\label{function_member_elim}
+    Let $f$ be a function.
+    Suppose $w\in f$.
+    Then there exists $x\in\dom{f}$ such that $w = (x, f(x))$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{apply,function_apply_intro,dom,relation}.
+\end{proof}
+
+\begin{proposition}\label{function_apply_elim}
+    Let $f$ be a function.
+    Suppose $x\in\dom{f}$.
+    Then $(x,f(x))\in f$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{dom_iff,function_apply_intro}.
+\end{proof}
+
+\begin{proposition}\label{function_apply_iff}
+    Let $f$ be a function.
+    $(a,b)\in f$ iff $a\in\dom{f}$ and $f(a) = b$.
+\end{proposition}
+
+\begin{proposition}\label{fun_subseteq}
+    Let $f, g$ be functions.
+    Suppose $\dom{f}\subseteq \dom{g}$.
+    Suppose for all $x\in\dom{f}$ we have $f(x) = g(x)$.
+    Then $f\subseteq g$.
+\end{proposition}
+\begin{proof}
+    For all $x,y$ such that $(x,y)\in f$ we have $(x,y)\in g$ by \cref{dom,function_apply_intro,function_apply_elim,apply,subseteq}.
+    Follows by \cref{subseteq,relation}.
+\end{proof}
+
+\begin{proposition}[Function extensionality]\label{funext}
+    Let $f, g$ be functions.
+    Suppose $\dom{f} = \dom{g}$.
+    Suppose for all $x$ we have  $f(x) = g(x)$.
+    Then $f = g$.
+\end{proposition}
+\begin{proof}
+    $\dom{f}\subseteq \dom{g}\subseteq \dom{f}$.
+    For all $x\in\dom{f}$ we have $f(x) = g(x)$.
+    Thus $f\subseteq g$.
+    For all $x\in\dom{g}$ we have $f(x) = g(x)$.
+    Thus $g\subseteq f$.
+\end{proof}
+
+\begin{proposition}\label{fun_ran_iff}
+    Let $f$ be a function.
+    $b\in\ran{f}$ iff there exists $a\in\dom{f}$ such that $f(a) = b$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{ran,function_apply_iff}.
+\end{proof}
+
+\begin{abbreviation}\label{function_on}
+    $f$ is a function on $X$ iff $f$ is a function and $X = \dom{f}$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{function_to}
+    $f$ is a function to $Y$ iff $f$ is a function and for all $x\in\dom{f}$ we have $f(x)\in Y$.
+\end{abbreviation}
+
+\begin{proposition}\label{function_on_weaken_codom}
+    Let $f$ be a function to $B$.
+    Suppose $B\subseteq C$.
+    Then $f$ is a function to $C$.
+\end{proposition}
+
+\begin{proposition}\label{function_to_ran}
+    Let $f$ be a function to $B$.
+    Then $\ran{f}\subseteq B$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{ran,subseteq,apply,function_member_elim,pair_eq_iff,dom}.
+\end{proof}
+
+\begin{definition}\label{funs}
+    $\funs{A}{B} = \{ f\in\rels{A}{B}\mid \text{$A= \dom{f}$ and $f$ is right-unique}\}$.
+\end{definition}
+
+\begin{abbreviation}\label{function_from_to}
+    $f$ is a function from $X$ to $Y$ iff $f\in\funs{X}{Y}$.
+\end{abbreviation}
+
+\begin{proposition}\label{funs_is_relation}
+    Let $f\in\funs{A}{B}$.
+    Then $f$ is a relation.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{funs,rels_is_relation}.
+\end{proof}
+
+\begin{proposition}\label{funs_is_function}
+    Let $f\in\funs{A}{B}$.
+    Then $f$ is a function.
+\end{proposition}
+
+\begin{proposition}\label{funs_subseteq_rels}
+    $\funs{A}{B}\subseteq\rels{A}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{funs,subseteq}.
+\end{proof}
+
+\begin{proposition}\label{funs_intro}
+    Let $f$ be a function to $B$ such that $A=\dom{f}$.
+    Then $f\in\funs{A}{B}$.
+\end{proposition}
+\begin{proof}
+    %$f$ is a function.
+    $\dom{f}\subseteq A$ by \cref{subseteq_refl}.
+    $\ran{f}\subseteq B$ by \cref{function_to_ran}.
+    Thus $f\in\rels{A}{B}$ by \cref{rels_intro_dom_and_ran}.
+    Thus $f\in\funs{A}{B}$ by \cref{funs}.
+\end{proof}
+
+\begin{proposition}\label{funs_elim}
+    Let $f\in\funs{A}{B}$.
+    Then $f$ is a function to $B$ such that $A= \dom{f}$.
+\end{proposition}
+\begin{proof}
+    $f$ is a function by \cref{funs_is_function}. % and in particular, a relation.
+    It suffices to show that for all $a\in\dom{f}$ we have $f(a)\in B$ by \cref{funs}.
+    Fix $a\in\dom{f}$.
+    Take $b$ such that $f(a) = b$.
+    Thus $(a,b)\in f$ by \cref{function_apply_elim}.
+    Now $b\in\ran{f}$ by \cref{ran_iff}.
+    Finally $\ran{f}\subseteq B$ by \cref{funs,rels_ran_subseteq}.
+\end{proof}
+
+\begin{proposition}\label{funs_weaken_codom}
+    Let $f\in\funs{A}{B}$.
+    Suppose $B\subseteq D$.
+    Then $f\in\funs{A}{D}$.
+\end{proposition}
+\begin{proof}
+    $f\in\rels{A}{D}$ by \cref{funs,rels_weaken_codom}.
+    Follows by \cref{funs}.
+\end{proof}
+
+\begin{proposition}\label{funs_type_apply}
+    Let $f\in\funs{A}{B}$.
+    Let $a\in A$.
+    Then $f(a)\in B$.
+\end{proposition}
+\begin{proof}
+    $(a,f(a)) \in f$ by \cref{funs_elim,function_apply_iff}.
+    Thus $f(a)\in B$ by \cref{funs,rels_type_ran}.
+\end{proof}
+
+\begin{proposition}\label{funs_tuple_intro}
+    Let $f\in\funs{A}{B}$.
+    Let $a\in A$.
+    Then there exists $b\in B$ such that $(a,b)\in f$.
+\end{proposition}
+\begin{proof}
+    $(a,f(a)) \in f$ by \cref{funs_elim,function_apply_iff}.
+    $f(a)\in B$ by \cref{funs_type_apply}.
+\end{proof}
+
+
+% LATER techincally ambiguous with the current grammar (as of 2022-04-24)
+% but the ambiguity gets resolved during interpretation.
+% the options are (probably):
+%
+% 1:  function such that ( ... and for all ...)
+% 2:  (function such that ...) and for all
+%
+% \begin{definition}
+%     $f$ is a function from $X$ to $Y$ iff $f$ is a function such that $\dom{f} = X$ and for all $x\in X$ we have $f(x)\in Y$.
+% \end{definition}
+
+\begin{proposition}\label{funs_ran}
+    Let $f\in\funs{A}{B}$.
+    Then $\ran{f}\subseteq B$.
+\end{proposition}
+\begin{proof}
+    $f$ is a function to $B$.
+\end{proof}
+
+
+
+\subsection{Image of a function}
+
+\begin{proposition}\label{img_of_function_intro}
+    Let $f$ be a function.
+    Suppose $x\in\dom{f}\inter X$.
+    Then $f(x)\in \img{f}{X}$.
+\end{proposition}
+\begin{proof}
+    $x\in X$ by \cref{inter_elim_right}.
+    Thus $(x,f(x))\in f$ by \cref{function_apply_elim,inter_elim_left}.
+\end{proof}
+
+\begin{proposition}\label{img_of_function_elim}
+    Let $f$ be a function.
+    Suppose $y\in \img{f}{X}$.
+    Then there exists $x\in\dom{f}\inter X$ such that $y = f(x)$.
+\end{proposition}
+\begin{proof}
+    Take $x\in X$ such that $(x,y)\in f$.
+    Then $x\in\dom{f}$ and $y = f(x)$ by \cref{dom_intro,function_apply_iff}.
+\end{proof}
+
+\begin{proposition}\label{img_of_function}
+    Suppose $f$ is a function.
+    $\img{f}{X} = \{ f(x) \mid x\in\dom{f}\inter X\}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{img_of_function_intro,img_of_function_elim}.
+\end{proof}
+
+\subsection{Families of functions}
+
+\begin{abbreviation}\label{family_of_functions}
+    $F$ is a family of functions iff
+    every element of $F$ is a function.
+\end{abbreviation}
+
+\begin{proposition}\label{unions_of_compatible_family_of_function_is_function}
+    Let $F$ be a family of functions.
+    Suppose that for all $f,g \in F$ we have $f\subseteq g$ or $g\subseteq f$.
+    Then $\unions{F}$ is a function.
+\end{proposition}
+\begin{proof}
+    $\unions{F}$ is a relation by \cref{unions_of_family_of_relations_is_relation}.
+    For all $x,y, y'$ such that $(x,y),(x,y')\in \unions{F}$
+        there exists $f\in F$ such that $(x,y),(x,y')\in f$
+        by \cref{unions_iff,subseteq}.
+    %Hence for all $x,y, y'$ such that $(x,y),(x,y')\in \unions{F}$ we have $y = y'$
+    %    by \cref{rightunique}.
+    Thus $\unions{F}$ is right-unique by \cref{rightunique}.
+\end{proof}
+
+
+\subsection{The empty function}
+
+\begin{proposition}\label{emptyset_is_function}
+    $\emptyset$ is a function.
+\end{proposition}
+%\begin{proof}
+%    For all $x,y, y'$ we have
+%    if $(x,y),(x,y')\in \emptyset$, then $y = y'$.
+%\end{proof}
+
+\begin{proposition}\label{emptyset_is_function_on_emptyset}
+    $\emptyset$ is a function on $\emptyset$.
+\end{proposition}
+
+\begin{proposition}\label{codom_of_emptyset_can_be_anything}
+    $\emptyset$ is a function to $X$.
+\end{proposition}
+
+\begin{proposition}\label{emptyset_is_injective}
+    $\emptyset$ is injective.
+\end{proposition}
+% LATER filter throws out the definition of injective, smh
+
+
+\subsection{Function composition}
+
+\begin{abbreviation}\label{composable}
+    $g$ is composable with $f$ iff $\ran{f}\subseteq \dom{g}$.
+\end{abbreviation}
+
+\begin{proposition}\label{function_circ}
+    Suppose $f$ and $g$ are right-unique.
+    Then $g\circ f$ is a function.
+\end{proposition}
+
+\begin{proposition}\label{circ_apply}
+    Let $f, g$ be functions.
+    Suppose $g$ is composable with $f$.
+    Let $x\in\dom{f}$.
+    Then $(g\circ f)(x) = g(f(x))$.
+\end{proposition}
+\begin{proof}
+    $(x, g(f(x)))\in g\circ f$ by \cref{circ,ran,subseteq,function_apply_elim}.
+    $g\circ f$ is a function by \cref{function_circ}.
+    Thus $(g\circ f)(x) = g(f(x))$ by \cref{function_apply_intro}.
+\end{proof}
+
+\begin{proposition}\label{dom_of_circ}
+    Let $f, g$ be functions.
+    Suppose $g$ is composable with $f$.
+    $\dom{g\circ f} = \preimg{f}{\dom{g}}$.
+\end{proposition}
+\begin{proof}
+    Every element of $\dom{g\circ f}$ is an element of $\preimg{f}{\dom{g}}$
+        by \cref{preimg,circ,dom,pair_eq_iff}.
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{dom_circ_exact}
+    Let $f, g$ be functions.
+    Suppose $\ran{f} = \dom{g}$.
+    $\dom{g\circ f} = \dom{f}$.
+\end{proposition}
+\begin{proof}
+    Every element of $\dom{g\circ f}$ is an element of $\dom{f}$.
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_of_circ_intro}
+    Let $f, g$ be functions.
+    Suppose $g$ is composable with $f$.
+    Suppose $y\in \img{g}{\ran{f}}$.
+    Then $y\in \ran{g\circ f}$.
+\end{proposition}
+\begin{proof}
+    Take $x\in\ran{f}$ such that $(x, y)\in g$.
+    Take $x'\in\dom{f}$ such that $(x', x)\in f$.
+    Then $(x', y) \in g\circ f$.
+    Follows by \cref{ran_intro}.
+\end{proof}
+
+\begin{proposition}\label{ran_of_circ_elim}
+    Let $f, g$ be functions.
+    Suppose $g$ is composable with $f$.
+    Suppose $y\in \ran{g\circ f}$.
+    Then $y\in \img{g}{\ran{f}}$.
+\end{proposition}
+\begin{proof}
+    Take $x\in\dom{f}$ such that $(x, y)\in g\circ f$
+        by \cref{circ,circ_iff,ran,dom}.
+    $f(x)\in\ran{f}$.
+    $(f(x), y)\in g$
+        by \cref{function_apply_intro,apply,circ_iff}.
+    Follows by \cref{img_iff}.
+\end{proof}
+
+\begin{proposition}\label{ran_of_circ}
+    Let $f, g$ be functions.
+    Suppose $g$ is composable with $f$.
+    Then $\ran{g\circ f} = \img{g}{\ran{f}}$.
+\end{proposition}
+\begin{proof}
+    Follows by set extensionality.
+\end{proof}
+
+\begin{proposition}\label{ran_circ_exact}
+    Let $f, g$ be functions.
+    Suppose $\ran{f} = \dom{g}$.
+    Then $\ran{g\circ f} = \ran{g}$.
+\end{proposition}
+\begin{proof}
+    \begin{align*}
+        \ran{g\circ f}
+        &= \img{g}{\ran{f}}
+            \explanation{by \cref{subseteq_refl,ran_of_circ}}\\
+        &= \img{g}{\dom{g}}
+            \\ % by assumption
+        &= \ran{g}
+            \explanation{by \cref{img_dom}}
+    \end{align*}
+\end{proof}
+
+
+\begin{proposition}\label{img_of_circ_elim}
+    Let $f, g$ be functions.
+    Let $A$ be a set.
+    Suppose $\ran{f}\subseteq \dom{g}$.
+    Suppose $c\in\img{g\circ f}{A}$.
+    Then $c\in\img{g}{\img{f}{A}}$.
+\end{proposition}
+\begin{proof}
+    Take $a\in A$ such that $(a,c)\in g\circ f$.
+    Take $b$ such that $(a,b)\in f$ and $(b, c)\in g$.
+    Then $b\in\img{f}{A}$.
+    Follows by \cref{img_iff}.
+\end{proof}
+
+\begin{proposition}\label{img_of_circ}
+    Let $f, g$ be functions.
+    Let $A$ be a set.
+    Suppose $\ran{f}\subseteq\dom{g}$.
+    Then $\img{g\circ f}{A} = \img{g}{\img{f}{A}}$.
+\end{proposition}
+\begin{proof}
+    For all $c$ we have $c\in\img{g}{\img{f}{A}}$
+        iff $c\in\img{g\circ f}{A}$
+        by \cref{circ_iff,img_iff}.
+    Follows by \hyperref[setext]{extensionality}.
+\end{proof}
+
+\begin{proposition}\label{funs_circ}
+    Let $f\in\funs{A}{B}$.
+    Let $g\in\funs{B}{C}$.
+    Then $g\circ f\in\funs{A}{C}$.
+\end{proposition}
+\begin{proof}
+    $\dom{f} = A$ by \cref{funs}.
+    $\dom{g} = B$ by \cref{funs}.
+    $g$ is composable with $f$.
+    Omitted. % TODO
+\end{proof}
+
+\subsection{Function restriction}
+
+\begin{proposition}\label{restrl_of_function_is_function}
+    Let $f$ be a function.
+    Let $A$ be a set.
+    $\restrl{f}{A}$ is a function.
+\end{proposition}
+
+\begin{proposition}\label{restrl_of_function_apply}
+    Let $f$ be a function.
+    Suppose $A\subseteq\dom{f}$.
+    Let $a\in A$.
+    Then $(\restrl{f}{A})(a) = f(a)$.
+\end{proposition}
+\begin{proof}
+    Then $(a,f(a))\in f$.
+    Then $(a,f(a))\in \restrl{f}{A}$ by \cref{restrl_iff}.
+    Thus $(\restrl{f}{A})(a) = f(a)$.
+\end{proof}
+
+\begin{proposition}\label{function_apply_default}
+    Suppose $x\notin\dom{f}$.
+    Then $f(x) = \emptyset$.
+\end{proposition}
+\begin{proof}
+    $\img{f}{\{x\}} = \emptyset$ by \cref{setext,emptyset,img_singleton_iff,dom_intro}.
+    Follows by \cref{apply,unions_emptyset}.
+\end{proof}
+
+
+
+\subsection{Injections}
+
+\begin{proposition}\label{injective_function}
+    Suppose $f$ is a function.
+    $f$ is injective iff for all $x,y\in\dom{f}$ we have $f(x) = f(y) \implies x = y$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{injective,function_apply_iff}.
+\end{proof}
+
+\begin{abbreviation}\label{injection}
+    $f$ is an injection iff $f$ is an injective function.
+\end{abbreviation}
+
+\begin{definition}\label{inj}
+    $\inj{A}{B} = \{f\in\funs{A}{B}\mid \text{for all $x,y\in A$ such that $f(x)=f(y)$ we have $x = y$}\}$.
+\end{definition}
+
+\begin{proposition}\label{inj_circ}
+    Let $f\in\inj{A}{B}$.
+    Let $g\in\inj{B}{C}$.
+    Then $g\circ f\in\inj{A}{C}$.
+\end{proposition}
+\begin{proof}
+    Omitted. % TODO
+\end{proof}
+
+\subsection{Surjections}
+
+\begin{abbreviation}\label{surjection}
+    $f$ is a surjection onto $Y$ iff $f$ is a function such that $f$ is surjective on $Y$.
+\end{abbreviation}
+
+\begin{definition}\label{surj}
+    $\surj{A}{B} = \{f\in\funs{A}{B}\mid \text{for all $b\in B$ there exists $a\in A$ such that $f(a) = b$}\}$.
+\end{definition}
+
+\begin{abbreviation}\label{surjection_from_to}
+    $f$ is a surjection from $A$ to $B$ iff $f\in\surj{A}{B}$.
+\end{abbreviation}
+
+\begin{lemma}\label{surjection_ran}
+    Let $f$ be a function.
+    Then $f$ is surjective on $\ran{f}$.
+\end{lemma}
+\begin{proof}
+    It suffices to show that for all $y\in\ran{f}$ there exists $x\in\dom{f}$ such that $f(x) = y$.
+    Fix $y\in\ran{f}$.
+    Take $x$ such that $(x,y)\in f$.
+    Then $x\in\dom{f}$ and $f(x) = y$ by \cref{dom,function_apply_iff}.
+\end{proof}
+
+\begin{lemma}\label{surj_to_fun}
+    Let $f\in\surj{A}{B}$.
+    Then $f\in\funs{A}{B}$.
+\end{lemma}
+
+\begin{lemma}\label{fun_to_surj}
+    Let $f\in\funs{A}{B}$.
+    Then $f\in\surj{A}{\ran{f}}$.
+\end{lemma}
+\begin{proof}
+    $f\in\rels{A}{\ran{f}}$ by \cref{funs,rels_restrict_ran}.
+    Thus $f\in\funs{A}{\ran{f}}$ by \cref{funs}.
+    It suffices to show that for all $b\in\ran{f}$ there exists $a\in A$ such that $f(a) = b$ by \cref{surj}.
+    Fix $b\in\ran{f}$.
+    Take $a$ such that $(a,b)\in f$.
+    Thus $f(a)=b$ by \cref{function_apply_iff,funs_elim}.
+    We have $a\in\dom{f} = A$.
+    Follows by assumption.
+\end{proof}
+
+\begin{corollary}\label{ran_of_surj}
+    Let $f\in\surj{A}{B}$.
+    Then $\ran{f} = B$.
+\end{corollary}
+\begin{proof}
+    % TODO clean
+    We have $f$ is a function by \cref{surj,funs_is_function}.
+    Now $\ran{f}\subseteq B$ by \cref{surj,funs_ran}.
+    It suffices to show that every element of $B$ is an element of $\ran{f}$.
+    It suffices to show that for all $b\in B$
+    there exists $a\in\dom{f}$ such that $f(a) = b$ by \cref{fun_ran_iff}.
+    Fix $b\in B$.
+    Take $a\in A$ such that $f(a) = b$ by \cref{surj}.
+    Now $A=\dom{f}$.
+\end{proof}
+
+\begin{corollary}\label{funs_surj_iff}
+    Let $f\in\funs{A}{B}$.
+    Then $f\in\surj{A}{B}$ iff $\ran{f} = B$.
+\end{corollary}
+\begin{proof}
+    Follows by \cref{surj,fun_to_surj,ran_of_surj}.
+\end{proof}
+
+\begin{proposition}\label{surjections_circ}
+    Let $f\in\surj{A}{B}$.
+    Let $g\in\surj{B}{C}$.
+    Then $g\circ f\in\surj{A}{C}$.
+\end{proposition}
+\begin{proof}
+    $\dom{f} = A$ by \cref{surj,funs}.
+    $\dom{g} = B = \ran{f}$ by \cref{surj,funs,ran_of_surj}.
+    $\dom{g\circ f} = A$ by \cref{surj_to_fun,funs_is_function,dom_circ_exact}.
+    Omitted. % TODO
+\end{proof}
+
+
+
+\subsection{Bijections}
+
+\begin{definition}\label{bijections}
+    $\bijections{A}{B} = \{ f\in\surj{A}{B} \mid \text{$f$ is injective}\}$.
+\end{definition}
+
+\begin{abbreviation}\label{bijection}
+    $f$ is a bijection from $A$ to $B$ iff $f\in\bijections{A}{B}$.
+\end{abbreviation}
+
+\begin{proposition}\label{bijections_to_funs}
+    Every element of $\bijections{A}{B}$ is an element of $\funs{A}{B}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{bijections,surj}.
+\end{proof}
+
+\begin{proposition}\label{bijection_is_function}
+    Every element of $\bijections{A}{B}$ is a function.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{bijections_to_funs,funs_is_function}.
+\end{proof}
+
+\begin{proposition}\label{bijections_dom}
+    Let $f\in\bijections{A}{B}$.
+    Then $\dom{f} = A$.
+\end{proposition}
+\begin{proof}
+    $f\in\funs{A}{B}$ by \cref{bijections_to_funs}.
+    Follows by \cref{funs}.
+\end{proof}
+
+\begin{proposition}\label{bijection_circ}
+    Let $f$ be a bijection from $A$ to $B$.
+    Let $g$ be a bijection from $B$ to $C$.
+    Then $g\circ f$ is a bijection from $A$ to $C$.
+\end{proposition}
+\begin{proof}
+    $g\circ f\in\surj{A}{C}$ by \cref{bijections,surjections_circ}.
+    $g\circ f$ is injective by \cref{bijections,circ_injective}.
+    Follows by \cref{bijections}.
+\end{proof}
+
+\subsection{Converse as a function}
+
+\begin{proposition}\label{converse_of_function_is_injective}
+    Let $f$ be a function.
+    Then $\converse{f}$ is injective. % i.e. an injective relation.
+\end{proposition}
+
+\begin{proposition}\label{injective_converse_is_function}
+    Suppose $f$ is injective. % NOTE: f need not be a function!
+    Then $\converse{f}$ is a function.
+\end{proposition}
+
+\begin{proposition}\label{bijective_converse_is_function}
+    Let $f$ be a bijection from $A$ to $B$.
+    Then $\converse{f}$ is a function.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{bijections,injective_converse_is_function}.
+\end{proof}
+
+\begin{proposition}\label{bijective_converse_are_funs}
+    Let $f$ be a bijection from $A$ to $B$.
+    Then $\converse{f}\in\funs{B}{A}$.
+\end{proposition}
+\begin{proof}
+    %\begin{align*}
+    %    \dom{\converse{f}}
+    %    &= \ran{f}
+    %        \explanation{by \cref{dom_converse}}\\
+    %    &= B
+    %        \explanation{by \cref{ran_of_surj}}
+    %\end{align*}
+    $\dom{\converse{f}} = \ran{f} = B$ by \cref{bijections,dom_converse,ran_of_surj}.
+    Omitted. % TODO
+\end{proof}
+
+\begin{proposition}\label{bijective_converse_are_surjs}
+    Let $f$ be a bijection from $A$ to $B$.
+    Then $\converse{f}\in\surj{B}{A}$.
+\end{proposition}
+\begin{proof}
+    We have $\converse{f}\in\funs{B}{A}$ by \cref{bijective_converse_are_funs}.
+    It suffices to show that $\ran{\converse{f}} = A$ by \cref{funs_surj_iff}.
+    We have $\dom{f} = A$ by \cref{bijections_dom}.
+    Thus $\ran{\converse{f}} = A$ by \cref{ran_converse}.
+\end{proof}
+
+\begin{proposition}\label{bijection_converse_is_bijection}
+    Let $f$ be a bijection from $A$ to $B$.
+    Then $\converse{f}$ is a bijection from $B$ to $A$.
+\end{proposition}
+\begin{proof}
+    $\converse{f}\in\funs{B}{A}$ by \cref{bijective_converse_are_funs}.
+    $\converse{f}$ is injective by \cref{bijection_is_function,converse_of_function_is_injective}.
+    $\converse{f}\in\surj{B}{A}$ by \cref{bijective_converse_are_surjs}.
+    Follows by \cref{bijections}.
+\end{proof}
+
+\subsubsection{Inverses of a function}
+
+\begin{abbreviation}\label{leftinverse}
+    $g$ is a left inverse of $f$ iff for all $x\in\dom{f}$ we have $g(f(x)) = x$.
+\end{abbreviation}
+
+% This definition of right inverse is probably not particularly useful...
+\begin{abbreviation}\label{rightinverse}
+    $g$ is a right inverse of $f$ iff $f\circ g = \identity{\dom{g}}$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{rightinverseon}
+    $g$ is a right inverse of $f$ on $B$ iff $f\circ g = \identity{B}$.
+\end{abbreviation}
+
+\begin{proposition}\label{injective_converse_is_leftinverse}
+    Let $f$ be an injection.
+    Then $\converse{f}$ is a left inverse of $f$.
+\end{proposition}
+\begin{proof}
+    $\converse{f}$ is a function by \cref{injective_converse_is_function}.
+
+    Omitted. % TODO
+\end{proof}
+
+
+
+\subsection{Identity function}
+
+\begin{proposition}\label{id_rightunique}
+    $\identity{A}$ is right-unique.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{id,rightunique,pair_eq_iff}.
+\end{proof}
+
+\begin{proposition}\label{id_is_function}
+    $\identity{A}$ is a function.
+\end{proposition}
+
+\begin{proposition}\label{id_is_function_on}
+    $\identity{A}$ is a function on $A$.
+\end{proposition}
+
+\begin{proposition}\label{id_is_function_to}
+    $\identity{A}$ is a function to $A$.
+\end{proposition}
+
+\begin{proposition}\label{id_is_function_from_to}
+    $\identity{A}$ is a function from $A$ to $A$.
+\end{proposition}
+\begin{proof}
+    $\identity{A}\in\rels{A}{A}$ by \cref{id_elem_rels}.
+    Follows by \cref{funs,id_is_function_on,id_is_function_to}.
+\end{proof}
+
+\begin{proposition}\label{id_apply}
+    Suppose $a\in A$.
+    % TODO/FIXME fix grammar, then simplify
+    %Then $\identity{A}(a) = a$.
+    Suppose $f = \identity{A}$.
+    Then $f(a) = a$.
+\end{proposition}
+\begin{proof}
+    $(a,a)\in\identity{A}$ by \cref{id_iff}.
+    Follows by \cref{id_is_function,function_apply_intro}.
+\end{proof}
+
+\begin{proposition}\label{id_elem_funs}
+    $\identity{A}\in\funs{A}{A}$.
+\end{proposition}
+\begin{proof}
+    $\identity{A}$ is a function.
+    $\identity{A}\in\rels{A}{A}$.
+    $\dom{\identity{A}}\subseteq A$.
+\end{proof}
+
+
+\begin{proposition}\label{id_elem_surjections}
+    $\identity{A}\in\surj{A}{A}$.
+\end{proposition}
+\begin{proof}
+    We have $\identity{A}\in\funs{A}{A}$ by \cref{id_elem_funs}.
+    Omitted. % TODO
+\end{proof}
+
+\begin{proposition}\label{id_elem_bijections}
+    $\identity{A}\in\bijections{A}{A}$.
+\end{proposition}
+\begin{proof}
+    $\identity{A}\in\surj{A}{A}$ by \cref{id_elem_surjections}.
+    $\identity{A}$ is injective by \cref{identity_injective}.
+    Follows by \cref{bijections}.
+\end{proof}
+\subsection{Fixpoints}
+
+% NOTE: we need to explicitly require that a is an element of the domain,
+% otherwise the emptyset becomes a fixpoint when it's not in the domain.
+\begin{definition}\label{fixpoint}
+    $a$ is a fixpoint of $f$ iff $a\in\dom{f}$ and $f(a) = a$.
+\end{definition}
+
+\begin{definition}\label{subseteqpreserving}
+    $f$ is \subseteq-preserving iff
+    for all $A, B\in\dom{f}$ such that $A\subseteq B$ we have $f(A)\subseteq f(B)$.
+\end{definition}
+
+\begin{theorem}[Knaster--Tarski]\label{knastertarski}
+    Let $f$ be a \subseteq-preserving function from $\pow{A}$ to $\pow{A}$.
+    Then there exists a fixpoint of $f$.
+\end{theorem}
+\begin{proof}
+    $\dom{f} = \pow{A}$.
+    Let $P = \{a\in\pow{A}\mid a\subseteq f(a)\}$.
+    $P\subseteq\pow{A}$.
+    Thus $\unions{P}\in\pow{A}$.
+    Hence $f(\unions{P})\in\pow{A}$ by \cref{funs_type_apply}.
+
+    Show $\unions{P}\subseteq f(\unions{P})$.
+    \begin{subproof}
+        It suffices to show that every element of $\unions{P}$ is an element of $f(\unions{P})$.
+        %
+        Fix $u\in\unions{P}$.
+        %
+        Take $p\in P$ such that $u\in p$.
+        Then $u\in f(p)$.
+        $p\subseteq\unions{P}$.
+        $f(p)\subseteq f(\unions{P})$ by \cref{subseteqpreserving}.
+        Thus $u\in f(\unions{P})$.
+    \end{subproof}
+
+    Now $f(\unions{P})\subseteq f(f(\unions{P}))$ by \cref{subseteqpreserving}.
+    Thus $f(\unions{P})\in P$ by definition.
+
+    Hence $f(\unions{P})\subseteq \unions{P}$.
+
+    Thus $f(\unions{P}) = \unions{P}$ by \cref{subseteq_antisymmetric}.
+    Follows by \cref{fixpoint}.
+\end{proof}
+\subsection{Cantor's theorem}
+
+
+\begin{theorem}[Cantor]\label{cantor}
+    There exists no surjection from $A$ to $\pow{A}$.
+\end{theorem}
+\begin{proof}
+    Suppose not.
+    Consider a surjection $f$ from $A$ to $\pow{A}$.
+    Let $B = \{a \in A \mid a\notin f(a)\}$.
+    Then $B\in\pow{A}$.
+    There exists $a'\in A$ such that $f(a') = B$ by \hyperref[surj]{the definition of surjectivity}.
+    Now $a' \in B$ iff $a' \notin f(a') = B$.
+    Contradiction.
+\end{proof}
+
+\begin{axiom}\label{axiom_of_choice}
+    Suppose $R$ is a relation.
+    Suppose for all $x\in A$ there exists $y$ such that $x\mathrel{R} y$.
+    Then there exists $f$ such that $f$ is a function on $A$ and for all $x\in A$ we have $x\mathrel{R} f(x)$.
+\end{axiom}
+
+\section{Standard Library: Regularity}
+
+\begin{abbreviation}\label{elemminimal}
+    $a$ is an \in-minimal element of $A$ iff
+    $a\in A$ and $a\notmeets A$.
+\end{abbreviation}
+
+% We need to first state regularity in this slightly weirder form,
+% so that we can do \in-induction.
+\begin{lemma}\label{regularity_aux}
+    Let $A$ be a set.
+    For all $a\in A$ there exists $b\in A$ such that
+    $b\notmeets A$.
+\end{lemma}
+\begin{proof}[Proof by \in-induction on $a$]
+    \begin{byCase}
+        \caseOf{$a\notmeets A$.}
+            Take $b$ such that $b = a$.
+            Straightforward.
+        \caseOf{$a\meets A$.}
+            Take $a'$ such that $a'\in a, A$.
+            There exists $b\in A$ such that $b\notmeets A$.
+    \end{byCase}
+\end{proof}
+
+\begin{proposition}[Regularity]%
+\label{regularity}
+    Let $A$ be an inhabited set.
+    Then there exists a \in-minimal element of $A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{regularity_aux}.
+\end{proof}
+
+
+% Isabelle/ZF-style foundation for case analysis
+\begin{theorem}[Foundation]\label{foundation}
+    Let $A$ be a set.
+    Then $A = \emptyset$ or there exists $a\in A$
+    such that for all $x\in a$ we have $x\notin A$.
+\end{theorem}
+\begin{proof}
+    \begin{byCase}
+        \caseOf{$A = \emptyset$.}
+            Follows by assumption.
+        \caseOf{$A \neq\emptyset$.}
+            Take $a$ such that $a$ is a \in-minimal element of $A$ by \cref{nonempty_inhabited,regularity}.
+            Then for all $x\in a$ we have $x\notin A$.
+            Follows by assumption.
+    \end{byCase}
+\end{proof}.
+
+\begin{proposition}\label{in_irrefl}
+    For all sets $A$ we have $A\not\in A$.
+\end{proposition}
+\begin{proof}[Proof by \in-induction]
+    Straightforward.
+\end{proof}
+
+\begin{proposition}\label{in_asymmetric}
+    For all sets $a, b$ such that $a\in b$ we have $b\notin a$.
+\end{proposition}
+\begin{proof}[Proof by \in-induction on $a$]
+    Straightforward.
+\end{proof}
+
+\subsection{Ordinal successor}
+
+\begin{definition}\label{suc}
+    $\suc{x} = \cons{x}{x}$.
+\end{definition}
+
+\begin{proposition}\label{suc_intro_self}
+    $x\in\suc{x}$.
+\end{proposition}
+
+\begin{proposition}\label{suc_intro_in}
+    Suppose $x\in y$. Then $x\in\suc{y}$.
+\end{proposition}
+
+\begin{proposition}\label{suc_elim}
+    Suppose $x\in\suc{y}$.
+    Then $x = y$ or $x\in y$.
+\end{proposition}
+
+\begin{proposition}\label{suc_iff}
+    $x\in\suc{y}$ iff $x = y$ or $x\in y$.
+\end{proposition}
+
+\begin{proposition}\label{suc_neq_emptyset}
+    $\suc{x}\neq \emptyset$.
+\end{proposition}
+
+\begin{proposition}\label{suc_subseteq_implies_in}
+    Suppose $\suc{x}\subseteq y$. Then $x\in y$.
+\end{proposition}
+
+\begin{proposition}\label{suc_neq_self}
+    $\suc{x}\neq x$.
+\end{proposition}
+
+\begin{proposition}\label{suc_injective}
+    Suppose $\suc{x} = \suc{y}$. Then $x = y$.
+\end{proposition}
+\begin{proof}
+    Suppose not.
+    $\suc{x}\subseteq \suc{y}$. Hence $x\in\suc{y}$.
+    Then $x\in y$.
+    $\suc{y}\subseteq \suc{x}$. Hence $y\in\suc{x}$.
+    Then $y\in x$.
+    Contradiction.
+\end{proof}
+
+\begin{proposition}\label{subseteq_self_suc_intro}
+    $x\subseteq\suc{x}$.
+\end{proposition}
+
+\begin{proposition}\label{suc_subseteq_intro}
+    Suppose $x\in y$ and $x\subseteq y$.
+    Then $\suc{x}\subseteq y$.
+\end{proposition}
+
+\begin{proposition}\label{suc_subseteq_elim}
+    Suppose $\suc{x}\subseteq y$.
+    Then $x\in y$ and $x\subseteq y$.
+\end{proposition}
+
+\begin{proposition}\label{suc_next_subset}
+    There exists no $z$ such that $x\subset z\subset \suc{x}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{suc,subset,subseteq,subset_witness,suc_elim}.
+\end{proof}
+
+\section{Standard Library: Order}
+
+% also called "(partial) ordering" or "partial order" to contrast with connex (i.e. "total") orders.
+\begin{abbreviation}\label{order}
+    $R$ is an order iff
+        $R$ is an antisymmetric quasiorder.
+\end{abbreviation}
+
+\begin{abbreviation}\label{order_on}
+    $R$ is an order on $A$ iff
+        $R$ is an antisymmetric quasiorder on $A$.
+\end{abbreviation}
+
+\begin{abbreviation}\label{strictorder}
+    $R$ is a strict order iff
+        $R$ is transitive and asymmetric.
+\end{abbreviation}
+
+\begin{struct}\label{orderedset}
+    An ordered set $X$ is a quasiordered set
+    such that
+    \begin{enumerate}
+        \item\label{orderedset_antisym} $\lt[X]$ is antisymmetric.
+    \end{enumerate}
+\end{struct}
+
+\begin{definition}\label{tostrictorder}
+    $\tostrictorder{R} = \{w\in R\mid \fst{w}\neq\snd{w}\}$.
+\end{definition}
+
+\begin{definition}\label{toorder}
+    $\toorder{A}{R} = R\union\identity{A}$.
+\end{definition}
+
+\begin{proposition}\label{tostrictorder_iff}
+    $(a,b)\in\tostrictorder{R}$ iff $(a,b)\in R$ and $a\neq b$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{tostrictorder,fst_eq,snd_eq}.
+\end{proof}
+
+\begin{proposition}\label{toorder_reflexive}
+    $\toorder{A}{R}$ is reflexive on $A$.
+\end{proposition}
+
+\begin{proposition}\label{toorder_intro}
+    Suppose $(a,b)\in R$.
+    Then $(a,b)\in\toorder{A}{R}$.
+\end{proposition}
+\begin{proof}
+    $R\subseteq\toorder{A}{R}$.
+\end{proof}
+
+\begin{proposition}\label{toorder_elim}
+    Suppose $(a,b)\in\toorder{A}{R}$.
+    Then $(a,b)\in R$ or $a = b$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{toorder,id,union_iff,upair_intro_right,tostrictorder_iff}.
+\end{proof}
+
+\begin{proposition}\label{toorder_iff}
+    $(a,b)\in\toorder{A}{R}$ iff $(a,b)\in R$ or $a = b\in A$.
+\end{proposition}
+
+\begin{proposition}\label{strictorder_from_order}
+    Suppose $R$ is an order.
+    Then $\tostrictorder{R}$ is a strict order.
+\end{proposition}
+\begin{proof}
+    $\tostrictorder{R}$ is asymmetric.
+    $\tostrictorder{R}$ is transitive.
+\end{proof}
+
+\begin{proposition}\label{order_from_strictorder}
+    Suppose $R$ is a strict order.
+    Suppose $R$ is a binary relation on $A$.
+    Then $\toorder{A}{R}$ is an order on $A$.
+\end{proposition}
+\begin{proof}
+    $\toorder{A}{R}$ is antisymmetric.
+    $\toorder{A}{R}$ is transitive by \cref{transitive,toorder_iff}.
+    $\toorder{A}{R}$ is reflexive on $A$.
+\end{proof}
+
+\begin{proposition}\label{subseteqrel_antisymmetric}
+    $\subseteqrel{A}$ is antisymmetric.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteqrel,antisymmetric,pair_eq_iff,subseteq_antisymmetric}.
+\end{proof}
+
+
+\begin{proposition}\label{subseteqrel_is_order}
+    $\subseteqrel{A}$ is an order on $A$.
+\end{proposition}
+\begin{proof}
+    $\subseteqrel{A}$ is a quasiorder on $A$ by \cref{subseteqrel_is_quasiorder}.
+    $\subseteqrel{A}$ is antisymmetric by \cref{subseteqrel_antisymmetric}.
+\end{proof}
+
+\section{Standard Library: The real numbers}
+
+\subsection{The field structure}
+
+\begin{signature} \label{sig1}
+    $\reals$ is a set.
+\end{signature}
+
+\begin{signature} \label{sig3}
+    $x + y$ is a set.
+\end{signature}
+
+\begin{signature} \label{sig4}
+    $x \rmul y$ is a set.
+\end{signature}
+
+% closure of addition
+\begin{axiom}\label{real_add_closed}
+    For all $a, b\in\reals$ we have $a + b\in\reals$.
+\end{axiom}
+
+% closure of multiplication
+\begin{axiom}\label{real_mul_closed}
+    For all $a, b\in\reals$ we have $a \rmul b\in\reals$.
+\end{axiom}
+
+% associativity of addition
+\begin{axiom}\label{real_add_assoc}
+    For all $a, b, c\in\reals$ we have $(a + b) + c = a + (b + c)$.
+\end{axiom}
+
+% commutativity of addition
+\begin{axiom}\label{real_add_comm}
+    For all $a, b\in\reals$ we have $a + b = b + a$.
+\end{axiom}
+
+% additive identity
+\begin{axiom}\label{real_add_ident}
+    $0\in\reals$ and for all $a\in\reals$ we have $0 + a = a$.
+\end{axiom}
+
+% additive inverses
+\begin{axiom}\label{real_add_inverse}
+    For all $a\in\reals$ we have $\neg{a}\in\reals$ and $a + \neg{a} = 0$.
+\end{axiom}
+
+% associativity of multiplication
+\begin{axiom}\label{real_mul_assoc}
+    For all $a, b, c\in\reals$ we have $(a \rmul b) \rmul c = a \rmul (b \rmul c)$.
+\end{axiom}
+
+% commutativity of multiplication
+\begin{axiom}\label{real_mul_comm}
+    For all $a, b\in\reals$ we have $a \rmul b = b \rmul a$.
+\end{axiom}
+
+% multiplicative identity
+\begin{axiom}\label{real_mul_ident}
+    $1\in\reals$ and $1\neq 0$ and for all $a\in\reals$ we have $1 \rmul a = a$.
+\end{axiom}
+
+% multiplicative inverses
+\begin{axiom}\label{real_mul_inverse}
+    Suppose $a\in\reals$ and $a\neq 0$.
+    Then $\inv{a}\in\reals$ and $a \rmul \inv{a} = 1$.
+\end{axiom}
+
+% distributive property
+\begin{axiom}\label{real_distrib}
+    For all $a, b, c\in\reals$ we have $a \rmul (b + c) = (a \rmul b) + (a \rmul c)$.
+\end{axiom}
+
+% uniqueness of additive identity
+\begin{proposition}\label{real_add_ident_unique}
+    Suppose $c\in\reals$ and for all $a\in\reals$ we have $c + a = a$.
+    Then $c = 0$.
+\end{proposition}
+
+% uniqueness of multiplicative identity
+\begin{proposition}\label{real_mul_ident_unique}
+    Suppose $c\in\reals$ and for all $a\in\reals$ we have $c \rmul a = a$.
+    Then $c = 1$.
+\end{proposition}
+
+% uniqueness of additive inverses
+\begin{proposition}\label{real_add_inverse_unique}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a + b = 0$.
+    Then $b = \neg{a}$.
+\end{proposition}
+
+% uniqueness of multiplicative inverses
+\begin{proposition}\label{real_mul_inverse_unique}
+    Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $a \rmul b = 1$.
+    Then $b = \inv{a}$.
+\end{proposition}
+
+% subtraction
+\begin{definition}\label{real_sub}
+    $a - b = a + \neg{b}$.
+\end{definition}
+
+% division
+\begin{definition}\label{real_div}
+    $a / b = a \rmul \inv{b}$.
+\end{definition}
+
+\subsection{Number literals}
+
+\begin{axiom} \label{def_of_2}
+    $2 = 1 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_3}
+     $3 = 2 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_4}
+    $4 = 3 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_5}
+    $5 = 4 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_6}
+    $6 = 5 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_7}
+    $7 = 6 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_8}
+    $8 = 7 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_9}
+    $9 = 8 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_10}
+    $10 = 9 + 1$.
+\end{axiom}    
+
+\begin{axiom} \label{def_of_100}
+    $100 = 10 \rmul 10$.
+\end{axiom}    
+
+\subsection{Order relation}
+
+The next abbreviation is a hack. The symbol "<" cannot be introduced by axioms.
+By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF. 
+
+\begin{abbreviation}\label{real_lt}
+    $a < b$ iff $a \rless b$.
+\end{abbreviation}
+
+
+% trichotomy law
+\begin{axiom}\label{real_lt_trichotomy}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a\neq b$.
+    Then $a < b$ or $b < a$.
+\end{axiom}
+
+% asymmetry for distinct points
+\begin{axiom}\label{real_lt_asym}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a\neq b$ and $a < b$.
+    Then it is wrong that $b < a$.
+\end{axiom}
+
+% transitivity of the order
+\begin{axiom}\label{real_lt_trans}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$ and $b < c$.
+    Then $a < c$.
+\end{axiom}
+
+% translation preserves order
+\begin{axiom}\label{real_lt_add}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$.
+    Then $a + c < b + c$.
+\end{axiom}
+
+% multiplication by a positive preserves order
+\begin{axiom}\label{real_lt_mul_pos}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a < b$ and $0 < c$.
+    Then $a \rmul c < b \rmul c$.
+\end{axiom}
+
+% irreflexivity of <
+\begin{axiom}\label{real_lt_irreflexive}
+    Suppose $a\in\reals$.
+    Then it is wrong that $a < a$.
+\end{axiom}
+
+% greater than
+\begin{abbreviation}\label{real_gt}
+    $a > b$ iff $b < a$.
+\end{abbreviation}
+
+% at most
+\begin{abbreviation}\label{real_at_most}
+    $a \leq b$ iff $a < b$ or $a = b$.
+\end{abbreviation}
+
+% at least
+\begin{abbreviation}\label{real_at_least}
+    $a \geq b$ iff $b \leq a$.
+\end{abbreviation}
+
+% positive
+\begin{abbreviation}\label{real_positive}
+    $a$ is positive iff $a > 0$.
+\end{abbreviation}
+
+% nonnegative
+\begin{abbreviation}\label{real_nonnegative}
+    $a$ is nonnegative iff $a \geq 0$.
+\end{abbreviation}
+
+% negative
+\begin{abbreviation}\label{real_negative}
+    $a$ is negative iff $a < 0$.
+\end{abbreviation}
+
+% nonpositive
+\begin{abbreviation}\label{real_nonpositive}
+    $a$ is nonpositive iff $a \leq 0$.
+\end{abbreviation}
+
+
+% upper bound
+\begin{definition}\label{real_upper_bound}
+    $b$ is an upper bound of $A$ iff $b\in\reals$ and $A\subseteq\reals$ and for all $a\in A$ we have $a \leq b$.
+\end{definition}
+
+% bounded above
+\begin{definition}\label{real_bounded_above}
+    $A$ is bounded above iff there exists $b$ such that $b$ is an upper bound of $A$.
+\end{definition}
+
+% lower bound
+\begin{definition}\label{real_lower_bound}
+    $b$ is a lower bound of $A$ iff $b\in\reals$ and $A\subseteq\reals$ and for all $a\in A$ we have $b \leq a$.
+\end{definition}
+
+% bounded below
+\begin{definition}\label{real_bounded_below}
+    $A$ is bounded below iff there exists $b$ such that $b$ is a lower bound of $A$.
+\end{definition}
+
+% bounded set
+\begin{definition}\label{real_bounded}
+    $A$ is bounded iff $A$ is bounded above and $A$ is bounded below.
+\end{definition}
+
+% supremum
+\begin{definition}\label{real_supremum}
+    $p$ is a supremum of $A$ iff $p$ is an upper bound of $A$ and for all $b$ such that $b$ is an upper bound of $A$ we have $p \leq b$.
+\end{definition}
+
+% infimum
+\begin{definition}\label{real_infimum}
+    $p$ is an infimum of $A$ iff $p$ is a lower bound of $A$ and for all $b$ such that $b$ is a lower bound of $A$ we have $p \geq b$.
+\end{definition}
+
+% Completeness Axiom
+\begin{axiom}\label{real_completeness_axiom}
+    Suppose $A\subseteq\reals$ and $A\neq \emptyset$ and $A$ is bounded above.
+    Then there exists $p$ such that $p$ is a supremum of $A$.
+\end{axiom}
+
+% maximum
+\begin{definition}\label{real_maximum}
+    $m$ is a maximum of $A$ iff $m\in A$ and for all $a\in A$ we have $a \leq m$.
+\end{definition}
+
+% minimum
+\begin{definition}\label{real_minimum}
+    $m$ is a minimum of $A$ iff $m\in A$ and for all $a\in A$ we have $m \leq a$.
+\end{definition}
+
+\begin{definition}\label{intervalclosed}
+    $\intervalclosed{a}{b} = \{x \in \reals \mid a \leq x \leq b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalopen}
+    $\intervalopen{a}{b} = \{ x \in \reals \mid a < x < b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalopen_infinite_left}
+    $\intervalopenInfiniteLeft{b} = \{ x \in \reals \mid x < b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalopen_infinite_right}
+    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x > a\}$.
+\end{definition}
+
+\begin{definition}\label{intervalclosed_infinite_left}
+    $\intervalclosedInfiniteLeft{b} = \{ x \in \reals \mid x \leq b\}$.
+\end{definition}
+
+\begin{definition}\label{intervalclosed_infinite_right}
+    $\intervalclosedInfiniteRight{a} = \{ x \in \reals \mid x \geq a\}$.
+\end{definition}
+
+\subsection{Natural numbers}
+
+\begin{signature} \label{sig2}
+    $\naturalsPlus$ is a set.
+\end{signature}
+
+% naturals are real numbers
+\begin{axiom}\label{real_naturals_subset_reals}
+    $\naturalsPlus \subseteq \reals$.
+\end{axiom}
+
+% $1$ is a natural number
+\begin{axiom}\label{real_one_in_naturals}
+    $1\in\naturalsPlus$.
+\end{axiom}
+
+
+% $1$ is the least positive natural
+\begin{axiom}\label{real_one_leq_naturalsplus}
+    For all $n\in\naturalsPlus$ we have $1 < n$ or $1 = n$.
+\end{axiom}
+
+% successor discreteness
+\begin{axiom}\label{real_succ_discrete}
+    Suppose $a\in\naturalsPlus$ and $n\in\naturalsPlus$.
+    Suppose $a < n + 1$ or $a = n + 1$.
+    Then $a < n$ or $a = n$ or $a = n + 1$.
+\end{axiom}
+
+% closure of naturals under $+1$
+\begin{axiom}\label{real_naturals_closed_succ}
+    For all $n\in\naturalsPlus$ we have $n + 1\in\naturalsPlus$.
+\end{axiom} 
+
+% naturals are the smallest such subset of $\reals$
+\begin{axiom}\label{real_naturals_smallest}
+    Suppose $A\subseteq\reals$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
+    Then $\naturalsPlus \subseteq A$.
+\end{axiom}
+
+% induction principle
+\begin{proposition}\label{real_naturals_induction}
+    Suppose $A\subseteq\naturalsPlus$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
+    Then for all $n\in\naturalsPlus$ we have $n\in A$.
+\end{proposition}
+ 
+
+\begin{definition}\label{naturals}
+      $\naturals = \naturalsPlus \union \{0\}$.
+\end{definition}
+
+\begin{abbreviation}\label{num_naturalnumber}
+    $n$ is a natural number iff $n\in \naturals$.
+\end{abbreviation}
+
+\subsection{Integers}
+ 
+% definition of integers
+\begin{definition}\label{real_integers}
+  $\integers = \{x \in \reals \mid \text{$x \in \naturalsPlus$ or $x=0$ or $\neg{x} \in \naturalsPlus$}\}$.
+\end{definition}
+
+% definition of integer attribute
+\begin{abbreviation}\label{real_integer}
+    $x$ is an integer iff $x\in\integers$.
+\end{abbreviation}
+
+\subsection{Rational numbers}
+
+% definition of rationals
+\begin{definition}\label{real_rationals}
+    $\rationals = \{ a / b \mid a\in\integers, b\in\integers\setminus\{0\}\}$.
+\end{definition}
+
+% definition of rational attribute
+\begin{abbreviation}\label{real_rational}
+    $x$ is rational iff $x\in\rationals$.
+\end{abbreviation}
+
+% definition of irrational numbers
+\begin{abbreviation}\label{real_irrational}
+    $x$ is irrational iff $x\in\reals$ and $x\notin\rationals$.
+\end{abbreviation}
+
+\subsection{Absolute values}
+
+% absolute value signature
+\begin{signature} \label{sig8}
+    $\abs{a}$ is a set.
+\end{signature}
+
+% absolute value
+\begin{axiom}\label{real_abs_nonneg}
+    Suppose $a\in\reals$ and $a \geq 0$.
+    Then $\abs{a} = a$.
+\end{axiom}
+
+% absolute value (negative case)
+\begin{axiom}\label{real_abs_neg}
+    Suppose $a\in\reals$ and $a < 0$.
+    Then $\abs{a} = \neg{a}$.
+\end{axiom}
+
+\subsection{Integer powers}
+
+\begin{signature} \label{sig7}
+    $\exp{x}{y}$ is a set.
+\end{signature}
+
+% power with exponent $1$
+\begin{axiom}\label{real_pow_one}
+    For all $a\in\reals$ we have $\exp{a}{1} = a$.
+\end{axiom}
+
+% power with positive exponents
+\begin{axiom}\label{real_pow_succ}
+    For all $a, n$ such that $a\in\reals$ and $n\in\naturalsPlus$ we have $\exp{a}{n+1} = \exp{a}{n} \rmul a$.
+\end{axiom}
+
+% power with exponent $0$
+\begin{axiom}\label{real_pow_zero}
+    Suppose $a\in\reals$ and $a\neq 0$.
+    Then $\exp{a}{0} = 1$.
+\end{axiom}
+
+% power with negative exponents
+\begin{axiom}\label{real_pow_neg}
+    Suppose $a\in\reals$ and $a\neq 0$ and $n\in\naturalsPlus$.
+    Then $\exp{a}{\neg{n}} = 1 / (\exp{a}{n})$. 
+\end{axiom}
+
+\subsection{Square roots}
+
+\begin{signature} \label{sig9}
+    $\sqrt{x}$ is a set.
+\end{signature}
+
+\begin{axiom} \label{positive_square_root}
+    Suppose that $x \in\reals$ and $x \geq 0$.
+    Then $\sqrt{x} \in \reals$ and $\sqrt{x} \geq 0$ and $\sqrt{x} \rmul \sqrt{x} = x$.
+\end{axiom}    
+
+\subsection{Simple consequences of the axioms}
+
+% adding the same number preserves equality
+\begin{proposition}\label{real_add_eq_subst}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a = b$.
+    Then $a + c = b + c$.
+\end{proposition}
+
+% additive cancellation
+\begin{proposition}\label{real_add_cancel}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $a + c = b + c$.
+    Then $a = b$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_add_assoc,real_add_ident,real_add_comm}.
+\end{proof}
+
+% multiplication by zero
+\begin{proposition}\label{real_mul_zero}
+    Suppose $a\in\reals$.
+    Then $0 \rmul a = 0$.
+\end{proposition}
+
+% $-a = (-1)a$
+\begin{proposition}\label{real_neg_as_mul}
+    Suppose $a\in\reals$.
+    Then $\neg{a} = \neg{1} \rmul a$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_mul_ident,real_add_inverse,real_add_closed,real_mul_comm,real_distrib,real_mul_zero,real_mul_closed,real_add_inverse_unique}.
+\end{proof}
+
+% $(-1)^2 = 1$
+\begin{proposition}\label{real_neg_one_square}
+    $\exp{\neg{1}}{1+1} = 1$.
+\end{proposition}
+
+% double negation
+\begin{proposition}\label{real_neg_neg}
+    Suppose $a\in\reals$.
+    Then $\neg{(\neg{a})} = a$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_add_comm,real_add_inverse_unique}.
+\end{proof}
+
+% helper lemma 1: nonzero left factor of a unit product
+\begin{lemma}\label{real_mul_unit_left_nonzero}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b = 1$.
+    Then $a \neq 0$.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_mul_zero,real_mul_ident}.
+\end{proof}
+
+% inverse of an inverse
+\begin{proposition}\label{real_inv_inv}
+    Suppose $a\in\reals$ and $a\neq 0$.
+    Then $\inv{\inv{a}} = a$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_mul_inverse,real_mul_comm,real_mul_unit_left_nonzero,real_mul_inverse_unique}.
+\end{proof}
+
+% multiplicative cancellation
+\begin{proposition}\label{real_mul_cancel}
+    Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $c\in\reals$ and $a \rmul b = a \rmul c$.
+    Then $b = c$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_mul_inverse,real_mul_assoc,real_mul_comm,real_mul_ident}.
+\end{proof}
+
+% zero product property
+\begin{proposition}\label{real_mul_zero_product}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b = 0$.
+    Then $a = 0$ or $b = 0$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_mul_inverse,real_mul_assoc,real_mul_zero,real_mul_ident}.
+\end{proof}
+
+% helper lemma 2: right distributive law
+\begin{lemma}\label{real_right_distrib}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
+    Then $(a + b) \rmul c = (a \rmul c) + (b \rmul c)$.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_add_closed,real_mul_comm,real_distrib}.
+\end{proof}
+
+% helper lemma 3: multiplication by a negative
+\begin{lemma}\label{real_mul_neg_right}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $a \rmul \neg{b} = \neg{(a \rmul b)}$.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_neg_as_mul,real_mul_ident,real_add_inverse,real_mul_assoc,real_mul_comm,real_mul_closed}.
+\end{proof}
+
+% helper lemma 4: regrouping sums
+\begin{lemma}\label{real_add_regroup}
+    Suppose $x\in\reals$ and $y\in\reals$ and $z\in\reals$ and $w\in\reals$.
+    Then $(x + y) + (z + w) = (x + (y + z)) + w$.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_add_closed,real_add_assoc}.
+\end{proof}
+
+% difference of squares
+\begin{proposition}\label{real_diff_squares}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$.
+\end{proposition}
+\begin{proof}
+    We have $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$
+        by \cref{real_sub,real_add_closed,real_add_inverse,real_distrib,real_mul_closed,real_right_distrib,real_add_regroup,real_mul_comm,real_mul_neg_right}.
+    Thus $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$ by \cref{real_mul_closed,real_add_ident,real_add_inverse,real_add_assoc,real_one_in_naturals,real_pow_succ,real_pow_one,real_sub}.
+\end{proof}
+
+
+% sum of positives is positive
+\begin{proposition}\label{real_pos_add}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
+    Then $a + b$ is positive.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_ident,real_add_closed,real_lt_add,real_lt_trans}.
+\end{proof}
+
+% sum of negatives is negative
+\begin{proposition}\label{real_neg_add}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
+    Then $a + b$ is negative.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_ident,real_add_closed,real_lt_add,real_lt_trans}.
+\end{proof}
+
+% adding inequalities
+\begin{proposition}\label{real_lt_add_two}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $d\in\reals$ and $a < b$ and $c < d$.
+    Then $a + c < b + d$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_lt_add,real_add_comm,real_add_closed,real_lt_trans}.
+\end{proof}
+
+% sign change (forward)
+\begin{proposition}\label{real_pos_imp_neg}
+    Suppose $a\in\reals$ and $a > 0$.
+    Then $\neg{a} < 0$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_add_ident,real_lt_add}.
+\end{proof}
+
+% sign change (backward)
+\begin{proposition}\label{real_neg_imp_pos}
+    Suppose $a\in\reals$ and $\neg{a} < 0$.
+    Then $a > 0$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_add_ident,real_lt_add,real_add_comm}.
+\end{proof}
+
+% multiplying inequalities
+\begin{proposition}\label{real_lt_mul_pos_two}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$ and $d\in\reals$.
+    Suppose $a$ is positive and $b$ is positive and $c$ is positive and $d$ is positive.
+    Suppose $a < b$ and $c < d$.
+    Then $a \rmul c < b \rmul d$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_lt_mul_pos,real_mul_comm,real_mul_closed,real_lt_trans}.
+\end{proof}
+
+% helper lemma 5: product of positives
+\begin{lemma}\label{real_mul_pos_pos}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
+    Then $a \rmul b$ is positive.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_add_ident,real_lt_mul_pos,real_mul_zero}.
+\end{proof}
+
+% helper lemma 6: positive times negative is negative
+\begin{lemma}\label{real_mul_pos_neg}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is negative.
+    Then $a \rmul b$ is negative.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_neg_neg,real_neg_imp_pos,real_mul_pos_pos,real_mul_neg_right,real_mul_closed,real_pos_imp_neg}.
+\end{proof}
+
+% helper lemma 7: product of negatives
+\begin{lemma}\label{real_mul_neg_neg}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
+    Then $a \rmul b$ is positive.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_neg_neg,real_neg_imp_pos,real_mul_pos_pos,real_mul_neg_right,real_mul_comm}.
+\end{proof}
+
+
+% helper lemma 9: positive implies nonzero
+\begin{lemma}\label{real_pos_nonzero}
+    Suppose $a\in\reals$ and $a > 0$.
+    Then $a \neq 0$.
+\end{lemma}
+
+% helper lemma 10: negative implies nonzero
+\begin{lemma}\label{real_neg_nonzero}
+    Suppose $a\in\reals$ and $a < 0$.
+    Then $a \neq 0$.
+\end{lemma}
+
+% product of positives is positive
+\begin{proposition}\label{real_mul_pos_pos_gt}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
+    Then $a \rmul b > 0$.
+\end{proposition}
+
+% product of negatives is positive
+\begin{proposition}\label{real_mul_neg_neg_gt}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
+    Then $a \rmul b > 0$.
+\end{proposition}
+
+% product positive (backward)
+\begin{proposition}\label{real_mul_pos_same_sign_rev}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b > 0$.
+    Then either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
+\end{proposition}
+% \begin{proof}
+%     Suppose not.
+%     If $b = 0$ then
+%         $a \rmul b = 0$ by \cref{real_mul_comm,real_mul_zero}.
+%         Thus $0 < 0$.
+%         Contradiction by \cref{real_add_ident,real_lt_irreflexive}.
+%     \begin{byCase}
+%     \caseOf{$0 < a$ and $0 < b$.}
+%         Contradiction.
+%     \caseOf{$0 < a$ and $b < 0$.}
+%         Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
+%     \caseOf{$a < 0$ and $0 < b$.}
+%         Contradiction by \cref{real_mul_pos_neg,real_lt_asym}.
+%     \caseOf{$a < 0$ and $b < 0$.}
+%         Contradiction.
+%     \end{byCase}
+% \end{proof}
+
+% product negative (forward, left)
+\begin{proposition}\label{real_mul_neg_opposite_sign_left}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a < 0$ and $0 < b$.
+    Then $a \rmul b < 0$.
+\end{proposition}
+
+% product negative (forward, right)
+\begin{proposition}\label{real_mul_neg_opposite_sign_right}
+    Suppose $a\in\reals$ and $b\in\reals$ and $b < 0$ and $0 < a$.
+    Then $a \rmul b < 0$.
+\end{proposition}
+
+% product negative (backward)
+\begin{proposition}\label{real_mul_neg_opposite_sign_rev}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b < 0$.
+    Then either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.
+\end{proposition}
+\begin{proof}
+    Suppose not.
+    Thus $a \rmul b \neq 0$ by \cref{real_mul_closed,real_neg_nonzero}.
+    \begin{byCase}
+    \caseOf{$0 < a$ and $0 < b$.}
+        Contradiction by \cref{real_mul_pos_pos_gt,real_add_ident,real_mul_closed,real_lt_asym}.
+    \caseOf{$0 < a$ and $b < 0$.}
+        Contradiction.
+    \caseOf{$a < 0$ and $b < 0$.}
+        Contradiction by \cref{real_mul_neg_neg_gt,real_add_ident,real_mul_closed,real_lt_asym}.
+    \caseOf{$a < 0$ and $0 < b$.}
+        Contradiction.
+    \end{byCase}
+\end{proof}
+
+% order preserved by squaring positives
+\begin{proposition}\label{real_pos_lt_iff_sq_lt}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
+    Then $a < b$ iff $\exp{a}{1+1} < \exp{b}{1+1}$.
+\end{proposition}
+\begin{proof}
+    Show if $a < b$ then $\exp{a}{1+1} < \exp{b}{1+1}$.
+    \begin{subproof}
+        Assume $a < b$.
+        Thus $(b - a) \rmul (a + b) > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
+        Hence $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_add_comm,real_diff_squares}.
+        Therefore $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
+        We have $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
+    \end{subproof}
+    Show if $\exp{a}{1+1} < \exp{b}{1+1}$ then $a < b$.
+    \begin{subproof}
+        Assume $\exp{a}{1+1} < \exp{b}{1+1}$.
+        Show $0 < b - a$.
+        \begin{subproof}
+            Suppose not.
+            Thus either $a + b > 0$ and $b - a > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
+            \begin{byCase}
+            \caseOf{$a + b > 0$ and $b - a > 0$.}
+                Contradiction.
+            \caseOf{$a + b < 0$ and $b - a < 0$.}
+                Contradiction by \cref{real_pos_add,real_add_ident,real_add_closed,real_pos_nonzero,real_lt_asym}.
+            \end{byCase}
+        \end{subproof}
+        Thus $a < b$ by \cref{real_add_ident,real_add_inverse,real_sub,real_add_closed,real_lt_add,real_add_assoc,real_add_comm}.
+    \end{subproof}
+\end{proof}
+
+% squares are nonnegative
+\begin{proposition}\label{real_sq_nonnegative}
+    Suppose $a\in\reals$.
+    Then $\exp{a}{1+1} \geq 0$.
+\end{proposition}
+% \begin{proof} Trivial. \end{proof}
+
+% zero is less than one
+\begin{proposition}\label{real_zero_lt_one}
+    $0 < 1$.
+\end{proposition}
+
+% inverse of a positive number
+\begin{proposition}\label{real_inv_pos}
+    Suppose $a\in\reals$ and $a > 0$.
+    Then $\inv{a} > 0$.
+\end{proposition}
+
+% inverse of a negative number
+\begin{proposition}\label{real_inv_neg}
+    Suppose $a\in\reals$ and $a < 0$.
+    Then $\inv{a} < 0$.
+\end{proposition}
+
+% order reversal by negation
+\begin{proposition}\label{real_lt_neg}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
+    Then $\neg{b} < \neg{a}$.
+\end{proposition}
+
+% helper lemma 13: order reversal under negation
+\begin{lemma}\label{real_leq_neg}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \leq b$.
+    Then $\neg{b} \leq \neg{a}$.
+\end{lemma}
+
+% helper lemma 14: transitivity of $\leq$
+\begin{lemma}\label{real_leq_trans}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
+    Suppose $a \leq b$ and $b \leq c$.
+    Then $a \leq c$.
+\end{lemma}
+
+% helper lemma 15: monotonicity of addition for $\leq$
+\begin{lemma}\label{real_leq_add}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
+    Suppose $a \leq b$.
+    Then $a + c \leq b + c$.
+\end{lemma}
+
+% helper lemma 17: antisymmetry of $\leq$
+\begin{lemma}\label{real_leq_antisym}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Suppose $a \leq b$ and $b \leq a$.
+    Then $a = b$.
+\end{lemma}
+
+% helper lemma 16: negation of a sum
+\begin{lemma}\label{real_neg_addition}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\neg{(a + b)} = \neg{a} + \neg{b}$.
+\end{lemma}
+
+% helper lemma 18: positive difference
+\begin{lemma}\label{real_lt_imp_pos_diff}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
+    Then $0 < b - a$.
+\end{lemma}
+
+% helper lemma 19: subtracting a positive number decreases
+\begin{lemma}\label{real_sub_pos_lt}
+    Suppose $a\in\reals$ and $b\in\reals$ and $0 < b$.
+    Then $a - b < a$.
+\end{lemma}
+
+% helper lemma 20: subtracting a difference
+\begin{lemma}\label{real_sub_sub_cancel}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $a - (a - b) = b$.
+\end{lemma}
+
+% multiplication by a negative number
+\begin{proposition}\label{real_lt_mul_neg}
+    Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
+    Suppose $a < b$ and $c < 0$.
+    Then $b \rmul c < a \rmul c$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_ident,real_lt_neg,real_add_inverse,real_lt_mul_pos,real_mul_neg_right,real_mul_closed,real_neg_neg}.
+\end{proof}
+
+% absolute value is nonnegative
+\begin{proposition}\label{real_abs_nonnegative}
+    Suppose $a\in\reals$.
+    Then $\abs{a} \geq 0$.
+\end{proposition}
+
+% absolute value zero only at zero
+\begin{proposition}\label{real_abs_eq_zero}
+    Suppose $a\in\reals$ and $\abs{a} = 0$.
+    Then $a = 0$.
+\end{proposition}
+
+% helper lemma 11: subtraction swap
+\begin{lemma}\label{real_sub_swap_neg}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $b - a = \neg{(a - b)}$.
+\end{lemma}
+
+% absolute value is symmetric
+\begin{proposition}\label{real_abs_sub_swap}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a - b} = \abs{b - a}$.
+\end{proposition}
+
+% helper lemma 12: absolute value is real
+\begin{lemma}\label{real_abs_in_reals}
+    Suppose $a\in\reals$.
+    Then $\abs{a}\in\reals$.
+\end{lemma}
+
+% absolute value of a product
+\begin{proposition}\label{real_abs_mul}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
+\end{proposition}
+\begin{proof}
+    \begin{byCase}
+    \caseOf{$a \geq 0$ and $b \geq 0$.}
+        Trivial.
+    \caseOf{$a \geq 0$ and $b < 0$.}
+        Trivial.
+    \caseOf{$a < 0$ and $b \geq 0$.}
+        Trivial.
+    \caseOf{$a < 0$ and $b < 0$.}
+        Trivial.
+    \end{byCase}
+\end{proof}
+
+% absolute value bounded by a two-sided bound
+\begin{proposition}\label{real_abs_leq_if_pm_leq}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Suppose $a \leq b$ and $\neg{a} \leq b$.
+    Then $\abs{a} \leq b$.
+\end{proposition}
+
+% absolute value squared
+\begin{proposition}\label{real_abs_square}
+    Suppose $a\in\reals$.
+    Then $\exp{\abs{a}}{1+1} = \exp{a}{1+1}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_abs_mul,real_abs_in_reals,real_abs_nonnegative,real_abs_nonneg,real_sq_nonnegative,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed}.
+\end{proof}
+
+% absolute value dominates
+\begin{proposition}\label{real_leq_abs}
+    Suppose $a\in\reals$.
+    Then $a \leq \abs{a}$.
+\end{proposition}
+
+% negative is at most absolute value
+\begin{proposition}\label{real_neg_leq_abs}
+    Suppose $a\in\reals$.
+    Then $\neg{a} \leq \abs{a}$.
+\end{proposition}
+
+% absolute value bound implies right bound
+\begin{proposition}\label{real_abs_leq_imp_right_bound}
+    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a} \leq r$.
+    Then $a \leq r$.
+\end{proposition}
+
+% absolute value bound implies left bound
+\begin{proposition}\label{real_abs_leq_imp_left_bound}
+    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a} \leq r$.
+    Then $\neg{r} \leq a$.
+\end{proposition}
+
+% two-sided bound implies absolute value bound
+\begin{proposition}\label{real_abs_leq_from_bounds}
+    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\neg{r} \leq a$ and $a \leq r$.
+    Then $\abs{a} \leq r$.
+\end{proposition}
+
+% absolute value bound implies left translated bound
+\begin{proposition}\label{real_abs_sub_leq_imp_left_bound}
+    Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a - b} \leq r$.
+    Then $b - r \leq a$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_left_bound,real_leq_add,real_add_comm,real_add_assoc,real_add_ident}.
+\end{proof}
+
+% absolute value bound implies right translated bound
+\begin{proposition}\label{real_abs_sub_leq_imp_right_bound}
+    Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a - b} \leq r$.
+    Then $a \leq b + r$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_right_bound,real_leq_add,real_add_assoc,real_add_comm,real_add_ident}.
+\end{proof}
+
+% Triangle Inequality
+\begin{proposition}\label{real_triangle_inequality}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a + b} \leq \abs{a} + \abs{b}$.
+\end{proposition}
+\begin{proof}
+    We have $\neg{(a + b)} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_add_inverse,real_neg_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_neg_addition}.
+    Hence $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
+\end{proof}
+
+% Reverse Triangle Inequality
+\begin{proposition}\label{real_reverse_triangle_inequality}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a - b} \geq \abs{\abs{a} - \abs{b}}$.
+\end{proposition}
+\begin{proof}
+    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
+    Now $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
+    $\abs{a - b}\in\reals$ by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_in_reals}.
+    $\abs{b - a} = \abs{a - b}$ by \cref{real_abs_sub_swap}.
+    $\abs{(a - b) + b} \leq \abs{a - b} + \abs{b}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
+    $\abs{(b - a) + a} \leq \abs{b - a} + \abs{a}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
+    Thus $\abs{b} + \neg{\abs{a}} \leq \abs{b - a}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add}.
+    Therefore $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
+\end{proof}
+
+% uniqueness of supremum
+\begin{proposition}\label{real_supremum_unique}
+    Suppose $p$ is a supremum of $A$ and $q$ is a supremum of $A$.
+    Then $p = q$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_supremum,real_upper_bound,real_leq_antisym}.
+\end{proof}
+
+% uniqueness of infimum
+\begin{proposition}\label{real_infimum_unique}
+    Suppose $p$ is an infimum of $A$ and $q$ is an infimum of $A$.
+    Then $p = q$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_infimum,real_lower_bound,real_leq_antisym}.
+\end{proof}
+
+% maximum implies supremum
+\begin{proposition}\label{real_maximum_is_supremum}
+    Suppose $A\subseteq\reals$ and $m$ is a maximum of $A$.
+    Then $m$ is a supremum of $A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{subseteq,real_maximum,real_upper_bound,real_supremum}.
+\end{proof}
+
+% supremum in set implies maximum
+\begin{proposition}\label{real_supremum_in_set_is_maximum}
+    Suppose $A\subseteq\reals$ and $p$ is a supremum of $A$ and $p\in A$.
+    Then $p$ is a maximum of $A$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_supremum,real_upper_bound,real_maximum}.
+\end{proof}
+
+% maximum equals supremum
+\begin{proposition}\label{real_maximum_eq_supremum}
+    Suppose $A\subseteq\reals$ and $m$ is a maximum of $A$.
+    Suppose $p$ is a supremum of $A$ and $p\in A$.
+    Then $m = p$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_maximum_is_supremum,real_supremum_unique}.
+\end{proof}
+
+% characterization of supremum
+\begin{proposition}\label{real_supremum_characterization}
+    Suppose $A\subseteq\reals$ and $A$ is bounded above and $b$ is an upper bound of $A$.
+    Then $b$ is a supremum of $A$ iff for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
+\end{proposition}
+\begin{proof}
+    Show if $b$ is a supremum of $A$ then for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
+    \begin{subproof}
+        Assume $b$ is a supremum of $A$.
+        Fix $\epsilon$.
+        Assume $\epsilon\in\reals$ and $0 < \epsilon$.
+        Follows by \cref{subseteq,real_supremum,real_upper_bound,real_add_inverse,real_sub,real_add_closed,real_lt_trichotomy,real_sub_pos_lt,real_lt_irreflexive,real_lt_asym}.
+    \end{subproof}
+    Show if for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$ then $b$ is a supremum of $A$.
+    \begin{subproof}
+        Assume for all $\epsilon$ such that $\epsilon\in\reals$ and $0 < \epsilon$ there exists $a\in A$ such that $b - \epsilon < a$.
+        Follows by \cref{subseteq,real_upper_bound,real_lt_trichotomy,real_add_inverse,real_sub,real_add_closed,real_lt_imp_pos_diff,real_sub_sub_cancel,real_lt_asym,real_supremum}.
+    \end{subproof}
+\end{proof}
+
+% existence of infimum
+\begin{proposition}\label{real_infimum_exists}
+    Suppose $A\subseteq\reals$ and $A\neq \emptyset$ and $A$ is bounded below.
+    Then there exists $p$ such that $p$ is an infimum of $A$.
+\end{proposition}
+\begin{proof}
+    Let $L = \{ x\in\reals \mid \text{$x$ is a lower bound of $A$}\}$.
+    Take $l$ such that $l$ is a lower bound of $A$.
+    Thus $L\neq \emptyset$.
+    Take $a$ such that $a\in A$.
+    Follows by \cref{subseteq,real_lower_bound,real_upper_bound,real_bounded_above,real_completeness_axiom,real_supremum,real_infimum}.
+\end{proof}
+
+% Archimedean Property
+\begin{proposition}\label{real_archimedean_property}
+    Suppose $x\in\reals$.
+    Then there exists $n\in\naturalsPlus$ such that $x < n$.
+\end{proposition}
+\begin{proof}
+    Suppose not.
+    Let $A = \naturalsPlus$.
+    $1\in A$ by \cref{real_one_in_naturals}.
+    Thus $A\neq \emptyset$.
+    Take $p$ such that $p$ is a supremum of $A$ by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy,real_upper_bound,real_bounded_above,real_completeness_axiom}.
+    Take $n\in A$ such that $p - 1 < n$ by \cref{real_naturals_subset_reals,real_bounded_above,real_supremum,real_mul_ident,real_zero_lt_one,real_supremum_characterization}.
+    Contradiction by \cref{subseteq,real_supremum,real_naturals_closed_succ,real_upper_bound,real_mul_ident,real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_ident,real_add_comm,real_lt_asym}.
+\end{proof}
+
+% Generalized Archimedean Property
+\begin{proposition}\label{real_generalized_archimedean_property}
+    Suppose $x\in\reals$.
+    Then there exist $k, n$ such that $k\in\integers$ and $n\in\integers$ and $k < x$ and $x < n$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_archimedean_property,real_add_inverse,real_naturals_subset_reals,subseteq,real_lt_neg,real_integers,real_neg_neg}.
+\end{proof}
+
+% small reciprocal of a positive real
+\begin{proposition}\label{real_small_reciprocal}
+    Suppose $x\in\reals$ and $x$ is positive.
+    Then there exists $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < x$.
+\end{proposition}
+\begin{proof}
+    Take $N\in\naturalsPlus$ such that $\inv{x} < N$ by \cref{real_pos_nonzero,real_mul_inverse,real_archimedean_property}. Thus $0 < 1 / N$ and $1 / N < x$ by \cref{real_naturals_subset_reals,subseteq,real_add_ident,real_pos_nonzero,real_mul_inverse,real_inv_pos,real_lt_trans,real_mul_ident,real_mul_closed,real_lt_mul_pos,real_mul_comm,real_mul_assoc,real_div}.
+\end{proof}
+
+% least element of nonempty subset of naturals
+% helper lemma 21: split at successor
+\begin{lemma}\label{real_naturals_split_succ}
+    Suppose $A\subseteq\naturalsPlus$ and $n\in\naturalsPlus$.
+    Suppose there exists $a\in A$ such that $a \leq n + 1$.
+    Suppose it is wrong that $n + 1\in A$.
+    Then there exists $b\in A$ such that $b \leq n$.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{subseteq,real_succ_discrete}.
+\end{proof}
+
+% helper lemma 22: succ leq elimination
+\begin{lemma}\label{real_naturals_leq_succ_elim}
+    Suppose $a\in\naturalsPlus$ and $n\in\naturalsPlus$.
+    Suppose $a \leq n + 1$ and $a \neq n + 1$.
+    Then $a \leq n$.
+\end{lemma}
+
+% helper lemma 22: minimum at successor
+\begin{lemma}\label{real_naturals_minimum_at_succ}
+    Suppose $A\subseteq\naturalsPlus$ and $n\in\naturalsPlus$ and $n + 1\in A$.
+    Suppose for all $a\in A$ we have it is wrong that $a \leq n$.
+    Then for all $b\in A$ we have $n + 1 \leq b$.
+\end{lemma}
+\begin{proof}
+    Follows by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy,real_naturals_leq_succ_elim}.
+\end{proof}
+
+\begin{proposition}\label{real_naturals_least_element}
+    Suppose $A\subseteq\naturalsPlus$ and $A\neq \emptyset$.
+    Then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$.
+\end{proposition}
+\begin{proof}
+    Let $S = \{ n\in\naturalsPlus \mid \text{if there exists $a\in A$ such that $a \leq n$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$}\}$. Follows by \cref{real_one_leq_naturalsplus,real_naturals_subset_reals,real_one_in_naturals,real_leq_antisym,real_naturals_split_succ,real_naturals_minimum_at_succ,real_naturals_closed_succ,real_naturals_induction,nonempty_inhabited,subseteq}.
+\end{proof}
+
+
+% helper lemma 1: predecessor of naturals
+\begin{lemma}\label{real_naturals_predecessor}
+    Suppose $n\in\naturalsPlus$.
+    Then $n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$.
+\end{lemma}
+\begin{proof}
+    Let $A = \{ n\in\naturalsPlus \mid \text{$n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$}\}$. Follows by \cref{subseteq,real_one_in_naturals,real_naturals_closed_succ,real_naturals_induction}.
+\end{proof}
+
+
+% helper lemma 2: consecutive integer for nonnegative reals
+\begin{lemma}\label{real_consecutive_integers_nonneg}
+    Suppose $x\in\reals$ and $0 \leq x$.
+    Then there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ and either $n = 0$ or $n\in\naturalsPlus$.
+\end{lemma}
+\begin{proof}
+    Let $S = \{ n\in\naturalsPlus \mid x < n\}$.
+    Take $N\in\naturalsPlus$ such that $x < N$ by \cref{real_archimedean_property}.
+    Thus $S\neq \emptyset$.
+    Take $m\in S$ such that for all $a\in S$ we have $m \leq a$ by \cref{subseteq,real_naturals_least_element}.
+    Thus $x < m$.
+    \begin{byCase}
+    \caseOf{$m = 1$.}
+        Take $n$ such that $n = 0$.
+        $n \in \reals$.
+        $n\in\integers$ by \cref{real_integers}.
+        Thus $x < n + 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+        Hence there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
+    \caseOf{$m \neq 1$.}
+        Take $p\in\naturalsPlus$ such that $m = p + 1$ by \cref{real_naturals_predecessor}.
+        Thus it is wrong that $x < p$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_ident,real_zero_lt_one,real_lt_add,real_add_comm,real_lt_trans,real_leq_antisym,real_lt_irreflexive}.
+        Take $n$ such that $n = p$.
+        $n \in \reals$.
+        $n\in\integers$ by \cref{real_integers}.
+        Thus $n \leq x$ by \cref{real_naturals_subset_reals,subseteq,real_lt_trichotomy}.
+        Therefore there exists $k\in\integers$ such that $k \leq x$ and $x < k + 1$ and either $k = 0$ or $k\in\naturalsPlus$.
+    \end{byCase}
+\end{proof}
+
+% consecutive integers
+\begin{proposition}\label{real_consecutive_integers}
+    Suppose $x\in\reals$.
+    Then there exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$.
+\end{proposition}
+\begin{proof}
+    \begin{byCase}
+    \caseOf{$0 \leq x$.}
+        Follows by \cref{real_consecutive_integers_nonneg}.
+    \caseOf{$x < 0$.}
+        Let $y = \neg{x}$.
+        $y\in\reals$ by \cref{real_add_inverse}.
+        Thus $0 < y$ by \cref{real_add_ident,real_add_inverse_unique,real_lt_neg}.
+        Take $t$ such that $t\in\integers$ and $t \leq y$ and $y < t + 1$ and either $t = 0$ or $t\in\naturalsPlus$ by \cref{real_consecutive_integers_nonneg}.
+        Hence $t\in\reals$ by \cref{real_add_ident,real_naturals_subset_reals,subseteq}.
+        Show that $t + 1\in\naturalsPlus$.
+        \begin{subproof}
+            \begin{byCase}
+            \caseOf{$t = 0$.}
+                $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
+                Thus $t + 1\in\naturalsPlus$.
+            \caseOf{$t \neq 0$.}
+                $t + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
+            \end{byCase}
+        \end{subproof}
+        Let $k = \neg{(t + 1)}$.
+        $k\in\reals$.
+        Thus $k\in\integers$. % by \cref{real_naturals_subset_reals,subseteq,real_add_inverse,real_add_comm,real_integers}.
+        Hence $k + 1 = \neg{t}$ by \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_neg_addition,real_add_inverse,real_add_assoc,real_add_comm,real_add_ident}.
+        \begin{byCase}
+        \caseOf{$x = k + 1$.}
+            There exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_add_comm,real_integers,real_add_ident,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_zero_lt_one,real_lt_add}.
+        \caseOf{$x \neq k + 1$.}
+            There exists $n\in\integers$ such that $n \leq x$ and $x < n + 1$ by \cref{real_add_inverse,real_leq_neg,real_neg_neg,real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_closed,real_lt_trichotomy}.
+        \end{byCase}
+    \end{byCase}
+\end{proof}
+  
+% helper lemma 3: rationals in nonnegative intervals
+\begin{lemma}\label{real_rationals_nonneg_interval}
+    Suppose $a\in\reals$ and $b\in\reals$ and $0 \leq a$ and $a < b$.
+    Then there exist $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{a}{b}$.
+\end{lemma}
+\begin{proof}
+    $0 < b - a$ by \cref{real_lt_imp_pos_diff}.
+    Take $N\in\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < b - a$ by \cref{real_add_inverse,real_sub,real_add_closed,real_small_reciprocal}.
+    Thus $0 < N$ by \cref{real_naturals_subset_reals,subseteq,real_mul_ident,real_add_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans}.
+    Hence $N\neq 0$ by \cref{real_naturals_subset_reals,subseteq,real_pos_nonzero}.
+    Therefore $0 < \inv{N}$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_inv_pos}.
+    Let $S = \{ n\in\naturalsPlus \mid a < n / N\}$.
+    Take $n\in\naturalsPlus$ such that $a \rmul N < n$ by \cref{real_naturals_subset_reals,subseteq,real_mul_closed,real_archimedean_property}.
+    $(a \rmul N) \rmul \inv{N} < n \rmul \inv{N}$ by \cref{real_mul_inverse,real_mul_closed,real_naturals_subset_reals,subseteq,real_lt_mul_pos}.
+    Thus $a < n / N$ by \cref{real_naturals_subset_reals,subseteq,real_mul_assoc,real_mul_inverse,real_mul_comm,real_mul_ident,real_div}.
+    Hence $S\neq \emptyset$.
+    Take $k\in S$ such that for all $m\in S$ we have $k \leq m$ by \cref{subseteq,real_naturals_least_element}.
+    Let $p = k / N$.
+    We have $p\in\reals$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_mul_closed}.
+    We have $a + 1 / N < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_sub,real_add_closed,real_lt_add,real_add_comm,real_add_assoc,real_add_inverse,real_add_ident}.
+    Show that $p < b$.
+    \begin{subproof}
+        \begin{byCase}
+        \caseOf{$k = 1$.}
+            We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_add_ident,real_lt_trans}.
+        \caseOf{$k \neq 1$.}
+            Take $m\in\naturalsPlus$ such that $k = m + 1$ by \cref{real_naturals_predecessor}.
+            Show that it is wrong that $a < m / N$.
+            \begin{subproof}
+                Suppose not.
+                Thus $k \neq m + 1$.
+                Contradiction.
+            \end{subproof}
+            \begin{byCase}
+            \caseOf{$m / N = a$.}
+                We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_div,real_right_distrib,real_mul_ident}.
+            \caseOf{$m / N \neq a$.}
+                We have $p < b$ by \cref{real_naturals_subset_reals,subseteq,real_mul_inverse,real_mul_ident,real_div,real_right_distrib,real_mul_closed,real_add_closed,real_lt_trichotomy,real_lt_add,real_lt_trans}.
+            \end{byCase}
+        \end{byCase}
+    \end{subproof}
+    Thus there exist $i, j$ such that $i\in\naturalsPlus$ and $j\in\naturalsPlus$ and $i / j\in\intervalopen{a}{b}$ by \cref{subseteq,intervalopen}.
+\end{proof}
+
+% rational in an open interval
+\begin{proposition}\label{real_rational_open_interval}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
+    Then there exists $p\in\rationals$ such that $p\in\intervalopen{a}{b}$.
+\end{proposition}
+\begin{proof}
+    \begin{byCase}
+    \caseOf{$0 < b$.}
+        \begin{byCase}
+        \caseOf{$a < 0$.}
+            There exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_integers,real_one_in_naturals,real_mul_ident,singleton_iff,setminus_intro,real_add_ident,real_mul_inverse,real_div,real_mul_zero,real_rationals,intervalopen}.
+        \caseOf{$0 \leq a$.}
+            There exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_rationals_nonneg_interval,real_integers,real_naturals_subset_reals,subseteq,real_mul_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans,real_pos_nonzero,singleton_iff,setminus_intro,real_rationals}.
+        \end{byCase}
+    \caseOf{$b \leq 0$.}
+        Take $n, N$ such that $n\in\naturalsPlus$ and $N\in\naturalsPlus$ and $n / N\in\intervalopen{\neg{b}}{\neg{a}}$ by \cref{real_add_inverse,real_add_ident,real_add_inverse_unique,real_leq_neg,real_lt_neg,real_rationals_nonneg_interval}.
+        Let $p = \neg{(n / N)}$.
+        $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
+        $\neg{n}\in\reals$ by \cref{real_add_inverse}.
+        $\neg{\neg{n}} = n$ by \cref{real_naturals_subset_reals,subseteq,real_neg_neg}.
+        $\neg{n}\in\integers$ by \cref{real_integers,real_naturals_subset_reals,subseteq,real_add_inverse}.
+        $N\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
+        $0 < N$ by \cref{real_add_ident,real_mul_ident,real_zero_lt_one,real_one_leq_naturalsplus,real_lt_trans}.
+        $N\neq 0$ by \cref{real_pos_nonzero}.
+        $\inv{N}\in\reals$ by \cref{real_mul_inverse}.
+        $N\in\integers$ by \cref{real_integers}.
+        $N\in\integers\setminus\{0\}$ by \cref{singleton_iff,setminus_intro}.
+        $(\neg{n}) / N = p$ by \cref{real_div,real_mul_comm,real_mul_neg_right}.
+        Thus $p\in\rationals$ by \cref{real_rationals}.
+        Hence there exists $r\in\rationals$ such that $r\in\intervalopen{a}{b}$ by \cref{real_add_inverse,intervalopen,real_neg_neg,real_lt_neg}.
+    \end{byCase}
+\end{proof}
+
+% helper lemma 1:
+\begin{lemma} \label{lemma_4_eq_2_times_2}
+    $4 = 2 \rmul 2$.
+\end{lemma}    
+
+% helper lemma 2:
+\begin{lemma} \label{lemma_6_eq_3_times_2}
+    $6 = 3 \rmul 2$.
+\end{lemma}    
+
+\subsection{Sequences and finite sums}
+
+% Sequences Item 1: initial segment of naturalsplus
+\begin{definition}\label{initial_segment_naturalsplus}
+    $\initialSegment{n} = \{k\in\naturalsPlus \mid k \leq n\}$.
+\end{definition}
+
+% Sequences Item 2: finite sequence of real numbers
+\begin{definition}\label{finite_real_sequence}
+    $a$ is a finite sequence of real numbers iff
+    there exists $n\in\naturalsPlus$ such that
+    $a\in\funs{\initialSegment{n}}{\reals}$.
+\end{definition}
+
+% Sequences Item 3: infinite sequence of real numbers
+\begin{definition}\label{infinite_real_sequence}
+    $a$ is an infinite sequence of real numbers iff
+    $a\in\funs{\naturalsPlus}{\reals}$.
+\end{definition}
+
+% Sequences Item 4: associated sequence of partial sums
+\begin{definition}\label{partial_sums_sequence}
+    $s$ is the sequence of partial sums associated with $a$ iff
+    $a$ is an infinite sequence of real numbers and
+    $s$ is an infinite sequence of real numbers and
+    $s(1) = a(1)$ and
+    for all $n\in\naturalsPlus$ we have
+    $s(n + 1) = s(n) + a(n + 1)$.
+\end{definition}
+
+% Sequences Item 5: sum of a finite sequence of real numbers
+\begin{definition}\label{sum_of_finite_sequence}
+    $x$ is the sum of $a$ iff
+    there exists $n\in\naturalsPlus$ such that
+    $a\in\funs{\initialSegment{n}}{\reals}$ and
+    there exists $s\in\funs{\initialSegment{n}}{\reals}$ such that
+    $s(1) = a(1)$ and
+    for all $k\in\naturalsPlus$ such that $k + 1 \leq n$ we have
+    $s(k + 1) = s(k) + a(k + 1)$ and
+    $x = s(n)$.
+\end{definition}
+
+
+\section{Standard Library: Cardinality}\label{form_sec_cardinality}
+
+\begin{definition}\label{finite}
+    $X$ is finite iff $X$ is empty or there exists $k \in \naturalsPlus$ such that
+        there exists a bijection from $\initialSegment{k}$ to $X$.
+\end{definition}
+
+\begin{lemma} \label{emptyset_is_finite}
+    $\emptyset$ is finite.
+\end{lemma}
+%\begin{proof}
+   % Omitted.
+%\end{proof}
+
+\begin{lemma} \label{pair_is_finite}
+    Assume that $x$ is a set and assume that $y$ is a set.
+    Then $\{x,y\}$ is finite.
+\end{lemma}
+\begin{proof}
+ Omitted.
+\end{proof}
+
+\begin{lemma} \label{subseteq_finite_is_finite}
+    Suppose $A\subseteq B$.
+    Suppose $B$ is finite.
+    Then $A$ is finite.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{lemma} \label{union_of_finite_is_finite}
+    Suppose $A$ is finite and $B$ is finite.
+    Then $A\union B$ is finite.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{abbreviation}\label{infinite}
+    $X$ is infinite iff $X$ is not finite.
+\end{abbreviation}
+
+% \begin{definition}\label{cardinality}
+%     $X$ has cardinality $k$ iff $k$ is a natural number and
+%     there exists a bijection from $k$ to $X$.
+% \end{definition}
+ 
+\begin{lemma}\label{finite_real_maximum}
+    Suppose $A\subseteq\reals$.
+    Suppose $A$ is finite.
+    Suppose $A\neq \emptyset$.
+    Then there exists $m\in A$ such that $m$ is a maximum of $A$.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{lemma}\label{finite_real_minimum}
+    Suppose $A\subseteq\reals$.
+    Suppose $A$ is finite.
+    Suppose $A\neq \emptyset$.
+    Then there exists $m\in A$ such that $m$ is a minimum of $A$.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{lemma}\label{finite_naturals_maximum}
+    Suppose $A\subseteq\naturalsPlus$.
+    Suppose $A$ is finite.
+    Suppose $A\neq \emptyset$.
+    Then there exists $m\in A$ such that for all $a\in A$ we have $a \leq m$.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{definition}\label{countable}
+    $X$ is countable iff there exists $f\in\inj{X}{\naturals}$.
+\end{definition}
+
+\begin{lemma}\label{emptyset_is_countable}
+    $\emptyset$ is countable.
+\end{lemma}
+\begin{proof}
+   Omitted.
+\end{proof}
+
+\begin{lemma}\label{subseteq_countable_is_countable}
+    Suppose $A\subseteq B$.
+    Suppose $B$ is countable.
+    Then $A$ is countable.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
+
+\begin{lemma}\label{union_of_countable_is_countable}
+    Suppose $A$ is countable and $B$ is countable.
+    Then $A\union B$ is countable.
+\end{lemma}
+\begin{proof}
+    Omitted.
+\end{proof}
