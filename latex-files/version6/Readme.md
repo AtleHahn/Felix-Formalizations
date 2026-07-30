@@ -10,8 +10,9 @@ numbers:
 - von Neumann naturals, and
 - positive real naturals.
 
-Von Neumann naturals have now been removed from `naprochelibrary.tex` and the file `formalizations.tex`
-was modified accordingly.
+Von Neumann naturals have now been removed from `naprochelibrary.tex`.
+The file `formalizations.tex` was modified and extended by Section 50 of Munkres book.
+
 
 ## Terminology
 
