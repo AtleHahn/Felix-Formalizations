@@ -36,6 +36,7 @@ which includes:
 - Ascoli's theorem
 - Baire spaces
 - A nowhere-differentiable function
+- Dimension theory
 
 ## LaTeX Sources
 
