@@ -30,8 +30,4 @@ Zorn's lemma and the well-ordering theorem.
 We plan to move both results, including their proofs, to
 the standard library in `naprochelibrary.tex`.
 
-## Note on Section §50
-
-Section §50, the final section on set-theoretic topology, will soon be included. 
- 
  
