@@ -4019,11 +4019,6 @@ This lets us use the same symbol for composition of functions.
     Contradiction.
 \end{proof}
 
-\begin{axiom}\label{axiom_of_choice}
-    Suppose $R$ is a relation.
-    Suppose for all $x\in A$ there exists $y$ such that $x\mathrel{R} y$.
-    Then there exists $f$ such that $f$ is a function on $A$ and for all $x\in A$ we have $x\mathrel{R} f(x)$.
-\end{axiom}
 
 \section{Standard Library: Regularity}
 
@@ -5718,4 +5713,66 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Omitted.
+\end{proof}
+
+
+\section{Standard Library: Axiom of Choice and Consequences}
+
+\begin{axiom}\label{axiom_of_choice}
+    Suppose $R$ is a relation.
+    Suppose for all $x\in A$ there exists $y$ such that $x\mathrel{R} y$.
+    Then there exists $f$ such that $f$ is a function on $A$ and for all $x\in A$ we have $x\mathrel{R} f(x)$.
+\end{axiom}
+
+\begin{definition}\label{finite_intersection_property}
+    $C$ has the finite intersection property iff
+        $C$ is inhabited and
+        for all $F$ such that $F\subseteq C$ and $F$ is finite and inhabited
+        we have $\inters{F}\neq\emptyset$.
+\end{definition}
+
+\begin{definition}\label{maximal_finite_intersection_property_on}
+    $D$ is maximal with respect to the finite intersection property on $X$ iff
+        $D\subseteq\pow{X}$ and
+        $D$ has the finite intersection property and
+        for all $E$ such that $D\subseteq E\subseteq\pow{X}$ and $E$ has the finite intersection property
+            we have $E = D$.
+\end{definition}
+
+\begin{theorem}\label{zorn_subset_family}
+    Assume $A\subseteq\pow{X}$.
+    Suppose $A$ has the finite intersection property.
+    Then there exists $D$ such that
+        $A\subseteq D$ and
+        $D$ is maximal with respect to the finite intersection property on $X$.
+\end{theorem}
+\begin{proof}
+    Omitted. % do not touch
+\end{proof}
+
+\begin{definition}\label{simple_order_relation}
+    $R$ is a simple order relation on $X$ iff
+    $R$ is a binary relation on $X$ and
+    $R$ is transitive and
+    $R$ is asymmetric and
+    $R$ is connex on $X$.
+\end{definition}
+
+\begin{definition}\label{smallest_element}
+    $a$ is a smallest element of $X$ with respect to $R$ iff
+    $a\in X$ and for all $x\in X$ we have $a\mathrel{R}x$ or $a = x$.
+\end{definition}
+
+\begin{definition}\label{well_order_relation}
+    $R$ is a well order relation on $X$ iff
+        $R$ is a simple order relation on $X$ and
+        for all $A$ such that $A\subseteq X$ and $A\neq\emptyset$
+            there exists $a$ such that $a$ is a smallest element of $A$ with respect to $R$.
+\end{definition}
+
+\begin{theorem}\label{well_ordering_theorem}
+    There exists $R$ such that $R$ is a well order relation on $A$.
+\end{theorem}
+\begin{proof}
+    Omitted. % do not touch
 \end{proof}

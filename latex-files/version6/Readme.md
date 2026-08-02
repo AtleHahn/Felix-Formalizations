@@ -20,15 +20,4 @@ Munkres uses the concept `neighborhood` in a non-standard way.
 Many other authors would use the term `open neighborhood` for what
 Munkres calls a `neighborhood`.
 
-## Coverage
-
-There are currently only two instances of `Omitted.` in
-`formalizations.tex`, namely in the proofs of theorems
-`zorn_subset_family` and
-`well_ordering_theorem_local_finiteness`, which formalize versions of
-Zorn's lemma and the well-ordering theorem.
-
-We plan to move both results, including their proofs, to
-the standard library in `naprochelibrary.tex`.
-
  
