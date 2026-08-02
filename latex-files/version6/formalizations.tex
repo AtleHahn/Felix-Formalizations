@@ -19727,159 +19727,37 @@ from §27 Item 6: Lebesgue number lemma
     Therefore $g$ is a surjection from $\naturals$ to $X$ by \cref{surj}.
 \end{proof}
 
-% local compatibility interface for the old set-theoretic naturals proofs
-\begin{abbreviation}\label{num_inductive_set}
-    $A$ is an inductive set iff $\emptyset\in A$ and for all $a\in A$ we have $\suc{a}\in A$.
-\end{abbreviation}
-
-\begin{axiom}\label{num_emptyset_in_naturals}
-    $\emptyset\in\naturals$.
-\end{axiom}
-
-\begin{axiom}\label{num_naturals_inductive_set}
-    $\naturals$ is an inductive set.
-\end{axiom}
-
-\begin{axiom}\label{num_naturals_smallest_inductive_set}
-    Let $A$ be an inductive set.
-    Then $\naturals\subseteq A$.
-\end{axiom}
-
-% from §27 helper lemma 14: naturals are subsets of naturals
-\begin{lemma}\label{natural_subseteq_naturals}
-    Suppose $n\in\naturals$.
-    Then $n\subseteq\naturals$.
+% from §27 helper lemma 14: naturals are real numbers
+\begin{lemma}\label{naturals_subseteq_reals}
+    $\naturals\subseteq\reals$.
 \end{lemma}
 \begin{proof}
-    Let $A = \{k\in\naturals \mid \text{$k\subseteq\naturals$}\}$.
-    $A\subseteq\naturals$ by \cref{subseteq}.
-    $\emptyset\subseteq\naturals$ by \cref{emptyset_subseteq}.
-    Hence $\emptyset\in A$ by \cref{num_emptyset_in_naturals}.
-    Show that for all $k\in A$ we have $\suc{k}\in A$.
+    Show that for all $n$ such that $n\in\naturals$ we have $n\in\reals$.
     \begin{subproof}
-        Fix $k\in A$.
-        We have $k\in\naturals$ and $k\subseteq\naturals$ by \cref{subseteq}.
-        Hence $\suc{k}\in\naturals$ by \cref{num_naturals_inductive_set}.
-        Show that for all $x$ such that $x\in\suc{k}$ we have $x\in\naturals$.
-        \begin{subproof}
-            Fix $x$ such that $x\in\suc{k}$.
-            $x\in k$ or $x = k$ by \cref{suc_iff}.
-            \begin{byCase}
-            \caseOf{$x\in k$.}
-                $x\in\naturals$ by \cref{subseteq}.
-            \caseOf{$x = k$.}
-                $x\in\naturals$.
-            \end{byCase}
-        \end{subproof}
-        Hence $\suc{k}\subseteq\naturals$ by \cref{subseteq}.
-        Thus $\suc{k}\in A$.
+        Fix $n$ such that $n\in\naturals$.
+        $n\in\naturalsPlus$ or $n\in\{0\}$ by \cref{naturals,union_iff}.
+        \begin{byCase}
+        \caseOf{$n\in\naturalsPlus$.}
+            $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
+        \caseOf{$n\notin\naturalsPlus$.}
+            $n\in\{0\}$.
+            $n = 0$ by \cref{singleton_iff}.
+            $0\in\reals$ by \cref{real_add_ident}.
+            Thus $n\in\reals$.
+        \end{byCase}
     \end{subproof}
-    Hence $A$ is an inductive set.
-    Therefore $\naturals\subseteq A$ by \cref{num_naturals_smallest_inductive_set}.
-    Hence $n\in A$ by \cref{subseteq}.
-    Thus $n\subseteq\naturals$ by \cref{subseteq}.
+    Thus $\naturals\subseteq\reals$ by \cref{subseteq}.
 \end{proof}
 
-% from §27 helper lemma 15: naturals are transitive sets
-\begin{lemma}\label{natural_is_transitiveset}
-    Suppose $n\in\naturals$.
-    Then for all $a\in n$ we have $a\subseteq n$.
-\end{lemma}
-\begin{proof}
-    Let $A = \{k\in\naturals \mid \text{for all $a\in k$ we have $a\subseteq k$}\}$.
-    $A\subseteq\naturals$ by \cref{subseteq}.
-    For all $a$ if $a\in\emptyset$ then $a\subseteq\emptyset$ by \cref{emptyset}.
-    Hence $\emptyset\in A$ by \cref{num_emptyset_in_naturals}.
-    Show that for all $k\in A$ we have $\suc{k}\in A$.
-    \begin{subproof}
-        Fix $k\in A$.
-        $k\in\naturals$ and for all $a\in k$ we have $a\subseteq k$ by \cref{subseteq}.
-        $\suc{k}\in\naturals$ by \cref{num_naturals_inductive_set}.
-        Show that for all $x\in\suc{k}$ we have $x\subseteq\suc{k}$.
-        \begin{subproof}
-            Fix $x\in\suc{k}$.
-            $x\in k$ or $x = k$ by \cref{suc_iff}.
-            \begin{byCase}
-            \caseOf{$x\in k$.}
-                $x\subseteq k$.
-                $k\subseteq\suc{k}$ by \cref{subseteq_self_suc_intro}.
-                Hence $x\subseteq\suc{k}$ by \cref{subseteq_transitive}.
-            \caseOf{$x = k$.}
-                $k\subseteq\suc{k}$ by \cref{subseteq_self_suc_intro}.
-                Hence $x\subseteq\suc{k}$.
-            \end{byCase}
-        \end{subproof}
-        Thus $\suc{k}\in A$.
-    \end{subproof}
-    Hence $A$ is an inductive set.
-    Therefore $\naturals\subseteq A$ by \cref{num_naturals_smallest_inductive_set}.
-    Hence $n\in A$ by \cref{subseteq}.
-    Thus for all $a\in n$ we have $a\subseteq n$ by \cref{subseteq}.
-\end{proof}
-
-\begin{lemma}\label{natural_elem_implies_subseteq}
-    Suppose $n\in\naturals$.
-    Suppose $m\in\naturals$.
-    Suppose $n\in m$.
-    Then $n\subseteq m$.
-\end{lemma}
-\begin{proof}
-    For all $a\in m$ we have $a\subseteq m$ by \cref{natural_is_transitiveset}.
-    Hence $n\subseteq m$ by \cref{subseteq}.
-\end{proof}
-
-% from §27 helper lemma 16: naturals are comparable by membership
+% from §27 helper lemma 15: naturals are comparable by the real order
 \begin{lemma}\label{natural_comparability}
-    For all natural numbers $m,n$ we have $m\in n$ or $n\in m$ or $m = n$.
+    Suppose $m$ is a natural number.
+    Suppose $n$ is a natural number.
+    Then $m < n$ or $n < m$ or $m = n$.
 \end{lemma}
-\begin{proof}[Proof by \in-induction on $m$]
-    Assume $m$ is a natural number.
-    Show for all natural numbers $n$ we have $m\in n$ or $n\in m$ or $m = n$.
-    \begin{subproof}[Proof by \in-induction on $n$]
-        Assume $n$ is a natural number.
-        For all $a\in m$ we have $a\subseteq m$ by \cref{natural_is_transitiveset}.
-        For all $a\in n$ we have $a\subseteq n$ by \cref{natural_is_transitiveset}.
-        Suppose not.
-        Then $m\notin n$ and $n\notin m$ and $m\neq n$.
-        Show that for all $x\in m$ we have $x\in n$.
-        \begin{subproof}
-            Fix $x\in m$.
-            $x\in\naturals$ by \cref{natural_subseteq_naturals,subseteq}.
-            $x\in n$ or $n\in x$ or $x = n$ by assumption.
-            \begin{byCase}
-            \caseOf{$x\in n$.}
-                Trivial.
-            \caseOf{$n\in x$.}
-                $x\subseteq m$.
-                Hence $n\in m$ by \cref{subseteq}.
-                Contradiction.
-            \caseOf{$x = n$.}
-                Hence $n\in m$.
-                Contradiction.
-            \end{byCase}
-        \end{subproof}
-        Hence $m\subseteq n$ by \cref{subseteq}.
-        Show that for all $y\in n$ we have $y\in m$.
-        \begin{subproof}
-            Fix $y\in n$.
-            $y\in\naturals$ by \cref{natural_subseteq_naturals,subseteq}.
-            $m\in y$ or $y\in m$ or $m = y$ by assumption.
-            \begin{byCase}
-            \caseOf{$y\in m$.}
-                Trivial.
-            \caseOf{$m\in y$.}
-                $y\subseteq n$.
-                Hence $m\in n$ by \cref{subseteq}.
-                Contradiction.
-            \caseOf{$m = y$.}
-                Hence $m\in n$.
-                Contradiction.
-            \end{byCase}
-        \end{subproof}
-        Hence $n\subseteq m$ by \cref{subseteq}.
-        Hence $m = n$ by \cref{subseteq_antisymmetric}.
-        Contradiction.
-    \end{subproof}
+\begin{proof}
+    $m\in\reals$ and $n\in\reals$ by \cref{naturals_subseteq_reals,subseteq}.
+    Thus $m < n$ or $n < m$ or $m = n$ by \cref{real_lt_trichotomy}.
 \end{proof}
 
 % from §27 helper lemma 17: finite inhabited subset of naturals has a largest element
@@ -19887,106 +19765,194 @@ from §27 Item 6: Lebesgue number lemma
     Suppose $F\subseteq\naturals$.
     Suppose $F$ is finite.
     Suppose $F$ is inhabited.
-    Then there exists $m\in F$ such that for all $a\in F$ we have $a\in m$ or $a = m$.
+    Then there exists $m\in F$ such that for all $a\in F$ we have $a\leq m$.
 \end{lemma}
 \begin{proof}
-    Let $R = \{w\in\naturals\times\naturals \mid \fst{w}\in\snd{w}\}$.
-    Show that $R$ is a simple order relation on $\naturals$.
-    \begin{subproof}
-        $R\subseteq\naturals\times\naturals$ by \cref{subseteq}.
-        Show that $R$ is a binary relation on $\naturals$.
-        \begin{subproof}
-            Trivial.
-        \end{subproof}
-        Show that for all $a,b,c$ such that $a\mathrel{R}b$ and $b\mathrel{R}c$ we have $a\mathrel{R}c$.
-        \begin{subproof}
-            Fix $a$.
-            Fix $b$.
-            Fix $c$.
-            Assume $a\mathrel{R}b$ and $b\mathrel{R}c$.
-            $(a,b)\in R$ and $(b,c)\in R$ by \cref{relation}.
-            Hence $(a,b)\in\naturals\times\naturals$ and $(b,c)\in\naturals\times\naturals$ by \cref{subseteq}.
-            $a\in\naturals$ and $b\in\naturals$ and $c\in\naturals$ by \cref{times_tuple_elim}.
-            $\fst{(a,b)}\in\snd{(a,b)}$ and $\fst{(b,c)}\in\snd{(b,c)}$.
-            $a\in b$ and $b\in c$ by \cref{fst_eq,snd_eq}.
-            For all $d\in c$ we have $d\subseteq c$ by \cref{natural_is_transitiveset}.
-            $b\subseteq c$ by \cref{subseteq}.
-            Therefore $a\in c$ by \cref{subseteq}.
-            $(a,c)\in\naturals\times\naturals$ by \cref{times_tuple_intro}.
-            $\fst{(a,c)}\in\snd{(a,c)}$ by \cref{fst_eq,snd_eq}.
-            Therefore $(a,c)\in R$.
-            Hence $a\mathrel{R}c$ by \cref{relation}.
-        \end{subproof}
-        Hence $R$ is transitive by \cref{transitive}.
-        Show that for all $a,b$ such that $a\mathrel{R}b$ we have it is wrong that $b\mathrel{R}a$.
-        \begin{subproof}
-            Fix $a$.
-            Fix $b$.
-            Assume $a\mathrel{R}b$.
-            Suppose not.
-            Hence $b\mathrel{R}a$.
-            $(a,b)\in R$ and $(b,a)\in R$ by \cref{relation}.
-            $\fst{(a,b)}\in\snd{(a,b)}$ and $\fst{(b,a)}\in\snd{(b,a)}$.
-            Hence $a\in b$ and $b\in a$ by \cref{fst_eq,snd_eq}.
-            Contradiction by \cref{in_asymmetric}.
-        \end{subproof}
-        Hence $R$ is asymmetric by \cref{asymmetric}.
-        Show that for all $a,b$ such that $a\in\naturals$ and $b\in\naturals$ we have
-            $a\mathrel{R}b$ or $b\mathrel{R}a$ or $a = b$.
-        \begin{subproof}
-            Fix $a$.
-            Fix $b$.
-            Assume $a\in\naturals$ and $b\in\naturals$.
-            $a\in b$ or $b\in a$ or $a = b$ by \cref{natural_comparability}.
-            \begin{byCase}
-            \caseOf{$a\in b$.}
-                $(a,b)\in\naturals\times\naturals$ by \cref{times_tuple_intro}.
-                Hence $(a,b)\in R$.
-                Thus $a\mathrel{R}b$ or $b\mathrel{R}a$ or $a = b$ by \cref{relation}.
-            \caseOf{$b\in a$.}
-                $(b,a)\in\naturals\times\naturals$ by \cref{times_tuple_intro}.
-                Hence $(b,a)\in R$.
-                Hence $a\mathrel{R}b$ or $b\mathrel{R}a$ or $a = b$ by \cref{relation}.
-            \caseOf{$a = b$.}
-                $a\mathrel{R}b$ or $b\mathrel{R}a$ or $a = b$.
-            \end{byCase}
-        \end{subproof}
-        Hence $R$ is connex on $\naturals$ by \cref{connex}.
-        Therefore $R$ is a simple order relation on $\naturals$ by \cref{simple_order_relation}.
-    \end{subproof}
-    Take $m$ such that $m$ is a largest element of $F$ with respect to $R$
-        by \cref{finite_inhabited_largest_element}.
-    Thus $m\in F$ and for all $a\in F$ we have $a\mathrel{R}m$ or $a = m$ by \cref{largest_element}.
-    Show that for all $a\in F$ we have $a\in m$ or $a = m$.
-    \begin{subproof}
-        Fix $a\in F$.
-        $a\mathrel{R}m$ or $a = m$ by \cref{largest_element}.
-        \begin{byCase}
-        \caseOf{$a\mathrel{R}m$.}
-            $(a,m)\in R$ by \cref{relation}.
-            Hence $\fst{(a,m)}\in\snd{(a,m)}$.
-            Thus $a\in m$ by \cref{fst_eq,snd_eq}.
-        \caseOf{$a = m$.}
-            Thus $a\in m$ or $a = m$.
-        \end{byCase}
-    \end{subproof}
-    Therefore there exists $n\in F$ such that for all $a\in F$ we have $a\in n$ or $a = n$.
+    $F\subseteq\reals$ by \cref{naturals_subseteq_reals,subseteq_transitive}.
+    $F\neq\emptyset$ by \cref{inhabited_nonempty}.
+    Take $m\in F$ such that $m$ is a maximum of $F$ by \cref{finite_real_maximum}.
+    Thus for all $a\in F$ we have $a\leq m$ by \cref{real_maximum}.
 \end{proof}
 
 % from §27 helper definition 2: shrinking sequence up to a stage
 \begin{definition}\label{shrinking_sequence_upto}
     $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$ iff
         $n\in\naturals$ and
-        $s$ is a function on $\suc{n}$ and
-        $s(\emptyset) = c((X,g(\emptyset)))$ and
-        for all $k\in\suc{n}$ we have
+        $s$ is a function on $\{k\in\naturals \mid k\leq n\}$ and
+        $s(0) = c((X,g(0)))$ and
+        for all $k\in\naturals$ such that $k\leq n$ we have
             $s(k)$ is open in $X$ with respect to $T$ and
             $s(k)\neq\emptyset$ and
             $g(k)\notin\closure{s(k)}{X}{T}$ and
-        for all $k\in n$ we have
-            $s(\suc{k}) = c((s(k),g(\suc{k})))$ and
-            $s(\suc{k})\subseteq s(k)$.
+        for all $k\in\naturals$ such that $k < n$ we have
+            $s(k + 1) = c((s(k),g(k + 1)))$ and
+            $s(k + 1)\subseteq s(k)$.
 \end{definition}
+
+% from §27 helper lemma 18a: elementary facts about the new natural numbers
+\begin{lemma}\label{zero_in_naturals}
+    $0\in\naturals$.
+\end{lemma}
+\begin{proof}
+    $0\in\{0\}$ by \cref{singleton_intro}.
+    Hence $0\in\naturalsPlus\union\{0\}$ by \cref{union_intro_right}.
+    Thus $0\in\naturals$ by \cref{naturals}.
+\end{proof}
+
+\begin{lemma}\label{naturals_closed_successor}
+    Suppose $n\in\naturals$.
+    Then $n + 1\in\naturals$.
+\end{lemma}
+\begin{proof}
+    $n\in\naturalsPlus$ or $n\in\{0\}$ by \cref{naturals,union_iff}.
+    \begin{byCase}
+    \caseOf{$n\in\naturalsPlus$.}
+        $n + 1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
+        Hence $n + 1\in\naturalsPlus\union\{0\}$ by \cref{union_intro_left}.
+        Thus $n + 1\in\naturals$ by \cref{naturals}.
+    \caseOf{$n\notin\naturalsPlus$.}
+        $n = 0$ by \cref{singleton_iff}.
+        $0 + 1 = 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+        Thus $n + 1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
+        Hence $n + 1\in\naturalsPlus\union\{0\}$ by \cref{union_intro_left}.
+        Therefore $n + 1\in\naturals$ by \cref{naturals}.
+    \end{byCase}
+\end{proof}
+
+\begin{lemma}\label{natural_nonnegative}
+    Suppose $n\in\naturals$.
+    Then $0\leq n$.
+\end{lemma}
+\begin{proof}
+    $n\in\naturalsPlus$ or $n\in\{0\}$ by \cref{naturals,union_iff}.
+    \begin{byCase}
+    \caseOf{$n\in\naturalsPlus$.}
+        $1 < n$ or $1 = n$ by \cref{real_one_leq_naturalsplus}.
+        $0 < 1$ by \cref{real_zero_lt_one}.
+        Hence $0 < n$ by
+            \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_add_ident,real_lt_trans,real_lt_subst_right}.
+        Thus $0\leq n$ by \cref{real_lt_imp_leq}.
+    \caseOf{$n\notin\naturalsPlus$.}
+        $n = 0$ by \cref{singleton_iff}.
+        Thus $0\leq n$.
+    \end{byCase}
+\end{proof}
+
+\begin{lemma}\label{natural_lt_successor}
+    Suppose $n\in\naturals$.
+    Then $n < n + 1$.
+\end{lemma}
+\begin{proof}
+    $n\in\reals$ and $0\in\reals$ and $1\in\reals$
+        by \cref{naturals_subseteq_reals,real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+    $0 < 1$ by \cref{real_zero_lt_one}.
+    $0 + n < 1 + n$ by \cref{real_lt_add}.
+    $0 + n = n$ and $1 + n = n + 1$ by \cref{real_add_ident,real_add_comm}.
+    Thus $n < n + 1$ by \cref{real_lt_subst_left,real_lt_subst_right}.
+\end{proof}
+
+\begin{lemma}\label{natural_lt_successor_split}
+    Suppose $k\in\naturals$ and $n\in\naturals$.
+    Suppose $k < n + 1$.
+    Then $k < n$ or $k = n$.
+\end{lemma}
+\begin{proof}
+    $k\in\naturalsPlus$ or $k\in\{0\}$ by \cref{naturals,union_iff}.
+    $n\in\naturalsPlus$ or $n\in\{0\}$ by \cref{naturals,union_iff}.
+    \begin{byCase}
+    \caseOf{$n\in\naturalsPlus$.}
+        \begin{byCase}
+        \caseOf{$k\in\naturalsPlus$.}
+            $k < n$ or $k = n$ or $k = n + 1$ by \cref{real_succ_discrete}.
+            Thus $k < n$ or $k = n$ by
+                \cref{real_naturals_subset_reals,real_naturals_closed_succ,subseteq,real_lt_irreflexive,real_lt_subst_right}.
+        \caseOf{$k\notin\naturalsPlus$.}
+            $k = 0$ by \cref{singleton_iff}.
+            $0\leq n$ by \cref{natural_nonnegative}.
+            $0\neq n$ by
+                \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_one_leq_naturalsplus,real_zero_lt_one,real_lt_asym}.
+            Hence $0 < n$ by \cref{real_leq_split}.
+            Thus $k < n$.
+        \end{byCase}
+    \caseOf{$n\notin\naturalsPlus$.}
+        $n = 0$ by \cref{singleton_iff}.
+        \begin{byCase}
+        \caseOf{$k\in\naturalsPlus$.}
+            Show that $k < n$ or $k = n$.
+            \begin{subproof}
+                Suppose not.
+                $1 < k$ or $1 = k$ by \cref{real_one_leq_naturalsplus}.
+                $n + 1 = 1$ by
+                    \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+                $k < 1$ by \cref{real_lt_subst_right}.
+                Contradiction by
+                    \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_lt_asym,real_lt_irreflexive,real_lt_subst_left}.
+            \end{subproof}
+        \caseOf{$k\notin\naturalsPlus$.}
+            $k = 0$ by \cref{singleton_iff}.
+            Thus $k = n$.
+        \end{byCase}
+    \end{byCase}
+\end{proof}
+
+\begin{lemma}\label{natural_successor_leq}
+    Suppose $k\in\naturals$ and $n\in\naturals$.
+    Suppose $k < n$.
+    Then $k + 1\leq n$.
+\end{lemma}
+\begin{proof}
+    $k + 1\in\naturals$ by \cref{naturals_closed_successor}.
+    $k + 1 < n$ or $n < k + 1$ or $k + 1 = n$ by \cref{natural_comparability}.
+    Show that it is wrong that $n < k + 1$.
+    \begin{subproof}
+        Suppose not.
+        $n < k$ or $n = k$ by \cref{natural_lt_successor_split}.
+        Contradiction by
+            \cref{naturals_subseteq_reals,subseteq,real_lt_asym,real_lt_irreflexive,real_lt_subst_right}.
+    \end{subproof}
+    Thus $k + 1 < n$ or $k + 1 = n$.
+    Therefore $k + 1\leq n$.
+\end{proof}
+
+\begin{lemma}\label{natural_leq_successor_split}
+    Suppose $k\in\naturals$ and $n\in\naturals$.
+    Suppose $k\leq n + 1$.
+    Then $k\leq n$ or $k = n + 1$.
+\end{lemma}
+\begin{proof}
+    $k < n + 1$ or $k = n + 1$ by \cref{real_leq_split}.
+    \begin{byCase}
+    \caseOf{$k = n + 1$.}
+        Trivial.
+    \caseOf{$k\neq n + 1$.}
+        $k < n$ or $k = n$ by \cref{natural_lt_successor_split}.
+        Hence $k\leq n$.
+    \end{byCase}
+\end{proof}
+
+\begin{lemma}\label{natural_segment_zero}
+    $\{k\in\naturals \mid k\leq 0\} = \{0\}$.
+\end{lemma}
+\begin{proof}
+    Let $I = \{k\in\naturals \mid k\leq 0\}$.
+    Show that for all $k\in I$ we have $k\in\{0\}$.
+    \begin{subproof}
+        Fix $k\in I$.
+        $k\in\naturals$ and $k\leq 0$ by \cref{subseteq}.
+        $0\leq k$ by \cref{natural_nonnegative}.
+        $k = 0$ by \cref{naturals_subseteq_reals,subseteq,real_add_ident,real_leq_antisym}.
+        Thus $k\in\{0\}$ by \cref{singleton_intro}.
+    \end{subproof}
+    $I\subseteq\{0\}$ by \cref{subseteq}.
+    Show that for all $k\in\{0\}$ we have $k\in I$.
+    \begin{subproof}
+        Fix $k\in\{0\}$.
+        $k = 0$ by \cref{singleton_iff}.
+        Thus $k\in\naturals$ and $k\leq 0$ by \cref{zero_in_naturals}.
+    \end{subproof}
+    $\{0\}\subseteq I$ by \cref{subseteq}.
+    Thus $I = \{0\}$ by \cref{subseteq_antisymmetric}.
+\end{proof}
 
 % from §27 helper lemma 18: existence of finite shrinking sequences
 \begin{lemma}\label{shrinking_sequence_exists}
@@ -20011,15 +19977,15 @@ from §27 Item 6: Lebesgue number lemma
         $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$}\}$.
     $X\in T$ by \cref{topology_on}.
     Hence $X$ is open in $X$ with respect to $T$ by \cref{open_in}.
-    $\emptyset\in\naturals$ by \cref{num_emptyset_in_naturals}.
-    $\emptyset\in\dom{g}$ by \cref{funs}.
-    Therefore $g(\emptyset)\in X$ by \cref{funs_type_apply}.
-    Let $V = c((X,g(\emptyset)))$.
+    $0\in\naturals$ by \cref{zero_in_naturals}.
+    $0\in\dom{g}$ by \cref{funs}.
+    Therefore $g(0)\in X$ by \cref{funs_type_apply}.
+    Let $V = c((X,g(0)))$.
     $V$ is open in $X$ with respect to $T$ and
         $V\neq\emptyset$ and
         $V\subseteq X$ and
-        $g(\emptyset)\notin\closure{V}{X}{T}$ by assumption.
-    Let $s_0 = \{(\emptyset,V)\}$.
+        $g(0)\notin\closure{V}{X}{T}$ by assumption.
+    Let $s_0 = \{(0,V)\}$.
     For all $w$ such that $w\in s_0$ there exist $x, y$ such that $w = (x,y)$ by \cref{singleton_iff,relation}.
     Hence $s_0$ is a relation by \cref{relation}.
     Show that for all $a,b,b'$ such that $(a,b)\in s_0$ and $(a,b')\in s_0$ we have $b = b'$.
@@ -20028,97 +19994,89 @@ from §27 Item 6: Lebesgue number lemma
         Fix $b$.
         Fix $b'$.
         Assume $(a,b)\in s_0$ and $(a,b')\in s_0$.
-        Hence $(a,b) = (\emptyset,V)$ and $(a,b') = (\emptyset,V)$ by \cref{singleton_iff}.
+        Hence $(a,b) = (0,V)$ and $(a,b') = (0,V)$ by \cref{singleton_iff}.
         Thus $b = V$ and $b' = V$ by \cref{pair_eq_iff}.
     \end{subproof}
     Hence $s_0$ is a function by \cref{rightunique}.
-    Show that for all $x$ such that $x\in\dom{s_0}$ we have $x\in\{\emptyset\}$.
+    Show that for all $x$ such that $x\in\dom{s_0}$ we have $x\in\{0\}$.
     \begin{subproof}
         Fix $x$ such that $x\in\dom{s_0}$.
         Take $y$ such that $(x,y)\in s_0$ by \cref{dom_iff}.
-        Hence $(x,y) = (\emptyset,V)$ by \cref{singleton_iff}.
-        Thus $x = \emptyset$ by \cref{pair_eq_iff}.
-        Hence $x\in\{\emptyset\}$ by \cref{singleton_intro}.
+        Hence $(x,y) = (0,V)$ by \cref{singleton_iff}.
+        Thus $x = 0$ by \cref{pair_eq_iff}.
+        Hence $x\in\{0\}$ by \cref{singleton_intro}.
     \end{subproof}
-    We have $\dom{s_0}\subseteq\{\emptyset\}$ by \cref{subseteq}.
-    $(\emptyset,V)\in s_0$ by \cref{singleton_intro}.
-    $\emptyset\in\dom{s_0}$ by \cref{dom_intro}.
-    Thus $\{\emptyset\}\subseteq\dom{s_0}$ by \cref{singleton_subset_intro}.
-    Therefore $\dom{s_0} = \{\emptyset\}$ by \cref{subseteq_antisymmetric}.
-    Show that for all $x$ such that $x\in\dom{s_0}$ we have $x\in\suc{\emptyset}$.
-    \begin{subproof}
-        Fix $x$ such that $x\in\dom{s_0}$.
-        $x = \emptyset$ by \cref{subseteq,singleton_iff}.
-        $x\in\suc{\emptyset}$ by \cref{suc_intro_self}.
-    \end{subproof}
-    Therefore $\dom{s_0}\subseteq\suc{\emptyset}$ by \cref{subseteq}.
-    Show that for all $x$ such that $x\in\suc{\emptyset}$ we have $x\in\dom{s_0}$.
-    \begin{subproof}
-        Fix $x$ such that $x\in\suc{\emptyset}$.
-        $x\in\emptyset$ or $x = \emptyset$ by \cref{suc_iff}.
-        Thus $x = \emptyset$ by \cref{emptyset}.
-        Therefore $x\in\dom{s_0}$ by \cref{subseteq,singleton_iff}.
-    \end{subproof}
-    Therefore $\suc{\emptyset}\subseteq\dom{s_0}$ by \cref{subseteq}.
-    Therefore $\dom{s_0} = \suc{\emptyset}$ by \cref{subseteq_antisymmetric}.
-    Show that $s_0$ is a function on $\suc{\emptyset}$.
+    We have $\dom{s_0}\subseteq\{0\}$ by \cref{subseteq}.
+    $(0,V)\in s_0$ by \cref{singleton_intro}.
+    $0\in\dom{s_0}$ by \cref{dom_intro}.
+    Thus $\{0\}\subseteq\dom{s_0}$ by \cref{singleton_subset_intro}.
+    Therefore $\dom{s_0} = \{0\}$ by \cref{subseteq_antisymmetric}.
+    Let $I_0 = \{k\in\naturals \mid k\leq 0\}$.
+    For all $k$ we have $k\in I_0$ iff $k\in\{0\}$ by \cref{natural_segment_zero}.
+    $I_0 = \{0\}$ by \cref{setext}.
+    Show that $s_0$ is a function on $I_0$.
     \begin{subproof}
         Trivial.
     \end{subproof}
-    Show that $s_0(\emptyset) = c((X,g(\emptyset)))$.
+    Show that $s_0(0) = c((X,g(0)))$.
     \begin{subproof}
-        $(\emptyset,V)\in s_0$ by \cref{singleton_iff}.
-        Therefore $s_0(\emptyset) = c((X,g(\emptyset)))$ by \cref{function_apply_intro}.
+        $(0,V)\in s_0$ by \cref{singleton_iff}.
+        Therefore $s_0(0) = c((X,g(0)))$ by \cref{function_apply_intro}.
     \end{subproof}
-    Show that for all $k\in\suc{\emptyset}$ we have
+    Show that for all $k\in\naturals$ such that $k\leq 0$ we have
         $s_0(k)$ is open in $X$ with respect to $T$ and
         $s_0(k)\neq\emptyset$ and
         $g(k)\notin\closure{s_0(k)}{X}{T}$.
     \begin{subproof}
-        Fix $k\in\suc{\emptyset}$.
-        $k\in\emptyset$ or $k = \emptyset$ by \cref{suc_iff}.
-        Hence $k = \emptyset$ by \cref{emptyset}.
-        $(\emptyset,V)\in s_0$ by \cref{singleton_iff}.
+        Fix $k$ such that $k\in\naturals$ and $k\leq 0$.
+        $k\in I_0$ by \cref{subseteq}.
+        Hence $k = 0$ by \cref{natural_segment_zero,singleton_iff}.
+        $(0,V)\in s_0$ by \cref{singleton_iff}.
         Hence $s_0(k) = V$ by \cref{function_apply_intro}.
         Thus $s_0(k)$ is open in $X$ with respect to $T$ and
             $s_0(k)\neq\emptyset$ and
             $g(k)\notin\closure{s_0(k)}{X}{T}$.
     \end{subproof}
-    Show that for all $k\in\emptyset$ we have
-        $s_0(\suc{k}) = c((s_0(k),g(\suc{k})))$ and
-        $s_0(\suc{k})\subseteq s_0(k)$.
+    Show that for all $k\in\naturals$ such that $k < 0$ we have
+        $s_0(k + 1) = c((s_0(k),g(k + 1)))$ and
+        $s_0(k + 1)\subseteq s_0(k)$.
     \begin{subproof}
-        Trivial.
+        Fix $k$ such that $k\in\naturals$ and $k < 0$.
+        Show that $s_0(k + 1) = c((s_0(k),g(k + 1)))$ and
+            $s_0(k + 1)\subseteq s_0(k)$.
+        \begin{subproof}
+            Suppose not.
+            $0\leq k$ by \cref{natural_nonnegative}.
+            $0 < k$ or $0 = k$ by \cref{real_leq_split}.
+            Contradiction by
+                \cref{naturals_subseteq_reals,subseteq,real_add_ident,real_lt_asym,real_lt_irreflexive,real_lt_subst_left}.
+        \end{subproof}
     \end{subproof}
-    Therefore $s_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{shrinking_sequence_upto,num_emptyset_in_naturals}.
-    Thus $\emptyset\in A$ by \cref{num_emptyset_in_naturals,subseteq}.
-    Show that for all $n\in A$ we have $\suc{n}\in A$.
+    Therefore $s_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$
+        by \cref{shrinking_sequence_upto,zero_in_naturals}.
+    Thus $0\in A$ by \cref{zero_in_naturals,subseteq}.
+    Show that for all $n\in A$ we have $n + 1\in A$.
     \begin{subproof}
         Fix $n\in A$.
         Take $s$ such that $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{subseteq}.
-        We have $n\in\naturals$ and $s$ is a function on $\suc{n}$ and
-            $s(\emptyset) = c((X,g(\emptyset)))$ and
-            for all $k\in\suc{n}$ we have
-                $s(k)$ is open in $X$ with respect to $T$ and
-                $s(k)\neq\emptyset$ and
-                $g(k)\notin\closure{s(k)}{X}{T}$ and
-            for all $k\in n$ we have
-                $s(\suc{k}) = c((s(k),g(\suc{k})))$ and
-                $s(\suc{k})\subseteq s(k)$ by \cref{shrinking_sequence_upto}.
-        Hence $\dom{s} = \suc{n}$ by definition.
-        $\suc{n}\in\naturals$ by \cref{num_naturals_inductive_set}.
-        $\suc{n}\in\dom{g}$ by \cref{funs}.
-        Therefore $g(\suc{n})\in X$ by \cref{funs_type_apply}.
-        $n\in\suc{n}$ by \cref{suc_intro_self}.
+        $n\in\naturals$ by \cref{shrinking_sequence_upto}.
+        Let $I = \{k\in\naturals \mid k\leq n\}$.
+        $s$ is a function by \cref{shrinking_sequence_upto}.
+        For all $k$ we have $k\in\dom{s}$ iff $k\in I$ by \cref{shrinking_sequence_upto}.
+        Hence $\dom{s} = I$ by \cref{setext}.
+        $n + 1\in\naturals$ by \cref{naturals_closed_successor}.
+        $n + 1\in\dom{g}$ by \cref{funs}.
+        Therefore $g(n + 1)\in X$ by \cref{funs_type_apply}.
+        $n\in I$.
         We have $s(n)$ is open in $X$ with respect to $T$ and
             $s(n)\neq\emptyset$ and
             $g(n)\notin\closure{s(n)}{X}{T}$ by \cref{shrinking_sequence_upto}.
-        Let $W = c((s(n),g(\suc{n})))$.
+        Let $W = c((s(n),g(n + 1)))$.
         $W$ is open in $X$ with respect to $T$ and
             $W\neq\emptyset$ and
             $W\subseteq s(n)$ and
-            $g(\suc{n})\notin\closure{W}{X}{T}$ by assumption.
-        Let $t = s\union\{(\suc{n},W)\}$.
+            $g(n + 1)\notin\closure{W}{X}{T}$ by assumption.
+        Let $t = s\union\{(n + 1,W)\}$.
         For all $w$ such that $w\in t$ there exist $x, y$ such that $w = (x,y)$ by \cref{union_iff,singleton_iff,relation}.
         Hence $t$ is a relation by \cref{relation}.
         Show that for all $a,b,b'$ such that $(a,b)\in t$ and $(a,b')\in t$ we have $b = b'$.
@@ -20128,101 +20086,114 @@ from §27 Item 6: Lebesgue number lemma
             Fix $b'$.
             Assume $(a,b)\in t$ and $(a,b')\in t$.
             \begin{byCase}
-            \caseOf{$a = \suc{n}$.}
-                $(a,b)\in s$ or $(a,b) = (\suc{n},W)$ by \cref{union_iff,singleton_iff}.
+            \caseOf{$a = n + 1$.}
+                $(a,b)\in s$ or $(a,b) = (n + 1,W)$ by \cref{union_iff,singleton_iff}.
                 Show that $(a,b)\notin s$.
                 \begin{subproof}
                     Suppose not.
                     $a\in\dom{s}$ by \cref{dom_intro}.
-                    Hence $a\in\suc{n}$.
-                    Contradiction by \cref{in_irrefl}.
+                    $a\in I$.
+                    Hence $a\leq n$ by \cref{subseteq}.
+                    $n < a$ by \cref{natural_lt_successor,real_lt_subst_right}.
+                    $a < n$ or $a = n$ by \cref{real_leq_split}.
+                    Contradiction by
+                        \cref{naturals_subseteq_reals,subseteq,real_lt_asym,real_lt_irreflexive,real_lt_subst_left}.
                 \end{subproof}
-                Hence $(a,b) = (\suc{n},W)$.
-                $(a,b')\in s$ or $(a,b') = (\suc{n},W)$ by \cref{union_iff,singleton_iff}.
+                Hence $(a,b) = (n + 1,W)$.
+                $(a,b')\in s$ or $(a,b') = (n + 1,W)$ by \cref{union_iff,singleton_iff}.
                 Show that $(a,b')\notin s$.
                 \begin{subproof}
                     Suppose not.
                     $a\in\dom{s}$ by \cref{dom_intro}.
-                    Hence $a\in\suc{n}$.
-                    Contradiction by \cref{in_irrefl}.
+                    $a\in I$.
+                    Hence $a\leq n$ by \cref{subseteq}.
+                    $n < a$ by \cref{natural_lt_successor,real_lt_subst_right}.
+                    $a < n$ or $a = n$ by \cref{real_leq_split}.
+                    Contradiction by
+                        \cref{naturals_subseteq_reals,subseteq,real_lt_asym,real_lt_irreflexive,real_lt_subst_left}.
                 \end{subproof}
-                Hence $(a,b') = (\suc{n},W)$.
+                Hence $(a,b') = (n + 1,W)$.
                 Thus $b = W$ and $b' = W$ by \cref{pair_eq_iff}.
-            \caseOf{$a \neq \suc{n}$.}
+            \caseOf{$a \neq n + 1$.}
                 $(a,b)\in s$ by \cref{union_iff,singleton_iff,pair_eq_iff}.
                 $(a,b')\in s$ by \cref{union_iff,singleton_iff,pair_eq_iff}.
                 Thus $b = b'$ by \cref{function_rightunique}.
             \end{byCase}
         \end{subproof}
         Hence $t$ is a function by \cref{rightunique}.
-        Show that for all $x$ such that $x\in\dom{t}$ we have $x\in\suc{\suc{n}}$.
+        Let $J = \{k\in\naturals \mid k\leq n + 1\}$.
+        Show that for all $x$ such that $x\in\dom{t}$ we have $x\in J$.
         \begin{subproof}
             Fix $x$ such that $x\in\dom{t}$.
             Take $y$ such that $(x,y)\in t$ by \cref{dom_iff}.
-            $(x,y)\in s$ or $(x,y) = (\suc{n},W)$ by \cref{union_iff,singleton_iff}.
+            $(x,y)\in s$ or $(x,y) = (n + 1,W)$ by \cref{union_iff,singleton_iff}.
             \begin{byCase}
-            \caseOf{$(x,y) = (\suc{n},W)$.}
-                $x = \suc{n}$ by \cref{pair_eq_iff}.
-                Hence $x\in\suc{\suc{n}}$ by \cref{suc_intro_self}.
+            \caseOf{$(x,y) = (n + 1,W)$.}
+                $x = n + 1$ by \cref{pair_eq_iff}.
+                Hence $x\in\naturals$ by \cref{naturals_closed_successor}.
+                Thus $x\leq n + 1$.
             \caseOf{$(x,y)\in s$.}
                 $x\in\dom{s}$ by \cref{dom_intro}.
-                We have $x\in\suc{n}$.
-                Therefore $x\in\suc{\suc{n}}$ by \cref{suc_intro_in}.
+                $x\in I$.
+                Hence $x\in\naturals$ and $x\leq n$ by \cref{subseteq}.
+                $n\leq n + 1$ by \cref{natural_lt_successor,real_lt_imp_leq}.
+                Thus $x\leq n + 1$ by
+                    \cref{naturals_subseteq_reals,naturals_closed_successor,subseteq,real_leq_trans}.
             \end{byCase}
         \end{subproof}
-        Hence $\dom{t}\subseteq\suc{\suc{n}}$ by \cref{subseteq}.
-        Show that for all $x$ such that $x\in\suc{\suc{n}}$ we have $x\in\dom{t}$.
+        Hence $\dom{t}\subseteq J$ by \cref{subseteq}.
+        Show that for all $x\in J$ we have $x\in\dom{t}$.
         \begin{subproof}
-            Fix $x$ such that $x\in\suc{\suc{n}}$.
-            $x\in\suc{n}$ or $x = \suc{n}$ by \cref{suc_iff}.
+            Fix $x\in J$.
+            $x\in\naturals$ and $x\leq n + 1$ by \cref{subseteq}.
+            $x\leq n$ or $x = n + 1$ by \cref{natural_leq_successor_split}.
             \begin{byCase}
-            \caseOf{$x\in\suc{n}$.}
+            \caseOf{$x\leq n$.}
+                $x\in I$.
                 $x\in\dom{s}$.
                 Take $y$ such that $(x,y)\in s$ by \cref{dom_iff}.
                 Hence $(x,y)\in t$ by \cref{union_intro_left}.
                 Thus $x\in\dom{t}$ by \cref{dom_intro}.
-            \caseOf{$x = \suc{n}$.}
-                $(x,W) = (\suc{n},W)$ by \cref{pair_eq_iff}.
+            \caseOf{$x\not\leq n$.}
+                $x = n + 1$.
+                $(x,W) = (n + 1,W)$ by \cref{pair_eq_iff}.
                 Hence $(x,W)\in t$ by \cref{union_intro_right,singleton_intro}.
                 Thus $x\in\dom{t}$ by \cref{dom_intro}.
             \end{byCase}
         \end{subproof}
-        Hence $\suc{\suc{n}}\subseteq\dom{t}$ by \cref{subseteq}.
-        Therefore $\dom{t} = \suc{\suc{n}}$ by \cref{subseteq_antisymmetric}.
-        Show that $t$ is a function on $\suc{\suc{n}}$.
+        Hence $J\subseteq\dom{t}$ by \cref{subseteq}.
+        Therefore $\dom{t} = J$ by \cref{subseteq_antisymmetric}.
+        Show that $t$ is a function on $J$.
         \begin{subproof}
             Trivial.
         \end{subproof}
-        Show that $t(\emptyset) = c((X,g(\emptyset)))$.
+        Show that $t(0) = c((X,g(0)))$.
         \begin{subproof}
-            $\emptyset\in n$ or $n\in\emptyset$ or $\emptyset = n$
-                by \cref{natural_comparability,num_emptyset_in_naturals}.
-            Thus $\emptyset\in n$ or $\emptyset = n$ by \cref{emptyset}.
-            $\emptyset\in\suc{n}$ by \cref{suc_iff}.
-            We have $\emptyset\in\dom{s}$.
-            $\emptyset\in\suc{\suc{n}}$ by \cref{suc_intro_in}.
-            Therefore $\emptyset\in\dom{t}$.
-            $(\emptyset,t(\emptyset))\in t$ and $(\emptyset,s(\emptyset))\in s$ by \cref{function_apply_elim}.
-            Thus $(\emptyset,s(\emptyset))\in t$ by \cref{union_intro_left}.
-            Therefore $t(\emptyset) = s(\emptyset)$ by \cref{function_rightunique}.
-            Thus $t(\emptyset) = c((X,g(\emptyset)))$ by \cref{shrinking_sequence_upto}.
+            $0\leq n$ by \cref{natural_nonnegative}.
+            Hence $0\in I$ by \cref{zero_in_naturals,subseteq}.
+            Thus $0\in\dom{s}$.
+            $(0,s(0))\in s$ by \cref{function_apply_elim}.
+            Hence $(0,s(0))\in t$ by \cref{union_intro_left}.
+            Thus $t(0) = s(0)$ by \cref{function_apply_intro}.
+            Therefore $t(0) = c((X,g(0)))$ by \cref{shrinking_sequence_upto}.
         \end{subproof}
-        Show that for all $k\in\suc{\suc{n}}$ we have
+        Show that for all $k\in\naturals$ such that $k\leq n + 1$ we have
             $t(k)$ is open in $X$ with respect to $T$ and
             $t(k)\neq\emptyset$ and
             $g(k)\notin\closure{t(k)}{X}{T}$.
         \begin{subproof}
-            Fix $k\in\suc{\suc{n}}$.
-            $k\in\suc{n}$ or $k = \suc{n}$ by \cref{suc_iff}.
+            Fix $k$ such that $k\in\naturals$ and $k\leq n + 1$.
             \begin{byCase}
-            \caseOf{$k = \suc{n}$.}
-                $(k,W) = (\suc{n},W)$ by \cref{pair_eq_iff}.
+            \caseOf{$k = n + 1$.}
+                $(k,W) = (n + 1,W)$ by \cref{pair_eq_iff}.
                 Hence $(k,W)\in t$ by \cref{union_intro_right,singleton_intro}.
                 Hence $t(k) = W$ by \cref{function_apply_intro}.
                 Thus $t(k)$ is open in $X$ with respect to $T$ and
                     $t(k)\neq\emptyset$ and
                     $g(k)\notin\closure{t(k)}{X}{T}$.
-            \caseOf{$k\in\suc{n}$.}
+            \caseOf{$k\neq n + 1$.}
+                $k\leq n$ by \cref{natural_leq_successor_split}.
+                Hence $k\in I$ by \cref{subseteq}.
                 $k\in\dom{s}$.
                 $(k,s(k))\in s$ by \cref{function_apply_elim}.
                 Therefore $(k,s(k))\in t$ by \cref{union_intro_left}.
@@ -20232,56 +20203,53 @@ from §27 Item 6: Lebesgue number lemma
                     $g(k)\notin\closure{t(k)}{X}{T}$ by \cref{shrinking_sequence_upto}.
             \end{byCase}
         \end{subproof}
-        Show that for all $k\in\suc{n}$ we have
-            $t(\suc{k}) = c((t(k),g(\suc{k})))$ and
-            $t(\suc{k})\subseteq t(k)$.
+        Show that for all $k\in\naturals$ such that $k < n + 1$ we have
+            $t(k + 1) = c((t(k),g(k + 1)))$ and
+            $t(k + 1)\subseteq t(k)$.
         \begin{subproof}
-            Fix $k\in\suc{n}$.
-            $k\in n$ or $k = n$ by \cref{suc_iff}.
+            Fix $k$ such that $k\in\naturals$ and $k < n + 1$.
+            $k < n$ or $k = n$ by \cref{natural_lt_successor_split}.
             \begin{byCase}
             \caseOf{$k = n$.}
-                $(\suc{k},W) = (\suc{n},W)$ by \cref{pair_eq_iff}.
-                Hence $(\suc{k},W)\in t$ by \cref{union_intro_right,singleton_intro}.
-                Hence $t(\suc{k}) = W$ by \cref{function_apply_intro}.
+                $(k + 1,W) = (n + 1,W)$ by \cref{pair_eq_iff}.
+                Hence $(k + 1,W)\in t$ by \cref{union_intro_right,singleton_intro}.
+                Hence $t(k + 1) = W$ by \cref{function_apply_intro}.
+                $k\leq n$.
+                Hence $k\in I$ by \cref{subseteq}.
                 $k\in\dom{s}$.
                 $(k,s(k))\in s$ by \cref{function_apply_elim}.
                 Hence $(k,s(k))\in t$ by \cref{union_intro_left}.
                 Hence $t(k) = s(k)$ by \cref{function_apply_intro}.
-                Thus $t(\suc{k}) = c((t(k),g(\suc{k})))$ and $t(\suc{k})\subseteq t(k)$.
-            \caseOf{$k\in n$.}
-                We have $n\subseteq\naturals$ by \cref{natural_subseteq_naturals}.
-                Hence $k\in\naturals$ by \cref{subseteq}.
-                Therefore $\suc{k}\in\naturals$ by \cref{num_naturals_inductive_set}.
-                $\suc{k}\in n$ or $n\in\suc{k}$ or $\suc{k} = n$ by \cref{natural_comparability}.
-                Show that it is wrong that $n\in\suc{k}$.
-                \begin{subproof}
-                    Suppose not.
-                    $n\in k$ or $n = k$ by \cref{suc_iff}.
-                    \begin{byCase}
-                    \caseOf{$n\in k$.}
-                        Contradiction by \cref{in_asymmetric}.
-                    \caseOf{$n = k$.}
-                        $k\in k$.
-                        Contradiction by \cref{in_irrefl}.
-                    \end{byCase}
-                \end{subproof}
-                Thus $\suc{k}\in n$ or $\suc{k} = n$.
-                $\suc{k}\in\suc{n}$ by \cref{suc_iff}.
-                $\suc{k}\in\dom{s}$ and $k\in\dom{s}$.
-                $(\suc{k},s(\suc{k}))\in s$ and $(k,s(k))\in s$
+                Thus $t(k + 1) = c((t(k),g(k + 1)))$ and $t(k + 1)\subseteq t(k)$.
+            \caseOf{$k\neq n$.}
+                $k < n$.
+                $k\leq n$ and $k + 1\leq n$ by \cref{real_lt_imp_leq,natural_successor_leq}.
+                Hence $k\in I$ and $k + 1\in I$ by \cref{naturals_closed_successor,subseteq}.
+                $k\in\dom{s}$ and $k + 1\in\dom{s}$.
+                $(k + 1,s(k + 1))\in s$ and $(k,s(k))\in s$
                     by \cref{function_apply_elim}.
-                Therefore $(\suc{k},s(\suc{k}))\in t$ and $(k,s(k))\in t$ by \cref{union_intro_left}.
-                Thus $t(\suc{k}) = s(\suc{k})$ and $t(k) = s(k)$ by \cref{function_apply_intro}.
-                We have $t(\suc{k}) = c((t(k),g(\suc{k})))$ and $t(\suc{k})\subseteq t(k)$
+                Therefore $(k + 1,s(k + 1))\in t$ and $(k,s(k))\in t$ by \cref{union_intro_left}.
+                Thus $t(k + 1) = s(k + 1)$ and $t(k) = s(k)$ by \cref{function_apply_intro}.
+                We have $t(k + 1) = c((t(k),g(k + 1)))$ and $t(k + 1)\subseteq t(k)$
                     by \cref{shrinking_sequence_upto}.
             \end{byCase}
         \end{subproof}
-        Therefore $t$ is a shrinking sequence up to $\suc{n}$ for $g$ and $c$ in $X$ with respect to $T$
+        Therefore $t$ is a shrinking sequence up to $n + 1$ for $g$ and $c$ in $X$ with respect to $T$
             by \cref{shrinking_sequence_upto}.
-        Thus $\suc{n}\in A$ by \cref{num_naturals_inductive_set,subseteq}.
+        Thus $n + 1\in A$ by \cref{naturals_closed_successor,subseteq}.
     \end{subproof}
-    Hence $A$ is an inductive set.
-    Therefore $\naturals\subseteq A$ by \cref{num_naturals_smallest_inductive_set}.
+    $0 + 1 = 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+    Hence $1\in A$.
+    $A\subseteq\naturals$ by \cref{subseteq}.
+    Therefore $A\subseteq\reals$ by \cref{naturals_subseteq_reals,subseteq_transitive}.
+    $\naturalsPlus\subseteq A$ by \cref{real_naturals_smallest}.
+    Show that for all $n\in\naturals$ we have $n\in A$.
+    \begin{subproof}
+        Fix $n\in\naturals$.
+        $n\in\naturalsPlus$ or $n\in\{0\}$ by \cref{naturals,union_iff}.
+        Thus $n\in A$ by \cref{subseteq,singleton_iff}.
+    \end{subproof}
+    Therefore $\naturals\subseteq A$ by \cref{subseteq}.
     Hence $m\in A$ by \cref{subseteq}.
     Thus there exists $s$ such that $s$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{subseteq}.
 \end{proof}
@@ -20289,93 +20257,72 @@ from §27 Item 6: Lebesgue number lemma
 % from §27 helper lemma 19: restriction of a shrinking sequence
 \begin{lemma}\label{shrinking_sequence_restriction}
     Suppose $s$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$.
-    Suppose $n\in m$ or $n = m$.
-    Then $\restrl{s}{\suc{n}}$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$.
+    Suppose $n\in\naturals$.
+    Suppose $n\leq m$.
+    Let $I = \{k\in\naturals \mid k\leq n\}$.
+    Then $\restrl{s}{I}$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$.
 \end{lemma}
 \begin{proof}
-    We have $m\in\naturals$ and $s$ is a function on $\suc{m}$ and
-        $s(\emptyset) = c((X,g(\emptyset)))$ and
-        for all $k\in\suc{m}$ we have
-            $s(k)$ is open in $X$ with respect to $T$ and
-            $s(k)\neq\emptyset$ and
-            $g(k)\notin\closure{s(k)}{X}{T}$ and
-        for all $k\in m$ we have
-            $s(\suc{k}) = c((s(k),g(\suc{k})))$ and
-            $s(\suc{k})\subseteq s(k)$ by \cref{shrinking_sequence_upto}.
-    Hence $\dom{s} = \suc{m}$ by definition.
-    Show that $n\in\naturals$ and $n\subseteq m$ and $\suc{n}\subseteq\suc{m}$.
+    $m\in\naturals$ by \cref{shrinking_sequence_upto}.
+    Let $J = \{k\in\naturals \mid k\leq m\}$.
+    $s$ is a function by \cref{shrinking_sequence_upto}.
+    For all $k$ we have $k\in\dom{s}$ iff $k\in J$ by \cref{shrinking_sequence_upto}.
+    Hence $\dom{s} = J$ by \cref{setext}.
+    Show that $I\subseteq J$.
     \begin{subproof}
-        \begin{byCase}
-        \caseOf{$n\in m$.}
-            $n\in\naturals$ by \cref{natural_subseteq_naturals,subseteq}.
-            Hence $n\subseteq m$ by \cref{natural_elem_implies_subseteq}.
-            Thus $\suc{n}\subseteq m$ by \cref{suc_subseteq_intro}.
-            We have $m\subseteq\suc{m}$ by \cref{suc,suc_intro_in,subseteq}.
-            Therefore $\suc{n}\subseteq\suc{m}$ by \cref{subseteq_transitive}.
-        \caseOf{$n = m$.}
-            $n\in\naturals$.
-            Hence $n\subseteq m$ by \cref{subseteq_refl}.
-            Thus $\suc{n}\subseteq\suc{m}$ by \cref{subseteq_refl}.
-        \end{byCase}
+        Show that for all $k\in I$ we have $k\in J$.
+        \begin{subproof}
+            Fix $k\in I$.
+            $k\in\naturals$ and $k\leq n$ by \cref{subseteq}.
+            Hence $k\leq m$ by
+                \cref{naturals_subseteq_reals,subseteq,real_leq_trans}.
+        \end{subproof}
+        Follows by \cref{subseteq}.
     \end{subproof}
-    Let $t = \restrl{s}{\suc{n}}$.
+    Let $t = \restrl{s}{I}$.
     $t$ is a function by \cref{restrl_of_function_is_function}.
-    We have $\dom{t} = \dom{s}\inter\suc{n}$ by \cref{dom_of_restrl_eq_inter}.
-    Hence $\dom{t} = \suc{n}$ by \cref{inter_absorb_supseteq_left}.
-    Show that $t$ is a function on $\suc{n}$.
+    We have $\dom{t} = \dom{s}\inter I$ by \cref{dom_of_restrl_eq_inter}.
+    Hence $\dom{t} = I$ by \cref{inter_absorb_supseteq_left}.
+    Show that $t$ is a function on $I$.
     \begin{subproof}
         Trivial.
     \end{subproof}
-    Show that $t(\emptyset) = c((X,g(\emptyset)))$.
+    Show that $t(0) = c((X,g(0)))$.
     \begin{subproof}
-        $\emptyset\in n$ or $n\in\emptyset$ or $\emptyset = n$
-            by \cref{natural_comparability,num_emptyset_in_naturals}.
-        Hence $\emptyset\in n$ or $\emptyset = n$ by \cref{emptyset}.
-        $\emptyset\in\suc{n}$ by \cref{suc_iff}.
-        We have $\emptyset\in\dom{t}$ and $\emptyset\in\dom{s}$.
-        Thus $t(\emptyset) = s(\emptyset)$ by \cref{restrl_of_function_apply}.
-        Therefore $t(\emptyset) = c((X,g(\emptyset)))$ by \cref{shrinking_sequence_upto}.
+        $0\leq n$ by \cref{natural_nonnegative}.
+        Hence $0\in I$ by \cref{zero_in_naturals,subseteq}.
+        We have $0\in\dom{t}$ and $0\in\dom{s}$.
+        Thus $t(0) = s(0)$ by \cref{restrl_of_function_apply}.
+        Therefore $t(0) = c((X,g(0)))$ by \cref{shrinking_sequence_upto}.
     \end{subproof}
-    Show that for all $k\in\suc{n}$ we have
+    Show that for all $k\in\naturals$ such that $k\leq n$ we have
         $t(k)$ is open in $X$ with respect to $T$ and
         $t(k)\neq\emptyset$ and
         $g(k)\notin\closure{t(k)}{X}{T}$.
     \begin{subproof}
-        Fix $k\in\suc{n}$.
+        Fix $k$ such that $k\in\naturals$ and $k\leq n$.
+        $k\in I$ and $k\in J$ by \cref{subseteq}.
         We have $k\in\dom{t}$ and $k\in\dom{s}$.
         Hence $t(k) = s(k)$ by \cref{restrl_of_function_apply}.
         Therefore $t(k)$ is open in $X$ with respect to $T$ and
             $t(k)\neq\emptyset$ and
             $g(k)\notin\closure{t(k)}{X}{T}$ by \cref{shrinking_sequence_upto}.
     \end{subproof}
-    Show that for all $k\in n$ we have
-        $t(\suc{k}) = c((t(k),g(\suc{k})))$ and
-        $t(\suc{k})\subseteq t(k)$.
+    Show that for all $k\in\naturals$ such that $k < n$ we have
+        $t(k + 1) = c((t(k),g(k + 1)))$ and
+        $t(k + 1)\subseteq t(k)$.
     \begin{subproof}
-        Fix $k\in n$.
-        $k\in\suc{n}$ by \cref{suc_intro_in}.
-        $k\in\naturals$ by \cref{natural_subseteq_naturals,subseteq}.
-        Hence $\suc{k}\in\naturals$ by \cref{num_naturals_inductive_set}.
-        $\suc{k}\in n$ or $n\in\suc{k}$ or $\suc{k} = n$ by \cref{natural_comparability}.
-        Show that it is wrong that $n\in\suc{k}$.
-        \begin{subproof}
-            Suppose not.
-            $n\in k$ or $n = k$ by \cref{suc_iff}.
-            \begin{byCase}
-            \caseOf{$n\in k$.}
-                Contradiction by \cref{in_asymmetric}.
-            \caseOf{$n = k$.}
-                $k\in k$.
-                Contradiction by \cref{in_irrefl}.
-            \end{byCase}
-        \end{subproof}
-        Hence $\suc{k}\in n$ or $\suc{k} = n$.
-        $\suc{k}\in\suc{n}$ by \cref{suc_iff}.
-        Therefore $k\in\dom{t}$ and $\suc{k}\in\dom{t}$.
-        Thus $k\in\dom{s}$ and $\suc{k}\in\dom{s}$.
-        $k\in m$ by \cref{subseteq}.
-        Therefore $t(k) = s(k)$ and $t(\suc{k}) = s(\suc{k})$ by \cref{restrl_of_function_apply}.
-        We have $t(\suc{k}) = c((t(k),g(\suc{k})))$ and $t(\suc{k})\subseteq t(k)$
+        Fix $k$ such that $k\in\naturals$ and $k < n$.
+        $k\leq n$ and $k + 1\leq n$ by \cref{real_lt_imp_leq,natural_successor_leq}.
+        Hence $k\in I$ and $k + 1\in I$ by \cref{naturals_closed_successor,subseteq}.
+        Thus $k\in J$ and $k + 1\in J$ by \cref{subseteq}.
+        Therefore $k\in\dom{t}$ and $k + 1\in\dom{t}$.
+        Thus $k\in\dom{s}$ and $k + 1\in\dom{s}$.
+        $n < m$ or $n = m$ by \cref{real_leq_split}.
+        Hence $k < m$ by
+            \cref{naturals_subseteq_reals,subseteq,real_lt_trans,real_lt_subst_right}.
+        Therefore $t(k) = s(k)$ and $t(k + 1) = s(k + 1)$ by \cref{restrl_of_function_apply}.
+        We have $t(k + 1) = c((t(k),g(k + 1)))$ and $t(k + 1)\subseteq t(k)$
             by \cref{shrinking_sequence_upto}.
     \end{subproof}
     Therefore $t$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$
@@ -20394,28 +20341,33 @@ from §27 Item 6: Lebesgue number lemma
         $t_0$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$
         we have $s_0 = t_0$}\}$.
     $A\subseteq\naturals$ by \cref{subseteq}.
-    Show that $\emptyset\in A$.
+    Show that $0\in A$.
     \begin{subproof}
         Show that for all $s_0,t_0$ such that
-            $s_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$ and
-            $t_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$
+            $s_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$ and
+            $t_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$
         we have $s_0 = t_0$.
         \begin{subproof}
             Fix $s_0$.
             Fix $t_0$.
-            Assume $s_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $t_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$.
-            We have $s_0$ is a function on $\suc{\emptyset}$ and
-                $s_0(\emptyset) = c((X,g(\emptyset)))$ by \cref{shrinking_sequence_upto}.
-            $t_0$ is a function on $\suc{\emptyset}$ and
-                $t_0(\emptyset) = c((X,g(\emptyset)))$ by \cref{shrinking_sequence_upto}.
-            Hence $\dom{s_0} = \suc{\emptyset}$ and $\dom{t_0} = \suc{\emptyset}$ by definition.
+            Assume $s_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$ and
+                $t_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$.
+            Let $I = \{k\in\naturals \mid k\leq 0\}$.
+            $s_0$ is a function by \cref{shrinking_sequence_upto}.
+            For all $k$ we have $k\in\dom{s_0}$ iff $k\in I$ by \cref{shrinking_sequence_upto}.
+            Hence $\dom{s_0} = I$ by \cref{setext}.
+            $s_0(0) = c((X,g(0)))$ by \cref{shrinking_sequence_upto}.
+            $t_0$ is a function by \cref{shrinking_sequence_upto}.
+            For all $k$ we have $k\in\dom{t_0}$ iff $k\in I$ by \cref{shrinking_sequence_upto}.
+            Hence $\dom{t_0} = I$ by \cref{setext}.
+            $t_0(0) = c((X,g(0)))$ by \cref{shrinking_sequence_upto}.
+            For all $k$ we have $k\in I$ iff $k\in\{0\}$ by \cref{natural_segment_zero}.
+            Hence $I = \{0\}$ by \cref{setext}.
             Show that for all $x$ such that $x\in\dom{s_0}$ we have $s_0(x) = t_0(x)$.
             \begin{subproof}
                 Fix $x$ such that $x\in\dom{s_0}$.
-                $x\in\emptyset$ or $x = \emptyset$ by \cref{suc_iff}.
-                Hence $x = \emptyset$ by \cref{emptyset}.
-                Thus $s_0(x) = c((X,g(\emptyset)))$ and $t_0(x) = c((X,g(\emptyset)))$
+                $x = 0$ by \cref{singleton_iff}.
+                Thus $s_0(x) = c((X,g(0)))$ and $t_0(x) = c((X,g(0)))$
                     by \cref{shrinking_sequence_upto}.
             \end{subproof}
             Show that $s_0\subseteq t_0$.
@@ -20436,54 +20388,78 @@ from §27 Item 6: Lebesgue number lemma
             \end{subproof}
             Therefore $s_0 = t_0$ by \cref{subseteq_antisymmetric}.
         \end{subproof}
-        Hence $\emptyset\in A$ by \cref{num_emptyset_in_naturals}.
+        Hence $0\in A$ by \cref{zero_in_naturals}.
     \end{subproof}
-    Show that for all $m\in A$ we have $\suc{m}\in A$.
+    Show that for all $m\in A$ we have $m + 1\in A$.
     \begin{subproof}
         Fix $m\in A$.
         $m\in\naturals$ by \cref{subseteq}.
         Show that for all $s_0,t_0$ such that
-            $s_0$ is a shrinking sequence up to $\suc{m}$ for $g$ and $c$ in $X$ with respect to $T$ and
-            $t_0$ is a shrinking sequence up to $\suc{m}$ for $g$ and $c$ in $X$ with respect to $T$
+            $s_0$ is a shrinking sequence up to $m + 1$ for $g$ and $c$ in $X$ with respect to $T$ and
+            $t_0$ is a shrinking sequence up to $m + 1$ for $g$ and $c$ in $X$ with respect to $T$
         we have $s_0 = t_0$.
         \begin{subproof}
             Fix $s_0$.
             Fix $t_0$.
-            Assume $s_0$ is a shrinking sequence up to $\suc{m}$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $t_0$ is a shrinking sequence up to $\suc{m}$ for $g$ and $c$ in $X$ with respect to $T$.
-            Let $s_1 = \restrl{s_0}{\suc{m}}$.
-            Let $t_1 = \restrl{t_0}{\suc{m}}$.
-            We have $s_1$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $t_1$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$
-                by \cref{shrinking_sequence_restriction,suc_intro_self}.
+            Assume $s_0$ is a shrinking sequence up to $m + 1$ for $g$ and $c$ in $X$ with respect to $T$ and
+                $t_0$ is a shrinking sequence up to $m + 1$ for $g$ and $c$ in $X$ with respect to $T$.
+            Let $I = \{k\in\naturals \mid k\leq m\}$.
+            Let $J = \{k\in\naturals \mid k\leq m + 1\}$.
+            Let $s_1 = \restrl{s_0}{I}$.
+            Let $t_1 = \restrl{t_0}{I}$.
+            $m\leq m + 1$ by \cref{natural_lt_successor,real_lt_imp_leq}.
+            $s_1$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$
+                by \cref{shrinking_sequence_restriction}.
+            $t_1$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$
+                by \cref{shrinking_sequence_restriction}.
             Hence $s_1 = t_1$ by \cref{subseteq}.
-            $s_0$ is a function on $\suc{\suc{m}}$ by \cref{shrinking_sequence_upto}.
-            $t_0$ is a function on $\suc{\suc{m}}$ by \cref{shrinking_sequence_upto}.
-            Hence $\dom{s_0} = \suc{\suc{m}}$ and $\dom{t_0} = \suc{\suc{m}}$ by definition.
-            $\suc{m}\subseteq\suc{\suc{m}}$ by \cref{subseteq_self_suc_intro}.
-            Hence $\suc{m}\subseteq\dom{s_0}$ and $\suc{m}\subseteq\dom{t_0}$ by \cref{subseteq}.
-            We have $\dom{s_1} = \dom{s_0}\inter\suc{m}$ and $\dom{t_1} = \dom{t_0}\inter\suc{m}$
-                by \cref{dom_of_restrl_eq_inter}.
-            Hence $\dom{s_1} = \suc{m}$ and $\dom{t_1} = \suc{m}$ by \cref{inter_absorb_supseteq_left}.
+            $s_0$ is a function by \cref{shrinking_sequence_upto}.
+            For all $x$ we have $x\in\dom{s_0}$ iff $x\in J$ by \cref{shrinking_sequence_upto}.
+            Hence $\dom{s_0} = J$ by \cref{setext}.
+            $t_0$ is a function by \cref{shrinking_sequence_upto}.
+            For all $x$ we have $x\in\dom{t_0}$ iff $x\in J$ by \cref{shrinking_sequence_upto}.
+            Hence $\dom{t_0} = J$ by \cref{setext}.
+            $s_1$ is a function by \cref{shrinking_sequence_upto}.
+            For all $x$ we have $x\in\dom{s_1}$ iff $x\in I$ by \cref{shrinking_sequence_upto}.
+            Hence $\dom{s_1} = I$ by \cref{setext}.
+            $t_1$ is a function by \cref{shrinking_sequence_upto}.
+            For all $x$ we have $x\in\dom{t_1}$ iff $x\in I$ by \cref{shrinking_sequence_upto}.
+            Hence $\dom{t_1} = I$ by \cref{setext}.
+            Show that $I\subseteq J$.
+            \begin{subproof}
+                Show that for all $x\in I$ we have $x\in J$.
+                \begin{subproof}
+                    Fix $x\in I$.
+                    $x\in\naturals$ and $x\leq m$ by \cref{subseteq}.
+                    Hence $x\leq m + 1$ by
+                        \cref{naturals_subseteq_reals,naturals_closed_successor,subseteq,real_leq_trans}.
+                \end{subproof}
+                Follows by \cref{subseteq}.
+            \end{subproof}
             Show that for all $x$ such that $x\in\dom{s_0}$ we have $s_0(x) = t_0(x)$.
             \begin{subproof}
                 Fix $x$ such that $x\in\dom{s_0}$.
-                $x\in\suc{m}$ or $x = \suc{m}$ by \cref{suc_iff}.
+                $x\in\naturals$ and $x\leq m + 1$ by \cref{subseteq}.
+                $x\leq m$ or $x = m + 1$ by \cref{natural_leq_successor_split}.
                 \begin{byCase}
-                \caseOf{$x\in\suc{m}$.}
-                    Hence $x\in\dom{s_1}$ and $x\in\dom{t_1}$ by \cref{subseteq}.
+                \caseOf{$x\leq m$.}
+                    Hence $x\in I$ by \cref{subseteq}.
+                    Thus $x\in\dom{s_1}$ and $x\in\dom{t_1}$.
                     Hence $s_0(x) = s_1(x)$ and $t_0(x) = t_1(x)$ by \cref{restrl_of_function_apply}.
                     Thus $s_1(x) = t_1(x)$.
                     Therefore $s_0(x) = t_0(x)$.
-                \caseOf{$x = \suc{m}$.}
-                    $m\in\suc{m}$ by \cref{suc_intro_self}.
-                    Hence $m\in\dom{s_1}$ and $m\in\dom{t_1}$ by \cref{subseteq}.
+                \caseOf{$x\not\leq m$.}
+                    $x = m + 1$.
+                    $m\in I$.
+                    Hence $m\in\dom{s_1}$ and $m\in\dom{t_1}$.
                     Therefore $s_0(m) = s_1(m)$ and $t_0(m) = t_1(m)$ by \cref{restrl_of_function_apply}.
                     Thus $s_0(m) = t_0(m)$.
-                    Therefore $s_0(\suc{m}) = c((s_0(m),g(\suc{m})))$ by \cref{shrinking_sequence_upto}.
-                    Hence $t_0(\suc{m}) = c((t_0(m),g(\suc{m})))$ by \cref{shrinking_sequence_upto}.
-                    $s_0(x) = c((s_0(m),g(\suc{m})))$ and
-                        $t_0(x) = c((t_0(m),g(\suc{m})))$.
+                    Therefore $s_0(m + 1) = c((s_0(m),g(m + 1)))$ by
+                        \cref{shrinking_sequence_upto,natural_lt_successor}.
+                    Hence $t_0(m + 1) = c((t_0(m),g(m + 1)))$ by
+                        \cref{shrinking_sequence_upto,natural_lt_successor}.
+                    $s_0(x) = c((s_0(m),g(m + 1)))$ and
+                        $t_0(x) = c((t_0(m),g(m + 1)))$.
                     Thus $s_0(x) = t_0(x)$.
                 \end{byCase}
             \end{subproof}
@@ -20505,10 +20481,19 @@ from §27 Item 6: Lebesgue number lemma
             \end{subproof}
             Therefore $s_0 = t_0$ by \cref{subseteq_antisymmetric}.
         \end{subproof}
-        Hence $\suc{m}\in A$ by \cref{num_naturals_inductive_set}.
+        Hence $m + 1\in A$ by \cref{naturals_closed_successor}.
     \end{subproof}
-    Hence $A$ is an inductive set.
-    Therefore $\naturals\subseteq A$ by \cref{num_naturals_smallest_inductive_set}.
+    $0 + 1 = 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+    Hence $1\in A$.
+    $A\subseteq\reals$ by \cref{naturals_subseteq_reals,subseteq_transitive}.
+    $\naturalsPlus\subseteq A$ by \cref{real_naturals_smallest}.
+    Show that for all $m\in\naturals$ we have $m\in A$.
+    \begin{subproof}
+        Fix $m\in\naturals$.
+        $m\in\naturalsPlus$ or $m\in\{0\}$ by \cref{naturals,union_iff}.
+        Thus $m\in A$ by \cref{subseteq,singleton_iff}.
+    \end{subproof}
+    Therefore $\naturals\subseteq A$ by \cref{subseteq}.
     $n\in\naturals$ by \cref{shrinking_sequence_upto}.
     Hence $n\in A$ by \cref{subseteq}.
     Thus $s = t$ by \cref{subseteq}.
@@ -20517,75 +20502,95 @@ from §27 Item 6: Lebesgue number lemma
 % from §27 helper lemma 21: later term of a shrinking sequence lies in every earlier stage
 \begin{lemma}\label{shrinking_sequence_terms_nested}
     Suppose $s$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$.
-    Suppose $n\in\suc{m}$.
+    Suppose $n\in\naturals$.
+    Suppose $n\leq m$.
     Then $s(m)\subseteq s(n)$.
 \end{lemma}
 \begin{proof}
     Let $A = \{k\in\naturals \mid \text{for all $s_0,n_0$ we have
         if $s_0$ is a shrinking sequence up to $k$ for $g$ and $c$ in $X$ with respect to $T$ and
-            $n_0\in\suc{k}$
+            $n_0\in\naturals$ and $n_0\leq k$
         then $s_0(k)\subseteq s_0(n_0)$}\}$.
     $A\subseteq\naturals$ by \cref{subseteq}.
-    Show that $\emptyset\in A$.
+    Show that $0\in A$.
     \begin{subproof}
         Show that for all $s_0,n_0$ we have
-            if $s_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $n_0\in\suc{\emptyset}$
-            then $s_0(\emptyset)\subseteq s_0(n_0)$.
+            if $s_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$ and
+                $n_0\in\naturals$ and $n_0\leq 0$
+            then $s_0(0)\subseteq s_0(n_0)$.
         \begin{subproof}
             Fix $s_0$.
             Fix $n_0$.
-            Assume $s_0$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $n_0\in\suc{\emptyset}$.
-            $n_0\in\emptyset$ or $n_0 = \emptyset$ by \cref{suc_iff}.
-            Hence $n_0 = \emptyset$ by \cref{emptyset}.
-            Thus $s_0(\emptyset)\subseteq s_0(n_0)$ by \cref{subseteq_refl}.
+            Assume $s_0$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$ and
+                $n_0\in\naturals$ and $n_0\leq 0$.
+            $0\leq n_0$ by \cref{natural_nonnegative}.
+            Hence $n_0 = 0$ by
+                \cref{naturals_subseteq_reals,subseteq,real_add_ident,real_leq_antisym}.
+            Thus $s_0(0)\subseteq s_0(n_0)$ by \cref{subseteq_refl}.
         \end{subproof}
-        Hence $\emptyset\in A$ by \cref{num_emptyset_in_naturals}.
+        Hence $0\in A$ by \cref{zero_in_naturals}.
     \end{subproof}
-    Show that for all $k\in A$ we have $\suc{k}\in A$.
+    Show that for all $k\in A$ we have $k + 1\in A$.
     \begin{subproof}
         Fix $k\in A$.
         $k\in\naturals$ by \cref{subseteq}.
         Show that for all $s_0,n_0$ we have
-            if $s_0$ is a shrinking sequence up to $\suc{k}$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $n_0\in\suc{\suc{k}}$
-            then $s_0(\suc{k})\subseteq s_0(n_0)$.
+            if $s_0$ is a shrinking sequence up to $k + 1$ for $g$ and $c$ in $X$ with respect to $T$ and
+                $n_0\in\naturals$ and $n_0\leq k + 1$
+            then $s_0(k + 1)\subseteq s_0(n_0)$.
         \begin{subproof}
             Fix $s_0$.
             Fix $n_0$.
-            Assume $s_0$ is a shrinking sequence up to $\suc{k}$ for $g$ and $c$ in $X$ with respect to $T$ and
-                $n_0\in\suc{\suc{k}}$.
-            $n_0\in\suc{k}$ or $n_0 = \suc{k}$ by \cref{suc_iff}.
+            Assume $s_0$ is a shrinking sequence up to $k + 1$ for $g$ and $c$ in $X$ with respect to $T$ and
+                $n_0\in\naturals$ and $n_0\leq k + 1$.
+            $n_0\leq k$ or $n_0 = k + 1$ by \cref{natural_leq_successor_split}.
             \begin{byCase}
-            \caseOf{$n_0 = \suc{k}$.}
-                Thus $s_0(\suc{k})\subseteq s_0(n_0)$ by \cref{subseteq_refl}.
-            \caseOf{$n_0\in\suc{k}$.}
-                We have $s_0$ is a function on $\suc{\suc{k}}$ and
-                    $s_0(\suc{k})\subseteq s_0(k)$ by \cref{shrinking_sequence_upto,suc_intro_self}.
-                Hence $\dom{s_0} = \suc{\suc{k}}$ by definition.
-                $\suc{k}\subseteq\suc{\suc{k}}$ by \cref{subseteq_self_suc_intro}.
-                Hence $\suc{k}\subseteq\dom{s_0}$ by \cref{subseteq}.
-                Let $t_0 = \restrl{s_0}{\suc{k}}$.
+            \caseOf{$n_0 = k + 1$.}
+                Thus $s_0(k + 1)\subseteq s_0(n_0)$ by \cref{subseteq_refl}.
+            \caseOf{$n_0\neq k + 1$.}
+                $n_0\leq k$.
+                $s_0(k + 1)\subseteq s_0(k)$ by
+                    \cref{shrinking_sequence_upto,natural_lt_successor}.
+                Let $I = \{i\in\naturals \mid i\leq k\}$.
+                Let $J = \{i\in\naturals \mid i\leq k + 1\}$.
+                $s_0$ is a function by \cref{shrinking_sequence_upto}.
+                For all $i$ we have $i\in\dom{s_0}$ iff $i\in J$ by \cref{shrinking_sequence_upto}.
+                Hence $\dom{s_0} = J$ by \cref{setext}.
+                Show that $I\subseteq J$.
+                \begin{subproof}
+                    Show that for all $i\in I$ we have $i\in J$.
+                    \begin{subproof}
+                        Fix $i\in I$.
+                        $i\in\naturals$ and $i\leq k$ by \cref{subseteq}.
+                        Hence $i\leq k + 1$ by
+                            \cref{naturals_subseteq_reals,naturals_closed_successor,subseteq,natural_lt_successor,real_lt_imp_leq,real_leq_trans}.
+                    \end{subproof}
+                    Follows by \cref{subseteq}.
+                \end{subproof}
+                Hence $I\subseteq\dom{s_0}$ by \cref{subseteq}.
+                Let $t_0 = \restrl{s_0}{I}$.
                 $t_0$ is a shrinking sequence up to $k$ for $g$ and $c$ in $X$ with respect to $T$
-                    by \cref{shrinking_sequence_restriction,suc_intro_self}.
-                \begin{byCase}
-                \caseOf{$n_0 = k$.}
-                    Thus $s_0(\suc{k})\subseteq s_0(n_0)$ by \cref{shrinking_sequence_upto,suc_intro_self}.
-                \caseOf{$n_0\in k$.}
-                    Hence $t_0(k)\subseteq t_0(n_0)$ by \cref{subseteq}.
-                    $k\in\suc{k}$ by \cref{suc_intro_self}.
-                    Therefore $n_0\in\suc{k}$ by \cref{suc_intro_in}.
-                    Thus $t_0(k) = s_0(k)$ and $t_0(n_0) = s_0(n_0)$ by \cref{restrl_of_function_apply}.
-                    We have $s_0(k)\subseteq s_0(n_0)$ by \cref{subseteq}.
-                    Therefore $s_0(\suc{k})\subseteq s_0(n_0)$ by \cref{subseteq_transitive}.
-                \end{byCase}
+                    by \cref{shrinking_sequence_restriction,natural_lt_successor,real_lt_imp_leq}.
+                Hence $t_0(k)\subseteq t_0(n_0)$ by \cref{subseteq}.
+                $k\in I$ and $n_0\in I$ by \cref{subseteq}.
+                Thus $t_0(k) = s_0(k)$ and $t_0(n_0) = s_0(n_0)$ by \cref{restrl_of_function_apply}.
+                We have $s_0(k)\subseteq s_0(n_0)$ by \cref{subseteq}.
+                Therefore $s_0(k + 1)\subseteq s_0(n_0)$ by \cref{subseteq_transitive}.
             \end{byCase}
         \end{subproof}
-        Hence $\suc{k}\in A$ by \cref{num_naturals_inductive_set}.
+        Hence $k + 1\in A$ by \cref{naturals_closed_successor}.
     \end{subproof}
-    Hence $A$ is an inductive set.
-    Therefore $\naturals\subseteq A$ by \cref{num_naturals_smallest_inductive_set}.
+    $0 + 1 = 1$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_ident}.
+    Hence $1\in A$.
+    $A\subseteq\reals$ by \cref{naturals_subseteq_reals,subseteq_transitive}.
+    $\naturalsPlus\subseteq A$ by \cref{real_naturals_smallest}.
+    Show that for all $k\in\naturals$ we have $k\in A$.
+    \begin{subproof}
+        Fix $k\in\naturals$.
+        $k\in\naturalsPlus$ or $k\in\{0\}$ by \cref{naturals,union_iff}.
+        Thus $k\in A$ by \cref{subseteq,singleton_iff}.
+    \end{subproof}
+    Therefore $\naturals\subseteq A$ by \cref{subseteq}.
     $m\in\naturals$ by \cref{shrinking_sequence_upto}.
     Hence $m\in A$ by \cref{subseteq}.
     Thus $s(m)\subseteq s(n)$ by \cref{subseteq}.
@@ -20688,16 +20693,16 @@ from §27 Item 6: Lebesgue number lemma
     \begin{subproof}
         Show that $C$ is inhabited.
         \begin{subproof}
-            $\emptyset\in\naturals$ by \cref{num_emptyset_in_naturals}.
-            Take $s$ such that $s$ is a shrinking sequence up to $\emptyset$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{subseteq}.
-            Let $A_0 = \closure{s(\emptyset)}{X}{T}$.
-            $\emptyset\in\suc{\emptyset}$ by \cref{suc_intro_self}.
-            Hence $s(\emptyset)$ is open in $X$ with respect to $T$ by \cref{shrinking_sequence_upto}.
-            Therefore $s(\emptyset)\subseteq X$ by \cref{open_in,topology_on,subseteq,pow_iff}.
+            $0\in\naturals$ by \cref{zero_in_naturals}.
+            Take $s$ such that $s$ is a shrinking sequence up to $0$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{subseteq}.
+            Let $A_0 = \closure{s(0)}{X}{T}$.
+            $0\leq 0$.
+            Hence $s(0)$ is open in $X$ with respect to $T$ by \cref{shrinking_sequence_upto}.
+            Therefore $s(0)\subseteq X$ by \cref{open_in,topology_on,subseteq,pow_iff}.
             Thus $A_0$ is closed in $X$ with respect to $T$ by \cref{closure_closed_in}.
             Therefore $A_0\subseteq X$ by \cref{closed_in}.
             Thus $A_0\in\pow{X}$ by \cref{powerset_intro}.
-            $A_0\in C$ by \cref{subseteq,num_emptyset_in_naturals}.
+            $A_0\in C$ by \cref{subseteq,zero_in_naturals}.
             Therefore $C$ is inhabited.
         \end{subproof}
         Show that for all $F$ such that $F\subseteq C$ and $F$ is finite and inhabited we have $\inters{F}\neq\emptyset$.
@@ -20727,10 +20732,10 @@ from §27 Item 6: Lebesgue number lemma
             Let $N = \img{h}{F}$.
             We have $N\subseteq\naturals$ and $N$ is finite and $N$ is inhabited
                 by \cref{img_iff,function_apply_iff,pair_eq_iff,subseteq,finite_image_function,nonempty_inhabited,function_apply_elim}.
-            Take $m\in N$ such that for all $a\in N$ we have $a\in m$ or $a = m$
+            Take $m\in N$ such that for all $a\in N$ we have $a\leq m$
                 by \cref{finite_inhabited_naturals_largest}.
             Take $u$ such that $u$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{subseteq}.
-            $m\in\suc{m}$ by \cref{suc_intro_self}.
+            $m\leq m$.
             Hence $u(m)\neq\emptyset$ by \cref{shrinking_sequence_upto}.
             Take $y$ such that $y\in u(m)$ by \cref{nonempty_inhabited}.
             Show that $y\in\inters{F}$.
@@ -20741,40 +20746,42 @@ from §27 Item 6: Lebesgue number lemma
                     $A\mathrel{R_0}h(A)$ by \cref{function_apply_iff}.
                     Hence $(A,h(A))\in R_0$ by \cref{relation}.
                     $h(A)\in N$ by \cref{function_apply_elim,img_iff}.
-                    Therefore $h(A)\in m$ or $h(A) = m$ by \cref{subseteq}.
-                    Hence $h(A)\in\suc{m}$ by \cref{suc_iff}.
+                    Therefore $h(A)\leq m$ by \cref{subseteq}.
+                    $h(A)\in\naturals$ by \cref{subseteq}.
                     Take $A_1,n_1,s_A$ such that $A_1\in F$ and $n_1\in\naturals$ and
                         $(A,h(A)) = (A_1,n_1)$ and
                         $s_A$ is a shrinking sequence up to $n_1$ for $g$ and $c$ in $X$ with respect to $T$ and
                         $A_1 = \closure{s_A(n_1)}{X}{T}$ by \cref{subseteq}.
                     $A = A_1$ and $h(A) = n_1$ by \cref{pair_eq_iff}.
-                    Let $v = \restrl{u}{\suc{h(A)}}$.
+                    Let $I_A = \{i\in\naturals \mid i\leq h(A)\}$.
+                    Let $v = \restrl{u}{I_A}$.
                     $v$ is a shrinking sequence up to $h(A)$ for $g$ and $c$ in $X$ with respect to $T$
                         by \cref{shrinking_sequence_restriction}.
                     Hence $v = s_A$ by \cref{shrinking_sequence_unique}.
                     Therefore $u(m)\subseteq u(h(A))$ by \cref{shrinking_sequence_terms_nested}.
                     Thus $y\in u(h(A))$ by \cref{subseteq}.
-                    Show that $\suc{h(A)}\subseteq\dom{u}$.
+                    Show that $I_A\subseteq\dom{u}$.
                     \begin{subproof}
-                        We have $m\in\naturals$ and $u$ is a function on $\suc{m}$ by \cref{shrinking_sequence_upto}.
-                        Hence $\dom{u} = \suc{m}$ by definition.
-                        \begin{byCase}
-                        \caseOf{$h(A)\in m$.}
-                            $h(A)\in\naturals$ by \cref{subseteq}.
-                            Hence $h(A)\subseteq m$ by \cref{natural_elem_implies_subseteq}.
-                            $\suc{h(A)}\subseteq m$ by \cref{suc_subseteq_intro}.
-                            $m\subseteq\suc{m}$ by \cref{subseteq_self_suc_intro}.
-                            Therefore $\suc{h(A)}\subseteq\dom{u}$ by \cref{subseteq_transitive}.
-                        \caseOf{$h(A) = m$.}
-                            Thus $\suc{h(A)}\subseteq\dom{u}$ by \cref{subseteq_refl}.
-                        \end{byCase}
+                        Let $J = \{i\in\naturals \mid i\leq m\}$.
+                        $u$ is a function by \cref{shrinking_sequence_upto}.
+                        For all $i$ we have $i\in\dom{u}$ iff $i\in J$ by \cref{shrinking_sequence_upto}.
+                        Hence $\dom{u} = J$ by \cref{setext}.
+                        Show that for all $i\in I_A$ we have $i\in\dom{u}$.
+                        \begin{subproof}
+                            Fix $i\in I_A$.
+                            $i\in\naturals$ and $i\leq h(A)$ by \cref{subseteq}.
+                            Hence $i\leq m$ by
+                                \cref{naturals_subseteq_reals,subseteq,real_leq_trans}.
+                            Thus $i\in J$ by \cref{subseteq}.
+                        \end{subproof}
+                        Follows by \cref{subseteq}.
                     \end{subproof}
                     $u$ is a function by \cref{shrinking_sequence_upto}.
-                    $h(A)\in\suc{h(A)}$ by \cref{suc_intro_self}.
+                    $h(A)\in I_A$.
                     Hence $v(h(A)) = u(h(A))$ by \cref{restrl_of_function_apply}.
                     $u(h(A)) = s_A(h(A))$ by \cref{subseteq}.
                     Therefore $y\in s_A(h(A))$ by \cref{subseteq}.
-                    $h(A)\in\suc{h(A)}$ by \cref{suc_intro_self}.
+                    $h(A)\leq h(A)$.
                     Hence $s_A(h(A))$ is open in $X$ with respect to $T$ by \cref{shrinking_sequence_upto}.
                     Hence $s_A(h(A))\subseteq X$ by \cref{open_in,topology_on,subseteq,pow_iff}.
                     Therefore $y\in\closure{s_A(h(A))}{X}{T}$ by \cref{subseteq_closure,elem_subseteq}.
@@ -20795,7 +20802,7 @@ from §27 Item 6: Lebesgue number lemma
             $A = \closure{s(n)}{X}{T}$ by \cref{subseteq}.
         Take $s$ such that $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$ and
             $A = \closure{s(n)}{X}{T}$.
-        $n\in\suc{n}$ by \cref{suc_intro_self}.
+        $n\leq n$.
         Hence $s(n)$ is open in $X$ with respect to $T$ by \cref{shrinking_sequence_upto}.
         Hence $s(n)\subseteq X$ by \cref{open_in,topology_on,subseteq,pow_iff}.
         Therefore $\closure{s(n)}{X}{T}$ is closed in $X$ with respect to $T$ by \cref{closure_closed_in}.
@@ -20810,7 +20817,7 @@ from §27 Item 6: Lebesgue number lemma
     Take $n\in\naturals$ such that $g(n) = x$ by \cref{surj}.
     Take $s$ such that $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$ by \cref{subseteq}.
     Let $B = \closure{s(n)}{X}{T}$.
-    $n\in\suc{n}$ by \cref{suc_intro_self}.
+    $n\leq n$.
     Hence $s(n)$ is open in $X$ with respect to $T$ by \cref{shrinking_sequence_upto}.
     Therefore $s(n)\subseteq X$ by \cref{open_in,topology_on,subseteq,pow_iff}.
     Thus $B$ is closed in $X$ with respect to $T$ by \cref{closure_closed_in}.
