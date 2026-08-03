@@ -1,5 +1,5 @@
 
-\import{naprochelibrary.tex}
+\import{naprochelibrary_version6k.tex}
 
 \section{§12 Topological Spaces}
 
@@ -73057,7 +73057,7 @@ from §27 Item 6: Lebesgue number lemma
     Fix $y$.
     Assume $x\in\dom{f}$ and $y\in\dom{f}$ and $f(x)=f(y)$.
     Suppose not.
-    Take $n\in\naturalsPlus$ such that $1/n<d((x,y))$ by
+    Take $n\in\naturalsPlus$ such that $1/n < d((x,y))$ by
         \cref{funs,metric_on,metric_zero_characterization,metric_nonnegative,real_leq_split,funs_type_apply,times_tuple_intro,real_small_reciprocal}.
     Contradiction by \cref{funs,real_lt_imp_leq}.
 \end{proof}
@@ -73266,7 +73266,7 @@ from §27 Item 6: Lebesgue number lemma
     Assume for all $i\in\initialSegment{n}$ we have
         $U(i)$ is open in $X$ with respect to $T$ and $U(i)$ is inhabited and
         for all $x,y\in U(i)$ we have
-            $d((x,y))<\epsilon$ and $e((f(x),f(y)))<\delta$.
+            $d((x,y)) < \epsilon$ and $e((f(x),f(y))) < \delta$.
     Then there exist $n_0,U_0$ such that
         $n_0\in\naturalsPlus$ and
         $U_0$ is a bijection from $\initialSegment{n_0}$ to
@@ -73276,7 +73276,7 @@ from §27 Item 6: Lebesgue number lemma
         for all $i\in\initialSegment{n_0}$ we have
             $U_0(i)$ is open in $X$ with respect to $T$ and $U_0(i)$ is inhabited and
             for all $x,y\in U_0(i)$ we have
-                $d((x,y))<\epsilon$ and $e((f(x),f(y)))<\delta$.
+                $d((x,y)) < \epsilon$ and $e((f(x),f(y))) < \delta$.
 \end{lemma}
 \begin{proof}
     Follows by \cref{subseteq_refl}.
@@ -73787,7 +73787,7 @@ from §27 Item 6: Lebesgue number lemma
 \begin{definition}\label{finite_homogeneous_kernel_property_50}
     $\finiteHomogeneousKernelProperty{m}$ iff
         $m\in\naturalsPlus$ and
-        for all $N\in\naturalsPlus$ such that $m<N$ we have
+        for all $N\in\naturalsPlus$ such that $m < N$ we have
             for all $M\in\funs{\initialSegment{m}}{
                 \realsPower{\initialSegment{N}}}$
             there exists $z$ such that
@@ -73839,7 +73839,7 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 68: one nonzero equation coefficient admits a two-coordinate kernel vector
 \begin{lemma}\label{one_equation_nonzero_last_kernel_50}
     Assume $N\in\naturalsPlus$.
-    Assume $1<N$.
+    Assume $1 < N$.
     Let $I=\initialSegment{N}$.
     Assume $a\in\realsPower{I}$.
     Assume $a(N)\neq 0$.
@@ -73910,7 +73910,7 @@ from §27 Item 6: Lebesgue number lemma
 \end{lemma}
 \begin{proof}
     $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-    Show that for all $N\in\naturalsPlus$ such that $1<N$ we have
+    Show that for all $N\in\naturalsPlus$ such that $1 < N$ we have
         for all $M\in\funs{\initialSegment{1}}{
             \realsPower{\initialSegment{N}}}$
         there exists $z$ such that
@@ -73920,7 +73920,7 @@ from §27 Item 6: Lebesgue number lemma
                 $0$ is the dot product of $M(i)$ and $z$ of length $N$.
     \begin{subproof}
         Fix $N\in\naturalsPlus$.
-        Assume $1<N$.
+        Assume $1 < N$.
         Fix $M\in\funs{\initialSegment{1}}{
             \realsPower{\initialSegment{N}}}$.
         Let $I=\initialSegment{N}$.
@@ -74220,7 +74220,7 @@ from §27 Item 6: Lebesgue number lemma
 \begin{proof}
     $m\in\naturalsPlus$ by
         \cref{finite_homogeneous_kernel_property_50}.
-    It suffices to show that for all $N\in\naturalsPlus$ such that $m+1<N$ we have
+    It suffices to show that for all $N\in\naturalsPlus$ such that $m+1 < N$ we have
         for all $M\in\funs{\initialSegment{m+1}}{
             \realsPower{\initialSegment{N}}}$
         there exists $z$ such that
@@ -74230,7 +74230,7 @@ from §27 Item 6: Lebesgue number lemma
                 $0$ is the dot product of $M(i)$ and $z$ of length $N$
         by \cref{real_naturals_closed_succ,finite_homogeneous_kernel_property_50}.
         Fix $N\in\naturalsPlus$.
-        Assume $m+1<N$.
+        Assume $m+1 < N$.
         Fix $M\in\funs{\initialSegment{m+1}}{
             \realsPower{\initialSegment{N}}}$.
         Let $R=\initialSegment{m+1}$.
@@ -74270,7 +74270,7 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 79: fewer homogeneous equations than variables have a nonzero solution
 \begin{lemma}\label{finite_homogeneous_kernel_50}
     Assume $m,N\in\naturalsPlus$.
-    Assume $m<N$.
+    Assume $m < N$.
     Let $M\in\funs{\initialSegment{m}}{
         \realsPower{\initialSegment{N}}}$.
     Then there exists $z$ such that
@@ -74592,7 +74592,7 @@ from §27 Item 6: Lebesgue number lemma
             $q+d=0$.
 \end{lemma}
 \begin{proof}
-    $n<N+1$ and $N+1\in\naturalsPlus$ by
+    $n < N+1$ and $N+1\in\naturalsPlus$ by
         \cref{real_naturals_subset_reals,subseteq,real_one_in_naturals,real_add_closed,real_naturals_lt_succ_local,real_leq_lt_trans,real_naturals_closed_succ}.
     Let $M=\augmentedAffineMatrix{n}{N}{g}$.
     $M\in\funs{I}{\realsPower{\initialSegment{N+1}}}$ and
@@ -74757,7 +74757,7 @@ from §27 Item 6: Lebesgue number lemma
     Let $E=\realsPower{J}$.
     Assume $j\in J$.
     Assume $y,c\in E$.
-    Assume $t\in\reals$ and $0<t$.
+    Assume $t\in\reals$ and $0 < t$.
     Assume $r$ is the dot product of $y$ and $c$ of length $N$.
     Let $u=\standardAffineFramePoint{N}{j+1}$.
     Let $v=\coordScalarSequence{N}{t}{u}$.
@@ -74956,16 +74956,16 @@ from §27 Item 6: Lebesgue number lemma
     $U\subseteq E$ by
         \cref{topology_on,pow_iff,subseteq}.
     $y\in E$ by \cref{subseteq}.
-    Take $\epsilon\in\reals$ such that $0<\epsilon$ and
+    Take $\epsilon\in\reals$ such that $0 < \epsilon$ and
         $\metricBall{\squareMetric{N}}{E}{y}{\epsilon}\subseteq U$ by
         \cref{metric_open_iff}.
     Let $t=\epsilon/(1+1)$.
-    $t\in\reals$ and $0<t$ and $t+t=\epsilon$ by
+    $t\in\reals$ and $0 < t$ and $t+t=\epsilon$ by
         \cref{real_half_of_positive}.
     $0\in\reals$ by \cref{real_add_ident}.
-    $0+t<t+t$ by \cref{real_lt_add}.
+    $0+t < t+t$ by \cref{real_lt_add}.
     $0+t=t$ by \cref{real_add_ident}.
-    $t<\epsilon$ by
+    $t < \epsilon$ by
         \cref{real_lt_subst_left,real_lt_subst_right}.
     There exists $i\in J$ such that $c(i)\neq 0$ by
         \cref{reals_power,tuple_power,zero_vector_euclidean_50,zero_vector_50,pair_eq_iff,funs_is_function,function_apply_intro,real_lt_subst_right,functions_eq_iff}.
@@ -74980,7 +74980,7 @@ from §27 Item 6: Lebesgue number lemma
         $\apply{\squareMetric{N}}{(y,w)}=t$ and
         $r+(t\rmul c(j))$ is the dot product of $w$ and $c$ of length $N$ by
         \cref{coordinate_perturbation_50}.
-    $\apply{\squareMetric{N}}{(y,w)}<\epsilon$ by
+    $\apply{\squareMetric{N}}{(y,w)} < \epsilon$ by
         \cref{real_lt_subst_left}.
     $w\in\metricBall{\squareMetric{N}}{E}{y}{\epsilon}$ by
         \cref{metric_ball}.
@@ -75183,7 +75183,7 @@ from §27 Item 6: Lebesgue number lemma
     Suppose not.
     $N,n\in\reals$ by
         \cref{real_naturals_subset_reals,subseteq}.
-    $N<n$ by \cref{real_lt_trichotomy}.
+    $N < n$ by \cref{real_lt_trichotomy}.
     $N+1,n\in\reals$ by
         \cref{real_naturals_closed_succ,real_naturals_subset_reals,real_add_closed,real_one_in_naturals,subseteq}.
     $N+1\leq n$ by
@@ -75364,9 +75364,9 @@ from §27 Item 6: Lebesgue number lemma
     Assume $A$ is finite and $A$ is inhabited.
     Assume $A$ is in general position in dimension $N$.
     Assume $x\in E$.
-    Assume $\delta\in\reals$ and $0<\delta$.
+    Assume $\delta\in\reals$ and $0 < \delta$.
     Then there exists $y\in E$ such that
-        $\apply{\squareMetric{N}}{(x,y)}<\delta$ and
+        $\apply{\squareMetric{N}}{(x,y)} < \delta$ and
         $y\notin A$ and
         $A\union\{y\}$ is in general position in dimension $N$.
 \end{lemma}
@@ -75494,7 +75494,7 @@ from §27 Item 6: Lebesgue number lemma
     $y\in U$ and $y\in E\setminus Z$ by \cref{inter}.
     $y\in E$ and $y\notin Z$ by
         \cref{setminus_elim_left,setminus_elim_right}.
-    $\apply{\squareMetric{N}}{(x,y)}<\delta$ by
+    $\apply{\squareMetric{N}}{(x,y)} < \delta$ by
         \cref{metric_ball}.
     $y\notin A$ by
         \cref{singleton_subset_intro,powerset_intro,singleton_intro,singleton_at_most_positive_50,subseteq,axiom_of_choice,fst_eq,snd_eq,singleton_geometrically_independent_50,generator_belongs_to_affine_plane_50,function_apply_elim,img_iff,unions_iff}.
@@ -75560,7 +75560,7 @@ from §27 Item 6: Lebesgue number lemma
         Follows by \cref{general_position_50}.
     \end{subproof}
     Therefore there exists $y_0\in E$ such that
-        $\apply{\squareMetric{N}}{(x,y_0)}<\delta$ and
+        $\apply{\squareMetric{N}}{(x,y_0)} < \delta$ and
         $y_0\notin A$ and
         $A\union\{y_0\}$ is in general position in dimension $N$.
 \end{proof}
@@ -75635,14 +75635,14 @@ from §27 Item 6: Lebesgue number lemma
             $N\in\naturalsPlus$ and
             $x\in\funs{\initialSegment{k}}
                 {\realsPower{\initialSegment{N}}}$ and
-            $\delta\in\reals$ and $0<\delta$
+            $\delta\in\reals$ and $0 < \delta$
         there exists $y$ such that
             $y\in\funs{\initialSegment{k}}
                 {\realsPower{\initialSegment{N}}}$ and
             $\img{y}{\initialSegment{k}}$ is in general position
                 in dimension $N$ and
             for all $i\in\initialSegment{k}$ we have
-                $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$.
+                $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$.
 \end{definition}
 
 % from §50 helper lemma 107: the approximation property starts at length one
@@ -75655,14 +75655,14 @@ from §27 Item 6: Lebesgue number lemma
         $N\in\naturalsPlus$ and
         $x\in\funs{\initialSegment{1}}
             {\realsPower{\initialSegment{N}}}$ and
-        $\delta\in\reals$ and $0<\delta$
+        $\delta\in\reals$ and $0 < \delta$
     there exists $y$ such that
         $y\in\funs{\initialSegment{1}}
             {\realsPower{\initialSegment{N}}}$ and
         $\img{y}{\initialSegment{1}}$ is in general position
             in dimension $N$ and
         for all $i\in\initialSegment{1}$ we have
-            $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$.
+            $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$.
     \begin{subproof}
         Fix $N$.
         Fix $x$.
@@ -75670,7 +75670,7 @@ from §27 Item 6: Lebesgue number lemma
         Assume $N\in\naturalsPlus$ and
             $x\in\funs{\initialSegment{1}}
                 {\realsPower{\initialSegment{N}}}$ and
-            $\delta\in\reals$ and $0<\delta$.
+            $\delta\in\reals$ and $0 < \delta$.
         Let $I=\initialSegment{1}$.
         Let $E=\realsPower{\initialSegment{N}}$.
         Let $y=x$.
@@ -75689,7 +75689,7 @@ from §27 Item 6: Lebesgue number lemma
         $\squareMetric{N}$ is a metric on $E$ by
             \cref{square_metric_is_metric}.
         For all $i\in I$ we have
-            $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$ by
+            $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$ by
             \cref{funs_type_apply,real_lt_subst_right,metric_zero_characterization,metric_on,real_lt_subst_left}.
         Therefore there exists $y_0$ such that
             $y_0\in\funs{\initialSegment{1}}
@@ -75697,7 +75697,7 @@ from §27 Item 6: Lebesgue number lemma
             $\img{y_0}{\initialSegment{1}}$ is in general position
                 in dimension $N$ and
             for all $i\in\initialSegment{1}$ we have
-                $\apply{\squareMetric{N}}{(x(i),y_0(i))}<\delta$.
+                $\apply{\squareMetric{N}}{(x(i),y_0(i))} < \delta$.
     \end{subproof}
     Follows by
         \cref{finite_general_position_approximation_property_50}.
@@ -75717,14 +75717,14 @@ from §27 Item 6: Lebesgue number lemma
         $N\in\naturalsPlus$ and
         $x\in\funs{\initialSegment{k+1}}
             {\realsPower{\initialSegment{N}}}$ and
-        $\delta\in\reals$ and $0<\delta$
+        $\delta\in\reals$ and $0 < \delta$
     there exists $y$ such that
         $y\in\funs{\initialSegment{k+1}}
             {\realsPower{\initialSegment{N}}}$ and
         $\img{y}{\initialSegment{k+1}}$ is in general position
             in dimension $N$ and
         for all $i\in\initialSegment{k+1}$ we have
-            $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$.
+            $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$.
     \begin{subproof}
         Fix $N$.
         Fix $x$.
@@ -75732,7 +75732,7 @@ from §27 Item 6: Lebesgue number lemma
         Assume $N\in\naturalsPlus$ and
             $x\in\funs{\initialSegment{k+1}}
                 {\realsPower{\initialSegment{N}}}$ and
-            $\delta\in\reals$ and $0<\delta$.
+            $\delta\in\reals$ and $0 < \delta$.
         Let $I=\initialSegment{k}$.
         Let $I_1=\initialSegment{k+1}$.
         Let $E=\realsPower{\initialSegment{N}}$.
@@ -75752,7 +75752,7 @@ from §27 Item 6: Lebesgue number lemma
             $g\in\funs{I}{E}$ and
             $\img{g}{I}$ is in general position in dimension $N$ and
             for all $i\in I$ we have
-                $\apply{\squareMetric{N}}{(x_0(i),g(i))}<\delta$ by
+                $\apply{\squareMetric{N}}{(x_0(i),g(i))} < \delta$ by
             \cref{finite_general_position_approximation_property_50}.
         Let $A=\img{g}{I}$.
         $g$ is a function and $\dom{g}=I$ by
@@ -75767,7 +75767,7 @@ from §27 Item 6: Lebesgue number lemma
         $x(k+1)\in E$ by
             \cref{real_naturals_closed_succ,initial_segment_naturalsplus,funs_type_apply}.
         Take $z\in E$ such that
-            $\apply{\squareMetric{N}}{(x(k+1),z)}<\delta$ and
+            $\apply{\squareMetric{N}}{(x(k+1),z)} < \delta$ and
             $A\union\{z\}$ is in general position in dimension $N$ by
             \cref{general_position_one_point_extension_50}.
         Take $h$ such that
@@ -75780,7 +75780,7 @@ from §27 Item 6: Lebesgue number lemma
         $\img{h}{I_1}$ is in general position in dimension $N$ by
             \cref{real_lt_subst_left}.
         For all $i\in I_1$ we have
-            $\apply{\squareMetric{N}}{(x(i),h(i))}<\delta$ by
+            $\apply{\squareMetric{N}}{(x(i),h(i))} < \delta$ by
             \cref{initial_segment_succ_split,funs_elim,initial_segment_subset_succ,restrl_of_function_apply,real_lt_subst_left,subseteq,real_lt_subst_right}.
         Therefore there exists $y_0$ such that
             $y_0\in\funs{\initialSegment{k+1}}
@@ -75788,7 +75788,7 @@ from §27 Item 6: Lebesgue number lemma
             $\img{y_0}{\initialSegment{k+1}}$ is in general position
                 in dimension $N$ and
             for all $i\in\initialSegment{k+1}$ we have
-                $\apply{\squareMetric{N}}{(x(i),y_0(i))}<\delta$.
+                $\apply{\squareMetric{N}}{(x(i),y_0(i))} < \delta$.
     \end{subproof}
     Follows by
         \cref{finite_general_position_approximation_property_50}.
@@ -75814,7 +75814,7 @@ from §27 Item 6: Lebesgue number lemma
             $N\in\naturalsPlus$ and
             $x\in\funs{\initialSegment{k}}
                 {\realsPower{\initialSegment{N}}}$ and
-            $\delta\in\reals$ and $0<\delta$
+            $\delta\in\reals$ and $0 < \delta$
         there exists $y$ such that
             $y\in\funs{\initialSegment{k}}
                 {\realsPower{\initialSegment{N}}}$ and
@@ -75822,7 +75822,7 @@ from §27 Item 6: Lebesgue number lemma
             $\img{y}{\initialSegment{k}}$ is in general position
                 in dimension $N$ and
             for all $i\in\initialSegment{k}$ we have
-                $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$.
+                $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$.
 \end{definition}
 
 % from §50 helper lemma 110: injective approximation starts at length one
@@ -75848,7 +75848,7 @@ from §27 Item 6: Lebesgue number lemma
         $N\in\naturalsPlus$ and
         $x\in\funs{\initialSegment{k+1}}
             {\realsPower{\initialSegment{N}}}$ and
-        $\delta\in\reals$ and $0<\delta$
+        $\delta\in\reals$ and $0 < \delta$
     there exists $y$ such that
         $y\in\funs{\initialSegment{k+1}}
             {\realsPower{\initialSegment{N}}}$ and
@@ -75856,7 +75856,7 @@ from §27 Item 6: Lebesgue number lemma
         $\img{y}{\initialSegment{k+1}}$ is in general position
             in dimension $N$ and
         for all $i\in\initialSegment{k+1}$ we have
-            $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$.
+            $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$.
     \begin{subproof}
         Fix $N$.
         Fix $x$.
@@ -75864,7 +75864,7 @@ from §27 Item 6: Lebesgue number lemma
         Assume $N\in\naturalsPlus$ and
             $x\in\funs{\initialSegment{k+1}}
                 {\realsPower{\initialSegment{N}}}$ and
-            $\delta\in\reals$ and $0<\delta$.
+            $\delta\in\reals$ and $0 < \delta$.
         Let $I=\initialSegment{k}$.
         Let $I_1=\initialSegment{k+1}$.
         Let $E=\realsPower{\initialSegment{N}}$.
@@ -75885,7 +75885,7 @@ from §27 Item 6: Lebesgue number lemma
             $g$ is injective and
             $\img{g}{I}$ is in general position in dimension $N$ and
             for all $i\in I$ we have
-                $\apply{\squareMetric{N}}{(x_0(i),g(i))}<\delta$ by
+                $\apply{\squareMetric{N}}{(x_0(i),g(i))} < \delta$ by
             \cref{finite_injective_general_position_approximation_property_50}.
         Let $A=\img{g}{I}$.
         $g$ is a function and $\dom{g}=I$ by
@@ -75900,7 +75900,7 @@ from §27 Item 6: Lebesgue number lemma
         $x(k+1)\in E$ by
             \cref{real_naturals_closed_succ,initial_segment_naturalsplus,funs_type_apply}.
         Take $z\in E$ such that
-            $\apply{\squareMetric{N}}{(x(k+1),z)}<\delta$ and
+            $\apply{\squareMetric{N}}{(x(k+1),z)} < \delta$ and
             $z\notin A$ and
             $A\union\{z\}$ is in general position in dimension $N$ by
             \cref{general_position_one_point_extension_50}.
@@ -75933,7 +75933,7 @@ from §27 Item 6: Lebesgue number lemma
         $\img{h}{I_1}$ is in general position in dimension $N$ by
             \cref{real_lt_subst_left}.
         For all $i\in I_1$ we have
-            $\apply{\squareMetric{N}}{(x(i),h(i))}<\delta$ by
+            $\apply{\squareMetric{N}}{(x(i),h(i))} < \delta$ by
             \cref{initial_segment_succ_split,funs_elim,initial_segment_subset_succ,restrl_of_function_apply,real_lt_subst_left,subseteq,real_lt_subst_right}.
         Therefore there exists $y_0$ such that
             $y_0\in\funs{\initialSegment{k+1}}
@@ -75942,7 +75942,7 @@ from §27 Item 6: Lebesgue number lemma
             $\img{y_0}{\initialSegment{k+1}}$ is in general position
                 in dimension $N$ and
             for all $i\in\initialSegment{k+1}$ we have
-                $\apply{\squareMetric{N}}{(x(i),y_0(i))}<\delta$.
+                $\apply{\squareMetric{N}}{(x(i),y_0(i))} < \delta$.
     \end{subproof}
     Follows by
         \cref{finite_injective_general_position_approximation_property_50}.
@@ -75965,13 +75965,13 @@ from §27 Item 6: Lebesgue number lemma
     Assume $N,n\in\naturalsPlus$.
     Let $E=\realsPower{\initialSegment{N}}$.
     Assume $x\in\funs{\initialSegment{n}}{E}$.
-    Assume $\delta\in\reals$ and $0<\delta$.
+    Assume $\delta\in\reals$ and $0 < \delta$.
     Then there exists $y$ such that
         $y\in\funs{\initialSegment{n}}{E}$ and
         $y$ is injective and
         $\img{y}{\initialSegment{n}}$ is in general position in dimension $N$ and
         for all $i\in\initialSegment{n}$ we have
-            $\apply{\squareMetric{N}}{(x(i),y(i))}<\delta$.
+            $\apply{\squareMetric{N}}{(x(i),y(i))} < \delta$.
 \end{lemma}
 \begin{proof}
     Follows by
@@ -76020,9 +76020,9 @@ from §27 Item 6: Lebesgue number lemma
     Assume $X$ is compact with respect to $T$.
     Assume $X\neq\emptyset$.
     Assume $h$ is continuous from $X$ to $\reals$ with respect to $T$ and $\standardTopologyR$.
-    Suppose for all $x\in X$ we have $0<h(x)$.
+    Suppose for all $x\in X$ we have $0 < h(x)$.
     Then there exists $r\in\reals$ such that
-        $0<r$ and
+        $0 < r$ and
         for all $x\in X$ we have $r\leq h(x)$.
 \end{lemma}
 \begin{proof}
@@ -76038,7 +76038,7 @@ from §27 Item 6: Lebesgue number lemma
         $h(d)$ is a largest element of $\img{h}{X}$ with respect to $\realOrderRel$
         by \cref{extreme_value_theorem}.
     Let $r=h(c)$.
-    $r\in\reals$ and $0<r$ by \cref{continuous,funs_type_apply,subseteq}.
+    $r\in\reals$ and $0 < r$ by \cref{continuous,funs_type_apply,subseteq}.
     For all $x\in X$ we have $r\leq h(x)$ by
         \cref{continuous,funs_is_function,funs,inter_intro,img_of_function_intro,smallest_element,real_order_relation_elim,real_leq_split}.
     Follows by \cref{subseteq}.
@@ -76106,7 +76106,7 @@ from §27 Item 6: Lebesgue number lemma
             Take $z\in C$ such that $(p,z)\in h$ by \cref{preimg_iff}.
             $h(p)=z$ by \cref{continuous,funs_is_function,function_apply_intro}.
             $h(p)\in C$ by \cref{real_lt_subst_left}.
-            $\epsilon<h(p)$ or $h(p)=\epsilon$ by
+            $\epsilon < h(p)$ or $h(p)=\epsilon$ by
                 \cref{closedray_right,real_order_relation_elim}.
             $\epsilon\leq d(p)$ by
                 \cref{real_leq_split,real_lt_subst_left,real_lt_subst_right,pair_eq_iff}.
@@ -76127,8 +76127,8 @@ from §27 Item 6: Lebesgue number lemma
             $d(p)=d((x,y))$ by \cref{pair_eq_iff}.
             $d(p)\in\reals$ and $h(p)\in\reals$ by
                 \cref{metric_on,funs_type_apply,continuous}.
-            $\epsilon<d(p)$ or $\epsilon=d(p)$ by \cref{real_leq_split}.
-            $\epsilon<h(p)$ or $\epsilon=h(p)$ by
+            $\epsilon < d(p)$ or $\epsilon=d(p)$ by \cref{real_leq_split}.
+            $\epsilon < h(p)$ or $\epsilon=h(p)$ by
                 \cref{real_lt_subst_right,real_lt_subst_left}.
             $h(p)\in C$ by
                 \cref{closedray_right,real_order_relation_intro}.
@@ -76149,9 +76149,9 @@ from §27 Item 6: Lebesgue number lemma
     Assume $g\in\funs{X}{Y}$.
     Assume $x\in X$.
     Assume $\delta\in\reals$.
-    Suppose $\rho((f,g))<\delta$.
+    Suppose $\rho((f,g)) < \delta$.
     Suppose $\delta\leq 1$.
-    Then $e((f(x),g(x)))<\delta$.
+    Then $e((f(x),g(x))) < \delta$.
 \end{lemma}
 \begin{proof}
     Let $b=\boundedMetric{e}$.
@@ -76163,8 +76163,8 @@ from §27 Item 6: Lebesgue number lemma
     $(f(x),g(x))\in Y\times Y$ by \cref{times_tuple_intro}.
     $b((f(x),g(x)))\in\reals$ by
         \cref{bounded_metric_is_metric,metric_on,funs_type_apply,times_tuple_intro}.
-    $b((f(x),g(x)))<\delta$ by \cref{real_leq_lt_trans}.
-    $b((f(x),g(x)))<1$ by
+    $b((f(x),g(x))) < \delta$ by \cref{real_leq_lt_trans}.
+    $b((f(x),g(x))) < 1$ by
         \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_lt_leq_trans_local}.
     $b((f(x),g(x)))=e((f(x),g(x)))$ by
         \cref{bounded_metric_apply_value_lt_one,bounded_metric_is_metric}.
@@ -76204,13 +76204,13 @@ from §27 Item 6: Lebesgue number lemma
     $A$ is compact with respect to $\subspaceTopology{P}{A}$
         by \cref{metric_large_pair_set_compact_50}.
     Show that for all $f\in U$ there exists $\delta\in\reals$ such that
-        $0<\delta$ and $\metricBall{q}{C}{f}{\delta}\subseteq U$.
+        $0 < \delta$ and $\metricBall{q}{C}{f}{\delta}\subseteq U$.
     \begin{subproof}
         Fix $f\in U$.
         $f\in C$ and $f\in\funs{X}{Y}$ by \cref{subseteq}.
         \begin{byCase}
         \caseOf{$A=\emptyset$.}
-            $1\in\reals$ and $0<1$ by
+            $1\in\reals$ and $0 < 1$ by
                 \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one}.
             $\metricBall{q}{C}{f}{1}\subseteq U$ by
                 \cref{subseteq,metric_ball,continuous_function_set,times_tuple_intro,emptyset,metric_scale_separating_class_50,continuous,funs}.
@@ -76247,7 +76247,7 @@ from §27 Item 6: Lebesgue number lemma
                 \cref{subspace_topology_is_topology}.
             $k$ is continuous from $A$ to $\reals$ with respect to $T_A$ and
                 $\standardTopologyR$ by \cref{continuous_restrict_domain}.
-            Show that for all $p\in A$ we have $0<k(p)$.
+            Show that for all $p\in A$ we have $0 < k(p)$.
             \begin{subproof}
                 Fix $p\in A$.
                 $p\in X\times X$ and $\epsilon\leq d(p)$ by \cref{subseteq}.
@@ -76270,43 +76270,43 @@ from §27 Item 6: Lebesgue number lemma
                     \cref{metric_on,funs_type_apply,times_tuple_intro,metric_nonnegative}.
                 $e((f(x),f(y)))\neq 0$ by
                     \cref{metric_on,metric_zero_characterization}.
-                $0<e((f(x),f(y)))$ by \cref{real_leq_split}.
+                $0 < e((f(x),f(y)))$ by \cref{real_leq_split}.
                 Follows by \cref{real_lt_subst_left,real_lt_subst_right}.
             \end{subproof}
-            Take $r\in\reals$ such that $0<r$ and
+            Take $r\in\reals$ such that $0 < r$ and
                 for all $p\in A$ we have $r\leq k(p)$
                 by \cref{compact_positive_continuous_lower_bound_50}.
             Let $a=r/(1+1)$.
-            $a\in\reals$ and $0<a$ and $a+a=r$ by
+            $a\in\reals$ and $0 < a$ and $a+a=r$ by
                 \cref{real_half_of_positive}.
-            $a<r$ by
+            $a < r$ by
                 \cref{real_add_ident,real_lt_add,real_lt_subst_left,real_lt_subst_right}.
             Let $b=a/(1+1)$.
-            $b\in\reals$ and $0<b$ and $b+b=a$ by
+            $b\in\reals$ and $0 < b$ and $b+b=a$ by
                 \cref{real_half_of_positive}.
-            $1\in\reals$ and $0<1$ by
+            $1\in\reals$ and $0 < 1$ by
                 \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one}.
             Take $\delta\in\reals$ such that
-                $0<\delta$ and $\delta\leq b$ and $\delta\leq 1$
+                $0 < \delta$ and $\delta\leq b$ and $\delta\leq 1$
                 by \cref{positive_radius_below_two_bounds_49}.
             $\delta+\delta\leq b+b$ by
                 \cref{real_leq_add_two_49}.
             $\delta+\delta,b+b\in\reals$ by \cref{real_add_closed}.
             $\delta+\delta\leq a$ by \cref{real_lt_subst_right}.
-            $\delta+\delta<r$ by
+            $\delta+\delta < r$ by
                 \cref{real_leq_lt_trans}.
             Show that $\metricBall{q}{C}{f}{\delta}\subseteq U$.
             \begin{subproof}
                 It suffices to show that for all $g\in\metricBall{q}{C}{f}{\delta}$
                     we have $g\in U$ by \cref{subseteq}.
                 Fix $g\in\metricBall{q}{C}{f}{\delta}$.
-                $g\in C$ and $q((f,g))<\delta$ by \cref{metric_ball}.
+                $g\in C$ and $q((f,g)) < \delta$ by \cref{metric_ball}.
                 $g\in\funs{X}{Y}$ and
                     $g$ is continuous from $X$ to $Y$ with respect to $T$ and $S$
                     by \cref{continuous_function_set,subseteq}.
                 $q((f,g))=\rho((f,g))$ by
                     \cref{continuous_function_set,subseteq,uniform_metric_on_function_space,metric_on,funs_elim,funs_is_function,times_subseteq_left,times_subseteq_right,subseteq_transitive,pair_eq_iff,times_tuple_intro,restrl_of_function_apply}.
-                $\rho((f,g))<\delta$ by \cref{real_lt_subst_left}.
+                $\rho((f,g)) < \delta$ by \cref{real_lt_subst_left}.
                 Show that for all $x\in X$ we have for all $y\in X$ if $\epsilon\leq d((x,y))$
                     then $g(x)\neq g(y)$.
                 \begin{subproof}
@@ -76324,8 +76324,8 @@ from §27 Item 6: Lebesgue number lemma
                     $k(p)=h(p)$ by
                         \cref{continuous,funs_is_function,funs,restrl_of_function_apply,subseteq}.
                     $r\leq k(p)$ by \cref{subseteq}.
-                    $e((f(x),g(x)))<\delta$ and
-                        $e((f(y),g(y)))<\delta$ by
+                    $e((f(x),g(x))) < \delta$ and
+                        $e((f(y),g(y))) < \delta$ by
                         \cref{uniform_metric_pointwise_lt_below_one_50}.
                     Suppose not.
                     $g(x)=g(y)$.
@@ -76335,20 +76335,20 @@ from §27 Item 6: Lebesgue number lemma
                         \cref{real_lt_subst_left}.
                     $e((g(y),f(y)))=e((f(y),g(y)))$ by
                         \cref{metric_on,metric_symmetric}.
-                    $e((g(x),f(y)))<\delta$ by
+                    $e((g(x),f(y))) < \delta$ by
                         \cref{real_lt_subst_left,real_lt_subst_right}.
                     $e((f(x),f(y)))\leq
                         e((f(x),g(x)))+e((g(x),f(y)))$ by
                         \cref{metric_on,metric_triangle_inequality}.
-                    $e((f(x),g(x)))+e((g(x),f(y)))<\delta+\delta$ by
+                    $e((f(x),g(x)))+e((g(x),f(y))) < \delta+\delta$ by
                         \cref{metric_on,funs_type_apply,times_tuple_intro,real_lt_add_two}.
                     $e((f(x),f(y)))\in\reals$ and
                         $e((f(x),g(x)))+e((g(x),f(y)))\in\reals$ and
                         $\delta+\delta\in\reals$ by
                         \cref{metric_on,funs_type_apply,times_tuple_intro,real_add_closed}.
-                    $e((f(x),f(y)))<\delta+\delta$ by
+                    $e((f(x),f(y))) < \delta+\delta$ by
                         \cref{real_leq_lt_trans}.
-                    $e((f(x),f(y)))<r$ by \cref{real_lt_trans}.
+                    $e((f(x),f(y))) < r$ by \cref{real_lt_trans}.
                     $r\leq e((f(x),f(y)))$ by
                         \cref{real_lt_subst_left,real_lt_subst_right}.
                     Contradiction by
@@ -76385,7 +76385,7 @@ from §27 Item 6: Lebesgue number lemma
     Assume $X$ is inhabited.
     Assume $e$ is a metric on $Y$.
     Assume $f$ is uniformly continuous from $X$ to $Y$ with respect to $d$ and $e$.
-    Assume $\epsilon,\delta\in\reals$ and $0<\epsilon$ and $0<\delta$.
+    Assume $\epsilon,\delta\in\reals$ and $0 < \epsilon$ and $0 < \delta$.
     Then there exist $n,U$ such that
         $n\in\naturalsPlus$ and
         $U$ is a bijection from $\initialSegment{n}$ to $\img{U}{\initialSegment{n}}$ and
@@ -76394,20 +76394,20 @@ from §27 Item 6: Lebesgue number lemma
         for all $i\in\initialSegment{n}$ we have
             $U(i)$ is open in $X$ with respect to $T$ and $U(i)$ is inhabited and
             for all $x,y\in U(i)$ we have
-                $d((x,y))<\epsilon$ and $e((f(x),f(y)))<\delta$.
+                $d((x,y)) < \epsilon$ and $e((f(x),f(y))) < \delta$.
 \end{lemma}
 \begin{proof}
     Take $\eta\in\reals$ such that
-        $0<\eta$ and
-        for all $x,y\in X$ if $d((x,y))<\eta$ then $e((f(x),f(y)))<\delta$
+        $0 < \eta$ and
+        for all $x,y\in X$ if $d((x,y)) < \eta$ then $e((f(x),f(y))) < \delta$
         by \cref{uniformly_continuous}.
     Let $a=\epsilon/(1+1)$.
-    $a\in\reals$ and $0<a$ and $a+a=\epsilon$ by
+    $a\in\reals$ and $0 < a$ and $a+a=\epsilon$ by
         \cref{real_half_of_positive}.
     Let $b=\eta/(1+1)$.
-    $b\in\reals$ and $0<b$ and $b+b=\eta$ by
+    $b\in\reals$ and $0 < b$ and $b+b=\eta$ by
         \cref{real_half_of_positive}.
-    Take $r\in\reals$ such that $0<r$ and $r\leq a$ and $r\leq b$
+    Take $r\in\reals$ such that $0 < r$ and $r\leq a$ and $r\leq b$
         by \cref{positive_radius_below_two_bounds_49}.
     $X$ is totally bounded with respect to $d$ by
         \cref{compact_metric_space_totally_bounded}.
@@ -76457,7 +76457,7 @@ from §27 Item 6: Lebesgue number lemma
     $\img{U}{\initialSegment{n}}$ has order at most $m+1$ in $X$ by
         \cref{real_lt_subst_left}.
     Show that for all $i\in\initialSegment{n}$ for all $x,y\in U(i)$ we have
-        $d((x,y))<\epsilon$ and $e((f(x),f(y)))<\delta$.
+        $d((x,y)) < \epsilon$ and $e((f(x),f(y))) < \delta$.
     \begin{subproof}
         Fix $i\in\initialSegment{n}$.
         Fix $x$.
@@ -76473,26 +76473,26 @@ from §27 Item 6: Lebesgue number lemma
         $x,y\in V$ by \cref{subseteq}.
         $x,y\in\metricBall{d}{X}{c}{r}$ by
             \cref{inter_elim_right,real_lt_subst_left}.
-        $d((c,x))<r$ and $d((c,y))<r$ by \cref{metric_ball}.
+        $d((c,x)) < r$ and $d((c,y)) < r$ by \cref{metric_ball}.
         $x,y,c\in X$ by \cref{metric_ball}.
         $d((x,c))=d((c,x))$ by
             \cref{metric_on,metric_symmetric}.
-        $d((x,c))<r$ by \cref{real_lt_subst_left}.
+        $d((x,c)) < r$ by \cref{real_lt_subst_left}.
         $d((x,c)),d((c,y)),d((x,y)),d((x,c))+d((c,y)),r+r,a+a,b+b\in\reals$ by
             \cref{metric_on,funs_type_apply,times_tuple_intro,real_add_closed}.
         $d((x,y))\leq d((x,c))+d((c,y))$ by
             \cref{metric_on,metric_triangle_inequality}.
-        $d((x,c))+d((c,y))<r+r$ by
+        $d((x,c))+d((c,y)) < r+r$ by
             \cref{real_lt_add_two}.
         $r+r\leq a+a$ and $r+r\leq b+b$ by \cref{real_leq_add_two_49}.
-        $d((x,y))<\epsilon$ and $d((x,y))<\eta$ by
+        $d((x,y)) < \epsilon$ and $d((x,y)) < \eta$ by
             \cref{real_leq_lt_trans,real_lt_leq_trans_local,real_lt_subst_right}.
-        $e((f(x),f(y)))<\delta$ by \cref{real_lt_subst_left}.
+        $e((f(x),f(y))) < \delta$ by \cref{real_lt_subst_left}.
     \end{subproof}
     For all $i\in\initialSegment{n}$ we have
         $U(i)$ is open in $X$ with respect to $T$ and $U(i)$ is inhabited and
         for all $x,y\in U(i)$ we have
-            $d((x,y))<\epsilon$ and $e((f(x),f(y)))<\delta$.
+            $d((x,y)) < \epsilon$ and $e((f(x),f(y))) < \delta$.
     Follows by \cref{controlled_finite_indexed_cover_packaging_50}.
 \end{proof}
 
@@ -77016,7 +77016,7 @@ from §27 Item 6: Lebesgue number lemma
     Assume for all $i\in I$ we have $0\leq a(i)$.
     Assume $y$ is an affine combination of $z$ with coefficients $a$
         in dimension $N$.
-    Assume for all $i\in I$ if $0<a(i)$ then
+    Assume for all $i\in I$ if $0 < a(i)$ then
         $\apply{\squareMetric{N}}{(z(i),x)}\leq r$.
     Then $\apply{\squareMetric{N}}{(y,x)}\leq r$.
 \end{lemma}
@@ -77064,7 +77064,7 @@ from §27 Item 6: Lebesgue number lemma
                 \cref{coord_scalar_sequence,funs_is_function,function_apply_intro}.
             $b(i)=a(i)\rmul\apply{z(i)}{j}$ by \cref{subseteq}.
             \begin{byCase}
-            \caseOf{$0<a(i)$.}
+            \caseOf{$0 < a(i)$.}
                 Take $s\in\reals$ such that
                     $((z(i),x),s)\in\squareMetric{N}$ and
                     for all $k\in J$ we have
@@ -77091,7 +77091,7 @@ from §27 Item 6: Lebesgue number lemma
                     \cref{real_mul_comm}.
                 Follows by
                     \cref{real_leq_subst_left_local,real_leq_subst_right_local}.
-            \caseOf{$0\not<a(i)$.}
+            \caseOf{$0\not < a(i)$.}
                 $a(i)=0$ by \cref{real_leq_split}.
                 $l(i)=0$ and $b(i)=0$ and $u(i)=0$ by
                     \cref{real_mul_zero,real_mul_comm,real_lt_subst_left,real_lt_subst_right}.
@@ -78141,7 +78141,7 @@ from §27 Item 6: Lebesgue number lemma
     Let $q=\restrl{\rho}{C\times C}$.
     Assume $q$ is a metric on $C$.
     Assume $\epsilon,\eta\in\reals$ and
-        $0<\epsilon$ and $0<\eta$.
+        $0 < \epsilon$ and $0 < \eta$.
     Assume $W$ is the separating class at scale $\epsilon$ on $X$ to $E$
         with respect to $T$ and $S$ and $d$.
     Assume $f\in C$.
@@ -78156,18 +78156,18 @@ from §27 Item 6: Lebesgue number lemma
     $f$ is uniformly continuous from $X$ to $E$ with respect to $d$ and $e$ by
         \cref{uniform_continuity_theorem}.
     Let $a=\eta/(1+1)$.
-    $a\in\reals$ and $0<a$ and $a+a=\eta$ by
+    $a\in\reals$ and $0 < a$ and $a+a=\eta$ by
         \cref{real_half_of_positive}.
-    $a<\eta$ by
+    $a < \eta$ by
         \cref{real_add_ident,real_lt_add,real_lt_subst_left,real_lt_subst_right}.
-    $1\in\reals$ and $0<1$ by
+    $1\in\reals$ and $0 < 1$ by
         \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one}.
     Take $r\in\reals$ such that
-        $0<r$ and $r\leq a$ and $r\leq 1$ by
+        $0 < r$ and $r\leq a$ and $r\leq 1$ by
         \cref{positive_radius_below_two_bounds_49}.
-    $r<\eta$ by \cref{real_leq_lt_trans}.
+    $r < \eta$ by \cref{real_leq_lt_trans}.
     Let $b=r/(1+1)$.
-    $b\in\reals$ and $0<b$ and $b+b=r$ by
+    $b\in\reals$ and $0 < b$ and $b+b=r$ by
         \cref{real_half_of_positive}.
     Take $n,U$ such that
         $n\in\naturalsPlus$ and
@@ -78179,8 +78179,8 @@ from §27 Item 6: Lebesgue number lemma
             $U(i)$ is open in $X$ with respect to $T$ and
             $U(i)$ is inhabited and
             for all $x,y\in U(i)$ we have
-                $d((x,y))<\epsilon$ and
-                $e((f(x),f(y)))<b$ by
+                $d((x,y)) < \epsilon$ and
+                $e((f(x),f(y))) < b$ by
         \cref{controlled_finite_indexed_cover_50}.
     Let $I=\initialSegment{n}$.
     $U$ is a function on $I$ by
@@ -78202,7 +78202,7 @@ from §27 Item 6: Lebesgue number lemma
         $z$ is injective and
         $\img{z}{I}$ is in general position in dimension $N$ and
         for all $i\in I$ we have
-            $e((v(i),z(i)))<b$ by
+            $e((v(i),z(i))) < b$ by
         \cref{injective_general_position_approximation_50}.
     $T$ is a topology on $X$ by
         \cref{topological_dimension_bound_50}.
@@ -78248,13 +78248,13 @@ from §27 Item 6: Lebesgue number lemma
             \cref{subseteq}.
         For all $i\in I$ we have $0\leq A_x(i)$ by
             \cref{finite_partition_coefficients_nonnegative_50}.
-        Show that for all $i\in I$ if $0<A_x(i)$ then
+        Show that for all $i\in I$ if $0 < A_x(i)$ then
             $e((z(i),f(x)))\leq r$.
         \begin{subproof}
             Fix $i\in I$.
-            Assume $0<A_x(i)$.
+            Assume $0 < A_x(i)$.
             $A_x(i)=\apply{\apply{p}{i}}{x}$ by \cref{subseteq}.
-            $0<\apply{\apply{p}{i}}{x}$ by
+            $0 < \apply{\apply{p}{i}}{x}$ by
                 \cref{real_lt_subst_right}.
             $x\in\supp{\apply{p}{i}}{X}{T}$ by
                 \cref{positive_partition_component_in_support}.
@@ -78262,11 +78262,11 @@ from §27 Item 6: Lebesgue number lemma
                 \cref{finite_partition_of_unity,finite_partition_component_condition}.
             $x\in U(i)$ by \cref{subseteq}.
             $c(i)\in U(i)$ by \cref{subseteq}.
-            $e((f(c(i)),f(x)))<b$ by \cref{subseteq}.
+            $e((f(c(i)),f(x))) < b$ by \cref{subseteq}.
             $v(i)=f(c(i))$ by \cref{subseteq}.
-            $e((v(i),f(x)))<b$ by
+            $e((v(i),f(x))) < b$ by
                 \cref{real_lt_subst_left}.
-            $e((v(i),z(i)))<b$ by \cref{subseteq}.
+            $e((v(i),z(i))) < b$ by \cref{subseteq}.
             $v(i),z(i),f(x)\in E$ by
                 \cref{funs_type_apply,continuous}.
             Follows by
@@ -78284,7 +78284,7 @@ from §27 Item 6: Lebesgue number lemma
         \cref{continuous_function_set,subseteq,times_subseteq_left,times_subseteq_right,subseteq_transitive,uniform_metric_on_function_space,metric_on,funs_elim,restrl_of_function_apply}.
     $q((f,g))\leq r$ by
         \cref{real_leq_subst_left_local}.
-    $q((f,g))<\eta$ by
+    $q((f,g)) < \eta$ by
         \cref{metric_on,funs_type_apply,times_tuple_intro,real_leq_lt_trans}.
     $g\in\metricBall{q}{C}{f}{\eta}$ by
         \cref{metric_ball}.
@@ -78340,7 +78340,7 @@ from §27 Item 6: Lebesgue number lemma
             \cref{sparse_general_position_affine_coordinates_unique_50}.
         For all $j\in I$ we have $0\leq A_x(j)$ by
             \cref{finite_partition_coefficients_nonnegative_50}.
-        Take $i\in I$ such that $0<A_x(i)$ by
+        Take $i\in I$ such that $0 < A_x(i)$ by
             \cref{finite_real_sum_one_positive_term}.
         Contradiction by
             \cref{real_lt_subst_left,real_lt_subst_right,subseteq,positive_partition_component_in_support,finite_partition_of_unity,finite_partition_component_condition,metric_on,funs_type_apply,times_tuple_intro,real_leq_split,real_lt_trans,real_lt_irreflexive}.
@@ -78369,7 +78369,7 @@ from §27 Item 6: Lebesgue number lemma
         with respect to $e$.
     Let $q=\restrl{\rho}{C\times C}$.
     Assume $q$ is a metric on $C$.
-    Assume $\epsilon\in\reals$ and $0<\epsilon$.
+    Assume $\epsilon\in\reals$ and $0 < \epsilon$.
     Assume $W$ is the separating class at scale $\epsilon$ on $X$ to $E$
         with respect to $T$ and $S$ and $d$.
     Then $W$ is dense in $C$ with respect to $\metricTopology{q}{C}$.
@@ -78467,9 +78467,9 @@ from §27 Item 6: Lebesgue number lemma
         $C$ is inhabited by
             \cref{continuous_reals_power_function_set_inhabited}.
         Take $c$ such that $c\in C$.
-        $1\in\reals$ and $0<1$ by
+        $1\in\reals$ and $0 < 1$ by
             \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one}.
-        Take $f\in D$ such that $q((c,f))<1$ by
+        Take $f\in D$ such that $q((c,f)) < 1$ by
             \cref{dense_metric_ball_intersection_49}.
         $f\in C$ by \cref{subseteq}.
         $f$ is continuous from $X$ to $E$ with respect to $T$ and $S$ by
@@ -78535,12 +78535,12 @@ from §27 Item 6: Lebesgue number lemma
     Assume $d$ is a metric on $X$.
     Let $T=\metricTopology{d}{X}$.
     Assume $X$ is compact with respect to $T$.
-    Suppose for all $\epsilon\in\reals$ such that $0<\epsilon$
+    Suppose for all $\epsilon\in\reals$ such that $0 < \epsilon$
         there exists $B$ such that
             $B$ is an open covering of $X$ with respect to $T$ and
             $B$ has order at most $m+1$ in $X$ and
             for all $V\in B$ for all $x,y\in V$ we have
-                $d((x,y))<\epsilon$.
+                $d((x,y)) < \epsilon$.
     Then $m$ is a topological dimension bound for $X$ with respect to $T$.
 \end{lemma}
 \begin{proof}
@@ -78565,17 +78565,17 @@ from §27 Item 6: Lebesgue number lemma
                 \cref{emptyset_subseteq,emptyset,covering,subseteq,unions_iff,refinement_on,open_refinement_on,natural_successor_positive_50,covering_order_at_most_50}.
         \caseOf{$X\neq\emptyset$.}
             Take $\epsilon\in\reals$ such that
-                $0<\epsilon$ and
+                $0 < \epsilon$ and
                 for all $D$ such that
                     $D\subseteq X$ and
-                    for all $x,y\in D$ we have $d((x,y))<\epsilon$
+                    for all $x,y\in D$ we have $d((x,y)) < \epsilon$
                 there exists $U\in A$ such that $D\subseteq U$ by
                 \cref{lebesgue_number_lemma}.
             Take $B$ such that
                 $B$ is an open covering of $X$ with respect to $T$ and
                 $B$ has order at most $m+1$ in $X$ and
                 for all $V\in B$ for all $x,y\in V$ we have
-                    $d((x,y))<\epsilon$.
+                    $d((x,y)) < \epsilon$.
             $B\subseteq\pow{X}$ by
                 \cref{open_covering,open_in,topology_on,subseteq,pow_iff,powerset_intro}.
             For all $V\in B$ there exists $U\in A$ such that
@@ -78667,12 +78667,12 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 141: distinct integers are separated by a full unit
 \begin{lemma}\label{integer_successor_gap_50}
     Assume $a,b\in\integers$.
-    Suppose $a<b$.
+    Suppose $a < b$.
     Then $a+1\leq b$.
 \end{lemma}
 \begin{proof}
     For all $p,q$ such that
-        $p\in\naturalsPlus$ and $q\in\naturalsPlus$ and $p<q$
+        $p\in\naturalsPlus$ and $q\in\naturalsPlus$ and $p < q$
     we have $p+1\leq q$ by
         \cref{real_naturals_subset_reals,subseteq,real_naturals_closed_succ,real_lt_trichotomy,real_succ_discrete,real_lt_trans,real_lt_irreflexive,real_lt_subst_right,real_lt_subst_left}.
     $a,b\in\reals$ by \cref{real_integers,subseteq}.
@@ -78695,7 +78695,7 @@ from §27 Item 6: Lebesgue number lemma
     \caseOf{$\neg{a}\in\naturalsPlus$.}
         Let $p=\neg{a}$.
         $p\in\naturalsPlus$.
-        $1<p$ or $1=p$ by
+        $1 < p$ or $1=p$ by
             \cref{real_one_leq_naturalsplus}.
         $1\leq p$ by \cref{real_lt_imp_leq}.
         $\neg{p}\leq\neg{1}$ by
@@ -78717,7 +78717,7 @@ from §27 Item 6: Lebesgue number lemma
         \caseOf{$\neg{b}\in\naturalsPlus$.}
             Let $q=\neg{b}$.
             $q\in\naturalsPlus$.
-            $q<p$ by
+            $q < p$ by
                 \cref{real_lt_neg,real_neg_neg,real_lt_subst_left,real_lt_subst_right}.
             $\neg{p}\leq\neg{(q+1)}$ by
                 \cref{real_naturals_subset_reals,subseteq,real_naturals_closed_succ,real_leq_neg}.
@@ -78750,8 +78750,8 @@ from §27 Item 6: Lebesgue number lemma
             $x(i)\notin\integers$
         then
                 there exists $n\in\integers$ such that
-                    $n<x(i)$ and $x(i)<n+1$ and
-                    $n<y(i)$ and $y(i)<n+1$.
+                    $n < x(i)$ and $x(i) < n+1$ and
+                    $n < y(i)$ and $y(i) < n+1$.
 \end{definition}
 
 % from §50 helper definition 41: equivalence inside the integer cubical decomposition
@@ -78798,8 +78798,8 @@ from §27 Item 6: Lebesgue number lemma
     For all $i\in I$ if $x(i)\in\integers$ then $x(i)=x(i)$.
     For all $i\in I$ if $x(i)\notin\integers$ then
         there exists $n\in\integers$ such that
-            $n<x(i)$ and $x(i)<n+1$ and
-            $n<x(i)$ and $x(i)<n+1$ by
+            $n < x(i)$ and $x(i) < n+1$ and
+            $n < x(i)$ and $x(i) < n+1$ by
         \cref{reals_power,tuple_power,funs_type_apply,real_consecutive_integers,real_lt_subst_right,real_leq_split}.
     $x$ is cubically equivalent to $x$ in dimension $N$ by
         \cref{cubically_integer_compatible_50,cubically_noninteger_compatible_50,cubically_equivalent_50}.
@@ -78811,14 +78811,14 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 143: an open unit interval between integers contains no integer
 \begin{lemma}\label{no_integer_between_successive_integers_50}
     Assume $n\in\integers$ and $r\in\reals$.
-    Suppose $n<r$ and $r<n+1$.
+    Suppose $n < r$ and $r < n+1$.
     Then $r\notin\integers$.
 \end{lemma}
 \begin{proof}
     Suppose not.
     $n+1\in\reals$ by
         \cref{real_integers,subseteq,real_one_in_naturals,real_naturals_subset_reals,real_add_closed}.
-    $n+1<n+1$ by
+    $n+1 < n+1$ by
         \cref{integer_successor_gap_50,real_leq_lt_trans}.
     Contradiction by \cref{real_lt_irreflexive}.
 \end{proof}
@@ -78981,8 +78981,8 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 147: two successive-integer intervals containing a point coincide
 \begin{lemma}\label{successive_integer_interval_unique_50}
     Assume $n,q\in\integers$ and $r\in\reals$.
-    Assume $n<r$ and $r<n+1$.
-    Assume $q<r$ and $r<q+1$.
+    Assume $n < r$ and $r < n+1$.
+    Assume $q < r$ and $r < q+1$.
     Then $n=q$.
 \end{lemma}
 \begin{proof}
@@ -79008,8 +79008,8 @@ from §27 Item 6: Lebesgue number lemma
         \cref{subseteq,real_lt_subst_left,cubically_equivalent_50,cubically_integer_compatible_50}.
     For all $i\in I$ if $y(i)\notin\integers$ then
         there exists $n\in\integers$ such that
-            $n<y(i)$ and $y(i)<n+1$ and
-            $n<x(i)$ and $x(i)<n+1$ by
+            $n < y(i)$ and $y(i) < n+1$ and
+            $n < x(i)$ and $x(i) < n+1$ by
         \cref{subseteq,real_lt_subst_left,cubically_equivalent_50,cubically_noninteger_compatible_50}.
     Follows by
         \cref{cubically_integer_compatible_50,cubically_noninteger_compatible_50,cubically_equivalent_50}.
@@ -79030,8 +79030,8 @@ from §27 Item 6: Lebesgue number lemma
         \cref{cubically_equivalent_50,cubically_integer_compatible_50,real_lt_subst_left}.
     For all $i\in I$ if $x(i)\notin\integers$ then
         there exists $n\in\integers$ such that
-            $n<x(i)$ and $x(i)<n+1$ and
-            $n<z(i)$ and $z(i)<n+1$ by
+            $n < x(i)$ and $x(i) < n+1$ and
+            $n < z(i)$ and $z(i) < n+1$ by
         \cref{cubically_equivalent_50,cubically_noninteger_compatible_50,reals_power,tuple_power,funs_type_apply,no_integer_between_successive_integers_50,successive_integer_interval_unique_50}.
     Follows by
         \cref{cubically_integer_compatible_50,cubically_noninteger_compatible_50,cubically_equivalent_50}.
@@ -79095,7 +79095,7 @@ from §27 Item 6: Lebesgue number lemma
             \cref{finite_at_most_remove_point_50,real_lt_subst_left,setminus_intro,singleton_iff,subseteq,finite_at_most_subset_50,finite_at_most_enumeration_length_50}.
         $m\in\reals$ by
             \cref{real_naturals_subset_reals,subseteq}.
-        $m<m$ by
+        $m < m$ by
             \cref{real_naturals_subset_reals,real_one_in_naturals,subseteq,real_zero_lt_one,real_lt_add,real_add_ident,real_add_comm,real_lt_subst_right,real_leq_lt_trans}.
         Contradiction by \cref{real_lt_irreflexive}.
     \end{byCase}
@@ -79104,11 +79104,11 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 152: a sufficiently small perturbation stays in one unit interval
 \begin{lemma}\label{small_perturbation_stays_in_integer_interval_50}
     Assume $n\in\integers$ and $x,y,r\in\reals$.
-    Assume $0<r$.
-    Assume $n<x$ and $x<n+1$.
-    Assume $r<x-n$ and $r<n+1-x$.
-    Assume $\abs{x-y}<r$.
-    Then $n<y$ and $y<n+1$.
+    Assume $0 < r$.
+    Assume $n < x$ and $x < n+1$.
+    Assume $r < x-n$ and $r < n+1-x$.
+    Assume $\abs{x-y} < r$.
+    Then $n < y$ and $y < n+1$.
 \end{lemma}
 \begin{proof}
     $\abs{y-x}\leq r$ by
@@ -79119,12 +79119,12 @@ from §27 Item 6: Lebesgue number lemma
         \cref{real_integers,subseteq}.
     $x-r,x+r,n+1\in\reals$ by
         \cref{real_sub,real_add_inverse,real_add_closed,real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-    $n<x-r$ by
+    $n < x-r$ by
         \cref{real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_comm,real_add_inverse,real_add_ident,real_lt_subst_left,real_lt_subst_right}.
-    $n<y$ by \cref{real_lt_leq_trans_local}.
-    $x+r<n+1$ by
+    $n < y$ by \cref{real_lt_leq_trans_local}.
+    $x+r < n+1$ by
         \cref{real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_comm,real_add_inverse,real_add_ident,real_lt_subst_left,real_lt_subst_right}.
-    $y<n+1$ by \cref{real_leq_lt_trans}.
+    $y < n+1$ by \cref{real_leq_lt_trans}.
 \end{proof}
 
 % from §50 helper lemma 153: points of one cubical cell have the same noninteger coordinates
@@ -79227,21 +79227,21 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 155: integers less than one unit apart are equal
 \begin{lemma}\label{integers_strictly_within_unit_equal_50}
     Assume $a,b\in\integers$.
-    Assume $\abs{a-b}<1$.
+    Assume $\abs{a-b} < 1$.
     Then $a=b$.
 \end{lemma}
 \begin{proof}
     $a,b,a-b,b-a,1\in\reals$ by
         \cref{real_integers,subseteq,real_sub,real_add_inverse,real_add_closed,real_one_in_naturals,real_naturals_subset_reals}.
-    $a<b$ or $a=b$ or $b<a$ by \cref{real_lt_trichotomy}.
+    $a < b$ or $a=b$ or $b < a$ by \cref{real_lt_trichotomy}.
     \begin{byCase}
-    \caseOf{$a<b$.}
+    \caseOf{$a < b$.}
         Suppose not.
         Contradiction by
             \cref{integer_successor_gap_50,real_sub,real_add_inverse,real_add_closed,real_leq_add,real_add_assoc,real_add_comm,real_add_ident,real_leq_subst_left_local,real_leq_subst_right_local,real_leq_abs,real_abs_in_reals,real_abs_sub_swap,real_lt_subst_left,real_leq_lt_trans,real_lt_irreflexive}.
     \caseOf{$a=b$.}
         Follows.
-    \caseOf{$b<a$.}
+    \caseOf{$b < a$.}
         Suppose not.
         Contradiction by
             \cref{integer_successor_gap_50,real_sub,real_add_inverse,real_add_closed,real_leq_add,real_add_assoc,real_add_comm,real_add_ident,real_leq_subst_left_local,real_leq_subst_right_local,real_leq_abs,real_abs_in_reals,real_leq_lt_trans,real_lt_irreflexive}.
@@ -79253,9 +79253,9 @@ from §27 Item 6: Lebesgue number lemma
     $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$ iff
         $N,k\in\naturalsPlus$ and
         $x\in\realsPower{\initialSegment{N}}$ and
-        $r\in\reals$ and $0<r$ and $r\leq1$ and
+        $r\in\reals$ and $0 < r$ and $r\leq1$ and
         for all $y\in\realsPower{\initialSegment{N}}$ if
-            $\apply{\squareMetric{N}}{(x,y)}<r$
+            $\apply{\squareMetric{N}}{(x,y)} < r$
         then for all $D$ if
             $D$ has cubical level $k$ in dimension $N$ and $y\in D$
         then $x\in D$.
@@ -79269,15 +79269,15 @@ from §27 Item 6: Lebesgue number lemma
     Assume $x\in E$.
     Let $J=\{i\in I\mid x(i)\notin\integers\}$.
     Then there exists $r\in\reals$ such that
-        $0<r$ and $r\leq1$ and
+        $0 < r$ and $r\leq1$ and
         for all $i\in J$ there exists $n\in\integers$ such that
-            $n<x(i)$ and $x(i)<n+1$ and
-            $r<x(i)-n$ and $r<n+1-x(i)$.
+            $n < x(i)$ and $x(i) < n+1$ and
+            $r < x(i)-n$ and $r < n+1-x(i)$.
 \end{lemma}
 \begin{proof}
     \begin{byCase}
     \caseOf{$J=\emptyset$.}
-        $1\in\reals$ and $0<1$ and $1\leq1$ by
+        $1\in\reals$ and $0 < 1$ and $1\leq1$ by
             \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one}.
         Follows by \cref{emptyset}.
     \caseOf{$J\neq\emptyset$.}
@@ -79288,8 +79288,8 @@ from §27 Item 6: Lebesgue number lemma
             \text{there exist $i,t,n$ such that
             $i\in J$ and $t\in\reals$ and $n\in\integers$ and
             $w=(i,t)$ and
-            $n<x(i)$ and $x(i)<n+1$ and
-            $0<t$ and $t\leq1$ and
+            $n < x(i)$ and $x(i) < n+1$ and
+            $0 < t$ and $t\leq1$ and
             $t\leq x(i)-n$ and $t\leq n+1-x(i)$}\}$.
         For all $w\in R$ there exist $i,t$ such that $w=(i,t)$.
         $R$ is a relation by \cref{relation}.
@@ -79301,17 +79301,17 @@ from §27 Item 6: Lebesgue number lemma
             $x(i)\in\reals$ by
                 \cref{reals_power,tuple_power,funs_type_apply}.
             Take $n\in\integers$ such that
-                $n\leq x(i)$ and $x(i)<n+1$ by
+                $n\leq x(i)$ and $x(i) < n+1$ by
                 \cref{real_consecutive_integers}.
             $n\neq x(i)$ by \cref{real_lt_subst_right}.
-            $n<x(i)$ by \cref{real_leq_split}.
+            $n < x(i)$ by \cref{real_leq_split}.
             $n\in\reals$ by \cref{real_integers,subseteq}.
             $x(i)-n,n+1-x(i),1\in\reals$ by
                 \cref{real_sub,real_add_inverse,real_add_closed,real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-            $0<x(i)-n$ and $0<n+1-x(i)$ by
+            $0 < x(i)-n$ and $0 < n+1-x(i)$ by
                 \cref{real_sub,real_add_inverse,real_add_closed,real_add_ident,real_lt_add,real_add_comm,real_add_assoc,real_add_inverse,real_lt_subst_left,real_lt_subst_right}.
             Take $t\in\reals$ such that
-                $0<t$ and $t\leq1$ and
+                $0 < t$ and $t\leq1$ and
                 $t\leq x(i)-n$ and $t\leq n+1-x(i)$ by
                 \cref{real_zero_lt_one,positive_radius_below_three_bounds_49}.
             $(i,t)\in R$ by
@@ -79330,24 +79330,24 @@ from §27 Item 6: Lebesgue number lemma
             \cref{function_apply_elim,img_iff}.
         $H\neq\emptyset$ by \cref{emptyset}.
         For all $t\in H$ we have
-            $t\in\reals$ and $0<t$ and $t\leq1$ by
+            $t\in\reals$ and $0 < t$ and $t\leq1$ by
             \cref{img_iff,function_apply_intro,subseteq,relation,pair_eq_iff,real_lt_subst_left,real_lt_subst_right}.
         $H\subseteq\reals$ by \cref{subseteq}.
         Take $s\in H$ such that $s$ is a minimum of $H$ by
             \cref{finite_real_minimum}.
-        $s\in\reals$ and $0<s$ and $s\leq1$ by \cref{subseteq}.
+        $s\in\reals$ and $0 < s$ and $s\leq1$ by \cref{subseteq}.
         Let $r=s/(1+1)$.
-        $r\in\reals$ and $0<r$ and $r+r=s$ by
+        $r\in\reals$ and $0 < r$ and $r+r=s$ by
             \cref{real_half_of_positive}.
-        $r<s$ by \cref{real_half_lt_self_positive_49}.
+        $r < s$ by \cref{real_half_lt_self_positive_49}.
         $1\in\reals$ by
             \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq}.
         $r\leq s$ by \cref{real_lt_imp_leq}.
         $r\leq1$ by
             \cref{real_leq_trans}.
         For all $i\in J$ there exists $n\in\integers$ such that
-            $n<x(i)$ and $x(i)<n+1$ and
-            $r<x(i)-n$ and $r<n+1-x(i)$ by
+            $n < x(i)$ and $x(i) < n+1$ and
+            $r < x(i)-n$ and $r < n+1-x(i)$ by
             \cref{subseteq,relation,pair_eq_iff,function_apply_elim,img_iff,real_minimum,real_lt_leq_trans_local,real_integers,reals_power,tuple_power,funs_type_apply,real_sub,real_add_inverse,real_add_closed,real_one_in_naturals,real_naturals_subset_reals,real_lt_subst_left,real_lt_subst_right}.
         Follows.
     \end{byCase}
@@ -79378,18 +79378,18 @@ from §27 Item 6: Lebesgue number lemma
         \cref{cubically_equivalent_50,cubically_integer_compatible_50}.
     Let $J_x=\{i\in I\mid x(i)\notin\integers\}$.
     Take $r\in\reals$ such that
-        $0<r$ and $r\leq1$ and
+        $0 < r$ and $r\leq1$ and
         for all $i\in J_x$ there exists $n\in\integers$ such that
-            $n<x(i)$ and $x(i)<n+1$ and
-            $r<x(i)-n$ and $r<n+1-x(i)$ by
+            $n < x(i)$ and $x(i) < n+1$ and
+            $r < x(i)-n$ and $r < n+1-x(i)$ by
         \cref{noninteger_coordinates_common_safe_radius_50}.
-    Show that for all $y\in E$ if $e((x,y))<r$ then
+    Show that for all $y\in E$ if $e((x,y)) < r$ then
         for all $D$ if
             $D$ has cubical level $k$ in dimension $N$ and $y\in D$
         then $x\in D$.
     \begin{subproof}
         Fix $y\in E$.
-        Assume $e((x,y))<r$.
+        Assume $e((x,y)) < r$.
         Fix $D$.
         Assume $D$ has cubical level $k$ in dimension $N$ and $y\in D$.
         $D$ is an integer cubical cell in dimension $N$ by
@@ -79400,7 +79400,7 @@ from §27 Item 6: Lebesgue number lemma
             \cref{square_metric_value_exists}.
         $q=e((x,y))$ by
             \cref{square_metric_function,function_apply_intro}.
-        $q<r$ by \cref{real_lt_subst_left}.
+        $q < r$ by \cref{real_lt_subst_left}.
         Let $J_y=\{i\in I\mid y(i)\notin\integers\}$.
         For all $i\in J_x$ we have $i\in J_y$ by
             \cref{subseteq,reals_power,tuple_power,funs_type_apply,real_sub,real_add_inverse,real_add_closed,real_abs_in_reals,real_leq_lt_trans,small_perturbation_stays_in_integer_interval_50,no_integer_between_successive_integers_50}.
@@ -79414,8 +79414,8 @@ from §27 Item 6: Lebesgue number lemma
             \cref{cubically_integer_compatible_50}.
         For all $i\in I$ if $x(i)\notin\integers$ then
             there exists $n\in\integers$ such that
-                $n<x(i)$ and $x(i)<n+1$ and
-                $n<y(i)$ and $y(i)<n+1$ by
+                $n < x(i)$ and $x(i) < n+1$ and
+                $n < y(i)$ and $y(i) < n+1$ by
             \cref{subseteq,reals_power,tuple_power,funs_type_apply,real_sub,real_add_inverse,real_add_closed,real_abs_in_reals,real_leq_lt_trans,small_perturbation_stays_in_integer_interval_50}.
         $x$ is cubically noninteger-compatible with $y$ in dimension $N$ by
             \cref{cubically_noninteger_compatible_50}.
@@ -79443,7 +79443,7 @@ from §27 Item 6: Lebesgue number lemma
             \text{there exist $x,r$ such that $x\in C$ and $r\in\reals$ and
             $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$
             and
-            $\apply{\squareMetric{N}}{(x,z)}<(r/(1+1))/(1+1)$}\}$.
+            $\apply{\squareMetric{N}}{(x,z)} < (r/(1+1))/(1+1)$}\}$.
 \end{definition}
 
 % from §50 helper lemma 158: every leveled cubical cell has an expansion
@@ -79458,7 +79458,7 @@ from §27 Item 6: Lebesgue number lemma
         \text{there exist $x,r$ such that $x\in C$ and $r\in\reals$ and
         $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$
         and
-        $\apply{\squareMetric{N}}{(x,z)}<(r/(1+1))/(1+1)$}\}$.
+        $\apply{\squareMetric{N}}{(x,z)} < (r/(1+1))/(1+1)$}\}$.
     Follows by \cref{cubical_cell_expansion_50}.
 \end{proof}
 
@@ -79489,16 +79489,16 @@ from §27 Item 6: Lebesgue number lemma
     Take $r\in\reals$ such that
         $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$ by
         \cref{cubical_protective_radius_exists_50}.
-    $0<r$ by \cref{cubical_protective_radius_50}.
+    $0 < r$ by \cref{cubical_protective_radius_50}.
     Let $h=r/(1+1)$.
     Let $q=h/(1+1)$.
-    $h\in\reals$ and $0<h$ by
+    $h\in\reals$ and $0 < h$ by
         \cref{real_half_of_positive}.
-    $q\in\reals$ and $0<q$ by
+    $q\in\reals$ and $0 < q$ by
         \cref{real_half_of_positive}.
     $e((x,x))=0$ by
         \cref{metric_on,metric_zero_characterization}.
-    $e((x,x))<q$ by
+    $e((x,x)) < q$ by
         \cref{real_lt_subst_left}.
     $x\in U$ by
         \cref{cubical_cell_expansion_50,subseteq}.
@@ -79532,27 +79532,27 @@ from §27 Item 6: Lebesgue number lemma
     $U\subseteq E$ by
         \cref{cubical_cell_expansion_50,subseteq}.
     Show that for all $z\in U$ there exists $\delta\in\reals$ such that
-        $0<\delta$ and $\metricBall{e}{E}{z}{\delta}\subseteq U$.
+        $0 < \delta$ and $\metricBall{e}{E}{z}{\delta}\subseteq U$.
     \begin{subproof}
         Fix $z\in U$.
         Take $x,r$ such that
             $x\in C$ and $r\in\reals$ and
             $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$ and
-            $e((x,z))<(r/(1+1))/(1+1)$ by
+            $e((x,z)) < (r/(1+1))/(1+1)$ by
             \cref{cubical_cell_expansion_50,subseteq}.
         $x,z\in E$ by
             \cref{cubical_protective_radius_50,subseteq}.
-        $0<r$ by \cref{cubical_protective_radius_50}.
+        $0 < r$ by \cref{cubical_protective_radius_50}.
         Let $h=r/(1+1)$.
         Let $q=h/(1+1)$.
-        $h\in\reals$ and $0<h$ by
+        $h\in\reals$ and $0 < h$ by
             \cref{real_half_of_positive}.
-        $q\in\reals$ and $0<q$ by
+        $q\in\reals$ and $0 < q$ by
             \cref{real_half_of_positive}.
         $e((x,z))\in\reals$ by
             \cref{metric_on,times_tuple_intro,funs_type_apply}.
         Let $\delta=q-e((x,z))$.
-        $\delta\in\reals$ and $0<\delta$ by
+        $\delta\in\reals$ and $0 < \delta$ by
             \cref{real_sub,real_add_inverse,real_add_closed,real_lt_imp_pos_diff}.
         Show that $\metricBall{e}{E}{z}{\delta}\subseteq U$.
         \begin{subproof}
@@ -79560,15 +79560,15 @@ from §27 Item 6: Lebesgue number lemma
                 $w\in\metricBall{e}{E}{z}{\delta}$ we have $w\in U$ by
                 \cref{subseteq}.
             Fix $w\in\metricBall{e}{E}{z}{\delta}$.
-            $w\in E$ and $e((z,w))<\delta$ by
+            $w\in E$ and $e((z,w)) < \delta$ by
                 \cref{metric_ball}.
             $e((z,w))\in\reals$ by
                 \cref{metric_on,times_tuple_intro,funs_type_apply}.
-            $e((x,z))+e((z,w))<q$ by
+            $e((x,z))+e((z,w)) < q$ by
                 \cref{real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_comm,real_add_inverse,real_add_ident,real_lt_subst_left,real_lt_subst_right}.
             $e((x,w))\leq e((x,z))+e((z,w))$ by
                 \cref{metric_on,metric_triangle_inequality}.
-            $e((x,w))<q$ by
+            $e((x,w)) < q$ by
                 \cref{metric_on,times_tuple_intro,funs_type_apply,real_add_closed,real_leq_lt_trans}.
             Follows by
                 \cref{cubical_cell_expansion_50,subseteq}.
@@ -79595,17 +79595,17 @@ from §27 Item 6: Lebesgue number lemma
     Take $x,r$ such that
         $x\in C$ and $r\in\reals$ and
         $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$ and
-        $e((x,z))<(r/(1+1))/(1+1)$ by
+        $e((x,z)) < (r/(1+1))/(1+1)$ by
         \cref{cubical_cell_expansion_50,subseteq}.
     Take $y,s$ such that
         $y\in D$ and $s\in\reals$ and
         $s$ is a cubical protective radius for $y$ at level $k$ in dimension $N$ and
-        $e((y,z))<(s/(1+1))/(1+1)$ by
+        $e((y,z)) < (s/(1+1))/(1+1)$ by
         \cref{cubical_cell_expansion_50,subseteq}.
     $N,k\in\naturalsPlus$ and $x\in E$ and
-        $0<r$ and $r\leq1$ by
+        $0 < r$ and $r\leq1$ by
         \cref{cubical_protective_radius_50}.
-    $y\in E$ and $0<s$ and $s\leq1$ by
+    $y\in E$ and $0 < s$ and $s\leq1$ by
         \cref{cubical_protective_radius_50}.
     $z\in E$ by
         \cref{cubical_cell_expansion_50,subseteq}.
@@ -79621,24 +79621,24 @@ from §27 Item 6: Lebesgue number lemma
     Let $h_s=s/(1+1)$.
     Let $q_s=h_s/(1+1)$.
     $h_r,q_r,h_s,q_s\in\reals$ and
-        $0<h_r$ and $0<q_r$ and $0<h_s$ and $0<q_s$ by
+        $0 < h_r$ and $0 < q_r$ and $0 < h_s$ and $0 < q_s$ by
         \cref{real_half_of_positive}.
     $e((z,y))=e((y,z))$ by
         \cref{metric_on,metric_symmetric}.
-    $e((z,y))<q_s$ by \cref{real_lt_subst_left}.
+    $e((z,y)) < q_s$ by \cref{real_lt_subst_left}.
     $e((x,z)),e((z,y)),e((x,y))\in\reals$ by
         \cref{metric_on,times_tuple_intro,funs_type_apply}.
-    $e((x,z))+e((z,y))<q_r+e((z,y))$ by
+    $e((x,z))+e((z,y)) < q_r+e((z,y))$ by
         \cref{real_lt_add}.
-    $q_r+e((z,y))<q_r+q_s$ by
+    $q_r+e((z,y)) < q_r+q_s$ by
         \cref{real_lt_add,real_add_comm,real_lt_subst_left,real_lt_subst_right}.
     $e((x,z))+e((z,y)),q_r+e((z,y)),q_r+q_s\in\reals$ by
         \cref{real_add_closed}.
-    $e((x,z))+e((z,y))<q_r+q_s$ by
+    $e((x,z))+e((z,y)) < q_r+q_s$ by
         \cref{real_lt_trans}.
     $e((x,y))\leq e((x,z))+e((z,y))$ by
         \cref{metric_on,metric_triangle_inequality}.
-    $e((x,y))<q_r+q_s$ by
+    $e((x,y)) < q_r+q_s$ by
         \cref{real_add_closed,real_leq_lt_trans}.
     \begin{byCase}
     \caseOf{$r\leq s$.}
@@ -79651,20 +79651,20 @@ from §27 Item 6: Lebesgue number lemma
         $q_r+q_s\leq q_s+q_s$ by
             \cref{real_leq_add}.
         $q_s+q_s=h_s$ by \cref{real_half_plus_half}.
-        $h_s<s$ by \cref{real_half_lt_self_positive_49}.
-        $q_r+q_s<s$ by
+        $h_s < s$ by \cref{real_half_lt_self_positive_49}.
+        $q_r+q_s < s$ by
             \cref{real_lt_subst_left,real_leq_lt_trans}.
-        $e((x,y))<s$ by \cref{real_lt_trans}.
+        $e((x,y)) < s$ by \cref{real_lt_trans}.
         $e((y,x))=e((x,y))$ by
             \cref{metric_on,metric_symmetric}.
-        $e((y,x))<s$ by \cref{real_lt_subst_left}.
+        $e((y,x)) < s$ by \cref{real_lt_subst_left}.
         $y\in C$ by
             \cref{cubical_protective_radius_50}.
         $y\in C\inter D$ by \cref{inter_intro}.
         $C=D$ by
             \cref{integer_cubical_cells_common_point_equal_50}.
         Contradiction.
-    \caseOf{$s<r$.}
+    \caseOf{$s < r$.}
         $1+1\in\naturalsPlus$ by
             \cref{real_one_in_naturals,real_naturals_closed_succ}.
         $h_s\leq h_r$ by
@@ -79677,10 +79677,10 @@ from §27 Item 6: Lebesgue number lemma
         $q_r+q_s\leq q_r+q_r$ by
             \cref{real_leq_subst_left_local}.
         $q_r+q_r=h_r$ by \cref{real_half_plus_half}.
-        $h_r<r$ by \cref{real_half_lt_self_positive_49}.
-        $q_r+q_s<r$ by
+        $h_r < r$ by \cref{real_half_lt_self_positive_49}.
+        $q_r+q_s < r$ by
             \cref{real_lt_subst_left,real_leq_lt_trans}.
-        $e((x,y))<r$ by \cref{real_lt_trans}.
+        $e((x,y)) < r$ by \cref{real_lt_trans}.
         $x\in D$ by
             \cref{cubical_protective_radius_50}.
         $x\in C\inter D$ by \cref{inter_intro}.
@@ -79693,8 +79693,8 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 162: two points in one open unit interval differ by at most one
 \begin{lemma}\label{unit_integer_interval_absolute_difference_bound_50}
     Assume $n\in\integers$ and $x,y\in\reals$.
-    Assume $n<x$ and $x<n+1$.
-    Assume $n<y$ and $y<n+1$.
+    Assume $n < x$ and $x < n+1$.
+    Assume $n < y$ and $y < n+1$.
     Then $\abs{x-y}\leq1$.
 \end{lemma}
 \begin{proof}
@@ -79702,12 +79702,12 @@ from §27 Item 6: Lebesgue number lemma
         \cref{real_integers,real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_closed}.
     $y-1,y+1\in\reals$ by
         \cref{real_sub,real_add_inverse,real_add_closed}.
-    $y-1<n$ by
+    $y-1 < n$ by
         \cref{real_sub,real_add_inverse,real_add_closed,real_lt_add,real_add_assoc,real_add_comm,real_add_inverse,real_add_ident,real_lt_subst_left,real_lt_subst_right}.
-    $y-1<x$ by \cref{real_lt_trans}.
+    $y-1 < x$ by \cref{real_lt_trans}.
     $y-1\leq x$ by \cref{real_lt_imp_leq}.
-    $n+1<y+1$ by \cref{real_lt_add}.
-    $x<y+1$ by \cref{real_lt_trans}.
+    $n+1 < y+1$ by \cref{real_lt_add}.
+    $x < y+1$ by \cref{real_lt_trans}.
     $x\leq y+1$ by \cref{real_lt_imp_leq}.
     $0\leq1$ by
         \cref{real_zero_lt_one,real_lt_imp_leq}.
@@ -79744,7 +79744,7 @@ from §27 Item 6: Lebesgue number lemma
 \begin{lemma}\label{cubical_cell_expansion_metric_bound_50}
     Assume $U$ is the cubical expansion of $C$ at level $k$ in dimension $N$.
     Assume $z,w\in U$.
-    Then $\apply{\squareMetric{N}}{(z,w)}<(1+1)+1$.
+    Then $\apply{\squareMetric{N}}{(z,w)} < (1+1)+1$.
 \end{lemma}
 \begin{proof}
     Let $I=\initialSegment{N}$.
@@ -79753,15 +79753,15 @@ from §27 Item 6: Lebesgue number lemma
     Take $x,r$ such that
         $x\in C$ and $r\in\reals$ and
         $r$ is a cubical protective radius for $x$ at level $k$ in dimension $N$ and
-        $e((x,z))<(r/(1+1))/(1+1)$ by
+        $e((x,z)) < (r/(1+1))/(1+1)$ by
         \cref{cubical_cell_expansion_50,subseteq}.
     Take $y,s$ such that
         $y\in C$ and $s\in\reals$ and
         $s$ is a cubical protective radius for $y$ at level $k$ in dimension $N$ and
-        $e((y,w))<(s/(1+1))/(1+1)$ by
+        $e((y,w)) < (s/(1+1))/(1+1)$ by
         \cref{cubical_cell_expansion_50,subseteq}.
     $N,k\in\naturalsPlus$ and $x,y,z,w\in E$ and
-        $0<r$ and $r\leq1$ and $0<s$ and $s\leq1$ by
+        $0 < r$ and $r\leq1$ and $0 < s$ and $s\leq1$ by
         \cref{cubical_protective_radius_50,cubical_cell_expansion_50,subseteq}.
     $e$ is a metric on $E$ by \cref{square_metric_is_metric}.
     $C$ is an integer cubical cell in dimension $N$ by
@@ -79771,9 +79771,9 @@ from §27 Item 6: Lebesgue number lemma
     Let $h_s=s/(1+1)$.
     Let $q_s=h_s/(1+1)$.
     $h_r,q_r,h_s,q_s\in\reals$ and
-        $0<h_r$ and $0<q_r$ and $0<h_s$ and $0<q_s$ by
+        $0 < h_r$ and $0 < q_r$ and $0 < h_s$ and $0 < q_s$ by
         \cref{real_half_of_positive}.
-    $q_r<h_r$ and $h_r<r$ and $q_s<h_s$ and $h_s<s$ by
+    $q_r < h_r$ and $h_r < r$ and $q_s < h_s$ and $h_s < s$ by
         \cref{real_half_lt_self_positive_49}.
     $e((z,x)),e((x,y)),e((z,y)),e((y,w)),e((z,w))\in\reals$ by
         \cref{metric_on,times_tuple_intro,funs_type_apply}.
@@ -79781,23 +79781,23 @@ from §27 Item 6: Lebesgue number lemma
         \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_add_closed}.
     $e((z,x))=e((x,z))$ by
         \cref{metric_on,metric_symmetric}.
-    $e((x,z))<q_r$ and $e((y,w))<q_s$ by
+    $e((x,z)) < q_r$ and $e((y,w)) < q_s$ by
         \cref{real_lt_subst_right}.
-    $e((z,x))<q_r$ by
+    $e((z,x)) < q_r$ by
         \cref{real_lt_subst_left}.
-    $e((z,x))<h_r$ and $e((z,x))<r$ and $e((z,x))<1$ by
+    $e((z,x)) < h_r$ and $e((z,x)) < r$ and $e((z,x)) < 1$ by
         \cref{real_lt_trans,real_lt_leq_trans_local}.
-    $e((y,w))<h_s$ and $e((y,w))<s$ and $e((y,w))<1$ by
+    $e((y,w)) < h_s$ and $e((y,w)) < s$ and $e((y,w)) < 1$ by
         \cref{real_lt_trans,real_lt_leq_trans_local}.
     $e((x,y))\leq1$ by
         \cref{integer_cubical_cell_metric_bound_50}.
-    $e((z,x))+e((x,y))<1+1$ by
+    $e((z,x))+e((x,y)) < 1+1$ by
         \cref{real_lt_add_leq_two_49}.
     $e((z,y))\leq e((z,x))+e((x,y))$ by
         \cref{metric_on,metric_triangle_inequality}.
-    $e((z,y))<1+1$ by
+    $e((z,y)) < 1+1$ by
         \cref{real_add_closed,real_leq_lt_trans}.
-    $e((z,y))+e((y,w))<(1+1)+1$ by
+    $e((z,y))+e((y,w)) < (1+1)+1$ by
         \cref{real_lt_add_two}.
     $e((z,w))\leq e((z,y))+e((y,w))$ by
         \cref{metric_on,metric_triangle_inequality}.
@@ -79814,7 +79814,7 @@ from §27 Item 6: Lebesgue number lemma
         $A$ is an open covering of $E$ with respect to $S$ and
         $A$ has order at most $N+1$ in $E$ and
         for all $U\in A$ for all $x,y\in U$ we have
-            $\apply{\squareMetric{N}}{(x,y)}<(1+1)+1$.
+            $\apply{\squareMetric{N}}{(x,y)} < (1+1)+1$.
 \end{lemma}
 \begin{proof}
     Let $J=\initialSegment{N+1}$.
@@ -79919,7 +79919,7 @@ from §27 Item 6: Lebesgue number lemma
     $A$ has order at most $N+1$ in $E$ by
         \cref{covering_order_at_most_50}.
     For all $U\in A$ for all $x,y\in U$ we have
-        $\apply{\squareMetric{N}}{(x,y)}<(1+1)+1$ by
+        $\apply{\squareMetric{N}}{(x,y)} < (1+1)+1$ by
         \cref{subseteq,cubical_cell_expansion_metric_bound_50}.
     Follows.
 \end{proof}
@@ -79938,7 +79938,7 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 166: every positive scalar induces a euclidean bijection
 \begin{lemma}\label{positive_euclidean_scalar_dilation_bijection_50}
     Assume $N\in\naturalsPlus$.
-    Assume $c\in\reals$ and $0<c$.
+    Assume $c\in\reals$ and $0 < c$.
     Let $E=\realsPower{\initialSegment{N}}$.
     Then there exists $f$ such that
         $f$ is the scalar dilation by $c$ in dimension $N$ and
@@ -80065,7 +80065,7 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 168: positive dilations scale the square metric
 \begin{lemma}\label{euclidean_scalar_dilation_metric_50}
     Assume $N\in\naturalsPlus$.
-    Assume $c\in\reals$ and $0<c$.
+    Assume $c\in\reals$ and $0 < c$.
     Let $I=\initialSegment{N}$.
     Let $E=\realsPower{I}$.
     Let $e=\squareMetric{N}$.
@@ -80152,7 +80152,7 @@ from §27 Item 6: Lebesgue number lemma
 % from §50 helper lemma 169: positive euclidean scalar dilations are continuous
 \begin{lemma}\label{positive_euclidean_scalar_dilation_continuous_50}
     Assume $N\in\naturalsPlus$.
-    Assume $c\in\reals$ and $0<c$.
+    Assume $c\in\reals$ and $0 < c$.
     Let $E=\realsPower{\initialSegment{N}}$.
     Let $e=\squareMetric{N}$.
     Let $S=\metricTopology{e}{E}$.
@@ -80164,27 +80164,27 @@ from §27 Item 6: Lebesgue number lemma
     $e$ is a metric on $E$ by \cref{square_metric_is_metric}.
     $f\in\funs{E}{E}$ by \cref{bijections_to_funs}.
     Show that for all $x\in E$ we have
-        for all $\epsilon\in\reals$ such that $0<\epsilon$
-        there exists $\delta\in\reals$ such that $0<\delta$ and
-        for all $y\in E$ if $e((x,y))<\delta$
-        then $e((f(x),f(y)))<\epsilon$.
+        for all $\epsilon\in\reals$ such that $0 < \epsilon$
+        there exists $\delta\in\reals$ such that $0 < \delta$ and
+        for all $y\in E$ if $e((x,y)) < \delta$
+        then $e((f(x),f(y))) < \epsilon$.
     \begin{subproof}
         Fix $x\in E$.
         Fix $\epsilon\in\reals$.
-        Assume $0<\epsilon$.
+        Assume $0 < \epsilon$.
         Let $\delta=\epsilon/c$.
-        $c\neq0$ and $\inv{c}\in\reals$ and $0<\inv{c}$ by
+        $c\neq0$ and $\inv{c}\in\reals$ and $0 < \inv{c}$ by
             \cref{real_pos_nonzero,real_mul_inverse,real_inv_pos}.
         $\delta=\epsilon\rmul\inv{c}$ and $\delta\in\reals$ by
             \cref{real_div,real_mul_closed}.
-        $0<\delta$ by
+        $0 < \delta$ by
             \cref{real_add_ident,real_lt_mul_pos,real_mul_zero,real_lt_subst_left,real_lt_subst_right}.
-        For all $y\in E$ if $e((x,y))<\delta$
-            then $e((f(x),f(y)))<\epsilon$ by
+        For all $y\in E$ if $e((x,y)) < \delta$
+            then $e((f(x),f(y))) < \epsilon$ by
             \cref{metric_on,times_tuple_intro,funs_type_apply,real_lt_mul_pos,real_mul_comm,real_lt_subst_left,real_lt_subst_right,real_div,real_mul_assoc,real_mul_inverse,real_mul_ident,euclidean_scalar_dilation_metric_50}.
-        Thus there exists $\eta\in\reals$ such that $0<\eta$ and
-            for all $y\in E$ if $e((x,y))<\eta$
-            then $e((f(x),f(y)))<\epsilon$.
+        Thus there exists $\eta\in\reals$ such that $0 < \eta$ and
+            for all $y\in E$ if $e((x,y)) < \eta$
+            then $e((f(x),f(y))) < \epsilon$.
     \end{subproof}
     Follows by \cref{metric_continuity_eps_delta}.
 \end{proof}
@@ -80195,23 +80195,23 @@ from §27 Item 6: Lebesgue number lemma
     Let $E=\realsPower{\initialSegment{N}}$.
     Let $e=\squareMetric{N}$.
     Let $S=\metricTopology{e}{E}$.
-    Assume $\epsilon\in\reals$ and $0<\epsilon$.
+    Assume $\epsilon\in\reals$ and $0 < \epsilon$.
     Then there exists $B$ such that
         $B$ is an open covering of $E$ with respect to $S$ and
         $B$ has order at most $N+1$ in $E$ and
         for all $V\in B$ for all $x,y\in V$ we have
-            $e((x,y))<\epsilon$.
+            $e((x,y)) < \epsilon$.
 \end{lemma}
 \begin{proof}
     Let $K=(1+1)+1$.
-    $1\in\reals$ and $0<1$ by
+    $1\in\reals$ and $0 < 1$ by
         \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one}.
-    $1+1,K\in\reals$ and $0<1+1$ and $0<K$ by
+    $1+1,K\in\reals$ and $0 < 1+1$ and $0 < K$ by
         \cref{real_add_closed,real_pos_add}.
     Take $m\in\naturalsPlus$ such that
-        $0<1/m$ and $K\rmul(1/m)\leq\epsilon$ by
+        $0 < 1/m$ and $K\rmul(1/m)\leq\epsilon$ by
         \cref{positive_mesh_step_scaled_bound_49}.
-    $m\in\reals$ and $0<m$ by
+    $m\in\reals$ and $0 < m$ by
         \cref{real_naturals_subset_reals,subseteq,naturalsplus_positive_real}.
     Take $f$ such that
         $f$ is the scalar dilation by $m$ in dimension $N$ and
@@ -80224,7 +80224,7 @@ from §27 Item 6: Lebesgue number lemma
         $A$ is an open covering of $E$ with respect to $S$ and
         $A$ has order at most $N+1$ in $E$ and
         for all $U\in A$ for all $u,v\in U$ we have
-            $e((u,v))<K$ by
+            $e((u,v)) < K$ by
         \cref{integer_cubical_expansion_cover_50}.
     Let $B=\{V\in\pow{E}\mid
         \text{there exists $U\in A$ such that $V=\preimg{f}{U}$}\}$.
@@ -80240,7 +80240,7 @@ from §27 Item 6: Lebesgue number lemma
     $B$ is an open covering of $E$ with respect to $S$ by
         \cref{open_covering}.
     Show that for all $V\in B$ for all $x,y$ such that
-        $x\in V$ and $y\in V$ we have $e((x,y))<\epsilon$.
+        $x\in V$ and $y\in V$ we have $e((x,y)) < \epsilon$.
     \begin{subproof}
         Fix $V\in B$.
         Fix $x$.
@@ -80252,17 +80252,17 @@ from §27 Item 6: Lebesgue number lemma
             \cref{powerset_elim,subseteq}.
         $f(x),f(y)\in U$ by
             \cref{preimg_iff,funs_is_function,function_apply_iff,real_lt_subst_left,real_lt_subst_right}.
-        $m\rmul e((x,y))<K$ by
+        $m\rmul e((x,y)) < K$ by
             \cref{subseteq,euclidean_scalar_dilation_metric_50,real_lt_subst_left}.
         $e((x,y))\in\reals$ and $m\rmul e((x,y))\in\reals$ by
             \cref{square_metric_is_metric,metric_on,times_tuple_intro,funs_type_apply,real_mul_closed}.
-        $(m\rmul e((x,y)))\rmul(1/m)<K\rmul(1/m)$ by
+        $(m\rmul e((x,y)))\rmul(1/m) < K\rmul(1/m)$ by
             \cref{naturalsplus_reciprocal_real,real_lt_mul_pos,real_lt_subst_left}.
         $m\neq0$ and $\inv{m}\in\reals$ and $1/m=\inv{m}$ by
             \cref{real_pos_nonzero,real_mul_inverse,real_div,real_mul_ident}.
         $(m\rmul e((x,y)))\rmul(1/m)=e((x,y))$ by
             \cref{real_mul_assoc,real_mul_comm,real_mul_inverse,real_mul_ident,real_lt_subst_left,real_lt_subst_right}.
-        $e((x,y))<K\rmul(1/m)$ by
+        $e((x,y)) < K\rmul(1/m)$ by
             \cref{real_lt_subst_left}.
         Follows by
             \cref{real_mul_closed,naturalsplus_reciprocal_real,real_lt_leq_trans_local}.
@@ -80271,7 +80271,7 @@ from §27 Item 6: Lebesgue number lemma
         $C$ is an open covering of $E$ with respect to $S$ and
         $C$ has order at most $N+1$ in $E$ and
         for all $V\in C$ for all $x,y\in V$ we have
-            $e((x,y))<\epsilon$.
+            $e((x,y)) < \epsilon$.
 \end{proof}
 
 % from §50 helper lemma 171: restricting the square metric to a subset gives a metric
@@ -80343,20 +80343,20 @@ from §27 Item 6: Lebesgue number lemma
         \cref{compact_eq_topology}.
     $N\in\naturals$ by
         \cref{naturals,union_intro_left}.
-    Show that for all $\epsilon\in\reals$ such that $0<\epsilon$
+    Show that for all $\epsilon\in\reals$ such that $0 < \epsilon$
         there exists $C$ such that
             $C$ is an open covering of $X$ with respect to $T_d$ and
             $C$ has order at most $N+1$ in $X$ and
             for all $U\in C$ for all $x,y\in U$ we have
-                $d((x,y))<\epsilon$.
+                $d((x,y)) < \epsilon$.
     \begin{subproof}
         Fix $\epsilon\in\reals$.
-        Assume $0<\epsilon$.
+        Assume $0 < \epsilon$.
         Take $B$ such that
             $B$ is an open covering of $E$ with respect to $S$ and
             $B$ has order at most $N+1$ in $E$ and
             for all $V\in B$ for all $x,y\in V$ we have
-                $e((x,y))<\epsilon$ by
+                $e((x,y)) < \epsilon$ by
             \cref{fine_integer_cubical_expansion_cover_50}.
         Let $C=\{U\in\pow{X}\mid
             \text{there exists $V\in B$ such that $U=X\inter V$}\}$.
@@ -80372,13 +80372,13 @@ from §27 Item 6: Lebesgue number lemma
         $C$ is an open covering of $X$ with respect to $T_d$ by
             \cref{open_covering}.
         For all $U\in C$ for all $x,y$ such that
-            $x\in U$ and $y\in U$ we have $d((x,y))<\epsilon$ by
+            $x\in U$ and $y\in U$ we have $d((x,y)) < \epsilon$ by
             \cref{subseteq,real_lt_subst_left,real_lt_subst_right,inter_elim_left,inter_elim_right,times_tuple_intro,metric_on,funs_is_function,restrl_of_function_apply}.
         Thus there exists $D$ such that
             $D$ is an open covering of $X$ with respect to $T_d$ and
             $D$ has order at most $N+1$ in $X$ and
             for all $U\in D$ for all $x,y\in U$ we have
-                $d((x,y))<\epsilon$.
+                $d((x,y)) < \epsilon$.
     \end{subproof}
     $N$ is a topological dimension bound for $X$ with respect to $T_d$ by
         \cref{fine_ordered_metric_covers_dimension_bound_50}.

@@ -4405,7 +4405,7 @@ This lets us use the same symbol for composition of functions.
 
 \subsection{Order relation}
 
-The next abbreviation is a hack. The symbol "<" cannot be introduced by axioms.
+The next abbreviation is a hack. The symbol " < " cannot be introduced by axioms.
 By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF. 
 
 \begin{abbreviation}\label{real_lt}
@@ -4443,7 +4443,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $a \rmul c < b \rmul c$.
 \end{axiom}
 
-% irreflexivity of <
+% irreflexivity of  < 
 \begin{axiom}\label{real_lt_irreflexive}
     Suppose $a\in\reals$.
     Then it is wrong that $a < a$.
@@ -4451,7 +4451,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % greater than
 \begin{abbreviation}\label{real_gt}
-    $a > b$ iff $b < a$.
+    $a  > b$ iff $b < a$.
 \end{abbreviation}
 
 % at most
@@ -4466,7 +4466,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % positive
 \begin{abbreviation}\label{real_positive}
-    $a$ is positive iff $a > 0$.
+    $a$ is positive iff $a  > 0$.
 \end{abbreviation}
 
 % nonnegative
@@ -4549,7 +4549,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{definition}
 
 \begin{definition}\label{intervalopen_infinite_right}
-    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x > a\}$.
+    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x  > a\}$.
 \end{definition}
 
 \begin{definition}\label{intervalclosed_infinite_left}
@@ -4852,7 +4852,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % sign change (forward)
 \begin{proposition}\label{real_pos_imp_neg}
-    Suppose $a\in\reals$ and $a > 0$.
+    Suppose $a\in\reals$ and $a  > 0$.
     Then $\neg{a} < 0$.
 \end{proposition}
 \begin{proof}
@@ -4862,7 +4862,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % sign change (backward)
 \begin{proposition}\label{real_neg_imp_pos}
     Suppose $a\in\reals$ and $\neg{a} < 0$.
-    Then $a > 0$.
+    Then $a  > 0$.
 \end{proposition}
 \begin{proof}
     Follows by \cref{real_add_inverse,real_add_ident,real_lt_add,real_add_comm}.
@@ -4909,7 +4909,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % helper lemma 9: positive implies nonzero
 \begin{lemma}\label{real_pos_nonzero}
-    Suppose $a\in\reals$ and $a > 0$.
+    Suppose $a\in\reals$ and $a  > 0$.
     Then $a \neq 0$.
 \end{lemma}
 
@@ -4922,19 +4922,19 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % product of positives is positive
 \begin{proposition}\label{real_mul_pos_pos_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
-    Then $a \rmul b > 0$.
+    Then $a \rmul b  > 0$.
 \end{proposition}
 
 % product of negatives is positive
 \begin{proposition}\label{real_mul_neg_neg_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
-    Then $a \rmul b > 0$.
+    Then $a \rmul b  > 0$.
 \end{proposition}
 
 % product positive (backward)
 \begin{proposition}\label{real_mul_pos_same_sign_rev}
-    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b > 0$.
-    Then either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b  > 0$.
+    Then either $a  > 0$ and $b  > 0$ or $a < 0$ and $b < 0$.
 \end{proposition}
 % \begin{proof}
 %     Suppose not.
@@ -4995,9 +4995,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Show if $a < b$ then $\exp{a}{1+1} < \exp{b}{1+1}$.
     \begin{subproof}
         Assume $a < b$.
-        Thus $(b - a) \rmul (a + b) > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
+        Thus $(b - a) \rmul (a + b)  > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
         Hence $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_add_comm,real_diff_squares}.
-        Therefore $\exp{b}{1+1} - \exp{a}{1+1} > 0$.
+        Therefore $\exp{b}{1+1} - \exp{a}{1+1}  > 0$.
         We have $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
     \end{subproof}
     Show if $\exp{a}{1+1} < \exp{b}{1+1}$ then $a < b$.
@@ -5006,9 +5006,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Show $0 < b - a$.
         \begin{subproof}
             Suppose not.
-            Thus either $a + b > 0$ and $b - a > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
+            Thus either $a + b  > 0$ and $b - a  > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
             \begin{byCase}
-            \caseOf{$a + b > 0$ and $b - a > 0$.}
+            \caseOf{$a + b  > 0$ and $b - a  > 0$.}
                 Contradiction.
             \caseOf{$a + b < 0$ and $b - a < 0$.}
                 Contradiction by \cref{real_pos_add,real_add_ident,real_add_closed,real_pos_nonzero,real_lt_asym}.
@@ -5032,8 +5032,8 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % inverse of a positive number
 \begin{proposition}\label{real_inv_pos}
-    Suppose $a\in\reals$ and $a > 0$.
-    Then $\inv{a} > 0$.
+    Suppose $a\in\reals$ and $a  > 0$.
+    Then $\inv{a}  > 0$.
 \end{proposition}
 
 % inverse of a negative number
@@ -5725,7 +5725,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Take $f$ such that $f\in\bijections{\initialSegment{n}}{X}$.
         $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
         $1\in\reals$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-        Thus $n<n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
+        Thus $n < n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
         Hence $n+1\neq n$ by \cref{real_lt_irreflexive}.
         Hence $n+1\notin\initialSegment{n}$ by \cref{initial_segment_naturalsplus,real_naturals_closed_succ,real_naturals_subset_reals,subseteq,real_lt_asym}.
         Let $g=\cons{(n+1,x)}{f}$.
@@ -5753,7 +5753,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \begin{proof}
     $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
     $1\in\reals$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-    Thus $n<n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
+    Thus $n < n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
     Hence $n+1\neq n$ by \cref{real_lt_irreflexive}.
     Follows by \cref{initial_segment_naturalsplus,real_naturals_closed_succ,real_naturals_subset_reals,subseteq,real_lt_asym}.
 \end{proof}
@@ -6011,9 +6011,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Thus there exists $p\in\cons{x}{Y}$ such that $p$ is a maximum of $\cons{x}{Y}$.
     \caseOf{$x\not\leq m$.}
         $x\neq m$ by definition.
-        $x<m$ or $m<x$ by \cref{real_lt_trichotomy}.
-        It is wrong that $x<m$ by definition.
-        Hence $m<x$ by assumption.
+        $x < m$ or $m < x$ by \cref{real_lt_trichotomy}.
+        It is wrong that $x < m$ by definition.
+        Hence $m < x$ by assumption.
         Thus $m\leq x$ by definition.
         $x\in\cons{x}{Y}$ by \cref{cons_left}.
         Show that for all $a\in\cons{x}{Y}$ we have $a\leq x$.
@@ -6111,9 +6111,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Thus there exists $p\in\cons{x}{Y}$ such that $p$ is a minimum of $\cons{x}{Y}$.
     \caseOf{$m\not\leq x$.}
         $m\neq x$ by definition.
-        $m<x$ or $x<m$ by \cref{real_lt_trichotomy}.
-        It is wrong that $m<x$ by definition.
-        Hence $x<m$ by assumption.
+        $m < x$ or $x < m$ by \cref{real_lt_trichotomy}.
+        It is wrong that $m < x$ by definition.
+        Hence $x < m$ by assumption.
         Thus $x\leq m$ by definition.
         $x\in\cons{x}{Y}$ by \cref{cons_left}.
         Show that for all $a\in\cons{x}{Y}$ we have $x\leq a$.
@@ -6326,8 +6326,8 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     $m,n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-    $1<2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
-    Hence $0<2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_add_closed,real_lt_trans}.
+    $1 < 2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
+    Hence $0 < 2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_add_closed,real_lt_trans}.
     $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
     Thus $2\neq0$ by \cref{real_pos_nonzero}.
     Follows by \cref{real_mul_cancel}.
@@ -6336,7 +6336,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % from §12 helper lemma 15: a larger natural is at least the successor
 \begin{lemma}\label{natural_succ_leq}
     Suppose $n,m\in\naturals$.
-    Suppose $n<m$.
+    Suppose $n < m$.
     Then $n+1\leq m$.
 \end{lemma}
 \begin{proof}
@@ -6346,12 +6346,12 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Then $n+1=1$ by \cref{real_add_ident,real_mul_ident}.
         $m\neq0$ by \cref{real_lt_irreflexive}.
         Hence $m\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        $1<m$ or $1=m$ by \cref{real_one_leq_naturalsplus}.
+        $1 < m$ or $1=m$ by \cref{real_one_leq_naturalsplus}.
         Thus $n+1\leq m$ by definition.
     \caseOf{$n\neq0$.}
         Then $n\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        $0<n$ by \cref{real_one_leq_naturalsplus,real_zero_lt_one,real_naturals_subset_reals,elem_subseteq,real_add_ident,real_mul_ident,real_lt_trans}.
-        Hence $0<m$ by \cref{real_add_ident,real_lt_trans}.
+        $0 < n$ by \cref{real_one_leq_naturalsplus,real_zero_lt_one,real_naturals_subset_reals,elem_subseteq,real_add_ident,real_mul_ident,real_lt_trans}.
+        Hence $0 < m$ by \cref{real_add_ident,real_lt_trans}.
         Thus $m\neq0$ by \cref{real_pos_nonzero}.
         Hence $m\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
         $n+1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
@@ -6359,9 +6359,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         \caseOf{$m=n+1$.}
             Then $n+1\leq m$ by definition.
         \caseOf{$m\neq n+1$.}
-            $n+1<m$ or $m<n+1$ by \cref{real_lt_trichotomy,real_naturals_subset_reals,elem_subseteq}.
-            It is wrong that $m<n+1$ by \cref{real_succ_discrete,real_lt_asym,real_lt_irreflexive}.
-            Hence $n+1<m$ by assumption.
+            $n+1 < m$ or $m < n+1$ by \cref{real_lt_trichotomy,real_naturals_subset_reals,elem_subseteq}.
+            It is wrong that $m < n+1$ by \cref{real_succ_discrete,real_lt_asym,real_lt_irreflexive}.
+            Hence $n+1 < m$ by assumption.
             Thus $n+1\leq m$ by definition.
         \end{byCase}
     \end{byCase}
@@ -6370,30 +6370,30 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % from §12 helper lemma 16: an odd code precedes the next even code
 \begin{lemma}\label{double_succ_lt_next_double}
     Suppose $n\in\naturals$.
-    Then $(2\rmul n)+1<2\rmul(n+1)$.
+    Then $(2\rmul n)+1 < 2\rmul(n+1)$.
 \end{lemma}
 \begin{proof}
     $n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
     $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
     Hence $2\rmul n\in\reals$ by \cref{real_mul_closed}.
     Thus $(2\rmul n)+1\in\reals$ by \cref{real_mul_ident,real_add_closed}.
-    $0+((2\rmul n)+1)<1+((2\rmul n)+1)$ by \cref{real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
-    Hence $(2\rmul n)+1<((2\rmul n)+1)+1$ by \cref{real_add_ident,real_mul_ident,real_add_comm}.
+    $0+((2\rmul n)+1) < 1+((2\rmul n)+1)$ by \cref{real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
+    Hence $(2\rmul n)+1 < ((2\rmul n)+1)+1$ by \cref{real_add_ident,real_mul_ident,real_add_comm}.
     $2\rmul(n+1)=((2\rmul n)+1)+1$ by \cref{def_of_2,real_mul_ident,real_add_closed,real_distrib,real_mul_comm,real_add_assoc}.
-    Thus $(2\rmul n)+1<2\rmul(n+1)$ by assumption.
+    Thus $(2\rmul n)+1 < 2\rmul(n+1)$ by assumption.
 \end{proof}
 
 % from §12 helper lemma 17: an even code precedes its odd successor
 \begin{lemma}\label{double_lt_double_succ}
     Suppose $n\in\naturals$.
-    Then $2\rmul n<(2\rmul n)+1$.
+    Then $2\rmul n < (2\rmul n)+1$.
 \end{lemma}
 \begin{proof}
     $n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
     $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
     Hence $2\rmul n\in\reals$ by \cref{real_mul_closed}.
-    $0+(2\rmul n)<1+(2\rmul n)$ by \cref{real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
-    Thus $2\rmul n<(2\rmul n)+1$ by \cref{real_add_ident,real_mul_ident,real_add_comm}.
+    $0+(2\rmul n) < 1+(2\rmul n)$ by \cref{real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
+    Thus $2\rmul n < (2\rmul n)+1$ by \cref{real_add_ident,real_mul_ident,real_add_comm}.
 \end{proof}
 
 % from §12 helper lemma 18: even and odd natural codes are disjoint
@@ -6404,34 +6404,34 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \begin{proof}
     $m,n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
     $1,2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-    $0<2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_add_closed,real_lt_add,real_lt_trans}.
+    $0 < 2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_add_closed,real_lt_add,real_lt_trans}.
     Suppose not.
     \begin{byCase}
     \caseOf{$m=n$.}
-        $2\rmul n<(2\rmul n)+1$ by \cref{double_lt_double_succ}.
+        $2\rmul n < (2\rmul n)+1$ by \cref{double_lt_double_succ}.
         Contradiction by \cref{real_mul_closed,real_add_closed,real_lt_irreflexive}.
     \caseOf{$m\neq n$.}
-        $m<n$ or $n<m$ by \cref{real_lt_trichotomy}.
+        $m < n$ or $n < m$ by \cref{real_lt_trichotomy}.
         \begin{byCase}
-        \caseOf{$m<n$.}
-            $m\rmul2<n\rmul2$ by \cref{real_lt_mul_pos}.
-            Hence $2\rmul m<2\rmul n$ by \cref{real_mul_comm}.
-            $2\rmul n<(2\rmul n)+1$ by \cref{double_lt_double_succ}.
-            Thus $2\rmul m<(2\rmul n)+1$ by \cref{real_mul_closed,real_add_closed,real_lt_trans}.
+        \caseOf{$m < n$.}
+            $m\rmul2 < n\rmul2$ by \cref{real_lt_mul_pos}.
+            Hence $2\rmul m < 2\rmul n$ by \cref{real_mul_comm}.
+            $2\rmul n < (2\rmul n)+1$ by \cref{double_lt_double_succ}.
+            Thus $2\rmul m < (2\rmul n)+1$ by \cref{real_mul_closed,real_add_closed,real_lt_trans}.
             Contradiction by \cref{real_mul_closed,real_add_closed,real_lt_irreflexive}.
-        \caseOf{$m\not<n$.}
-            Then $n<m$ by assumption.
+        \caseOf{$m\not < n$.}
+            Then $n < m$ by assumption.
             Hence $n+1\leq m$ by \cref{natural_succ_leq}.
-            Show that $(2\rmul n)+1<2\rmul m$.
+            Show that $(2\rmul n)+1 < 2\rmul m$.
             \begin{subproof}
                 \begin{byCase}
                 \caseOf{$n+1=m$.}
                     Follows by \cref{double_succ_lt_next_double}.
                 \caseOf{$n+1\neq m$.}
-                    Then $n+1<m$ by definition.
-                    Hence $(n+1)\rmul2<m\rmul2$ by \cref{real_lt_mul_pos,real_add_closed}.
-                    Thus $2\rmul(n+1)<2\rmul m$ by \cref{real_mul_comm,real_add_closed}.
-                    $(2\rmul n)+1<2\rmul(n+1)$ by \cref{double_succ_lt_next_double}.
+                    Then $n+1 < m$ by definition.
+                    Hence $(n+1)\rmul2 < m\rmul2$ by \cref{real_lt_mul_pos,real_add_closed}.
+                    Thus $2\rmul(n+1) < 2\rmul m$ by \cref{real_mul_comm,real_add_closed}.
+                    $(2\rmul n)+1 < 2\rmul(n+1)$ by \cref{double_succ_lt_next_double}.
                     Follows by \cref{real_mul_closed,real_add_closed,real_lt_trans}.
                 \end{byCase}
             \end{subproof}
