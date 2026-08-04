@@ -1,5 +1,8 @@
 
-\import{naprochelibrary_version6k.tex}
+\import{naprochelibrary.tex}
+
+
+\import{naprochelibrary.tex}
 
 \section{§12 Topological Spaces}
 
@@ -6465,6 +6468,7 @@
     Then $a \leq b$ iff $\exp{a}{1+1} \leq \exp{b}{1+1}$.
 \end{lemma}
 \begin{proof}
+    $2 = 1 + 1$ by \cref{def_of_2}.
     Show that if $a \leq b$ then $\exp{a}{1+1} \leq \exp{b}{1+1}$.
     \begin{subproof}
         Assume $a \leq b$.
@@ -6477,8 +6481,12 @@
             \begin{byCase}
             \caseOf{$a = 0$.}
                 $0 < b$ by \cref{real_lt_subst_left}.
-                $\exp{a}{1+1} \leq \exp{b}{1+1}$
-                    by \cref{real_pow_one,real_one_in_naturals,real_pow_succ,real_mul_zero,real_sq_nonnegative}.
+                $\exp{a}{1} = a$ by \cref{real_pow_one}.
+                $\exp{a}{1+1} = \exp{a}{1} \rmul a$
+                    by \cref{real_one_in_naturals,real_pow_succ}.
+                $\exp{a}{1+1} = 0$ by \cref{real_mul_zero}.
+                $0 \leq \exp{b}{1+1}$ by \cref{real_sq_nonnegative}.
+                $\exp{a}{1+1} \leq \exp{b}{1+1}$.
             \caseOf{$0 < a$.}
                 $0 < b$ by \cref{real_lt_trans}.
                 $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_pos_lt_iff_sq_lt}.
@@ -6557,6 +6565,7 @@
 \end{lemma}
 \begin{proof}
     $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
+    $2 = 1 + 1$ by \cref{def_of_2}.
     Let $D = \coordDiffSet{n}{x}{y}$.
     Take $s\in\reals$ such that
         $\sumFiniteSequence{\coordSquareSequence{n}{(x,y)}}{s}$ and $r = \sqrt{s}$
@@ -6578,7 +6587,17 @@
     Take $i_0\in J$ such that $m = \abs{x(i_0) - y(i_0)}$ by \cref{coord_diff_set}.
     Show that for all $i\in J$ we have $0 \leq a(i)$.
     \begin{subproof}
-        Follows by \cref{coord_square_sequence_elem,reals_power,tuple_power,funs_type_apply,real_add_inverse,real_add_closed,real_sub,real_sq_nonnegative,function_apply_intro}.
+        Fix $i\in J$.
+        $x(i)\in\reals$ and $y(i)\in\reals$
+            by \cref{reals_power,tuple_power,funs_type_apply}.
+        $x(i) - y(i)\in\reals$
+            by \cref{real_add_inverse,real_add_closed,real_sub}.
+        $0 \leq \exp{x(i) - y(i)}{2}$ by \cref{real_sq_nonnegative}.
+        $0 \leq \exp{x(i) - y(i)}{1+1}$.
+        $(i,\exp{x(i) - y(i)}{1+1})\in a$
+            by \cref{coord_square_sequence_elem}.
+        $a(i) = \exp{x(i) - y(i)}{1+1}$ by \cref{function_apply_intro}.
+        $0 \leq a(i)$.
     \end{subproof}
     $\dom{a} = J$
         by \cref{coord_square_sequence_elem,dom_intro,subseteq,dom_iff,coord_square_sequence,pair_eq_iff,subseteq_antisymmetric}.
@@ -7289,7 +7308,16 @@
     Then for all $i\in J$ we have $0 \leq \apply{\coordSquareSequenceMul{n}{a}}{i}$.
 \end{lemma}
 \begin{proof}
-    Follows by \cref{coord_square_sequence_mul,coord_square_sequence_mul_function,function_apply_intro,funs_elim,funs_type_apply,real_sq_nonnegative,real_one_in_naturals,real_pow_succ,real_pow_one}.
+    Let $c = \coordSquareSequenceMul{n}{a}$.
+    $c\in\funs{J}{\reals}$ by \cref{coord_square_sequence_mul_function}.
+    Fix $i\in J$.
+    $a(i)\in\reals$ by \cref{funs_type_apply}.
+    $(i,a(i) \rmul a(i))\in c$ by \cref{coord_square_sequence_mul}.
+    $c(i) = a(i) \rmul a(i)$ by \cref{funs_elim,function_apply_intro}.
+    $0 \leq \exp{a(i)}{1+1}$ by \cref{def_of_2,real_sq_nonnegative}.
+    $\exp{a(i)}{1+1} = a(i) \rmul a(i)$
+        by \cref{real_one_in_naturals,real_pow_succ,real_pow_one}.
+    $0 \leq c(i)$.
 \end{proof}
 
 % from §20 helper lemma 41c: finite sum of coordinate squares is nonnegative
@@ -7480,7 +7508,7 @@
         by \cref{real_abs_in_reals,real_abs_nonnegative,real_mul_closed}.
     $\abs{t} \leq r_1 \rmul r_2$ iff
         $\exp{\abs{t}}{1+1} \leq \exp{r_1 \rmul r_2}{1+1}$ by \cref{real_nonneg_leq_iff_sq_leq}.
-    $\exp{\abs{t}}{1+1} = t \rmul t$ by \cref{real_abs_square,real_pow_succ,real_pow_one}.
+    $\exp{\abs{t}}{1+1} = t \rmul t$ by \cref{def_of_2,real_abs_square,real_pow_succ,real_pow_one}.
     $t \rmul t \leq s_1 \rmul s_2$ by \cref{cauchy_schwarz_finite_sequences}.
     $\exp{r_1 \rmul r_2}{1+1} = s_1 \rmul s_2$
         by \cref{real_pow_succ,real_pow_one,real_mul_assoc,real_mul_comm}.
@@ -7542,8 +7570,19 @@
     Let $a = \coordSquareSequence{n}{(x,y)}$.
     $a\in\funs{J}{\reals}$ by \cref{coord_square_sequence_function}.
     Take $s\in\reals$ such that $\sumFiniteSequence{a}{s}$ by \cref{sum_finite_sequence_exists}.
-    For all $i\in\dom{a}$ we have $0 \leq a(i)$
-        by \cref{funs_elim,reals_power,tuple_power,funs_type_apply,real_add_inverse,real_add_closed,real_sub,real_sq_nonnegative,coord_square_sequence_elem,function_apply_intro}.
+    Show that for all $i\in\dom{a}$ we have $0 \leq a(i)$.
+    \begin{subproof}
+        Fix $i\in\dom{a}$.
+        $i\in J$ by \cref{funs_elim}.
+        $x(i)\in\reals$ and $y(i)\in\reals$
+            by \cref{reals_power,tuple_power,funs_type_apply}.
+        $x(i) - y(i)\in\reals$
+            by \cref{real_add_inverse,real_add_closed,real_sub}.
+        $0 \leq \exp{x(i) - y(i)}{1+1}$ by \cref{def_of_2,real_sq_nonnegative}.
+        $(i,\exp{x(i) - y(i)}{1+1})\in a$ by \cref{coord_square_sequence_elem}.
+        $a(i) = \exp{x(i) - y(i)}{1+1}$ by \cref{funs_elim,function_apply_intro}.
+        $0 \leq a(i)$.
+    \end{subproof}
     $0 \leq s$ by \cref{sum_finite_sequence_nonneg}.
     There exists $r\in\reals$ such that $((x,y),r)\in\euclideanMetric{n}$
         by \cref{positive_square_root,times_tuple_intro,euclidean_metric}.
@@ -7719,8 +7758,50 @@
             Take $s_2\in\reals$ such that
                 $\sumFiniteSequence{\coordSquareSequence{n}{(y,x)}}{s_2}$ and $s = \sqrt{s_2}$
                 by \cref{euclidean_metric,pair_eq_iff}.
+            Let $A = \coordSquareSequence{n}{(x,y)}$.
+            Let $B = \coordSquareSequence{n}{(y,x)}$.
+            Show that $A\subseteq B$.
+            \begin{subproof}
+                It suffices to show that every element of $A$ is an element of $B$.
+                Fix $w\in A$.
+                Take $i\in J$ such that
+                    $w = (i,\exp{x(i) - y(i)}{1+1})$
+                    by \cref{coord_square_sequence,fst_eq,snd_eq}.
+                $x(i)\in\reals$ and $y(i)\in\reals$
+                    by \cref{reals_power,tuple_power,funs_type_apply}.
+                $x(i) - y(i)\in\reals$ and $y(i) - x(i)\in\reals$
+                    by \cref{real_add_inverse,real_add_closed,real_sub}.
+                $\abs{x(i) - y(i)} = \abs{y(i) - x(i)}$
+                    by \cref{real_abs_sub_swap}.
+                $\exp{\abs{x(i) - y(i)}}{1+1} = \exp{x(i) - y(i)}{1+1}$ and
+                    $\exp{\abs{y(i) - x(i)}}{1+1} = \exp{y(i) - x(i)}{1+1}$
+                    by \cref{def_of_2,real_abs_square}.
+                $\exp{x(i) - y(i)}{1+1} = \exp{y(i) - x(i)}{1+1}$.
+                $w = (i,\exp{y(i) - x(i)}{1+1})$.
+                $w\in B$ by \cref{coord_square_sequence,fst_eq,snd_eq}.
+            \end{subproof}
+            Show that $B\subseteq A$.
+            \begin{subproof}
+                It suffices to show that every element of $B$ is an element of $A$.
+                Fix $w\in B$.
+                Take $i\in J$ such that
+                    $w = (i,\exp{y(i) - x(i)}{1+1})$
+                    by \cref{coord_square_sequence,fst_eq,snd_eq}.
+                $x(i)\in\reals$ and $y(i)\in\reals$
+                    by \cref{reals_power,tuple_power,funs_type_apply}.
+                $x(i) - y(i)\in\reals$ and $y(i) - x(i)\in\reals$
+                    by \cref{real_add_inverse,real_add_closed,real_sub}.
+                $\abs{x(i) - y(i)} = \abs{y(i) - x(i)}$
+                    by \cref{real_abs_sub_swap}.
+                $\exp{\abs{x(i) - y(i)}}{1+1} = \exp{x(i) - y(i)}{1+1}$ and
+                    $\exp{\abs{y(i) - x(i)}}{1+1} = \exp{y(i) - x(i)}{1+1}$
+                    by \cref{def_of_2,real_abs_square}.
+                $\exp{y(i) - x(i)}{1+1} = \exp{x(i) - y(i)}{1+1}$.
+                $w = (i,\exp{x(i) - y(i)}{1+1})$.
+                $w\in A$ by \cref{coord_square_sequence,fst_eq,snd_eq}.
+            \end{subproof}
             $\coordSquareSequence{n}{(x,y)} = \coordSquareSequence{n}{(y,x)}$
-                by \cref{setext,coord_square_sequence,fst_eq,snd_eq,reals_power,tuple_power,funs_type_apply,real_add_inverse,real_add_closed,real_sub,real_abs_sub_swap,real_abs_square}.
+                by \cref{subseteq_antisymmetric}.
             $d((x,y)) = d((y,x))$ by \cref{sum_finite_sequence_unique,function_apply_intro}.
     \end{subproof}
     $d$ is symmetric on $X$ by \cref{metric_symmetric}.

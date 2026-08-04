@@ -4255,9 +4255,14 @@ This lets us use the same symbol for composition of functions.
     $\subseteqrel{A}$ is antisymmetric by \cref{subseteqrel_antisymmetric}.
 \end{proof}
 
+
+\import{naprochelibrary.tex}
+
 \section{Standard Library: The real numbers}
 
-\subsection{The field structure}
+\subsection{Axioms and Definitions}
+
+\subsubsection{The field structure}
 
 \begin{signature} \label{sig1}
     $\reals$ is a set.
@@ -4327,30 +4332,6 @@ This lets us use the same symbol for composition of functions.
     For all $a, b, c\in\reals$ we have $a \rmul (b + c) = (a \rmul b) + (a \rmul c)$.
 \end{axiom}
 
-% uniqueness of additive identity
-\begin{proposition}\label{real_add_ident_unique}
-    Suppose $c\in\reals$ and for all $a\in\reals$ we have $c + a = a$.
-    Then $c = 0$.
-\end{proposition}
-
-% uniqueness of multiplicative identity
-\begin{proposition}\label{real_mul_ident_unique}
-    Suppose $c\in\reals$ and for all $a\in\reals$ we have $c \rmul a = a$.
-    Then $c = 1$.
-\end{proposition}
-
-% uniqueness of additive inverses
-\begin{proposition}\label{real_add_inverse_unique}
-    Suppose $a\in\reals$ and $b\in\reals$ and $a + b = 0$.
-    Then $b = \neg{a}$.
-\end{proposition}
-
-% uniqueness of multiplicative inverses
-\begin{proposition}\label{real_mul_inverse_unique}
-    Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $a \rmul b = 1$.
-    Then $b = \inv{a}$.
-\end{proposition}
-
 % subtraction
 \begin{definition}\label{real_sub}
     $a - b = a + \neg{b}$.
@@ -4361,7 +4342,7 @@ This lets us use the same symbol for composition of functions.
     $a / b = a \rmul \inv{b}$.
 \end{definition}
 
-\subsection{Number literals}
+\subsubsection{Number literals}
 
 \begin{axiom} \label{def_of_2}
     $2 = 1 + 1$.
@@ -4403,7 +4384,7 @@ This lets us use the same symbol for composition of functions.
     $100 = 10 \rmul 10$.
 \end{axiom}    
 
-\subsection{Order relation}
+\subsubsection{Order relation}
 
 The next abbreviation is a hack. The symbol " < " cannot be introduced by axioms.
 By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF. 
@@ -4560,7 +4541,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $\intervalclosedInfiniteRight{a} = \{ x \in \reals \mid x \geq a\}$.
 \end{definition}
 
-\subsection{Natural numbers}
+\subsubsection{Natural numbers}
 
 \begin{signature} \label{sig2}
     $\naturalsPlus$ is a set.
@@ -4600,13 +4581,6 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\naturalsPlus \subseteq A$.
 \end{axiom}
 
-% induction principle
-\begin{proposition}\label{real_naturals_induction}
-    Suppose $A\subseteq\naturalsPlus$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
-    Then for all $n\in\naturalsPlus$ we have $n\in A$.
-\end{proposition}
- 
-
 \begin{definition}\label{naturals}
       $\naturals = \naturalsPlus \union \{0\}$.
 \end{definition}
@@ -4615,7 +4589,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $n$ is a natural number iff $n\in \naturals$.
 \end{abbreviation}
 
-\subsection{Integers}
+\subsubsection{Integers}
  
 % definition of integers
 \begin{definition}\label{real_integers}
@@ -4627,7 +4601,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $x$ is an integer iff $x\in\integers$.
 \end{abbreviation}
 
-\subsection{Rational numbers}
+\subsubsection{Rational numbers}
 
 % definition of rationals
 \begin{definition}\label{real_rationals}
@@ -4644,7 +4618,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $x$ is irrational iff $x\in\reals$ and $x\notin\rationals$.
 \end{abbreviation}
 
-\subsection{Absolute values}
+\subsubsection{Absolute values}
 
 % absolute value signature
 \begin{signature} \label{sig8}
@@ -4663,7 +4637,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\abs{a} = \neg{a}$.
 \end{axiom}
 
-\subsection{Integer powers}
+\subsubsection{Integer powers}
 
 \begin{signature} \label{sig7}
     $\exp{x}{y}$ is a set.
@@ -4691,7 +4665,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\exp{a}{\neg{n}} = 1 / (\exp{a}{n})$. 
 \end{axiom}
 
-\subsection{Square roots}
+\subsubsection{Square roots}
 
 \begin{signature} \label{sig9}
     $\sqrt{x}$ is a set.
@@ -4702,7 +4676,76 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\sqrt{x} \in \reals$ and $\sqrt{x} \geq 0$ and $\sqrt{x} \rmul \sqrt{x} = x$.
 \end{axiom}    
 
+
+\subsubsection{Sequences and finite sums}
+
+% Sequences Item 1: initial segment of naturalsplus
+\begin{definition}\label{initial_segment_naturalsplus}
+    $\initialSegment{n} = \{k\in\naturalsPlus \mid k \leq n\}$.
+\end{definition}
+
+% Sequences Item 2: finite sequence of real numbers
+\begin{definition}\label{finite_real_sequence}
+    $a$ is a finite sequence of real numbers iff
+    there exists $n\in\naturalsPlus$ such that
+    $a\in\funs{\initialSegment{n}}{\reals}$.
+\end{definition}
+
+% Sequences Item 3: infinite sequence of real numbers
+\begin{definition}\label{infinite_real_sequence}
+    $a$ is an infinite sequence of real numbers iff
+    $a\in\funs{\naturalsPlus}{\reals}$.
+\end{definition}
+
+% Sequences Item 4: associated sequence of partial sums
+\begin{definition}\label{partial_sums_sequence}
+    $s$ is the sequence of partial sums associated with $a$ iff
+    $a$ is an infinite sequence of real numbers and
+    $s$ is an infinite sequence of real numbers and
+    $s(1) = a(1)$ and
+    for all $n\in\naturalsPlus$ we have
+    $s(n + 1) = s(n) + a(n + 1)$.
+\end{definition}
+
+% Sequences Item 5: sum of a finite sequence of real numbers
+\begin{definition}\label{sum_of_finite_sequence}
+    $x$ is the sum of $a$ iff
+    there exists $n\in\naturalsPlus$ such that
+    $a\in\funs{\initialSegment{n}}{\reals}$ and
+    there exists $s\in\funs{\initialSegment{n}}{\reals}$ such that
+    $s(1) = a(1)$ and
+    for all $k\in\naturalsPlus$ such that $k + 1 \leq n$ we have
+    $s(k + 1) = s(k) + a(k + 1)$ and
+    $x = s(n)$.
+\end{definition}
+
 \subsection{Simple consequences of the axioms}
+
+\subsubsection{Results using only the field structure}
+
+% uniqueness of additive identity
+\begin{proposition}\label{real_add_ident_unique}
+    Suppose $c\in\reals$ and for all $a\in\reals$ we have $c + a = a$.
+    Then $c = 0$.
+\end{proposition}
+
+% uniqueness of multiplicative identity
+\begin{proposition}\label{real_mul_ident_unique}
+    Suppose $c\in\reals$ and for all $a\in\reals$ we have $c \rmul a = a$.
+    Then $c = 1$.
+\end{proposition}
+
+% uniqueness of additive inverses
+\begin{proposition}\label{real_add_inverse_unique}
+    Suppose $a\in\reals$ and $b\in\reals$ and $a + b = 0$.
+    Then $b = \neg{a}$.
+\end{proposition}
+
+% uniqueness of multiplicative inverses
+\begin{proposition}\label{real_mul_inverse_unique}
+    Suppose $a\in\reals$ and $a\neq 0$ and $b\in\reals$ and $a \rmul b = 1$.
+    Then $b = \inv{a}$.
+\end{proposition}
 
 % adding the same number preserves equality
 \begin{proposition}\label{real_add_eq_subst}
@@ -4733,11 +4776,6 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \begin{proof}
     Follows by \cref{real_mul_ident,real_add_inverse,real_add_closed,real_mul_comm,real_distrib,real_mul_zero,real_mul_closed,real_add_inverse_unique}.
 \end{proof}
-
-% $(-1)^2 = 1$
-\begin{proposition}\label{real_neg_one_square}
-    $\exp{\neg{1}}{1+1} = 1$.
-\end{proposition}
 
 % double negation
 \begin{proposition}\label{real_neg_neg}
@@ -4811,17 +4849,67 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Follows by \cref{real_add_closed,real_add_assoc}.
 \end{proof}
 
+% helper lemma 16: negation of a sum
+\begin{lemma}\label{real_neg_addition}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\neg{(a + b)} = \neg{a} + \neg{b}$.
+\end{lemma}
+
+% helper lemma 20: subtracting a difference
+\begin{lemma}\label{real_sub_sub_cancel}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $a - (a - b) = b$.
+\end{lemma}
+
+% helper lemma 11: subtraction swap
+\begin{lemma}\label{real_sub_swap_neg}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $b - a = \neg{(a - b)}$.
+\end{lemma}
+
+\subsubsection{Miscellaneous results (involving natural numbers and powers)}
+
+% induction principle
+\begin{proposition}\label{real_naturals_induction}
+    Suppose $A\subseteq\naturalsPlus$ and $1\in A$ and for all $n\in A$ we have $n + 1\in A$.
+    Then for all $n\in\naturalsPlus$ we have $n\in A$.
+\end{proposition}
+
+% $(-1)^2 = 1$
+\begin{proposition}\label{real_neg_one_square}
+    $\exp{\neg{1}}{2} = 1$.
+\end{proposition}
+
 % difference of squares
 \begin{proposition}\label{real_diff_squares}
     Suppose $a\in\reals$ and $b\in\reals$.
-    Then $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$.
+    Then $(a + b) \rmul (a - b) = \exp{a}{2} - \exp{b}{2}$.
 \end{proposition}
 \begin{proof}
     We have $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$
         by \cref{real_sub,real_add_closed,real_add_inverse,real_distrib,real_mul_closed,real_right_distrib,real_add_regroup,real_mul_comm,real_mul_neg_right}.
-    Thus $(a + b) \rmul (a - b) = \exp{a}{1+1} - \exp{b}{1+1}$ by \cref{real_mul_closed,real_add_ident,real_add_inverse,real_add_assoc,real_one_in_naturals,real_pow_succ,real_pow_one,real_sub}.
+    Thus $(a + b) \rmul (a - b) = \exp{a}{2} - \exp{b}{2}$ by \cref{def_of_2,real_mul_closed,real_add_ident,real_add_inverse,real_add_assoc,real_one_in_naturals,real_pow_succ,real_pow_one,real_sub}.
 \end{proof}
 
+% helper lemma 1:
+\begin{lemma} \label{lemma_4_eq_2_times_2}
+    $4 = 2 \rmul 2$.
+\end{lemma}    
+
+% helper lemma 2:
+\begin{lemma} \label{lemma_6_eq_3_times_2}
+    $6 = 3 \rmul 2$.
+\end{lemma}    
+\begin{proof}
+    $1\in\reals$ by \cref{real_mul_ident}.
+    $2\in\reals$ by \cref{def_of_2,real_add_closed}.
+    $3\in\reals$ by \cref{def_of_3,real_add_closed}.
+    We have $3 \rmul 2 = 3 + 3$ by \cref{def_of_2,real_distrib,real_mul_comm,real_mul_ident}.
+    We have $3 + 3 = 6$ by \cref{def_of_2,def_of_3,def_of_4,def_of_5,def_of_6,real_add_assoc}.
+    Thus $6 = 3 \rmul 2$.
+\end{proof}
+
+\subsubsection{Results involving the order relation (but no absolute values)}
 
 % sum of positives is positive
 \begin{proposition}\label{real_pos_add}
@@ -4989,24 +5077,28 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % order preserved by squaring positives
 \begin{proposition}\label{real_pos_lt_iff_sq_lt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
-    Then $a < b$ iff $\exp{a}{1+1} < \exp{b}{1+1}$.
+    Then $a < b$ iff $\exp{a}{2} < \exp{b}{2}$.
 \end{proposition}
 \begin{proof}
-    Show if $a < b$ then $\exp{a}{1+1} < \exp{b}{1+1}$.
+    Show if $a < b$ then $\exp{a}{2} < \exp{b}{2}$.
     \begin{subproof}
         Assume $a < b$.
         Thus $(b - a) \rmul (a + b)  > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
-        Hence $(a + b) \rmul (b - a) = \exp{b}{1+1} - \exp{a}{1+1}$ by \cref{real_add_comm,real_diff_squares}.
-        Therefore $\exp{b}{1+1} - \exp{a}{1+1}  > 0$.
-        We have $\exp{a}{1+1} < \exp{b}{1+1}$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
+        Hence $(a + b) \rmul (b - a) = \exp{b}{2} - \exp{a}{2}$ by \cref{real_add_comm,real_diff_squares}.
+        Therefore $\exp{b}{2} - \exp{a}{2}  > 0$.
+        We have $\exp{a}{2} = a \rmul a$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one}.
+        Hence $\exp{a}{2}\in\reals$ by \cref{real_mul_closed}.
+        We have $\exp{b}{2} = b \rmul b$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one}.
+        Hence $\exp{b}{2}\in\reals$ by \cref{real_mul_closed}.
+        We have $\exp{a}{2} < \exp{b}{2}$ by \cref{real_add_ident,real_lt_add,real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_closed}.
     \end{subproof}
-    Show if $\exp{a}{1+1} < \exp{b}{1+1}$ then $a < b$.
+    Show if $\exp{a}{2} < \exp{b}{2}$ then $a < b$.
     \begin{subproof}
-        Assume $\exp{a}{1+1} < \exp{b}{1+1}$.
+        Assume $\exp{a}{2} < \exp{b}{2}$.
         Show $0 < b - a$.
         \begin{subproof}
             Suppose not.
-            Thus either $a + b  > 0$ and $b - a  > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
+            Thus either $a + b  > 0$ and $b - a  > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
             \begin{byCase}
             \caseOf{$a + b  > 0$ and $b - a  > 0$.}
                 Contradiction.
@@ -5021,7 +5113,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % squares are nonnegative
 \begin{proposition}\label{real_sq_nonnegative}
     Suppose $a\in\reals$.
-    Then $\exp{a}{1+1} \geq 0$.
+    Then $\exp{a}{2} \geq 0$.
 \end{proposition}
 % \begin{proof} Trivial. \end{proof}
 
@@ -5075,12 +5167,6 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $a = b$.
 \end{lemma}
 
-% helper lemma 16: negation of a sum
-\begin{lemma}\label{real_neg_addition}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $\neg{(a + b)} = \neg{a} + \neg{b}$.
-\end{lemma}
-
 % helper lemma 18: positive difference
 \begin{lemma}\label{real_lt_imp_pos_diff}
     Suppose $a\in\reals$ and $b\in\reals$ and $a < b$.
@@ -5093,12 +5179,6 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $a - b < a$.
 \end{lemma}
 
-% helper lemma 20: subtracting a difference
-\begin{lemma}\label{real_sub_sub_cancel}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $a - (a - b) = b$.
-\end{lemma}
-
 % multiplication by a negative number
 \begin{proposition}\label{real_lt_mul_neg}
     Suppose $a\in\reals$ and $b\in\reals$ and $c\in\reals$.
@@ -5107,149 +5187,6 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{proposition}
 \begin{proof}
     Follows by \cref{real_add_ident,real_lt_neg,real_add_inverse,real_lt_mul_pos,real_mul_neg_right,real_mul_closed,real_neg_neg}.
-\end{proof}
-
-% absolute value is nonnegative
-\begin{proposition}\label{real_abs_nonnegative}
-    Suppose $a\in\reals$.
-    Then $\abs{a} \geq 0$.
-\end{proposition}
-
-% absolute value zero only at zero
-\begin{proposition}\label{real_abs_eq_zero}
-    Suppose $a\in\reals$ and $\abs{a} = 0$.
-    Then $a = 0$.
-\end{proposition}
-
-% helper lemma 11: subtraction swap
-\begin{lemma}\label{real_sub_swap_neg}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $b - a = \neg{(a - b)}$.
-\end{lemma}
-
-% absolute value is symmetric
-\begin{proposition}\label{real_abs_sub_swap}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $\abs{a - b} = \abs{b - a}$.
-\end{proposition}
-
-% helper lemma 12: absolute value is real
-\begin{lemma}\label{real_abs_in_reals}
-    Suppose $a\in\reals$.
-    Then $\abs{a}\in\reals$.
-\end{lemma}
-
-% absolute value of a product
-\begin{proposition}\label{real_abs_mul}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
-\end{proposition}
-\begin{proof}
-    \begin{byCase}
-    \caseOf{$a \geq 0$ and $b \geq 0$.}
-        Trivial.
-    \caseOf{$a \geq 0$ and $b < 0$.}
-        Trivial.
-    \caseOf{$a < 0$ and $b \geq 0$.}
-        Trivial.
-    \caseOf{$a < 0$ and $b < 0$.}
-        Trivial.
-    \end{byCase}
-\end{proof}
-
-% absolute value bounded by a two-sided bound
-\begin{proposition}\label{real_abs_leq_if_pm_leq}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Suppose $a \leq b$ and $\neg{a} \leq b$.
-    Then $\abs{a} \leq b$.
-\end{proposition}
-
-% absolute value squared
-\begin{proposition}\label{real_abs_square}
-    Suppose $a\in\reals$.
-    Then $\exp{\abs{a}}{1+1} = \exp{a}{1+1}$.
-\end{proposition}
-\begin{proof}
-    Follows by \cref{real_abs_mul,real_abs_in_reals,real_abs_nonnegative,real_abs_nonneg,real_sq_nonnegative,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed}.
-\end{proof}
-
-% absolute value dominates
-\begin{proposition}\label{real_leq_abs}
-    Suppose $a\in\reals$.
-    Then $a \leq \abs{a}$.
-\end{proposition}
-
-% negative is at most absolute value
-\begin{proposition}\label{real_neg_leq_abs}
-    Suppose $a\in\reals$.
-    Then $\neg{a} \leq \abs{a}$.
-\end{proposition}
-
-% absolute value bound implies right bound
-\begin{proposition}\label{real_abs_leq_imp_right_bound}
-    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
-    Suppose $\abs{a} \leq r$.
-    Then $a \leq r$.
-\end{proposition}
-
-% absolute value bound implies left bound
-\begin{proposition}\label{real_abs_leq_imp_left_bound}
-    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
-    Suppose $\abs{a} \leq r$.
-    Then $\neg{r} \leq a$.
-\end{proposition}
-
-% two-sided bound implies absolute value bound
-\begin{proposition}\label{real_abs_leq_from_bounds}
-    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
-    Suppose $\neg{r} \leq a$ and $a \leq r$.
-    Then $\abs{a} \leq r$.
-\end{proposition}
-
-% absolute value bound implies left translated bound
-\begin{proposition}\label{real_abs_sub_leq_imp_left_bound}
-    Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
-    Suppose $\abs{a - b} \leq r$.
-    Then $b - r \leq a$.
-\end{proposition}
-\begin{proof}
-    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_left_bound,real_leq_add,real_add_comm,real_add_assoc,real_add_ident}.
-\end{proof}
-
-% absolute value bound implies right translated bound
-\begin{proposition}\label{real_abs_sub_leq_imp_right_bound}
-    Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
-    Suppose $\abs{a - b} \leq r$.
-    Then $a \leq b + r$.
-\end{proposition}
-\begin{proof}
-    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_right_bound,real_leq_add,real_add_assoc,real_add_comm,real_add_ident}.
-\end{proof}
-
-% Triangle Inequality
-\begin{proposition}\label{real_triangle_inequality}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $\abs{a + b} \leq \abs{a} + \abs{b}$.
-\end{proposition}
-\begin{proof}
-    We have $\neg{(a + b)} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_add_inverse,real_neg_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_neg_addition}.
-    Hence $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
-\end{proof}
-
-% Reverse Triangle Inequality
-\begin{proposition}\label{real_reverse_triangle_inequality}
-    Suppose $a\in\reals$ and $b\in\reals$.
-    Then $\abs{a - b} \geq \abs{\abs{a} - \abs{b}}$.
-\end{proposition}
-\begin{proof}
-    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
-    Now $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
-    $\abs{a - b}\in\reals$ by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_in_reals}.
-    $\abs{b - a} = \abs{a - b}$ by \cref{real_abs_sub_swap}.
-    $\abs{(a - b) + b} \leq \abs{a - b} + \abs{b}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
-    $\abs{(b - a) + a} \leq \abs{b - a} + \abs{a}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
-    Thus $\abs{b} + \neg{\abs{a}} \leq \abs{b - a}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add}.
-    Therefore $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
 \end{proof}
 
 % uniqueness of supremum
@@ -5556,58 +5493,144 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     \end{byCase}
 \end{proof}
 
-% helper lemma 1:
-\begin{lemma} \label{lemma_4_eq_2_times_2}
-    $4 = 2 \rmul 2$.
-\end{lemma}    
+\subsubsection{Results involving absolute values}
 
-% helper lemma 2:
-\begin{lemma} \label{lemma_6_eq_3_times_2}
-    $6 = 3 \rmul 2$.
-\end{lemma}    
+% absolute value is nonnegative
+\begin{proposition}\label{real_abs_nonnegative}
+    Suppose $a\in\reals$.
+    Then $\abs{a} \geq 0$.
+\end{proposition}
 
-\subsection{Sequences and finite sums}
+% absolute value zero only at zero
+\begin{proposition}\label{real_abs_eq_zero}
+    Suppose $a\in\reals$ and $\abs{a} = 0$.
+    Then $a = 0$.
+\end{proposition}
 
-% Sequences Item 1: initial segment of naturalsplus
-\begin{definition}\label{initial_segment_naturalsplus}
-    $\initialSegment{n} = \{k\in\naturalsPlus \mid k \leq n\}$.
-\end{definition}
+% absolute value is symmetric
+\begin{proposition}\label{real_abs_sub_swap}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a - b} = \abs{b - a}$.
+\end{proposition}
 
-% Sequences Item 2: finite sequence of real numbers
-\begin{definition}\label{finite_real_sequence}
-    $a$ is a finite sequence of real numbers iff
-    there exists $n\in\naturalsPlus$ such that
-    $a\in\funs{\initialSegment{n}}{\reals}$.
-\end{definition}
+% helper lemma 12: absolute value is real
+\begin{lemma}\label{real_abs_in_reals}
+    Suppose $a\in\reals$.
+    Then $\abs{a}\in\reals$.
+\end{lemma}
 
-% Sequences Item 3: infinite sequence of real numbers
-\begin{definition}\label{infinite_real_sequence}
-    $a$ is an infinite sequence of real numbers iff
-    $a\in\funs{\naturalsPlus}{\reals}$.
-\end{definition}
+% absolute value of a product
+\begin{proposition}\label{real_abs_mul}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.
+\end{proposition}
+\begin{proof}
+    \begin{byCase}
+    \caseOf{$a \geq 0$ and $b \geq 0$.}
+        Follows by \cref{real_abs_nonneg,real_mul_closed,real_mul_zero,real_mul_comm,real_mul_pos_pos_gt}.
+    \caseOf{$a \geq 0$ and $b < 0$.}
+        Follows by \cref{real_abs_nonneg,real_abs_neg,real_mul_closed,real_mul_zero,real_mul_neg_opposite_sign_right,real_mul_neg_right,real_add_inverse}.
+    \caseOf{$a < 0$ and $b \geq 0$.}
+        Follows by \cref{real_abs_nonneg,real_abs_neg,real_mul_closed,real_mul_zero,real_mul_comm,real_mul_neg_opposite_sign_left,real_mul_neg_right,real_add_inverse}.
+    \caseOf{$a < 0$ and $b < 0$.}
+        Follows by \cref{real_abs_neg,real_abs_nonneg,real_mul_closed,real_mul_neg_neg_gt,real_mul_neg_right,real_mul_comm,real_neg_neg,real_add_inverse}.
+    \end{byCase}
+\end{proof}
 
-% Sequences Item 4: associated sequence of partial sums
-\begin{definition}\label{partial_sums_sequence}
-    $s$ is the sequence of partial sums associated with $a$ iff
-    $a$ is an infinite sequence of real numbers and
-    $s$ is an infinite sequence of real numbers and
-    $s(1) = a(1)$ and
-    for all $n\in\naturalsPlus$ we have
-    $s(n + 1) = s(n) + a(n + 1)$.
-\end{definition}
+% absolute value bounded by a two-sided bound
+\begin{proposition}\label{real_abs_leq_if_pm_leq}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Suppose $a \leq b$ and $\neg{a} \leq b$.
+    Then $\abs{a} \leq b$.
+\end{proposition}
 
-% Sequences Item 5: sum of a finite sequence of real numbers
-\begin{definition}\label{sum_of_finite_sequence}
-    $x$ is the sum of $a$ iff
-    there exists $n\in\naturalsPlus$ such that
-    $a\in\funs{\initialSegment{n}}{\reals}$ and
-    there exists $s\in\funs{\initialSegment{n}}{\reals}$ such that
-    $s(1) = a(1)$ and
-    for all $k\in\naturalsPlus$ such that $k + 1 \leq n$ we have
-    $s(k + 1) = s(k) + a(k + 1)$ and
-    $x = s(n)$.
-\end{definition}
+% absolute value squared
+\begin{proposition}\label{real_abs_square}
+    Suppose $a\in\reals$.
+    Then $\exp{\abs{a}}{2} = \exp{a}{2}$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{def_of_2,real_abs_mul,real_abs_in_reals,real_abs_nonnegative,real_abs_nonneg,real_sq_nonnegative,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed}.
+\end{proof}
 
+% absolute value dominates
+\begin{proposition}\label{real_leq_abs}
+    Suppose $a\in\reals$.
+    Then $a \leq \abs{a}$.
+\end{proposition}
+
+% negative is at most absolute value
+\begin{proposition}\label{real_neg_leq_abs}
+    Suppose $a\in\reals$.
+    Then $\neg{a} \leq \abs{a}$.
+\end{proposition}
+
+% absolute value bound implies right bound
+\begin{proposition}\label{real_abs_leq_imp_right_bound}
+    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a} \leq r$.
+    Then $a \leq r$.
+\end{proposition}
+
+% absolute value bound implies left bound
+\begin{proposition}\label{real_abs_leq_imp_left_bound}
+    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a} \leq r$.
+    Then $\neg{r} \leq a$.
+\end{proposition}
+
+% two-sided bound implies absolute value bound
+\begin{proposition}\label{real_abs_leq_from_bounds}
+    Suppose $a\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\neg{r} \leq a$ and $a \leq r$.
+    Then $\abs{a} \leq r$.
+\end{proposition}
+
+% absolute value bound implies left translated bound
+\begin{proposition}\label{real_abs_sub_leq_imp_left_bound}
+    Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a - b} \leq r$.
+    Then $b - r \leq a$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_left_bound,real_leq_add,real_add_comm,real_add_assoc,real_add_ident}.
+\end{proof}
+
+% absolute value bound implies right translated bound
+\begin{proposition}\label{real_abs_sub_leq_imp_right_bound}
+    Suppose $a\in\reals$ and $b\in\reals$ and $r\in\reals$ and $r$ is nonnegative.
+    Suppose $\abs{a - b} \leq r$.
+    Then $a \leq b + r$.
+\end{proposition}
+\begin{proof}
+    Follows by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_leq_imp_right_bound,real_leq_add,real_add_assoc,real_add_comm,real_add_ident}.
+\end{proof}
+
+% Triangle Inequality
+\begin{proposition}\label{real_triangle_inequality}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a + b} \leq \abs{a} + \abs{b}$.
+\end{proposition}
+\begin{proof}
+    We have $\neg{(a + b)} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_add_inverse,real_neg_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_neg_addition}.
+    Hence $\abs{a + b} \leq \abs{a} + \abs{b}$ by \cref{real_abs_in_reals,real_leq_abs,real_leq_add,real_add_closed,real_add_comm,real_leq_trans,real_abs_leq_if_pm_leq}.
+\end{proof}
+
+% Reverse Triangle Inequality
+\begin{proposition}\label{real_reverse_triangle_inequality}
+    Suppose $a\in\reals$ and $b\in\reals$.
+    Then $\abs{a - b} \geq \abs{\abs{a} - \abs{b}}$.
+\end{proposition}
+\begin{proof}
+    $\abs{a}\in\reals$ by \cref{real_abs_in_reals}.
+    Now $\abs{b}\in\reals$ by \cref{real_abs_in_reals}.
+    $\abs{a - b}\in\reals$ by \cref{real_add_inverse,real_sub,real_add_closed,real_abs_in_reals}.
+    $\abs{b - a} = \abs{a - b}$ by \cref{real_abs_sub_swap}.
+    $\abs{(a - b) + b} \leq \abs{a - b} + \abs{b}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
+    $\abs{(b - a) + a} \leq \abs{b - a} + \abs{a}$ by \cref{real_add_inverse,real_sub,real_add_closed,real_triangle_inequality}.
+    Thus $\abs{b} + \neg{\abs{a}} \leq \abs{b - a}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add}.
+    Therefore $\abs{\abs{a} - \abs{b}} \leq \abs{a - b}$ by \cref{real_sub,real_add_assoc,real_add_inverse,real_add_comm,real_add_ident,real_add_closed,real_leq_add,real_abs_sub_swap,real_sub_swap_neg,real_abs_leq_if_pm_leq}.
+\end{proof}
 
 \section{Standard Library: Cardinality}\label{form_sec_cardinality}
 
@@ -6264,7 +6287,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $S\subseteq\naturalsPlus$ by \cref{subseteq}.
     Show that $1\in S$.
     \begin{subproof}
-        $1+1\in\naturalsPlus$ by \cref{real_one_in_naturals,real_naturals_closed_succ}.
+        $2\in\naturalsPlus$ by \cref{def_of_2,real_one_in_naturals,real_naturals_closed_succ}.
         Hence $2\in\naturalsPlus$ by \cref{def_of_2}.
         $2\in\reals$ by \cref{real_naturals_subset_reals,elem_subseteq}.
         $2\rmul1=2$ by \cref{real_one_in_naturals,real_naturals_subset_reals,elem_subseteq,real_mul_comm,real_mul_ident}.
@@ -6789,6 +6812,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Hence $F\union G\in\inj{A\union B}{\naturals}$ by assumption.
     Follows by \cref{countable}.
 \end{proof}
+
 \section{Standard Library: Axiom of Choice and Consequences}
 
 \begin{axiom}\label{axiom_of_choice}
