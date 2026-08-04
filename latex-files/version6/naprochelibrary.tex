@@ -3082,6 +3082,7 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}
     Omitted.
 \end{proof}
+
 \subsection{Closure operations on relations}
 
 \begin{definition}\label{reflexive_closure}
@@ -3761,7 +3762,6 @@ This lets us use the same symbol for composition of functions.
 \end{proof}
 
 
-
 \subsection{Bijections}
 
 \begin{definition}\label{bijections}
@@ -3888,7 +3888,6 @@ This lets us use the same symbol for composition of functions.
 
     Omitted. % TODO
 \end{proof}
-
 
 
 \subsection{Identity function}
@@ -4424,7 +4423,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $a \rmul c < b \rmul c$.
 \end{axiom}
 
-% irreflexivity of  < 
+% irreflexivity of < 
 \begin{axiom}\label{real_lt_irreflexive}
     Suppose $a\in\reals$.
     Then it is wrong that $a < a$.
@@ -4432,7 +4431,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % greater than
 \begin{abbreviation}\label{real_gt}
-    $a  > b$ iff $b < a$.
+    $a > b$ iff $b < a$.
 \end{abbreviation}
 
 % at most
@@ -4447,7 +4446,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % positive
 \begin{abbreviation}\label{real_positive}
-    $a$ is positive iff $a  > 0$.
+    $a$ is positive iff $a > 0$.
 \end{abbreviation}
 
 % nonnegative
@@ -4530,7 +4529,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{definition}
 
 \begin{definition}\label{intervalopen_infinite_right}
-    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x  > a\}$.
+    $\intervalopenInfiniteRight{a} = \{ x \in \reals \mid x > a\}$.
 \end{definition}
 
 \begin{definition}\label{intervalclosed_infinite_left}
@@ -4940,7 +4939,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % sign change (forward)
 \begin{proposition}\label{real_pos_imp_neg}
-    Suppose $a\in\reals$ and $a  > 0$.
+    Suppose $a\in\reals$ and $a > 0$.
     Then $\neg{a} < 0$.
 \end{proposition}
 \begin{proof}
@@ -4950,7 +4949,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % sign change (backward)
 \begin{proposition}\label{real_neg_imp_pos}
     Suppose $a\in\reals$ and $\neg{a} < 0$.
-    Then $a  > 0$.
+    Then $a > 0$.
 \end{proposition}
 \begin{proof}
     Follows by \cref{real_add_inverse,real_add_ident,real_lt_add,real_add_comm}.
@@ -4997,7 +4996,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % helper lemma 9: positive implies nonzero
 \begin{lemma}\label{real_pos_nonzero}
-    Suppose $a\in\reals$ and $a  > 0$.
+    Suppose $a\in\reals$ and $a > 0$.
     Then $a \neq 0$.
 \end{lemma}
 
@@ -5010,19 +5009,19 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 % product of positives is positive
 \begin{proposition}\label{real_mul_pos_pos_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is positive and $b$ is positive.
-    Then $a \rmul b  > 0$.
+    Then $a \rmul b > 0$.
 \end{proposition}
 
 % product of negatives is positive
 \begin{proposition}\label{real_mul_neg_neg_gt}
     Suppose $a\in\reals$ and $b\in\reals$ and $a$ is negative and $b$ is negative.
-    Then $a \rmul b  > 0$.
+    Then $a \rmul b > 0$.
 \end{proposition}
 
 % product positive (backward)
 \begin{proposition}\label{real_mul_pos_same_sign_rev}
-    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b  > 0$.
-    Then either $a  > 0$ and $b  > 0$ or $a < 0$ and $b < 0$.
+    Suppose $a\in\reals$ and $b\in\reals$ and $a \rmul b > 0$.
+    Then either $a > 0$ and $b > 0$ or $a < 0$ and $b < 0$.
 \end{proposition}
 % \begin{proof}
 %     Suppose not.
@@ -5083,9 +5082,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Show if $a < b$ then $\exp{a}{2} < \exp{b}{2}$.
     \begin{subproof}
         Assume $a < b$.
-        Thus $(b - a) \rmul (a + b)  > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
+        Thus $(b - a) \rmul (a + b) > 0$ by \cref{real_pos_add,real_add_closed,real_add_inverse,real_lt_add,real_sub,real_mul_pos_pos_gt}.
         Hence $(a + b) \rmul (b - a) = \exp{b}{2} - \exp{a}{2}$ by \cref{real_add_comm,real_diff_squares}.
-        Therefore $\exp{b}{2} - \exp{a}{2}  > 0$.
+        Therefore $\exp{b}{2} - \exp{a}{2} > 0$.
         We have $\exp{a}{2} = a \rmul a$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one}.
         Hence $\exp{a}{2}\in\reals$ by \cref{real_mul_closed}.
         We have $\exp{b}{2} = b \rmul b$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one}.
@@ -5098,9 +5097,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Show $0 < b - a$.
         \begin{subproof}
             Suppose not.
-            Thus either $a + b  > 0$ and $b - a  > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
+            Thus either $a + b > 0$ and $b - a > 0$ or $a + b < 0$ and $b - a < 0$ by \cref{def_of_2,real_one_in_naturals,real_pow_succ,real_pow_one,real_mul_closed,real_add_inverse,real_lt_add,real_sub,real_add_comm,real_diff_squares,real_add_closed,real_mul_pos_same_sign_rev}.
             \begin{byCase}
-            \caseOf{$a + b  > 0$ and $b - a  > 0$.}
+            \caseOf{$a + b > 0$ and $b - a > 0$.}
                 Contradiction.
             \caseOf{$a + b < 0$ and $b - a < 0$.}
                 Contradiction by \cref{real_pos_add,real_add_ident,real_add_closed,real_pos_nonzero,real_lt_asym}.
@@ -5124,8 +5123,8 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 
 % inverse of a positive number
 \begin{proposition}\label{real_inv_pos}
-    Suppose $a\in\reals$ and $a  > 0$.
-    Then $\inv{a}  > 0$.
+    Suppose $a\in\reals$ and $a > 0$.
+    Then $\inv{a} > 0$.
 \end{proposition}
 
 % inverse of a negative number
