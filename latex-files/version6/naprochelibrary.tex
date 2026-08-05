@@ -5868,16 +5868,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\initialSegment{n+1} = \cons{n+1}{\initialSegment{n}}$.
 \end{lemma}
 \begin{proof}
-    $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    $1\in\reals$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-    Thus $n < n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
-    Hence $n+1\in\initialSegment{n+1}$ by \cref{real_naturals_closed_succ,initial_segment_naturalsplus}.
-    Every element of $\initialSegment{n}$ is an element of $\initialSegment{n+1}$ by \cref{initial_segment_naturalsplus,real_naturals_subset_reals,subseteq,real_naturals_closed_succ,real_leq_trans}.
-    Thus $\initialSegment{n}\subseteq\initialSegment{n+1}$ by \cref{subseteq}.
-    Thus $\cons{n+1}{\initialSegment{n}}\subseteq\initialSegment{n+1}$ by \cref{cons_subseteq_intro}.
-    Every element of $\initialSegment{n+1}$ is an element of $\cons{n+1}{\initialSegment{n}}$ by \cref{initial_segment_naturalsplus,real_succ_discrete,cons_iff}.
-    Thus $\initialSegment{n+1}\subseteq\cons{n+1}{\initialSegment{n}}$ by \cref{subseteq}.
-    Follows by \cref{subseteq_antisymmetric}.
+    Follows by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq,real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add,cons_subseteq_intro,initial_segment_naturalsplus,real_naturals_closed_succ,real_leq_trans,real_succ_discrete,cons_iff,subseteq_antisymmetric}.
 \end{proof}
 
 % from §12 helper lemma 3: adjoining fresh points extends a bijection
@@ -5887,50 +5878,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\cons{(a,b)}{f}\in\bijections{\cons{a}{A}}{\cons{b}{B}}$.
 \end{lemma}
 \begin{proof}
-    Let $g = \cons{(a,b)}{f}$.
-    $f$ is a function by \cref{bijection_is_function}.
-    $f$ is injective by \cref{bijections}.
-    $\dom{f}=A$ by \cref{bijections_dom}.
-    $\ran{f}=B$ by \cref{bijections,ran_of_surj}.
-    Thus for all $e$ we have $(a,e)\notin f$ by \cref{dom_intro}.
-    Thus for all $e$ we have $(e,b)\notin f$ by \cref{ran_intro}.
-    $g$ is a relation by \cref{relation,cons_iff}.
-    Show that $g$ is right-unique.
-    \begin{subproof}
-        It suffices to show that for all $c,d,e$ such that $(c,d),(c,e)\in g$ we have $d=e$.
-        Fix $c$.
-        Fix $d$.
-        Fix $e$.
-        Assume $(c,d),(c,e)\in g$.
-        \begin{byCase}
-        \caseOf{$(c,d)=(a,b)$ and $(c,e)=(a,b)$.}
-            Then $d=e$ by \cref{pair_eq_iff}.
-        \caseOf{$(c,d),(c,e)\in f$.}
-            Then $d=e$ by \cref{function_rightunique}.
-        \end{byCase}
-    \end{subproof}
-    Thus $g$ is a function.
-    $\dom{g}=\cons{a}{A}$ by \cref{dom_cons}.
-    $\ran{g}=\cons{b}{B}$ by \cref{ran_cons}.
-    For all $x\in\dom{g}$ we have $g(x)\in\cons{b}{B}$ by \cref{function_apply_elim,ran_intro}.
-    Thus $g$ is a function to $\cons{b}{B}$.
-    Hence $g\in\funs{\cons{a}{A}}{\cons{b}{B}}$ by \cref{funs_intro}.
-    Hence $g\in\surj{\cons{a}{A}}{\cons{b}{B}}$ by \cref{funs_surj_iff}.
-    Show that $g$ is injective.
-    \begin{subproof}
-        It suffices to show that for all $c,d,e$ such that $(c,d),(e,d)\in g$ we have $c=e$.
-        Fix $c$.
-        Fix $d$.
-        Fix $e$.
-        Assume $(c,d),(e,d)\in g$.
-        \begin{byCase}
-        \caseOf{$(c,d)=(a,b)$ and $(e,d)=(a,b)$.}
-            Then $c=e$ by \cref{pair_eq_iff}.
-        \caseOf{$(c,d),(e,d)\in f$.}
-            Then $c=e$ by \cref{injective}.
-        \end{byCase}
-    \end{subproof}
-    Follows by \cref{bijections}.
+    Follows by \cref{bijections_dom,dom_intro,bijection_is_function,relation,cons_iff,rightunique,pair_eq_iff,function_rightunique,ran_of_surj,dom_cons,ran_cons,function_apply_elim,ran_intro,funs_intro,funs_surj_iff,injective,bijections}.
 \end{proof}
 
 % from §12 helper lemma 4: adjoining one point preserves finiteness
@@ -5939,31 +5887,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\cons{x}{X}$ is finite.
 \end{lemma}
 \begin{proof}
-    \begin{byCase}
-    \caseOf{$x\in X$.}
-        $\cons{x}{X}=X$ by \cref{cons_absorb}.
-        Thus $\cons{x}{X}$ is finite.
-    \caseOf{$x\notin X$ and $X=\emptyset$.}
-        Let $f=\identity{\emptyset}$.
-        $f\in\bijections{\emptyset}{\emptyset}$ by \cref{id_elem_bijections}.
-        Let $g=\cons{(1,x)}{f}$.
-        $g\in\bijections{\cons{1}{\emptyset}}{\cons{x}{\emptyset}}$ by \cref{emptyset,bijection_cons}.
-        $\cons{1}{\emptyset}=\initialSegment{1}$ by \cref{initial_segment_one_library}.
-        Thus $\cons{x}{X}$ is finite by \cref{real_one_in_naturals,finite}.
-    \caseOf{$x\notin X$ and $X\neq\emptyset$.}
-        $X$ is inhabited by \cref{nonempty_inhabited}.
-        Take $n\in\naturalsPlus$ such that there exists $f\in\bijections{\initialSegment{n}}{X}$ by \cref{finite}.
-        Take $f$ such that $f\in\bijections{\initialSegment{n}}{X}$.
-        $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-        $1\in\reals$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-        Thus $n < n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
-        Hence $n+1\neq n$ by \cref{real_lt_irreflexive}.
-        Hence $n+1\notin\initialSegment{n}$ by \cref{initial_segment_naturalsplus,real_naturals_closed_succ,real_naturals_subset_reals,subseteq,real_lt_asym}.
-        Let $g=\cons{(n+1,x)}{f}$.
-        $g\in\bijections{\cons{n+1}{\initialSegment{n}}}{\cons{x}{X}}$ by \cref{bijection_cons}.
-        $\cons{n+1}{\initialSegment{n}}=\initialSegment{n+1}$ by \cref{initial_segment_succ}.
-        Thus $\cons{x}{X}$ is finite by \cref{real_naturals_closed_succ,finite}.
-    \end{byCase}
+    Follows by \cref{cons_absorb,id_elem_bijections,emptyset,bijection_cons,initial_segment_one_library,real_one_in_naturals,finite,nonempty_inhabited,real_naturals_subset_reals,subseteq,real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add,real_lt_irreflexive,initial_segment_naturalsplus,real_naturals_closed_succ,real_lt_asym,initial_segment_succ}.
 \end{proof}
 
 \begin{lemma} \label{pair_is_finite}
@@ -5971,9 +5895,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\{x,y\}$ is finite.
 \end{lemma}
 \begin{proof}
-    $\emptyset$ is finite by \cref{emptyset_is_finite}.
-    $\cons{y}{\emptyset}$ is finite by \cref{finite_cons}.
-    Thus $\{x,y\}$ is finite by \cref{finite_cons}.
+    Follows by \cref{emptyset_is_finite,finite_cons}.
 \end{proof}
 
 % from §12 helper lemma 5: the successor is outside the preceding initial segment
@@ -5982,11 +5904,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $n+1\notin\initialSegment{n}$.
 \end{lemma}
 \begin{proof}
-    $n\in\reals$ by \cref{real_naturals_subset_reals,subseteq}.
-    $1\in\reals$ by \cref{real_one_in_naturals,real_naturals_subset_reals,subseteq}.
-    Thus $n < n+1$ by \cref{real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add}.
-    Hence $n+1\neq n$ by \cref{real_lt_irreflexive}.
-    Follows by \cref{initial_segment_naturalsplus,real_naturals_closed_succ,real_naturals_subset_reals,subseteq,real_lt_asym}.
+    Follows by \cref{real_naturals_subset_reals,subseteq,real_one_in_naturals,real_zero_lt_one,real_add_ident,real_add_comm,real_lt_add,real_lt_irreflexive,initial_segment_naturalsplus,real_naturals_closed_succ,real_lt_asym}.
 \end{proof}
 
 % from §12 helper lemma 6: removing the last value restricts a bijection
@@ -6001,48 +5919,13 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $f$ is injective by \cref{bijections}.
     $\dom{f}=\initialSegment{n+1}$ by \cref{bijections_dom}.
     $\ran{f}=Y$ by \cref{bijections,ran_of_surj}.
-    $\initialSegment{n}\subseteq\initialSegment{n+1}$ by \cref{initial_segment_succ,subseteq_cons_self}.
-    $g$ is a function by \cref{restrl_of_function_is_function}.
-    $\dom{g}=\initialSegment{n}$ by \cref{dom_of_restrl_eq_inter,inter_absorb_supseteq_left}.
+    $g$ is a function by \cref{bijection_is_function,restrl_of_function_is_function}.
+    $\dom{g}=\initialSegment{n}$ by \cref{bijection_is_function,bijections_dom,initial_segment_succ,subseteq_cons_self,dom_of_restrl_eq_inter,inter_absorb_supseteq_left}.
 
-    Show that $\ran{g}\subseteq Y\setminus\{f(n+1)\}$.
-    \begin{subproof}
-        It suffices to show that every element of $\ran{g}$ is an element of $Y\setminus\{f(n+1)\}$.
-        Fix $z\in\ran{g}$.
-        Take $a$ such that $(a,z)\in g$ by \cref{ran_iff}.
-        Then $(a,z)\in f$ and $a\in\initialSegment{n}$ by \cref{restrl_iff}.
-        Thus $z\in Y$ by \cref{ran_intro}.
-        Show that $z\neq f(n+1)$.
-        \begin{subproof}
-            Suppose not.
-            $n+1\in\dom{f}$ by \cref{initial_segment_succ,cons_left}.
-            Thus $(n+1,f(n+1))\in f$ by \cref{function_apply_elim}.
-            Hence $a=n+1$ by \cref{injective}.
-            Contradiction by \cref{initial_segment_last_fresh}.
-        \end{subproof}
-        Thus $z\in Y\setminus\{f(n+1)\}$ by \cref{setminus_intro,singleton_iff}.
-    \end{subproof}
+    $\ran{g}\subseteq Y\setminus\{f(n+1)\}$ by \cref{subseteq,ran_iff,restrl_iff,ran_intro,initial_segment_succ,cons_left,function_apply_elim,injective,initial_segment_last_fresh,setminus_intro,singleton_iff}.
 
-    Show that $Y\setminus\{f(n+1)\}\subseteq\ran{g}$.
-    \begin{subproof}
-        It suffices to show that every element of $Y\setminus\{f(n+1)\}$ is an element of $\ran{g}$.
-        Fix $z\in Y\setminus\{f(n+1)\}$.
-        Then $z\neq f(n+1)$ by \cref{setminus_elim_right,singleton_iff}.
-        $z\in Y$ by \cref{setminus_elim_left}.
-        Take $a\in\dom{f}$ such that $f(a)=z$ by \cref{fun_ran_iff}.
-        $a=n+1$ or $a\in\initialSegment{n}$ by \cref{initial_segment_succ,cons_iff}.
-        Thus $a\in\initialSegment{n}$.
-        $(a,z)\in f$ by \cref{function_apply_elim}.
-        Hence $(a,z)\in g$ by \cref{restrl_iff}.
-        Thus $z\in\ran{g}$ by \cref{ran_intro}.
-    \end{subproof}
-    Hence $\ran{g}=Y\setminus\{f(n+1)\}$ by \cref{subseteq_antisymmetric}.
-    For all $a\in\dom{g}$ we have $g(a)\in Y\setminus\{f(n+1)\}$ by \cref{function_apply_elim,ran_intro}.
-    Thus $g$ is a function to $Y\setminus\{f(n+1)\}$.
-    Hence $g\in\funs{\initialSegment{n}}{Y\setminus\{f(n+1)\}}$ by \cref{funs_intro}.
-    Thus $g\in\surj{\initialSegment{n}}{Y\setminus\{f(n+1)\}}$ by \cref{funs_surj_iff}.
-    $g$ is injective by \cref{restrl_injective}.
-    Follows by \cref{bijections}.
+    $Y\setminus\{f(n+1)\}\subseteq\ran{g}$ by \cref{subseteq,setminus_elim_right,singleton_iff,setminus_elim_left,fun_ran_iff,initial_segment_succ,cons_iff,function_apply_elim,restrl_iff,ran_intro}.
+    Follows by \cref{subseteq_antisymmetric,function_apply_elim,ran_intro,funs_intro,funs_surj_iff,restrl_injective,bijections}.
 \end{proof}
 
 % from §12 helper lemma 7: induction over finite sets by adjoining points
@@ -6058,67 +5941,10 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Then $X\in C$.
     \caseOf{$X\neq\emptyset$.}
         Let $S=\{n\in\naturalsPlus\mid \text{for all $Y,f$ such that $Y\subseteq X$ and $f\in\bijections{\initialSegment{n}}{Y}$ we have $Y\in C$}\}$.
-        $S\subseteq\naturalsPlus$ by \cref{subseteq}.
+        For all $n\in S$ we have $n+1\in S$ by \cref{bijection_is_function,bijections_dom,bijections,ran_of_surj,initial_segment_succ,cons_left,function_apply_elim,ran_intro,elem_subseteq,bijection_remove_last,setminus_subseteq,subseteq_transitive,cons_remove,real_naturals_closed_succ}.
 
-        Show that $1\in S$.
-        \begin{subproof}
-            $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-            Show that for all $Y,f$ such that $Y\subseteq X$ and $f\in\bijections{\initialSegment{1}}{Y}$ we have $Y\in C$.
-            \begin{subproof}
-                Fix $Y$.
-                Fix $f$.
-                Assume $Y\subseteq X$ and $f\in\bijections{\initialSegment{1}}{Y}$.
-                $f$ is a function by \cref{bijection_is_function}.
-                $\dom{f}=\initialSegment{1}$ by \cref{bijections_dom}.
-                $\ran{f}=Y$ by \cref{bijections,ran_of_surj}.
-                Let $y=f(1)$.
-                $1\in\dom{f}$ by \cref{initial_segment_one_library,singleton_intro}.
-                Thus $y\in Y$ by \cref{function_apply_elim,ran_intro}.
-                Hence $y\in X$ by \cref{elem_subseteq}.
-                For all $z\in Y$ we have $z=y$ by \cref{fun_ran_iff,initial_segment_one_library,singleton_iff}.
-                Thus $Y$ is a subsingleton.
-                Hence $Y=\{y\}$ by \cref{singleton_iff_inhabited_subsingleton}.
-                $\cons{y}{\emptyset}\in C$ by assumption.
-                Thus $Y\in C$ by assumption.
-            \end{subproof}
-            Follows by definition.
-        \end{subproof}
-
-        Show that for all $n\in S$ we have $n+1\in S$.
-        \begin{subproof}
-            Fix $n\in S$.
-            Show that for all $Y,f$ such that $Y\subseteq X$ and $f\in\bijections{\initialSegment{n+1}}{Y}$ we have $Y\in C$.
-            \begin{subproof}
-                Fix $Y$.
-                Fix $f$.
-                Assume $Y\subseteq X$ and $f\in\bijections{\initialSegment{n+1}}{Y}$.
-                $n\in\naturalsPlus$.
-                $f$ is a function by \cref{bijection_is_function}.
-                $\dom{f}=\initialSegment{n+1}$ by \cref{bijections_dom}.
-                $\ran{f}=Y$ by \cref{bijections,ran_of_surj}.
-                Let $y=f(n+1)$.
-                $n+1\in\dom{f}$ by \cref{initial_segment_succ,cons_left}.
-                Thus $y\in Y$ by \cref{function_apply_elim,ran_intro}.
-                Hence $y\in X$ by \cref{elem_subseteq}.
-                Let $g=\restrl{f}{\initialSegment{n}}$.
-                $g\in\bijections{\initialSegment{n}}{Y\setminus\{y\}}$ by \cref{bijection_remove_last}.
-                $Y\setminus\{y\}\subseteq X$ by \cref{setminus_subseteq,subseteq_transitive}.
-                Thus $Y\setminus\{y\}\in C$ by definition.
-                Hence $\cons{y}{Y\setminus\{y\}}\in C$ by assumption.
-                $\cons{y}{Y\setminus\{y\}}=Y$ by \cref{cons_remove}.
-                Thus $Y\in C$ by assumption.
-            \end{subproof}
-            Thus $n+1\in S$ by \cref{real_naturals_closed_succ}.
-        \end{subproof}
-
-        $1\in S$ and for all $n\in S$ we have $n+1\in S$.
-        Thus $\naturalsPlus\subseteq S$ by \cref{real_naturals_induction,subseteq}.
-        $X$ is inhabited by \cref{nonempty_inhabited}.
-        Take $n\in\naturalsPlus$ such that there exists $f\in\bijections{\initialSegment{n}}{X}$ by \cref{finite}.
-        Take $f$ such that $f\in\bijections{\initialSegment{n}}{X}$.
-        $n\in S$ by \cref{elem_subseteq}.
-        $X\subseteq X$ by \cref{subseteq_refl}.
-        Thus $X\in C$ by definition.
+        Take $n,f$ such that $n\in\naturalsPlus$ and $f\in\bijections{\initialSegment{n}}{X}$ by \cref{nonempty_inhabited,finite}.
+        Thus $X\in C$ by \cref{real_one_in_naturals,bijection_is_function,bijections_dom,bijections,ran_of_surj,initial_segment_one_library,singleton_intro,function_apply_elim,ran_intro,elem_subseteq,fun_ran_iff,singleton_iff,singleton_iff_inhabited_subsingleton,real_naturals_induction,subseteq,subseteq_refl}.
     \end{byCase}
 \end{proof}
 
@@ -6129,47 +5955,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $C=\{Y\in\pow{B}\mid \text{for all $D$ such that $D\subseteq Y$ we have $D$ is finite}\}$.
-    Show that $\emptyset\in C$.
-    \begin{subproof}
-        $\emptyset\in\pow{B}$ by \cref{powerset_bottom}.
-        Show that for all $D$ such that $D\subseteq\emptyset$ we have $D$ is finite.
-        \begin{subproof}
-            Fix $D$.
-            Assume $D\subseteq\emptyset$.
-            Then $D=\emptyset$ by \cref{subseteq_emptyset_iff}.
-            Thus $D$ is finite by \cref{emptyset_is_finite}.
-        \end{subproof}
-        Follows by definition.
-    \end{subproof}
-    Show that for all $Y,y$ such that $Y\in C$ and $y\in B$ we have $\cons{y}{Y}\in C$.
-    \begin{subproof}
-        Fix $Y$.
-        Fix $y$.
-        Assume $Y\in C$ and $y\in B$.
-        $Y\in\pow{B}$ by definition.
-        Hence $Y\subseteq B$ by \cref{powerset_elim}.
-        Thus $\cons{y}{Y}\subseteq B$ by \cref{cons_subseteq_intro}.
-        Hence $\cons{y}{Y}\in\pow{B}$ by \cref{powerset_intro}.
-        Show that for all $D$ such that $D\subseteq\cons{y}{Y}$ we have $D$ is finite.
-        \begin{subproof}
-            Fix $D$.
-            Assume $D\subseteq\cons{y}{Y}$.
-            $D\subseteq Y \lor (y\in D \land \remove{y}{D}\subseteq Y)$ by \cref{subseteq_cons_elim}.
-            \begin{byCase}
-            \caseOf{$D\subseteq Y$.}
-                Then $D$ is finite by definition.
-            \caseOf{$D\not\subseteq Y$.}
-                $y\in D \land \remove{y}{D}\subseteq Y$ by assumption.
-                Thus $\remove{y}{D}$ is finite by definition.
-                Hence $\cons{y}{\remove{y}{D}}$ is finite by \cref{finite_cons}.
-                $\cons{y}{\remove{y}{D}}=D$ by \cref{cons_remove}.
-                Thus $D$ is finite by assumption.
-            \end{byCase}
-        \end{subproof}
-        Follows by definition.
-    \end{subproof}
-    $B\in C$ by \cref{finite_induction}.
-    Thus $A$ is finite by definition.
+    Thus $A$ is finite by \cref{powerset_bottom,subseteq_emptyset_iff,emptyset_is_finite,powerset_elim,cons_subseteq_intro,powerset_intro,subseteq_cons_elim,finite_cons,cons_remove,finite_induction}.
 \end{proof}
 
 \begin{lemma} \label{union_of_finite_is_finite}
@@ -6178,30 +5964,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $C=\{Y\in\pow{A}\mid \text{$Y\union B$ is finite}\}$.
-    Show that $\emptyset\in C$.
-    \begin{subproof}
-        $\emptyset\in\pow{A}$ by \cref{powerset_bottom}.
-        $\emptyset\union B=B$ by \cref{union_comm,union_emptyset}.
-        Thus $\emptyset\union B$ is finite by assumption.
-        Follows by definition.
-    \end{subproof}
-    Show that for all $Y,y$ such that $Y\in C$ and $y\in A$ we have $\cons{y}{Y}\in C$.
-    \begin{subproof}
-        Fix $Y$.
-        Fix $y$.
-        Assume $Y\in C$ and $y\in A$.
-        $Y\in\pow{A}$ by definition.
-        Hence $Y\subseteq A$ by \cref{powerset_elim}.
-        Thus $\cons{y}{Y}\subseteq A$ by \cref{cons_subseteq_intro}.
-        Hence $\cons{y}{Y}\in\pow{A}$ by \cref{powerset_intro}.
-        $Y\union B$ is finite by definition.
-        Hence $\cons{y}{Y\union B}$ is finite by \cref{finite_cons}.
-        $\cons{y}{Y}\union B=\cons{y}{Y\union B}$ by \cref{union_cons}.
-        Thus $\cons{y}{Y}\union B$ is finite by assumption.
-        Follows by definition.
-    \end{subproof}
-    $A\in C$ by \cref{finite_induction}.
-    Thus $A\union B$ is finite by definition.
+    Thus $A\union B$ is finite by \cref{powerset_bottom,union_comm,union_emptyset,powerset_elim,cons_subseteq_intro,powerset_intro,finite_cons,union_cons,finite_induction}.
 \end{proof}
 
 \begin{abbreviation}\label{infinite}
@@ -6221,49 +5984,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then there exists $p\in\cons{x}{Y}$ such that $p$ is a maximum of $\cons{x}{Y}$.
 \end{lemma}
 \begin{proof}
-    $m\in Y$ by \cref{real_maximum}.
-    Hence $m\in\reals$ by \cref{elem_subseteq}.
-    \begin{byCase}
-    \caseOf{$x\leq m$.}
-        $m\in\cons{x}{Y}$ by \cref{cons_right}.
-        Show that for all $a\in\cons{x}{Y}$ we have $a\leq m$.
-        \begin{subproof}
-            Fix $a\in\cons{x}{Y}$.
-            $a=x$ or $a\in Y$ by \cref{cons_iff}.
-            \begin{byCase}
-            \caseOf{$a=x$.}
-                Then $a\leq m$ by assumption.
-            \caseOf{$a\neq x$.}
-                Then $a\in Y$ by assumption.
-                Thus $a\leq m$ by \cref{real_maximum}.
-            \end{byCase}
-        \end{subproof}
-        Thus $m$ is a maximum of $\cons{x}{Y}$ by \cref{real_maximum}.
-        Thus there exists $p\in\cons{x}{Y}$ such that $p$ is a maximum of $\cons{x}{Y}$.
-    \caseOf{$x\not\leq m$.}
-        $x\neq m$ by definition.
-        $x < m$ or $m < x$ by \cref{real_lt_trichotomy}.
-        It is wrong that $x < m$ by definition.
-        Hence $m < x$ by assumption.
-        Thus $m\leq x$ by definition.
-        $x\in\cons{x}{Y}$ by \cref{cons_left}.
-        Show that for all $a\in\cons{x}{Y}$ we have $a\leq x$.
-        \begin{subproof}
-            Fix $a\in\cons{x}{Y}$.
-            $a=x$ or $a\in Y$ by \cref{cons_iff}.
-            \begin{byCase}
-            \caseOf{$a=x$.}
-                Then $a\leq x$ by definition.
-            \caseOf{$a\neq x$.}
-                Then $a\in Y$ by assumption.
-                Hence $a\leq m$ by \cref{real_maximum}.
-                $a\in\reals$ by \cref{elem_subseteq}.
-                Thus $a\leq x$ by \cref{real_leq_trans}.
-            \end{byCase}
-        \end{subproof}
-        Thus $x$ is a maximum of $\cons{x}{Y}$ by \cref{real_maximum}.
-        Thus there exists $p\in\cons{x}{Y}$ such that $p$ is a maximum of $\cons{x}{Y}$.
-    \end{byCase}
+    Follows by \cref{real_maximum,elem_subseteq,cons_right,cons_iff,real_lt_trichotomy,cons_left,real_leq_trans}.
 \end{proof}
 
 \begin{lemma}\label{finite_real_maximum}
@@ -6274,43 +5995,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $C=\{Y\in\pow{A}\mid \text{$Y=\emptyset$ or there exists $m\in Y$ such that $m$ is a maximum of $Y$}\}$.
-    Show that $\emptyset\in C$.
-    \begin{subproof}
-        $\emptyset\in\pow{A}$ by \cref{powerset_bottom}.
-        Follows by definition.
-    \end{subproof}
-    Show that for all $Y,y$ such that $Y\in C$ and $y\in A$ we have $\cons{y}{Y}\in C$.
-    \begin{subproof}
-        Fix $Y$.
-        Fix $y$.
-        Assume $Y\in C$ and $y\in A$.
-        $Y\in\pow{A}$ by definition.
-        Hence $Y\subseteq A$ by \cref{powerset_elim}.
-        Thus $\cons{y}{Y}\subseteq A$ by \cref{cons_subseteq_intro}.
-        Hence $\cons{y}{Y}\in\pow{A}$ by \cref{powerset_intro}.
-        $y\in\reals$ by \cref{elem_subseteq}.
-        \begin{byCase}
-        \caseOf{$Y=\emptyset$.}
-            $\cons{y}{Y}=\{y\}$ by assumption.
-            $y\in\cons{y}{Y}$ by \cref{cons_left}.
-            Show that for all $z\in\cons{y}{Y}$ we have $z\leq y$.
-            \begin{subproof}
-                Fix $z\in\cons{y}{Y}$.
-                Then $z=y$ by \cref{singleton_iff}.
-                Thus $z\leq y$ by definition.
-            \end{subproof}
-            Thus $y$ is a maximum of $\cons{y}{Y}$ by \cref{real_maximum}.
-            Hence there exists $p\in\cons{y}{Y}$ such that $p$ is a maximum of $\cons{y}{Y}$.
-            Thus $\cons{y}{Y}\in C$ by definition.
-        \caseOf{$Y\neq\emptyset$.}
-            Take $m\in Y$ such that $m$ is a maximum of $Y$ by definition.
-            $Y\subseteq\reals$ by \cref{subseteq_transitive}.
-            Thus there exists $p\in\cons{y}{Y}$ such that $p$ is a maximum of $\cons{y}{Y}$ by \cref{maximum_cons}.
-            Thus $\cons{y}{Y}\in C$ by definition.
-        \end{byCase}
-    \end{subproof}
-    $A\in C$ by \cref{finite_induction}.
-    Thus there exists $m\in A$ such that $m$ is a maximum of $A$ by definition.
+    Thus there exists $m\in A$ such that $m$ is a maximum of $A$ by \cref{powerset_bottom,powerset_elim,cons_subseteq_intro,powerset_intro,elem_subseteq,cons_left,singleton_iff,real_maximum,subseteq_transitive,maximum_cons,finite_induction}.
 \end{proof}
 
 % from §12 helper lemma 9: adjoining a real preserves existence of a minimum
@@ -6321,49 +6006,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then there exists $p\in\cons{x}{Y}$ such that $p$ is a minimum of $\cons{x}{Y}$.
 \end{lemma}
 \begin{proof}
-    $m\in Y$ by \cref{real_minimum}.
-    Hence $m\in\reals$ by \cref{elem_subseteq}.
-    \begin{byCase}
-    \caseOf{$m\leq x$.}
-        $m\in\cons{x}{Y}$ by \cref{cons_right}.
-        Show that for all $a\in\cons{x}{Y}$ we have $m\leq a$.
-        \begin{subproof}
-            Fix $a\in\cons{x}{Y}$.
-            $a=x$ or $a\in Y$ by \cref{cons_iff}.
-            \begin{byCase}
-            \caseOf{$a=x$.}
-                Then $m\leq a$ by assumption.
-            \caseOf{$a\neq x$.}
-                Then $a\in Y$ by assumption.
-                Thus $m\leq a$ by \cref{real_minimum}.
-            \end{byCase}
-        \end{subproof}
-        Thus $m$ is a minimum of $\cons{x}{Y}$ by \cref{real_minimum}.
-        Thus there exists $p\in\cons{x}{Y}$ such that $p$ is a minimum of $\cons{x}{Y}$.
-    \caseOf{$m\not\leq x$.}
-        $m\neq x$ by definition.
-        $m < x$ or $x < m$ by \cref{real_lt_trichotomy}.
-        It is wrong that $m < x$ by definition.
-        Hence $x < m$ by assumption.
-        Thus $x\leq m$ by definition.
-        $x\in\cons{x}{Y}$ by \cref{cons_left}.
-        Show that for all $a\in\cons{x}{Y}$ we have $x\leq a$.
-        \begin{subproof}
-            Fix $a\in\cons{x}{Y}$.
-            $a=x$ or $a\in Y$ by \cref{cons_iff}.
-            \begin{byCase}
-            \caseOf{$a=x$.}
-                Then $x\leq a$ by definition.
-            \caseOf{$a\neq x$.}
-                Then $a\in Y$ by assumption.
-                Hence $m\leq a$ by \cref{real_minimum}.
-                $a\in\reals$ by \cref{elem_subseteq}.
-                Thus $x\leq a$ by \cref{real_leq_trans}.
-            \end{byCase}
-        \end{subproof}
-        Thus $x$ is a minimum of $\cons{x}{Y}$ by \cref{real_minimum}.
-        Thus there exists $p\in\cons{x}{Y}$ such that $p$ is a minimum of $\cons{x}{Y}$.
-    \end{byCase}
+    Follows by \cref{real_minimum,elem_subseteq,cons_right,cons_iff,real_lt_trichotomy,cons_left,real_leq_trans}.
 \end{proof}
 
 \begin{lemma}\label{finite_real_minimum}
@@ -6374,43 +6017,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $C=\{Y\in\pow{A}\mid \text{$Y=\emptyset$ or there exists $m\in Y$ such that $m$ is a minimum of $Y$}\}$.
-    Show that $\emptyset\in C$.
-    \begin{subproof}
-        $\emptyset\in\pow{A}$ by \cref{powerset_bottom}.
-        Follows by definition.
-    \end{subproof}
-    Show that for all $Y,y$ such that $Y\in C$ and $y\in A$ we have $\cons{y}{Y}\in C$.
-    \begin{subproof}
-        Fix $Y$.
-        Fix $y$.
-        Assume $Y\in C$ and $y\in A$.
-        $Y\in\pow{A}$ by definition.
-        Hence $Y\subseteq A$ by \cref{powerset_elim}.
-        Thus $\cons{y}{Y}\subseteq A$ by \cref{cons_subseteq_intro}.
-        Hence $\cons{y}{Y}\in\pow{A}$ by \cref{powerset_intro}.
-        $y\in\reals$ by \cref{elem_subseteq}.
-        \begin{byCase}
-        \caseOf{$Y=\emptyset$.}
-            $\cons{y}{Y}=\{y\}$ by assumption.
-            $y\in\cons{y}{Y}$ by \cref{cons_left}.
-            Show that for all $z\in\cons{y}{Y}$ we have $y\leq z$.
-            \begin{subproof}
-                Fix $z\in\cons{y}{Y}$.
-                Then $z=y$ by \cref{singleton_iff}.
-                Thus $y\leq z$ by definition.
-            \end{subproof}
-            Thus $y$ is a minimum of $\cons{y}{Y}$ by \cref{real_minimum}.
-            Hence there exists $p\in\cons{y}{Y}$ such that $p$ is a minimum of $\cons{y}{Y}$.
-            Thus $\cons{y}{Y}\in C$ by definition.
-        \caseOf{$Y\neq\emptyset$.}
-            Take $m\in Y$ such that $m$ is a minimum of $Y$ by definition.
-            $Y\subseteq\reals$ by \cref{subseteq_transitive}.
-            Thus there exists $p\in\cons{y}{Y}$ such that $p$ is a minimum of $\cons{y}{Y}$ by \cref{minimum_cons}.
-            Thus $\cons{y}{Y}\in C$ by definition.
-        \end{byCase}
-    \end{subproof}
-    $A\in C$ by \cref{finite_induction}.
-    Thus there exists $m\in A$ such that $m$ is a minimum of $A$ by definition.
+    Thus there exists $m\in A$ such that $m$ is a minimum of $A$ by \cref{powerset_bottom,powerset_elim,cons_subseteq_intro,powerset_intro,elem_subseteq,cons_left,singleton_iff,real_minimum,subseteq_transitive,minimum_cons,finite_induction}.
 \end{proof}
 
 \begin{lemma}\label{finite_naturals_maximum}
@@ -6431,11 +6038,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $\emptyset$ is countable.
 \end{lemma}
 \begin{proof}
-    $\emptyset$ is a function to $\naturals$ by \cref{codom_of_emptyset_can_be_anything}.
-    $\emptyset=\dom{\emptyset}$ by \cref{dom_emptyset}.
-    Thus $\emptyset\in\funs{\emptyset}{\naturals}$ by \cref{funs_intro}.
-    Thus $\emptyset\in\inj{\emptyset}{\naturals}$ by \cref{inj,emptyset}.
-    Follows by \cref{countable}.
+    Follows by \cref{codom_of_emptyset_can_be_anything,dom_emptyset,funs_intro,inj,emptyset,countable}.
 \end{proof}
 
 % from §12 helper lemma 10: restricting the domain preserves an injection
@@ -6445,27 +6048,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\restrl{f}{A}\in\inj{A}{C}$.
 \end{lemma}
 \begin{proof}
-    $f\in\funs{B}{C}$ by \cref{inj}.
-    Hence $f$ is a function by \cref{funs_is_function}.
-    $\dom{f}=B$ by \cref{funs}.
-    Let $g=\restrl{f}{A}$.
-    $g$ is a function by \cref{restrl_of_function_is_function}.
-    $\dom{g}=\dom{f}\inter A$ by \cref{dom_of_restrl_eq_inter}.
-    Hence $\dom{g}=A$ by \cref{inter_absorb_supseteq_left}.
-    Show that for all $x\in\dom{g}$ we have $g(x)\in C$.
-    \begin{subproof}
-        Fix $x\in\dom{g}$.
-        Then $x\in A$ by \cref{restrl_dom}.
-        Hence $x\in B$ by \cref{elem_subseteq}.
-        $g(x)=f(x)$ by \cref{restrl_of_function_apply}.
-        Thus $g(x)\in C$ by \cref{funs_type_apply}.
-    \end{subproof}
-    Thus $g$ is a function to $C$ by definition.
-    $A=\dom{g}$ by assumption.
-    Hence $g\in\funs{A}{C}$ by \cref{funs_intro}.
-    $f$ is injective by \cref{inj,injective_function}.
-    Thus $g$ is injective by \cref{restrl_injective}.
-    Thus $g\in\inj{A}{C}$ by \cref{inj,injective_function}.
+    Follows by \cref{inj,funs_is_function,funs,restrl_of_function_is_function,dom_of_restrl_eq_inter,inter_absorb_supseteq_left,restrl_dom,elem_subseteq,restrl_of_function_apply,funs_type_apply,funs_intro,injective_function,restrl_injective}.
 \end{proof}
 
 \begin{lemma}\label{subseteq_countable_is_countable}
@@ -6492,41 +6075,8 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $S=\{k\in\naturalsPlus\mid \text{$2\rmul k\in\naturalsPlus$}\}$.
-    $S\subseteq\naturalsPlus$ by \cref{subseteq}.
-    Show that $1\in S$.
-    \begin{subproof}
-        $2\in\naturalsPlus$ by \cref{def_of_2,real_one_in_naturals,real_naturals_closed_succ}.
-        Hence $2\in\naturalsPlus$ by \cref{def_of_2}.
-        $2\in\reals$ by \cref{real_naturals_subset_reals,elem_subseteq}.
-        $2\rmul1=2$ by \cref{real_one_in_naturals,real_naturals_subset_reals,elem_subseteq,real_mul_comm,real_mul_ident}.
-        $1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-        Thus $1\in S$ by definition.
-    \end{subproof}
-    Show that for all $k\in S$ we have $k+1\in S$.
-    \begin{subproof}
-        Fix $k\in S$.
-        $k\in\naturalsPlus$ and $2\rmul k\in\naturalsPlus$ by definition.
-        Hence $(2\rmul k)+1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-        Hence $((2\rmul k)+1)+1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-        $k\in\reals$ by \cref{real_naturals_subset_reals,elem_subseteq}.
-        $2\rmul(k+1)=((2\rmul k)+1)+1$ by \cref{def_of_2,real_one_in_naturals,real_naturals_subset_reals,elem_subseteq,real_add_closed,real_distrib,real_mul_ident,real_mul_comm,real_add_assoc}.
-        Thus $2\rmul(k+1)\in\naturalsPlus$ by assumption.
-        $k+1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-        Thus $k+1\in S$ by definition.
-    \end{subproof}
-    $1\in S$ and for all $k\in S$ we have $k+1\in S$.
-    Thus $\naturalsPlus\subseteq S$ by \cref{real_naturals_induction,subseteq}.
-    \begin{byCase}
-    \caseOf{$n=0$.}
-        $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-        Then $2\rmul n=0$ by \cref{real_add_ident,real_mul_zero,real_mul_comm}.
-        Thus $2\rmul n\in\naturals$ by \cref{naturals,union_iff,singleton_iff}.
-    \caseOf{$n\neq0$.}
-        Then $n\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        Hence $n\in S$ by \cref{elem_subseteq}.
-        Thus $2\rmul n\in\naturalsPlus$ by definition.
-        Thus $2\rmul n\in\naturals$ by \cref{naturals,union_iff}.
-    \end{byCase}
+    For all $k\in S$ we have $k+1\in S$ by \cref{real_naturals_closed_succ,real_naturals_subset_reals,elem_subseteq,def_of_2,real_one_in_naturals,real_add_closed,real_distrib,real_mul_ident,real_mul_comm,real_add_assoc}.
+    Thus $2\rmul n\in\naturals$ by \cref{real_one_in_naturals,real_naturals_closed_succ,real_naturals_subset_reals,elem_subseteq,def_of_2,real_mul_comm,real_mul_ident,real_naturals_induction,subseteq,real_add_closed,real_add_ident,real_mul_zero,naturals,union_iff,singleton_iff}.
 \end{proof}
 
 % from §12 helper lemma 13: a successor of a doubled natural is natural
@@ -6535,18 +6085,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $(2\rmul n)+1\in\naturals$.
 \end{lemma}
 \begin{proof}
-    Let $k=2\rmul n$.
-    $k\in\naturals$ by \cref{double_natural}.
-    \begin{byCase}
-    \caseOf{$k=0$.}
-        Then $k+1=1$ by \cref{real_add_ident,real_add_comm,real_mul_ident}.
-        Thus $k+1\in\naturalsPlus$ by \cref{real_one_in_naturals}.
-        Thus $k+1\in\naturals$ by \cref{naturals,union_iff}.
-    \caseOf{$k\neq0$.}
-        Then $k\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        Hence $k+1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-        Thus $k+1\in\naturals$ by \cref{naturals,union_iff}.
-    \end{byCase}
+    Follows by \cref{double_natural,real_add_ident,real_add_comm,real_mul_ident,real_one_in_naturals,naturals,union_iff,singleton_iff,real_naturals_closed_succ}.
 \end{proof}
 
 % from §12 helper lemma 14: doubling is injective on natural numbers
@@ -6556,12 +6095,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $m=n$.
 \end{lemma}
 \begin{proof}
-    $m,n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-    $1 < 2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
-    Hence $0 < 2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_add_closed,real_lt_trans}.
-    $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-    Thus $2\neq0$ by \cref{real_pos_nonzero}.
-    Follows by \cref{real_mul_cancel}.
+    Follows by \cref{naturals_subset_reals,elem_subseteq,def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add,real_add_closed,real_lt_trans,real_pos_nonzero,real_mul_cancel}.
 \end{proof}
 
 % from §12 helper lemma 15: a larger natural is at least the successor
@@ -6571,31 +6105,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $n+1\leq m$.
 \end{lemma}
 \begin{proof}
-    $n,m\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-    \begin{byCase}
-    \caseOf{$n=0$.}
-        Then $n+1=1$ by \cref{real_add_ident,real_mul_ident}.
-        $m\neq0$ by \cref{real_lt_irreflexive}.
-        Hence $m\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        $1 < m$ or $1=m$ by \cref{real_one_leq_naturalsplus}.
-        Thus $n+1\leq m$ by definition.
-    \caseOf{$n\neq0$.}
-        Then $n\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        $0 < n$ by \cref{real_one_leq_naturalsplus,real_zero_lt_one,real_naturals_subset_reals,elem_subseteq,real_add_ident,real_mul_ident,real_lt_trans}.
-        Hence $0 < m$ by \cref{real_add_ident,real_lt_trans}.
-        Thus $m\neq0$ by \cref{real_pos_nonzero}.
-        Hence $m\in\naturalsPlus$ by \cref{naturals,union_iff,singleton_iff}.
-        $n+1\in\naturalsPlus$ by \cref{real_naturals_closed_succ}.
-        \begin{byCase}
-        \caseOf{$m=n+1$.}
-            Then $n+1\leq m$ by definition.
-        \caseOf{$m\neq n+1$.}
-            $n+1 < m$ or $m < n+1$ by \cref{real_lt_trichotomy,real_naturals_subset_reals,elem_subseteq}.
-            It is wrong that $m < n+1$ by \cref{real_succ_discrete,real_lt_asym,real_lt_irreflexive}.
-            Hence $n+1 < m$ by assumption.
-            Thus $n+1\leq m$ by definition.
-        \end{byCase}
-    \end{byCase}
+    Follows by \cref{naturals_subset_reals,elem_subseteq,real_add_ident,real_mul_ident,real_lt_irreflexive,naturals,union_iff,singleton_iff,real_one_leq_naturalsplus,real_zero_lt_one,real_naturals_subset_reals,real_lt_trans,real_pos_nonzero,real_naturals_closed_succ,real_lt_trichotomy,real_succ_discrete,real_lt_asym}.
 \end{proof}
 
 % from §12 helper lemma 16: an odd code precedes the next even code
@@ -6604,14 +6114,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $(2\rmul n)+1 < 2\rmul(n+1)$.
 \end{lemma}
 \begin{proof}
-    $n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-    $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-    Hence $2\rmul n\in\reals$ by \cref{real_mul_closed}.
-    Thus $(2\rmul n)+1\in\reals$ by \cref{real_mul_ident,real_add_closed}.
-    $0+((2\rmul n)+1) < 1+((2\rmul n)+1)$ by \cref{real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
-    Hence $(2\rmul n)+1 < ((2\rmul n)+1)+1$ by \cref{real_add_ident,real_mul_ident,real_add_comm}.
-    $2\rmul(n+1)=((2\rmul n)+1)+1$ by \cref{def_of_2,real_mul_ident,real_add_closed,real_distrib,real_mul_comm,real_add_assoc}.
-    Thus $(2\rmul n)+1 < 2\rmul(n+1)$ by assumption.
+    Follows by \cref{naturals_subset_reals,elem_subseteq,def_of_2,real_mul_ident,real_add_closed,real_mul_closed,real_zero_lt_one,real_add_ident,real_lt_add,real_add_comm,real_distrib,real_mul_comm,real_add_assoc}.
 \end{proof}
 
 % from §12 helper lemma 17: an even code precedes its odd successor
@@ -6620,11 +6123,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $2\rmul n < (2\rmul n)+1$.
 \end{lemma}
 \begin{proof}
-    $n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-    $2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-    Hence $2\rmul n\in\reals$ by \cref{real_mul_closed}.
-    $0+(2\rmul n) < 1+(2\rmul n)$ by \cref{real_zero_lt_one,real_add_ident,real_mul_ident,real_lt_add}.
-    Thus $2\rmul n < (2\rmul n)+1$ by \cref{real_add_ident,real_mul_ident,real_add_comm}.
+    Follows by \cref{naturals_subset_reals,elem_subseteq,def_of_2,real_mul_ident,real_add_closed,real_mul_closed,real_zero_lt_one,real_add_ident,real_lt_add,real_add_comm}.
 \end{proof}
 
 % from §12 helper lemma 18: even and odd natural codes are disjoint
@@ -6633,42 +6132,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $2\rmul m\neq(2\rmul n)+1$.
 \end{lemma}
 \begin{proof}
-    $m,n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-    $1,2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-    $0 < 2$ by \cref{def_of_2,real_zero_lt_one,real_add_ident,real_mul_ident,real_add_closed,real_lt_add,real_lt_trans}.
-    Suppose not.
-    \begin{byCase}
-    \caseOf{$m=n$.}
-        $2\rmul n < (2\rmul n)+1$ by \cref{double_lt_double_succ}.
-        Contradiction by \cref{real_mul_closed,real_add_closed,real_lt_irreflexive}.
-    \caseOf{$m\neq n$.}
-        $m < n$ or $n < m$ by \cref{real_lt_trichotomy}.
-        \begin{byCase}
-        \caseOf{$m < n$.}
-            $m\rmul2 < n\rmul2$ by \cref{real_lt_mul_pos}.
-            Hence $2\rmul m < 2\rmul n$ by \cref{real_mul_comm}.
-            $2\rmul n < (2\rmul n)+1$ by \cref{double_lt_double_succ}.
-            Thus $2\rmul m < (2\rmul n)+1$ by \cref{real_mul_closed,real_add_closed,real_lt_trans}.
-            Contradiction by \cref{real_mul_closed,real_add_closed,real_lt_irreflexive}.
-        \caseOf{$m\not < n$.}
-            Then $n < m$ by assumption.
-            Hence $n+1\leq m$ by \cref{natural_succ_leq}.
-            Show that $(2\rmul n)+1 < 2\rmul m$.
-            \begin{subproof}
-                \begin{byCase}
-                \caseOf{$n+1=m$.}
-                    Follows by \cref{double_succ_lt_next_double}.
-                \caseOf{$n+1\neq m$.}
-                    Then $n+1 < m$ by definition.
-                    Hence $(n+1)\rmul2 < m\rmul2$ by \cref{real_lt_mul_pos,real_add_closed}.
-                    Thus $2\rmul(n+1) < 2\rmul m$ by \cref{real_mul_comm,real_add_closed}.
-                    $(2\rmul n)+1 < 2\rmul(n+1)$ by \cref{double_succ_lt_next_double}.
-                    Follows by \cref{real_mul_closed,real_add_closed,real_lt_trans}.
-                \end{byCase}
-            \end{subproof}
-            Contradiction by \cref{real_mul_closed,real_add_closed,real_lt_irreflexive}.
-        \end{byCase}
-    \end{byCase}
+    Follows by \cref{naturals_subset_reals,elem_subseteq,def_of_2,real_mul_ident,real_add_closed,real_zero_lt_one,real_add_ident,real_lt_add,real_lt_trans,double_lt_double_succ,real_mul_closed,real_lt_irreflexive,real_lt_trichotomy,real_lt_mul_pos,real_mul_comm,natural_succ_leq,double_succ_lt_next_double}.
 \end{proof}
 
 % from §12 helper lemma 19: the even coding map is an injection
@@ -6678,84 +6142,8 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $e=\{(n,2\rmul n)\mid n\in\naturals\}$.
-    Show that $e$ is a relation.
-    \begin{subproof}
-        Show that for all $w\in e$ there exist $x,y$ such that $w=(x,y)$.
-        \begin{subproof}
-            Fix $w\in e$.
-            Take $n\in\naturals$ such that $w=(n,2\rmul n)$.
-            Thus there exist $x,y$ such that $w=(x,y)$.
-        \end{subproof}
-        Follows by \cref{relation}.
-    \end{subproof}
-    Show that $e$ is right-unique.
-    \begin{subproof}
-        Show that for all $a,b,b'$ such that $(a,b)\in e$ and $(a,b')\in e$ we have $b=b'$.
-        \begin{subproof}
-            Fix $a$.
-            Fix $b$.
-            Fix $b'$.
-            Assume $(a,b)\in e$ and $(a,b')\in e$.
-            Take $n\in\naturals$ such that $(a,b)=(n,2\rmul n)$.
-            Take $k\in\naturals$ such that $(a,b')=(k,2\rmul k)$.
-            $a=n$ and $b=2\rmul n$ by \cref{pair_eq_iff}.
-            $a=k$ and $b'=2\rmul k$ by \cref{pair_eq_iff}.
-            Thus $b=b'$.
-        \end{subproof}
-        Follows by \cref{rightunique}.
-    \end{subproof}
-    Thus $e$ is a function by definition.
-    Show that $\naturals\subseteq\dom{e}$.
-    \begin{subproof}
-        Show that for all $n\in\naturals$ we have $n\in\dom{e}$.
-        \begin{subproof}
-            Fix $n\in\naturals$.
-            $(n,2\rmul n)\in e$ by definition.
-            Thus $n\in\dom{e}$ by \cref{dom_intro}.
-        \end{subproof}
-        Follows by \cref{subseteq}.
-    \end{subproof}
-    Show that $\dom{e}\subseteq\naturals$.
-    \begin{subproof}
-        Show that for all $x\in\dom{e}$ we have $x\in\naturals$.
-        \begin{subproof}
-            Fix $x\in\dom{e}$.
-            Take $y$ such that $(x,y)\in e$ by \cref{dom_iff}.
-            Take $n\in\naturals$ such that $(x,y)=(n,2\rmul n)$.
-            Then $x=n$ by \cref{pair_eq_iff}.
-            Thus $x\in\naturals$.
-        \end{subproof}
-        Follows by \cref{subseteq}.
-    \end{subproof}
-    Thus $\dom{e}=\naturals$ by \cref{subseteq_antisymmetric}.
-    Show that for all $n\in\naturals$ we have $e(n)=2\rmul n$.
-    \begin{subproof}
-        Fix $n\in\naturals$.
-        $(n,2\rmul n)\in e$ by definition.
-        Thus $e(n)=2\rmul n$ by \cref{function_apply_intro}.
-    \end{subproof}
-    Show that for all $n\in\dom{e}$ we have $e(n)\in\naturals$.
-    \begin{subproof}
-        Fix $n\in\dom{e}$.
-        Then $n\in\naturals$ by assumption.
-        Hence $e(n)=2\rmul n$ by assumption.
-        Thus $e(n)\in\naturals$ by \cref{double_natural}.
-    \end{subproof}
-    Thus $e$ is a function to $\naturals$ by definition.
-    $\naturals=\dom{e}$ by assumption.
-    Hence $e\in\funs{\naturals}{\naturals}$ by \cref{funs_intro}.
-    Show that for all $m,n$ such that $m\in\naturals$ and $n\in\naturals$ and $e(m)=e(n)$ we have $m=n$.
-    \begin{subproof}
-        Fix $m$.
-        Fix $n$.
-        Assume $m\in\naturals$ and $n\in\naturals$ and $e(m)=e(n)$.
-        $e(m)=2\rmul m$ and $e(n)=2\rmul n$ by assumption.
-        Thus $2\rmul m=2\rmul n$.
-        Follows by \cref{double_injective}.
-    \end{subproof}
-    Thus $e\in\inj{\naturals}{\naturals}$ by \cref{inj}.
     Hence there exists $q\in\inj{\naturals}{\naturals}$ such that
-    for all $n\in\naturals$ we have $q(n)=2\rmul n$.
+    for all $n\in\naturals$ we have $q(n)=2\rmul n$ by \cref{relation,rightunique,pair_eq_iff,subseteq,dom_intro,dom_iff,subseteq_antisymmetric,function_apply_intro,double_natural,funs_intro,double_injective,inj}.
 \end{proof}
 
 % from §12 helper lemma 20: the odd coding map is an injection
@@ -6765,87 +6153,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $o=\{(n,(2\rmul n)+1)\mid n\in\naturals\}$.
-    Show that $o$ is a relation.
-    \begin{subproof}
-        Show that for all $w\in o$ there exist $x,y$ such that $w=(x,y)$.
-        \begin{subproof}
-            Fix $w\in o$.
-            Take $n\in\naturals$ such that $w=(n,(2\rmul n)+1)$.
-            Thus there exist $x,y$ such that $w=(x,y)$.
-        \end{subproof}
-        Follows by \cref{relation}.
-    \end{subproof}
-    Show that $o$ is right-unique.
-    \begin{subproof}
-        Show that for all $a,b,b'$ such that $(a,b)\in o$ and $(a,b')\in o$ we have $b=b'$.
-        \begin{subproof}
-            Fix $a$.
-            Fix $b$.
-            Fix $b'$.
-            Assume $(a,b)\in o$ and $(a,b')\in o$.
-            Take $n\in\naturals$ such that $(a,b)=(n,(2\rmul n)+1)$.
-            Take $k\in\naturals$ such that $(a,b')=(k,(2\rmul k)+1)$.
-            $a=n$ and $b=(2\rmul n)+1$ by \cref{pair_eq_iff}.
-            $a=k$ and $b'=(2\rmul k)+1$ by \cref{pair_eq_iff}.
-            Thus $b=b'$.
-        \end{subproof}
-        Follows by \cref{rightunique}.
-    \end{subproof}
-    Thus $o$ is a function by definition.
-    Show that $\naturals\subseteq\dom{o}$.
-    \begin{subproof}
-        Show that for all $n\in\naturals$ we have $n\in\dom{o}$.
-        \begin{subproof}
-            Fix $n\in\naturals$.
-            $(n,(2\rmul n)+1)\in o$ by definition.
-            Thus $n\in\dom{o}$ by \cref{dom_intro}.
-        \end{subproof}
-        Follows by \cref{subseteq}.
-    \end{subproof}
-    Show that $\dom{o}\subseteq\naturals$.
-    \begin{subproof}
-        Show that for all $x\in\dom{o}$ we have $x\in\naturals$.
-        \begin{subproof}
-            Fix $x\in\dom{o}$.
-            Take $y$ such that $(x,y)\in o$ by \cref{dom_iff}.
-            Take $n\in\naturals$ such that $(x,y)=(n,(2\rmul n)+1)$.
-            Then $x=n$ by \cref{pair_eq_iff}.
-            Thus $x\in\naturals$.
-        \end{subproof}
-        Follows by \cref{subseteq}.
-    \end{subproof}
-    Thus $\dom{o}=\naturals$ by \cref{subseteq_antisymmetric}.
-    Show that for all $n\in\naturals$ we have $o(n)=(2\rmul n)+1$.
-    \begin{subproof}
-        Fix $n\in\naturals$.
-        $(n,(2\rmul n)+1)\in o$ by definition.
-        Thus $o(n)=(2\rmul n)+1$ by \cref{function_apply_intro}.
-    \end{subproof}
-    Show that for all $n\in\dom{o}$ we have $o(n)\in\naturals$.
-    \begin{subproof}
-        Fix $n\in\dom{o}$.
-        Then $n\in\naturals$ by assumption.
-        Hence $o(n)=(2\rmul n)+1$ by assumption.
-        Thus $o(n)\in\naturals$ by \cref{double_succ_natural}.
-    \end{subproof}
-    Thus $o$ is a function to $\naturals$ by definition.
-    $\naturals=\dom{o}$ by assumption.
-    Hence $o\in\funs{\naturals}{\naturals}$ by \cref{funs_intro}.
-    Show that for all $m,n$ such that $m\in\naturals$ and $n\in\naturals$ and $o(m)=o(n)$ we have $m=n$.
-    \begin{subproof}
-        Fix $m$.
-        Fix $n$.
-        Assume $m\in\naturals$ and $n\in\naturals$ and $o(m)=o(n)$.
-        $o(m)=(2\rmul m)+1$ and $o(n)=(2\rmul n)+1$ by assumption.
-        Thus $(2\rmul m)+1=(2\rmul n)+1$.
-        $m,n\in\reals$ by \cref{naturals_subset_reals,elem_subseteq}.
-        $1,2\in\reals$ by \cref{def_of_2,real_mul_ident,real_add_closed}.
-        Hence $2\rmul m=2\rmul n$ by \cref{real_mul_closed,real_add_cancel}.
-        Follows by \cref{double_injective}.
-    \end{subproof}
-    Thus $o\in\inj{\naturals}{\naturals}$ by \cref{inj}.
+    $o$ is a function by \cref{relation,rightunique,pair_eq_iff}.
     Hence there exists $q\in\inj{\naturals}{\naturals}$ such that
-    for all $n\in\naturals$ we have $q(n)=(2\rmul n)+1$.
+    for all $n\in\naturals$ we have $q(n)=(2\rmul n)+1$ by \cref{subseteq,dom_intro,dom_iff,pair_eq_iff,subseteq_antisymmetric,function_apply_intro,double_succ_natural,funs_intro,naturals_subset_reals,elem_subseteq,def_of_2,real_mul_ident,real_add_closed,real_mul_closed,real_add_cancel,double_injective,inj}.
 \end{proof}
 
 % from §12 helper lemma 21: disjoint injections combine into an injection
@@ -6855,112 +6165,14 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $f\union g\in\inj{A\union B}{C}$.
 \end{lemma}
 \begin{proof}
-    $f\in\funs{A}{C}$ and $g\in\funs{B}{C}$ by \cref{inj}.
-    Thus $f$ and $g$ are functions by \cref{funs_is_function}.
-    $\dom{f}=A$ and $\dom{g}=B$ by \cref{funs}.
+    $f$ and $g$ are functions by \cref{inj,funs_is_function}.
+    $\dom{f}=A$ and $\dom{g}=B$ by \cref{inj,funs}.
     $f$ and $g$ are injective by \cref{inj,injective_function}.
     Let $h=f\union g$.
-    $h$ is a relation by \cref{union_relations_is_relation}.
-    Show that $h$ is right-unique.
-    \begin{subproof}
-        Show that for all $x,y,z$ such that $(x,y)\in h$ and $(x,z)\in h$ we have $y=z$.
-        \begin{subproof}
-            Fix $x$.
-            Fix $y$.
-            Fix $z$.
-            Assume $(x,y)\in h$ and $(x,z)\in h$.
-            $(x,y)\in f$ or $(x,y)\in g$ by \cref{union_iff}.
-            $(x,z)\in f$ or $(x,z)\in g$ by \cref{union_iff}.
-            \begin{byCase}
-            \caseOf{$(x,y)\in f$ and $(x,z)\in f$.}
-                Thus $y=z$ by \cref{rightunique}.
-            \caseOf{$(x,y)\in f$ and $(x,z)\in g$.}
-                Show that $y=z$.
-                \begin{subproof}
-                    Suppose not.
-                    $x\in\dom{f}$ and $x\in\dom{g}$ by \cref{dom_intro}.
-                    Hence $x\in A\inter B$ by \cref{inter_intro}.
-                    Thus $x\in\emptyset$ by assumption.
-                    Contradiction by \cref{emptyset}.
-                \end{subproof}
-            \caseOf{$(x,y)\in g$ and $(x,z)\in f$.}
-                Show that $y=z$.
-                \begin{subproof}
-                    Suppose not.
-                    $x\in\dom{f}$ and $x\in\dom{g}$ by \cref{dom_intro}.
-                    Hence $x\in A\inter B$ by \cref{inter_intro}.
-                    Thus $x\in\emptyset$ by assumption.
-                    Contradiction by \cref{emptyset}.
-                \end{subproof}
-            \caseOf{$(x,y)\in g$ and $(x,z)\in g$.}
-                Thus $y=z$ by \cref{rightunique}.
-            \end{byCase}
-        \end{subproof}
-        Follows by \cref{rightunique}.
-    \end{subproof}
-    Thus $h$ is a function by definition.
-    $\dom{h}=\dom{f}\union\dom{g}$ by \cref{dom_union}.
-    Hence $\dom{h}=A\union B$ by assumption.
-    $\ran{f}\subseteq C$ and $\ran{g}\subseteq C$ by \cref{funs_ran}.
-    Show that $\ran{h}\subseteq C$.
-    \begin{subproof}
-        Show that for all $c\in\ran{h}$ we have $c\in C$.
-        \begin{subproof}
-            Fix $c\in\ran{h}$.
-            Then $c\in\ran{f}\union\ran{g}$ by \cref{ran_union}.
-            Thus $c\in\ran{f}$ or $c\in\ran{g}$ by \cref{union_iff}.
-            Hence $c\in C$ by \cref{elem_subseteq}.
-        \end{subproof}
-        Follows by \cref{subseteq}.
-    \end{subproof}
-    Show that for all $x\in\dom{h}$ we have $h(x)\in C$.
-    \begin{subproof}
-        Fix $x\in\dom{h}$.
-        $(x,h(x))\in h$ by \cref{function_apply_elim}.
-        Hence $h(x)\in\ran{h}$ by \cref{ran_intro}.
-        Thus $h(x)\in C$ by \cref{elem_subseteq}.
-    \end{subproof}
-    Thus $h$ is a function to $C$ by definition.
-    $A\union B=\dom{h}$ by assumption.
-    Hence $h\in\funs{A\union B}{C}$ by \cref{funs_intro}.
-    Show that $h$ is injective.
-    \begin{subproof}
-        Show that for all $x,x',y$ such that $(x,y)\in h$ and $(x',y)\in h$ we have $x=x'$.
-        \begin{subproof}
-            Fix $x$.
-            Fix $x'$.
-            Fix $y$.
-            Assume $(x,y)\in h$ and $(x',y)\in h$.
-            $(x,y)\in f$ or $(x,y)\in g$ by \cref{union_iff}.
-            $(x',y)\in f$ or $(x',y)\in g$ by \cref{union_iff}.
-            \begin{byCase}
-            \caseOf{$(x,y)\in f$ and $(x',y)\in f$.}
-                Thus $x=x'$ by \cref{injective}.
-            \caseOf{$(x,y)\in f$ and $(x',y)\in g$.}
-                Show that $x=x'$.
-                \begin{subproof}
-                    Suppose not.
-                    $y\in\ran{f}$ and $y\in\ran{g}$ by \cref{ran_intro}.
-                    Hence $y\in\ran{f}\inter\ran{g}$ by \cref{inter_intro}.
-                    Thus $y\in\emptyset$ by assumption.
-                    Contradiction by \cref{emptyset}.
-                \end{subproof}
-            \caseOf{$(x,y)\in g$ and $(x',y)\in f$.}
-                Show that $x=x'$.
-                \begin{subproof}
-                    Suppose not.
-                    $y\in\ran{f}$ and $y\in\ran{g}$ by \cref{ran_intro}.
-                    Hence $y\in\ran{f}\inter\ran{g}$ by \cref{inter_intro}.
-                    Thus $y\in\emptyset$ by assumption.
-                    Contradiction by \cref{emptyset}.
-                \end{subproof}
-            \caseOf{$(x,y)\in g$ and $(x',y)\in g$.}
-                Thus $x=x'$ by \cref{injective}.
-            \end{byCase}
-        \end{subproof}
-        Follows by \cref{injective}.
-    \end{subproof}
-    Thus $h\in\inj{A\union B}{C}$ by \cref{inj,injective_function}.
+    $h$ is a function by \cref{union_relations_is_relation,rightunique,union_iff,dom_intro,inter_intro,emptyset}.
+    Hence $h\in\funs{A\union B}{C}$ by \cref{dom_union,inj,funs_ran,subseteq,ran_union,union_iff,elem_subseteq,function_apply_elim,ran_intro,funs_intro}.
+    $h$ is injective by \cref{injective,union_iff,ran_intro,inter_intro,emptyset}.
+    Thus $h\in\inj{A\union B}{C}$ by \cref{funs,inj,injective_function}.
 \end{proof}
 
 \begin{lemma}\label{union_of_countable_is_countable}
@@ -6968,57 +6180,19 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $A\union B$ is countable.
 \end{lemma}
 \begin{proof}
-    Take $f$ such that $f\in\inj{A}{\naturals}$ by \cref{countable}.
-    Take $g$ such that $g\in\inj{B}{\naturals}$ by \cref{countable}.
+    Take $f,g$ such that $f\in\inj{A}{\naturals}$ and $g\in\inj{B}{\naturals}$ by \cref{countable}.
     Take $e\in\inj{\naturals}{\naturals}$ such that
     for all $n\in\naturals$ we have $e(n)=2\rmul n$ by \cref{even_code_injection}.
     Take $o\in\inj{\naturals}{\naturals}$ such that
     for all $n\in\naturals$ we have $o(n)=(2\rmul n)+1$ by \cref{odd_code_injection}.
     Let $r=\restrl{g}{B\setminus A}$.
-    $B\setminus A\subseteq B$ by \cref{setminus_subseteq}.
-    Thus $r\in\inj{B\setminus A}{\naturals}$ by \cref{inj_restrl}.
+    $r\in\inj{B\setminus A}{\naturals}$ by \cref{setminus_subseteq,inj_restrl}.
     Let $F=e\circ f$.
     Let $G=o\circ r$.
-    $F\in\inj{A}{\naturals}$ by \cref{inj_circ}.
-    $G\in\inj{B\setminus A}{\naturals}$ by \cref{inj_circ}.
-    $f\in\funs{A}{\naturals}$ and $e\in\funs{\naturals}{\naturals}$ by \cref{inj}.
-    $r\in\funs{B\setminus A}{\naturals}$ and $o\in\funs{\naturals}{\naturals}$ by \cref{inj}.
-    Thus $f$ and $e$ are functions by \cref{funs_is_function}.
-    $r$ and $o$ are functions by \cref{funs_is_function}.
-    $\ran{f}\subseteq\naturals$ and $\dom{e}=\naturals$ by \cref{funs_ran,funs}.
-    Hence $e$ is composable with $f$ by definition.
-    $\ran{r}\subseteq\naturals$ and $\dom{o}=\naturals$ by \cref{funs_ran,funs}.
-    Hence $o$ is composable with $r$ by definition.
-    $F$ and $G$ are functions by \cref{inj,funs_is_function}.
-    Show that $\ran{F}\inter\ran{G}=\emptyset$.
-    \begin{subproof}
-        Show that for all $c$ we have $c\notin\ran{F}\inter\ran{G}$.
-        \begin{subproof}
-            Fix $c$.
-            Show that $c\notin\ran{F}\inter\ran{G}$.
-            \begin{subproof}
-                Suppose not.
-                $c\in\ran{F}$ and $c\in\ran{G}$ by \cref{inter_elim_left,inter_elim_right}.
-                Take $a\in\dom{F}$ such that $c=F(a)$ by \cref{fun_ran_iff}.
-                Take $b\in\dom{G}$ such that $c=G(b)$ by \cref{fun_ran_iff}.
-                $F\in\funs{A}{\naturals}$ and $G\in\funs{B\setminus A}{\naturals}$ by \cref{inj}.
-                Thus $\dom{F}=A$ and $\dom{G}=B\setminus A$ by \cref{funs}.
-                Hence $a\in A$ and $b\in B\setminus A$ by assumption.
-                Thus $f(a)\in\naturals$ and $r(b)\in\naturals$ by \cref{funs_type_apply}.
-                $F(a)=e(f(a))$ and $G(b)=o(r(b))$ by \cref{circ_apply,funs}.
-                $e(f(a))=2\rmul f(a)$ and $o(r(b))=(2\rmul r(b))+1$ by assumption.
-                Hence $c=2\rmul f(a)$ and $c=(2\rmul r(b))+1$ by assumption.
-                Thus $2\rmul f(a)=(2\rmul r(b))+1$.
-                Contradiction by \cref{double_neq_double_succ}.
-            \end{subproof}
-        \end{subproof}
-        Follows by \cref{setext,emptyset}.
-    \end{subproof}
-    $A\inter(B\setminus A)=\emptyset$ by \cref{setminus_disjoint}.
-    Thus $F\union G\in\inj{A\union(B\setminus A)}{\naturals}$ by \cref{union_inj_disjoint}.
-    $A\union(B\setminus A)=A\union B$ by \cref{setext,union_iff,setminus}.
-    Hence $F\union G\in\inj{A\union B}{\naturals}$ by assumption.
-    Follows by \cref{countable}.
+    $F\in\inj{A}{\naturals}$ and $G\in\inj{B\setminus A}{\naturals}$ by \cref{inj_circ}.
+    $\ran{F}\inter\ran{G}=\emptyset$ by \cref{setext,emptyset,inter_elim_left,inter_elim_right,fun_ran_iff,inj,funs,funs_is_function,funs_ran,funs_type_apply,circ_apply,double_neq_double_succ}.
+    Thus $F\union G\in\inj{A\union(B\setminus A)}{\naturals}$ by \cref{setminus_disjoint,union_inj_disjoint}.
+    Follows by \cref{setext,union_iff,setminus,countable}.
 \end{proof}
 
 \section{Standard Library: Axiom of Choice and Consequences}
@@ -7101,35 +6275,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $\unions{K}$ is a common initial segment of $R$ on $B$ and $S$ on $C$.
 \end{lemma}
 \begin{proof}
-    For all $J\in K$ we have $J\subseteq B\inter C$ by \cref{common_initial_segment}.
-    Thus $\unions{K}\subseteq B\inter C$ by \cref{unions_family}.
-
-    Show that for all $i\in\unions{K}$ we have $\downward{R}{i}=\downward{S}{i}$.
-    \begin{subproof}
-        Fix $i\in\unions{K}$.
-        Take $J\in K$ such that $i\in J$ by \cref{unions_iff}.
-        Follows by \cref{common_initial_segment}.
-    \end{subproof}
-
-    Show that for all $i\in\unions{K}$ we have $\downward{R}{i}\subseteq\unions{K}$.
-    \begin{subproof}
-        Fix $i\in\unions{K}$.
-        Take $J\in K$ such that $i\in J$ by \cref{unions_iff}.
-        $\downward{R}{i}\subseteq J$ by \cref{common_initial_segment}.
-        $J\subseteq\unions{K}$ by \cref{subseteq,unions_iff}.
-        Follows by \cref{subseteq_transitive}.
-    \end{subproof}
-
-    Show that for all $i\in\unions{K}$ we have $\downward{S}{i}\subseteq\unions{K}$.
-    \begin{subproof}
-        Fix $i\in\unions{K}$.
-        Take $J\in K$ such that $i\in J$ by \cref{unions_iff}.
-        $\downward{S}{i}\subseteq J$ by \cref{common_initial_segment}.
-        $J\subseteq\unions{K}$ by \cref{subseteq,unions_iff}.
-        Follows by \cref{subseteq_transitive}.
-    \end{subproof}
-
-    Follows by \cref{common_initial_segment}.
+    Follows by \cref{common_initial_segment,unions_family,unions_iff,subseteq,subseteq_transitive}.
 \end{proof}
 
 % from §13 helper lemma 3: compatibility of generated well orderings
@@ -7141,9 +6287,6 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $K = \{I\in\pow{B\inter C}\mid \text{$I$ is a common initial segment of $R$ on $B$ and $S$ on $C$}\}$.
-    $\emptyset\in K$ by \cref{powerset_bottom,empty_common_initial_segment}.
-    Thus $K$ is inhabited.
-    Every element of $K$ is a common initial segment of $R$ on $B$ and $S$ on $C$.
     Let $I = \unions{K}$.
     $I$ is a common initial segment of $R$ on $B$ and $S$ on $C$
         by \cref{union_common_initial_segments}.
@@ -7151,84 +6294,34 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Show $B\subseteq I$ or $C\subseteq I$.
     \begin{subproof}
         Suppose not.
-        $B\setminus I\neq\emptyset$ and $C\setminus I\neq\emptyset$
-            by \cref{setminus_eq_emptyset_iff_subseteq}.
         Take $b\in B\setminus I$ such that for all $x\in B\setminus I$
-            we have $b\mathrel{R}x$ or $b=x$ by \cref{generated_well_ordering,foundational_ordering,setminus_subseteq}.
+            we have $b\mathrel{R}x$ or $b=x$ by \cref{setminus_eq_emptyset_iff_subseteq,generated_well_ordering,foundational_ordering,setminus_subseteq}.
         Take $c\in C\setminus I$ such that for all $x\in C\setminus I$
-            we have $c\mathrel{S}x$ or $c=x$ by \cref{generated_well_ordering,foundational_ordering,setminus_subseteq}.
+            we have $c\mathrel{S}x$ or $c=x$ by \cref{setminus_eq_emptyset_iff_subseteq,generated_well_ordering,foundational_ordering,setminus_subseteq}.
 
         Show $\downward{R}{b}=I$.
         \begin{subproof}
-            Every element of $\downward{R}{b}$ is an element of $I$
-                by \cref{generated_well_ordering,foundational_ordering,subseteq,times_tuple_elim,downward_closure,setminus,asymmetric}.
-            Show that every element of $I$ is an element of $\downward{R}{b}$.
-            \begin{subproof}
-                Fix $x\in I$.
-                $x,b\in B$ and $x\neq b$ by \cref{common_initial_segment,inter_elim_left,subseteq,setminus}.
-                $\downward{R}{x}\subseteq I$ by \cref{common_initial_segment}.
-                Thus $x\mathrel{R}b$ by \cref{generated_well_ordering,foundational_ordering,connex,dom_intro,downward_closure,subseteq,setminus}.
-                Follows by \cref{dom_intro,downward_closure}.
-            \end{subproof}
-            Follows by set extensionality.
+            Every element of $I$ is an element of $\downward{R}{b}$
+                by \cref{common_initial_segment,inter_elim_left,subseteq,setminus,generated_well_ordering,foundational_ordering,connex,dom_intro,downward_closure}.
+            Follows by \cref{generated_well_ordering,foundational_ordering,subseteq,times_tuple_elim,downward_closure,setminus,asymmetric,setext}.
         \end{subproof}
 
         Show $\downward{S}{c}=I$.
         \begin{subproof}
-            Every element of $\downward{S}{c}$ is an element of $I$
-                by \cref{generated_well_ordering,foundational_ordering,subseteq,times_tuple_elim,downward_closure,setminus,asymmetric}.
-            Show that every element of $I$ is an element of $\downward{S}{c}$.
-            \begin{subproof}
-                Fix $x\in I$.
-                $x,c\in C$ and $x\neq c$ by \cref{common_initial_segment,inter_elim_right,subseteq,setminus}.
-                $\downward{S}{x}\subseteq I$ by \cref{common_initial_segment}.
-                Thus $x\mathrel{S}c$ by \cref{generated_well_ordering,foundational_ordering,connex,dom_intro,downward_closure,subseteq,setminus}.
-                Follows by \cref{dom_intro,downward_closure}.
-            \end{subproof}
-            Follows by set extensionality.
+            Every element of $I$ is an element of $\downward{S}{c}$
+                by \cref{common_initial_segment,inter_elim_right,subseteq,setminus,generated_well_ordering,foundational_ordering,connex,dom_intro,downward_closure}.
+            Follows by \cref{generated_well_ordering,foundational_ordering,subseteq,times_tuple_elim,downward_closure,setminus,asymmetric,setext}.
         \end{subproof}
 
-        $f(I)=b$ and $f(I)=c$ by \cref{generated_well_ordering,setminus}.
-        Thus $b=c$.
         Let $J=\cons{b}{I}$.
-        $J\subseteq B\inter C$ by \cref{common_initial_segment,setminus,inter_intro,cons_subseteq_intro}.
-
-        Show that for all $j\in J$ we have $\downward{R}{j}=\downward{S}{j}$.
-        \begin{subproof}
-            Fix $j\in J$.
-            Follows by \cref{cons_iff,common_initial_segment}.
-        \end{subproof}
-
-        Show that for all $j\in J$ we have $\downward{R}{j}\subseteq J$.
-        \begin{subproof}
-            Fix $j\in J$.
-            Follows by \cref{cons_iff,common_initial_segment,subseteq_cons_self,subseteq_transitive}.
-        \end{subproof}
-
-        Show that for all $j\in J$ we have $\downward{S}{j}\subseteq J$.
-        \begin{subproof}
-            Fix $j\in J$.
-            Follows by \cref{cons_iff,common_initial_segment,subseteq_cons_self,subseteq_transitive}.
-        \end{subproof}
-
-        Thus $J$ is a common initial segment of $R$ on $B$ and $S$ on $C$
-            by \cref{common_initial_segment}.
-        Hence $J\in K$ by \cref{pow_iff}.
-        Therefore $b\in I$ by \cref{cons_left,unions_iff}.
-        Contradiction by \cref{setminus}.
+        Contradiction by \cref{generated_well_ordering,common_initial_segment,setminus,inter_intro,cons_subseteq_intro,cons_iff,subseteq_cons_self,subseteq_transitive,pow_iff,cons_left,unions_iff}.
     \end{subproof}
 
     \begin{byCase}
     \caseOf{$B\subseteq I$.}
-        $I\subseteq B\inter C$ by \cref{common_initial_segment}.
-        Thus $I=B$ and $B\subseteq C$ by \cref{inter_elim_left,inter_elim_right,subseteq,subseteq_antisymmetric}.
-        Thus $B$ is a common initial segment of $R$ on $B$ and $S$ on $C$.
-        Follows by assumption.
+        Follows by \cref{common_initial_segment,inter_elim_left,inter_elim_right,subseteq,subseteq_antisymmetric}.
     \caseOf{$C\subseteq I$.}
-        $I\subseteq B\inter C$ by \cref{common_initial_segment}.
-        Thus $I=C$ and $C\subseteq B$ by \cref{inter_elim_left,inter_elim_right,subseteq,subseteq_antisymmetric}.
-        Thus $C$ is a common initial segment of $R$ on $B$ and $S$ on $C$.
-        Follows by assumption.
+        Follows by \cref{common_initial_segment,inter_elim_left,inter_elim_right,subseteq,subseteq_antisymmetric}.
     \end{byCase}
 \end{proof}
 
@@ -7237,12 +6330,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     $\emptyset$ is a well ordering generated by $f$ on $\emptyset$.
 \end{lemma}
 \begin{proof}
-    $\emptyset$ is transitive by \cref{transitive,emptyset}.
-    $\emptyset$ is asymmetric by \cref{asymmetric,emptyset}.
-    $\emptyset$ is connex on $\emptyset$ by \cref{connex,emptyset}.
-    $\emptyset$ is a foundational ordering on $\emptyset$
-        by \cref{foundational_ordering,emptyset,emptyset_subseteq,subseteq_emptyset_iff}.
-    Follows by \cref{generated_well_ordering,emptyset}.
+    Follows by \cref{generated_well_ordering,foundational_ordering,transitive,asymmetric,connex,emptyset,emptyset_subseteq,subseteq_emptyset_iff}.
 \end{proof}
 
 % from §13 helper lemma 5: adjoining a generated last element
@@ -7256,66 +6344,8 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Let $C=\cons{c}{B}$.
     $R\subseteq B\times B$ by \cref{generated_well_ordering,foundational_ordering}.
     $B\subseteq C$ and $c\in C$ by \cref{subseteq_cons_self,cons_left}.
-    Thus $B\times B\subseteq C\times C$ by \cref{times_subseteq_left,times_subseteq_right,subseteq_transitive}.
-    Hence $R\subseteq C\times C$ by \cref{subseteq_transitive}.
-    $\{c\}\subseteq C$ by \cref{singleton_subset_intro}.
-    Thus $B\times\{c\}\subseteq C\times C$ by \cref{times_subseteq_left,times_subseteq_right,subseteq_transitive}.
-    Hence $S\subseteq C\times C$ by \cref{union_subsets_is_subset}.
-    Show $S$ is transitive.
-    \begin{subproof}
-        It suffices to show that for all $x,y,z$ such that $x\mathrel{S}y\mathrel{S}z$
-            we have $x\mathrel{S}z$ by \cref{transitive}.
-        Fix $x$.
-        Fix $y$.
-        Fix $z$.
-        Assume $x\mathrel{S}y\mathrel{S}z$.
-        Show $x\mathrel{R}y$.
-        \begin{subproof}
-            Suppose not.
-            $(x,y)\in B\times\{c\}$ by \cref{union_iff}.
-            Thus $y=c$ by \cref{times_tuple_elim,singleton_iff}.
-            $y\in B$ by \cref{union_iff,subseteq,times_tuple_elim}.
-            Contradiction.
-        \end{subproof}
-        \begin{byCase}
-        \caseOf{$y\mathrel{R}z$.}
-            $x\mathrel{R}z$ by \cref{generated_well_ordering,foundational_ordering,transitive}.
-            Follows by \cref{union_iff}.
-        \caseOf{$y\not\mathrel{R}z$.}
-            $(y,z)\in B\times\{c\}$ by \cref{union_iff}.
-            Thus $y\in B$ and $z=c$ by \cref{times_tuple_elim,singleton_iff}.
-            $x\in B$ by \cref{subseteq,times_tuple_elim}.
-            Hence $(x,z)\in B\times\{c\}$ by \cref{times_tuple_intro,singleton_intro}.
-            Follows by \cref{union_iff}.
-        \end{byCase}
-    \end{subproof}
-
-    Show $S$ is asymmetric.
-    \begin{subproof}
-        It suffices to show that for all $x,y$ such that $x\mathrel{S}y$
-            we have $y\not\mathrel{S}x$ by \cref{asymmetric}.
-        Fix $x$.
-        Fix $y$.
-        Assume $x\mathrel{S}y$.
-        Show $y\not\mathrel{S}x$.
-        \begin{subproof}
-            Suppose not.
-            $x,y\in B$ by \cref{union_iff,generated_well_ordering,foundational_ordering,subseteq,times_tuple_elim}.
-            Thus $(x,y),(y,x)\in R$ by \cref{union_iff,times_tuple_elim,singleton_iff}.
-            Contradiction by \cref{generated_well_ordering,foundational_ordering,asymmetric}.
-        \end{subproof}
-    \end{subproof}
-
-    Show $S$ is connex on $C$.
-    \begin{subproof}
-        It suffices to show that for all $x,y$ such that $x\in C$ and $y\in C$ and $x\neq y$
-            we have $x\mathrel{S}y$ or $y\mathrel{S}x$ by \cref{connex}.
-        Fix $x$.
-        Fix $y$.
-        Assume $x\in C$ and $y\in C$ and $x\neq y$.
-        Follows by \cref{generated_well_ordering,foundational_ordering,connex,cons_iff,union_iff,times,pair_eq_iff}.
-    \end{subproof}
-
+    $S$ is connex on $C$
+        by \cref{connex,generated_well_ordering,foundational_ordering,cons_iff,union_iff,times,pair_eq_iff}.
     Show that for all $D$ such that $D\subseteq C$ and $D\neq\emptyset$
         there exists $d\in D$ such that for all $x\in D$ we have $d\mathrel{S}x$ or $d=x$.
     \begin{subproof}
@@ -7326,72 +6356,22 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
             Take $d\in D\inter B$ such that for all $b\in D\inter B$
                 we have $d\mathrel{R}b$ or $d=b$
                 by \cref{generated_well_ordering,foundational_ordering,inter_lower_right}.
-            $d\in D$ by \cref{inter_elim_left}.
-            For all $x\in D$ we have $d\mathrel{S}x$ or $d=x$
-                by \cref{subseteq,cons_iff,inter_intro,inter_elim_left,inter_elim_right,union_iff,times,pair_eq_iff}.
-            Follows by assumption.
+            Follows by \cref{inter_elim_left,subseteq,cons_iff,inter_intro,inter_elim_right,union_iff,times,pair_eq_iff}.
         \caseOf{$D\inter B=\emptyset$.}
-            $D\subseteq\{c\}$ by \cref{subseteq,cons_iff,inter_intro,emptyset,singleton_iff}.
-            Take $d$ such that $d\in D$ by \cref{nonempty_inhabited}.
-            Then $d=c$ by \cref{subseteq,singleton_iff}.
-            Thus $c\in D$.
-            Hence $D=\{c\}$ by \cref{subseteq_antisymmetric,singleton_subset_intro}.
-            Hence $c\in D$ and for all $x\in D$ we have $c=x$ by \cref{singleton_iff}.
-            Follows by assumption.
+            Follows by \cref{subseteq,cons_iff,inter_intro,emptyset,singleton_iff,nonempty_inhabited}.
         \end{byCase}
     \end{subproof}
 
-    Thus $S$ is a foundational ordering on $C$ by \cref{foundational_ordering}.
+    Thus $S$ is a foundational ordering on $C$
+        by \cref{singleton_subset_intro,times_subseteq_left,times_subseteq_right,subseteq_transitive,union_subsets_is_subset,transitive,asymmetric,union_iff,generated_well_ordering,foundational_ordering,subseteq,times_tuple_elim,times_tuple_intro,singleton_iff,singleton_intro}.
 
-    Show that for all $b\in B$ we have $\downward{S}{b}=\downward{R}{b}$.
-    \begin{subproof}
-        Fix $b\in B$.
-        Show $\downward{S}{b}\subseteq\downward{R}{b}$.
-        \begin{subproof}
-            It suffices to show that every element of $\downward{S}{b}$ is an element of $\downward{R}{b}$
-                by \cref{subseteq}.
-            Fix $x\in\downward{S}{b}$.
-            $x\mathrel{S}b$ by \cref{downward_closure}.
-            Thus $x\mathrel{R}b$ by \cref{union_iff,times_tuple_elim,singleton_iff}.
-            Follows by \cref{dom_intro,downward_closure}.
-        \end{subproof}
-        Show $\downward{R}{b}\subseteq\downward{S}{b}$.
-        \begin{subproof}
-            It suffices to show that every element of $\downward{R}{b}$ is an element of $\downward{S}{b}$
-                by \cref{subseteq}.
-            Fix $x\in\downward{R}{b}$.
-            $x\mathrel{R}b$ by \cref{downward_closure}.
-            Thus $x\mathrel{S}b$ by \cref{union_iff}.
-            Follows by \cref{dom_intro,downward_closure}.
-        \end{subproof}
-        Follows by \cref{subseteq_antisymmetric}.
-    \end{subproof}
+    For all $b\in B$ we have $\downward{S}{b}=\downward{R}{b}$
+        by \cref{subseteq,downward_closure,union_iff,times_tuple_elim,singleton_iff,dom_intro,subseteq_antisymmetric}.
 
-    Show $\downward{S}{c}=B$.
-    \begin{subproof}
-        Show $\downward{S}{c}\subseteq B$.
-        \begin{subproof}
-            It suffices to show that every element of $\downward{S}{c}$ is an element of $B$
-                by \cref{subseteq}.
-            Fix $x\in\downward{S}{c}$.
-            $x\mathrel{S}c$ by \cref{downward_closure}.
-            Follows by \cref{union_iff,subseteq,times_tuple_elim}.
-        \end{subproof}
-        Show $B\subseteq\downward{S}{c}$.
-        \begin{subproof}
-            It suffices to show that every element of $B$ is an element of $\downward{S}{c}$
-                by \cref{subseteq}.
-            Fix $b\in B$.
-            $(b,c)\in B\times\{c\}$ by \cref{times_tuple_intro,singleton_intro}.
-            Thus $b\mathrel{S}c$ by \cref{union_iff}.
-            Follows by \cref{dom_intro,downward_closure}.
-        \end{subproof}
-        Follows by \cref{subseteq_antisymmetric}.
-    \end{subproof}
+    $\downward{S}{c}=B$
+        by \cref{subseteq,downward_closure,union_iff,times_tuple_elim,times_tuple_intro,singleton_intro,dom_intro,subseteq_antisymmetric}.
 
-    For all $x\in C$ we have $f(\downward{S}{x})=x$
-        by \cref{cons_iff,generated_well_ordering}.
-    Follows by \cref{generated_well_ordering}.
+    Follows by \cref{cons_iff,generated_well_ordering}.
 \end{proof}
 
 % from §13 helper lemma 6: an initial generated ordering is a subrelation
@@ -7402,13 +6382,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $R\subseteq S$.
 \end{lemma}
 \begin{proof}
-    It suffices to show that every element of $R$ is an element of $S$ by \cref{subseteq}.
-    Fix $w\in R$.
-    Take $x,y$ such that $w=(x,y)$ by \cref{generated_well_ordering,foundational_ordering,subseteq,times_elem_is_tuple}.
-    Then $x\mathrel{R}y$ and $y\in B$.
-    Thus $x\in\downward{R}{y}$ by \cref{dom_intro,downward_closure}.
-    $\downward{R}{y}=\downward{S}{y}$ by \cref{common_initial_segment}.
-    Hence $x\mathrel{S}y$ by \cref{downward_closure}.
+    Follows by \cref{subseteq,generated_well_ordering,foundational_ordering,times_elem_is_tuple,dom_intro,downward_closure,common_initial_segment}.
 \end{proof}
 
 % from §13 helper lemma 7: symmetry of common initial segments
@@ -7429,66 +6403,12 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Then $S$ is a well ordering generated by $f$ on $B$.
 \end{lemma}
 \begin{proof}
-    Show that for all $p\in G$ we have for all $q\in G$
-        $\snd{p}\subseteq\snd{q}$ or $\snd{q}\subseteq\snd{p}$.
-    \begin{subproof}
-        Fix $p\in G$.
-        Fix $q\in G$.
-        Follows by \cref{generated_well_orderings_compatible,common_initial_segment_symmetric,common_initial_segment_relation_subseteq}.
-    \end{subproof}
+    For all $p\in G$ we have for all $q\in G$
+        $\snd{p}\subseteq\snd{q}$ or $\snd{q}\subseteq\snd{p}$
+        by \cref{generated_well_orderings_compatible,common_initial_segment_symmetric,common_initial_segment_relation_subseteq}.
 
-    Show $S\subseteq B\times B$.
-    \begin{subproof}
-        It suffices to show that every element of $S$ is an element of $B\times B$ by \cref{subseteq}.
-        Fix $w\in S$.
-        Take $T\in V$ such that $w\in T$ by \cref{unions_iff}.
-        Take $p\in G$ such that $T=\snd{p}$.
-        $T\subseteq\fst{p}\times\fst{p}$ by \cref{generated_well_ordering,foundational_ordering}.
-        $\fst{p}\in U$.
-        Thus $\fst{p}\subseteq B$ by \cref{subseteq,unions_iff}.
-        Hence $\fst{p}\times\fst{p}\subseteq B\times B$
-            by \cref{times_subseteq_left,times_subseteq_right,subseteq_transitive}.
-        Follows by \cref{subseteq}.
-    \end{subproof}
-
-    Show $S$ is transitive.
-    \begin{subproof}
-        It suffices to show that for all $x,y,z$ such that $x\mathrel{S}y\mathrel{S}z$
-            we have $x\mathrel{S}z$ by \cref{transitive}.
-        Fix $x$.
-        Fix $y$.
-        Fix $z$.
-        Assume $x\mathrel{S}y\mathrel{S}z$.
-        Take $p\in G$ such that $(x,y)\in\snd{p}$ by \cref{unions_iff}.
-        Take $q\in G$ such that $(y,z)\in\snd{q}$ by \cref{unions_iff}.
-        \begin{byCase}
-        \caseOf{$\snd{p}\subseteq\snd{q}$.}
-            $(x,y),(y,z)\in\snd{q}$ by \cref{subseteq}.
-            Thus $(x,z)\in\snd{q}$ by \cref{generated_well_ordering,foundational_ordering,transitive}.
-            Follows by \cref{unions_iff}.
-        \caseOf{$\snd{q}\subseteq\snd{p}$.}
-            $(x,y),(y,z)\in\snd{p}$ by \cref{subseteq}.
-            Thus $(x,z)\in\snd{p}$ by \cref{generated_well_ordering,foundational_ordering,transitive}.
-            Follows by \cref{unions_iff}.
-        \end{byCase}
-    \end{subproof}
-
-    Show $S$ is asymmetric.
-    \begin{subproof}
-        It suffices to show that for all $x,y$ such that $x\mathrel{S}y$
-            we have $y\not\mathrel{S}x$ by \cref{asymmetric}.
-        Fix $x$.
-        Fix $y$.
-        Assume $x\mathrel{S}y$.
-        Show $y\not\mathrel{S}x$.
-        \begin{subproof}
-            Suppose not.
-            Take $p\in G$ such that $(x,y)\in\snd{p}$ by \cref{unions_iff}.
-            Take $q\in G$ such that $(y,x)\in\snd{q}$ by \cref{unions_iff}.
-            Either $\snd{p}\subseteq\snd{q}$ or $\snd{q}\subseteq\snd{p}$.
-            Contradiction by \cref{subseteq,generated_well_ordering,foundational_ordering,asymmetric}.
-        \end{subproof}
-    \end{subproof}
+    $S\subseteq B\times B$
+        by \cref{subseteq,unions_iff,generated_well_ordering,foundational_ordering,times_subseteq_left,times_subseteq_right,subseteq_transitive}.
 
     Show $S$ is connex on $B$.
     \begin{subproof}
@@ -7501,17 +6421,9 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
         Take $q\in G$ such that $y\in\fst{q}$ by \cref{unions_iff}.
         \begin{byCase}
         \caseOf{$\fst{p}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-            $\fst{p}\subseteq\fst{q}$ by \cref{common_initial_segment,inter_elim_right,subseteq}.
-            Thus $x,y\in\fst{q}$ by \cref{subseteq}.
-            Hence $x\mathrel{\snd{q}}y$ or $y\mathrel{\snd{q}}x$
-                by \cref{generated_well_ordering,foundational_ordering,connex}.
-            Follows by \cref{unions_iff}.
+            Follows by \cref{common_initial_segment,inter_elim_right,subseteq,generated_well_ordering,foundational_ordering,connex,unions_iff}.
         \caseOf{$\fst{q}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-            $\fst{q}\subseteq\fst{p}$ by \cref{common_initial_segment,inter_elim_left,subseteq}.
-            Thus $x,y\in\fst{p}$ by \cref{subseteq}.
-            Hence $x\mathrel{\snd{p}}y$ or $y\mathrel{\snd{p}}x$
-                by \cref{generated_well_ordering,foundational_ordering,connex}.
-            Follows by \cref{unions_iff}.
+            Follows by \cref{common_initial_segment,inter_elim_left,subseteq,generated_well_ordering,foundational_ordering,connex,unions_iff}.
         \end{byCase}
     \end{subproof}
 
@@ -7520,13 +6432,11 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     \begin{subproof}
         Fix $D$.
         Assume $D\subseteq B$ and $D\neq\emptyset$.
-        Take $x$ such that $x\in D$ by \cref{nonempty_inhabited}.
-        Take $p\in G$ such that $x\in\fst{p}$ by \cref{subseteq,unions_iff}.
-        $D\inter\fst{p}\neq\emptyset$ by \cref{inter_intro,emptyset}.
+        Take $p\in G$ such that $D\inter\fst{p}\neq\emptyset$
+            by \cref{nonempty_inhabited,subseteq,unions_iff,inter_intro,emptyset}.
         Take $d\in D\inter\fst{p}$ such that for all $a\in D\inter\fst{p}$
             we have $d\mathrel{\snd{p}}a$ or $d=a$
             by \cref{generated_well_ordering,foundational_ordering,inter_lower_right}.
-        $d\in D$ by \cref{inter_elim_left}.
         Show that for all $y\in D$ we have $d\mathrel{S}y$ or $d=y$.
         \begin{subproof}
             Fix $y\in D$.
@@ -7537,30 +6447,17 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
                 \begin{subproof}
                     \begin{byCase}
                     \caseOf{$y\in\fst{p}$.}
-                        $y\in D\inter\fst{p}$ by \cref{inter_intro}.
-                        Thus $d\mathrel{\snd{p}}y$ or $d=y$.
-                        Follows by \cref{unions_iff}.
+                        Follows by \cref{inter_intro,unions_iff}.
                     \caseOf{$y\notin\fst{p}$.}
-                        $d,y\in\fst{q}$ and $d\neq y$ by \cref{common_initial_segment,inter_elim_right,inter_elim_left,subseteq}.
-                        $\downward{\snd{p}}{d}=\downward{\snd{q}}{d}$
-                            by \cref{common_initial_segment,inter_elim_right}.
-                        $\downward{\snd{p}}{d}\subseteq\fst{p}$
-                            by \cref{common_initial_segment,inter_elim_right}.
-                        Thus $d\mathrel{\snd{q}}y$ by \cref{generated_well_ordering,foundational_ordering,connex,dom_intro,downward_closure,subseteq}.
-                        Follows by \cref{unions_iff}.
+                        Follows by \cref{common_initial_segment,inter_elim_right,inter_elim_left,subseteq,generated_well_ordering,foundational_ordering,connex,dom_intro,downward_closure,unions_iff}.
                     \end{byCase}
                 \end{subproof}
             \caseOf{$\fst{q}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-                $\fst{q}\subseteq\fst{p}$ by \cref{common_initial_segment,inter_elim_left,subseteq}.
-                Thus $y\in D\inter\fst{p}$ by \cref{inter_intro,subseteq}.
-                Hence $d\mathrel{\snd{p}}y$ or $d=y$.
-                Follows by \cref{unions_iff}.
+                Follows by \cref{common_initial_segment,inter_elim_left,inter_intro,subseteq,unions_iff}.
             \end{byCase}
         \end{subproof}
-        Follows by assumption.
+        Follows by \cref{inter_elim_left}.
     \end{subproof}
-
-    Thus $S$ is a foundational ordering on $B$ by \cref{foundational_ordering}.
 
     Show that for all $b\in B$ we have $f(\downward{S}{b})=b$.
     \begin{subproof}
@@ -7576,30 +6473,17 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
                 Take $q\in G$ such that $(x,b)\in\snd{q}$ by \cref{downward_closure,unions_iff}.
                 \begin{byCase}
                 \caseOf{$\fst{p}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-                    $\downward{\snd{p}}{b}=\downward{\snd{q}}{b}$ by \cref{common_initial_segment}.
-                    $x\in\downward{\snd{q}}{b}$ by \cref{dom_intro,downward_closure}.
-                    Follows by assumption.
+                    Follows by \cref{common_initial_segment,dom_intro,downward_closure}.
                 \caseOf{$\fst{q}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-                    $\snd{q}\subseteq\snd{p}$ by \cref{common_initial_segment_symmetric,common_initial_segment_relation_subseteq}.
-                    Thus $(x,b)\in\snd{p}$ by \cref{subseteq}.
-                    Follows by \cref{dom_intro,downward_closure}.
+                    Follows by \cref{common_initial_segment_symmetric,common_initial_segment_relation_subseteq,subseteq,dom_intro,downward_closure}.
                 \end{byCase}
             \end{subproof}
-            Show $\downward{\snd{p}}{b}\subseteq\downward{S}{b}$.
-            \begin{subproof}
-                It suffices to show that every element of $\downward{\snd{p}}{b}$ is an element of $\downward{S}{b}$
-                    by \cref{subseteq}.
-                Fix $x\in\downward{\snd{p}}{b}$.
-                $(x,b)\in\snd{p}$ by \cref{downward_closure}.
-                Thus $(x,b)\in S$ by \cref{unions_iff}.
-                Follows by \cref{dom_intro,downward_closure}.
-            \end{subproof}
-            Follows by \cref{subseteq_antisymmetric}.
+            Follows by \cref{subseteq,downward_closure,unions_iff,dom_intro,subseteq_antisymmetric}.
         \end{subproof}
         Follows by \cref{generated_well_ordering}.
     \end{subproof}
 
-    Follows by \cref{generated_well_ordering}.
+    Follows by \cref{transitive,asymmetric,unions_iff,subseteq,foundational_ordering,generated_well_ordering}.
 \end{proof}
 
 % from §13 helper lemma 9: Hausdorff's maximal-chain principle
@@ -7611,76 +6495,33 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \begin{proof}
     Suppose not.
     Let $H=\{C\in\pow{P}\mid \text{$C$ is a chain in $P$ with respect to $Q$}\}$.
-    $\emptyset\in H$ by \cref{powerset_bottom,chain_in_relation,emptyset,emptyset_subseteq}.
-    Thus $H$ is inhabited.
 
     Show that for all $C\in H$ there exists $p\in P\setminus C$ such that $\cons{p}{C}\in H$.
     \begin{subproof}
         Fix $C\in H$.
-        $C$ is a chain in $P$ with respect to $Q$.
-        $C$ is not a maximal chain in $P$ with respect to $Q$.
         Take $D$ such that $C\subseteq D$ and $D$ is a chain in $P$ with respect to $Q$ and $D\neq C$
-            by \cref{maximal_chain_in_relation}.
-        $C\subset D$.
-        Take $p\in D$ such that $p\notin C$ by \cref{subset_witness}.
-        $p\in P\setminus C$ by \cref{chain_in_relation,subseteq,setminus}.
-        $\cons{p}{C}\subseteq D$ by \cref{cons_subseteq_intro}.
-        Thus $\cons{p}{C}$ is a chain in $P$ with respect to $Q$
-            by \cref{chain_in_relation,subseteq}.
-        $\cons{p}{C}\subseteq P$ by \cref{chain_in_relation}.
-        Hence $\cons{p}{C}\in H$ by \cref{pow_iff}.
-        Follows by assumption.
+            by \cref{chain_in_relation,maximal_chain_in_relation}.
+        Take $p\in D$ such that $p\notin C$ by \cref{subset,subset_witness}.
+        Hence $\cons{p}{C}\in H$
+            by \cref{cons_subseteq_intro,chain_in_relation,subseteq,pow_iff}.
+        Follows by \cref{chain_in_relation,subseteq,setminus}.
     \end{subproof}
 
     Let $T=\{w\in H\times P\mid \text{$\snd{w}\notin\fst{w}$ and $\cons{\snd{w}}{\fst{w}}\in H$}\}$.
-    $T\subseteq H\times P$.
-    $T$ is a relation by \cref{relation,subseteq,times_elem_is_tuple}.
-    Show that for all $C\in H$ there exists $p$ such that $C\mathrel{T}p$.
-    \begin{subproof}
-        Fix $C\in H$.
-        Take $p\in P\setminus C$ such that $\cons{p}{C}\in H$.
-        $(C,p)\in H\times P$ by \cref{setminus,times_tuple_intro}.
-        $\fst{(C,p)}=C$ and $\snd{(C,p)}=p$ by \cref{fst_eq,snd_eq}.
-        Thus $(C,p)\in T$.
-        Follows by assumption.
-    \end{subproof}
     Take $f$ such that $f$ is a function on $H$ and for all $C\in H$ we have $C\mathrel{T}f(C)$
-        by \cref{axiom_of_choice}.
-    Show that for all $C\in H$ we have $f(C)\in P\setminus C$ and $\cons{f(C)}{C}\in H$.
-    \begin{subproof}
-        Fix $C\in H$.
-        $(C,f(C))\in T$.
-        $\fst{(C,f(C))}=C$ and $\snd{(C,f(C))}=f(C)$ by \cref{fst_eq,snd_eq}.
-        $f(C)\notin C$ and $\cons{f(C)}{C}\in H$.
-        $f(C)\in P$ by \cref{subseteq,times_tuple_elim}.
-        Follows by \cref{setminus}.
-    \end{subproof}
+        by \cref{relation,subseteq,times_elem_is_tuple,setminus,times_tuple_intro,fst_eq,snd_eq,axiom_of_choice}.
 
     Let $G=\{p\in H\times\pow{P\times P}\mid \text{$\snd{p}$ is a well ordering generated by $f$ on $\fst{p}$}\}$.
-    $(\emptyset,\emptyset)\in G$
-        by \cref{times_tuple_intro,powerset_bottom,empty_generated_well_ordering,fst_eq,snd_eq}.
-    Thus $G$ is inhabited.
-    For all $p\in G$ we have $\snd{p}$ is a well ordering generated by $f$ on $\fst{p}$.
+    Thus $G$ is inhabited
+        by \cref{chain_in_relation,emptyset,emptyset_subseteq,times_tuple_intro,powerset_bottom,empty_generated_well_ordering,fst_eq,snd_eq}.
 
     Let $U=\{\fst{p}\mid p\in G\}$.
     Let $V=\{\snd{p}\mid p\in G\}$.
     Let $B=\unions{U}$.
     Let $S=\unions{V}$.
-    $S$ is a well ordering generated by $f$ on $B$ by \cref{union_generated_well_orderings}.
 
     Show $B$ is a chain in $P$ with respect to $Q$.
     \begin{subproof}
-        Show $B\subseteq P$.
-        \begin{subproof}
-            It suffices to show that every element of $B$ is an element of $P$ by \cref{subseteq}.
-            Fix $x\in B$.
-            Take $C\in U$ such that $x\in C$ by \cref{unions_iff}.
-            Take $p\in G$ such that $C=\fst{p}$.
-            $p\in H\times\pow{P\times P}$.
-            Thus $C\in H$ by \cref{fst_type}.
-            $C\subseteq P$ by \cref{chain_in_relation}.
-            Follows by \cref{subseteq}.
-        \end{subproof}
         Show that for all $x\in B$ we have for all $y\in B$
             $x=y$ or $x\mathrel{Q}y$ or $y\mathrel{Q}x$.
         \begin{subproof}
@@ -7690,50 +6531,23 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
             Take $q\in G$ such that $y\in\fst{q}$ by \cref{unions_iff}.
             \begin{byCase}
                 \caseOf{$\fst{p}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-                    $\fst{p}\subseteq\fst{q}$
-                        by \cref{common_initial_segment,inter_elim_right,subseteq}.
-                    Thus $x,y\in\fst{q}$ by \cref{subseteq}.
-                    $q\in H\times\pow{P\times P}$.
-                    Hence $\fst{q}\in H$ by \cref{fst_type}.
-                    Thus $\fst{q}$ is a chain in $P$ with respect to $Q$.
-                    Follows by \cref{chain_in_relation}.
+                    Follows by \cref{common_initial_segment,inter_elim_right,subseteq,fst_type,chain_in_relation}.
                 \caseOf{$\fst{q}$ is a common initial segment of $\snd{p}$ on $\fst{p}$ and $\snd{q}$ on $\fst{q}$.}
-                    $\fst{q}\subseteq\fst{p}$
-                        by \cref{common_initial_segment,inter_elim_left,subseteq}.
-                    Thus $x,y\in\fst{p}$ by \cref{subseteq}.
-                    $p\in H\times\pow{P\times P}$.
-                    Hence $\fst{p}\in H$ by \cref{fst_type}.
-                    Thus $\fst{p}$ is a chain in $P$ with respect to $Q$.
-                    Follows by \cref{chain_in_relation}.
+                    Follows by \cref{common_initial_segment,inter_elim_left,subseteq,fst_type,chain_in_relation}.
             \end{byCase}
         \end{subproof}
-        Follows by \cref{chain_in_relation}.
+        Follows by \cref{subseteq,unions_iff,fst_type,chain_in_relation}.
     \end{subproof}
 
-    $B\subseteq P$ by \cref{chain_in_relation}.
-    Hence $B\in\pow{P}$ by \cref{pow_iff}.
-    Thus $B\in H$.
     Let $c=f(B)$.
-    $c\in P\setminus B$ and $\cons{c}{B}\in H$.
+    $c\in P\setminus B$ and $\cons{c}{B}\in H$
+        by \cref{chain_in_relation,pow_iff,fst_eq,snd_eq,subseteq,times_tuple_elim,setminus}.
     Let $C=\cons{c}{B}$.
     Let $R=S\union(B\times\{c\})$.
     $R$ is a well ordering generated by $f$ on $C$
-        by \cref{generated_well_ordering_adjoin,setminus}.
-    $C\in H$.
-    Hence $C\in\pow{P}$.
-    Thus $C\subseteq P$ by \cref{pow_iff}.
-    $R\subseteq C\times C$ by \cref{generated_well_ordering,foundational_ordering}.
-    $C\times C\subseteq P\times P$
-        by \cref{times_subseteq_left,times_subseteq_right,subseteq_transitive}.
-    Hence $R\subseteq P\times P$ by \cref{subseteq_transitive}.
-    Thus $R\in\pow{P\times P}$ by \cref{pow_iff}.
-    $(C,R)\in H\times\pow{P\times P}$ by \cref{times_tuple_intro}.
-    $\fst{(C,R)}=C$ and $\snd{(C,R)}=R$ by \cref{fst_eq,snd_eq}.
-    Hence $(C,R)\in G$.
-    Thus $C\in U$.
-    Hence $C\subseteq B$ by \cref{subseteq,unions_iff}.
-    Therefore $c\in B$ by \cref{cons_left,subseteq}.
-    Contradiction by \cref{setminus}.
+        by \cref{union_generated_well_orderings,generated_well_ordering_adjoin,setminus}.
+    Contradiction
+        by \cref{generated_well_ordering,foundational_ordering,pow_iff,times_subseteq_left,times_subseteq_right,subseteq_transitive,times_tuple_intro,fst_eq,snd_eq,unions_iff,cons_left,subseteq,setminus}.
 \end{proof}
 
 % from §13 helper lemma 10: finite subsets of the union of an inclusion chain lie in one member
@@ -7745,37 +6559,18 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{lemma}
 \begin{proof}
     Let $K=\{Y\in\pow{F}\mid \text{there exists $E\in M$ such that $Y\subseteq E$}\}$.
-    Take $E$ such that $E\in M$.
-    $\emptyset\in\pow{F}$ by \cref{powerset_bottom}.
-    $\emptyset\subseteq E$ by \cref{emptyset_subseteq}.
-    Thus $\emptyset\in K$.
+    Thus $\emptyset\in K$ by \cref{powerset_bottom,emptyset_subseteq}.
 
     Show that for all $Y,y$ such that $Y\in K$ and $y\in F$ we have $\cons{y}{Y}\in K$.
     \begin{subproof}
         Fix $Y$.
         Fix $y$.
         Assume $Y\in K$ and $y\in F$.
-        $Y\in\pow{F}$.
-        Hence $Y\subseteq F$ by \cref{pow_iff}.
-        Thus $\cons{y}{Y}\subseteq F$ by \cref{cons_subseteq_intro}.
-        Hence $\cons{y}{Y}\in\pow{F}$ by \cref{pow_iff}.
-        Take $C\in M$ such that $Y\subseteq C$.
-        $y\in\unions{M}$ by \cref{subseteq}.
-        Take $D\in M$ such that $y\in D$ by \cref{unions_iff}.
-        \begin{byCase}
-            \caseOf{$C\subseteq D$.}
-                $Y\subseteq D$ by \cref{subseteq_transitive}.
-                Hence $\cons{y}{Y}\subseteq D$ by \cref{cons_subseteq_intro}.
-                Thus $\cons{y}{Y}\in K$.
-            \caseOf{$D\subseteq C$.}
-                $y\in C$ by \cref{subseteq}.
-                Hence $\cons{y}{Y}\subseteq C$ by \cref{cons_subseteq_intro}.
-                Thus $\cons{y}{Y}\in K$.
-        \end{byCase}
+        Thus $\cons{y}{Y}\in K$
+            by \cref{pow_iff,unions_iff,subseteq_transitive,subseteq,cons_subseteq_intro}.
     \end{subproof}
 
-    $F\in K$ by \cref{finite_induction}.
-    Follows by definition.
+    Follows by \cref{finite_induction}.
 \end{proof}
 
 \begin{theorem}\label{zorn_subset_family}
@@ -7787,265 +6582,48 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{theorem}
 \begin{proof}
     Let $P=\{E\in\pow{\pow{X}}\mid \text{$A\subseteq E$ and $E$ has the finite intersection property}\}$.
-    $A\in\pow{\pow{X}}$ by \cref{pow_iff}.
-    $A\subseteq A$ by \cref{subseteq_refl}.
-    Thus $A\in P$.
-    Hence $P$ is inhabited.
 
     Let $Q=\{w\in P\times P\mid \text{$\fst{w}\subset\snd{w}$}\}$.
-    $Q\subseteq P\times P$.
     Thus $Q$ is a binary relation on $P$.
 
-    Show that for all $E,F$ such that $E\in P$ and $F\in P$ and $E\subset F$
-        we have $E\mathrel{Q}F$.
-    \begin{subproof}
-        Fix $E$.
-        Fix $F$.
-        Assume $E\in P$ and $F\in P$ and $E\subset F$.
-        $(E,F)\in P\times P$ by \cref{times_tuple_intro}.
-        $\fst{(E,F)}=E$ and $\snd{(E,F)}=F$ by \cref{fst_eq,snd_eq}.
-        Thus $(E,F)\in Q$.
-    \end{subproof}
+    $Q$ is transitive
+        by \cref{transitive,times_tuple_elim,times_tuple_intro,fst_eq,snd_eq,subset,subseteq_transitive,subset_witness,subseteq}.
 
-    Show $Q$ is transitive.
-    \begin{subproof}
-        It suffices to show that for all $E,F,K$ such that $E\mathrel{Q}F\mathrel{Q}K$
-            we have $E\mathrel{Q}K$ by \cref{transitive}.
-        Fix $E$.
-        Fix $F$.
-        Fix $K$.
-        Assume $E\mathrel{Q}F\mathrel{Q}K$.
-        $(E,F),(F,K)\in Q$.
-        Hence $(E,F),(F,K)\in P\times P$.
-        Thus $E,F,K\in P$ by \cref{times_tuple_elim}.
-        $E\subset F$ and $F\subset K$ by \cref{fst_eq,snd_eq}.
-        Hence $E\subseteq F\subseteq K$ by \cref{subset}.
-        Thus $E\subseteq K$ by \cref{subseteq_transitive}.
-        Take $x\in F$ such that $x\notin E$ by \cref{subset_witness}.
-        $x\in K$ by \cref{subset,subseteq}.
-        Hence $E\neq K$.
-        Thus $E\subset K$ by \cref{subset}.
-        Follows by assumption.
-    \end{subproof}
-
-    Show $Q$ is asymmetric.
-    \begin{subproof}
-        It suffices to show that for all $E,F$ such that $E\mathrel{Q}F$
-            we have $F\not\mathrel{Q}E$ by \cref{asymmetric}.
-        Fix $E$.
-        Fix $F$.
-        Assume $E\mathrel{Q}F$.
-        Show $F\not\mathrel{Q}E$.
-        \begin{subproof}
-            Suppose not.
-            $E\subset F$ and $F\subset E$ by \cref{fst_eq,snd_eq}.
-            Hence $E\subseteq F\subseteq E$ by \cref{subset}.
-            Thus $E=F$ by \cref{subseteq_antisymmetric}.
-            Contradiction by \cref{subset_irrefl}.
-        \end{subproof}
-    \end{subproof}
+    $Q$ is asymmetric
+        by \cref{asymmetric,fst_eq,snd_eq,subset,subseteq_antisymmetric,subset_irrefl}.
 
     Take $M$ such that $M$ is a maximal chain in $P$ with respect to $Q$
         by \cref{hausdorff_maximal_chain}.
     $M$ is a chain in $P$ with respect to $Q$ by \cref{maximal_chain_in_relation}.
-    Hence $M\subseteq P$ by \cref{chain_in_relation}.
 
     Show $M$ is inhabited.
     \begin{subproof}
         Suppose not.
-        Show $M\subseteq\emptyset$.
-        \begin{subproof}
-            It suffices to show that every element of $M$ is an element of $\emptyset$ by \cref{subseteq}.
-            Fix $x\in M$.
-            Contradiction.
-        \end{subproof}
-        $\emptyset\subseteq M$ by \cref{emptyset_subseteq}.
-        Hence $M=\emptyset$ by \cref{subseteq_antisymmetric}.
-        Let $C=\cons{A}{M}$.
-        $C=\{A\}$ by assumption.
-        $C\subseteq P$ by \cref{singleton_subset_intro}.
-        Show that for all $E\in C$ we have for all $F\in C$
-            $E=F$ or $E\mathrel{Q}F$ or $F\mathrel{Q}E$.
-        \begin{subproof}
-            Fix $E\in C$.
-            Fix $F\in C$.
-            $E=A$ and $F=A$ by \cref{singleton_iff}.
-            Thus $E=F$.
-        \end{subproof}
-        Hence $C$ is a chain in $P$ with respect to $Q$ by \cref{chain_in_relation}.
-        $M\subseteq C$ by \cref{subseteq_cons_self}.
-        Thus $C=M$ by \cref{maximal_chain_in_relation}.
-        $A\in C$ by \cref{cons_left}.
-        Hence $A\in M$.
-        Contradiction by \cref{emptyset}.
+        Contradiction
+            by \cref{subseteq,emptyset,emptyset_subseteq,subseteq_antisymmetric,pow_iff,subseteq_refl,singleton_subset_intro,singleton_iff,chain_in_relation,subseteq_cons_self,maximal_chain_in_relation,cons_left}.
     \end{subproof}
 
     Let $D=\unions{M}$.
-    Show that for all $E\in M$ we have $E\subseteq D$.
-    \begin{subproof}
-        Fix $E\in M$.
-        Follows by \cref{subseteq,unions_iff}.
-    \end{subproof}
-    Show that for all $E\in M$ we have for all $F\in M$
-        $E\subseteq F$ or $F\subseteq E$.
-    \begin{subproof}
-        Fix $E\in M$.
-        Fix $F\in M$.
-        $E=F$ or $E\mathrel{Q}F$ or $F\mathrel{Q}E$ by \cref{chain_in_relation}.
-        Follows by \cref{subseteq_refl,subset,fst_eq,snd_eq}.
-    \end{subproof}
+    For all $E\in M$ we have $E\subseteq D$ by \cref{subseteq,unions_iff}.
+    For all $E\in M$ we have for all $F\in M$
+        $E\subseteq F$ or $F\subseteq E$
+        by \cref{chain_in_relation,subseteq_refl,subset,fst_eq,snd_eq}.
 
-    Show $A\subseteq D$.
-    \begin{subproof}
-        It suffices to show that every element of $A$ is an element of $D$ by \cref{subseteq}.
-        Fix $x\in A$.
-        Take $E$ such that $E\in M$.
-        $E\in P$ by \cref{subseteq}.
-        Hence $A\subseteq E$.
-        Thus $x\in E$ by \cref{subseteq}.
-        Follows by \cref{unions_iff}.
-    \end{subproof}
-
-    Show $D\subseteq\pow{X}$.
-    \begin{subproof}
-        Show that for all $E\in M$ we have $E\subseteq\pow{X}$.
-        \begin{subproof}
-            Fix $E\in M$.
-            $E\in P$ by \cref{subseteq}.
-            Hence $E\in\pow{\pow{X}}$.
-            Follows by \cref{pow_iff}.
-        \end{subproof}
-        Follows by \cref{unions_family}.
-    \end{subproof}
-
-    Show $D$ has the finite intersection property.
-    \begin{subproof}
-        $A$ is inhabited by \cref{finite_intersection_property}.
-        Hence $D$ is inhabited by \cref{subseteq}.
-        Show that for all $F$ such that $F\subseteq D$ and $F$ is finite and inhabited
-            we have $\inters{F}\neq\emptyset$.
-        \begin{subproof}
-            Fix $F$.
-            Assume $F\subseteq D$ and $F$ is finite and inhabited.
-            Take $E\in M$ such that $F\subseteq E$ by \cref{finite_subset_of_chain_union}.
-            $E\in P$ by \cref{subseteq}.
-            Hence $E$ has the finite intersection property.
-            Follows by \cref{finite_intersection_property}.
-        \end{subproof}
-        Follows by \cref{finite_intersection_property}.
-    \end{subproof}
-
-    $D\in\pow{\pow{X}}$ by \cref{pow_iff}.
-    Hence $D\in P$.
-
-    Show that for all $E\in M$ we have $E=D$ or $E\mathrel{Q}D$.
-    \begin{subproof}
-        Fix $E\in M$.
-        $E\subseteq D$.
-        \begin{byCase}
-            \caseOf{$E=D$.}
-                Follows by assumption.
-            \caseOf{$E\neq D$.}
-                $E\subset D$ by \cref{subset}.
-                $E\in P$ by \cref{subseteq}.
-                Thus $E\mathrel{Q}D$ by assumption.
-        \end{byCase}
-    \end{subproof}
-
-    Let $C=\cons{D}{M}$.
-    $C\subseteq P$ by \cref{cons_subseteq_intro}.
-    Show that for all $E\in C$ we have for all $F\in C$
-        $E=F$ or $E\mathrel{Q}F$ or $F\mathrel{Q}E$.
-    \begin{subproof}
-        Fix $E\in C$.
-        Fix $F\in C$.
-        \begin{byCase}
-            \caseOf{$E=D$.}
-                \begin{byCase}
-                    \caseOf{$F=D$.}
-                        Thus $E=F$.
-                    \caseOf{$F\in M$.}
-                        $F=D$ or $F\mathrel{Q}D$.
-                        Follows by assumption.
-                \end{byCase}
-            \caseOf{$E\in M$.}
-                \begin{byCase}
-                    \caseOf{$F=D$.}
-                        $E=D$ or $E\mathrel{Q}D$.
-                        Follows by assumption.
-                    \caseOf{$F\in M$.}
-                        Follows by \cref{chain_in_relation}.
-                \end{byCase}
-        \end{byCase}
-    \end{subproof}
-    Hence $C$ is a chain in $P$ with respect to $Q$ by \cref{chain_in_relation}.
-    $M\subseteq C$ by \cref{subseteq_cons_self}.
-    Thus $C=M$ by \cref{maximal_chain_in_relation}.
-    $D\in C$ by \cref{cons_left}.
-    Hence $D\in M$.
+    $A\subseteq D$ by \cref{chain_in_relation,subseteq,unions_iff}.
 
     Show that for all $E$ such that $D\subseteq E\subseteq\pow{X}$ and
         $E$ has the finite intersection property we have $E=D$.
     \begin{subproof}
         Fix $E$.
         Assume $D\subseteq E\subseteq\pow{X}$ and $E$ has the finite intersection property.
-        $A\subseteq E$ by \cref{subseteq_transitive}.
-        $E\in\pow{\pow{X}}$ by \cref{pow_iff}.
-        Hence $E\in P$.
-
-        Show that for all $F\in M$ we have $F=E$ or $F\mathrel{Q}E$.
-        \begin{subproof}
-            Fix $F\in M$.
-            $F\subseteq D\subseteq E$.
-            Hence $F\subseteq E$ by \cref{subseteq_transitive}.
-            \begin{byCase}
-                \caseOf{$F=E$.}
-                    Follows by assumption.
-                \caseOf{$F\neq E$.}
-                    $F\subset E$ by \cref{subset}.
-                    $F\in P$ by \cref{subseteq}.
-                    Thus $F\mathrel{Q}E$ by assumption.
-            \end{byCase}
-        \end{subproof}
 
         Let $K=\cons{E}{M}$.
-        $K\subseteq P$ by \cref{cons_subseteq_intro}.
-        Show that for all $F\in K$ we have for all $G\in K$
-            $F=G$ or $F\mathrel{Q}G$ or $G\mathrel{Q}F$.
-        \begin{subproof}
-            Fix $F\in K$.
-            Fix $G\in K$.
-            \begin{byCase}
-                \caseOf{$F=E$.}
-                    \begin{byCase}
-                        \caseOf{$G=E$.}
-                            Thus $F=G$.
-                        \caseOf{$G\in M$.}
-                            $G=E$ or $G\mathrel{Q}E$.
-                            Follows by assumption.
-                    \end{byCase}
-                \caseOf{$F\in M$.}
-                    \begin{byCase}
-                        \caseOf{$G=E$.}
-                            $F=E$ or $F\mathrel{Q}E$.
-                            Follows by assumption.
-                        \caseOf{$G\in M$.}
-                            Follows by \cref{chain_in_relation}.
-                    \end{byCase}
-            \end{byCase}
-        \end{subproof}
-        Hence $K$ is a chain in $P$ with respect to $Q$ by \cref{chain_in_relation}.
-        $M\subseteq K$ by \cref{subseteq_cons_self}.
-        Thus $K=M$ by \cref{maximal_chain_in_relation}.
-        $E\in K$ by \cref{cons_left}.
-        Hence $E\in M$.
-        Thus $E\subseteq D$.
-        Follows by \cref{subseteq_antisymmetric}.
+        Thus $K=M$
+            by \cref{subseteq_transitive,pow_iff,subset,subseteq,times_tuple_intro,fst_eq,snd_eq,cons_subseteq_intro,cons_iff,chain_in_relation,subseteq_cons_self,maximal_chain_in_relation}.
+        Follows by \cref{cons_left,subseteq_antisymmetric}.
     \end{subproof}
 
-    $D$ is maximal with respect to the finite intersection property on $X$
-        by \cref{maximal_finite_intersection_property_on}.
-    Follows by assumption.
+    Follows by \cref{chain_in_relation,finite_intersection_property,subseteq,finite_subset_of_chain_union,pow_iff,unions_family,maximal_finite_intersection_property_on}.
 \end{proof}
 
 \begin{definition}\label{simple_order_relation}
@@ -8073,48 +6651,15 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
 \end{theorem}
 \begin{proof}
     Let $H=\{B\in\pow{A}\mid B\neq A\}$.
-    Show that for all $B\in H$ there exists $a\in A\setminus B$.
-    \begin{subproof}
-        Fix $B\in H$.
-        $B\in\pow{A}$ and $B\neq A$.
-        Hence $B\subseteq A$ by \cref{pow_iff}.
-        Thus $B\subset A$ by \cref{subset}.
-        Take $a\in A$ such that $a\notin B$ by \cref{subset_witness}.
-        Hence $a\in A\setminus B$ by \cref{setminus}.
-        Follows by assumption.
-    \end{subproof}
 
     Let $T=\{w\in H\times A\mid \snd{w}\notin\fst{w}\}$.
-    $T\subseteq H\times A$.
-    Hence $T$ is a relation by \cref{relation,subseteq,times_elem_is_tuple}.
-    Show that for all $B\in H$ there exists $a$ such that $B\mathrel{T}a$.
-    \begin{subproof}
-        Fix $B\in H$.
-        Take $a$ such that $a\in A\setminus B$.
-        $(B,a)\in H\times A$ by \cref{setminus,times_tuple_intro}.
-        $\fst{(B,a)}=B$ and $\snd{(B,a)}=a$ by \cref{fst_eq,snd_eq}.
-        Hence $(B,a)\in T$ by \cref{setminus}.
-        Follows by assumption.
-    \end{subproof}
     Take $f$ such that $f$ is a function on $H$ and for all $B\in H$ we have $B\mathrel{T}f(B)$
-        by \cref{axiom_of_choice}.
-    Show that for all $B\in H$ we have $f(B)\in A\setminus B$.
-    \begin{subproof}
-        Fix $B\in H$.
-        $(B,f(B))\in T$.
-        Hence $(B,f(B))\in H\times A$.
-        Thus $f(B)\in A$ by \cref{times_tuple_elim}.
-        $\fst{(B,f(B))}=B$ and $\snd{(B,f(B))}=f(B)$ by \cref{fst_eq,snd_eq}.
-        Hence $f(B)\notin B$.
-        Follows by \cref{setminus}.
-    \end{subproof}
+        by \cref{relation,subseteq,times_elem_is_tuple,pow_iff,subset,subset_witness,setminus,times_tuple_intro,fst_eq,snd_eq,axiom_of_choice}.
 
     Let $G=\{p\in\pow{A}\times\pow{A\times A}\mid
         \text{$\snd{p}$ is a well ordering generated by $f$ on $\fst{p}$}\}$.
-    $(\emptyset,\emptyset)\in G$
+    Thus $G$ is inhabited
         by \cref{times_tuple_intro,powerset_bottom,empty_generated_well_ordering,fst_eq,snd_eq}.
-    Thus $G$ is inhabited.
-    For all $p\in G$ we have $\snd{p}$ is a well ordering generated by $f$ on $\fst{p}$.
 
     Let $U=\{\fst{p}\mid p\in G\}$.
     Let $V=\{\snd{p}\mid p\in G\}$.
@@ -8122,62 +6667,21 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Let $S=\unions{V}$.
     $S$ is a well ordering generated by $f$ on $B$ by \cref{union_generated_well_orderings}.
 
-    Show $B\subseteq A$.
-    \begin{subproof}
-        Show that for all $C\in U$ we have $C\subseteq A$.
-        \begin{subproof}
-            Fix $C\in U$.
-            Take $p\in G$ such that $C=\fst{p}$.
-            $p\in\pow{A}\times\pow{A\times A}$.
-            Hence $\fst{p}\in\pow{A}$ by \cref{fst_type}.
-            Thus $C\subseteq A$ by \cref{pow_iff}.
-        \end{subproof}
-        Follows by \cref{unions_family}.
-    \end{subproof}
+    $B\subseteq A$ by \cref{fst_type,pow_iff,unions_family}.
 
     Show $B=A$.
     \begin{subproof}
         Suppose not.
-        $B\in\pow{A}$ by \cref{pow_iff}.
-        Hence $B\in H$.
         Let $c=f(B)$.
-        $c\in A\setminus B$.
-        Hence $c\in A$ and $c\notin B$ by \cref{setminus}.
+        Hence $c\in A$ and $c\notin B$
+            by \cref{pow_iff,times_tuple_elim,fst_eq,snd_eq,setminus}.
         Let $C=\cons{c}{B}$.
-        $C\subseteq A$ by \cref{cons_subseteq_intro}.
-        Hence $C\in\pow{A}$ by \cref{pow_iff}.
         Let $R=S\union(B\times\{c\})$.
         $R$ is a well ordering generated by $f$ on $C$
             by \cref{generated_well_ordering_adjoin}.
-        $R\subseteq C\times C$ by \cref{generated_well_ordering,foundational_ordering}.
-        $C\times C\subseteq A\times A$
-            by \cref{times_subseteq_left,times_subseteq_right,subseteq_transitive}.
-        Hence $R\subseteq A\times A$ by \cref{subseteq_transitive}.
-        Thus $R\in\pow{A\times A}$ by \cref{pow_iff}.
-        $(C,R)\in\pow{A}\times\pow{A\times A}$ by \cref{times_tuple_intro}.
-        $\fst{(C,R)}=C$ and $\snd{(C,R)}=R$ by \cref{fst_eq,snd_eq}.
-        Hence $(C,R)\in G$.
-        Thus $C\in U$.
-        Hence $C\subseteq B$ by \cref{subseteq,unions_iff}.
-        Therefore $c\in B$ by \cref{cons_left,subseteq}.
-        Contradiction.
+        Contradiction
+            by \cref{cons_subseteq_intro,generated_well_ordering,foundational_ordering,times_subseteq_left,times_subseteq_right,subseteq_transitive,pow_iff,times_tuple_intro,fst_eq,snd_eq,unions_iff,cons_left,subseteq}.
     \end{subproof}
 
-    Hence $S$ is a foundational ordering on $A$
-        by \cref{generated_well_ordering}.
-    Thus $S$ is a simple order relation on $A$
-        by \cref{foundational_ordering,simple_order_relation}.
-    Show that for all $C$ such that $C\subseteq A$ and $C\neq\emptyset$
-        there exists $c$ such that $c$ is a smallest element of $C$ with respect to $S$.
-    \begin{subproof}
-        Fix $C$.
-        Assume $C\subseteq A$ and $C\neq\emptyset$.
-        Take $c\in C$ such that for all $x\in C$ we have $c\mathrel{S}x$ or $c=x$
-            by \cref{foundational_ordering}.
-        $c$ is a smallest element of $C$ with respect to $S$
-            by \cref{smallest_element}.
-        Follows by assumption.
-    \end{subproof}
-    Hence $S$ is a well order relation on $A$ by \cref{well_order_relation}.
-    Follows by assumption.
+    Follows by \cref{generated_well_ordering,foundational_ordering,simple_order_relation,smallest_element,well_order_relation}.
 \end{proof}
