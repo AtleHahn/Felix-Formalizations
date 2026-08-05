@@ -1471,7 +1471,6 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
 %    $X\inter A = \{a\}$.
 %\end{definition}
 
-
 \section{Standard Library: Relations}
 
 \begin{definition}\label{relation}
@@ -3048,7 +3047,34 @@ This lets us use the same symbol for composition of functions.
     $\equivfrompartition{P}{A}$ is symmetric.
 \end{proposition}
 \begin{proof}
-    Omitted.
+    It suffices to show that for all $a,b$ we have
+        $a\mathrel{\equivfrompartition{P}{A}}b$ iff
+        $b\mathrel{\equivfrompartition{P}{A}}a$
+        by \cref{symmetric}.
+    Fix $a$.
+    Fix $b$.
+    Show if $a\mathrel{\equivfrompartition{P}{A}}b$ then
+        $b\mathrel{\equivfrompartition{P}{A}}a$.
+    \begin{subproof}
+        Assume $a\mathrel{\equivfrompartition{P}{A}}b$.
+        $a,b\in A$ by \cref{equivalence_from_partition,pair_eq_iff}.
+        Take $C\in P$ such that $a,b\in C$
+            by \cref{equivalence_from_partition,pair_eq_iff}.
+        Then $b,a\in C$.
+        Thus $b\mathrel{\equivfrompartition{P}{A}}a$
+            by \cref{equivalence_from_partition}.
+    \end{subproof}
+    Show if $b\mathrel{\equivfrompartition{P}{A}}a$ then
+        $a\mathrel{\equivfrompartition{P}{A}}b$.
+    \begin{subproof}
+        Assume $b\mathrel{\equivfrompartition{P}{A}}a$.
+        $b,a\in A$ by \cref{equivalence_from_partition,pair_eq_iff}.
+        Take $C\in P$ such that $b,a\in C$
+            by \cref{equivalence_from_partition,pair_eq_iff}.
+        Then $a,b\in C$.
+        Thus $a\mathrel{\equivfrompartition{P}{A}}b$
+            by \cref{equivalence_from_partition}.
+    \end{subproof}
 \end{proof}
 
 \begin{proposition}\label{equivalence_from_partition_transitive}
@@ -3056,7 +3082,32 @@ This lets us use the same symbol for composition of functions.
     $\equivfrompartition{P}{A}$ is transitive.
 \end{proposition}
 \begin{proof}
-    Omitted.
+    It suffices to show that for all $a,b,c$ such that
+        $a\mathrel{\equivfrompartition{P}{A}}b
+        \mathrel{\equivfrompartition{P}{A}}c$
+        we have $a\mathrel{\equivfrompartition{P}{A}}c$
+        by \cref{transitive}.
+    Fix $a$.
+    Fix $b$.
+    Fix $c$.
+    Assume $a\mathrel{\equivfrompartition{P}{A}}b
+        \mathrel{\equivfrompartition{P}{A}}c$.
+    $a,b\in A$ by \cref{equivalence_from_partition,pair_eq_iff}.
+    $b,c\in A$ by \cref{equivalence_from_partition,pair_eq_iff}.
+    Take $C\in P$ such that $a,b\in C$
+        by \cref{equivalence_from_partition,pair_eq_iff}.
+    Take $D\in P$ such that $b,c\in D$
+        by \cref{equivalence_from_partition,pair_eq_iff}.
+    Show $C=D$.
+    \begin{subproof}
+        Suppose not.
+        $C$ is disjoint from $D$ by \cref{partition}.
+        Thus $b\notin D$ by \cref{disjoint}.
+        Contradiction.
+    \end{subproof}
+    Hence $a,c\in C$.
+    Thus $a\mathrel{\equivfrompartition{P}{A}}c$
+        by \cref{equivalence_from_partition}.
 \end{proof}
 
 \begin{proposition}\label{equivalence_from_partition_is_equivalence}
@@ -3064,7 +3115,15 @@ This lets us use the same symbol for composition of functions.
     $\equivfrompartition{P}{A}$ is an equivalence on $A$.
 \end{proposition}
 \begin{proof}
-    Omitted.
+    $\equivfrompartition{P}{A}\subseteq A\times A$
+        by \cref{equivalence_from_partition,subseteq,times_tuple_intro,pair_eq_iff}.
+    Thus $\equivfrompartition{P}{A}$ is a binary relation on $A$.
+    $\equivfrompartition{P}{A}$ is reflexive on $A$
+        by \cref{equivalence_from_partition_reflexive}.
+    $\equivfrompartition{P}{A}$ is transitive
+        by \cref{equivalence_from_partition_transitive}.
+    $\equivfrompartition{P}{A}$ is symmetric
+        by \cref{equivalence_from_partition_symmetric}.
 \end{proof}
 
 \begin{proposition}\label{equivalence_from_quotient}
@@ -3072,7 +3131,102 @@ This lets us use the same symbol for composition of functions.
     Then $\equivfrompartition{\quotient{A}{E}}{A} = E$.
 \end{proposition}
 \begin{proof}
-    Omitted.
+    $E$ is a binary relation on $A$.
+    Hence $E\in\rels{A}{A}$ by \cref{rels_intro}.
+    Thus $E$ is a relation by \cref{rels_is_relation}.
+    $\quotient{A}{E}$ is a partition of $A$
+        by \cref{quotient_partition_of}.
+    Hence $\equivfrompartition{\quotient{A}{E}}{A}$ is an equivalence on $A$
+        by \cref{equivalence_from_partition_is_equivalence}.
+    Thus $\equivfrompartition{\quotient{A}{E}}{A}$ is a binary relation on $A$.
+    Hence $\equivfrompartition{\quotient{A}{E}}{A}\in\rels{A}{A}$
+        by \cref{rels_intro}.
+    Thus $\equivfrompartition{\quotient{A}{E}}{A}$ is a relation
+        by \cref{rels_is_relation}.
+    It suffices to show that for all $a,b$ we have
+        $a\mathrel{\equivfrompartition{\quotient{A}{E}}{A}}b$ iff
+        $a\mathrel{E}b$
+        by \cref{relext}.
+    Fix $a$.
+    Fix $b$.
+    Show if $a\mathrel{\equivfrompartition{\quotient{A}{E}}{A}}b$ then
+        $a\mathrel{E}b$.
+    \begin{subproof}
+        Assume $a\mathrel{\equivfrompartition{\quotient{A}{E}}{A}}b$.
+        Take $C\in\quotient{A}{E}$ such that $a,b\in C$
+            by \cref{equivalence_from_partition,pair_eq_iff}.
+        Take $c\in A$ such that $C=\equivalenceClass{E}{c}$
+            by \cref{quotient}.
+        Then $a\mathrel{E}c$ and $b\mathrel{E}c$
+            by \cref{downward_closure_iff}.
+        $E$ is symmetric and transitive.
+        Thus $c\mathrel{E}b$ by \hyperref[symmetric]{symmetry}.
+        Hence $a\mathrel{E}b$ by \hyperref[transitive]{transitivity}.
+    \end{subproof}
+    Show if $a\mathrel{E}b$ then
+        $a\mathrel{\equivfrompartition{\quotient{A}{E}}{A}}b$.
+    \begin{subproof}
+        Assume $a\mathrel{E}b$.
+        Then $(a,b)\in A\times A$ by \cref{subseteq}.
+        Hence $a,b\in A$ by \cref{times_tuple_elim}.
+        Let $C=\equivalenceClass{E}{b}$.
+        $C\in\quotient{A}{E}$ by \cref{quotient}.
+        $a\in C$ by \cref{downward_closure_iff}.
+        $b\in C$ by \cref{equivclasses_inhabited_equivalenceon}.
+        Thus $a\mathrel{\equivfrompartition{\quotient{A}{E}}{A}}b$
+            by \cref{equivalence_from_partition_intro}.
+    \end{subproof}
+\end{proof}
+
+% from §12 helper lemma 1: intersecting blocks of a partition are equal
+\begin{lemma}\label{partition_blocks_meeting_eq}
+    Let $P$ be a partition.
+    Suppose $C,D\in P$.
+    Suppose $c\in C,D$.
+    Then $C=D$.
+\end{lemma}
+\begin{proof}
+    Suppose not.
+    $C$ is disjoint from $D$ by \cref{partition}.
+    Thus $c\notin D$ by \cref{disjoint}.
+    Contradiction.
+\end{proof}
+
+% from §12 helper lemma 2: a block is the induced equivalence class of each of its elements
+\begin{lemma}\label{partition_block_is_equivalence_class}
+    Let $P$ be a partition of $A$.
+    Suppose $C\in P$.
+    Suppose $b\in C$.
+    Then $\equivalenceClass{\equivfrompartition{P}{A}}{b}=C$.
+\end{lemma}
+\begin{proof}
+    $b\in\unions{P}$ by \cref{unions_intro}.
+    Hence $b\in A$.
+    It suffices to show that for all $x$ we have
+        $x\in\equivalenceClass{\equivfrompartition{P}{A}}{b}$ iff $x\in C$
+        by \cref{setext}.
+    Fix $x$.
+    Show if $x\in\equivalenceClass{\equivfrompartition{P}{A}}{b}$ then $x\in C$.
+    \begin{subproof}
+        Assume $x\in\equivalenceClass{\equivfrompartition{P}{A}}{b}$.
+        Then $x\mathrel{\equivfrompartition{P}{A}}b$
+            by \cref{downward_closure_iff}.
+        Take $D\in P$ such that $x,b\in D$
+            by \cref{equivalence_from_partition,pair_eq_iff}.
+        $D=C$ by \cref{partition_blocks_meeting_eq}.
+        Thus $x\in C$.
+    \end{subproof}
+    Show if $x\in C$ then
+        $x\in\equivalenceClass{\equivfrompartition{P}{A}}{b}$.
+    \begin{subproof}
+        Assume $x\in C$.
+        $x\in\unions{P}$ by \cref{unions_intro}.
+        Hence $x\in A$.
+        Thus $x\mathrel{\equivfrompartition{P}{A}}b$
+            by \cref{equivalence_from_partition_intro}.
+        Hence $x\in\equivalenceClass{\equivfrompartition{P}{A}}{b}$
+            by \cref{downward_closure_iff}.
+    \end{subproof}
 \end{proof}
 
 \begin{proposition}\label{partition_eq_quotient_by_equivalence_from_partition}
@@ -3080,7 +3234,36 @@ This lets us use the same symbol for composition of functions.
     Then $\quotient{A}{\equivfrompartition{P}{A}} = P$.
 \end{proposition}
 \begin{proof}
-    Omitted.
+    It suffices to show that for all $C$ we have
+        $C\in\quotient{A}{\equivfrompartition{P}{A}}$ iff $C\in P$
+        by \cref{setext}.
+    Fix $C$.
+    Show if $C\in\quotient{A}{\equivfrompartition{P}{A}}$ then $C\in P$.
+    \begin{subproof}
+        Assume $C\in\quotient{A}{\equivfrompartition{P}{A}}$.
+        Take $b\in A$ such that
+            $C=\equivalenceClass{\equivfrompartition{P}{A}}{b}$
+            by \cref{quotient}.
+        Then $b\in\unions{P}$.
+        Take $D\in P$ such that $b\in D$ by \cref{unions_iff}.
+        $\equivalenceClass{\equivfrompartition{P}{A}}{b}=D$
+            by \cref{partition_block_is_equivalence_class}.
+        Thus $C=D$.
+        Hence $C\in P$.
+    \end{subproof}
+    Show if $C\in P$ then
+        $C\in\quotient{A}{\equivfrompartition{P}{A}}$.
+    \begin{subproof}
+        Assume $C\in P$.
+        $C\neq\emptyset$ by \cref{partition}.
+        Take $b$ such that $b\in C$ by \cref{nonempty_inhabited}.
+        $b\in\unions{P}$ by \cref{unions_intro}.
+        Hence $b\in A$.
+        Let $D=\equivalenceClass{\equivfrompartition{P}{A}}{b}$.
+        $D\in\quotient{A}{\equivfrompartition{P}{A}}$ by \cref{quotient}.
+        $D=C$ by \cref{partition_block_is_equivalence_class}.
+        Thus $C\in\quotient{A}{\equivfrompartition{P}{A}}$.
+    \end{subproof}
 \end{proof}
 
 \subsection{Closure operations on relations}
@@ -3186,7 +3369,6 @@ This lets us use the same symbol for composition of functions.
 \begin{abbreviation}\label{surjective}
     $R$ is surjective on $B$ iff $R$ is right-total on $B$.
 \end{abbreviation}
-
 \section{Standard Library: Functions}
 
 \begin{abbreviation}\label{function}
@@ -3618,8 +3800,16 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}
     $\dom{f} = A$ by \cref{funs}.
     $\dom{g} = B$ by \cref{funs}.
+    $f$ is a function and $g$ is a function by \cref{funs_is_function}.
     $g$ is composable with $f$.
-    Omitted. % TODO
+    $g\circ f$ is a function by \cref{function_circ,funs_is_function}.
+    $\dom{g\circ f} = A$ by set extensionality.
+    For all $x\in A$ we have $f(x)\in B$ by \cref{funs_type_apply}.
+    For all $x\in A$ we have $g(f(x))\in C$ by \cref{funs_type_apply}.
+    For all $x\in A$ we have $(g\circ f)(x)=g(f(x))$ by \cref{circ_apply}.
+    Thus for all $x\in\dom{g\circ f}$ we have $(g\circ f)(x)\in C$.
+    Thus $g\circ f$ is a function to $C$.
+    Follows by \cref{funs_intro}.
 \end{proof}
 
 \subsection{Function restriction}
@@ -3677,7 +3867,15 @@ This lets us use the same symbol for composition of functions.
     Then $g\circ f\in\inj{A}{C}$.
 \end{proposition}
 \begin{proof}
-    Omitted. % TODO
+    $f\in\funs{A}{B}$ and $g\in\funs{B}{C}$ by \cref{inj}.
+    $f$ is a function and $g$ is a function by \cref{funs_is_function}.
+    $\dom{f}=A$ and $\dom{g}=B$ by \cref{funs}.
+    $f$ is injective and $g$ is injective by \cref{inj,injective_function}.
+    $g\circ f\in\funs{A}{C}$ by \cref{funs_circ}.
+    $g\circ f$ is injective by \cref{circ_injective}.
+    $g\circ f$ is a function by \cref{funs_is_function}.
+    $\dom{g\circ f}=A$ by \cref{funs}.
+    Follows by \cref{inj,injective_function,funs}.
 \end{proof}
 
 \subsection{Surjections}
@@ -3758,7 +3956,12 @@ This lets us use the same symbol for composition of functions.
     $\dom{f} = A$ by \cref{surj,funs}.
     $\dom{g} = B = \ran{f}$ by \cref{surj,funs,ran_of_surj}.
     $\dom{g\circ f} = A$ by \cref{surj_to_fun,funs_is_function,dom_circ_exact}.
-    Omitted. % TODO
+    $f\in\funs{A}{B}$ and $g\in\funs{B}{C}$ by \cref{surj_to_fun}.
+    $f$ is a function and $g$ is a function by \cref{funs_is_function}.
+    $g\circ f\in\funs{A}{C}$ by \cref{funs_circ}.
+    $\ran{g\circ f}=\ran{g}$ by \cref{ran_circ_exact}.
+    $\ran{g}=C$ by \cref{ran_of_surj}.
+    Follows by \cref{funs_surj_iff}.
 \end{proof}
 
 
@@ -3839,7 +4042,12 @@ This lets us use the same symbol for composition of functions.
     %        \explanation{by \cref{ran_of_surj}}
     %\end{align*}
     $\dom{\converse{f}} = \ran{f} = B$ by \cref{bijections,dom_converse,ran_of_surj}.
-    Omitted. % TODO
+    $\converse{f}$ is a function by \cref{bijective_converse_is_function}.
+    $\ran{\converse{f}}=\dom{f}=A$ by \cref{ran_converse,bijections_dom}.
+    For all $x\in\dom{\converse{f}}$ we have $(\converse{f})(x)\in A$
+        by \cref{fun_ran_iff}.
+    Thus $\converse{f}$ is a function to $A$.
+    Follows by \cref{funs_intro}.
 \end{proof}
 
 \begin{proposition}\label{bijective_converse_are_surjs}
@@ -3885,8 +4093,14 @@ This lets us use the same symbol for composition of functions.
 \end{proposition}
 \begin{proof}
     $\converse{f}$ is a function by \cref{injective_converse_is_function}.
-
-    Omitted. % TODO
+    $f$ is a function.
+    For all $x\in\dom{f}$ we have $(x,f(x))\in f$
+        by \cref{function_apply_elim}.
+    For all $x\in\dom{f}$ we have $(f(x),x)\in\converse{f}$
+        by \cref{converse_iff}.
+    Thus for all $x\in\dom{f}$ we have $(\converse{f})(f(x))=x$
+        by \cref{function_apply_intro}.
+    Follows by definition.
 \end{proof}
 
 
@@ -3946,7 +4160,8 @@ This lets us use the same symbol for composition of functions.
 \end{proposition}
 \begin{proof}
     We have $\identity{A}\in\funs{A}{A}$ by \cref{id_elem_funs}.
-    Omitted. % TODO
+    $\ran{\identity{A}}=A$ by \cref{id_ran}.
+    Follows by \cref{funs_surj_iff}.
 \end{proof}
 
 \begin{proposition}\label{id_elem_bijections}
@@ -4017,8 +4232,6 @@ This lets us use the same symbol for composition of functions.
     Now $a' \in B$ iff $a' \notin f(a') = B$.
     Contradiction.
 \end{proof}
-
-
 \section{Standard Library: Regularity}
 
 \begin{abbreviation}\label{elemminimal}
@@ -4253,8 +4466,6 @@ This lets us use the same symbol for composition of functions.
     $\subseteqrel{A}$ is a quasiorder on $A$ by \cref{subseteqrel_is_quasiorder}.
     $\subseteqrel{A}$ is antisymmetric by \cref{subseteqrel_antisymmetric}.
 \end{proof}
-
-
 \section{Standard Library: The real numbers}
 
 \subsection{Axioms and Definitions}
