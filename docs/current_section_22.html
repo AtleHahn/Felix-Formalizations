@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -422,7 +424,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="quotient_map_closed_iff">
+<section class="statement lemma joins-following-proof" id="quotient_map_closed_iff">
   <div class="statement-head"><div class="statement-title">Lemma 209</div><span class="label-badge">quotient_map_closed_iff</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $Y$.<br> <span class="kw">Suppose</span> $T_X$ is a topology on $X$.<br> <span class="kw">Suppose</span> $T_Y$ is a topology on $Y$. <br><span class="kw">Then</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ iff for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ we have $A$ is closed in $Y$ with respect to $T_Y$ iff $\preimg{p}{A}$ is closed in $X$ with respect to $T_X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -439,7 +441,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_closed_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p$ is a function from $X$ to $Y$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ then for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ we have $A$ is closed in $Y$ with respect to $T_Y$ iff $\preimg{p}{A}$ is closed in $X$ with respect to $T_X$.</span></summary>
@@ -501,7 +503,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="saturated_iff_preimg">
+<section class="statement lemma joins-following-proof" id="saturated_iff_preimg">
   <div class="statement-head"><div class="statement-title">Lemma 210</div><span class="label-badge">saturated_iff_preimg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a function. <br><span class="kw">Then</span> $C$ is saturated with respect to $p$ iff there exists $B$ such that $C = \preimg{p}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -514,7 +516,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="saturated_iff_preimg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $C$ is saturated with respect to $p$ then there exists $B$ such that $C = \preimg{p}{B}$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $C$ is saturated with respect to $p$.<br> <span class="kw kw-bold">Let</span> $B = \img{p}{C}$.</p>
@@ -586,7 +588,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="img_preimg_surjection">
+<section class="statement lemma helper joins-following-proof" id="img_preimg_surjection">
   <div class="statement-head"><div class="statement-title">Lemma 211</div><span class="label-badge">img_preimg_surjection</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $Y$.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$. <br><span class="kw">Then</span> $\img{p}{\preimg{p}{B}} = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -599,7 +601,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="img_preimg_surjection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{X}{Y}$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $p$ is a function by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\img{p}{\preimg{p}{B}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.</span></summary>
@@ -633,7 +635,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="quotient_map_saturated_open_iff">
+<section class="statement theorem joins-following-proof" id="quotient_map_saturated_open_iff">
   <div class="statement-head"><div class="statement-title">Theorem 32</div><span class="label-badge">quotient_map_saturated_open_iff</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $Y$.<br> <span class="kw">Suppose</span> $T_X$ is a topology on $X$.<br> <span class="kw">Suppose</span> $T_Y$ is a topology on $Y$. <br><span class="kw">Then</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ iff $p$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$ and for all $C$ such that $C$ is saturated with respect to $p$ and $C$ is open in $X$ with respect to $T_X$ we have $\img{p}{C}$ is open in $Y$ with respect to $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -652,7 +654,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_saturated_open_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ then $p$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$ and for all $C$ such that $C$ is saturated with respect to $p$ and $C$ is open in $X$ with respect to $T_X$ we have $\img{p}{C}$ is open in $Y$ with respect to $T_Y$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.</p>
@@ -779,7 +781,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="open_or_closed_surjection_quotient">
+<section class="statement lemma joins-following-proof" id="open_or_closed_surjection_quotient">
   <div class="statement-head"><div class="statement-title">Lemma 212</div><span class="label-badge">open_or_closed_surjection_quotient</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $Y$.<br> <span class="kw">Suppose</span> $T_X$ is a topology on $X$.<br> <span class="kw">Suppose</span> $T_Y$ is a topology on $Y$.<br> <span class="kw">Suppose</span> $p$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $p$ is an open map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ or $p$ is a closed map from $X$ to $Y$ with respect to $T_X$ and $T_Y$. <br><span class="kw">Then</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -796,7 +798,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="open_or_closed_surjection_quotient" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $p$ is an open map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ then $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_22.html#open_map" data-preview-label="open_map">Definition 119</a>, <a class="xref" href="current_section_22.html#img_preimg_surjection" data-preview-label="img_preimg_surjection">Lemma 211</a>, <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>.</p></div>
@@ -833,7 +835,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="quotient_topology_is_topology">
+<section class="statement lemma joins-following-proof" id="quotient_topology_is_topology">
   <div class="statement-head"><div class="statement-title">Lemma 213</div><span class="label-badge">quotient_topology_is_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $p$ is a function from $X$ to $A$.<br> <span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\quotientTopology{p}{T}{X}{A}$ is a topology on $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -846,7 +848,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_topology_is_topology" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_Q = \quotientTopology{p}{T}{X}{A}$.<br> $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{A}$ and $\dom{p} = X$ and $p$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_Q\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{A}$.</span></summary>
@@ -955,7 +957,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="quotient_topology_quotient_map">
+<section class="statement lemma joins-following-proof" id="quotient_topology_quotient_map">
   <div class="statement-head"><div class="statement-title">Lemma 214</div><span class="label-badge">quotient_topology_quotient_map</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $A$.<br> <span class="kw">Suppose</span> $T$ is a topology on $X$.<br> <span class="kw kw-bold">Let</span> $T_Q = \quotientTopology{p}{T}{X}{A}$. <br><span class="kw">Then</span> $p$ is a quotient map from $X$ to $A$ with respect to $T$ and $T_Q$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -969,7 +971,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_topology_quotient_map" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p$ is a function from $X$ to $A$ and $T_Q$ is a topology on $A$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_22.html#quotient_topology_is_topology" data-preview-label="quotient_topology_is_topology">Lemma 213</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $A$ with respect to $T_Q$ we have $\preimg{p}{V}$ is open in $X$ with respect to $T$.</span></summary>
@@ -1001,7 +1003,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="quotient_topology_unique">
+<section class="statement lemma joins-following-proof" id="quotient_topology_unique">
   <div class="statement-head"><div class="statement-title">Lemma 215</div><span class="label-badge">quotient_topology_unique</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $A$.<br> <span class="kw">Suppose</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $T_A$ is a topology on $A$.<br> <span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $A$ with respect to $T$ and $T_A$. <br><span class="kw">Then</span> $T_A = \quotientTopology{p}{T}{X}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1016,7 +1018,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_topology_unique" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_Q = \quotientTopology{p}{T}{X}{A}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T_Q$.</span></summary>
@@ -1065,7 +1067,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="preimg_restrl_saturated">
+<section class="statement lemma helper joins-following-proof" id="preimg_restrl_saturated">
   <div class="statement-head"><div class="statement-title">Lemma 216</div><span class="label-badge">preimg_restrl_saturated</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $Y$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $A$ is saturated with respect to $p$.<br> <span class="kw kw-bold">Let</span> $q = \restrl{p}{A}$.<br> <span class="kw">Suppose</span> $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \img{p}{A}$. <br><span class="kw">Then</span> $\preimg{q}{V} = \preimg{p}{V}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1081,7 +1083,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="preimg_restrl_saturated" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\preimg{q}{V}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \preimg{p}{V}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_iff" data-preview-label="restrl_iff">Proposition 262</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -1106,7 +1108,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="img_inter_saturated">
+<section class="statement lemma helper joins-following-proof" id="img_inter_saturated">
   <div class="statement-head"><div class="statement-title">Lemma 217</div><span class="label-badge">img_inter_saturated</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a function.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{p}$.<br> <span class="kw">Suppose</span> $A$ is saturated with respect to $p$.<br> <span class="kw">Suppose</span> $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{p}$. <br><span class="kw">Then</span> $\img{p}{U\inter A} = \img{p}{U}\inter \img{p}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1121,7 +1123,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="img_inter_saturated" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\img{p}{U\inter A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \img{p}{U}\inter \img{p}{A}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -1157,7 +1159,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="preimg_img_saturated">
+<section class="statement lemma helper joins-following-proof" id="preimg_img_saturated">
   <div class="statement-head"><div class="statement-title">Lemma 218</div><span class="label-badge">preimg_img_saturated</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a function.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{p}$.<br> <span class="kw">Suppose</span> $A$ is saturated with respect to $p$. <br><span class="kw">Then</span> $\preimg{p}{\img{p}{A}} = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1171,7 +1173,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="preimg_img_saturated" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \preimg{p}{\img{p}{A}}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>.</p></div>
@@ -1196,7 +1198,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="quotient_map_restriction_open_or_closed">
+<section class="statement theorem joins-following-proof" id="quotient_map_restriction_open_or_closed">
   <div class="statement-head"><div class="statement-title">Theorem 33</div><span class="label-badge">quotient_map_restriction_open_or_closed</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T_X$.<br> <span class="kw">Suppose</span> $A$ is saturated with respect to $p$.<br> <span class="kw kw-bold">Let</span> $q = \restrl{p}{A}$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T_X}{A}$.<br> <span class="kw kw-bold">Let</span> $T_B = \subspaceTopology{T_Y}{\img{p}{A}}$.<br> <span class="kw">Suppose</span> $A$ is open in $X$ with respect to $T_X$ or $A$ is closed in $X$ with respect to $T_X$. <br><span class="kw">Then</span> $q$ is a quotient map from $A$ to $\img{p}{A}$ with respect to $T_A$ and $T_B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1215,7 +1217,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_restriction_open_or_closed" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{X}{Y}$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $p$ is a function by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>, <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $p$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$ by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>.<br> <span class="kw">Therefore</span> $T_X$ is a topology on $X$ and $T_Y$ is a topology on $Y$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $A$ is a subspace of $X$ with respect to $T_X$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> We have $\img{p}{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $\img{p}{A}$ is a subspace of $Y$ with respect to $T_Y$ by <a class="xref" href="current_section_standard_library_relations.html#img_subseteq_ran" data-preview-label="img_subseteq_ran">Proposition 237</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw">Therefore</span> $T_A$ is a topology on $A$ and $T_B$ is a topology on $\img{p}{A}$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> We have $q$ is a function by <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_is_function" data-preview-label="restrl_of_function_is_function">Proposition 383</a>.<br> $q$ is right-unique and $q$ is a relation.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{p}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $\dom{q} = A$ and $\ran{q} = \img{p}{A}$ by <a class="xref" href="current_section_standard_library_relations.html#dom_of_restrl_eq_inter" data-preview-label="dom_of_restrl_eq_inter">Corollary 21</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_ran" data-preview-label="restrl_ran">Proposition 272</a>.<br> We have $\dom{q}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ and $\ran{q}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \img{p}{A}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.<br> $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{\img{p}{A}}$ by <a class="xref" href="current_section_standard_library_relations.html#rels_intro_dom_and_ran" data-preview-label="rels_intro_dom_and_ran">Proposition 281</a>.<br> $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{\img{p}{A}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> <span class="kw">Therefore</span> $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{\img{p}{A}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_ran" data-preview-label="restrl_ran">Proposition 272</a>.<br> We have $q$ is continuous from $A$ to $Y$ with respect to $T_A$ and $T_Y$ by <a class="xref" href="current_section_18.html#continuous_restrict_domain" data-preview-label="continuous_restrict_domain">Lemma 91</a>.<br> <span class="kw">Therefore</span> $q$ is continuous from $A$ to $\img{p}{A}$ with respect to $T_A$ and $T_B$ by <a class="xref" href="current_section_standard_library_relations.html#restrl_img" data-preview-label="restrl_img">Proposition 273</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_18.html#continuous_restrict_range" data-preview-label="continuous_restrict_range">Lemma 92</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $A$ is open in $X$ with respect to $T_X$.</div><div class="case-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \img{p}{A}$ if $\preimg{q}{V}$ is open in $A$ with respect to $T_A$ then $V$ is open in $\img{p}{A}$ with respect to $T_B$.</span></summary>
@@ -1369,7 +1371,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="quotient_map_restriction_open_or_closed_map">
+<section class="statement theorem joins-following-proof" id="quotient_map_restriction_open_or_closed_map">
   <div class="statement-head"><div class="statement-title">Theorem 34</div><span class="label-badge">quotient_map_restriction_open_or_closed_map</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T_X$.<br> <span class="kw">Suppose</span> $A$ is saturated with respect to $p$.<br> <span class="kw kw-bold">Let</span> $q = \restrl{p}{A}$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T_X}{A}$.<br> <span class="kw kw-bold">Let</span> $T_B = \subspaceTopology{T_Y}{\img{p}{A}}$.<br> <span class="kw">Suppose</span> $p$ is an open map from $X$ to $Y$ with respect to $T_X$ and $T_Y$ or $p$ is a closed map from $X$ to $Y$ with respect to $T_X$ and $T_Y$. <br><span class="kw">Then</span> $q$ is a quotient map from $A$ to $\img{p}{A}$ with respect to $T_A$ and $T_B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1388,7 +1390,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_restriction_open_or_closed_map" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{X}{Y}$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $p$ is a function by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>, <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $p$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$ by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>.<br> <span class="kw">Therefore</span> $T_X$ is a topology on $X$ and $T_Y$ is a topology on $Y$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $A$ is a subspace of $X$ with respect to $T_X$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> We have $\img{p}{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $\img{p}{A}$ is a subspace of $Y$ with respect to $T_Y$ by <a class="xref" href="current_section_standard_library_relations.html#img_subseteq_ran" data-preview-label="img_subseteq_ran">Proposition 237</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw">Therefore</span> $T_A$ is a topology on $A$ and $T_B$ is a topology on $\img{p}{A}$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> We have $q$ is a function by <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_is_function" data-preview-label="restrl_of_function_is_function">Proposition 383</a>.<br> $q$ is right-unique and $q$ is a relation.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{p}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $\dom{q} = A$ and $\ran{q} = \img{p}{A}$ by <a class="xref" href="current_section_standard_library_relations.html#dom_of_restrl_eq_inter" data-preview-label="dom_of_restrl_eq_inter">Corollary 21</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_ran" data-preview-label="restrl_ran">Proposition 272</a>.<br> We have $\dom{q}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ and $\ran{q}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \img{p}{A}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.<br> $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{\img{p}{A}}$ by <a class="xref" href="current_section_standard_library_relations.html#rels_intro_dom_and_ran" data-preview-label="rels_intro_dom_and_ran">Proposition 281</a>.<br> $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{\img{p}{A}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> <span class="kw">Therefore</span> $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{\img{p}{A}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_ran" data-preview-label="restrl_ran">Proposition 272</a>.<br> We have $q$ is continuous from $A$ to $Y$ with respect to $T_A$ and $T_Y$ by <a class="xref" href="current_section_18.html#continuous_restrict_domain" data-preview-label="continuous_restrict_domain">Lemma 91</a>.<br> <span class="kw">Therefore</span> $q$ is continuous from $A$ to $\img{p}{A}$ with respect to $T_A$ and $T_B$ by <a class="xref" href="current_section_standard_library_relations.html#restrl_img" data-preview-label="restrl_img">Proposition 273</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_18.html#continuous_restrict_range" data-preview-label="continuous_restrict_range">Lemma 92</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $p$ is an open map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.</div><div class="case-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $U$ such that $U$ is open in $A$ with respect to $T_A$ we have $\img{q}{U}$ is open in $\img{p}{A}$ with respect to $T_B$.</span></summary>
@@ -1489,7 +1491,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="quotient_map_composite">
+<section class="statement lemma joins-following-proof" id="quotient_map_composite">
   <div class="statement-head"><div class="statement-title">Lemma 219</div><span class="label-badge">quotient_map_composite</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $q$ is a quotient map from $Y$ to $Z$ with respect to $T_Y$ and $T_Z$. <br><span class="kw">Then</span> $q\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p$ is a quotient map from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1502,7 +1504,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_composite" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$q\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{X}{Z}$ and $q\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p$ is continuous from $X$ to $Z$ with respect to $T_X$ and $T_Z$ by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>, <a class="xref" href="current_section_standard_library_functions.html#surjections_circ" data-preview-label="surjections_circ">Proposition 388</a>, <a class="xref" href="current_section_18.html#continuous_composite" data-preview-label="continuous_composite">Lemma 90</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $U$ such that $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Z$ we have $\preimg{(q\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p)}{U} = \preimg{p}{\preimg{q}{U}}$.</span></summary>
@@ -1593,7 +1595,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="quotient_map_induced_map">
+<section class="statement lemma joins-following-proof" id="quotient_map_induced_map">
   <div class="statement-head"><div class="statement-title">Lemma 220</div><span class="label-badge">quotient_map_induced_map</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $g$ is a function from $X$ to $Z$.<br> <span class="kw">Suppose</span> for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ there exists $z$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\preimg{p}{\{y\}}$ we have $g(x) = z$. <br><span class="kw">Then</span> there exists $f$ such that $f$ is a function from $Y$ to $Z$ and $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1609,7 +1611,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_induced_map" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{X}{Y}$ by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>.<br> <span class="kw">Hence</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $p$ is a function by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> <span class="kw kw-bold">Let</span> $f = \inducedMap{p}{g}{X}{Y}{Z}$.<br> For all $y,z_1,z_2$ such that $y\mathrel{f} z_1$ and $y\mathrel{f} z_2$ we have $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $z_1\class{latex-symbol-tip latex-symbol-id-in}{\in} \img{g}{\preimg{p}{\{y\}}}$ and $z_2\class{latex-symbol-tip latex-symbol-id-in}{\in} \img{g}{\preimg{p}{\{y\}}}$ by <a class="xref" href="current_section_22.html#induced_map" data-preview-label="induced_map">Definition 124</a>, <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.<br> For all $y,z_1,z_2$ such that $y\mathrel{f} z_1$ and $y\mathrel{f} z_2$ there exist $x_1, x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in} \preimg{p}{\{y\}}$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in} \preimg{p}{\{y\}}$ and $x_1\mathrel{g} z_1$ and $x_2\mathrel{g} z_2$ by <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>.<br> For all $y,z_1,z_2$ such that $y\mathrel{f} z_1$ and $y\mathrel{f} z_2$ we have $z_1 = z_2$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.<br> <span class="kw">Therefore</span> $f$ is right-unique.<br> $\dom{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_22.html#induced_map" data-preview-label="induced_map">Definition 124</a>, <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $p(x) = y$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.<br> For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ we have $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_22.html#induced_map" data-preview-label="induced_map">Definition 124</a>, <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>.<br> <span class="kw">Hence</span> $\dom{f} = Y$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ we have $w\class{latex-symbol-tip latex-symbol-id-in}{\in} Y\class{latex-symbol-tip latex-symbol-id-times}{\times} Z$ by <a class="xref" href="current_section_22.html#induced_map" data-preview-label="induced_map">Definition 124</a>.<br> <span class="kw">Therefore</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{Y}{Z}$ and $f$ is a function from $Y$ to $Z$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_intro" data-preview-label="rels_intro">Proposition 280</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} g$ we have $w\class{latex-symbol-tip latex-symbol-id-in}{\in} f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p$.</span></summary>
@@ -1681,7 +1683,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="quotient_map_induced_map_continuous">
+<section class="statement lemma joins-following-proof" id="quotient_map_induced_map_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 221</div><span class="label-badge">quotient_map_induced_map_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $g$ is a function from $X$ to $Z$.<br> <span class="kw">Suppose</span> for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ there exists $z$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\preimg{p}{\{y\}}$ we have $g(x) = z$.<br> <span class="kw">Suppose</span> $f$ is a function from $Y$ to $Z$.<br> <span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$. <br><span class="kw">Then</span> $f$ is continuous from $Y$ to $Z$ with respect to $T_Y$ and $T_Z$ iff $g$ is continuous from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1698,7 +1700,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_induced_map_continuous" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $f$ is continuous from $Y$ to $Z$ with respect to $T_Y$ and $T_Z$ then $g$ is continuous from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_22.html#quotient_map" data-preview-label="quotient_map">Definition 117</a>, <a class="xref" href="current_section_18.html#continuous_composite" data-preview-label="continuous_composite">Lemma 90</a>.</p></div>
@@ -1764,7 +1766,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="surj_factor_of_surj_composite">
+<section class="statement lemma helper joins-following-proof" id="surj_factor_of_surj_composite">
   <div class="statement-head"><div class="statement-title">Lemma 222</div><span class="label-badge">surj_factor_of_surj_composite</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a surjection from $X$ to $Y$.<br> <span class="kw">Suppose</span> $g$ is a surjection from $X$ to $Z$.<br> <span class="kw">Suppose</span> $f$ is a function from $Y$ to $Z$.<br> <span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$. <br><span class="kw">Then</span> $f$ is a surjection from $Y$ to $Z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1779,7 +1781,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="surj_factor_of_surj_composite" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$p\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Z}$ and $p$ is a function and $g$ is a function and $f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> For all $z\class{latex-symbol-tip latex-symbol-id-in}{\in} Z$ there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $g(x) = z$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.<br> <span class="kw">Hence</span> for all $z\class{latex-symbol-tip latex-symbol-id-in}{\in} Z$ there exists $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ such that $f(y) = z$ by <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_standard_library_relations.html#circ_iff" data-preview-label="circ_iff">Proposition 257</a>, <a class="xref" href="current_section_standard_library_functions.html#function_rightunique" data-preview-label="function_rightunique">Proposition 345</a>.<br> <span class="kw">Therefore</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{Y}{Z}$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1792,7 +1794,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="quotient_map_induced_map_quotient">
+<section class="statement lemma joins-following-proof" id="quotient_map_induced_map_quotient">
   <div class="statement-head"><div class="statement-title">Lemma 223</div><span class="label-badge">quotient_map_induced_map_quotient</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a quotient map from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $g$ is a function from $X$ to $Z$.<br> <span class="kw">Suppose</span> for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ there exists $z$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\preimg{p}{\{y\}}$ we have $g(x) = z$.<br> <span class="kw">Suppose</span> $f$ is a function from $Y$ to $Z$.<br> <span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$. <br><span class="kw">Then</span> $f$ is a quotient map from $Y$ to $Z$ with respect to $T_Y$ and $T_Z$ iff $g$ is a quotient map from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1809,7 +1811,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="quotient_map_induced_map_quotient" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $f$ is a quotient map from $Y$ to $Z$ with respect to $T_Y$ and $T_Z$ then $g$ is a quotient map from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_22.html#quotient_map_composite" data-preview-label="quotient_map_composite">Lemma 219</a>.</p></div>
@@ -1861,7 +1863,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="fiber_partition_is_partition">
+<section class="statement lemma helper joins-following-proof" id="fiber_partition_is_partition">
   <div class="statement-head"><div class="statement-title">Lemma 224</div><span class="label-badge">fiber_partition_is_partition</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $g$ is a surjection from $X$ to $Z$.<br> <span class="kw kw-bold">Let</span> $X_s = \fiberPartition{g}{Z}$. <br><span class="kw">Then</span> $X_s$ is a partition of $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1874,7 +1876,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="fiber_partition_is_partition" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Z}$ and $g$ is a function by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$X_s$ is a partition.</span></summary>
@@ -1909,7 +1911,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="partition_map_surjection">
+<section class="statement lemma helper joins-following-proof" id="partition_map_surjection">
   <div class="statement-head"><div class="statement-title">Lemma 225</div><span class="label-badge">partition_map_surjection</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $P$ is a partition of $X$.<br> <span class="kw kw-bold">Let</span> $p = \partitionMap{P}{X}$. <br><span class="kw">Then</span> $p$ is a surjection from $X$ to $P$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1922,7 +1924,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="partition_map_surjection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$P$ is a partition and $\unions{P} = X$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$p$ is a function from $X$ to $P$.</span></summary>
@@ -1954,7 +1956,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="corollary_quotient_space_induced_bijection">
+<section class="statement lemma joins-following-proof" id="corollary_quotient_space_induced_bijection">
   <div class="statement-head"><div class="statement-title">Lemma 226</div><span class="label-badge">corollary_quotient_space_induced_bijection</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $g$ is a surjection from $X$ to $Z$.<br> <span class="kw">Suppose</span> $g$ is continuous from $X$ to $Z$ with respect to $T_X$ and $T_Z$.<br> <span class="kw kw-bold">Let</span> $X_s = \fiberPartition{g}{Z}$.<br> <span class="kw kw-bold">Let</span> $p = \partitionMap{X_s}{X}$.<br> <span class="kw kw-bold">Let</span> $T_s = \quotientTopology{p}{T_X}{X}{X_s}$. <br><span class="kw">Then</span> there exists $f$ such that $f$ is a bijection from $X_s$ to $Z$ and $f$ is continuous from $X_s$ to $Z$ with respect to $T_s$ and $T_Z$ and $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1973,7 +1975,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="corollary_quotient_space_induced_bijection" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_X$ is a topology on $X$ and $X_s$ is a partition of $X$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_22.html#fiber_partition_is_partition" data-preview-label="fiber_partition_is_partition">Lemma 224</a>.<br> <span class="kw">Hence</span> $p$ is a surjection from $X$ to $X_s$ by <a class="xref" href="current_section_22.html#partition_map_surjection" data-preview-label="partition_map_surjection">Lemma 225</a>.<br> <span class="kw">Therefore</span> $p$ is a quotient map from $X$ to $X_s$ with respect to $T_X$ and $T_s$ by <a class="xref" href="current_section_22.html#quotient_topology_quotient_map" data-preview-label="quotient_topology_quotient_map">Lemma 214</a>.<br> We have $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Z}$ and $g$ is a function by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> For all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X_s$ there exists $z$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\preimg{p}{\{y\}}$ we have $g(x) = z$ by <a class="xref" href="current_section_22.html#fiber_partition" data-preview-label="fiber_partition">Definition 125</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_22.html#partition_map" data-preview-label="partition_map">Definition 122</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.<br> <span class="kw kw-bold">Take</span> $f$ such that $f$ is a function from $X_s$ to $Z$ and $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$ by <a class="xref" href="current_section_22.html#quotient_map_induced_map" data-preview-label="quotient_map_induced_map">Lemma 220</a>.<br> <span class="kw">Hence</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{X_s}{Z}$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_22.html#partition_map_surjection" data-preview-label="partition_map_surjection">Lemma 225</a>, <a class="xref" href="current_section_22.html#surj_factor_of_surj_composite" data-preview-label="surj_factor_of_surj_composite">Lemma 222</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $y_1,y_2,z$ such that $y_1\mathrel{f} z$ and $y_2\mathrel{f} z$ we have $y_1 = y_2$.</span></summary>
@@ -2023,7 +2025,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="corollary_quotient_space_homeomorphism">
+<section class="statement lemma joins-following-proof" id="corollary_quotient_space_homeomorphism">
   <div class="statement-head"><div class="statement-title">Lemma 227</div><span class="label-badge">corollary_quotient_space_homeomorphism</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $g$ is a surjection from $X$ to $Z$.<br> <span class="kw">Suppose</span> $g$ is continuous from $X$ to $Z$ with respect to $T_X$ and $T_Z$.<br> <span class="kw kw-bold">Let</span> $X_s = \fiberPartition{g}{Z}$.<br> <span class="kw kw-bold">Let</span> $p = \partitionMap{X_s}{X}$.<br> <span class="kw kw-bold">Let</span> $T_s = \quotientTopology{p}{T_X}{X}{X_s}$.<br> <span class="kw">Suppose</span> $f$ is a function from $X_s$ to $Z$.<br> <span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} p = g$.<br> <span class="kw">Suppose</span> $f$ is a bijection from $X_s$ to $Z$. <br><span class="kw">Then</span> $f$ is a homeomorphism between $X_s$ and $Z$ with respect to $T_s$ and $T_Z$ iff $g$ is a quotient map from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2043,7 +2045,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="corollary_quotient_space_homeomorphism" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_X$ is a topology on $X$ and $X_s$ is a partition of $X$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_22.html#fiber_partition_is_partition" data-preview-label="fiber_partition_is_partition">Lemma 224</a>.<br> <span class="kw">Hence</span> $p$ is a surjection from $X$ to $X_s$ by <a class="xref" href="current_section_22.html#partition_map_surjection" data-preview-label="partition_map_surjection">Lemma 225</a>.<br> <span class="kw">Therefore</span> $p$ is a quotient map from $X$ to $X_s$ with respect to $T_X$ and $T_s$ by <a class="xref" href="current_section_22.html#quotient_topology_quotient_map" data-preview-label="quotient_topology_quotient_map">Lemma 214</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $f$ is a homeomorphism between $X_s$ and $Z$ with respect to $T_s$ and $T_Z$ then $g$ is a quotient map from $X$ to $Z$ with respect to $T_X$ and $T_Z$.</span></summary>
@@ -2112,7 +2114,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="corollary_quotient_space_hausdorff">
+<section class="statement lemma joins-following-proof" id="corollary_quotient_space_hausdorff">
   <div class="statement-head"><div class="statement-title">Lemma 228</div><span class="label-badge">corollary_quotient_space_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $g$ is a surjection from $X$ to $Z$.<br> <span class="kw">Suppose</span> $g$ is continuous from $X$ to $Z$ with respect to $T_X$ and $T_Z$.<br> <span class="kw">Suppose</span> $Z$ is Hausdorff with respect to $T_Z$.<br> <span class="kw kw-bold">Let</span> $X_s = \fiberPartition{g}{Z}$.<br> <span class="kw kw-bold">Let</span> $p = \partitionMap{X_s}{X}$.<br> <span class="kw kw-bold">Let</span> $T_s = \quotientTopology{p}{T_X}{X}{X_s}$.<br> <span class="kw">Suppose</span> $f$ is a bijection from $X_s$ to $Z$.<br> <span class="kw">Suppose</span> $f$ is continuous from $X_s$ to $Z$ with respect to $T_s$ and $T_Z$. <br><span class="kw">Then</span> $X_s$ is Hausdorff with respect to $T_s$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2131,7 +2133,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="corollary_quotient_space_hausdorff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_X$ is a topology on $X$ and $X_s$ is a partition of $X$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_22.html#fiber_partition_is_partition" data-preview-label="fiber_partition_is_partition">Lemma 224</a>.<br> <span class="kw">Hence</span> $p$ is a surjection from $X$ to $X_s$ by <a class="xref" href="current_section_22.html#partition_map_surjection" data-preview-label="partition_map_surjection">Lemma 225</a>.<br> <span class="kw">Therefore</span> $T_s$ is a topology on $X_s$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_22.html#quotient_topology_is_topology" data-preview-label="quotient_topology_is_topology">Lemma 213</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x_1,x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X_s$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X_s$ and $x_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x_2$ there exist $U_1,U_2$ such that $U_1$ is a neighborhood of $x_1$ in $X_s$ with respect to $T_s$ and $U_2$ is a neighborhood of $x_2$ in $X_s$ with respect to $T_s$ and $U_1$ is disjoint from $U_2$.</span></summary>

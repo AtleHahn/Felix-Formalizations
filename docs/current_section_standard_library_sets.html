@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -432,7 +434,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <p>This axiom is also available as the justification “{\ldots\ by set extensionality}”, which applies it to goals of the form “$A = B$” and “$A \class{latex-symbol-tip latex-symbol-id-neq}{\neq} B$”.</p>
-<section class="statement proposition" id="neq_witness">
+<section class="statement proposition joins-following-proof" id="neq_witness">
   <div class="statement-head"><div class="statement-title">Proposition 1 [Witness for disequality]</div><span class="label-badge">neq_witness</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} B$. <br><span class="kw">Then</span> there exists $c$ such that either $c\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $c\not\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ or $c\not\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -447,7 +449,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="neq_witness" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not. <br><span class="kw">Then</span> $A = B$ by set extensionality.<br> Contradiction.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -497,7 +499,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="subseteq_antisymmetric">
+<section class="statement proposition joins-following-proof" id="subseteq_antisymmetric">
   <div class="statement-head"><div class="statement-title">Proposition 3</div><span class="label-badge">subseteq_antisymmetric</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$. <br><span class="kw">Then</span> $A = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -509,7 +511,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_antisymmetric" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -582,7 +584,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="subset_witness">
+<section class="statement proposition joins-following-proof" id="subset_witness">
   <div class="statement-head"><div class="statement-title">Proposition 9</div><span class="label-badge">subset_witness</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subset}{\subset} B$. <br><span class="kw">Then</span> there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ such that $b\class{latex-symbol-tip latex-symbol-id-notin}{\notin} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -594,7 +596,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subset_witness" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ and $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -838,7 +840,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="singleton_iff_inhabited_subsingleton">
+<section class="statement proposition joins-following-proof" id="singleton_iff_inhabited_subsingleton">
   <div class="statement-head"><div class="statement-title">Proposition 24</div><span class="label-badge">singleton_iff_inhabited_subsingleton</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A$ be a subsingleton.<br> <span class="kw kw-bold">Let</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $A = \{a\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -851,7 +853,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="singleton_iff_inhabited_subsingleton" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -893,7 +895,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{axiom}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="unions_intro">
+<section class="statement proposition joins-following-proof" id="unions_intro">
   <div class="statement-head"><div class="statement-title">Proposition 27</div><span class="label-badge">unions_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-in}{\in} B\class{latex-symbol-tip latex-symbol-id-in}{\in} C$. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-in}{\in}\unions{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -905,7 +907,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="unions_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1024,7 +1026,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="inters_singleton">
+<section class="statement proposition joins-following-proof" id="inters_singleton">
   <div class="statement-head"><div class="statement-title">Proposition 36</div><span class="label-badge">inters_singleton</span></div>
   <div class="statement-body"><p>$\inters{\{a\}} = a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1035,7 +1037,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inters_singleton" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Every element of $a$ is an element of $\inters{\{a\}}$ by <a class="xref" href="current_section_standard_library_sets.html#inters_iff_forall" data-preview-label="inters_iff_forall">Proposition 30</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_inhabited" data-preview-label="singleton_inhabited">Proposition 23</a>.<br> Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1045,7 +1047,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inters_emptyset">
+<section class="statement proposition joins-following-proof" id="inters_emptyset">
   <div class="statement-head"><div class="statement-title">Proposition 37</div><span class="label-badge">inters_emptyset</span></div>
   <div class="statement-body"><p>$\inters{\{\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\}} = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1056,7 +1058,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inters_emptyset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1096,7 +1098,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="union_as_unions">
+<section class="statement proposition joins-following-proof" id="union_as_unions">
   <div class="statement-head"><div class="statement-title">Proposition 40</div><span class="label-badge">union_as_unions</span></div>
   <div class="statement-body"><p>$\unions{\{x,y\}} = x\union y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1107,7 +1109,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_as_unions" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $z$ we have \begin{align*} z\in \unions{\{x,y\}} &amp;\iff \exists Z\in\{x,y\}. z\in Z &amp;\iff z\in x \lor z\in y &amp;\iff z\in x\union y. \end{align*} Follows by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1123,7 +1125,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_comm">
+<section class="statement proposition joins-following-proof" id="union_comm">
   <div class="statement-head"><div class="statement-title">Proposition 41 [Commutativity of union]</div><span class="label-badge">union_comm</span></div>
   <div class="statement-body"><p>$A\union B = B\union A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1135,7 +1137,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_comm" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1143,7 +1145,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_assoc">
+<section class="statement proposition joins-following-proof" id="union_assoc">
   <div class="statement-head"><div class="statement-title">Proposition 42 [Associativity of union]</div><span class="label-badge">union_assoc</span></div>
   <div class="statement-body"><p>$(A\union B)\union C = A\union (B\union C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1155,7 +1157,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_assoc" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1163,7 +1165,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_idempotent">
+<section class="statement proposition joins-following-proof" id="union_idempotent">
   <div class="statement-head"><div class="statement-title">Proposition 43 [Idempotence of union]</div><span class="label-badge">union_idempotent</span></div>
   <div class="statement-body"><p>$A\union A = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1175,7 +1177,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_idempotent" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1235,7 +1237,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="union_emptyset">
+<section class="statement proposition joins-following-proof" id="union_emptyset">
   <div class="statement-head"><div class="statement-title">Proposition 49</div><span class="label-badge">union_emptyset</span></div>
   <div class="statement-body"><p>$A\union\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset} = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1246,7 +1248,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_emptyset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1254,7 +1256,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_emptyset_intro">
+<section class="statement proposition joins-following-proof" id="union_emptyset_intro">
   <div class="statement-head"><div class="statement-title">Proposition 50</div><span class="label-badge">union_emptyset_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> $A\union B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1265,7 +1267,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_emptyset_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1273,7 +1275,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_emptyset_elim_left">
+<section class="statement proposition joins-following-proof" id="union_emptyset_elim_left">
   <div class="statement-head"><div class="statement-title">Proposition 51</div><span class="label-badge">union_emptyset_elim_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\union B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> $A = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1284,7 +1286,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_emptyset_elim_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq_emptyset_iff" data-preview-label="subseteq_emptyset_iff">Proposition 12</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1293,7 +1295,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_emptyset_elim_right">
+<section class="statement proposition joins-following-proof" id="union_emptyset_elim_right">
   <div class="statement-head"><div class="statement-title">Proposition 52</div><span class="label-badge">union_emptyset_elim_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\union B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> $B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1304,7 +1306,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_emptyset_elim_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#union_upper_right" data-preview-label="union_upper_right">Proposition 47</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq_emptyset_iff" data-preview-label="subseteq_emptyset_iff">Proposition 12</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1313,7 +1315,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_absorb_subseteq_left">
+<section class="statement proposition joins-following-proof" id="union_absorb_subseteq_left">
   <div class="statement-head"><div class="statement-title">Proposition 53</div><span class="label-badge">union_absorb_subseteq_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$. <br><span class="kw">Then</span> $A\union B = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1324,7 +1326,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_absorb_subseteq_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1332,7 +1334,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_absorb_subseteq_right">
+<section class="statement proposition joins-following-proof" id="union_absorb_subseteq_right">
   <div class="statement-head"><div class="statement-title">Proposition 54</div><span class="label-badge">union_absorb_subseteq_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$. <br><span class="kw">Then</span> $B\union A = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1343,7 +1345,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_absorb_subseteq_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1361,7 +1363,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="unions_cons">
+<section class="statement proposition joins-following-proof" id="unions_cons">
   <div class="statement-head"><div class="statement-title">Proposition 56</div><span class="label-badge">unions_cons</span></div>
   <div class="statement-body"><p>$\unions{\cons{b}{A}} = b\union\unions{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1372,7 +1374,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="unions_cons" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1380,7 +1382,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_cons">
+<section class="statement proposition joins-following-proof" id="union_cons">
   <div class="statement-head"><div class="statement-title">Proposition 57</div><span class="label-badge">union_cons</span></div>
   <div class="statement-body"><p>$\cons{b}{A} \union C = \cons{b}{A\union C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1391,7 +1393,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_cons" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1399,7 +1401,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_absorb_left">
+<section class="statement proposition joins-following-proof" id="union_absorb_left">
   <div class="statement-head"><div class="statement-title">Proposition 58</div><span class="label-badge">union_absorb_left</span></div>
   <div class="statement-body"><p>$A\union (A\union B) = A\union B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1410,7 +1412,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_absorb_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1418,7 +1420,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_absorb_right">
+<section class="statement proposition joins-following-proof" id="union_absorb_right">
   <div class="statement-head"><div class="statement-title">Proposition 59</div><span class="label-badge">union_absorb_right</span></div>
   <div class="statement-body"><p>$(A\union B)\union B = A\union B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1429,7 +1431,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_absorb_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1437,7 +1439,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_comm_left">
+<section class="statement proposition joins-following-proof" id="union_comm_left">
   <div class="statement-head"><div class="statement-title">Proposition 60</div><span class="label-badge">union_comm_left</span></div>
   <div class="statement-body"><p>$A\union (B\union C) = B\union (A\union C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1448,7 +1450,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_comm_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1508,7 +1510,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="inter_as_inters">
+<section class="statement proposition joins-following-proof" id="inter_as_inters">
   <div class="statement-head"><div class="statement-title">Proposition 64</div><span class="label-badge">inter_as_inters</span></div>
   <div class="statement-body"><p>$\inters{\{A,B\}} = A\inter B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1519,7 +1521,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_as_inters" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\{A,B\}$ is inhabited. <br><span class="kw">Thus</span> for all $c$ we have $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\inters{\{A,B\}}$ iff $c\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter B$ by <a class="xref" href="current_section_standard_library_sets.html#inters_iff_forall" data-preview-label="inters_iff_forall">Proposition 30</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_iff" data-preview-label="upair_iff">Proposition 19</a>.</p>
 <p>Follows by \hyperref[setext]{extensionality}.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1532,7 +1534,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_comm">
+<section class="statement proposition joins-following-proof" id="inter_comm">
   <div class="statement-head"><div class="statement-title">Proposition 65 [Commutativity of intersection]</div><span class="label-badge">inter_comm</span></div>
   <div class="statement-body"><p>$A\inter B = B\inter A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1544,7 +1546,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_comm" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1552,7 +1554,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_assoc">
+<section class="statement proposition joins-following-proof" id="inter_assoc">
   <div class="statement-head"><div class="statement-title">Proposition 66 [Associativity of intersection]</div><span class="label-badge">inter_assoc</span></div>
   <div class="statement-body"><p>$(A\inter B)\inter C = A\inter (B\inter C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1564,7 +1566,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_assoc" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1572,7 +1574,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_idempotent">
+<section class="statement proposition joins-following-proof" id="inter_idempotent">
   <div class="statement-head"><div class="statement-title">Proposition 67 [Idempotence of intersection]</div><span class="label-badge">inter_idempotent</span></div>
   <div class="statement-body"><p>$A\inter A = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1584,7 +1586,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_idempotent" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1592,7 +1594,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_emptyset">
+<section class="statement proposition joins-following-proof" id="inter_emptyset">
   <div class="statement-head"><div class="statement-title">Proposition 68</div><span class="label-badge">inter_emptyset</span></div>
   <div class="statement-body"><p>$A\inter\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset} = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1603,7 +1605,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_emptyset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1611,7 +1613,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_absorb_supseteq_right">
+<section class="statement proposition joins-following-proof" id="inter_absorb_supseteq_right">
   <div class="statement-head"><div class="statement-title">Proposition 69</div><span class="label-badge">inter_absorb_supseteq_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$. <br><span class="kw">Then</span> $A\inter B = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1622,7 +1624,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_absorb_supseteq_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1630,7 +1632,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_absorb_supseteq_left">
+<section class="statement proposition joins-following-proof" id="inter_absorb_supseteq_left">
   <div class="statement-head"><div class="statement-title">Proposition 70</div><span class="label-badge">inter_absorb_supseteq_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$. <br><span class="kw">Then</span> $B\inter A = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1641,7 +1643,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_absorb_supseteq_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1689,7 +1691,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="inter_absorb_left">
+<section class="statement proposition joins-following-proof" id="inter_absorb_left">
   <div class="statement-head"><div class="statement-title">Proposition 75</div><span class="label-badge">inter_absorb_left</span></div>
   <div class="statement-body"><p>$A\inter (A\inter B) = A\inter B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1700,7 +1702,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_absorb_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1708,7 +1710,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_absorb_right">
+<section class="statement proposition joins-following-proof" id="inter_absorb_right">
   <div class="statement-head"><div class="statement-title">Proposition 76</div><span class="label-badge">inter_absorb_right</span></div>
   <div class="statement-body"><p>$(A\inter B) \inter B = A\inter B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1719,7 +1721,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_absorb_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1727,7 +1729,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_comm_left">
+<section class="statement proposition joins-following-proof" id="inter_comm_left">
   <div class="statement-head"><div class="statement-title">Proposition 77</div><span class="label-badge">inter_comm_left</span></div>
   <div class="statement-body"><p>$A\inter (B\inter C) = B\inter (A\inter C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1738,7 +1740,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_comm_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1769,7 +1771,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <h5 class="tex-subsubsection">Interaction of union and intersection</h5>
-<section class="statement proposition" id="inter_distrib_union">
+<section class="statement proposition joins-following-proof" id="inter_distrib_union">
   <div class="statement-head"><div class="statement-title">Proposition 79 [Binary intersection over binary union]</div><span class="label-badge">inter_distrib_union</span></div>
   <div class="statement-body"><p>$A\inter (B\union C) = (A\inter B)\union (A\inter C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1781,7 +1783,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_distrib_union" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1789,7 +1791,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_distrib_inter">
+<section class="statement proposition joins-following-proof" id="union_distrib_inter">
   <div class="statement-head"><div class="statement-title">Proposition 80 [Binary union over binary intersection]</div><span class="label-badge">union_distrib_inter</span></div>
   <div class="statement-body"><p>$x\union (y\inter z) = (x\union y)\inter (x\union z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1801,7 +1803,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_distrib_inter" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1809,7 +1811,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_inter_assoc_intro">
+<section class="statement proposition joins-following-proof" id="union_inter_assoc_intro">
   <div class="statement-head"><div class="statement-title">Proposition 81</div><span class="label-badge">union_inter_assoc_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$. <br><span class="kw">Then</span> $A\inter (B\union C) = (A\inter B)\union C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1821,7 +1823,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_inter_assoc_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>\begin{align*} A\inter (B\union C) &amp;= (A\inter B)\union (A\inter C) \explanation{by <a class="xref" href="current_section_standard_library_sets.html#inter_distrib_union" data-preview-label="inter_distrib_union">Proposition 79 [Binary intersection over binary union]</a>}\\ &amp;= (A\inter B)\union C \explanation{by <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>} \end{align*}</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1832,7 +1834,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_inter_assoc_elim">
+<section class="statement proposition joins-following-proof" id="union_inter_assoc_elim">
   <div class="statement-head"><div class="statement-title">Proposition 82</div><span class="label-badge">union_inter_assoc_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $(A\inter B)\union C = A\inter (B\union C)$. <br><span class="kw">Then</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1844,7 +1846,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_inter_assoc_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#union_upper_right" data-preview-label="union_upper_right">Proposition 47</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_union_iff" data-preview-label="subseteq_union_iff">Proposition 45</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_inter_iff" data-preview-label="subseteq_inter_iff">Proposition 72</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1852,7 +1854,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_inter_crazy">
+<section class="statement proposition joins-following-proof" id="union_inter_crazy">
   <div class="statement-head"><div class="statement-title">Proposition 83</div><span class="label-badge">union_inter_crazy</span></div>
   <div class="statement-body"><p>$(A\inter B)\union (B\inter C)\union (C\inter A) = (A\union B)\inter (B\union C)\inter (C\union A)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1865,7 +1867,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_inter_crazy" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1873,7 +1875,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inters_distrib_union">
+<section class="statement proposition joins-following-proof" id="inters_distrib_union">
   <div class="statement-head"><div class="statement-title">Proposition 84 [Intersection over binary union]</div><span class="label-badge">inters_distrib_union</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A$ and $B$ are inhabited. <br><span class="kw">Then</span> $\inters{A\union B} = (\inters{A})\inter\inters{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1885,7 +1887,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inters_distrib_union" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$A\union B$ is inhabited. <br><span class="kw">Thus</span> for all $c$ we have $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\inters{A\union B}$ iff $c\class{latex-symbol-tip latex-symbol-id-in}{\in}(\inters{A})\inter\inters{B}$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#inters_iff_forall" data-preview-label="inters_iff_forall">Proposition 30</a>.<br> Follows by \hyperref[setext]{set extensionality}.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1937,7 +1939,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="setminus_emptyset">
+<section class="statement proposition joins-following-proof" id="setminus_emptyset">
   <div class="statement-head"><div class="statement-title">Proposition 88</div><span class="label-badge">setminus_emptyset</span></div>
   <div class="statement-body"><p>$x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset} = x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1948,7 +1950,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_emptyset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1956,7 +1958,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="emptyset_setminus">
+<section class="statement proposition joins-following-proof" id="emptyset_setminus">
   <div class="statement-head"><div class="statement-title">Proposition 89</div><span class="label-badge">emptyset_setminus</span></div>
   <div class="statement-body"><p>$\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} x = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1967,7 +1969,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="emptyset_setminus" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1975,7 +1977,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_self">
+<section class="statement proposition joins-following-proof" id="setminus_self">
   <div class="statement-head"><div class="statement-title">Proposition 90</div><span class="label-badge">setminus_self</span></div>
   <div class="statement-body"><p>$x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} x = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1986,7 +1988,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_self" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1994,7 +1996,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_setminus">
+<section class="statement proposition joins-following-proof" id="setminus_setminus">
   <div class="statement-head"><div class="statement-title">Proposition 91</div><span class="label-badge">setminus_setminus</span></div>
   <div class="statement-body"><p>$x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} y) = x\inter y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2005,7 +2007,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_setminus" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2013,7 +2015,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="double_relative_complement">
+<section class="statement proposition joins-following-proof" id="double_relative_complement">
   <div class="statement-head"><div class="statement-title">Proposition 92</div><span class="label-badge">double_relative_complement</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} x$.<br> $x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} y) = y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2025,7 +2027,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="double_relative_complement" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#setminus_setminus" data-preview-label="setminus_setminus">Proposition 91</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2033,7 +2035,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_inter">
+<section class="statement proposition joins-following-proof" id="setminus_inter">
   <div class="statement-head"><div class="statement-title">Proposition 93</div><span class="label-badge">setminus_inter</span></div>
   <div class="statement-body"><p>$x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (y\inter z) = (x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} y)\union (x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2044,7 +2046,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_inter" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2052,7 +2054,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_union">
+<section class="statement proposition joins-following-proof" id="setminus_union">
   <div class="statement-head"><div class="statement-title">Proposition 94</div><span class="label-badge">setminus_union</span></div>
   <div class="statement-body"><p>$x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (y\union z) = (x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} y)\inter (x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2063,7 +2065,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_union" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2071,7 +2073,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_setminus">
+<section class="statement proposition joins-following-proof" id="inter_setminus">
   <div class="statement-head"><div class="statement-title">Proposition 95</div><span class="label-badge">inter_setminus</span></div>
   <div class="statement-body"><p>$x\inter (y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} z) = (x\inter y)\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (x\inter z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2082,7 +2084,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_setminus" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2090,7 +2092,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="difference_with_proper_subset_is_inhabited">
+<section class="statement proposition joins-following-proof" id="difference_with_proper_subset_is_inhabited">
   <div class="statement-head"><div class="statement-title">Proposition 96</div><span class="label-badge">difference_with_proper_subset_is_inhabited</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A, B$ be sets.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subset}{\subset} B$. <br><span class="kw">Then</span> $B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A$ is inhabited.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2103,7 +2105,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="difference_with_proper_subset_is_inhabited" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $b$ such that $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $b\class{latex-symbol-tip latex-symbol-id-notin}{\notin} A$. <br><span class="kw">Then</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2186,7 +2188,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="setminus_cons">
+<section class="statement proposition joins-following-proof" id="setminus_cons">
   <div class="statement-head"><div class="statement-title">Proposition 104</div><span class="label-badge">setminus_cons</span></div>
   <div class="statement-body"><p>$A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \cons{a}{B} = (A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \{a\})\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2197,7 +2199,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_cons" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2205,7 +2207,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_cons_flip">
+<section class="statement proposition joins-following-proof" id="setminus_cons_flip">
   <div class="statement-head"><div class="statement-title">Proposition 105</div><span class="label-badge">setminus_cons_flip</span></div>
   <div class="statement-body"><p>$A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \cons{a}{B} = (A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \{a\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2216,7 +2218,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_cons_flip" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2224,7 +2226,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_disjoint">
+<section class="statement proposition joins-following-proof" id="setminus_disjoint">
   <div class="statement-head"><div class="statement-title">Proposition 106</div><span class="label-badge">setminus_disjoint</span></div>
   <div class="statement-body"><p>$A\inter (B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A) = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2235,7 +2237,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_disjoint" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2243,7 +2245,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_partition">
+<section class="statement proposition joins-following-proof" id="setminus_partition">
   <div class="statement-head"><div class="statement-title">Proposition 107</div><span class="label-badge">setminus_partition</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.<br> $A\union (B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A) = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2255,7 +2257,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_partition" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2273,7 +2275,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="double_complement">
+<section class="statement proposition joins-following-proof" id="double_complement">
   <div class="statement-head"><div class="statement-title">Proposition 109</div><span class="label-badge">double_complement</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$. <br><span class="kw">Then</span> $B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (C\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A) = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2285,7 +2287,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="double_complement" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2293,7 +2295,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="double_complement_union">
+<section class="statement proposition joins-following-proof" id="double_complement_union">
   <div class="statement-head"><div class="statement-title">Proposition 110</div><span class="label-badge">double_complement_union</span></div>
   <div class="statement-body"><p><span class="kw">Then</span> $(A\union B)\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A) = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2304,7 +2306,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="double_complement_union" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2312,7 +2314,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="setminus_eq_inter_complement">
+<section class="statement proposition joins-following-proof" id="setminus_eq_inter_complement">
   <div class="statement-head"><div class="statement-title">Proposition 111</div><span class="label-badge">setminus_eq_inter_complement</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A, B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B = A\inter (C\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2324,7 +2326,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="setminus_eq_inter_complement" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2426,7 +2428,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="times_tuple_elim">
+<section class="statement proposition joins-following-proof" id="times_tuple_elim">
   <div class="statement-head"><div class="statement-title">Proposition 114</div><span class="label-badge">times_tuple_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $(x, y)\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2437,7 +2439,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="times_tuple_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x', y'$ such that $x'\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-land}{\land} y'\class{latex-symbol-tip latex-symbol-id-in}{\in} Y \class{latex-symbol-tip latex-symbol-id-land}{\land} (x, y) = (x', y')$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>. <br><span class="kw">Then</span> $x = x'$ and $y = y'$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2477,7 +2479,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="times_empty_iff">
+<section class="statement proposition joins-following-proof" id="times_empty_iff">
   <div class="statement-head"><div class="statement-title">Proposition 118</div><span class="label-badge">times_empty_iff</span></div>
   <div class="statement-body"><p>$X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ is empty iff $X$ is empty or $Y$ is empty.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2488,7 +2490,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="times_empty_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2496,7 +2498,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="fst_type">
+<section class="statement proposition joins-following-proof" id="fst_type">
   <div class="statement-head"><div class="statement-title">Proposition 119</div><span class="label-badge">fst_type</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $c\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-times}{\times} B$. <br><span class="kw">Then</span> $\fst{c}\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2507,7 +2509,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="fst_type" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a, b$ such that $c = (a, b)$ and $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2518,7 +2520,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="snd_type">
+<section class="statement proposition joins-following-proof" id="snd_type">
   <div class="statement-head"><div class="statement-title">Proposition 120</div><span class="label-badge">snd_type</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $c\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-times}{\times} B$. <br><span class="kw">Then</span> $\snd{c}\class{latex-symbol-tip latex-symbol-id-in}{\in} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2529,7 +2531,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="snd_type" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a, b$ such that $c = (a, b)$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2625,7 +2627,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="subseteq_cons_intro_left">
+<section class="statement proposition joins-following-proof" id="subseteq_cons_intro_left">
   <div class="statement-head"><div class="statement-title">Proposition 127</div><span class="label-badge">subseteq_cons_intro_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} C \class{latex-symbol-tip latex-symbol-id-land}{\land} \remove{a}{C} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$. <br><span class="kw">Then</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \cons{a}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2637,7 +2639,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_cons_intro_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#setminus_cons" data-preview-label="setminus_cons">Proposition 104</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_eq_emptyset_iff_subseteq" data-preview-label="setminus_eq_emptyset_iff_subseteq">Proposition 101</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2656,7 +2658,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="subseteq_cons_elim">
+<section class="statement proposition joins-following-proof" id="subseteq_cons_elim">
   <div class="statement-head"><div class="statement-title">Proposition 129</div><span class="label-badge">subseteq_cons_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \cons{a}{B}$. <br><span class="kw">Then</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (a\class{latex-symbol-tip latex-symbol-id-in}{\in} C \class{latex-symbol-tip latex-symbol-id-land}{\land} \remove{a}{C} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2668,7 +2670,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_cons_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#setminus_cons" data-preview-label="setminus_cons">Proposition 104</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_eq_emptyset_iff_subseteq" data-preview-label="setminus_eq_emptyset_iff_subseteq">Proposition 101</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2686,7 +2688,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="remove_point_eq_setminus_singleton">
+<section class="statement proposition joins-following-proof" id="remove_point_eq_setminus_singleton">
   <div class="statement-head"><div class="statement-title">Proposition 131</div><span class="label-badge">remove_point_eq_setminus_singleton</span></div>
   <div class="statement-body"><p>$\remove{a}{B} = B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{a\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2697,7 +2699,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="remove_point_eq_setminus_singleton" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2705,7 +2707,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_eq_cons">
+<section class="statement proposition joins-following-proof" id="union_eq_cons">
   <div class="statement-head"><div class="statement-title">Proposition 132</div><span class="label-badge">union_eq_cons</span></div>
   <div class="statement-body"><p>$\{a\}\union B = \cons{a}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2716,7 +2718,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_eq_cons" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2724,7 +2726,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="cons_comm">
+<section class="statement proposition joins-following-proof" id="cons_comm">
   <div class="statement-head"><div class="statement-title">Proposition 133</div><span class="label-badge">cons_comm</span></div>
   <div class="statement-body"><p>$\cons{a}{\cons{b}{C}} = \cons{b}{\cons{a}{C}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2735,7 +2737,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="cons_comm" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2743,7 +2745,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="cons_absorb">
+<section class="statement proposition joins-following-proof" id="cons_absorb">
   <div class="statement-head"><div class="statement-title">Proposition 134</div><span class="label-badge">cons_absorb</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $\cons{a}{A} = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2755,7 +2757,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="cons_absorb" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2763,7 +2765,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="cons_remove">
+<section class="statement proposition joins-following-proof" id="cons_remove">
   <div class="statement-head"><div class="statement-title">Proposition 135</div><span class="label-badge">cons_remove</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $\cons{a}{A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{a\}} = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2775,7 +2777,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="cons_remove" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2783,7 +2785,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="cons_idempotent">
+<section class="statement proposition joins-following-proof" id="cons_idempotent">
   <div class="statement-head"><div class="statement-title">Proposition 136</div><span class="label-badge">cons_idempotent</span></div>
   <div class="statement-body"><p><span class="kw">Then</span> $\cons{a}{\cons{a}{B}} = \cons{a}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2794,7 +2796,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="cons_idempotent" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2802,7 +2804,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inters_cons">
+<section class="statement proposition joins-following-proof" id="inters_cons">
   <div class="statement-head"><div class="statement-title">Proposition 137</div><span class="label-badge">inters_cons</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $B$ is inhabited. <br><span class="kw">Then</span> $\inters{\cons{a}{B}} = a\inter\inters{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2814,7 +2816,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inters_cons" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\cons{a}{B}$ is inhabited. <br><span class="kw">Thus</span> for all $c$ we have $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\inters{\cons{a}{B}}$ iff $c\class{latex-symbol-tip latex-symbol-id-in}{\in} a\inter \inters{B}$ by <a class="xref" href="current_section_standard_library_sets.html#inters_iff_forall" data-preview-label="inters_iff_forall">Proposition 30</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>.<br> Follows by \hyperref[setext]{extensionality}.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2836,7 +2838,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="symdiff_as_setdiff">
+<section class="statement proposition joins-following-proof" id="symdiff_as_setdiff">
   <div class="statement-head"><div class="statement-title">Proposition 138</div><span class="label-badge">symdiff_as_setdiff</span></div>
   <div class="statement-body"><p>$x\symdiff y = (x\union y)\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} (y\inter x)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2847,7 +2849,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="symdiff_as_setdiff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2865,7 +2867,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="xor_in_implies_symdiff">
+<section class="statement proposition joins-following-proof" id="xor_in_implies_symdiff">
   <div class="statement-head"><div class="statement-title">Proposition 140</div><span class="label-badge">xor_in_implies_symdiff</span></div>
   <div class="statement-body"><p>If either $z\class{latex-symbol-tip latex-symbol-id-in}{\in} x$ or $z\class{latex-symbol-tip latex-symbol-id-in}{\in} y$, then $z\class{latex-symbol-tip latex-symbol-id-in}{\in} x\symdiff y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2876,7 +2878,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="xor_in_implies_symdiff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>If $z\class{latex-symbol-tip latex-symbol-id-in}{\in} x$ and $z\not\class{latex-symbol-tip latex-symbol-id-in}{\in} y$, then $z\class{latex-symbol-tip latex-symbol-id-in}{\in} x\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} y$.<br> If $z\not\class{latex-symbol-tip latex-symbol-id-in}{\in} x$ and $z\class{latex-symbol-tip latex-symbol-id-in}{\in} y$, then $z\class{latex-symbol-tip latex-symbol-id-in}{\in} y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2885,7 +2887,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="symdiff_assoc">
+<section class="statement proposition joins-following-proof" id="symdiff_assoc">
   <div class="statement-head"><div class="statement-title">Proposition 141</div><span class="label-badge">symdiff_assoc</span></div>
   <div class="statement-body"><p>$x\symdiff (y\symdiff z) = (x\symdiff y)\symdiff z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2896,7 +2898,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="symdiff_assoc" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2904,7 +2906,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="symdiff_comm">
+<section class="statement proposition joins-following-proof" id="symdiff_comm">
   <div class="statement-head"><div class="statement-title">Proposition 142</div><span class="label-badge">symdiff_comm</span></div>
   <div class="statement-body"><p>$x\symdiff y = y\symdiff x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2915,7 +2917,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="symdiff_comm" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2923,7 +2925,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="times_subseteq_left">
+<section class="statement proposition joins-following-proof" id="times_subseteq_left">
   <div class="statement-head"><div class="statement-title">Proposition 143</div><span class="label-badge">times_subseteq_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-times}{\times} B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C\class{latex-symbol-tip latex-symbol-id-times}{\times} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2934,7 +2936,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="times_subseteq_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>It suffices to show that for all $w\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-times}{\times} B$ we have $w\class{latex-symbol-tip latex-symbol-id-in}{\in} C\class{latex-symbol-tip latex-symbol-id-times}{\times} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2942,7 +2944,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="times_subseteq_right">
+<section class="statement proposition joins-following-proof" id="times_subseteq_right">
   <div class="statement-head"><div class="statement-title">Proposition 144</div><span class="label-badge">times_subseteq_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} D$. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-times}{\times} B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A\class{latex-symbol-tip latex-symbol-id-times}{\times} D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2953,7 +2955,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="times_subseteq_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>It suffices to show that for all $w\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-times}{\times} B$ we have $w\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-times}{\times} D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2961,7 +2963,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_times_intro">
+<section class="statement proposition joins-following-proof" id="inter_times_intro">
   <div class="statement-head"><div class="statement-title">Proposition 145</div><span class="label-badge">inter_times_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\inter B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\inter D)$. <br><span class="kw">Then</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\inter (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2973,7 +2975,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_times_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,c$ such that $w = (a, c)$ by <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>. <br><span class="kw">Then</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A, B$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in} C,D$ by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>. <br><span class="kw">Thus</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in} (A\class{latex-symbol-tip latex-symbol-id-times}{\times} C), (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2985,7 +2987,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_times_elim">
+<section class="statement proposition joins-following-proof" id="inter_times_elim">
   <div class="statement-head"><div class="statement-title">Proposition 146</div><span class="label-badge">inter_times_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\inter (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$. <br><span class="kw">Then</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\inter B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\inter D)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2997,7 +2999,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_times_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$w\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-times}{\times} C$.<br> <span class="kw kw-bold">Take</span> $a, c$ such that $w = (a, c)$.<br> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A, B$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>.<br> $c\class{latex-symbol-tip latex-symbol-id-in}{\in} C, D$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>. <br><span class="kw">Thus</span> $(a,c) \class{latex-symbol-tip latex-symbol-id-in}{\in} (A\inter B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\inter D)$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3009,7 +3011,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_times">
+<section class="statement proposition joins-following-proof" id="inter_times">
   <div class="statement-head"><div class="statement-title">Proposition 147</div><span class="label-badge">inter_times</span></div>
   <div class="statement-body"><p>$(A\inter B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\inter D) = (A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\inter (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3020,7 +3022,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_times" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3028,7 +3030,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_times_right">
+<section class="statement proposition joins-following-proof" id="inter_times_right">
   <div class="statement-head"><div class="statement-title">Proposition 148</div><span class="label-badge">inter_times_right</span></div>
   <div class="statement-body"><p>$(X\inter Y)\class{latex-symbol-tip latex-symbol-id-times}{\times} Z = (X\class{latex-symbol-tip latex-symbol-id-times}{\times} Z)\inter (Y\class{latex-symbol-tip latex-symbol-id-times}{\times} Z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3039,7 +3041,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_times_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3047,7 +3049,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_times_left">
+<section class="statement proposition joins-following-proof" id="inter_times_left">
   <div class="statement-head"><div class="statement-title">Proposition 149</div><span class="label-badge">inter_times_left</span></div>
   <div class="statement-body"><p>$X\class{latex-symbol-tip latex-symbol-id-times}{\times} (Y\inter Z) = (X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y)\inter (X\class{latex-symbol-tip latex-symbol-id-times}{\times} Z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3058,7 +3060,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_times_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3066,7 +3068,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_times_intro">
+<section class="statement proposition joins-following-proof" id="union_times_intro">
   <div class="statement-head"><div class="statement-title">Proposition 150</div><span class="label-badge">union_times_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\union B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\union D)$. <br><span class="kw">Then</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (A\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3078,7 +3080,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_times_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,c$ such that $w = (a, c)$.<br> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ or $a\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>.<br> $c\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ or $c\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>. <br><span class="kw">Thus</span> $(a, c)\class{latex-symbol-tip latex-symbol-id-in}{\in} (A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$ or $(a, c)\class{latex-symbol-tip latex-symbol-id-in}{\in} (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$ or $(a, c)\class{latex-symbol-tip latex-symbol-id-in}{\in} (A\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$ or $(a, c)\class{latex-symbol-tip latex-symbol-id-in}{\in} (B\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$. <br><span class="kw">Thus</span> $(a, c)\class{latex-symbol-tip latex-symbol-id-in}{\in} (A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (A\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3090,7 +3092,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_times_elim">
+<section class="statement proposition joins-following-proof" id="union_times_elim">
   <div class="statement-head"><div class="statement-title">Proposition 151</div><span class="label-badge">union_times_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (A\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$. <br><span class="kw">Then</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\union B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\union D)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3102,7 +3104,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_times_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, c$ such that $w = (a, c) \class{latex-symbol-tip latex-symbol-id-land}{\land} a\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-land}{\land} c\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>. <br><span class="kw">Then</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A\union B$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in} C\union D$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $b, d$ such that $w = (b, d) \class{latex-symbol-tip latex-symbol-id-land}{\land} b\class{latex-symbol-tip latex-symbol-id-in}{\in} B\class{latex-symbol-tip latex-symbol-id-land}{\land} d\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>. <br><span class="kw">Then</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} A\union B$ and $d\class{latex-symbol-tip latex-symbol-id-in}{\in} C\union D$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(A\class{latex-symbol-tip latex-symbol-id-times}{\times} D)$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, d$ such that $w = (a, d) \class{latex-symbol-tip latex-symbol-id-land}{\land} a\class{latex-symbol-tip latex-symbol-id-in}{\in} A\class{latex-symbol-tip latex-symbol-id-land}{\land} d\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>. <br><span class="kw">Then</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A\union B$ and $d\class{latex-symbol-tip latex-symbol-id-in}{\in} C\union D$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in}(B\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $b, c$ such that $w = (b, c) \class{latex-symbol-tip latex-symbol-id-land}{\land} b\class{latex-symbol-tip latex-symbol-id-in}{\in} B\class{latex-symbol-tip latex-symbol-id-land}{\land} c\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ by <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>. <br><span class="kw">Then</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} A\union B$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in} C\union D$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{byCase}
@@ -3148,7 +3150,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_times">
+<section class="statement proposition joins-following-proof" id="union_times">
   <div class="statement-head"><div class="statement-title">Proposition 152</div><span class="label-badge">union_times</span></div>
   <div class="statement-body"><p>$(A\union B)\class{latex-symbol-tip latex-symbol-id-times}{\times} (C\union D) = (A\class{latex-symbol-tip latex-symbol-id-times}{\times} C)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (A\class{latex-symbol-tip latex-symbol-id-times}{\times} D)\union (B\class{latex-symbol-tip latex-symbol-id-times}{\times} C)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3159,7 +3161,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_times" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3167,7 +3169,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_times_left">
+<section class="statement proposition joins-following-proof" id="union_times_left">
   <div class="statement-head"><div class="statement-title">Proposition 153</div><span class="label-badge">union_times_left</span></div>
   <div class="statement-body"><p>$(X\union Y)\class{latex-symbol-tip latex-symbol-id-times}{\times} Z = (X\class{latex-symbol-tip latex-symbol-id-times}{\times} Z)\union (Y\class{latex-symbol-tip latex-symbol-id-times}{\times} Z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3178,7 +3180,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_times_left" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3186,7 +3188,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_times_right">
+<section class="statement proposition joins-following-proof" id="union_times_right">
   <div class="statement-head"><div class="statement-title">Proposition 154</div><span class="label-badge">union_times_right</span></div>
   <div class="statement-body"><p>$X\class{latex-symbol-tip latex-symbol-id-times}{\times} (Y\union Z) = (X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y)\union (X\class{latex-symbol-tip latex-symbol-id-times}{\times} Z)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3197,7 +3199,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_times_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3268,7 +3270,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="unions_subseteq_of_powerset_is_subseteq">
+<section class="statement proposition joins-following-proof" id="unions_subseteq_of_powerset_is_subseteq">
   <div class="statement-head"><div class="statement-title">Proposition 159</div><span class="label-badge">unions_subseteq_of_powerset_is_subseteq</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A$ be a set.<br> <span class="kw kw-bold">Let</span> $B$ be a subset of $\pow{A}$. <br><span class="kw">Then</span> $\unions{B}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3281,7 +3283,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="unions_subseteq_of_powerset_is_subseteq" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3289,7 +3291,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="powerset_closed_unions">
+<section class="statement corollary joins-following-proof" id="powerset_closed_unions">
   <div class="statement-head"><div class="statement-title">Corollary 20</div><span class="label-badge">powerset_closed_unions</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A$ be a set.<br> <span class="kw kw-bold">Let</span> $B$ be a subset of $\pow{A}$. <br><span class="kw">Then</span> $\unions{B}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3302,7 +3304,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="powerset_closed_unions" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_subseteq_of_powerset_is_subseteq" data-preview-label="unions_subseteq_of_powerset_is_subseteq">Proposition 159</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3310,7 +3312,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inter_powerset">
+<section class="statement proposition joins-following-proof" id="inter_powerset">
   <div class="statement-head"><div class="statement-title">Proposition 160</div><span class="label-badge">inter_powerset</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A,B\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{C}$. <br><span class="kw">Then</span> $A\inter B\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3322,7 +3324,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inter_powerset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $A,B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ by <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> $A\inter B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ by <a class="xref" href="current_section_standard_library_sets.html#inter_subseteq" data-preview-label="inter_subseteq">Proposition 78</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3332,7 +3334,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="unions_powerset">
+<section class="statement proposition joins-following-proof" id="unions_powerset">
   <div class="statement-head"><div class="statement-title">Proposition 161</div><span class="label-badge">unions_powerset</span></div>
   <div class="statement-body"><p>$\unions{\pow{A}} = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3343,7 +3345,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="unions_powerset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3351,7 +3353,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="inters_powerset">
+<section class="statement proposition joins-following-proof" id="inters_powerset">
   <div class="statement-head"><div class="statement-title">Proposition 162</div><span class="label-badge">inters_powerset</span></div>
   <div class="statement-body"><p>$\inters{\pow{A}} = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3362,7 +3364,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inters_powerset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3370,7 +3372,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="union_powersets_subseteq">
+<section class="statement proposition joins-following-proof" id="union_powersets_subseteq">
   <div class="statement-head"><div class="statement-title">Proposition 163</div><span class="label-badge">union_powersets_subseteq</span></div>
   <div class="statement-body"><p>$\pow{A}\union\pow{B} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \pow{A\union B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3381,7 +3383,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_powersets_subseteq" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\pow{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \pow{A}\union\pow{B}$ by <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>.<br> $\pow{B}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \pow{A}\union\pow{B}$ by <a class="xref" href="current_section_standard_library_sets.html#union_upper_right" data-preview-label="union_upper_right">Proposition 47</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#subset_transitive" data-preview-label="subset_transitive">Proposition 8</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3411,7 +3413,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="subseteq_pow_unions">
+<section class="statement proposition joins-following-proof" id="subseteq_pow_unions">
   <div class="statement-head"><div class="statement-title">Proposition 166</div><span class="label-badge">subseteq_pow_unions</span></div>
   <div class="statement-body"><p>$A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\unions{A}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3422,7 +3424,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_pow_unions" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_intro" data-preview-label="unions_intro">Proposition 27</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3450,7 +3452,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="pow_inter">
+<section class="statement proposition joins-following-proof" id="pow_inter">
   <div class="statement-head"><div class="statement-title">Proposition 169</div><span class="label-badge">pow_inter</span></div>
   <div class="statement-body"><p>$\pow{A\inter B} = \pow{A}\inter\pow{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3461,7 +3463,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="pow_inter" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_inter_iff" data-preview-label="subseteq_inter_iff">Proposition 72</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3500,7 +3502,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="bipartition_intro">
+<section class="statement proposition joins-following-proof" id="bipartition_intro">
   <div class="statement-head"><div class="statement-title">Proposition 170</div><span class="label-badge">bipartition_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $C$ is partitioned by $A$ and $B$. <br><span class="kw">Then</span> $(A, B)$ is a bipartition of $C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3512,7 +3514,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bipartition_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$(A,B)\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{C}\class{latex-symbol-tip latex-symbol-id-times}{\times}\pow{C}$.<br> $C$ is partitioned by $\fst{(A,B)}$ and $\snd{(A,B)}$. <br><span class="kw">Thus</span> $(A, B)$ is a bipartition of $C$ by <a class="xref" href="current_section_standard_library_sets.html#bipartitions_of_a_set" data-preview-label="bipartitions_of_a_set">Definition 354</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3522,7 +3524,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bipartition_elim">
+<section class="statement proposition joins-following-proof" id="bipartition_elim">
   <div class="statement-head"><div class="statement-title">Proposition 171</div><span class="label-badge">bipartition_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $(A, B)$ is a bipartition of $C$. <br><span class="kw">Then</span> $C$ is partitioned by $A$ and $B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3534,7 +3536,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bipartition_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\fst{(A, B)} = A$.<br> $\snd{(A, B)} = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3553,7 +3555,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="union_eq_cons_implies_union_remove_eq">
+<section class="statement proposition joins-following-proof" id="union_eq_cons_implies_union_remove_eq">
   <div class="statement-head"><div class="statement-title">Proposition 173</div><span class="label-badge">union_eq_cons_implies_union_remove_eq</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $d\class{latex-symbol-tip latex-symbol-id-notin}{\notin} C$.<br> <span class="kw">Suppose</span> $A\union B = \cons{d}{C}$.<br> <span class="kw">Suppose</span> $A, B\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \{d\}$. <br><span class="kw">Then</span> $\remove{d}{A}\union \remove{d}{B} = C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3567,7 +3569,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_eq_cons_implies_union_remove_eq" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3575,7 +3577,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bipartitions_cons">
+<section class="statement proposition joins-following-proof" id="bipartitions_cons">
   <div class="statement-head"><div class="statement-title">Proposition 174</div><span class="label-badge">bipartitions_cons</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $d\class{latex-symbol-tip latex-symbol-id-notin}{\notin} C$.<br> <span class="kw">Suppose</span> $\cons{d}{C}$ is partitioned by $A$ and $B$.<br> <span class="kw">Suppose</span> $A, B\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \{d\}$. <br><span class="kw">Then</span> $C$ is partitioned by $\remove{d}{A}$ and $\remove{d}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3589,7 +3591,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bipartitions_cons" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\remove{d}{A},\remove{d}{B}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> $\remove{d}{A}\union \remove{d}{B} = C$ by <a class="xref" href="current_section_standard_library_sets.html#union_eq_cons_implies_union_remove_eq" data-preview-label="union_eq_cons_implies_union_remove_eq">Proposition 173</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3656,7 +3658,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="partition_refinement_transitive">
+<section class="statement proposition joins-following-proof" id="partition_refinement_transitive">
   <div class="statement-head"><div class="statement-title">Proposition 176</div><span class="label-badge">partition_refinement_transitive</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $P''\refines P'\refines P$. <br><span class="kw">Then</span> $P''\refines P$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3668,7 +3670,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="partition_refinement_transitive" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>It suffices to show that for all $A''\class{latex-symbol-tip latex-symbol-id-in}{\in} P''$ there exists $A\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ such that $A''\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.<br> <span class="kw kw-bold">Fix</span> $A''\class{latex-symbol-tip latex-symbol-id-in}{\in} P''$.<br> <span class="kw kw-bold">Take</span> $A'\class{latex-symbol-tip latex-symbol-id-in}{\in} P'$ such that $A''\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A'$ by <a class="xref" href="current_section_standard_library_sets.html#partition_refinement" data-preview-label="partition_refinement">Definition 356</a>.<br> <span class="kw kw-bold">Take</span> $A\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ such that $A'\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$. <br><span class="kw">Then</span> $A''\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.<br> Follows by definition.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}

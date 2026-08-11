@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -476,7 +478,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="tostrictorder_iff">
+<section class="statement proposition joins-following-proof" id="tostrictorder_iff">
   <div class="statement-head"><div class="statement-title">Proposition 424</div><span class="label-badge">tostrictorder_iff</span></div>
   <div class="statement-body"><p>$(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in}\tostrictorder{R}$ iff $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ and $a\class{latex-symbol-tip latex-symbol-id-neq}{\neq} b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -487,7 +489,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="tostrictorder_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_order.html#tostrictorder" data-preview-label="tostrictorder">Definition 407</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -505,7 +507,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="toorder_intro">
+<section class="statement proposition joins-following-proof" id="toorder_intro">
   <div class="statement-head"><div class="statement-title">Proposition 426</div><span class="label-badge">toorder_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} R$. <br><span class="kw">Then</span> $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in}\toorder{A}{R}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -517,7 +519,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="toorder_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\toorder{A}{R}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -525,7 +527,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="toorder_elim">
+<section class="statement proposition joins-following-proof" id="toorder_elim">
   <div class="statement-head"><div class="statement-title">Proposition 427</div><span class="label-badge">toorder_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in}\toorder{A}{R}$. <br><span class="kw">Then</span> $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ or $a = b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -537,7 +539,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="toorder_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_order.html#toorder" data-preview-label="toorder">Definition 408</a>, <a class="xref" href="current_section_standard_library_relations.html#id" data-preview-label="id">Definition 370</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_right" data-preview-label="upair_intro_right">Proposition 17</a>, <a class="xref" href="current_section_standard_library_order.html#tostrictorder_iff" data-preview-label="tostrictorder_iff">Proposition 424</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -555,7 +557,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="strictorder_from_order">
+<section class="statement proposition joins-following-proof" id="strictorder_from_order">
   <div class="statement-head"><div class="statement-title">Proposition 429</div><span class="label-badge">strictorder_from_order</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $R$ is an order. <br><span class="kw">Then</span> $\tostrictorder{R}$ is a strict order.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -567,7 +569,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="strictorder_from_order" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\tostrictorder{R}$ is asymmetric.<br> $\tostrictorder{R}$ is transitive.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -576,7 +578,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="order_from_strictorder">
+<section class="statement proposition joins-following-proof" id="order_from_strictorder">
   <div class="statement-head"><div class="statement-title">Proposition 430</div><span class="label-badge">order_from_strictorder</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $R$ is a strict order.<br> <span class="kw">Suppose</span> $R$ is a binary relation on $A$. <br><span class="kw">Then</span> $\toorder{A}{R}$ is an order on $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -589,7 +591,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="order_from_strictorder" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\toorder{A}{R}$ is antisymmetric.<br> $\toorder{A}{R}$ is transitive by <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_order.html#toorder_iff" data-preview-label="toorder_iff">Proposition 428</a>.<br> $\toorder{A}{R}$ is reflexive on $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -599,7 +601,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="subseteqrel_antisymmetric">
+<section class="statement proposition joins-following-proof" id="subseteqrel_antisymmetric">
   <div class="statement-head"><div class="statement-title">Proposition 431</div><span class="label-badge">subseteqrel_antisymmetric</span></div>
   <div class="statement-body"><p>$\subseteqrel{A}$ is antisymmetric.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -610,7 +612,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteqrel_antisymmetric" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#subseteqrel" data-preview-label="subseteqrel">Definition 372</a>, <a class="xref" href="current_section_standard_library_relations.html#antisymmetric" data-preview-label="antisymmetric">Definition 379</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -618,7 +620,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="subseteqrel_is_order">
+<section class="statement proposition joins-following-proof" id="subseteqrel_is_order">
   <div class="statement-head"><div class="statement-title">Proposition 432</div><span class="label-badge">subseteqrel_is_order</span></div>
   <div class="statement-body"><p>$\subseteqrel{A}$ is an order on $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -629,7 +631,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteqrel_is_order" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\subseteqrel{A}$ is a quasiorder on $A$ by <a class="xref" href="current_section_standard_library_relations.html#subseteqrel_is_quasiorder" data-preview-label="subseteqrel_is_quasiorder">Proposition 315</a>.<br> $\subseteqrel{A}$ is antisymmetric by <a class="xref" href="current_section_standard_library_order.html#subseteqrel_antisymmetric" data-preview-label="subseteqrel_antisymmetric">Proposition 431</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}

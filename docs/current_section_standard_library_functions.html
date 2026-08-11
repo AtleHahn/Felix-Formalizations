@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -428,7 +430,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="function_rightunique">
+<section class="statement proposition joins-following-proof" id="function_rightunique">
   <div class="statement-head"><div class="statement-title">Proposition 345</div><span class="label-badge">function_rightunique</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $(a,b), (a, b')\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> $b = b'$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -441,7 +443,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="function_rightunique" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by \hyperref[rightunique]{right-uniqueness}.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -449,7 +451,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="function_apply_intro">
+<section class="statement proposition joins-following-proof" id="function_apply_intro">
   <div class="statement-head"><div class="statement-title">Proposition 346</div><span class="label-badge">function_apply_intro</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> $f(a) = b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -462,7 +464,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="function_apply_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $B = \img{f}{\{a\}}$.<br> $B = \{b'\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}\mid (a,b')\class{latex-symbol-tip latex-symbol-id-in}{\in} f \}$ by <a class="xref" href="current_section_standard_library_relations.html#img_singleton" data-preview-label="img_singleton">Proposition 244</a>.<br> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$.<br> For all $b'\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ we have $(a, b')\class{latex-symbol-tip latex-symbol-id-in}{\in} f$.<br> For all $b', b''\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ we have $b' = b''$ by \hyperref[rightunique]{right-uniqueness}. <br><span class="kw">Then</span> $B = \{b\}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_iff_inhabited_subsingleton" data-preview-label="singleton_iff_inhabited_subsingleton">Proposition 24</a>. <br><span class="kw">Then</span> $\unions{B} = b$. <br><span class="kw">Thus</span> $f(a) = b$ by <a class="xref" href="current_section_standard_library_functions.html#apply" data-preview-label="apply">Definition 399</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -477,7 +479,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="function_member_elim">
+<section class="statement proposition joins-following-proof" id="function_member_elim">
   <div class="statement-head"><div class="statement-title">Proposition 347</div><span class="label-badge">function_member_elim</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $w\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ such that $w = (x, f(x))$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -490,7 +492,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="function_member_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#apply" data-preview-label="apply">Definition 399</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -498,7 +500,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="function_apply_elim">
+<section class="statement proposition joins-following-proof" id="function_apply_elim">
   <div class="statement-head"><div class="statement-title">Proposition 348</div><span class="label-badge">function_apply_elim</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$. <br><span class="kw">Then</span> $(x,f(x))\class{latex-symbol-tip latex-symbol-id-in}{\in} f$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -511,7 +513,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="function_apply_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -530,7 +532,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="fun_subseteq">
+<section class="statement proposition joins-following-proof" id="fun_subseteq">
   <div class="statement-head"><div class="statement-title">Proposition 350</div><span class="label-badge">fun_subseteq</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $\dom{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{g}$.<br> <span class="kw">Suppose</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $f(x) = g(x)$. <br><span class="kw">Then</span> $f\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} g$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -544,7 +546,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="fun_subseteq" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $x,y$ such that $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ we have $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} g$ by <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_functions.html#apply" data-preview-label="apply">Definition 399</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -553,7 +555,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funext">
+<section class="statement proposition joins-following-proof" id="funext">
   <div class="statement-head"><div class="statement-title">Proposition 351 [Function extensionality]</div><span class="label-badge">funext</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $\dom{f} = \dom{g}$.<br> <span class="kw">Suppose</span> for all $x$ we have $f(x) = g(x)$. <br><span class="kw">Then</span> $f = g$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -567,7 +569,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funext" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\dom{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{g}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{f}$.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $f(x) = g(x)$. <br><span class="kw">Thus</span> $f\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} g$.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{g}$ we have $f(x) = g(x)$. <br><span class="kw">Thus</span> $g\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} f$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -579,7 +581,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="fun_ran_iff">
+<section class="statement proposition joins-following-proof" id="fun_ran_iff">
   <div class="statement-head"><div class="statement-title">Proposition 352</div><span class="label-badge">fun_ran_iff</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$ iff there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ such that $f(a) = b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -591,7 +593,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="fun_ran_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#ran" data-preview-label="ran">Definition 361</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -631,7 +633,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="function_to_ran">
+<section class="statement proposition joins-following-proof" id="function_to_ran">
   <div class="statement-head"><div class="statement-title">Proposition 354</div><span class="label-badge">function_to_ran</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function to $B$. <br><span class="kw">Then</span> $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -643,7 +645,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="function_to_ran" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#ran" data-preview-label="ran">Definition 361</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#apply" data-preview-label="apply">Definition 399</a>, <a class="xref" href="current_section_standard_library_functions.html#function_member_elim" data-preview-label="function_member_elim">Proposition 347</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -671,7 +673,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="funs_is_relation">
+<section class="statement proposition joins-following-proof" id="funs_is_relation">
   <div class="statement-head"><div class="statement-title">Proposition 355</div><span class="label-badge">funs_is_relation</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$. <br><span class="kw">Then</span> $f$ is a relation.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -683,7 +685,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_is_relation" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_is_relation" data-preview-label="rels_is_relation">Proposition 285</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -702,7 +704,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="funs_subseteq_rels">
+<section class="statement proposition joins-following-proof" id="funs_subseteq_rels">
   <div class="statement-head"><div class="statement-title">Proposition 357</div><span class="label-badge">funs_subseteq_rels</span></div>
   <div class="statement-body"><p>$\funs{A}{B}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\rels{A}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -713,7 +715,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_subseteq_rels" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -721,7 +723,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_intro">
+<section class="statement proposition joins-following-proof" id="funs_intro">
   <div class="statement-head"><div class="statement-title">Proposition 358</div><span class="label-badge">funs_intro</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function to $B$ such that $A=\dom{f}$. <br><span class="kw">Then</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -733,7 +735,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\dom{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.<br> $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_standard_library_functions.html#function_to_ran" data-preview-label="function_to_ran">Proposition 354</a>. <br><span class="kw">Thus</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{B}$ by <a class="xref" href="current_section_standard_library_relations.html#rels_intro_dom_and_ran" data-preview-label="rels_intro_dom_and_ran">Proposition 281</a>. <br><span class="kw">Thus</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -745,7 +747,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_elim">
+<section class="statement proposition joins-following-proof" id="funs_elim">
   <div class="statement-head"><div class="statement-title">Proposition 359</div><span class="label-badge">funs_elim</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$. <br><span class="kw">Then</span> $f$ is a function to $B$ such that $A= \dom{f}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -757,7 +759,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> It suffices to show that for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $f(a)\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> <span class="kw kw-bold">Fix</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$.<br> <span class="kw kw-bold">Take</span> $b$ such that $f(a) = b$. <br><span class="kw">Thus</span> $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>.<br> Now $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$ by <a class="xref" href="current_section_standard_library_relations.html#ran_iff" data-preview-label="ran_iff">Proposition 208</a>.<br> Finally $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_ran_subseteq" data-preview-label="rels_ran_subseteq">Proposition 284</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -771,7 +773,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_weaken_codom">
+<section class="statement proposition joins-following-proof" id="funs_weaken_codom">
   <div class="statement-head"><div class="statement-title">Proposition 360</div><span class="label-badge">funs_weaken_codom</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} D$. <br><span class="kw">Then</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{D}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -784,7 +786,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_weaken_codom" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{D}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_weaken_codom" data-preview-label="rels_weaken_codom">Proposition 287</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -793,7 +795,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_type_apply">
+<section class="statement proposition joins-following-proof" id="funs_type_apply">
   <div class="statement-head"><div class="statement-title">Proposition 361</div><span class="label-badge">funs_type_apply</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$.<br> <span class="kw kw-bold">Let</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $f(a)\class{latex-symbol-tip latex-symbol-id-in}{\in} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -806,7 +808,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_type_apply" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$(a,f(a)) \class{latex-symbol-tip latex-symbol-id-in}{\in} f$ by <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>. <br><span class="kw">Thus</span> $f(a)\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_type_ran" data-preview-label="rels_type_ran">Proposition 290</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -815,7 +817,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_tuple_intro">
+<section class="statement proposition joins-following-proof" id="funs_tuple_intro">
   <div class="statement-head"><div class="statement-title">Proposition 362</div><span class="label-badge">funs_tuple_intro</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$.<br> <span class="kw kw-bold">Let</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ such that $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -828,7 +830,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_tuple_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$(a,f(a)) \class{latex-symbol-tip latex-symbol-id-in}{\in} f$ by <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.<br> $f(a)\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -837,7 +839,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_ran">
+<section class="statement proposition joins-following-proof" id="funs_ran">
   <div class="statement-head"><div class="statement-title">Proposition 363</div><span class="label-badge">funs_ran</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$. <br><span class="kw">Then</span> $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -849,7 +851,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_ran" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f$ is a function to $B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -858,7 +860,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <h4 class="tex-subsection">Image of a function</h4>
-<section class="statement proposition" id="img_of_function_intro">
+<section class="statement proposition joins-following-proof" id="img_of_function_intro">
   <div class="statement-head"><div class="statement-title">Proposition 364</div><span class="label-badge">img_of_function_intro</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}\inter X$. <br><span class="kw">Then</span> $f(x)\class{latex-symbol-tip latex-symbol-id-in}{\in} \img{f}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -871,7 +873,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="img_of_function_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_sets.html#inter_elim_right" data-preview-label="inter_elim_right">Proposition 63</a>. <br><span class="kw">Thus</span> $(x,f(x))\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_left" data-preview-label="inter_elim_left">Proposition 62</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -880,7 +882,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="img_of_function_elim">
+<section class="statement proposition joins-following-proof" id="img_of_function_elim">
   <div class="statement-head"><div class="statement-title">Proposition 365</div><span class="label-badge">img_of_function_elim</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} \img{f}{X}$. <br><span class="kw">Then</span> there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}\inter X$ such that $y = f(x)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -893,7 +895,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="img_of_function_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ and $y = f(x)$ by <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -902,7 +904,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="img_of_function">
+<section class="statement proposition joins-following-proof" id="img_of_function">
   <div class="statement-head"><div class="statement-title">Proposition 366</div><span class="label-badge">img_of_function</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f$ is a function.<br> $\img{f}{X} = \{ f(x) \mid x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}\inter X\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -914,7 +916,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="img_of_function" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#img_of_function_intro" data-preview-label="img_of_function_intro">Proposition 364</a>, <a class="xref" href="current_section_standard_library_functions.html#img_of_function_elim" data-preview-label="img_of_function_elim">Proposition 365</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -934,7 +936,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="unions_of_compatible_family_of_function_is_function">
+<section class="statement proposition joins-following-proof" id="unions_of_compatible_family_of_function_is_function">
   <div class="statement-head"><div class="statement-title">Proposition 367</div><span class="label-badge">unions_of_compatible_family_of_function_is_function</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $F$ be a family of functions.<br> <span class="kw">Suppose</span> that for all $f,g \class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $f\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} g$ or $g\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} f$. <br><span class="kw">Then</span> $\unions{F}$ is a function.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -947,7 +949,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="unions_of_compatible_family_of_function_is_function" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\unions{F}$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#unions_of_family_of_relations_is_relation" data-preview-label="unions_of_family_of_relations_is_relation">Proposition 178</a>.<br> For all $x,y, y'$ such that $(x,y),(x,y')\class{latex-symbol-tip latex-symbol-id-in}{\in} \unions{F}$ there exists $f\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ such that $(x,y),(x,y')\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ by <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <p><span class="kw">Thus</span> $\unions{F}$ is right-unique by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1025,7 +1027,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="circ_apply">
+<section class="statement proposition joins-following-proof" id="circ_apply">
   <div class="statement-head"><div class="statement-title">Proposition 373</div><span class="label-badge">circ_apply</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $g$ is composable with $f$.<br> <span class="kw kw-bold">Let</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$. <br><span class="kw">Then</span> $(g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f)(x) = g(f(x))$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1039,7 +1041,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="circ_apply" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$(x, g(f(x)))\class{latex-symbol-tip latex-symbol-id-in}{\in} g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ by <a class="xref" href="current_section_standard_library_relations.html#circ" data-preview-label="circ">Definition 367</a>, <a class="xref" href="current_section_standard_library_relations.html#ran" data-preview-label="ran">Definition 361</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#function_circ" data-preview-label="function_circ">Proposition 372</a>. <br><span class="kw">Thus</span> $(g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f)(x) = g(f(x))$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1049,7 +1051,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="dom_of_circ">
+<section class="statement proposition joins-following-proof" id="dom_of_circ">
   <div class="statement-head"><div class="statement-title">Proposition 374</div><span class="label-badge">dom_of_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $g$ is composable with $f$.<br> $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f} = \preimg{f}{\dom{g}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1062,7 +1064,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="dom_of_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Every element of $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}$ is an element of $\preimg{f}{\dom{g}}$ by <a class="xref" href="current_section_standard_library_relations.html#preimg" data-preview-label="preimg">Definition 364</a>, <a class="xref" href="current_section_standard_library_relations.html#circ" data-preview-label="circ">Definition 367</a>, <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1072,7 +1074,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="dom_circ_exact">
+<section class="statement proposition joins-following-proof" id="dom_circ_exact">
   <div class="statement-head"><div class="statement-title">Proposition 375</div><span class="label-badge">dom_circ_exact</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $\ran{f} = \dom{g}$.<br> $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f} = \dom{f}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1085,7 +1087,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="dom_circ_exact" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Every element of $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}$ is an element of $\dom{f}$.<br> Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1094,7 +1096,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="ran_of_circ_intro">
+<section class="statement proposition joins-following-proof" id="ran_of_circ_intro">
   <div class="statement-head"><div class="statement-title">Proposition 376</div><span class="label-badge">ran_of_circ_intro</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $g$ is composable with $f$.<br> <span class="kw">Suppose</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} \img{g}{\ran{f}}$. <br><span class="kw">Then</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} \ran{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1108,7 +1110,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ran_of_circ_intro" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$ such that $(x, y)\class{latex-symbol-tip latex-symbol-id-in}{\in} g$.<br> <span class="kw kw-bold">Take</span> $x'\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ such that $(x', x)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> $(x', y) \class{latex-symbol-tip latex-symbol-id-in}{\in} g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$.<br> Follows by <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1119,7 +1121,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="ran_of_circ_elim">
+<section class="statement proposition joins-following-proof" id="ran_of_circ_elim">
   <div class="statement-head"><div class="statement-title">Proposition 377</div><span class="label-badge">ran_of_circ_elim</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $g$ is composable with $f$.<br> <span class="kw">Suppose</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} \ran{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}$. <br><span class="kw">Then</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} \img{g}{\ran{f}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1133,7 +1135,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ran_of_circ_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ such that $(x, y)\class{latex-symbol-tip latex-symbol-id-in}{\in} g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ by <a class="xref" href="current_section_standard_library_relations.html#circ" data-preview-label="circ">Definition 367</a>, <a class="xref" href="current_section_standard_library_relations.html#circ_iff" data-preview-label="circ_iff">Proposition 257</a>, <a class="xref" href="current_section_standard_library_relations.html#ran" data-preview-label="ran">Definition 361</a>, <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>.<br> $f(x)\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$.<br> $(f(x), y)\class{latex-symbol-tip latex-symbol-id-in}{\in} g$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#apply" data-preview-label="apply">Definition 399</a>, <a class="xref" href="current_section_standard_library_relations.html#circ_iff" data-preview-label="circ_iff">Proposition 257</a>.<br> Follows by <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1146,7 +1148,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="ran_of_circ">
+<section class="statement proposition joins-following-proof" id="ran_of_circ">
   <div class="statement-head"><div class="statement-title">Proposition 378</div><span class="label-badge">ran_of_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $g$ is composable with $f$. <br><span class="kw">Then</span> $\ran{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f} = \img{g}{\ran{f}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1159,7 +1161,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ran_of_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by set extensionality.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1167,7 +1169,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="ran_circ_exact">
+<section class="statement proposition joins-following-proof" id="ran_circ_exact">
   <div class="statement-head"><div class="statement-title">Proposition 379</div><span class="label-badge">ran_circ_exact</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw">Suppose</span> $\ran{f} = \dom{g}$. <br><span class="kw">Then</span> $\ran{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f} = \ran{g}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1180,7 +1182,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ran_circ_exact" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>\begin{align*} \ran{g\circ f} &amp;= \img{g}{\ran{f}} \explanation{by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_circ" data-preview-label="ran_of_circ">Proposition 378</a>}\\ &amp;= \img{g}{\dom{g}} \\ &amp;= \ran{g} \explanation{by <a class="xref" href="current_section_standard_library_relations.html#img_dom" data-preview-label="img_dom">Proposition 238</a>} \end{align*}</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1196,7 +1198,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="img_of_circ_elim">
+<section class="statement proposition joins-following-proof" id="img_of_circ_elim">
   <div class="statement-head"><div class="statement-title">Proposition 380</div><span class="label-badge">img_of_circ_elim</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw kw-bold">Let</span> $A$ be a set.<br> <span class="kw">Suppose</span> $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{g}$.<br> <span class="kw">Suppose</span> $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\img{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}{A}$. <br><span class="kw">Then</span> $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\img{g}{\img{f}{A}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1211,7 +1213,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="img_of_circ_elim" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $(a,c)\class{latex-symbol-tip latex-symbol-id-in}{\in} g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$.<br> <span class="kw kw-bold">Take</span> $b$ such that $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ and $(b, c)\class{latex-symbol-tip latex-symbol-id-in}{\in} g$. <br><span class="kw">Then</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\img{f}{A}$.<br> Follows by <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1222,7 +1224,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="img_of_circ">
+<section class="statement proposition joins-following-proof" id="img_of_circ">
   <div class="statement-head"><div class="statement-title">Proposition 381</div><span class="label-badge">img_of_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f, g$ be functions.<br> <span class="kw kw-bold">Let</span> $A$ be a set.<br> <span class="kw">Suppose</span> $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\dom{g}$. <br><span class="kw">Then</span> $\img{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}{A} = \img{g}{\img{f}{A}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1236,7 +1238,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="img_of_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $c$ we have $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\img{g}{\img{f}{A}}$ iff $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\img{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}{A}$ by <a class="xref" href="current_section_standard_library_relations.html#circ_iff" data-preview-label="circ_iff">Proposition 257</a>, <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>.<br> Follows by \hyperref[setext]{extensionality}.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1247,7 +1249,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="funs_circ">
+<section class="statement proposition joins-following-proof" id="funs_circ">
   <div class="statement-head"><div class="statement-title">Proposition 382</div><span class="label-badge">funs_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$.<br> <span class="kw kw-bold">Let</span> $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{C}$. <br><span class="kw">Then</span> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1260,7 +1262,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\dom{f} = A$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $\dom{g} = B$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $f$ is a function and $g$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $g$ is composable with $f$.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#function_circ" data-preview-label="function_circ">Proposition 372</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f} = A$ by set extensionality.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $f(x)\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $g(f(x))\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ by <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $(g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f)(x)=g(f(x))$ by <a class="xref" href="current_section_standard_library_functions.html#circ_apply" data-preview-label="circ_apply">Proposition 373</a>. <br><span class="kw">Thus</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}$ we have $(g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f)(x)\class{latex-symbol-tip latex-symbol-id-in}{\in} C$. <br><span class="kw">Thus</span> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is a function to $C$.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1292,7 +1294,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="restrl_of_function_apply">
+<section class="statement proposition joins-following-proof" id="restrl_of_function_apply">
   <div class="statement-head"><div class="statement-title">Proposition 384</div><span class="label-badge">restrl_of_function_apply</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\dom{f}$.<br> <span class="kw kw-bold">Let</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $(\restrl{f}{A})(a) = f(a)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1306,7 +1308,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="restrl_of_function_apply" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Then</span> $(a,f(a))\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> $(a,f(a))\class{latex-symbol-tip latex-symbol-id-in}{\in} \restrl{f}{A}$ by <a class="xref" href="current_section_standard_library_relations.html#restrl_iff" data-preview-label="restrl_iff">Proposition 262</a>. <br><span class="kw">Thus</span> $(\restrl{f}{A})(a) = f(a)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1316,7 +1318,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="function_apply_default">
+<section class="statement proposition joins-following-proof" id="function_apply_default">
   <div class="statement-head"><div class="statement-title">Proposition 385</div><span class="label-badge">function_apply_default</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\dom{f}$. <br><span class="kw">Then</span> $f(x) = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1328,7 +1330,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="function_apply_default" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\img{f}{\{x\}} = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_relations.html#img_singleton_iff" data-preview-label="img_singleton_iff">Proposition 242</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#apply" data-preview-label="apply">Definition 399</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_emptyset" data-preview-label="unions_emptyset">Proposition 28</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1338,7 +1340,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <h4 class="tex-subsection">Injections</h4>
-<section class="statement proposition" id="injective_function">
+<section class="statement proposition joins-following-proof" id="injective_function">
   <div class="statement-head"><div class="statement-title">Proposition 386</div><span class="label-badge">injective_function</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f$ is a function.<br> $f$ is injective iff for all $x,y\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $f(x) = f(y) \class{latex-symbol-tip latex-symbol-id-implies}{\implies} x = y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1350,7 +1352,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="injective_function" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#injective" data-preview-label="injective">Definition 395</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1378,7 +1380,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="inj_circ">
+<section class="statement proposition joins-following-proof" id="inj_circ">
   <div class="statement-head"><div class="statement-title">Proposition 387</div><span class="label-badge">inj_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A}{B}$.<br> <span class="kw kw-bold">Let</span> $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{B}{C}$. <br><span class="kw">Then</span> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1391,7 +1393,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inj_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{C}$ by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>.<br> $f$ is a function and $g$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $\dom{f}=A$ and $\dom{g}=B$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $f$ is injective and $g$ is injective by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#injective_function" data-preview-label="injective_function">Proposition 386</a>.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{C}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_circ" data-preview-label="funs_circ">Proposition 382</a>.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is injective by <a class="xref" href="current_section_standard_library_relations.html#circ_injective" data-preview-label="circ_injective">Proposition 341</a>.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}=A$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#injective_function" data-preview-label="injective_function">Proposition 386</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1438,7 +1440,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="surjection_ran">
+<section class="statement lemma joins-following-proof" id="surjection_ran">
   <div class="statement-head"><div class="statement-title">Lemma 1229</div><span class="label-badge">surjection_ran</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a function. <br><span class="kw">Then</span> $f$ is surjective on $\ran{f}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1450,7 +1452,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="surjection_ran" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>It suffices to show that for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$ there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ such that $f(x) = y$.<br> <span class="kw kw-bold">Fix</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$.<br> <span class="kw kw-bold">Take</span> $x$ such that $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ and $f(x) = y$ by <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1472,7 +1474,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="fun_to_surj">
+<section class="statement lemma joins-following-proof" id="fun_to_surj">
   <div class="statement-head"><div class="statement-title">Lemma 1231</div><span class="label-badge">fun_to_surj</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$. <br><span class="kw">Then</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{\ran{f}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1484,7 +1486,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="fun_to_surj" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{\ran{f}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_restrict_ran" data-preview-label="rels_restrict_ran">Proposition 292</a>. <br><span class="kw">Thus</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{\ran{f}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> It suffices to show that for all $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$ there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $f(a) = b$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.<br> <span class="kw kw-bold">Fix</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{f}$.<br> <span class="kw kw-bold">Take</span> $a$ such that $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$. <br><span class="kw">Thus</span> $f(a)=b$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>.<br> We have $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f} = A$.<br> Follows by assumption.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1499,7 +1501,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="ran_of_surj">
+<section class="statement corollary joins-following-proof" id="ran_of_surj">
   <div class="statement-head"><div class="statement-title">Corollary 25</div><span class="label-badge">ran_of_surj</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{B}$. <br><span class="kw">Then</span> $\ran{f} = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1511,7 +1513,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ran_of_surj" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> Now $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>.<br> It suffices to show that every element of $B$ is an element of $\ran{f}$.<br> It suffices to show that for all $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ such that $f(a) = b$ by <a class="xref" href="current_section_standard_library_functions.html#fun_ran_iff" data-preview-label="fun_ran_iff">Proposition 352</a>.<br> <span class="kw kw-bold">Fix</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$.<br> <span class="kw kw-bold">Take</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $f(a) = b$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.<br> Now $A=\dom{f}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1527,7 +1529,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="funs_surj_iff">
+<section class="statement corollary joins-following-proof" id="funs_surj_iff">
   <div class="statement-head"><div class="statement-title">Corollary 26</div><span class="label-badge">funs_surj_iff</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$. <br><span class="kw">Then</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{B}$ iff $\ran{f} = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1539,7 +1541,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="funs_surj_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#fun_to_surj" data-preview-label="fun_to_surj">Lemma 1231</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1547,7 +1549,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="surjections_circ">
+<section class="statement proposition joins-following-proof" id="surjections_circ">
   <div class="statement-head"><div class="statement-title">Proposition 388</div><span class="label-badge">surjections_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{B}$.<br> <span class="kw kw-bold">Let</span> $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{B}{C}$. <br><span class="kw">Then</span> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1560,7 +1562,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="surjections_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\dom{f} = A$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $\dom{g} = B = \ran{f}$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>.<br> $\dom{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f} = A$ by <a class="xref" href="current_section_standard_library_functions.html#surj_to_fun" data-preview-label="surj_to_fun">Lemma 1230</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#dom_circ_exact" data-preview-label="dom_circ_exact">Proposition 375</a>.<br> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{C}$ by <a class="xref" href="current_section_standard_library_functions.html#surj_to_fun" data-preview-label="surj_to_fun">Lemma 1230</a>.<br> $f$ is a function and $g$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{C}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_circ" data-preview-label="funs_circ">Proposition 382</a>.<br> $\ran{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}=\ran{g}$ by <a class="xref" href="current_section_standard_library_functions.html#ran_circ_exact" data-preview-label="ran_circ_exact">Proposition 379</a>.<br> $\ran{g}=C$ by <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1597,7 +1599,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="bijections_to_funs">
+<section class="statement proposition joins-following-proof" id="bijections_to_funs">
   <div class="statement-head"><div class="statement-title">Proposition 389</div><span class="label-badge">bijections_to_funs</span></div>
   <div class="statement-body"><p>Every element of $\bijections{A}{B}$ is an element of $\funs{A}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1608,7 +1610,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijections_to_funs" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1616,7 +1618,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bijection_is_function">
+<section class="statement proposition joins-following-proof" id="bijection_is_function">
   <div class="statement-head"><div class="statement-title">Proposition 390</div><span class="label-badge">bijection_is_function</span></div>
   <div class="statement-body"><p>Every element of $\bijections{A}{B}$ is a function.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1627,7 +1629,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijection_is_function" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections_to_funs" data-preview-label="bijections_to_funs">Proposition 389</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1635,7 +1637,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bijections_dom">
+<section class="statement proposition joins-following-proof" id="bijections_dom">
   <div class="statement-head"><div class="statement-title">Proposition 391</div><span class="label-badge">bijections_dom</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{A}{B}$. <br><span class="kw">Then</span> $\dom{f} = A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1647,7 +1649,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijections_dom" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{B}$ by <a class="xref" href="current_section_standard_library_functions.html#bijections_to_funs" data-preview-label="bijections_to_funs">Proposition 389</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1656,7 +1658,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bijection_circ">
+<section class="statement proposition joins-following-proof" id="bijection_circ">
   <div class="statement-head"><div class="statement-title">Proposition 392</div><span class="label-badge">bijection_circ</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a bijection from $A$ to $B$.<br> <span class="kw kw-bold">Let</span> $g$ be a bijection from $B$ to $C$. <br><span class="kw">Then</span> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is a bijection from $A$ to $C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1669,7 +1671,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijection_circ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{C}$ by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#surjections_circ" data-preview-label="surjections_circ">Proposition 388</a>.<br> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is injective by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_relations.html#circ_injective" data-preview-label="circ_injective">Proposition 341</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1702,7 +1704,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="bijective_converse_is_function">
+<section class="statement proposition joins-following-proof" id="bijective_converse_is_function">
   <div class="statement-head"><div class="statement-title">Proposition 395</div><span class="label-badge">bijective_converse_is_function</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a bijection from $A$ to $B$. <br><span class="kw">Then</span> $\converse{f}$ is a function.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1714,7 +1716,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijective_converse_is_function" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#injective_converse_is_function" data-preview-label="injective_converse_is_function">Proposition 394</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1722,7 +1724,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bijective_converse_are_funs">
+<section class="statement proposition joins-following-proof" id="bijective_converse_are_funs">
   <div class="statement-head"><div class="statement-title">Proposition 396</div><span class="label-badge">bijective_converse_are_funs</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a bijection from $A$ to $B$. <br><span class="kw">Then</span> $\converse{f}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1734,7 +1736,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijective_converse_are_funs" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\dom{\converse{f}} = \ran{f} = B$ by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_converse" data-preview-label="dom_converse">Proposition 217</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>.<br> $\converse{f}$ is a function by <a class="xref" href="current_section_standard_library_functions.html#bijective_converse_is_function" data-preview-label="bijective_converse_is_function">Proposition 395</a>.<br> $\ran{\converse{f}}=\dom{f}=A$ by <a class="xref" href="current_section_standard_library_relations.html#ran_converse" data-preview-label="ran_converse">Proposition 218</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\converse{f}}$ we have $(\converse{f})(x)\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_functions.html#fun_ran_iff" data-preview-label="fun_ran_iff">Proposition 352</a>. <br><span class="kw">Thus</span> $\converse{f}$ is a function to $A$.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1755,7 +1757,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bijective_converse_are_surjs">
+<section class="statement proposition joins-following-proof" id="bijective_converse_are_surjs">
   <div class="statement-head"><div class="statement-title">Proposition 397</div><span class="label-badge">bijective_converse_are_surjs</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a bijection from $A$ to $B$. <br><span class="kw">Then</span> $\converse{f}\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{B}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1767,7 +1769,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijective_converse_are_surjs" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $\converse{f}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{A}$ by <a class="xref" href="current_section_standard_library_functions.html#bijective_converse_are_funs" data-preview-label="bijective_converse_are_funs">Proposition 396</a>.<br> It suffices to show that $\ran{\converse{f}} = A$ by <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>.<br> We have $\dom{f} = A$ by <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>. <br><span class="kw">Thus</span> $\ran{\converse{f}} = A$ by <a class="xref" href="current_section_standard_library_relations.html#ran_converse" data-preview-label="ran_converse">Proposition 218</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1778,7 +1780,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="bijection_converse_is_bijection">
+<section class="statement proposition joins-following-proof" id="bijection_converse_is_bijection">
   <div class="statement-head"><div class="statement-title">Proposition 398</div><span class="label-badge">bijection_converse_is_bijection</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a bijection from $A$ to $B$. <br><span class="kw">Then</span> $\converse{f}$ is a bijection from $B$ to $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1790,7 +1792,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="bijection_converse_is_bijection" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\converse{f}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{A}$ by <a class="xref" href="current_section_standard_library_functions.html#bijective_converse_are_funs" data-preview-label="bijective_converse_are_funs">Proposition 396</a>.<br> $\converse{f}$ is injective by <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>, <a class="xref" href="current_section_standard_library_functions.html#converse_of_function_is_injective" data-preview-label="converse_of_function_is_injective">Proposition 393</a>.<br> $\converse{f}\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{B}{A}$ by <a class="xref" href="current_section_standard_library_functions.html#bijective_converse_are_surjs" data-preview-label="bijective_converse_are_surjs">Proposition 397</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1832,7 +1834,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="injective_converse_is_leftinverse">
+<section class="statement proposition joins-following-proof" id="injective_converse_is_leftinverse">
   <div class="statement-head"><div class="statement-title">Proposition 399</div><span class="label-badge">injective_converse_is_leftinverse</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be an injection. <br><span class="kw">Then</span> $\converse{f}$ is a left inverse of $f$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1844,7 +1846,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="injective_converse_is_leftinverse" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\converse{f}$ is a function by <a class="xref" href="current_section_standard_library_functions.html#injective_converse_is_function" data-preview-label="injective_converse_is_function">Proposition 394</a>.<br> $f$ is a function.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $(x,f(x))\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $(f(x),x)\class{latex-symbol-tip latex-symbol-id-in}{\in}\converse{f}$ by <a class="xref" href="current_section_standard_library_relations.html#converse_iff" data-preview-label="converse_iff">Proposition 186</a>. <br><span class="kw">Thus</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$ we have $(\converse{f})(f(x))=x$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.<br> Follows by definition.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1861,7 +1863,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <h4 class="tex-subsection">Identity function</h4>
-<section class="statement proposition" id="id_rightunique">
+<section class="statement proposition joins-following-proof" id="id_rightunique">
   <div class="statement-head"><div class="statement-title">Proposition 400</div><span class="label-badge">id_rightunique</span></div>
   <div class="statement-body"><p>$\identity{A}$ is right-unique.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1872,7 +1874,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="id_rightunique" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#id" data-preview-label="id">Definition 370</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1910,7 +1912,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="id_is_function_from_to">
+<section class="statement proposition joins-following-proof" id="id_is_function_from_to">
   <div class="statement-head"><div class="statement-title">Proposition 404</div><span class="label-badge">id_is_function_from_to</span></div>
   <div class="statement-body"><p>$\identity{A}$ is a function from $A$ to $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1921,7 +1923,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="id_is_function_from_to" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{A}$ by <a class="xref" href="current_section_standard_library_relations.html#id_elem_rels" data-preview-label="id_elem_rels">Proposition 300</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#id_is_function_on" data-preview-label="id_is_function_on">Proposition 402</a>, <a class="xref" href="current_section_standard_library_functions.html#id_is_function_to" data-preview-label="id_is_function_to">Proposition 403</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1930,7 +1932,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="id_apply">
+<section class="statement proposition joins-following-proof" id="id_apply">
   <div class="statement-head"><div class="statement-title">Proposition 405</div><span class="label-badge">id_apply</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</p>
 <p><span class="kw">Suppose</span> $f = \identity{A}$. <br><span class="kw">Then</span> $f(a) = a$.</p><details class="latex-source">
@@ -1946,7 +1948,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="id_apply" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$(a,a)\class{latex-symbol-tip latex-symbol-id-in}{\in}\identity{A}$ by <a class="xref" href="current_section_standard_library_relations.html#id_iff" data-preview-label="id_iff">Proposition 293</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#id_is_function" data-preview-label="id_is_function">Proposition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1955,7 +1957,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="id_elem_funs">
+<section class="statement proposition joins-following-proof" id="id_elem_funs">
   <div class="statement-head"><div class="statement-title">Proposition 406</div><span class="label-badge">id_elem_funs</span></div>
   <div class="statement-body"><p>$\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1966,7 +1968,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="id_elem_funs" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\identity{A}$ is a function.<br> $\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{A}{A}$.<br> $\dom{\identity{A}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1976,7 +1978,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="id_elem_surjections">
+<section class="statement proposition joins-following-proof" id="id_elem_surjections">
   <div class="statement-head"><div class="statement-title">Proposition 407</div><span class="label-badge">id_elem_surjections</span></div>
   <div class="statement-body"><p>$\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1987,7 +1989,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="id_elem_surjections" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{A}$ by <a class="xref" href="current_section_standard_library_functions.html#id_elem_funs" data-preview-label="id_elem_funs">Proposition 406</a>.<br> $\ran{\identity{A}}=A$ by <a class="xref" href="current_section_standard_library_relations.html#id_ran" data-preview-label="id_ran">Proposition 298</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1997,7 +1999,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="id_elem_bijections">
+<section class="statement proposition joins-following-proof" id="id_elem_bijections">
   <div class="statement-head"><div class="statement-title">Proposition 408</div><span class="label-badge">id_elem_bijections</span></div>
   <div class="statement-body"><p>$\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{A}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2008,7 +2010,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="id_elem_bijections" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\identity{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{A}$ by <a class="xref" href="current_section_standard_library_functions.html#id_elem_surjections" data-preview-label="id_elem_surjections">Proposition 407</a>.<br> $\identity{A}$ is injective by <a class="xref" href="current_section_standard_library_relations.html#identity_injective" data-preview-label="identity_injective">Proposition 342</a>.<br> Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2040,7 +2042,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="knastertarski">
+<section class="statement theorem joins-following-proof" id="knastertarski">
   <div class="statement-head"><div class="statement-title">Theorem 142 [Knaster--Tarski]</div><span class="label-badge">knastertarski</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f$ be a \subseteq-preserving function from $\pow{A}$ to $\pow{A}$. <br><span class="kw">Then</span> there exists a fixpoint of $f$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2052,7 +2054,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="knastertarski" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\dom{f} = \pow{A}$.<br> <span class="kw kw-bold">Let</span> $P = \{a\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}\mid a\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} f(a)\}$.<br> $P\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{A}$. <br><span class="kw">Thus</span> $\unions{P}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}$.<br> <span class="kw">Hence</span> $f(\unions{P})\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\unions{P}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} f(\unions{P})$.</span></summary>
@@ -2095,7 +2097,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <h4 class="tex-subsection">Cantor&#x27;s theorem</h4>
-<section class="statement theorem" id="cantor">
+<section class="statement theorem joins-following-proof" id="cantor">
   <div class="statement-head"><div class="statement-title">Theorem 143 [Cantor]</div><span class="label-badge">cantor</span></div>
   <div class="statement-body"><p>There exists no surjection from $A$ to $\pow{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2106,7 +2108,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="cantor" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> Consider a surjection $f$ from $A$ to $\pow{A}$.<br> <span class="kw kw-bold">Let</span> $B = \{a \class{latex-symbol-tip latex-symbol-id-in}{\in} A \mid a\class{latex-symbol-tip latex-symbol-id-notin}{\notin} f(a)\}$. <br><span class="kw">Then</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}$.<br> There exists $a'\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $f(a') = B$ by \hyperref[surj]{the definition of surjectivity}.<br> Now $a' \class{latex-symbol-tip latex-symbol-id-in}{\in} B$ iff $a' \class{latex-symbol-tip latex-symbol-id-notin}{\notin} f(a') = B$.<br> Contradiction.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}

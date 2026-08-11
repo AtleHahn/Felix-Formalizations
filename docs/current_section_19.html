@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -504,7 +506,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="box_basis_is_basis">
+<section class="statement lemma joins-following-proof" id="box_basis_is_basis">
   <div class="statement-head"><div class="statement-title">Lemma 100</div><span class="label-badge">box_basis_is_basis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\boxBasis{T}{X}$ is a basis on $\productFamily{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -519,7 +521,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="box_basis_is_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $B = \boxBasis{T}{X}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\productFamily{X}}$.</span></summary>
@@ -670,7 +672,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_subbasis_is_subbasis">
+<section class="statement lemma joins-following-proof" id="product_subbasis_is_subbasis">
   <div class="statement-head"><div class="statement-title">Lemma 101</div><span class="label-badge">product_subbasis_is_subbasis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productSubbasis{T}{X}$ is a subbasis on $\productFamily{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -686,7 +688,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_subbasis_is_subbasis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \productSubbasis{T}{X}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$S\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\productFamily{X}}$.</span></summary>
@@ -717,7 +719,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_subbasis_finite_intersections_basis">
+<section class="statement lemma joins-following-proof" id="product_subbasis_finite_intersections_basis">
   <div class="statement-head"><div class="statement-title">Lemma 102</div><span class="label-badge">product_subbasis_finite_intersections_basis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\finiteIntersections{\productSubbasis{T}{X}}$ is a basis for $\productTopologyIndexed{T}{X}$ on $\productFamily{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -733,7 +735,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_subbasis_finite_intersections_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_19.html#product_subbasis_is_subbasis" data-preview-label="product_subbasis_is_subbasis">Lemma 101</a>, <a class="xref" href="current_section_19.html#product_topology_indexed" data-preview-label="product_topology_indexed">Definition 73</a>, <a class="xref" href="current_section_13.html#subbasis_finite_intersections_basis" data-preview-label="subbasis_finite_intersections_basis">Lemma 24</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#topology_generated_by_subbasis" data-preview-label="topology_generated_by_subbasis">Definition 26</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -741,7 +743,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="box_basis_from_bases">
+<section class="statement lemma joins-following-proof" id="box_basis_from_bases">
   <div class="statement-head"><div class="statement-title">Lemma 103</div><span class="label-badge">box_basis_from_bases</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $B$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{B} = \dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{B}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a basis for $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw kw-bold">Let</span> $C = \{A\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\productFamily{X}} \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} U. U\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\pow{\unions{\ran{X}}}}\class{latex-symbol-tip latex-symbol-id-land}{\land} (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} \class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}. \apply{U}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\apply{B}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}})\class{latex-symbol-tip latex-symbol-id-land}{\land} A = \productFamily{U}\}$. <br><span class="kw">Then</span> $C$ is a basis for $\boxTopology{T}{X}$ on $\productFamily{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -762,7 +764,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="box_basis_from_bases" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \boxTopology{T}{X}$.<br> <span class="kw kw-bold">Let</span> $B_0 = \boxBasis{T}{X}$.<br> For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>.<br> We have $T_0$ is a topology on $\productFamily{X}$ by <a class="xref" href="current_section_19.html#box_basis_is_basis" data-preview-label="box_basis_is_basis">Lemma 100</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_19.html#box_topology" data-preview-label="box_topology">Definition 69</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $A$ is open in $\productFamily{X}$ with respect to $T_0$.</span></summary>
@@ -859,7 +861,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_basis_from_bases_indexed">
+<section class="statement lemma joins-following-proof" id="product_basis_from_bases_indexed">
   <div class="statement-head"><div class="statement-title">Lemma 104</div><span class="label-badge">product_basis_from_bases_indexed</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $B$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{B} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{B}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a basis for $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw kw-bold">Let</span> $S$ be a set such that for all $A$ we have $A\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ iff there exists $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ such that there exists $U\class{latex-symbol-tip latex-symbol-id-in}{\in}\apply{B}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$ such that $A = \preimg{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}}{U}$. <br><span class="kw">Then</span> $\finiteIntersections{S}$ is a basis for $\productTopologyIndexed{T}{X}$ on $\productFamily{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -880,7 +882,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_basis_from_bases_indexed" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \subbasisTopology{S}{\productFamily{X}}$.<br> For all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ we have $A\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\productFamily{X}}$ by <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$S\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\productFamily{X}}$.</span></summary>
@@ -998,7 +1000,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="replace_coordinate_function">
+<section class="statement lemma helper joins-following-proof" id="replace_coordinate_function">
   <div class="statement-head"><div class="statement-title">Lemma 105</div><span class="label-badge">replace_coordinate_function</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.<br> <span class="kw">Assume</span> $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\unions{\ran{X}}$. <br><span class="kw">Then</span> there exists $V$ such that $V\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\pow{\unions{\ran{X}}}}$ and $\apply{V}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}} = U$ and for all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ such that $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}$ we have $\apply{V}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}} = \apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1015,7 +1017,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="replace_coordinate_function" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $R_1 = \{(\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha},U)\}$.<br> <span class="kw kw-bold">Let</span> $R_2 = \{(\class{latex-symbol-tip latex-symbol-id-beta}{\beta},\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}) \mid \class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\}\}$.<br> <span class="kw kw-bold">Let</span> $R = R_1\union R_2$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ there exist $x,y$ such that $w = (x,y)$ by <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>.<br> <span class="kw">Hence</span> $R$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ there exists $y$ such that $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\mathrel{R} y$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.<br> <span class="kw kw-bold">Take</span> $V$ such that $V$ is a function on $\dom{X}$ and for all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\mathrel{R}\apply{V}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>.<br> $V$ is a function and $\dom{V} = \dom{X}$.<br> $(\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha},\apply{V}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}})\class{latex-symbol-tip latex-symbol-id-notin}{\notin} R_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>.<br> <span class="kw">Hence</span> $\apply{V}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}} = U$ by <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> For all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ such that $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}$ we have $\apply{V}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}} = \apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{V}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\unions{\ran{X}}}$.</span></summary>
@@ -1074,7 +1076,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="indexed_product_subset_from_coordinate_subsets">
+<section class="statement lemma helper joins-following-proof" id="indexed_product_subset_from_coordinate_subsets">
   <div class="statement-head"><div class="statement-title">Lemma 106</div><span class="label-badge">indexed_product_subset_from_coordinate_subsets</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\pow{\unions{\ran{X}}}}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{U}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{U}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\productFamily{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1088,7 +1090,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="indexed_product_subset_from_coordinate_subsets" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{U}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ by <a class="xref" href="current_section_19.html#indexed_product" data-preview-label="indexed_product">Definition 67</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>.<br> <span class="kw">Hence</span> $\productFamily{U}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\productFamily{X}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1098,7 +1100,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="replace_coordinate_function_subset">
+<section class="statement lemma helper joins-following-proof" id="replace_coordinate_function_subset">
   <div class="statement-head"><div class="statement-title">Lemma 107</div><span class="label-badge">replace_coordinate_function_subset</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\pow{\unions{\ran{X}}}}$.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.<br> <span class="kw">Assume</span> $\apply{U}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ such that $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}$ we have $\apply{U}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}} = \apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$. <br><span class="kw">Then</span> for all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{U}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1114,7 +1116,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="replace_coordinate_function_subset" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{U}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1122,7 +1124,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="indexed_product_disjoint_from_coordinate_disjoint">
+<section class="statement lemma helper joins-following-proof" id="indexed_product_disjoint_from_coordinate_disjoint">
   <div class="statement-head"><div class="statement-title">Lemma 108</div><span class="label-badge">indexed_product_disjoint_from_coordinate_disjoint</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $U_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\pow{\unions{\ran{X}}}}$.<br> <span class="kw">Assume</span> $U_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\pow{\unions{\ran{X}}}}$.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.<br> <span class="kw">Assume</span> $\apply{U_1}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is disjoint from $\apply{U_2}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{U_1}$ is disjoint from $\productFamily{U_2}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1138,7 +1140,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="indexed_product_disjoint_from_coordinate_disjoint" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> There exists $p$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{U_1}$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{U_2}$.<br> <span class="kw">Hence</span> $\apply{p}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\apply{U_1}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ and $\apply{p}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\apply{U_2}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_19.html#indexed_product" data-preview-label="indexed_product">Definition 67</a>. <br><span class="kw">Thus</span> $\apply{U_1}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ intersects $\apply{U_2}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>.<br> Contradiction by <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1151,7 +1153,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="projection_preimgs_disjoint">
+<section class="statement lemma helper joins-following-proof" id="projection_preimgs_disjoint">
   <div class="statement-head"><div class="statement-title">Lemma 109</div><span class="label-badge">projection_preimgs_disjoint</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.<br> <span class="kw">Assume</span> $U_1$ is disjoint from $U_2$. <br><span class="kw">Then</span> $\preimg{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{U_1}$ is disjoint from $\preimg{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{U_2}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1165,7 +1167,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="projection_preimgs_disjoint" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> There exists $p$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\preimg{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{U_1}$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\preimg{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{U_2}$.<br> <span class="kw">Hence</span> $\apply{p}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in} U_1$ and $\apply{p}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in} U_2$ by <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>. <br><span class="kw">Thus</span> $U_1$ intersects $U_2$ by <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>.<br> Contradiction by <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1178,7 +1180,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_subspace_box">
+<section class="statement lemma joins-following-proof" id="product_subspace_box">
   <div class="statement-head"><div class="statement-title">Lemma 110</div><span class="label-badge">product_subspace_box</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $A$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{A} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{A}$ is a subspace of $\productFamily{X}$ with respect to $\boxTopology{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1196,7 +1198,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_subspace_box" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\unions{\ran{X}}}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}$ such that $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.<br> $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{X}$ by <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>.<br> <span class="kw">Hence</span> $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\unions{\ran{X}}}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_pow_unions" data-preview-label="subseteq_pow_unions">Proposition 166</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\unions{\ran{X}}$ by <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> <span class="kw">Therefore</span> $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\unions{\ran{X}}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.<br> <span class="kw">Hence</span> $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\unions{\ran{X}}}$ by <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>.</p></div>
@@ -1222,7 +1224,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_subspace_product">
+<section class="statement lemma joins-following-proof" id="product_subspace_product">
   <div class="statement-head"><div class="statement-title">Lemma 111</div><span class="label-badge">product_subspace_product</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $A$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{A} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{A}$ is a subspace of $\productFamily{X}$ with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1241,7 +1243,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_subspace_product" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\unions{\ran{X}}}$.</span></summary>
@@ -1269,7 +1271,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_hausdorff_box">
+<section class="statement lemma joins-following-proof" id="product_hausdorff_box">
   <div class="statement-head"><div class="statement-title">Lemma 112</div><span class="label-badge">product_hausdorff_box</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is Hausdorff with respect to $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{X}$ is Hausdorff with respect to $\boxTopology{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1284,7 +1286,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_hausdorff_box" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \boxTopology{T}{X}$.<br> <span class="kw kw-bold">Let</span> $B_0 = \boxBasis{T}{X}$.<br> For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>.<br> $\boxBasis{T}{X}$ is a basis on $\productFamily{X}$ by <a class="xref" href="current_section_19.html#box_basis_is_basis" data-preview-label="box_basis_is_basis">Lemma 100</a>.<br> <span class="kw">Hence</span> $T_0$ is a topology on $\productFamily{X}$ by <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_19.html#box_topology" data-preview-label="box_topology">Definition 69</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x_1,x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ and $x_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x_2$ there exist $U_1,U_2$ such that $U_1$ is a neighborhood of $x_1$ in $\productFamily{X}$ with respect to $T_0$ and $U_2$ is a neighborhood of $x_2$ in $\productFamily{X}$ with respect to $T_0$ and $U_1$ is disjoint from $U_2$.</span></summary>
@@ -1533,7 +1535,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_hausdorff_product">
+<section class="statement lemma joins-following-proof" id="product_hausdorff_product">
   <div class="statement-head"><div class="statement-title">Lemma 113</div><span class="label-badge">product_hausdorff_product</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is Hausdorff with respect to $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{X}$ is Hausdorff with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1549,7 +1551,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_hausdorff_product" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.<br> <span class="kw kw-bold">Let</span> $S = \productSubbasis{T}{X}$.<br> For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>.<br> $S$ is a subbasis on $\productFamily{X}$ by <a class="xref" href="current_section_19.html#product_subbasis_is_subbasis" data-preview-label="product_subbasis_is_subbasis">Lemma 101</a>.<br> <span class="kw">Hence</span> $\finiteIntersections{S}$ is a basis for $T_0$ on $\productFamily{X}$ by <a class="xref" href="current_section_19.html#product_subbasis_finite_intersections_basis" data-preview-label="product_subbasis_finite_intersections_basis">Lemma 102</a>.<br> <span class="kw">Therefore</span> $T_0$ is a topology on $\productFamily{X}$ by <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x_1,x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ and $x_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x_2$ there exist $U_1,U_2$ such that $U_1$ is a neighborhood of $x_1$ in $\productFamily{X}$ with respect to $T_0$ and $U_2$ is a neighborhood of $x_2$ in $\productFamily{X}$ with respect to $T_0$ and $U_1$ is disjoint from $U_2$.</span></summary>
@@ -1788,7 +1790,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="product_closure_box">
+<section class="statement lemma joins-following-proof" id="product_closure_box">
   <div class="statement-head"><div class="statement-title">Lemma 114</div><span class="label-badge">product_closure_box</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $A$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{A} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw kw-bold">Let</span> $C = \closureFamily{A}{X}{T}$. <br><span class="kw">Then</span> $\productFamily{C} = \closure{\productFamily{A}}{\productFamily{X}}{\boxTopology{T}{X}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1807,7 +1809,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_closure_box" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \boxTopology{T}{X}$.<br> <span class="kw kw-bold">Let</span> $B_0 = \boxBasis{T}{X}$.<br> $B_0$ is a basis on $\productFamily{X}$ by <a class="xref" href="current_section_19.html#box_basis_is_basis" data-preview-label="box_basis_is_basis">Lemma 100</a>.<br> <span class="kw">Hence</span> $T_0$ is a topology on $\productFamily{X}$ by <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_19.html#box_topology" data-preview-label="box_topology">Definition 69</a>.<br> $\productFamily{A}$ is a subspace of $\productFamily{X}$ with respect to $T_0$ and $\productFamily{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\productFamily{X}$ by <a class="xref" href="current_section_19.html#product_subspace_box" data-preview-label="product_subspace_box">Lemma 110</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $C$ is a relation by <a class="xref" href="current_section_19.html#closure_family" data-preview-label="closure_family">Definition 74</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $a,b_1,b_2$ such that $(a,b_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ and $(a,b_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $b_1 = b_2$ by <a class="xref" href="current_section_19.html#closure_family" data-preview-label="closure_family">Definition 74</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Therefore</span> $C$ is a function by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{C}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{\productFamily{A}}{\productFamily{X}}{T_0}$.</span></summary>
@@ -1934,7 +1936,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_closure_product">
+<section class="statement lemma joins-following-proof" id="product_closure_product">
   <div class="statement-head"><div class="statement-title">Lemma 115</div><span class="label-badge">product_closure_product</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $A$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{A} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{A}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw kw-bold">Let</span> $C = \closureFamily{A}{X}{T}$. <br><span class="kw">Then</span> $\productFamily{C} = \closure{\productFamily{A}}{\productFamily{X}}{\productTopologyIndexed{T}{X}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1954,7 +1956,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_closure_product" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \boxTopology{T}{X}$.<br> <span class="kw kw-bold">Let</span> $S = \productSubbasis{T}{X}$.<br> $C$ is a relation by <a class="xref" href="current_section_19.html#closure_family" data-preview-label="closure_family">Definition 74</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $a,b_1,b_2$ such that $(a,b_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ and $(a,b_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $b_1 = b_2$ by <a class="xref" href="current_section_19.html#closure_family" data-preview-label="closure_family">Definition 74</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Therefore</span> $C$ is a function by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.<br> $\productFamily{A}$ is a subspace of $\productFamily{X}$ with respect to $T_0$ and $\productFamily{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\productFamily{X}$ by <a class="xref" href="current_section_19.html#product_subspace_product" data-preview-label="product_subspace_product">Lemma 111</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{\productFamily{A}}{\productFamily{X}}{T_0}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{C}$.</span></summary>
@@ -2133,7 +2135,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="projection_map_indexed_function">
+<section class="statement lemma helper joins-following-proof" id="projection_map_indexed_function">
   <div class="statement-head"><div class="statement-title">Lemma 116</div><span class="label-badge">projection_map_indexed_function</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$. <br><span class="kw">Then</span> $\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\productFamily{X}}{\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2146,7 +2148,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="projection_map_indexed_function" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $P = \piIndex{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$.<br> $P$ is a relation by <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $x,y_1,y_2$ such that $(x,y_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ and $(x,y_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ we have $y_1 = y_2$ by <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Hence</span> $P$ is right-unique by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.<br> $P$ is a function by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{P}$ by <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>.<br> $\productFamily{X}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\dom{P}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{P}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $\dom{P}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\productFamily{X}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Therefore</span> $\dom{P} = \productFamily{X}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{P}$ we have $\apply{P}{x}\class{latex-symbol-tip latex-symbol-id-in}{\in}\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$ by <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_19.html#indexed_product" data-preview-label="indexed_product">Definition 67</a>.<br> <span class="kw">Hence</span> $P\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\productFamily{X}}{\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2167,7 +2169,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_image_function">
+<section class="statement lemma helper joins-following-proof" id="finite_image_function">
   <div class="statement-head"><div class="statement-title">Lemma 117</div><span class="label-badge">finite_image_function</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $F$ is finite.<br> <span class="kw">Assume</span> $g$ is a function on $F$. <br><span class="kw">Then</span> $\img{g}{F}$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2180,7 +2182,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_image_function" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $B = \img{g}{F}$.<br> <span class="kw kw-bold">Let</span> $R = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in} B\class{latex-symbol-tip latex-symbol-id-times}{\times} F \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} y\class{latex-symbol-tip latex-symbol-id-in}{\in} B.\class{latex-symbol-tip latex-symbol-id-exists}{\exists} x\class{latex-symbol-tip latex-symbol-id-in}{\in} F. w = (y,x) \class{latex-symbol-tip latex-symbol-id-land}{\land} \apply{g}{x} = y\}$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ such that $g(x) = y$ by <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.<br> <span class="kw">Hence</span> for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ there exists $x$ such that $y\mathrel{R} x$ by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>.<br> <span class="kw kw-bold">Take</span> $s$ such that $s$ is a function on $B$ and for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ we have $y\mathrel{R}\apply{s}{y}$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>.<br> <span class="kw">Hence</span> $s$ is a function and $\dom{s} = B$.<br> For all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ we have $\apply{s}{y}\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ and $\apply{g}{\apply{s}{y}} = y$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw kw-bold">Let</span> $C = \ran{s}$.<br> For all $y_1,y_2$ such that $y_1\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $y_2\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $\apply{s}{y_1} = \apply{s}{y_2}$ we have $y_1 = y_2$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Therefore</span> $s$ is injective.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} F$.</span></summary>
@@ -2215,7 +2217,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_map_into_indexed_product">
+<section class="statement lemma joins-following-proof" id="continuous_map_into_indexed_product">
   <div class="statement-head"><div class="statement-title">Lemma 118</div><span class="label-badge">continuous_map_into_indexed_product</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw">Assume</span> $T_A$ is a topology on $A$.<br> <span class="kw">Assume</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{\productFamily{X}}$. <br><span class="kw">Then</span> $f$ is continuous from $A$ to $\productFamily{X}$ with respect to $T_A$ and $\productTopologyIndexed{T}{X}$ iff for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is continuous from $A$ to $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ with respect to $T_A$ and $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2234,7 +2236,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_map_into_indexed_product" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.<br> <span class="kw kw-bold">Let</span> $S = \productSubbasis{T}{X}$.<br> For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $f$ is continuous from $A$ to $\productFamily{X}$ with respect to $T_A$ and $T_0$ then for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is continuous from $A$ to $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ with respect to $T_A$ and $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.</span></summary>

@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -408,7 +410,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
       <button id="toggleRaw">Make raw code available</button>
     </div>
     <h3 class="tex-section" data-section-label="§37 The Tychonoff Theorem">§37 The Tychonoff Theorem</h3>
-<section class="statement lemma helper" id="maximal_finite_intersection_property_basic">
+<section class="statement lemma helper joins-following-proof" id="maximal_finite_intersection_property_basic">
   <div class="statement-head"><div class="statement-title">Lemma 499</div><span class="label-badge">maximal_finite_intersection_property_basic</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $D$ is maximal with respect to the finite intersection property on $X$. <br><span class="kw">Then</span> $D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ and $D$ has the finite intersection property.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -420,7 +422,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="maximal_finite_intersection_property_basic" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#maximal_finite_intersection_property_on" data-preview-label="maximal_finite_intersection_property_on">Definition 437</a>.</p></div>
@@ -442,7 +444,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="maximal_finite_intersection_property_extension">
+<section class="statement lemma joins-following-proof" id="maximal_finite_intersection_property_extension">
   <div class="statement-head"><div class="statement-title">Lemma 500</div><span class="label-badge">maximal_finite_intersection_property_extension</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.<br> <span class="kw">Suppose</span> $A$ has the finite intersection property. <br><span class="kw">Then</span> there exists $D$ such that $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} D$ and $D$ is maximal with respect to the finite intersection property on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -457,7 +459,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="maximal_finite_intersection_property_extension" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#zorn_subset_family" data-preview-label="zorn_subset_family">Theorem 145</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -465,7 +467,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="maximal_finite_intersection_property_finite_intersections">
+<section class="statement lemma joins-following-proof" id="maximal_finite_intersection_property_finite_intersections">
   <div class="statement-head"><div class="statement-title">Lemma 501</div><span class="label-badge">maximal_finite_intersection_property_finite_intersections</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $D$ is maximal with respect to the finite intersection property on $X$.<br> <span class="kw">Assume</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} D$.<br> <span class="kw">Assume</span> $F$ is finite and inhabited. <br><span class="kw">Then</span> $\inters{F}\class{latex-symbol-tip latex-symbol-id-in}{\in} D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -479,7 +481,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="maximal_finite_intersection_property_finite_intersections" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $B = \inters{F}$.<br> $D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ and $D$ has the finite intersection property by <a class="xref" href="current_section_37.html#maximal_finite_intersection_property_basic" data-preview-label="maximal_finite_intersection_property_basic">Lemma 499</a>.<br> <span class="kw kw-bold">Take</span> $D_0$ such that $D_0\class{latex-symbol-tip latex-symbol-id-in}{\in} F$.<br> <span class="kw kw-bold">Let</span> $E = D\union\{B\}$.<br> <span class="kw">Hence</span> $E\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ by <a class="xref" href="current_section_standard_library_sets.html#inters_subseteq_elem" data-preview-label="inters_subseteq_elem">Proposition 35</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_sets.html#union_subsets_is_subset" data-preview-label="union_subsets_is_subset">Proposition 44</a>.<br> <span class="kw kw-bold">Take</span> $D_1$ such that $D_1\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#finite_intersection_property" data-preview-label="finite_intersection_property">Definition 436</a>.<br> <span class="kw">Therefore</span> $E$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $G$ such that $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} E$ and $G$ is finite and inhabited we have $\inters{G}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</span></summary>
@@ -548,7 +550,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="maximal_finite_intersection_property_intersection_test">
+<section class="statement lemma joins-following-proof" id="maximal_finite_intersection_property_intersection_test">
   <div class="statement-head"><div class="statement-title">Lemma 502</div><span class="label-badge">maximal_finite_intersection_property_intersection_test</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $D$ is maximal with respect to the finite intersection property on $X$.<br> <span class="kw">Assume</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> for all $E\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ we have $A$ intersects $E$. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-in}{\in} D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -562,7 +564,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="maximal_finite_intersection_property_intersection_test" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ and $D$ has the finite intersection property by <a class="xref" href="current_section_37.html#maximal_finite_intersection_property_basic" data-preview-label="maximal_finite_intersection_property_basic">Lemma 499</a>.<br> <span class="kw kw-bold">Let</span> $E = D\union\{A\}$.<br> <span class="kw">Hence</span> $E\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ by <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_sets.html#union_subsets_is_subset" data-preview-label="union_subsets_is_subset">Proposition 44</a>.<br> <span class="kw kw-bold">Take</span> $D_0$ such that $D_0\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#finite_intersection_property" data-preview-label="finite_intersection_property">Definition 436</a>.<br> <span class="kw">Therefore</span> $A$ intersects $D_0$.<br> <span class="kw kw-bold">Take</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter D_0$ by <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw">Hence</span> $A$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>.<br> <span class="kw">Therefore</span> $E$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $G$ such that $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} E$ and $G$ is finite and inhabited we have $\inters{G}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</span></summary>
@@ -683,7 +685,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="coordinate_closure_family_fip">
+<section class="statement lemma helper joins-following-proof" id="coordinate_closure_family_fip">
   <div class="statement-head"><div class="statement-title">Lemma 503</div><span class="label-badge">coordinate_closure_family_fip</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-beta}{\beta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-beta}{\beta}}$.<br> <span class="kw">Assume</span> $D$ is maximal with respect to the finite intersection property on $\productFamily{X}$.<br> <span class="kw kw-bold">Let</span> $C = \{B\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}} \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} E\class{latex-symbol-tip latex-symbol-id-in}{\in} D. B = \closure{\img{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{E}}{\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}\}$. <br><span class="kw">Then</span> $C$ has the finite intersection property.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -701,7 +703,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="coordinate_closure_family_fip" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\productFamily{X}}$ and $D$ has the finite intersection property by <a class="xref" href="current_section_37.html#maximal_finite_intersection_property_basic" data-preview-label="maximal_finite_intersection_property_basic">Lemma 499</a>.<br> <span class="kw kw-bold">Let</span> $P = \piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> $P\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\productFamily{X}}{\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}$ by <a class="xref" href="current_section_19.html#projection_map_indexed_function" data-preview-label="projection_map_indexed_function">Lemma 116</a>.<br> <span class="kw kw-bold">Take</span> $E_0$ such that $E_0\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#finite_intersection_property" data-preview-label="finite_intersection_property">Definition 436</a>.<br> <span class="kw kw-bold">Let</span> $B_0 = \closure{\img{P}{E_0}}{\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}{\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}$.<br> <span class="kw">Hence</span> $B_0\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}}$ by <a class="xref" href="current_section_standard_library_relations.html#img_subseteq_ran" data-preview-label="img_subseteq_ran">Proposition 237</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_17.html#closure_closed_in" data-preview-label="closure_closed_in">Lemma 69</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>.<br> <span class="kw">Therefore</span> $C$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $F$ such that $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ and $F$ is finite and inhabited we have $\inters{F}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</span></summary>
@@ -747,7 +749,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="tychonoff_theorem">
+<section class="statement theorem joins-following-proof" id="tychonoff_theorem">
   <div class="statement-head"><div class="statement-title">Theorem 90</div><span class="label-badge">tychonoff_theorem</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ and $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is compact with respect to $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{X}$ is compact with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -764,7 +766,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="tychonoff_theorem" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\dom{X} = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p>$\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ is a function to $\unions{\ran{X}}$ by <a class="xref" href="current_section_standard_library_functions.html#codom_of_emptyset_can_be_anything" data-preview-label="codom_of_emptyset_can_be_anything">Proposition 370</a>.<br> <span class="kw">Hence</span> $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\dom{X}}{\unions{\ran{X}}}$ by <a class="xref" href="current_section_standard_library_relations.html#dom_emptyset" data-preview-label="dom_emptyset">Proposition 201</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.<br> For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}$ such that $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.<br> <span class="kw">Therefore</span> $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ by <a class="xref" href="current_section_19.html#indexed_product" data-preview-label="indexed_product">Definition 67</a>.<br> We have $\{\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\productFamily{X}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>.<br> For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ we have $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\{\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\}$ by <a class="xref" href="current_section_19.html#indexed_product" data-preview-label="indexed_product">Definition 67</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_relation" data-preview-label="funs_is_relation">Proposition 355</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset_subseteq" data-preview-label="emptyset_subseteq">Proposition 11</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>.<br> <span class="kw">Therefore</span> $\productFamily{X} = \{\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p>
 <details class="proof-block subproof" open>

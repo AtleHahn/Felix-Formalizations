@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -422,7 +424,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="metrizable_implies_locally_metrizable">
+<section class="statement lemma helper joins-following-proof" id="metrizable_implies_locally_metrizable">
   <div class="statement-head"><div class="statement-title">Lemma 583</div><span class="label-badge">metrizable_implies_locally_metrizable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is metrizable with respect to $T$. <br><span class="kw">Then</span> $X$ is a locally metrizable space with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -434,7 +436,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="metrizable_implies_locally_metrizable" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_20.html#metrizable" data-preview-label="metrizable">Definition 85</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_16.html#subspace_topology" data-preview-label="subspace_topology">Definition 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_42.html#locally_metrizable_space" data-preview-label="locally_metrizable_space">Definition 241</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -442,7 +444,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="paracompact_hausdorff_locally_metrizable_regular">
+<section class="statement lemma helper joins-following-proof" id="paracompact_hausdorff_locally_metrizable_regular">
   <div class="statement-head"><div class="statement-title">Lemma 584</div><span class="label-badge">paracompact_hausdorff_locally_metrizable_regular</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is paracompact with respect to $T$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $X$ is a locally metrizable space with respect to $T$. <br><span class="kw">Then</span> $X$ is regular with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -456,7 +458,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="paracompact_hausdorff_locally_metrizable_regular" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_41.html#paracompact_hausdorff_normal" data-preview-label="paracompact_hausdorff_normal">Theorem 95</a>, <a class="xref" href="current_section_31.html#normal_implies_regular" data-preview-label="normal_implies_regular">Lemma 372</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -464,7 +466,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="locally_metrizable_space_implies_locally_metrizable">
+<section class="statement lemma helper joins-following-proof" id="locally_metrizable_space_implies_locally_metrizable">
   <div class="statement-head"><div class="statement-title">Lemma 585</div><span class="label-badge">locally_metrizable_space_implies_locally_metrizable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a locally metrizable space with respect to $T$. <br><span class="kw">Then</span> $X$ is locally metrizable with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -476,7 +478,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="locally_metrizable_space_implies_locally_metrizable" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_42.html#locally_metrizable_space" data-preview-label="locally_metrizable_space">Definition 241</a>, <a class="xref" href="current_section_41.html#locally_metrizable" data-preview-label="locally_metrizable">Definition 240</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -484,7 +486,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="smirnov_metrization_theorem">
+<section class="statement theorem joins-following-proof" id="smirnov_metrization_theorem">
   <div class="statement-head"><div class="statement-title">Theorem 101</div><span class="label-badge">smirnov_metrization_theorem</span></div>
   <div class="statement-body"><p>$X$ is metrizable with respect to $T$ iff $X$ is paracompact with respect to $T$ and $X$ is Hausdorff with respect to $T$ and $X$ is a locally metrizable space with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -498,7 +500,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="smirnov_metrization_theorem" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $X$ is metrizable with respect to $T$ then $X$ is paracompact with respect to $T$ and $X$ is Hausdorff with respect to $T$ and $X$ is a locally metrizable space with respect to $T$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_41.html#metrizable_implies_paracompact" data-preview-label="metrizable_implies_paracompact">Theorem 97</a>, <a class="xref" href="current_section_20.html#metrizable" data-preview-label="metrizable">Definition 85</a>, <a class="xref" href="current_section_28.html#metric_space_hausdorff" data-preview-label="metric_space_hausdorff">Lemma 320</a>, <a class="xref" href="current_section_42.html#metrizable_implies_locally_metrizable" data-preview-label="metrizable_implies_locally_metrizable">Lemma 583</a>.</p></div>

@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -423,7 +425,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="preimg_inter_function">
+<section class="statement lemma helper joins-following-proof" id="preimg_inter_function">
   <div class="statement-head"><div class="statement-title">Lemma 80</div><span class="label-badge">preimg_inter_function</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f$ is a function. <br><span class="kw">Then</span> $\preimg{f}{A\inter B} = \preimg{f}{A}\inter \preimg{f}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -435,7 +437,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="preimg_inter_function" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#preimg_inter" data-preview-label="preimg_inter">Proposition 251</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_functions.html#function_rightunique" data-preview-label="function_rightunique">Proposition 345</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -443,7 +445,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="img_preimg_subseteq">
+<section class="statement lemma helper joins-following-proof" id="img_preimg_subseteq">
   <div class="statement-head"><div class="statement-title">Lemma 81</div><span class="label-badge">img_preimg_subseteq</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f$ is a function. <br><span class="kw">Then</span> $\img{f}{\preimg{f}{B}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -455,7 +457,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="img_preimg_subseteq" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#img_of_function_elim" data-preview-label="img_of_function_elim">Proposition 365</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_right" data-preview-label="inter_elim_right">Proposition 63</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_left" data-preview-label="inter_elim_left">Proposition 62</a>, <a class="xref" href="current_section_standard_library_functions.html#function_rightunique" data-preview-label="function_rightunique">Proposition 345</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -463,7 +465,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="preimg_setminus_function">
+<section class="statement lemma helper joins-following-proof" id="preimg_setminus_function">
   <div class="statement-head"><div class="statement-title">Lemma 82</div><span class="label-badge">preimg_setminus_function</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is a function from $X$ to $Y$.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$. <br><span class="kw">Then</span> $\preimg{f}{Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B} = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \preimg{f}{B}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -476,7 +478,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="preimg_setminus_function" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\preimg{f}{Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \preimg{f}{B}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_subseteq_dom" data-preview-label="preimg_subseteq_dom">Proposition 249</a>, <a class="xref" href="current_section_standard_library_functions.html#function_rightunique" data-preview-label="function_rightunique">Proposition 345</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>.</p></div>
@@ -515,7 +517,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_closure_image_subset">
+<section class="statement lemma joins-following-proof" id="continuous_closure_image_subset">
   <div class="statement-head"><div class="statement-title">Lemma 83</div><span class="label-badge">continuous_closure_image_subset</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$. <br><span class="kw">Then</span> $\img{f}{\closure{A}{X}{T}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \closure{\img{f}{A}}{Y}{T_1}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -528,7 +530,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_closure_image_subset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $f$ is a function and $T$ is a topology on $X$ and $T_1$ is a topology on $Y$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> We have $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\rels{X}{Y}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_subseteq_rels" data-preview-label="funs_subseteq_rels">Proposition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Therefore</span> $\img{f}{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_standard_library_functions.html#funs_subseteq_rels" data-preview-label="funs_subseteq_rels">Proposition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_ran_subseteq" data-preview-label="rels_ran_subseteq">Proposition 284</a>, <a class="xref" href="current_section_standard_library_relations.html#img_subseteq_ran" data-preview-label="img_subseteq_ran">Proposition 237</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\img{f}{\closure{A}{X}{T}}$ we have $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{\img{f}{A}}{Y}{T_1}$.</span></summary>
@@ -573,7 +575,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closure_image_subset_implies_preimg_closed">
+<section class="statement lemma joins-following-proof" id="closure_image_subset_implies_preimg_closed">
   <div class="statement-head"><div class="statement-title">Lemma 84</div><span class="label-badge">closure_image_subset_implies_preimg_closed</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is a function from $X$ to $Y$ and $T$ is a topology on $X$ and $T_1$ is a topology on $Y$.<br> <span class="kw">Suppose</span> for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ we have $\img{f}{\closure{A}{X}{T}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \closure{\img{f}{A}}{Y}{T_1}$. <br><span class="kw">Then</span> for all $B$ such that $B$ is closed in $Y$ with respect to $T_1$ we have $\preimg{f}{B}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -590,7 +592,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_image_subset_implies_preimg_closed" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $B$ such that $B$ is closed in $Y$ with respect to $T_1$.<br> <span class="kw kw-bold">Let</span> $A = \preimg{f}{B}$.<br> We have $f$ is right-unique and $f$ is a relation and $\dom{f} = X$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#function_rightunique" data-preview-label="function_rightunique">Proposition 345</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_relation" data-preview-label="funs_is_relation">Proposition 355</a>.<br> We have $\ran{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_standard_library_functions.html#funs_subseteq_rels" data-preview-label="funs_subseteq_rels">Proposition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#rels_ran_subseteq" data-preview-label="rels_ran_subseteq">Proposition 284</a>.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_standard_library_relations.html#preimg_subseteq_dom" data-preview-label="preimg_subseteq_dom">Proposition 249</a>.<br> $\img{f}{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_18.html#img_preimg_subseteq" data-preview-label="img_preimg_subseteq">Lemma 81</a>.<br> <span class="kw">Hence</span> $\img{f}{A}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_standard_library_relations.html#img_subseteq_ran" data-preview-label="img_subseteq_ran">Proposition 237</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.<br> <span class="kw">Therefore</span> $\closure{\img{f}{A}}{Y}{T_1}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_17.html#closure_subseteq_closed" data-preview-label="closure_subseteq_closed">Lemma 72</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</span></summary>
@@ -625,7 +627,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="preimg_closed_implies_continuous">
+<section class="statement lemma joins-following-proof" id="preimg_closed_implies_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 85</div><span class="label-badge">preimg_closed_implies_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is a function from $X$ to $Y$ and $T$ is a topology on $X$ and $T_1$ is a topology on $Y$.<br> <span class="kw">Suppose</span> for all $B$ such that $B$ is closed in $Y$ with respect to $T_1$ we have $\preimg{f}{B}$ is closed in $X$ with respect to $T$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -641,7 +643,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="preimg_closed_implies_continuous" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $\dom{f} = X$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $Y$ with respect to $T_1$ we have $\preimg{f}{V}$ is open in $X$ with respect to $T$.</span></summary>
@@ -684,7 +686,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="continuous_implies_continuous_at">
+<section class="statement lemma joins-following-proof" id="continuous_implies_continuous_at">
   <div class="statement-head"><div class="statement-title">Lemma 86</div><span class="label-badge">continuous_implies_continuous_at</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $f$ is continuous at $x$ from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -697,7 +699,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_implies_continuous_at" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#preimg_iff" data-preview-label="preimg_iff">Proposition 246</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_18.html#img_preimg_subseteq" data-preview-label="img_preimg_subseteq">Lemma 81</a>, <a class="xref" href="current_section_18.html#continuous_at" data-preview-label="continuous_at">Definition 61</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -705,7 +707,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_at_implies_continuous">
+<section class="statement lemma joins-following-proof" id="continuous_at_implies_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 87</div><span class="label-badge">continuous_at_implies_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is a function from $X$ to $Y$ and $T$ is a topology on $X$ and $T_1$ is a topology on $Y$.<br> <span class="kw">Suppose</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $f$ is continuous at $x$ from $X$ to $Y$ with respect to $T$ and $T_1$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -720,7 +722,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_at_implies_continuous" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $\dom{f} = X$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $Y$ with respect to $T_1$ we have $\preimg{f}{V}$ is open in $X$ with respect to $T$.</span></summary>
@@ -800,7 +802,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="constant_continuous">
+<section class="statement lemma joins-following-proof" id="constant_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 88</div><span class="label-badge">constant_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$ and $T_1$ is a topology on $Y$.<br> <span class="kw">Suppose</span> $f$ is a function from $X$ to $Y$.<br> <span class="kw">Suppose</span> there exists $y_0\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $f(x) = y_0$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -814,7 +816,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="constant_continuous" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $Y$ with respect to $T_1$ we have $\preimg{f}{V}$ is open in $X$ with respect to $T$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $V$ such that $V$ is open in $Y$ with respect to $T_1$.<br> <span class="kw kw-bold">Take</span> $y_0\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $f(x) = y_0$.</p>
@@ -852,7 +854,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="inclusion_continuous">
+<section class="statement lemma joins-following-proof" id="inclusion_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 89</div><span class="label-badge">inclusion_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $A$ is a subspace of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T}{A}$.<br> <span class="kw kw-bold">Let</span> $j = \identity{A}$. <br><span class="kw">Then</span> $j$ is continuous from $A$ to $X$ with respect to $T_A$ and $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -866,7 +868,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="inclusion_continuous" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_A$ is a topology on $A$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> We have $T$ is a topology on $X$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw">Hence</span> $j\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{A}$ and $j\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{X}$ by <a class="xref" href="current_section_standard_library_functions.html#id_elem_funs" data-preview-label="id_elem_funs">Proposition 406</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_weaken_codom" data-preview-label="funs_weaken_codom">Proposition 360</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $U$ such that $U$ is open in $X$ with respect to $T$ we have $\preimg{j}{U} = A\inter U$.</span></summary>
@@ -916,7 +918,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_composite">
+<section class="statement lemma joins-following-proof" id="continuous_composite">
   <div class="statement-head"><div class="statement-title">Lemma 90</div><span class="label-badge">continuous_composite</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Assume</span> $g$ is continuous from $Y$ to $Z$ with respect to $T_1$ and $T_2$. <br><span class="kw">Then</span> $g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is continuous from $X$ to $Z$ with respect to $T$ and $T_2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -929,7 +931,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_composite" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Z}$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_circ" data-preview-label="funs_circ">Proposition 382</a>.<br> $T$ is a topology on $X$ and $T_2$ is a topology on $Z$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $Z$ with respect to $T_2$ we have $\preimg{g\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f}{V}$ is open in $X$ with respect to $T$.</span></summary>
@@ -993,7 +995,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_restrict_domain">
+<section class="statement lemma joins-following-proof" id="continuous_restrict_domain">
   <div class="statement-head"><div class="statement-title">Lemma 91</div><span class="label-badge">continuous_restrict_domain</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T}{A}$.<br> <span class="kw kw-bold">Let</span> $g = \restrl{f}{A}$. <br><span class="kw">Then</span> $g$ is continuous from $A$ to $Y$ with respect to $T_A$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1008,7 +1010,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_restrict_domain" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_A$ is a topology on $A$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $Y$ with respect to $T_1$ we have $\preimg{g}{V} = A\inter \preimg{f}{V}$.</span></summary>
@@ -1066,7 +1068,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_restrict_range">
+<section class="statement lemma joins-following-proof" id="continuous_restrict_range">
   <div class="statement-head"><div class="statement-title">Lemma 92</div><span class="label-badge">continuous_restrict_range</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Suppose</span> $Z$ is a subspace of $Y$ with respect to $T_1$.<br> <span class="kw">Suppose</span> $\img{f}{X}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Z$.<br> <span class="kw kw-bold">Let</span> $T_Z = \subspaceTopology{T_1}{Z}$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Z$ with respect to $T$ and $T_Z$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1081,7 +1083,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_restrict_range" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $\dom{f} = X$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> We have $T_1$ is a topology on $Y$ and $T_Z$ is a topology on $Z$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> For all $B$ such that $B$ is open in $Z$ with respect to $T_Z$ there exists $U\class{latex-symbol-tip latex-symbol-id-in}{\in} T_1$ such that $B = Z\inter U$ by <a class="xref" href="current_section_16.html#subspace_topology" data-preview-label="subspace_topology">Definition 46</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $B$ such that $B$ is open in $Z$ with respect to $T_Z$ we have $\preimg{f}{B}$ is open in $X$ with respect to $T$.</span></summary>
@@ -1129,7 +1131,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_expand_range">
+<section class="statement lemma joins-following-proof" id="continuous_expand_range">
   <div class="statement-head"><div class="statement-title">Lemma 93</div><span class="label-badge">continuous_expand_range</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Suppose</span> $Y$ is a subspace of $Z$ with respect to $T_2$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T_2}{Y}$.<br> <span class="kw">Suppose</span> $T_1 = T_Y$.<br> <span class="kw kw-bold">Let</span> $j = \identity{Y}$. <br><span class="kw">Then</span> $j\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$ is continuous from $X$ to $Z$ with respect to $T$ and $T_2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1145,7 +1147,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_expand_range" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_18.html#inclusion_continuous" data-preview-label="inclusion_continuous">Lemma 89</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_18.html#continuous_composite" data-preview-label="continuous_composite">Lemma 90</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1153,7 +1155,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_local">
+<section class="statement lemma joins-following-proof" id="continuous_local">
   <div class="statement-head"><div class="statement-title">Lemma 94</div><span class="label-badge">continuous_local</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $T_1$ is a topology on $Y$.<br> <span class="kw">Assume</span> $f$ is a function from $X$ to $Y$.<br> <span class="kw">Suppose</span> $M\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T$.<br> <span class="kw">Suppose</span> $\unions{M} = X$.<br> <span class="kw">Suppose</span> for all $U$ such that $U\class{latex-symbol-tip latex-symbol-id-in}{\in} M$ we have $\restrl{f}{U}$ is continuous from $U$ to $Y$ with respect to $\subspaceTopology{T}{U}$ and $T_1$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1172,7 +1174,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_local" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $V$ such that $V$ is open in $Y$ with respect to $T_1$ we have $\preimg{f}{V}$ is open in $X$ with respect to $T$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $V$ such that $V$ is open in $Y$ with respect to $T_1$.<br> <span class="kw kw-bold">Let</span> $N = \{W\class{latex-symbol-tip latex-symbol-id-in}{\in} T \mid W\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \preimg{f}{V}\}$.</p>
@@ -1206,7 +1208,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="union_compatible_functions">
+<section class="statement lemma helper joins-following-proof" id="union_compatible_functions">
   <div class="statement-head"><div class="statement-title">Lemma 95</div><span class="label-badge">union_compatible_functions</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f$ is a function.<br> <span class="kw">Suppose</span> $g$ is a function.<br> <span class="kw">Suppose</span> for all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}\inter\dom{g}$ we have $f(x) = g(x)$. <br><span class="kw">Then</span> $f\union g$ is a function.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1220,7 +1222,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="union_compatible_functions" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f$ is a relation and $g$ is a relation and $f\union g$ is a relation by <a class="xref" href="current_section_standard_library_functions.html#funs_is_relation" data-preview-label="funs_is_relation">Proposition 355</a>, <a class="xref" href="current_section_standard_library_relations.html#union_relations_is_relation" data-preview-label="union_relations_is_relation">Proposition 180</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,y,z$ such that $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} f\union g$ and $(x,z)\class{latex-symbol-tip latex-symbol-id-in}{\in} f\union g$ we have $y = z$.</span></summary>
@@ -1265,7 +1267,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="pasting_lemma">
+<section class="statement theorem joins-following-proof" id="pasting_lemma">
   <div class="statement-head"><div class="statement-title">Theorem 15</div><span class="label-badge">pasting_lemma</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X = A\union B$.<br> <span class="kw">Assume</span> $A$ is closed in $X$ with respect to $T$.<br> <span class="kw">Assume</span> $B$ is closed in $X$ with respect to $T$.<br> <span class="kw">Assume</span> $f$ is continuous from $A$ to $Y$ with respect to $\subspaceTopology{T}{A}$ and $T_1$.<br> <span class="kw">Assume</span> $g$ is continuous from $B$ to $Y$ with respect to $\subspaceTopology{T}{B}$ and $T_1$.<br> <span class="kw">Suppose</span> for all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter B$ we have $f(x) = g(x)$.<br> <span class="kw kw-bold">Let</span> $h = f\union g$. <br><span class="kw">Then</span> $h$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1283,7 +1285,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="pasting_lemma" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{Y}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{B}{Y}$ and $\dom{f} = A$ and $\dom{g} = B$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $h$ is a function by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_18.html#union_compatible_functions" data-preview-label="union_compatible_functions">Lemma 95</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $C$ such that $C$ is closed in $Y$ with respect to $T_1$ we have $\preimg{h}{C}$ is closed in $X$ with respect to $T$.</span></summary>
@@ -1337,7 +1339,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="projection_one_continuous">
+<section class="statement lemma helper joins-following-proof" id="projection_one_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 96</div><span class="label-badge">projection_one_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$ and $T_1$ is a topology on $Y$.<br> <span class="kw kw-bold">Let</span> $T_2 = \productTopology{T}{T_1}{X}{Y}$. <br><span class="kw">Then</span> $\piOne{X}{Y}$ is continuous from $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ to $X$ with respect to $T_2$ and $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1350,7 +1352,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="projection_one_continuous" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_2$ is a topology on $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_15.html#product_basis_is_basis" data-preview-label="product_basis_is_basis">Lemma 51</a>, <a class="xref" href="current_section_15.html#product_topology" data-preview-label="product_topology">Definition 41</a>.<br> For all $p$ we have for all $x$ we have for all $x'$ such that $p\mathrel{\piOne{X}{Y}} x$ and $p\mathrel{\piOne{X}{Y}} x'$ we have $x = x'$ by <a class="xref" href="current_section_15.html#projection_first" data-preview-label="projection_first">Definition 42</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Therefore</span> $\piOne{X}{Y}$ is a function by <a class="xref" href="current_section_15.html#projection_first" data-preview-label="projection_first">Definition 42</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\piOne{X}{Y}}$ we have $\apply{\piOne{X}{Y}}{p}\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_15.html#projection_first" data-preview-label="projection_first">Definition 42</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.<br> For all $p$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ we have $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\piOne{X}{Y}}$ by <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>, <a class="xref" href="current_section_15.html#projection_first" data-preview-label="projection_first">Definition 42</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>.<br> <span class="kw">Hence</span> $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{\piOne{X}{Y}}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> For all $p$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\piOne{X}{Y}}$ we have $p\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_15.html#projection_first" data-preview-label="projection_first">Definition 42</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>.<br> <span class="kw">Therefore</span> $\dom{\piOne{X}{Y}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Hence</span> $\dom{\piOne{X}{Y}} = X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> <span class="kw">Therefore</span> $\piOne{X}{Y}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y}{X}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.<br> For all $U$ such that $U$ is open in $X$ with respect to $T$ we have $\preimg{\piOne{X}{Y}}{U}$ is open in $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T_2$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_subseteq_left" data-preview-label="times_subseteq_left">Proposition 143</a>, <a class="xref" href="current_section_15.html#product_basis" data-preview-label="product_basis">Definition 40</a>, <a class="xref" href="current_section_15.html#product_basis_is_basis" data-preview-label="product_basis_is_basis">Lemma 51</a>, <a class="xref" href="current_section_13.html#basis_elem_open_in_generated" data-preview-label="basis_elem_open_in_generated">Lemma 2</a>, <a class="xref" href="current_section_15.html#product_topology" data-preview-label="product_topology">Definition 41</a>, <a class="xref" href="current_section_15.html#preimg_pi1" data-preview-label="preimg_pi1">Lemma 53</a>.<br> <span class="kw">Therefore</span> $\piOne{X}{Y}$ is continuous from $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ to $X$ with respect to $T_2$ and $T$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1377,7 +1379,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="projection_two_continuous">
+<section class="statement lemma helper joins-following-proof" id="projection_two_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 97</div><span class="label-badge">projection_two_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$ and $T_1$ is a topology on $Y$.<br> <span class="kw kw-bold">Let</span> $T_2 = \productTopology{T}{T_1}{X}{Y}$. <br><span class="kw">Then</span> $\piTwo{X}{Y}$ is continuous from $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ to $Y$ with respect to $T_2$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1390,7 +1392,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="projection_two_continuous" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_2$ is a topology on $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_15.html#product_basis_is_basis" data-preview-label="product_basis_is_basis">Lemma 51</a>, <a class="xref" href="current_section_15.html#product_topology" data-preview-label="product_topology">Definition 41</a>.<br> For all $p$ we have for all $y$ we have for all $y'$ such that $p\mathrel{\piTwo{X}{Y}} y$ and $p\mathrel{\piTwo{X}{Y}} y'$ we have $y = y'$ by <a class="xref" href="current_section_15.html#projection_second" data-preview-label="projection_second">Definition 43</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Therefore</span> $\piTwo{X}{Y}$ is a function by <a class="xref" href="current_section_15.html#projection_second" data-preview-label="projection_second">Definition 43</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\piTwo{X}{Y}}$ we have $\apply{\piTwo{X}{Y}}{p}\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_15.html#projection_second" data-preview-label="projection_second">Definition 43</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.<br> For all $p$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ we have $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\piTwo{X}{Y}}$ by <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>, <a class="xref" href="current_section_15.html#projection_second" data-preview-label="projection_second">Definition 43</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>.<br> <span class="kw">Hence</span> $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \dom{\piTwo{X}{Y}}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> For all $p$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{\piTwo{X}{Y}}$ we have $p\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_15.html#projection_second" data-preview-label="projection_second">Definition 43</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#times" data-preview-label="times">Definition 352</a>.<br> <span class="kw">Therefore</span> $\dom{\piTwo{X}{Y}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Hence</span> $\dom{\piTwo{X}{Y}} = X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> <span class="kw">Therefore</span> $\piTwo{X}{Y}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y}{Y}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.<br> For all $V$ such that $V$ is open in $Y$ with respect to $T_1$ we have $\preimg{\piTwo{X}{Y}}{V}$ is open in $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T_2$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_subseteq_right" data-preview-label="times_subseteq_right">Proposition 144</a>, <a class="xref" href="current_section_15.html#product_basis" data-preview-label="product_basis">Definition 40</a>, <a class="xref" href="current_section_15.html#product_basis_is_basis" data-preview-label="product_basis_is_basis">Lemma 51</a>, <a class="xref" href="current_section_15.html#product_topology" data-preview-label="product_topology">Definition 41</a>, <a class="xref" href="current_section_13.html#basis_elem_open_in_generated" data-preview-label="basis_elem_open_in_generated">Lemma 2</a>, <a class="xref" href="current_section_15.html#preimg_pi2" data-preview-label="preimg_pi2">Lemma 54</a>.<br> <span class="kw">Therefore</span> $\piTwo{X}{Y}$ is continuous from $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ to $Y$ with respect to $T_2$ and $T_1$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1417,7 +1419,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_map_into_product_forward">
+<section class="statement lemma joins-following-proof" id="continuous_map_into_product_forward">
   <div class="statement-head"><div class="statement-title">Lemma 98</div><span class="label-badge">continuous_map_into_product_forward</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T_1$ is a topology on $X$ and $T_2$ is a topology on $Y$.<br> <span class="kw">Assume</span> $f$ is continuous from $A$ to $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T$ and $\productTopology{T_1}{T_2}{X}{Y}$.<br> <span class="kw kw-bold">Let</span> $f_1 = \piOne{X}{Y}\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$.<br> <span class="kw kw-bold">Let</span> $f_2 = \piTwo{X}{Y}\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$. <br><span class="kw">Then</span> $f_1$ is continuous from $A$ to $X$ with respect to $T$ and $T_1$ and $f_2$ is continuous from $A$ to $Y$ with respect to $T$ and $T_2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1434,7 +1436,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_map_into_product_forward" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_18.html#projection_one_continuous" data-preview-label="projection_one_continuous">Lemma 96</a>, <a class="xref" href="current_section_18.html#projection_two_continuous" data-preview-label="projection_two_continuous">Lemma 97</a>, <a class="xref" href="current_section_18.html#continuous_composite" data-preview-label="continuous_composite">Lemma 90</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1442,7 +1444,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="continuous_map_into_product_backward">
+<section class="statement lemma joins-following-proof" id="continuous_map_into_product_backward">
   <div class="statement-head"><div class="statement-title">Lemma 99</div><span class="label-badge">continuous_map_into_product_backward</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $f_1$ is continuous from $A$ to $X$ with respect to $T$ and $T_1$.<br> <span class="kw">Assume</span> $f_2$ is continuous from $A$ to $Y$ with respect to $T$ and $T_2$.<br> <span class="kw kw-bold">Let</span> $f = \{(a,(f_1(a),f_2(a))) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} A\}$. <br><span class="kw">Then</span> $f$ is continuous from $A$ to $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T$ and $\productTopology{T_1}{T_2}{X}{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1457,7 +1459,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_map_into_product_backward" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_3 = \productTopology{T_1}{T_2}{X}{Y}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $U$ such that $U$ is open in $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T_3$ we have $\preimg{f}{U}$ is open in $A$ with respect to $T$.</span></summary>

@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -442,7 +444,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="basis_topology_is_topology">
+<section class="statement lemma joins-following-proof" id="basis_topology_is_topology">
   <div class="statement-head"><div class="statement-title">Lemma 1</div><span class="label-badge">basis_topology_is_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $B$ is a basis on $X$. <br><span class="kw">Then</span> $\basisTopology{B}{X}$ is a topology on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -454,7 +456,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="basis_topology_is_topology" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\basisTopology{B}{X}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#topology_generated_by_basis" data-preview-label="topology_generated_by_basis">Definition 14</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -520,7 +522,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="basis_elem_open_in_generated">
+<section class="statement lemma helper joins-following-proof" id="basis_elem_open_in_generated">
   <div class="statement-head"><div class="statement-title">Lemma 2</div><span class="label-badge">basis_elem_open_in_generated</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $B$ is a basis on $X$.<br> <span class="kw">Suppose</span> $B_1\class{latex-symbol-tip latex-symbol-id-in}{\in} B$. <br><span class="kw">Then</span> $B_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\basisTopology{B}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -533,7 +535,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="basis_elem_open_in_generated" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_13.html#basis_on" data-preview-label="basis_on">Definition 13</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_13.html#topology_generated_by_basis" data-preview-label="topology_generated_by_basis">Definition 14</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -541,7 +543,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="basis_topology_unions">
+<section class="statement lemma joins-following-proof" id="basis_topology_unions">
   <div class="statement-head"><div class="statement-title">Lemma 3</div><span class="label-badge">basis_topology_unions</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $B$ is a basis for $T$ on $X$. <br><span class="kw">Then</span> $T = \{U\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{X} \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} M\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B. U = \unions{M}\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -553,7 +555,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="basis_topology_unions" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T = \basisTopology{B}{X}$ by <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.<br> It suffices to show that for all $U$ we have $U\class{latex-symbol-tip latex-symbol-id-in}{\in}\basisTopology{B}{X}$ iff there exists $M\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ such that $U = \unions{M}$.<br> <span class="kw kw-bold">Fix</span> $U$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $U\class{latex-symbol-tip latex-symbol-id-in}{\in}\basisTopology{B}{X}$ then there exists $M\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ such that $U = \unions{M}$.</span></summary>
@@ -583,7 +585,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="open_collection_basis">
+<section class="statement lemma joins-following-proof" id="open_collection_basis">
   <div class="statement-head"><div class="statement-title">Lemma 4</div><span class="label-badge">open_collection_basis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> for all $C_1\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $C_1$ is open in $X$ with respect to $T$.<br> <span class="kw">Assume</span> for all $U,x$ such that $U\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ there exists $C_1\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C_1$ and $C_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$. <br><span class="kw">Then</span> $C$ is a basis for $T$ on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -597,7 +599,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="open_collection_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $C_1\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C_1$ and $C_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>.</p></div>
@@ -640,7 +642,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="basis_finer_criterion">
+<section class="statement lemma joins-following-proof" id="basis_finer_criterion">
   <div class="statement-head"><div class="statement-title">Lemma 5</div><span class="label-badge">basis_finer_criterion</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $B$ is a basis for $T$ on $X$.<br> <span class="kw">Assume</span> $B_1$ is a basis for $T_1$ on $X$. <br><span class="kw">Then</span> $T_1$ is finer than $T$ on $X$ iff for all $x,B_2$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -655,7 +657,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="basis_finer_criterion" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If for all $x,B_2$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_2$ then $T_1$ is finer than $T$ on $X$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> for all $x,B_2$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_2$.<br> $B$ is a basis on $X$ and $T = \basisTopology{B}{X}$ by <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.<br> $B_1$ is a basis on $X$ and $T_1 = \basisTopology{B_1}{X}$ by <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.</p>
@@ -789,7 +791,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="real_leq_split">
+<section class="statement lemma helper joins-following-proof" id="real_leq_split">
   <div class="statement-head"><div class="statement-title">Lemma 6</div><span class="label-badge">real_leq_split</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} b$. <br><span class="kw">Then</span> $a < b$ or $a = b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -801,7 +803,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_leq_split" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -809,7 +811,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_lt_subst_left">
+<section class="statement lemma helper joins-following-proof" id="real_lt_subst_left">
   <div class="statement-head"><div class="statement-title">Lemma 7</div><span class="label-badge">real_lt_subst_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a = b$ and $b < c$. <br><span class="kw">Then</span> $a < c$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -821,7 +823,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_lt_subst_left" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -829,7 +831,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_lt_subst_right">
+<section class="statement lemma helper joins-following-proof" id="real_lt_subst_right">
   <div class="statement-head"><div class="statement-title">Lemma 8</div><span class="label-badge">real_lt_subst_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a < b$ and $b = c$. <br><span class="kw">Then</span> $a < c$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -841,7 +843,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_lt_subst_right" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -849,7 +851,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_neg_zero">
+<section class="statement lemma helper joins-following-proof" id="real_neg_zero">
   <div class="statement-head"><div class="statement-title">Lemma 9</div><span class="label-badge">real_neg_zero</span></div>
   <div class="statement-body"><p>$\neg{0} = 0$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -860,7 +862,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_neg_zero" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse_unique" data-preview-label="real_add_inverse_unique">Proposition 435</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -868,7 +870,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="open_interval_refinement">
+<section class="statement lemma helper joins-following-proof" id="open_interval_refinement">
   <div class="statement-head"><div class="statement-title">Lemma 10</div><span class="label-badge">open_interval_refinement</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a,b,c,d,x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a < x$ and $x < b$ and $c < x$ and $x < d$. <br><span class="kw">Then</span> there exist $e,f\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $e < x$ and $x < f$ and $\intervalopen{e}{f} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalopen{a}{b}\inter \intervalopen{c}{d}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -882,7 +884,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="open_interval_refinement" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{a,c\}$.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_standard_library_sets.html#upair_elim" data-preview-label="upair_elim">Proposition 18</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Take</span> $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $m$ is a maximum of $A$ by <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_real_maximum" data-preview-label="finite_real_maximum">Lemma 1272</a>.<br> <span class="kw kw-bold">Let</span> $B = \{b,d\}$.<br> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_standard_library_sets.html#upair_elim" data-preview-label="upair_elim">Proposition 18</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Take</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ such that $n$ is a minimum of $B$ by <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_real_minimum" data-preview-label="finite_real_minimum">Lemma 1274</a>. <br><span class="kw">Then</span> $m < x$ and $x < n$ by <a class="xref" href="current_section_standard_library_sets.html#upair_elim" data-preview-label="upair_elim">Proposition 18</a>.<br> <span class="kw kw-bold">Let</span> $e = m$.<br> <span class="kw kw-bold">Let</span> $f = n$.<br> <span class="kw">Hence</span> $e\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $e < x$ and $x < f$ and $\intervalopen{e}{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalopen{a}{b}\inter \intervalopen{c}{d}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#intervalopen" data-preview-label="intervalopen">Definition 421</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_right" data-preview-label="upair_intro_right">Proposition 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_minimum" data-preview-label="real_minimum">Definition 419</a>, <a class="xref" href="current_section_13.html#real_leq_split" data-preview-label="real_leq_split">Lemma 6</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -903,7 +905,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedopen_interval_refinement">
+<section class="statement lemma helper joins-following-proof" id="closedopen_interval_refinement">
   <div class="statement-head"><div class="statement-title">Lemma 11</div><span class="label-badge">closedopen_interval_refinement</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a,b,c,d,x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < b$ and $c \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < d$. <br><span class="kw">Then</span> there exist $e,f\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $e \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < f$ and $\intervalclosedopen{e}{f} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalclosedopen{a}{b}\inter \intervalclosedopen{c}{d}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -917,7 +919,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedopen_interval_refinement" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{a,c\}$.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_standard_library_sets.html#upair_elim" data-preview-label="upair_elim">Proposition 18</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Take</span> $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $m$ is a maximum of $A$ by <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_real_maximum" data-preview-label="finite_real_maximum">Lemma 1272</a>.<br> <span class="kw kw-bold">Let</span> $B = \{b,d\}$.<br> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_standard_library_sets.html#upair_elim" data-preview-label="upair_elim">Proposition 18</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Take</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ such that $n$ is a minimum of $B$ by <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_real_minimum" data-preview-label="finite_real_minimum">Lemma 1274</a>. <br><span class="kw">Then</span> $m \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < n$ by <a class="xref" href="current_section_standard_library_sets.html#upair_elim" data-preview-label="upair_elim">Proposition 18</a>.<br> <span class="kw kw-bold">Let</span> $e = m$.<br> <span class="kw kw-bold">Let</span> $f = n$.<br> <span class="kw">Hence</span> $e\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $e \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < f$ and $\intervalclosedopen{e}{f}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalclosedopen{a}{b}\inter \intervalclosedopen{c}{d}$ by <a class="xref" href="current_section_13.html#interval_closed_open" data-preview-label="interval_closed_open">Definition 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_right" data-preview-label="upair_intro_right">Proposition 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_minimum" data-preview-label="real_minimum">Definition 419</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>, <a class="xref" href="current_section_13.html#real_leq_split" data-preview-label="real_leq_split">Lemma 6</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -938,7 +940,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalopen_subset_reals">
+<section class="statement lemma helper joins-following-proof" id="intervalopen_subset_reals">
   <div class="statement-head"><div class="statement-title">Lemma 12</div><span class="label-badge">intervalopen_subset_reals</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\intervalopen{a}{b}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -950,7 +952,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopen_subset_reals" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#intervalopen" data-preview-label="intervalopen">Definition 421</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -958,7 +960,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalclosedopen_subset_reals">
+<section class="statement lemma helper joins-following-proof" id="intervalclosedopen_subset_reals">
   <div class="statement-head"><div class="statement-title">Lemma 13</div><span class="label-badge">intervalclosedopen_subset_reals</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\intervalclosedopen{a}{b}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -970,7 +972,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalclosedopen_subset_reals" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#interval_closed_open" data-preview-label="interval_closed_open">Definition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -978,7 +980,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_positive_real">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_positive_real">
   <div class="statement-head"><div class="statement-title">Lemma 14</div><span class="label-badge">naturalsplus_positive_real</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $0 < n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -990,7 +992,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_positive_real" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_13.html#real_leq_split" data-preview-label="real_leq_split">Lemma 6</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -999,7 +1001,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_reciprocal_real">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_reciprocal_real">
   <div class="statement-head"><div class="statement-title">Lemma 15</div><span class="label-badge">naturalsplus_reciprocal_real</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $1 / n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1011,7 +1013,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_reciprocal_real" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_13.html#naturalsplus_positive_real" data-preview-label="naturalsplus_positive_real">Lemma 14</a>.<br> Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1021,7 +1023,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="k_set_positive">
+<section class="statement lemma helper joins-following-proof" id="k_set_positive">
   <div class="statement-head"><div class="statement-title">Lemma 16</div><span class="label-badge">k_set_positive</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\kset$. <br><span class="kw">Then</span> $0 < x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1033,7 +1035,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="k_set_positive" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x = 1 / n$ by <a class="xref" href="current_section_13.html#k_set" data-preview-label="k_set">Definition 21</a>.<br> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_13.html#naturalsplus_positive_real" data-preview-label="naturalsplus_positive_real">Lemma 14</a>.<br> <span class="kw">Hence</span> $0 < x$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_inv_pos" data-preview-label="real_inv_pos">Proposition 463</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1043,7 +1045,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="rational_between_negative_and_zero">
+<section class="statement lemma helper joins-following-proof" id="rational_between_negative_and_zero">
   <div class="statement-head"><div class="statement-title">Lemma 17</div><span class="label-badge">rational_between_negative_and_zero</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a < 0$. <br><span class="kw">Then</span> there exists $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\rationals$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\intervalopen{a}{0}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1055,7 +1057,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="rational_between_negative_and_zero" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $\neg{a}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.<br> <span class="kw">Hence</span> $0 < \neg{a}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_neg" data-preview-label="real_lt_neg">Proposition 465</a>, <a class="xref" href="current_section_13.html#real_neg_zero" data-preview-label="real_neg_zero">Lemma 9</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>.<br> <span class="kw kw-bold">Take</span> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < \neg{a}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_small_reciprocal" data-preview-label="real_small_reciprocal">Proposition 476</a>.<br> $0 < N$ and $1 / N\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_13.html#naturalsplus_positive_real" data-preview-label="naturalsplus_positive_real">Lemma 14</a>, <a class="xref" href="current_section_13.html#naturalsplus_reciprocal_real" data-preview-label="naturalsplus_reciprocal_real">Lemma 15</a>.<br> <span class="kw kw-bold">Let</span> $p = \neg{(1 / N)}$.<br> <span class="kw">Hence</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\intervalopen{a}{0}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_neg" data-preview-label="real_lt_neg">Proposition 465</a>, <a class="xref" href="current_section_13.html#real_neg_zero" data-preview-label="real_neg_zero">Lemma 9</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#intervalopen" data-preview-label="intervalopen">Definition 421</a>.<br> $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $\neg{1}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $\neg{\neg{1}} = 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>. <br><span class="kw">Then</span> $\neg{1}\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>. <br><span class="kw">Then</span> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>.<br> <span class="kw">Hence</span> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{0\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>.<br> $\inv{N}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>. <br><span class="kw">Then</span> $p = \neg{1} \rmul \inv{N}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>.<br> <span class="kw">Hence</span> $p = (\neg{1}) / N$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>.<br> <span class="kw">Therefore</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\rationals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_rationals" data-preview-label="real_rationals">Definition 428</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1078,7 +1080,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="standard_basis_is_basis">
+<section class="statement lemma joins-following-proof" id="standard_basis_is_basis">
   <div class="statement-head"><div class="statement-title">Lemma 18</div><span class="label-badge">standard_basis_is_basis</span></div>
   <div class="statement-body"><p>$\standardBasisR$ is a basis on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1089,7 +1091,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="standard_basis_is_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\standardBasisR\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\reals}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#standard_basis_reals" data-preview-label="standard_basis_reals">Definition 17</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -1123,7 +1125,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="lower_limit_basis_is_basis">
+<section class="statement lemma joins-following-proof" id="lower_limit_basis_is_basis">
   <div class="statement-head"><div class="statement-title">Lemma 19</div><span class="label-badge">lower_limit_basis_is_basis</span></div>
   <div class="statement-body"><p>$\lowerLimitBasisR$ is a basis on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1134,7 +1136,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="lower_limit_basis_is_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\lowerLimitBasisR\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\reals}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#lower_limit_basis_reals" data-preview-label="lower_limit_basis_reals">Definition 19</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -1168,7 +1170,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="k_basis_is_basis">
+<section class="statement lemma joins-following-proof" id="k_basis_is_basis">
   <div class="statement-head"><div class="statement-title">Lemma 20</div><span class="label-badge">k_basis_is_basis</span></div>
   <div class="statement-body"><p>$\kBasisR$ is a basis on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1179,7 +1181,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="k_basis_is_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\kBasisR\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{\reals}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#k_basis_reals" data-preview-label="k_basis_reals">Definition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -1329,7 +1331,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="lower_limit_strictly_finer_standard">
+<section class="statement lemma joins-following-proof" id="lower_limit_strictly_finer_standard">
   <div class="statement-head"><div class="statement-title">Lemma 21</div><span class="label-badge">lower_limit_strictly_finer_standard</span></div>
   <div class="statement-body"><p>$\lowerLimitTopologyR$ is strictly finer than $\standardTopologyR$ on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1340,7 +1342,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="lower_limit_strictly_finer_standard" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T = \standardTopologyR$.<br> <span class="kw kw-bold">Let</span> $T_1 = \lowerLimitTopologyR$.<br> $\standardBasisR$ is a basis for $T$ on $\reals$ and $\lowerLimitBasisR$ is a basis for $T_1$ on $\reals$ by <a class="xref" href="current_section_13.html#standard_basis_is_basis" data-preview-label="standard_basis_is_basis">Lemma 18</a>, <a class="xref" href="current_section_13.html#lower_limit_basis_is_basis" data-preview-label="lower_limit_basis_is_basis">Lemma 19</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#standard_topology_reals" data-preview-label="standard_topology_reals">Definition 18</a>, <a class="xref" href="current_section_13.html#lower_limit_topology_reals" data-preview-label="lower_limit_topology_reals">Definition 20</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,B_2$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\standardBasisR$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in}\lowerLimitBasisR$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_2$.</span></summary>
@@ -1393,7 +1395,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="k_strictly_finer_standard">
+<section class="statement lemma joins-following-proof" id="k_strictly_finer_standard">
   <div class="statement-head"><div class="statement-title">Lemma 22</div><span class="label-badge">k_strictly_finer_standard</span></div>
   <div class="statement-body"><p>$\kTopologyR$ is strictly finer than $\standardTopologyR$ on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1404,7 +1406,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="k_strictly_finer_standard" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T = \standardTopologyR$.<br> <span class="kw kw-bold">Let</span> $T_2 = \kTopologyR$.<br> $\standardBasisR$ is a basis for $T$ on $\reals$ and $\kBasisR$ is a basis for $T_2$ on $\reals$ by <a class="xref" href="current_section_13.html#standard_basis_is_basis" data-preview-label="standard_basis_is_basis">Lemma 18</a>, <a class="xref" href="current_section_13.html#k_basis_is_basis" data-preview-label="k_basis_is_basis">Lemma 20</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#standard_topology_reals" data-preview-label="standard_topology_reals">Definition 18</a>, <a class="xref" href="current_section_13.html#k_topology_reals" data-preview-label="k_topology_reals">Definition 23</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,B_2$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\standardBasisR$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in}\kBasisR$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_2$.</span></summary>
@@ -1464,7 +1466,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="lower_limit_k_not_comparable">
+<section class="statement lemma joins-following-proof" id="lower_limit_k_not_comparable">
   <div class="statement-head"><div class="statement-title">Lemma 23</div><span class="label-badge">lower_limit_k_not_comparable</span></div>
   <div class="statement-body"><p>$\lowerLimitTopologyR$ is not comparable with $\kTopologyR$ on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1475,7 +1477,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="lower_limit_k_not_comparable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_1 = \lowerLimitTopologyR$.<br> <span class="kw kw-bold">Let</span> $T_2 = \kTopologyR$.<br> <span class="kw kw-bold">Let</span> $U_1 = \intervalclosedopen{0}{1}$.<br> <span class="kw kw-bold">Let</span> $U_2 = \intervalopen{\neg{1}}{1}\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \kset$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$U_1\class{latex-symbol-tip latex-symbol-id-in}{\in} T_1$.</span></summary>
@@ -1587,7 +1589,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="subbasis_finite_intersections_basis">
+<section class="statement lemma joins-following-proof" id="subbasis_finite_intersections_basis">
   <div class="statement-head"><div class="statement-title">Lemma 24</div><span class="label-badge">subbasis_finite_intersections_basis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $S$ is a subbasis on $X$. <br><span class="kw">Then</span> $\finiteIntersections{S}$ is a basis on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1599,7 +1601,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subbasis_finite_intersections_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $B_1,B_2,x$ such that $B_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1\inter B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_1\inter B_2$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#finite_intersections" data-preview-label="finite_intersections">Definition 25</a>, <a class="xref" href="current_section_standard_library_sets.html#union_subsets_is_subset" data-preview-label="union_subsets_is_subset">Proposition 44</a>, <a class="xref" href="current_section_standard_library_cardinality.html#union_of_finite_is_finite" data-preview-label="union_of_finite_is_finite">Lemma 1270</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_subseteq" data-preview-label="inter_subseteq">Proposition 78</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#inters_distrib_union" data-preview-label="inters_distrib_union">Proposition 84 [Intersection over binary union]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.</p></div>

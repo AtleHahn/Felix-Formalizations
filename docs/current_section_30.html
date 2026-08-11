@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -408,7 +410,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
       <button id="toggleRaw">Make raw code available</button>
     </div>
     <h3 class="tex-section" data-section-label="§30 The Countability Axioms">§30 The Countability Axioms</h3>
-<section class="statement lemma" id="sequence_implies_closure_first_countable">
+<section class="statement lemma joins-following-proof" id="sequence_implies_closure_first_countable">
   <div class="statement-head"><div class="statement-title">Lemma 350</div><span class="label-badge">sequence_implies_closure_first_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $s$ is a sequence in $A$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $s$ converges to $x$ in $X$ with respect to $T$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -424,7 +426,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="sequence_implies_closure_first_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_21.html#sequence_implies_closure" data-preview-label="sequence_implies_closure">Lemma 197</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -432,7 +434,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="nested_countable_basis">
+<section class="statement lemma helper joins-following-proof" id="nested_countable_basis">
   <div class="statement-head"><div class="statement-title">Lemma 351</div><span class="label-badge">nested_countable_basis</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $b$ is a countable basis at $x$ in $X$ with respect to $T$. <br><span class="kw">Then</span> there exists $c$ such that $c$ is a countable basis at $x$ in $X$ with respect to $T$ and for all $m,n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ if $m\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ then $c(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} c(m)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -446,7 +448,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="nested_countable_basis" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>.<br> $b$ is a sequence in $\pow{X}$ by <a class="xref" href="current_section_21.html#countable_basis_at_point" data-preview-label="countable_basis_at_point">Definition 109</a>.<br> $b(1)$ is a neighborhood of $x$ in $X$ with respect to $T$ by <a class="xref" href="current_section_21.html#countable_basis_at_point" data-preview-label="countable_basis_at_point">Definition 109</a>.<br> $T$ is a topology on $X$ and $b(1)$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.<br> <span class="kw kw-bold">Let</span> $F = \{(n,\img{\restrl{b}{\initialSegment{n}}}{\initialSegment{n}}) \mid n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\}$.<br> <span class="kw kw-bold">Let</span> $C = \{(n,\inters{\apply{F}{n}}) \mid n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\}$.</p>
 <p>For all $n,U_1,U_2$ such that $(n,U_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ and $(n,U_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $U_1 = U_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $F$ is right-unique by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.<br> $F$ is a function.<br> For all $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{F}$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>.<br> For all $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{F}$ we have $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $F$ is a function on $\naturalsPlus$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p>
 <p>For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $F(n) = \img{\restrl{b}{\initialSegment{n}}}{\initialSegment{n}}$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.</p>
@@ -578,7 +580,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closure_implies_sequence_first_countable">
+<section class="statement lemma joins-following-proof" id="closure_implies_sequence_first_countable">
   <div class="statement-head"><div class="statement-title">Lemma 352</div><span class="label-badge">closure_implies_sequence_first_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $X$ satisfies the first countability axiom with respect to $T$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$. <br><span class="kw">Then</span> there exists $s$ such that $s$ is a sequence in $A$ and $s$ converges to $x$ in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -594,7 +596,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_implies_sequence_first_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $c$ such that $c$ is a countable basis at $x$ in $X$ with respect to $T$ and for all $m,n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ if $m\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ then $c(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} c(m)$ by <a class="xref" href="current_section_21.html#first_countability_axiom" data-preview-label="first_countability_axiom">Definition 110</a>, <a class="xref" href="current_section_30.html#nested_countable_basis" data-preview-label="nested_countable_basis">Lemma 351</a>.</p>
 <p><span class="kw kw-bold">Let</span> $R = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\class{latex-symbol-tip latex-symbol-id-times}{\times} X \mid \snd{w}\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter \apply{c}{\fst{w}}\}$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ there exists $y$ such that $n\mathrel{R} y$ by <a class="xref" href="current_section_21.html#countable_basis_at_point" data-preview-label="countable_basis_at_point">Definition 109</a>, <a class="xref" href="current_section_17.html#closure_iff_intersects_open" data-preview-label="closure_iff_intersects_open">Theorem 6</a>, <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_right" data-preview-label="inter_elim_right">Proposition 63</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_left" data-preview-label="inter_elim_left">Proposition 62</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw kw-bold">Take</span> $s$ such that $s$ is a function on $\naturalsPlus$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $n\mathrel{R} s(n)$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>.</p>
 <p>For all $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{s}$ we have $s(n)\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>.</p>
@@ -645,7 +647,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="continuous_implies_sequential_first_countable">
+<section class="statement theorem joins-following-proof" id="continuous_implies_sequential_first_countable">
   <div class="statement-head"><div class="statement-title">Theorem 73</div><span class="label-badge">continuous_implies_sequential_first_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $T_1$ is a topology on $Y$.<br> <span class="kw">Suppose</span> $f$ is a function from $X$ to $Y$.<br> <span class="kw">Suppose</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$. <br><span class="kw">Then</span> for all $s$ such that $s$ is a sequence in $X$ we have for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ if $s$ converges to $x$ in $X$ with respect to $T$ then $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} s$ converges to $f(x)$ in $Y$ with respect to $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -662,7 +664,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="continuous_implies_sequential_first_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_21.html#continuous_implies_sequential" data-preview-label="continuous_implies_sequential">Theorem 25</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -670,7 +672,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="sequential_implies_continuous_first_countable">
+<section class="statement theorem joins-following-proof" id="sequential_implies_continuous_first_countable">
   <div class="statement-head"><div class="statement-title">Theorem 74</div><span class="label-badge">sequential_implies_continuous_first_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $T_1$ is a topology on $Y$.<br> <span class="kw">Suppose</span> $f$ is a function from $X$ to $Y$.<br> <span class="kw">Suppose</span> $X$ satisfies the first countability axiom with respect to $T$.<br> <span class="kw">Suppose</span> for all $s$ such that $s$ is a sequence in $X$ we have for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ if $s$ converges to $x$ in $X$ with respect to $T$ then $f\class{latex-symbol-tip latex-symbol-id-circ}{\circ} s$ converges to $f(x)$ in $Y$ with respect to $T_1$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -688,7 +690,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="sequential_implies_continuous_first_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ we have $\img{f}{\closure{A}{X}{T}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \closure{\img{f}{A}}{Y}{T_1}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $A$ such that $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.</p>
@@ -749,7 +751,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="second_countability_implies_first">
+<section class="statement lemma joins-following-proof" id="second_countability_implies_first">
   <div class="statement-head"><div class="statement-title">Lemma 353</div><span class="label-badge">second_countability_implies_first</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $X$ satisfies the second countability axiom with respect to $T$. <br><span class="kw">Then</span> $X$ satisfies the first countability axiom with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -762,7 +764,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="second_countability_implies_first" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $b$ such that $b$ is a sequence in $\pow{X}$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $b(n)$ is open in $X$ with respect to $T$ and for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} b(n)$ and $b(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_30.html#second_countability_axiom" data-preview-label="second_countability_axiom">Definition 171</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $c$ such that $c$ is a countable basis at $x$ in $X$ with respect to $T$.</span></summary>
@@ -848,7 +850,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subspace_first_countable">
+<section class="statement lemma joins-following-proof" id="subspace_first_countable">
   <div class="statement-head"><div class="statement-title">Lemma 354</div><span class="label-badge">subspace_first_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $X$ satisfies the first countability axiom with respect to $T$. <br><span class="kw">Then</span> $A$ satisfies the first countability axiom with respect to $\subspaceTopology{T}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -862,7 +864,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subspace_first_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_1 = \subspaceTopology{T}{A}$.<br> $T_1$ is a topology on $A$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ there exists $c$ such that $c$ is a countable basis at $x$ in $A$ with respect to $T_1$.</span></summary>
@@ -928,7 +930,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="countable_basis_elem_neighborhood">
+<section class="statement lemma helper joins-following-proof" id="countable_basis_elem_neighborhood">
   <div class="statement-head"><div class="statement-title">Lemma 355</div><span class="label-badge">countable_basis_elem_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $b$ is a countable basis at $x$ in $X$ with respect to $T$.<br> <span class="kw">Assume</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $b(n)$ is a neighborhood of $x$ in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -941,7 +943,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="countable_basis_elem_neighborhood" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_21.html#countable_basis_at_point" data-preview-label="countable_basis_at_point">Definition 109</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -949,7 +951,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="countable_product_first_countable">
+<section class="statement lemma joins-following-proof" id="countable_product_first_countable">
   <div class="statement-head"><div class="statement-title">Lemma 356</div><span class="label-badge">countable_product_first_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{X} = \naturalsPlus$.<br> <span class="kw">Assume</span> $\dom{T} = \naturalsPlus$.<br> <span class="kw">Assume</span> that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $\apply{T}{n}$ is a topology on $\apply{X}{n}$.<br> <span class="kw">Suppose</span> for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $\apply{X}{n}$ satisfies the first countability axiom with respect to $\apply{T}{n}$. <br><span class="kw">Then</span> $\productFamily{X}$ satisfies the first countability axiom with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -966,7 +968,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="countable_product_first_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{X}$ there exists $d$ such that $d$ is a countable basis at $x$ in $\productFamily{X}$ with respect to $T_0$.</span></summary>
@@ -1458,7 +1460,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subspace_second_countable">
+<section class="statement lemma joins-following-proof" id="subspace_second_countable">
   <div class="statement-head"><div class="statement-title">Lemma 357</div><span class="label-badge">subspace_second_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $X$ satisfies the second countability axiom with respect to $T$. <br><span class="kw">Then</span> $A$ satisfies the second countability axiom with respect to $\subspaceTopology{T}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1472,7 +1474,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subspace_second_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_1 = \subspaceTopology{T}{A}$.<br> $T_1$ is a topology on $A$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.<br> <span class="kw kw-bold">Take</span> $b$ such that $b$ is a sequence in $\pow{X}$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $b(n)$ is open in $X$ with respect to $T$ and for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} b(n)$ and $b(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_30.html#second_countability_axiom" data-preview-label="second_countability_axiom">Definition 171</a>.<br> <span class="kw kw-bold">Let</span> $c = \{(n, A\inter b(n)) \mid n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\}$.<br> For all $n,U_1,U_2$ such that $(n,U_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} c$ and $(n,U_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} c$ we have $U_1 = U_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $c$ is a function by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\naturalsPlus}{\pow{A}}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_left" data-preview-label="inter_elim_left">Proposition 62</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$c$ is a sequence in $\pow{A}$.</span></summary>
@@ -1528,7 +1530,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_add_closed">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_add_closed">
   <div class="statement-head"><div class="statement-title">Lemma 358</div><span class="label-badge">naturalsplus_add_closed</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $a + b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1540,7 +1542,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_add_closed" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid a + b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\}$.<br> $1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>.<br> $a + b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_induction" data-preview-label="real_naturals_induction">Proposition 445</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1552,7 +1554,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_mul_closed">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_mul_closed">
   <div class="statement-head"><div class="statement-title">Lemma 359</div><span class="label-badge">naturalsplus_mul_closed</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $a \rmul b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1564,7 +1566,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_mul_closed" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid a \rmul b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\}$.<br> $1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_30.html#naturalsplus_add_closed" data-preview-label="naturalsplus_add_closed">Lemma 358</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> $a \rmul b\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_induction" data-preview-label="real_naturals_induction">Proposition 445</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1576,7 +1578,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_mul_succ_lt_square">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_mul_succ_lt_square">
   <div class="statement-head"><div class="statement-title">Lemma 360</div><span class="label-badge">naturalsplus_mul_succ_lt_square</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $s\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $s \rmul (s + 1) < (s + 1) \rmul (s + 1)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1588,7 +1590,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_mul_succ_lt_square" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$s\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>.<br> $s < s + 1$ and $s + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> $0 < s + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>.<br> $s \rmul (s + 1) < (s + 1) \rmul (s + 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1600,7 +1602,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_mul_succ_lt_square_bound">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_mul_succ_lt_square_bound">
   <div class="statement-head"><div class="statement-title">Lemma 361</div><span class="label-badge">naturalsplus_mul_succ_lt_square_bound</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $s\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $t\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $s < t$. <br><span class="kw">Then</span> $s \rmul (s + 1) < t \rmul t$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1612,7 +1614,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_mul_succ_lt_square_bound" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$t = 1$ or there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $t = m + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_predecessor" data-preview-label="real_naturals_predecessor">Lemma 1256</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $t = 1$.</div><div class="case-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$s \rmul (s + 1) < t \rmul t$.</span></summary>
@@ -1735,7 +1737,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_pairing_injection">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_pairing_injection">
   <div class="statement-head"><div class="statement-title">Lemma 362</div><span class="label-badge">naturalsplus_pairing_injection</span></div>
   <div class="statement-body"><p>There exists $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturalsPlus\class{latex-symbol-tip latex-symbol-id-times}{\times}\naturalsPlus}{\naturalsPlus}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1746,7 +1748,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_pairing_injection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $g = \{(p,(\fst{p} + \snd{p}) \rmul (\fst{p} + \snd{p}) + \fst{p}) \mid p\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\class{latex-symbol-tip latex-symbol-id-times}{\times}\naturalsPlus\}$.<br> For all $p,a,b$ such that $(p,a)\class{latex-symbol-tip latex-symbol-id-in}{\in} g$ and $(p,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} g$ we have $a = b$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $g$ is a function by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{g}$ we have $g(p)\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</span></summary>
@@ -1942,7 +1944,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="functions_eq_iff">
+<section class="statement lemma helper joins-following-proof" id="functions_eq_iff">
   <div class="statement-head"><div class="statement-title">Lemma 363</div><span class="label-badge">functions_eq_iff</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$.<br> <span class="kw">Suppose</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $f(x) = g(x)$. <br><span class="kw">Then</span> $f = g$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1955,7 +1957,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="functions_eq_iff" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_functions.html#fun_subseteq" data-preview-label="fun_subseteq">Proposition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1963,7 +1965,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="restrl_initialsegment_funs">
+<section class="statement lemma helper joins-following-proof" id="restrl_initialsegment_funs">
   <div class="statement-head"><div class="statement-title">Lemma 364</div><span class="label-badge">restrl_initialsegment_funs</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $u\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{n + 1}}{\naturalsPlus}$. <br><span class="kw">Then</span> $\restrl{u}{\initialSegment{n}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{n}}{\naturalsPlus}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1975,7 +1977,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="restrl_initialsegment_funs" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$u$ is a function and $\dom{u} = \initialSegment{n + 1}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>.<br> $\restrl{u}{\initialSegment{n}}$ is a function by <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_is_function" data-preview-label="restrl_of_function_is_function">Proposition 383</a>.<br> $\dom{\restrl{u}{\initialSegment{n}}} = \initialSegment{n}$ by <a class="xref" href="current_section_14.html#initial_segment_subset_succ" data-preview-label="initial_segment_subset_succ">Lemma 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#elem_dom_and_restr_implies_elem_of_restr" data-preview-label="elem_dom_and_restr_implies_elem_of_restr">Proposition 265</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_dom" data-preview-label="restrl_dom">Proposition 269</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> $\restrl{u}{\initialSegment{n}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{n}}{\naturalsPlus}$ by <a class="xref" href="current_section_standard_library_relations.html#elem_dom_of_restrl_implies_elem_dom_and_restr" data-preview-label="elem_dom_of_restrl_implies_elem_dom_and_restr">Proposition 264</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_14.html#initial_segment_subset_succ" data-preview-label="initial_segment_subset_succ">Lemma 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_apply" data-preview-label="restrl_of_function_apply">Proposition 384</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1988,7 +1990,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_finite_sequences_inj">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_finite_sequences_inj">
   <div class="statement-head"><div class="statement-title">Lemma 365</div><span class="label-badge">naturalsplus_finite_sequences_inj</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> there exists $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\funs{\initialSegment{n}}{\naturalsPlus}}{\naturalsPlus}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2000,7 +2002,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_finite_sequences_inj" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\funs{\initialSegment{n}}{\naturalsPlus}}{\naturalsPlus}. f = f\}$.<br> $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>.<br> <span class="kw kw-bold">Let</span> $f_1 = \{(u, \apply{u}{1}) \mid u\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{1}}{\naturalsPlus}\}$.<br> $f_1$ is a function by <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $f_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\funs{\initialSegment{1}}{\naturalsPlus}}{\naturalsPlus}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>.<br> For all $u_1,u_2$ such that $u_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{1}}{\naturalsPlus}$ and $u_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{1}}{\naturalsPlus}$ and $f_1(u_1) = f_1(u_2)$ we have for all $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{1}$ we have $u_1(k) = u_2(k)$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>.<br> For all $u_1,u_2$ such that $u_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{1}}{\naturalsPlus}$ and $u_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{1}}{\naturalsPlus}$ and $f_1(u_1) = f_1(u_2)$ we have $u_1 = u_2$ by <a class="xref" href="current_section_30.html#functions_eq_iff" data-preview-label="functions_eq_iff">Lemma 363</a>.<br> $f_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\funs{\initialSegment{1}}{\naturalsPlus}}{\naturalsPlus}$ by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</span></summary>
@@ -2087,7 +2089,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_finite_sequences_all_inj">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_finite_sequences_all_inj">
   <div class="statement-head"><div class="statement-title">Lemma 366</div><span class="label-badge">naturalsplus_finite_sequences_all_inj</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $F = \{ \funs{\initialSegment{k}}{\naturalsPlus} \mid k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \}$.<br> <span class="kw kw-bold">Let</span> $S = \unions{F}$. <br><span class="kw">Then</span> there exists $h\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{S}{\naturalsPlus}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2100,7 +2102,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_finite_sequences_all_inj" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $B = \pow{S\class{latex-symbol-tip latex-symbol-id-times}{\times}\naturalsPlus}$.<br> <span class="kw kw-bold">Let</span> $R = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\class{latex-symbol-tip latex-symbol-id-times}{\times} B \mid \text{there exists $k\in\naturalsPlus$ such that there exists $f\in\inj{\funs{\initialSegment{k}}{\naturalsPlus}}{\naturalsPlus}$ such that $w = (k,f)$}\}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ there exists $f$ such that $k\mathrel{R} f$.</span></summary>
@@ -2245,7 +2247,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_finite_sequence_enumeration">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_finite_sequence_enumeration">
   <div class="statement-head"><div class="statement-title">Lemma 367</div><span class="label-badge">naturalsplus_finite_sequence_enumeration</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $F = \{ \funs{\initialSegment{k}}{\naturalsPlus} \mid k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \}$.<br> <span class="kw kw-bold">Let</span> $S = \unions{F}$.<br> There exists $q$ such that $q$ is a function on $\naturalsPlus$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $q(n)\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ and for all $u$ such that $u\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $q(n) = u$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2262,7 +2264,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_finite_sequence_enumeration" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $h$ such that $h\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{S}{\naturalsPlus}$ by <a class="xref" href="current_section_30.html#naturalsplus_finite_sequences_all_inj" data-preview-label="naturalsplus_finite_sequences_all_inj">Lemma 366</a>.<br> <span class="kw kw-bold">Let</span> $u_0 = \{(1,1)\}$.<br> $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>.<br> $u_0$ is a function by <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{u_0}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{1}$ by <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{1}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{u_0}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>.<br> $\dom{u_0} = \initialSegment{1}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{u_0}$ we have $u_0(x)\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_relations.html#dom" data-preview-label="dom">Definition 360</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>.<br> $u_0\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\initialSegment{1}}{\naturalsPlus}$ by <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.<br> $u_0\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ by <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>.<br> <span class="kw kw-bold">Let</span> $R_a = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in}\ran{h}\class{latex-symbol-tip latex-symbol-id-times}{\times} S \mid \text{there exists $u\in S$ such that $w = (h(u),u)$}\}$.<br> <span class="kw kw-bold">Let</span> $R_b = (\naturalsPlus\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\ran{h})\class{latex-symbol-tip latex-symbol-id-times}{\times}\{u_0\}$.<br> <span class="kw kw-bold">Let</span> $R_1 = R_a\union R_b$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} R_a$ there exist $n,u$ such that $w = (n,u)$.<br> $R_a$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> $R_b$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#times_elem_is_tuple" data-preview-label="times_elem_is_tuple">Proposition 121</a>.<br> $R_1$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#union_relations_is_relation" data-preview-label="union_relations_is_relation">Proposition 180</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ there exists $u$ such that $n\mathrel{R_1} u$.</span></summary>
@@ -2385,7 +2387,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="countable_product_second_countable">
+<section class="statement lemma joins-following-proof" id="countable_product_second_countable">
   <div class="statement-head"><div class="statement-title">Lemma 368</div><span class="label-badge">countable_product_second_countable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{X} = \naturalsPlus$.<br> <span class="kw">Assume</span> $\dom{T} = \naturalsPlus$.<br> <span class="kw">Assume</span> that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $\apply{T}{n}$ is a topology on $\apply{X}{n}$.<br> <span class="kw">Suppose</span> for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $\apply{X}{n}$ satisfies the second countability axiom with respect to $\apply{T}{n}$. <br><span class="kw">Then</span> $\productFamily{X}$ satisfies the second countability axiom with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2402,7 +2404,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="countable_product_second_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.<br> <span class="kw kw-bold">Let</span> $R = \{(n,b) \mid n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus, b\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\naturalsPlus}{\pow{\unions{\ran{X}}}} \mid \text{$b$ is a sequence in $\pow{\apply{X}{n}}$ and for all $k\in\naturalsPlus$ we have $b(k)$ is open in $\apply{X}{n}$ with respect to $\apply{T}{n}$ and for all $x\in\apply{X}{n}$ we have for all $U$ such that $U$ is open in $\apply{X}{n}$ with respect to $\apply{T}{n}$ and $x\in U$ there exists $k\in\naturalsPlus$ such that $x\in b(k)$ and $b(k)\subseteq U$}\}$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ there exists $b$ such that $n\mathrel{R} b$.</span></summary>
@@ -3004,7 +3006,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="second_countable_open_covering_countable_subcover">
+<section class="statement lemma joins-following-proof" id="second_countable_open_covering_countable_subcover">
   <div class="statement-head"><div class="statement-title">Lemma 369</div><span class="label-badge">second_countable_open_covering_countable_subcover</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $X$ satisfies the second countability axiom with respect to $T$. <br><span class="kw">Then</span> for all $C$ such that $C$ is an open covering of $X$ with respect to $T$ there exists $J$ such that $J\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$ and there exists $f$ such that $f$ is a function on $J$ and for all $j\class{latex-symbol-tip latex-symbol-id-in}{\in} J$ we have $\apply{f}{j}\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\unions{\img{f}{J}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3023,7 +3025,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="second_countable_open_covering_countable_subcover" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $b$ such that $b$ is a sequence in $\pow{X}$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $b(n)$ is open in $X$ with respect to $T$ and for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} b(n)$ and $b(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_30.html#second_countability_axiom" data-preview-label="second_countability_axiom">Definition 171</a>.<br> <span class="kw kw-bold">Fix</span> $C$ such that $C$ is an open covering of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $J_0 = \{n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} A\class{latex-symbol-tip latex-symbol-id-in}{\in} C. b(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A\}$.<br> <span class="kw kw-bold">Let</span> $R = \{(n,A) \mid n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_0, A\class{latex-symbol-tip latex-symbol-id-in}{\in} C \mid b(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A\}$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_0$ there exists $A$ such that $n\mathrel{R} A$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw kw-bold">Take</span> $f_0$ such that $f_0$ is a function on $J_0$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_0$ we have $n\mathrel{R}\apply{f_0}{n}$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $j\class{latex-symbol-tip latex-symbol-id-in}{\in} J_0$ we have $\apply{f_0}{j}\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.</span></summary>
@@ -3080,7 +3082,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="second_countable_countable_dense_subset">
+<section class="statement lemma joins-following-proof" id="second_countable_countable_dense_subset">
   <div class="statement-head"><div class="statement-title">Lemma 370</div><span class="label-badge">second_countable_countable_dense_subset</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $X$ satisfies the second countability axiom with respect to $T$. <br><span class="kw">Then</span> there exists $J$ such that $J\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$ and there exists $f$ such that $f$ is a function on $J$ and for all $j\class{latex-symbol-tip latex-symbol-id-in}{\in} J$ we have $\apply{f}{j}\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $\img{f}{J}$ is dense in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3098,7 +3100,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="second_countable_countable_dense_subset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $b$ such that $b$ is a sequence in $\pow{X}$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ we have $b(n)$ is open in $X$ with respect to $T$ and for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} b(n)$ and $b(n)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_30.html#second_countability_axiom" data-preview-label="second_countability_axiom">Definition 171</a>.<br> <span class="kw kw-bold">Let</span> $J_1 = \{n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid b(n)\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\}$.<br> <span class="kw kw-bold">Let</span> $R = \{(n,x) \mid n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_1, x\class{latex-symbol-tip latex-symbol-id-in}{\in} X \mid x\class{latex-symbol-tip latex-symbol-id-in}{\in} b(n)\}$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_1$ there exists $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} b(n)$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_17.html#sequence_in" data-preview-label="sequence_in">Definition 58</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#function_to_ran" data-preview-label="function_to_ran">Proposition 354</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_iff" data-preview-label="ran_iff">Proposition 208</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_1$ there exists $x$ such that $n\mathrel{R} x$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw kw-bold">Take</span> $f_1$ such that $f_1$ is a function on $J_1$ and for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} J_1$ we have $n\mathrel{R}\apply{f_1}{n}$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>.<br> $\img{f_1}{J_1}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#axiom_of_choice" data-preview-label="axiom_of_choice">Axiom 54</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_17.html#sequence_in" data-preview-label="sequence_in">Definition 58</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_standard_library_functions.html#function_to_ran" data-preview-label="function_to_ran">Proposition 354</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_iff" data-preview-label="ran_iff">Proposition 208</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{\img{f_1}{J_1}}{X}{T}$.</span></summary>

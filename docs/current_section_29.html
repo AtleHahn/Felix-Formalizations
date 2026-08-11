@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -447,7 +449,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="compact_implies_locally_compact">
+<section class="statement lemma joins-following-proof" id="compact_implies_locally_compact">
   <div class="statement-head"><div class="statement-title">Lemma 334</div><span class="label-badge">compact_implies_locally_compact</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $X$ is compact with respect to $T$. <br><span class="kw">Then</span> $X$ is locally compact with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -460,7 +462,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="compact_implies_locally_compact" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_X = \subspaceTopology{T}{X}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T_X$.</span></summary>
@@ -497,7 +499,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="set_notin_self">
+<section class="statement lemma helper joins-following-proof" id="set_notin_self">
   <div class="statement-head"><div class="statement-title">Lemma 335</div><span class="label-badge">set_notin_self</span></div>
   <div class="statement-body"><p>For all $x$ we have $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -508,7 +510,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="set_notin_self" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x$.<br> <span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Take</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\{x\}$ such that for all $y\class{latex-symbol-tip latex-symbol-id-in}{\in} a$ we have $y\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\{x\}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_regularity.html#foundation" data-preview-label="foundation">Theorem 144 [Foundation]</a>.<br> <span class="kw">Hence</span> $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\{x\}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>.<br> Contradiction by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -520,7 +522,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="emptyset_compact">
+<section class="statement lemma helper joins-following-proof" id="emptyset_compact">
   <div class="statement-head"><div class="statement-title">Lemma 336</div><span class="label-badge">emptyset_compact</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ is compact with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -532,7 +534,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="emptyset_compact" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A$ such that $A$ is an open covering of $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ with respect to $T$ there exists $B$ such that $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ and $B$ is finite and $B$ is a covering of $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $A$ such that $A$ is an open covering of $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> We have $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ and $B$ is finite and $B$ is a covering of $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#emptyset_subseteq" data-preview-label="emptyset_subseteq">Proposition 11</a>, <a class="xref" href="current_section_standard_library_cardinality.html#emptyset_is_finite" data-preview-label="emptyset_is_finite">Lemma 1260</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_emptyset" data-preview-label="unions_emptyset">Proposition 28</a>, <a class="xref" href="current_section_26.html#covering" data-preview-label="covering">Definition 145</a>.</p></div>
@@ -552,7 +554,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="compact_subspace_inters">
+<section class="statement lemma helper joins-following-proof" id="compact_subspace_inters">
   <div class="statement-head"><div class="statement-title">Lemma 337</div><span class="label-badge">compact_subspace_inters</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.<br> <span class="kw">Suppose</span> $C$ is inhabited.<br> <span class="kw">Suppose</span> for all $K$ such that $K\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $K$ is a compact subspace of $X$ with respect to $T$. <br><span class="kw">Then</span> $\inters{C}$ is a compact subspace of $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -568,7 +570,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="compact_subspace_inters" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $K_0$ such that $K_0\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.<br> For all $K$ such that $K\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $K$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_26.html#compact_subspace_closed" data-preview-label="compact_subspace_closed">Theorem 55</a>.<br> <span class="kw">Hence</span> $\inters{C}$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#closed_inters" data-preview-label="closed_inters">Lemma 65</a>.<br> $\inters{C}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} K_0$ by <a class="xref" href="current_section_standard_library_sets.html#inters" data-preview-label="inters">Definition 349</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Let</span> $T_{K0} = \subspaceTopology{T}{K_0}$.<br> $K_0$ is compact with respect to $T_{K0}$ and $K_0\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>.<br> $\inters{C}\inter K_0 = \inters{C}$ by <a class="xref" href="current_section_17.html#closed_in_subspace_iff" data-preview-label="closed_in_subspace_iff">Theorem 3</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_right" data-preview-label="inter_absorb_supseteq_right">Proposition 69</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Hence</span> $\inters{C}$ is compact with respect to $\subspaceTopology{T_{K0}}{\inters{C}}$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_17.html#closed_in_subspace_iff" data-preview-label="closed_in_subspace_iff">Theorem 3</a>, <a class="xref" href="current_section_26.html#closed_subspace_compact" data-preview-label="closed_subspace_compact">Theorem 54</a>.<br> <span class="kw">Therefore</span> $\inters{C}$ is compact with respect to $\subspaceTopology{T}{\inters{C}}$ by <a class="xref" href="current_section_17.html#closed_in_subspace_iff" data-preview-label="closed_in_subspace_iff">Theorem 3</a>, <a class="xref" href="current_section_26.html#closed_subspace_compact" data-preview-label="closed_subspace_compact">Theorem 54</a>, <a class="xref" href="current_section_23.html#subspace_subspace_topology" data-preview-label="subspace_subspace_topology">Lemma 232</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> Finally $\inters{C}$ is a compact subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -588,7 +590,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="compact_subspace_union">
+<section class="statement lemma helper joins-following-proof" id="compact_subspace_union">
   <div class="statement-head"><div class="statement-title">Lemma 338</div><span class="label-badge">compact_subspace_union</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A$ is a compact subspace of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $B$ is a compact subspace of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $C = A\union B$. <br><span class="kw">Then</span> $C$ is a compact subspace of $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -603,7 +605,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="compact_subspace_union" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#union_subsets_is_subset" data-preview-label="union_subsets_is_subset">Proposition 44</a>.<br> <span class="kw kw-bold">Let</span> $T_C = \subspaceTopology{T}{C}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $U$ such that $U$ is an open covering of $C$ with respect to $T_C$ there exists $D$ such that $D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ and $D$ is finite and $D$ is a covering of $C$.</span></summary>
@@ -678,7 +680,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="compact_subspace_minus_open">
+<section class="statement lemma helper joins-following-proof" id="compact_subspace_minus_open">
   <div class="statement-head"><div class="statement-title">Lemma 339</div><span class="label-badge">compact_subspace_minus_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $C$ is a compact subspace of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $U$ is open in $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $D = C\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} U$. <br><span class="kw">Then</span> $D$ is a compact subspace of $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -693,7 +695,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="compact_subspace_minus_open" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.<br> <span class="kw kw-bold">Let</span> $T_C = \subspaceTopology{T}{C}$.<br> <span class="kw kw-bold">Let</span> $T_D = \subspaceTopology{T}{D}$.<br> $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} U$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_setminus" data-preview-label="setminus_setminus">Proposition 91</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>.<br> <span class="kw">Hence</span> $D$ is closed in $C$ with respect to $T_C$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_eq_inter_complement" data-preview-label="setminus_eq_inter_complement">Proposition 111</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_comm" data-preview-label="inter_comm">Proposition 65 [Commutativity of intersection]</a>, <a class="xref" href="current_section_17.html#closed_in_subspace_iff" data-preview-label="closed_in_subspace_iff">Theorem 3</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>.<br> <span class="kw">Hence</span> $D$ is compact with respect to $T_D$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_26.html#closed_subspace_compact" data-preview-label="closed_subspace_compact">Theorem 54</a>, <a class="xref" href="current_section_23.html#subspace_subspace_topology" data-preview-label="subspace_subspace_topology">Lemma 232</a>.<br> <span class="kw">Therefore</span> $D$ is a compact subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -745,7 +747,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="one_point_topology_subseteq_pow">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_subseteq_pow">
   <div class="statement-head"><div class="statement-title">Lemma 340</div><span class="label-badge">one_point_topology_subseteq_pow</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$. <br><span class="kw">Then</span> $S\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -759,7 +761,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_subseteq_pow" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $S\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{Y}$ by <a class="xref" href="current_section_29.html#one_point_compactification_topology" data-preview-label="one_point_compactification_topology">Definition 168</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_29.html#one_point_open_sets" data-preview-label="one_point_open_sets">Definition 166</a>, <a class="xref" href="current_section_29.html#one_point_compact_complements" data-preview-label="one_point_compact_complements">Definition 167</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -768,7 +770,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_intro_left">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_intro_left">
   <div class="statement-head"><div class="statement-title">Lemma 341</div><span class="label-badge">one_point_topology_intro_left</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$.<br> <span class="kw">Suppose</span> $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} T$. <br><span class="kw">Then</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -784,7 +786,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_intro_left" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $U\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ by <a class="xref" href="current_section_29.html#one_point_compactification_topology" data-preview-label="one_point_compactification_topology">Definition 168</a>, <a class="xref" href="current_section_29.html#one_point_open_sets" data-preview-label="one_point_open_sets">Definition 166</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -792,7 +794,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_intro_right">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_intro_right">
   <div class="statement-head"><div class="statement-title">Lemma 342</div><span class="label-badge">one_point_topology_intro_right</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$.<br> <span class="kw">Suppose</span> there exists $C$ such that $C$ is a compact subspace of $X$ with respect to $T$ and $U = Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} C$. <br><span class="kw">Then</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -809,7 +811,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_intro_right" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $C$ such that $C$ is a compact subspace of $X$ with respect to $T$ and $U = Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} C$.<br> <span class="kw">Hence</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ by <a class="xref" href="current_section_29.html#one_point_compactification_topology" data-preview-label="one_point_compactification_topology">Definition 168</a>, <a class="xref" href="current_section_29.html#one_point_compact_complements" data-preview-label="one_point_compact_complements">Definition 167</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_right" data-preview-label="union_intro_right">Proposition 39</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -820,7 +822,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_without_p">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_without_p">
   <div class="statement-head"><div class="statement-title">Lemma 343</div><span class="label-badge">one_point_topology_without_p</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$.<br> <span class="kw">Suppose</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} S$.<br> <span class="kw">Suppose</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} U$. <br><span class="kw">Then</span> $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $U\class{latex-symbol-tip latex-symbol-id-in}{\in} T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -836,7 +838,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_without_p" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$U\class{latex-symbol-tip latex-symbol-id-in}{\in} \onePointOpenSets{T}{X}{p}$.</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw">Hence</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} \onePointCompactComplements{T}{X}{p}$ by <a class="xref" href="current_section_29.html#one_point_compactification_topology" data-preview-label="one_point_compactification_topology">Definition 168</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.<br> <span class="kw kw-bold">Take</span> $C$ such that $C$ is a compact subspace of $X$ with respect to $T$ and $U = Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} C$ by <a class="xref" href="current_section_29.html#one_point_compact_complements" data-preview-label="one_point_compact_complements">Definition 167</a>. <br><span class="kw">Thus</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_right" data-preview-label="union_intro_right">Proposition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>.<br> Contradiction.</p></div>
@@ -865,7 +867,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_with_p">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_with_p">
   <div class="statement-head"><div class="statement-title">Lemma 344</div><span class="label-badge">one_point_topology_with_p</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$.<br> <span class="kw">Suppose</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} S$.<br> <span class="kw">Suppose</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in} U$. <br><span class="kw">Then</span> there exists $C$ such that $C$ is a compact subspace of $X$ with respect to $T$ and $U = (X\union\{p\})\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -882,7 +884,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_with_p" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$U\class{latex-symbol-tip latex-symbol-id-in}{\in} \onePointCompactComplements{T}{X}{p}$.</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw">Hence</span> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} \onePointOpenSets{T}{X}{p}$ by <a class="xref" href="current_section_29.html#one_point_compactification_topology" data-preview-label="one_point_compactification_topology">Definition 168</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.<br> <span class="kw">Therefore</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_29.html#one_point_open_sets" data-preview-label="one_point_open_sets">Definition 166</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> Contradiction.</p></div>
@@ -908,7 +910,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_is_topology">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_is_topology">
   <div class="statement-head"><div class="statement-title">Lemma 345</div><span class="label-badge">one_point_topology_is_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$. <br><span class="kw">Then</span> $S$ is a topology on $Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -924,7 +926,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_is_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$S\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{Y}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_29.html#one_point_topology_subseteq_pow" data-preview-label="one_point_topology_subseteq_pow">Lemma 340</a>.</p></div>
@@ -1403,7 +1405,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_subspace">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_subspace">
   <div class="statement-head"><div class="statement-title">Lemma 346</div><span class="label-badge">one_point_topology_subspace</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$.<br> <span class="kw kw-bold">Let</span> $T_X = \subspaceTopology{S}{X}$. <br><span class="kw">Then</span> $T_X = T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1420,7 +1422,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_subspace" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T_X$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_29.html#one_point_topology_intro_left" data-preview-label="one_point_topology_intro_left">Lemma 341</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_16.html#subspace_topology" data-preview-label="subspace_topology">Definition 46</a>.</p></div>
@@ -1480,7 +1482,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_compact">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_compact">
   <div class="statement-head"><div class="statement-title">Lemma 347</div><span class="label-badge">one_point_topology_compact</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$. <br><span class="kw">Then</span> $Y$ is compact with respect to $S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1496,7 +1498,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_compact" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A$ such that $A$ is an open covering of $Y$ with respect to $S$ there exists $B$ such that $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ and $B$ is finite and $B$ is a covering of $Y$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $A$ such that $A$ is an open covering of $Y$ with respect to $S$.<br> We have $A$ is a covering of $Y$ and for all $U$ such that $U\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $U$ is open in $Y$ with respect to $S$ by <a class="xref" href="current_section_26.html#open_covering" data-preview-label="open_covering">Definition 146</a>.<br> <span class="kw">Hence</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\unions{A}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_right" data-preview-label="union_intro_right">Proposition 39</a>, <a class="xref" href="current_section_26.html#covering" data-preview-label="covering">Definition 145</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Take</span> $U_0\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in} U_0$ by <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>.<br> <span class="kw kw-bold">Take</span> $C_0$ such that $C_0$ is a compact subspace of $X$ with respect to $T$ and $U_0 = (X\union\{p\})\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} C_0$ by <a class="xref" href="current_section_26.html#open_covering" data-preview-label="open_covering">Definition 146</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_29.html#one_point_topology_with_p" data-preview-label="one_point_topology_with_p">Lemma 344</a>.<br> <span class="kw kw-bold">Let</span> $A_0 = A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{U_0\}$.<br> <span class="kw">Therefore</span> $A_0$ is a covering of $C_0$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>, <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>, <a class="xref" href="current_section_26.html#covering" data-preview-label="covering">Definition 145</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>.<br> $T = \subspaceTopology{S}{X}$ and $S$ is a topology on $Y$ by <a class="xref" href="current_section_29.html#one_point_topology_subspace" data-preview-label="one_point_topology_subspace">Lemma 346</a>, <a class="xref" href="current_section_29.html#one_point_topology_is_topology" data-preview-label="one_point_topology_is_topology">Lemma 345</a>.<br> <span class="kw">Hence</span> $C_0$ is compact with respect to $\subspaceTopology{S}{C_0}$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>, <a class="xref" href="current_section_23.html#subspace_subspace_topology" data-preview-label="subspace_subspace_topology">Lemma 232</a>.<br> <span class="kw">Hence</span> $C_0$ is a subspace of $Y$ with respect to $S$ by <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> For all $U$ such that $U\class{latex-symbol-tip latex-symbol-id-in}{\in} A_0$ we have $U$ is open in $Y$ with respect to $S$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_left" data-preview-label="setminus_elim_left">Proposition 86</a>, <a class="xref" href="current_section_26.html#open_covering" data-preview-label="open_covering">Definition 146</a>.<br> <span class="kw kw-bold">Take</span> $B$ such that $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A_0$ and $B$ is finite and $B$ is a covering of $C_0$ by <a class="xref" href="current_section_26.html#compact_subspace_open_covering" data-preview-label="compact_subspace_open_covering">Lemma 281</a>.<br> <span class="kw kw-bold">Let</span> $E = B\union\{U_0\}$.<br> $E$ is finite by <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#subseteq_finite_is_finite" data-preview-label="subseteq_finite_is_finite">Lemma 1269</a>, <a class="xref" href="current_section_standard_library_cardinality.html#union_of_finite_is_finite" data-preview-label="union_of_finite_is_finite">Lemma 1270</a>.<br> We have $E\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_sets.html#union_subsets_is_subset" data-preview-label="union_subsets_is_subset">Proposition 44</a>.<br> <span class="kw">Hence</span> $E$ is a covering of $Y$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_right" data-preview-label="union_intro_right">Proposition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_29.html#compact_subspace" data-preview-label="compact_subspace">Definition 163</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_setminus" data-preview-label="setminus_setminus">Proposition 91</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_26.html#covering" data-preview-label="covering">Definition 145</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>.<br> There exists $B_0$ such that $B_0\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ and $B_0$ is finite and $B_0$ is a covering of $Y$.</p></div>
@@ -1547,7 +1549,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="one_point_topology_hausdorff">
+<section class="statement lemma helper joins-following-proof" id="one_point_topology_hausdorff">
   <div class="statement-head"><div class="statement-title">Lemma 348</div><span class="label-badge">one_point_topology_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $X$ is locally compact with respect to $T$.<br> <span class="kw">Assume</span> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$. <br><span class="kw">Then</span> $Y$ is Hausdorff with respect to $S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1564,7 +1566,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="one_point_topology_hausdorff" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$S$ is a topology on $Y$ by <a class="xref" href="current_section_29.html#one_point_topology_is_topology" data-preview-label="one_point_topology_is_topology">Lemma 345</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,y$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $x\class{latex-symbol-tip latex-symbol-id-neq}{\neq} y$ there exist $U,V$ such that $U$ is a neighborhood of $x$ in $Y$ with respect to $S$ and $V$ is a neighborhood of $y$ in $Y$ with respect to $S$ and $U$ is disjoint from $V$.</span></summary>
@@ -1749,7 +1751,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="one_point_compactification_existence_forward">
+<section class="statement theorem joins-following-proof" id="one_point_compactification_existence_forward">
   <div class="statement-head"><div class="statement-title">Theorem 68</div><span class="label-badge">one_point_compactification_existence_forward</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> If $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$, then there exist $Y,S,p$ such that $S$ is a topology on $Y$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $T = \subspaceTopology{S}{X}$ and $Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p\}$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1768,7 +1770,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="one_point_compactification_existence_forward" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$.<br> <span class="kw kw-bold">Let</span> $p_0 = X$.<br> $p_0\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$ by <a class="xref" href="current_section_29.html#set_notin_self" data-preview-label="set_notin_self">Lemma 335</a>.<br> <span class="kw kw-bold">Let</span> $Y_0 = X\union\{p_0\}$.<br> <span class="kw kw-bold">Let</span> $S_0 = \onePointTopology{T}{X}{p_0}$.<br> $S_0$ is a topology on $Y_0$ by <a class="xref" href="current_section_29.html#one_point_topology_is_topology" data-preview-label="one_point_topology_is_topology">Lemma 345</a>.<br> $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y_0$ by <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>.<br> $T = \subspaceTopology{S_0}{X}$ by <a class="xref" href="current_section_29.html#one_point_topology_subspace" data-preview-label="one_point_topology_subspace">Lemma 346</a>.<br> <span class="kw">Hence</span> $Y_0\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p_0\}$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_left" data-preview-label="setminus_elim_left">Proposition 86</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#union_intro_right" data-preview-label="union_intro_right">Proposition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.<br> $Y_0$ is compact with respect to $S_0$ and $Y_0$ is Hausdorff with respect to $S_0$ by <a class="xref" href="current_section_29.html#one_point_topology_compact" data-preview-label="one_point_topology_compact">Lemma 347</a>, <a class="xref" href="current_section_29.html#one_point_topology_hausdorff" data-preview-label="one_point_topology_hausdorff">Lemma 348</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">There exist $Y,S,p$ such that $S$ is a topology on $Y$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $T = \subspaceTopology{S}{X}$ and $Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p\}$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$.</span></summary>
@@ -1801,7 +1803,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="one_point_compactification_existence_reverse">
+<section class="statement theorem joins-following-proof" id="one_point_compactification_existence_reverse">
   <div class="statement-head"><div class="statement-title">Theorem 69</div><span class="label-badge">one_point_compactification_existence_reverse</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> If there exist $Y,S,p$ such that $S$ is a topology on $Y$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $T = \subspaceTopology{S}{X}$ and $Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p\}$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ then $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1820,7 +1822,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="one_point_compactification_existence_reverse" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> there exist $Y,S,p$ such that $S$ is a topology on $Y$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $T = \subspaceTopology{S}{X}$ and $Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p\}$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$.<br> <span class="kw kw-bold">Take</span> $Y_0,S_0,p_0$ such that $S_0$ is a topology on $Y_0$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y_0$ and $T = \subspaceTopology{S_0}{X}$ and $Y_0\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p_0\}$ and $Y_0$ is compact with respect to $S_0$ and $Y_0$ is Hausdorff with respect to $S_0$.<br> <span class="kw">Hence</span> $Y_0 = X\union\{p_0\}$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_partition" data-preview-label="setminus_partition">Proposition 107</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$X$ is Hausdorff with respect to $T$.</span></summary>
@@ -1892,7 +1894,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="one_point_compactification_uniqueness">
+<section class="statement theorem joins-following-proof" id="one_point_compactification_uniqueness">
   <div class="statement-head"><div class="statement-title">Theorem 70</div><span class="label-badge">one_point_compactification_uniqueness</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $S$ is a topology on $Y$.<br> <span class="kw">Assume</span> $S_1$ is a topology on $Y_1$.<br> <span class="kw">Suppose</span> $X$ is a subspace of $Y$ with respect to $S$.<br> <span class="kw">Suppose</span> $X$ is a subspace of $Y_1$ with respect to $S_1$.<br> <span class="kw">Suppose</span> $T = \subspaceTopology{S}{X}$.<br> <span class="kw">Suppose</span> $T = \subspaceTopology{S_1}{X}$.<br> <span class="kw">Suppose</span> $Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p\}$.<br> <span class="kw">Suppose</span> $Y_1\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{q\}$.<br> <span class="kw">Suppose</span> $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$.<br> <span class="kw">Suppose</span> $Y_1$ is compact with respect to $S_1$ and $Y_1$ is Hausdorff with respect to $S_1$. <br><span class="kw">Then</span> there exists $h$ such that $h$ is a homeomorphism between $Y$ and $Y_1$ with respect to $S$ and $S_1$ and $\restrl{h}{X} = \identity{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1916,7 +1918,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="one_point_compactification_uniqueness" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y_1$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw">Therefore</span> $Y = X\union\{p\}$ and $Y_1 = X\union\{q\}$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_partition" data-preview-label="setminus_partition">Proposition 107</a>.<br> <span class="kw">Hence</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $q\class{latex-symbol-tip latex-symbol-id-in}{\in} Y_1$ and $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$ and $q\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_left" data-preview-label="setminus_elim_left">Proposition 86</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>.</p>
 <p><span class="kw kw-bold">Let</span> $f = \identity{X}$.<br> <span class="kw kw-bold">Let</span> $g = \{(p,q)\}$.<br> <span class="kw kw-bold">Let</span> $h = f\union g$.</p>
 <p>$f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#id_is_function" data-preview-label="id_is_function">Proposition 401</a>.<br> We have $g$ is a function by <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.</p>
@@ -2180,7 +2182,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="one_point_compactification_characterization">
+<section class="statement theorem joins-following-proof" id="one_point_compactification_characterization">
   <div class="statement-head"><div class="statement-title">Theorem 71</div><span class="label-badge">one_point_compactification_characterization</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> there exist $Y,S$ such that $Y$ is a one-point compactification of $X$ with respect to $S$ and $T$ iff $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$ and $X$ is not compact with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2194,7 +2196,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="one_point_compactification_characterization" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If there exist $Y,S$ such that $Y$ is a one-point compactification of $X$ with respect to $S$ and $T$ then $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$ and $X$ is not compact with respect to $T$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> there exist $Y,S$ such that $Y$ is a one-point compactification of $X$ with respect to $S$ and $T$.<br> <span class="kw kw-bold">Take</span> $Y,S$ such that $Y$ is a one-point compactification of $X$ with respect to $S$ and $T$.<br> <span class="kw kw-bold">Take</span> $p$ such that $Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} X = \{p\}$ and $Y$ is a compactification of $X$ with respect to $S$ and $T$ by <a class="xref" href="current_section_29.html#one_point_compactification" data-preview-label="one_point_compactification">Definition 170</a>.<br> $T = \subspaceTopology{S}{X}$ by <a class="xref" href="current_section_29.html#compactification" data-preview-label="compactification">Definition 169</a>.<br> $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ by <a class="xref" href="current_section_29.html#compactification" data-preview-label="compactification">Definition 169</a>.<br> $X\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ and $S$ is a topology on $Y$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_29.html#compactification" data-preview-label="compactification">Definition 169</a>.</p>
@@ -2335,7 +2337,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="locally_compact_neighborhood_characterization">
+<section class="statement theorem joins-following-proof" id="locally_compact_neighborhood_characterization">
   <div class="statement-head"><div class="statement-title">Theorem 72</div><span class="label-badge">locally_compact_neighborhood_characterization</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$. <br><span class="kw">Then</span> $X$ is locally compact with respect to $T$ iff for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is a neighborhood of $x$ in $X$ with respect to $T$ we have there exists $V$ such that $V$ is a neighborhood of $x$ in $X$ with respect to $T$ and $\closure{V}{X}{T}$ is a compact subspace of $X$ with respect to $T$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2354,7 +2356,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="locally_compact_neighborhood_characterization" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is a neighborhood of $x$ in $X$ with respect to $T$ we have there exists $V$ such that $V$ is a neighborhood of $x$ in $X$ with respect to $T$ and $\closure{V}{X}{T}$ is a compact subspace of $X$ with respect to $T$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ then $X$ is locally compact with respect to $T$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have for all $U$ such that $U$ is a neighborhood of $x$ in $X$ with respect to $T$ we have there exists $V$ such that $V$ is a neighborhood of $x$ in $X$ with respect to $T$ and $\closure{V}{X}{T}$ is a compact subspace of $X$ with respect to $T$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $X$ is a neighborhood of $x$ in $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>.<br> For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $V$ such that $V$ is a neighborhood of $x$ in $X$ with respect to $T$ and $\closure{V}{X}{T}$ is a compact subspace of $X$ with respect to $T$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $X$ is locally compact at $x$ with respect to $T$ by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_17.html#subseteq_closure" data-preview-label="subseteq_closure">Lemma 71</a>, <a class="xref" href="current_section_29.html#locally_compact_at_point" data-preview-label="locally_compact_at_point">Definition 164</a>.<br> $X$ is locally compact with respect to $T$ by <a class="xref" href="current_section_29.html#locally_compact" data-preview-label="locally_compact">Definition 165</a>.</p></div>
@@ -2494,7 +2496,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="locally_compact_subspace">
+<section class="statement corollary joins-following-proof" id="locally_compact_subspace">
   <div class="statement-head"><div class="statement-title">Corollary 5</div><span class="label-badge">locally_compact_subspace</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is locally compact with respect to $T$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T$.<br> If $A$ is closed in $X$ with respect to $T$ or $A$ is open in $X$ with respect to $T$ then $A$ is locally compact with respect to $\subspaceTopology{T}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2510,7 +2512,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="locally_compact_subspace" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T}{A}$.<br> <span class="kw">Assume</span> $A$ is closed in $X$ with respect to $T$ or $A$ is open in $X$ with respect to $T$.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $A$ is closed in $X$ with respect to $T$.</div><div class="case-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $A$ is locally compact at $x$ with respect to $T_A$.</span></summary>
@@ -2664,7 +2666,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="homeomorphism_preserves_local_compactness">
+<section class="statement lemma helper joins-following-proof" id="homeomorphism_preserves_local_compactness">
   <div class="statement-head"><div class="statement-title">Lemma 349</div><span class="label-badge">homeomorphism_preserves_local_compactness</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $S$ is a topology on $Y$.<br> <span class="kw">Suppose</span> $f$ is a homeomorphism between $X$ and $Y$ with respect to $T$ and $S$.<br> If $Y$ is locally compact with respect to $S$ then $X$ is locally compact with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2678,7 +2680,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="homeomorphism_preserves_local_compactness" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $Y$ is locally compact with respect to $S$.<br> <span class="kw kw-bold">Let</span> $g = \converse{f}$.<br> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $f$ is a function and $\dom{f} = X$ by <a class="xref" href="current_section_18.html#homeomorphism" data-preview-label="homeomorphism">Definition 62</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections_to_funs" data-preview-label="bijections_to_funs">Proposition 389</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> We have $g$ is a bijection from $Y$ to $X$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{Y}{X}$ and $\dom{g} = Y$ and $g$ is a function by <a class="xref" href="current_section_18.html#homeomorphism" data-preview-label="homeomorphism">Definition 62</a>, <a class="xref" href="current_section_standard_library_functions.html#bijection_converse_is_bijection" data-preview-label="bijection_converse_is_bijection">Proposition 398</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>, <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>.<br> $g$ is continuous from $Y$ to $X$ with respect to $S$ and $T$ by <a class="xref" href="current_section_18.html#homeomorphism" data-preview-label="homeomorphism">Definition 62</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $X$ is locally compact at $x$ with respect to $T$.</span></summary>
@@ -2741,7 +2743,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="locally_compact_open_subspace_compact_hausdorff_forward">
+<section class="statement corollary joins-following-proof" id="locally_compact_open_subspace_compact_hausdorff_forward">
   <div class="statement-head"><div class="statement-title">Corollary 6</div><span class="label-badge">locally_compact_open_subspace_compact_hausdorff_forward</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> If $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$ then there exist $Y,S,A,f$ such that $S$ is a topology on $Y$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ and $A$ is open in $Y$ with respect to $S$ and $f$ is a homeomorphism between $X$ and $A$ with respect to $T$ and $\subspaceTopology{S}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2759,7 +2761,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="locally_compact_open_subspace_compact_hausdorff_forward" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$.<br> <span class="kw kw-bold">Let</span> $p = X$.<br> $p\class{latex-symbol-tip latex-symbol-id-notin}{\notin} X$ by <a class="xref" href="current_section_29.html#set_notin_self" data-preview-label="set_notin_self">Lemma 335</a>.<br> <span class="kw kw-bold">Let</span> $Y = X\union\{p\}$.<br> <span class="kw kw-bold">Let</span> $S = \onePointTopology{T}{X}{p}$.<br> $S$ is a topology on $Y$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ by <a class="xref" href="current_section_29.html#one_point_topology_is_topology" data-preview-label="one_point_topology_is_topology">Lemma 345</a>, <a class="xref" href="current_section_29.html#one_point_topology_compact" data-preview-label="one_point_topology_compact">Lemma 347</a>, <a class="xref" href="current_section_29.html#one_point_topology_hausdorff" data-preview-label="one_point_topology_hausdorff">Lemma 348</a>.<br> <span class="kw kw-bold">Let</span> $A = X$.<br> We have $A$ is open in $Y$ with respect to $S$ and $T = \subspaceTopology{S}{A}$ by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_29.html#one_point_topology_intro_left" data-preview-label="one_point_topology_intro_left">Lemma 341</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_29.html#one_point_topology_subspace" data-preview-label="one_point_topology_subspace">Lemma 346</a>.<br> <span class="kw kw-bold">Let</span> $f = \identity{A}$.<br> $f$ is a bijection from $X$ to $A$ by <a class="xref" href="current_section_standard_library_functions.html#id_elem_bijections" data-preview-label="id_elem_bijections">Proposition 408</a>.<br> $f$ is continuous from $X$ to $A$ with respect to $T$ and $\subspaceTopology{S}{A}$ by <a class="xref" href="current_section_23.html#identity_continuous" data-preview-label="identity_continuous">Lemma 233</a>.<br> $\converse{f}$ is a function from $A$ to $X$ by <a class="xref" href="current_section_standard_library_functions.html#bijective_converse_are_funs" data-preview-label="bijective_converse_are_funs">Proposition 396</a>.<br> $A$ is a subspace of $Y$ with respect to $S$ and $\subspaceTopology{S}{A}$ is a topology on $A$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.<br> For all $U$ such that $U$ is open in $X$ with respect to $T$ we have $\preimg{\converse{f}}{U}$ is open in $A$ with respect to $\subspaceTopology{S}{A}$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_relations.html#id_is_relation" data-preview-label="id_is_relation">Proposition 296</a>, <a class="xref" href="current_section_standard_library_relations.html#preim_eq_img_of_converse" data-preview-label="preim_eq_img_of_converse">Proposition 247</a>, <a class="xref" href="current_section_standard_library_relations.html#converse_converse_eq" data-preview-label="converse_converse_eq">Proposition 189</a>, <a class="xref" href="current_section_standard_library_relations.html#id_img" data-preview-label="id_img">Proposition 299</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>.<br> $\converse{f}$ is continuous from $A$ to $X$ with respect to $\subspaceTopology{S}{A}$ and $T$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.<br> $f$ is a homeomorphism between $X$ and $A$ with respect to $T$ and $\subspaceTopology{S}{A}$ by <a class="xref" href="current_section_18.html#homeomorphism" data-preview-label="homeomorphism">Definition 62</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">There exist $Y_1,S_1,A_1,f_1$ such that $S_1$ is a topology on $Y_1$ and $Y_1$ is compact with respect to $S_1$ and $Y_1$ is Hausdorff with respect to $S_1$ and $A_1$ is open in $Y_1$ with respect to $S_1$ and $f_1$ is a homeomorphism between $X$ and $A_1$ with respect to $T$ and $\subspaceTopology{S_1}{A_1}$.</span></summary>
@@ -2803,7 +2805,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="open_subspace_compact_hausdorff_locally_compact_hausdorff">
+<section class="statement corollary joins-following-proof" id="open_subspace_compact_hausdorff_locally_compact_hausdorff">
   <div class="statement-head"><div class="statement-title">Corollary 7</div><span class="label-badge">open_subspace_compact_hausdorff_locally_compact_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> If there exist $Y,S,A,f$ such that $S$ is a topology on $Y$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ and $A$ is open in $Y$ with respect to $S$ and $f$ is a homeomorphism between $X$ and $A$ with respect to $T$ and $\subspaceTopology{S}{A}$ then $X$ is locally compact with respect to $T$ and $X$ is Hausdorff with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2821,7 +2823,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="open_subspace_compact_hausdorff_locally_compact_hausdorff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> there exist $Y,S,A,f$ such that $S$ is a topology on $Y$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ and $A$ is open in $Y$ with respect to $S$ and $f$ is a homeomorphism between $X$ and $A$ with respect to $T$ and $\subspaceTopology{S}{A}$.<br> <span class="kw kw-bold">Take</span> $Y,S,A,f$ such that $S$ is a topology on $Y$ and $Y$ is compact with respect to $S$ and $Y$ is Hausdorff with respect to $S$ and $A$ is open in $Y$ with respect to $S$ and $f$ is a homeomorphism between $X$ and $A$ with respect to $T$ and $\subspaceTopology{S}{A}$.</p>
 <p>$Y$ is locally compact with respect to $S$ by <a class="xref" href="current_section_29.html#compact_implies_locally_compact" data-preview-label="compact_implies_locally_compact">Lemma 334</a>.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{S}{A}$.<br> $A$ is a subspace of $Y$ with respect to $S$ and $T_A$ is a topology on $A$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.<br> $A$ is Hausdorff with respect to $T_A$ by <a class="xref" href="current_section_17.html#subspace_hausdorff" data-preview-label="subspace_hausdorff">Theorem 14</a>.<br> $A$ is locally compact with respect to $T_A$ by <a class="xref" href="current_section_29.html#locally_compact_subspace" data-preview-label="locally_compact_subspace">Corollary 5</a>.</p>
 <details class="proof-block subproof" open>

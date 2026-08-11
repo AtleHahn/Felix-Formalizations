@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -408,7 +410,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
       <button id="toggleRaw">Make raw code available</button>
     </div>
     <h3 class="tex-section" data-section-label="§32 Normal Spaces">§32 Normal Spaces</h3>
-<section class="statement theorem" id="regular_second_countable_normal">
+<section class="statement theorem joins-following-proof" id="regular_second_countable_normal">
   <div class="statement-head"><div class="statement-title">Theorem 75</div><span class="label-badge">regular_second_countable_normal</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is regular with respect to $T$.<br> <span class="kw">Suppose</span> $X$ satisfies the second countability axiom with respect to $T$. <br><span class="kw">Then</span> $X$ is normal with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -421,7 +423,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="regular_second_countable_normal" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T$ is a topology on $X$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_31.html#regular_space" data-preview-label="regular_space">Definition 176</a>.</p></div>
@@ -1416,7 +1418,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="subseteq_setminus_disjoint">
+<section class="statement lemma joins-following-proof" id="subseteq_setminus_disjoint">
   <div class="statement-head"><div class="statement-title">Lemma 381</div><span class="label-badge">subseteq_setminus_disjoint</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B$. <br><span class="kw">Then</span> $C\inter B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1428,7 +1430,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_setminus_disjoint" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Take</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C\inter B$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} B$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>.<br> Contradiction.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1439,7 +1441,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_double_as_mul_two">
+<section class="statement lemma joins-following-proof" id="real_double_as_mul_two">
   <div class="statement-head"><div class="statement-title">Lemma 382</div><span class="label-badge">real_double_as_mul_two</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul (1 + 1)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1451,7 +1453,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_double_as_mul_two" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul 1 = 1 \rmul \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul 1 = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> $(\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul 1) + (\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul 1) = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_eq_subst" data-preview-label="real_add_eq_subst">Proposition 437</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul (1 + 1) = (\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul 1) + (\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul (1 + 1)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1464,7 +1466,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_half_plus_half">
+<section class="statement lemma joins-following-proof" id="real_half_plus_half">
   <div class="statement-head"><div class="statement-title">Lemma 383</div><span class="label-badge">real_half_plus_half</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1) + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1) = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1476,7 +1478,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_half_plus_half" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < 1 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.<br> $1 + 1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$ and $\inv{(1 + 1)}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1) + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1) = (\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}) \rmul \inv{(1 + 1)}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_right_distrib" data-preview-label="real_right_distrib">Lemma 1234</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul (1 + 1)$ by <a class="xref" href="current_section_32.html#real_double_as_mul_two" data-preview-label="real_double_as_mul_two">Lemma 382</a>.<br> $(\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}) \rmul \inv{(1 + 1)} = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} \rmul ((1 + 1) \rmul \inv{(1 + 1)})$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_assoc" data-preview-label="real_mul_assoc">Axiom 19</a>.<br> $(\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}) \rmul \inv{(1 + 1)} = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1) + \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1) = \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1493,7 +1495,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="metric_ball_family_open">
+<section class="statement lemma joins-following-proof" id="metric_ball_family_open">
   <div class="statement-head"><div class="statement-title">Lemma 384</div><span class="label-badge">metric_ball_family_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $d$ is a metric on $X$ and $T = \metricTopology{d}{X}$.<br> <span class="kw">Assume</span> $1 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < 1 + 1$ and $\inv{(1 + 1)}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $A$ is closed in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $W\class{latex-symbol-tip latex-symbol-id-in}{\in}\metricBallFamily{d}{X}{A}{B}$. <br><span class="kw">Then</span> $W\class{latex-symbol-tip latex-symbol-id-in}{\in} T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1508,7 +1510,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="metric_ball_family_open" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ such that $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ and $W = \metricBall{d}{X}{a}{\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1)}$ and $\metricBall{d}{X}{a}{\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}}\inter B = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_32.html#metric_ball_family" data-preview-label="metric_ball_family">Definition 178</a>.<br> $W\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{X}$ and $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_32.html#metric_ball_family" data-preview-label="metric_ball_family">Definition 178</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1)\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.<br> $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_inv_pos" data-preview-label="real_inv_pos">Proposition 463</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>.<br> $W\class{latex-symbol-tip latex-symbol-id-in}{\in}\metricBasis{d}{X}$ by <a class="xref" href="current_section_20.html#metric_basis" data-preview-label="metric_basis">Definition 81</a>.<br> $W\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ by <a class="xref" href="current_section_20.html#metric_on" data-preview-label="metric_on">Definition 79</a>, <a class="xref" href="current_section_20.html#metric_basis_is_basis" data-preview-label="metric_basis_is_basis">Lemma 119</a>, <a class="xref" href="current_section_13.html#basis_elem_open_in_generated" data-preview-label="basis_elem_open_in_generated">Lemma 2</a>, <a class="xref" href="current_section_20.html#metric_topology" data-preview-label="metric_topology">Definition 82</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1525,7 +1527,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="metric_ball_family_center_in_union">
+<section class="statement lemma joins-following-proof" id="metric_ball_family_center_in_union">
   <div class="statement-head"><div class="statement-title">Lemma 385</div><span class="label-badge">metric_ball_family_center_in_union</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $d$ is a metric on $X$.<br> <span class="kw">Assume</span> $1 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < 1 + 1$ and $\inv{(1 + 1)}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ and $\metricBall{d}{X}{a}{\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B$. <br><span class="kw">Then</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\unions{\metricBallFamily{d}{X}{A}{B}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1540,7 +1542,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="metric_ball_family_center_in_union" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$d((a,a)) = 0$ by <a class="xref" href="current_section_20.html#metric_on" data-preview-label="metric_on">Definition 79</a>, <a class="xref" href="current_section_20.html#metric_zero_characterization" data-preview-label="metric_zero_characterization">Definition 76</a>.<br> $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_inv_pos" data-preview-label="real_inv_pos">Proposition 463</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>.<br> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} \metricBall{d}{X}{a}{\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1)}$ by <a class="xref" href="current_section_20.html#metric_ball" data-preview-label="metric_ball">Definition 80</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>.<br> <span class="kw kw-bold">Let</span> $W = \metricBall{d}{X}{a}{\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} / (1 + 1)}$.<br> $W\class{latex-symbol-tip latex-symbol-id-in}{\in} \metricBallFamily{d}{X}{A}{B}$ by <a class="xref" href="current_section_20.html#metric_ball" data-preview-label="metric_ball">Definition 80</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_32.html#subseteq_setminus_disjoint" data-preview-label="subseteq_setminus_disjoint">Lemma 381</a>, <a class="xref" href="current_section_32.html#metric_ball_family" data-preview-label="metric_ball_family">Definition 178</a>.<br> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\unions{\metricBallFamily{d}{X}{A}{B}}$ by <a class="xref" href="current_section_standard_library_sets.html#unions_intro" data-preview-label="unions_intro">Proposition 27</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1553,7 +1555,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="metrizable_normal">
+<section class="statement theorem joins-following-proof" id="metrizable_normal">
   <div class="statement-head"><div class="statement-title">Theorem 76</div><span class="label-badge">metrizable_normal</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $X$ is metrizable with respect to $T$. <br><span class="kw">Then</span> $X$ is normal with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1565,7 +1567,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="metrizable_normal" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $d$ such that $d$ is a metric on $X$ and $T = \metricTopology{d}{X}$ by <a class="xref" href="current_section_20.html#metrizable" data-preview-label="metrizable">Definition 85</a>.<br> $1 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < 1 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.<br> $1 + 1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$ and $\inv{(1 + 1)}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A,B$ such that $A$ is closed in $X$ with respect to $T$ and $B$ is closed in $X$ with respect to $T$ and $A$ is disjoint from $B$ there exist $U,V$ such that $U$ is open in $X$ with respect to $T$ and $V$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ and $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V$ and $U$ is disjoint from $V$.</span></summary>
@@ -1775,7 +1777,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="compact_hausdorff_normal">
+<section class="statement theorem joins-following-proof" id="compact_hausdorff_normal">
   <div class="statement-head"><div class="statement-title">Theorem 77</div><span class="label-badge">compact_hausdorff_normal</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $X$ is compact with respect to $T$ and $X$ is Hausdorff with respect to $T$. <br><span class="kw">Then</span> $X$ is normal with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1787,7 +1789,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="compact_hausdorff_normal" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A,B$ such that $A$ is closed in $X$ with respect to $T$ and $B$ is closed in $X$ with respect to $T$ and $A$ is disjoint from $B$ there exist $U,V$ such that $U$ is open in $X$ with respect to $T$ and $V$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ and $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V$ and $U$ is disjoint from $V$.</span></summary>
@@ -2062,7 +2064,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="well_order_non_largest_has_immediate_successor">
+<section class="statement lemma helper joins-following-proof" id="well_order_non_largest_has_immediate_successor">
   <div class="statement-head"><div class="statement-title">Lemma 386</div><span class="label-badge">well_order_non_largest_has_immediate_successor</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a well order relation on $X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $x$ is not a largest element of $X$ with respect to $R$. <br><span class="kw">Then</span> there exists $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $y$ is an immediate successor of $x$ in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2076,7 +2078,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="well_order_non_largest_has_immediate_successor" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $X$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#well_order_relation" data-preview-label="well_order_relation">Definition 445</a>.<br> <span class="kw kw-bold">Take</span> $z\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $x\mathrel{R}z$ by <a class="xref" href="current_section_14.html#non_largest_has_successor" data-preview-label="non_largest_has_successor">Lemma 27</a>.<br> <span class="kw kw-bold">Let</span> $A = \openrayright{R}{X}{x}$.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $z\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>.<br> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.<br> <span class="kw kw-bold">Take</span> $y$ such that $y$ is a smallest element of $A$ with respect to $R$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#well_order_relation" data-preview-label="well_order_relation">Definition 445</a>.<br> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x\mathrel{R}y$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>, <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\intervalclosedrel{R}{X}{x}{y} = \{x,y\}$.</span></summary>
@@ -2166,7 +2168,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="well_order_intervalopenclosed_open">
+<section class="statement lemma helper joins-following-proof" id="well_order_intervalopenclosed_open">
   <div class="statement-head"><div class="statement-title">Lemma 387</div><span class="label-badge">well_order_intervalopenclosed_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a well order relation on $X$.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $x,y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $x\mathrel{R}y$. <br><span class="kw">Then</span> $\intervalopenclosedrel{R}{X}{x}{y}$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2181,7 +2183,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="well_order_intervalopenclosed_open" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $X$ and $X$ has more than one element by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#well_order_relation" data-preview-label="well_order_relation">Definition 445</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $y$ is a largest element of $X$ with respect to $R$.</div><div class="case-body"><p>$\intervalopenclosedrel{R}{X}{x}{y} = \openrayright{R}{X}{x}$ by <a class="xref" href="current_section_14.html#intervalopenclosedrel_largest_eq_openrayright" data-preview-label="intervalopenclosedrel_largest_eq_openrayright">Lemma 41</a>.<br> $\intervalopenclosedrel{R}{X}{x}{y}$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#openrayright_open_in_order_topology" data-preview-label="openrayright_open_in_order_topology">Lemma 78</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $y$ is not a largest element of $X$ with respect to $R$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $s\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $s$ is an immediate successor of $y$ in $X$ with respect to $R$ by <a class="xref" href="current_section_32.html#well_order_non_largest_has_immediate_successor" data-preview-label="well_order_non_largest_has_immediate_successor">Lemma 386</a>.<br> <span class="kw kw-bold">Let</span> $U = \openrayright{R}{X}{x}\inter \openrayleft{R}{X}{s}$.</p>
 <details class="proof-block subproof" open>
@@ -2399,7 +2401,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="well_order_left_interval_neighborhood">
+<section class="statement lemma helper joins-following-proof" id="well_order_left_interval_neighborhood">
   <div class="statement-head"><div class="statement-title">Lemma 388</div><span class="label-badge">well_order_left_interval_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a well order relation on $X$.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $a$ is not a smallest element of $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $U$ is open in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} U$. <br><span class="kw">Then</span> there exists $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $x\mathrel{R}a$ and $\intervalopenclosedrel{R}{X}{x}{a}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2416,7 +2418,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="well_order_left_interval_neighborhood" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $X$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#well_order_relation" data-preview-label="well_order_relation">Definition 445</a>.<br> <span class="kw kw-bold">Let</span> $B = \orderBasis{R}{X}$.<br> $T = \basisTopology{B}{X}$ by <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $B$ is a basis for $T$ on $X$ by <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $U\class{latex-symbol-tip latex-symbol-id-in}{\in}\basisTopology{B}{X}$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.<br> <span class="kw kw-bold">Take</span> $B_1\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ such that $a\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1$ and $B_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_13.html#topology_generated_by_basis" data-preview-label="topology_generated_by_basis">Definition 14</a>.<br> $((\class{latex-symbol-tip latex-symbol-id-exists}{\exists} u, v\class{latex-symbol-tip latex-symbol-id-in}{\in} X. u\mathrel{R}v \class{latex-symbol-tip latex-symbol-id-land}{\land} B_1 = \intervalopenrel{R}{X}{u}{v}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} v\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} z\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}z \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = z) \class{latex-symbol-tip latex-symbol-id-land}{\land} B_1 = \intervalclosedopenrel{R}{X}{a_0}{v}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} u\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} z\class{latex-symbol-tip latex-symbol-id-in}{\in} X. z\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} z = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B_1 = \intervalopenclosedrel{R}{X}{u}{b_0}))$ by <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} u, v\class{latex-symbol-tip latex-symbol-id-in}{\in} X. u\mathrel{R}v \class{latex-symbol-tip latex-symbol-id-land}{\land} B_1 = \intervalopenrel{R}{X}{u}{v}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $u, v\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $u\mathrel{R}v$ and $B_1 = \intervalopenrel{R}{X}{u}{v}$.<br> $u\mathrel{R}a$ and $a\mathrel{R}v$ by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>.</p>
 <details class="proof-block subproof" open>
@@ -2672,7 +2674,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="well_order_smallest_singleton_open">
+<section class="statement lemma helper joins-following-proof" id="well_order_smallest_singleton_open">
   <div class="statement-head"><div class="statement-title">Lemma 389</div><span class="label-badge">well_order_smallest_singleton_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a well order relation on $X$.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a_0$ is a smallest element of $X$ with respect to $R$. <br><span class="kw">Then</span> $\{a_0\}$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2686,7 +2688,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="well_order_smallest_singleton_open" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $X$ and $X$ has more than one element by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#well_order_relation" data-preview-label="well_order_relation">Definition 445</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>.<br> <span class="kw kw-bold">Take</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $y\class{latex-symbol-tip latex-symbol-id-neq}{\neq} a_0$ by <a class="xref" href="current_section_14.html#more_than_one_element_has_other" data-preview-label="more_than_one_element_has_other">Lemma 25</a>.<br> $a_0\mathrel{R}y$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$a_0$ is not a largest element of $X$ with respect to $R$.</span></summary>
@@ -2790,7 +2792,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="well_ordered_normal">
+<section class="statement theorem joins-following-proof" id="well_ordered_normal">
   <div class="statement-head"><div class="statement-title">Theorem 78</div><span class="label-badge">well_ordered_normal</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a well order relation on $X$ and $T$ is the order topology on $X$ with respect to $R$. <br><span class="kw">Then</span> $X$ is normal with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2802,7 +2804,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="well_ordered_normal" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $X$ and $X$ has more than one element by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#well_order_relation" data-preview-label="well_order_relation">Definition 445</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $T$ is a topology on $X$ and $X$ is Hausdorff with respect to $T$ by <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_17.html#order_topology_hausdorff" data-preview-label="order_topology_hausdorff">Theorem 12</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$X$ has closed singletons with respect to $T$.</span></summary>

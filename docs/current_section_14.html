@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -495,7 +497,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="more_than_one_element_has_other">
+<section class="statement lemma helper joins-following-proof" id="more_than_one_element_has_other">
   <div class="statement-head"><div class="statement-title">Lemma 25</div><span class="label-badge">more_than_one_element_has_other</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> there exists $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $y\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -508,7 +510,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="more_than_one_element_has_other" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#more_than_one_element" data-preview-label="more_than_one_element">Definition 27</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -516,7 +518,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="non_smallest_has_predecessor">
+<section class="statement lemma helper joins-following-proof" id="non_smallest_has_predecessor">
   <div class="statement-head"><div class="statement-title">Lemma 26</div><span class="label-badge">non_smallest_has_predecessor</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $x$ is not a smallest element of $X$ with respect to $R$. <br><span class="kw">Then</span> there exists $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $y\mathrel{R}x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -530,7 +532,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="non_smallest_has_predecessor" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -538,7 +540,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="non_largest_has_successor">
+<section class="statement lemma helper joins-following-proof" id="non_largest_has_successor">
   <div class="statement-head"><div class="statement-title">Lemma 27</div><span class="label-badge">non_largest_has_successor</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $x$ is not a largest element of $X$ with respect to $R$. <br><span class="kw">Then</span> there exists $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $x\mathrel{R}y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -552,7 +554,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="non_largest_has_successor" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>, <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -560,7 +562,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalopenrel_subset_by_endpoints">
+<section class="statement lemma helper joins-following-proof" id="intervalopenrel_subset_by_endpoints">
   <div class="statement-head"><div class="statement-title">Lemma 28</div><span class="label-badge">intervalopenrel_subset_by_endpoints</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,a_1,b,b_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $a_1\mathrel{R}a$ or $a_1 = a$.<br> <span class="kw">Suppose</span> $b\mathrel{R}b_1$ or $b = b_1$. <br><span class="kw">Then</span> $\intervalopenrel{R}{X}{a}{b} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalopenrel{R}{X}{a_1}{b_1}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -575,7 +577,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenrel_subset_by_endpoints" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -583,7 +585,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalclosedopenrel_subset_by_right">
+<section class="statement lemma helper joins-following-proof" id="intervalclosedopenrel_subset_by_right">
   <div class="statement-head"><div class="statement-title">Lemma 29</div><span class="label-badge">intervalclosedopenrel_subset_by_right</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,b,b_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $b\mathrel{R}b_1$ or $b = b_1$. <br><span class="kw">Then</span> $\intervalclosedopenrel{R}{X}{a}{b} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalclosedopenrel{R}{X}{a}{b_1}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -597,7 +599,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalclosedopenrel_subset_by_right" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -605,7 +607,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalopenclosedrel_subset_by_left">
+<section class="statement lemma helper joins-following-proof" id="intervalopenclosedrel_subset_by_left">
   <div class="statement-head"><div class="statement-title">Lemma 30</div><span class="label-badge">intervalopenclosedrel_subset_by_left</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,a_1,b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $a_1\mathrel{R}a$ or $a_1 = a$. <br><span class="kw">Then</span> $\intervalopenclosedrel{R}{X}{a}{b} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \intervalopenclosedrel{R}{X}{a_1}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -619,7 +621,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenclosedrel_subset_by_left" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -627,7 +629,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="orderbasis_elem_at_smallest">
+<section class="statement lemma helper joins-following-proof" id="orderbasis_elem_at_smallest">
   <div class="statement-head"><div class="statement-title">Lemma 31</div><span class="label-badge">orderbasis_elem_at_smallest</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $x$ is a smallest element of $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\orderBasis{R}{X}$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B$. <br><span class="kw">Then</span> there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $x\mathrel{R}b$ and $B = \intervalclosedopenrel{R}{X}{x}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -642,7 +644,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="orderbasis_elem_at_smallest" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$((\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}))$ by <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $a\mathrel{R}b$ and $B = \intervalopenrel{R}{X}{a}{b}$. <br><span class="kw">Then</span> $a\mathrel{R}x$ by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>.<br> $x\mathrel{R}a$ or $x = a$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>.<br> <span class="kw">Suppose</span> not.<br> Contradiction by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a_0, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x)$ and $B = \intervalclosedopenrel{R}{X}{a_0}{b}$. <br><span class="kw">Then</span> $(a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = a_0)$ and $x\mathrel{R}b$ by <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>.<br> <span class="kw">Hence</span> $a_0 = x$ by <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>.<br> <span class="kw">Therefore</span> there exists $c\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $x\mathrel{R}c$ and $B = \intervalclosedopenrel{R}{X}{x}{c}$.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0)$ and $B = \intervalopenclosedrel{R}{X}{a}{b_0}$. <br><span class="kw">Then</span> $a\mathrel{R}x$ by <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>.<br> $x\mathrel{R}a$ or $x = a$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>.<br> <span class="kw">Suppose</span> not.<br> Contradiction by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -699,7 +701,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="orderbasis_elem_at_largest">
+<section class="statement lemma helper joins-following-proof" id="orderbasis_elem_at_largest">
   <div class="statement-head"><div class="statement-title">Lemma 32</div><span class="label-badge">orderbasis_elem_at_largest</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $x$ is a largest element of $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\orderBasis{R}{X}$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B$. <br><span class="kw">Then</span> there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $a\mathrel{R}x$ and $B = \intervalopenclosedrel{R}{X}{a}{x}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -714,7 +716,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="orderbasis_elem_at_largest" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$((\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}))$ by <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $a\mathrel{R}b$ and $B = \intervalopenrel{R}{X}{a}{b}$. <br><span class="kw">Then</span> $x\mathrel{R}b$ by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>.<br> $b\mathrel{R}x$ or $b = x$ by <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>.<br> <span class="kw">Suppose</span> not.<br> Contradiction by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a_0, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x)$ and $B = \intervalclosedopenrel{R}{X}{a_0}{b}$. <br><span class="kw">Then</span> $x\mathrel{R}b$ by <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>.<br> $b\mathrel{R}x$ or $b = x$ by <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>.<br> <span class="kw">Suppose</span> not.<br> Contradiction by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0)$ and $B = \intervalopenclosedrel{R}{X}{a}{b_0}$. <br><span class="kw">Then</span> $a\mathrel{R}x$ and $(x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0)$ by <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>.<br> <span class="kw">Hence</span> $b_0 = x$ by <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>, <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>.<br> <span class="kw">Therefore</span> there exists $c\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $c\mathrel{R}x$ and $B = \intervalopenclosedrel{R}{X}{c}{x}$.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -771,7 +773,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="orderbasis_elem_contains_open_interval">
+<section class="statement lemma helper joins-following-proof" id="orderbasis_elem_contains_open_interval">
   <div class="statement-head"><div class="statement-title">Lemma 33</div><span class="label-badge">orderbasis_elem_contains_open_interval</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $x$ is not a smallest element of $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $x$ is not a largest element of $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\orderBasis{R}{X}$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B$. <br><span class="kw">Then</span> there exist $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $a\mathrel{R}x$ and $x\mathrel{R}b$ and $\intervalopenrel{R}{X}{a}{b} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -789,7 +791,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="orderbasis_elem_contains_open_interval" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$((\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}))$ by <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $a\mathrel{R}b$ and $B = \intervalopenrel{R}{X}{a}{b}$. <br><span class="kw">Then</span> $a\mathrel{R}x$ and $x\mathrel{R}b$ and $\intervalopenrel{R}{X}{a}{b} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a_0, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x)$ and $B = \intervalclosedopenrel{R}{X}{a_0}{b}$.<br> <span class="kw">Hence</span> $a_0\mathrel{R}x$ and $x\mathrel{R}b$ and $\intervalopenrel{R}{X}{a_0}{b} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0)$ and $B = \intervalopenclosedrel{R}{X}{a}{b_0}$.<br> <span class="kw">Therefore</span> $a\mathrel{R}x$ and $x\mathrel{R}b_0$ and $\intervalopenrel{R}{X}{a}{b_0} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$ by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>, <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -836,7 +838,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="max_of_two_elements">
+<section class="statement lemma helper joins-following-proof" id="max_of_two_elements">
   <div class="statement-head"><div class="statement-title">Lemma 34</div><span class="label-badge">max_of_two_elements</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $a_1, a_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(a = a_1 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a = a_2) \class{latex-symbol-tip latex-symbol-id-land}{\land} (a_1\mathrel{R}a \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_1 = a) \class{latex-symbol-tip latex-symbol-id-land}{\land} (a_2\mathrel{R}a \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_2 = a)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -852,7 +854,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="max_of_two_elements" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -860,7 +862,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="min_of_two_elements">
+<section class="statement lemma helper joins-following-proof" id="min_of_two_elements">
   <div class="statement-head"><div class="statement-title">Lemma 35</div><span class="label-badge">min_of_two_elements</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $b_1, b_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(b = b_1 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} b = b_2) \class{latex-symbol-tip latex-symbol-id-land}{\land} (b\mathrel{R}b_1 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} b = b_1) \class{latex-symbol-tip latex-symbol-id-land}{\land} (b\mathrel{R}b_2 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} b = b_2)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -876,7 +878,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="min_of_two_elements" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -884,7 +886,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="rel_from_or_left">
+<section class="statement lemma helper joins-following-proof" id="rel_from_or_left">
   <div class="statement-head"><div class="statement-title">Lemma 36</div><span class="label-badge">rel_from_or_left</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a = a_1$ or $a = a_2$.<br> <span class="kw">Suppose</span> $a_1\mathrel{R}x$ and $a_2\mathrel{R}x$. <br><span class="kw">Then</span> $a\mathrel{R}x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -897,7 +899,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="rel_from_or_left" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -905,7 +907,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="rel_from_or_right">
+<section class="statement lemma helper joins-following-proof" id="rel_from_or_right">
   <div class="statement-head"><div class="statement-title">Lemma 37</div><span class="label-badge">rel_from_or_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $b = b_1$ or $b = b_2$.<br> <span class="kw">Suppose</span> $x\mathrel{R}b_1$ and $x\mathrel{R}b_2$. <br><span class="kw">Then</span> $x\mathrel{R}b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -918,7 +920,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="rel_from_or_right" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -926,7 +928,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="order_basis_is_basis">
+<section class="statement lemma joins-following-proof" id="order_basis_is_basis">
   <div class="statement-head"><div class="statement-title">Lemma 38</div><span class="label-badge">order_basis_is_basis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element. <br><span class="kw">Then</span> $\orderBasis{R}{X}$ is a basis on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -939,7 +941,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="order_basis_is_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\orderBasis{R}{X}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -1224,7 +1226,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="intervalopenrel_as_intersection_openrays">
+<section class="statement lemma helper joins-following-proof" id="intervalopenrel_as_intersection_openrays">
   <div class="statement-head"><div class="statement-title">Lemma 39</div><span class="label-badge">intervalopenrel_as_intersection_openrays</span></div>
   <div class="statement-body"><p>$\intervalopenrel{R}{X}{a}{b} = \openrayright{R}{X}{a} \inter \openrayleft{R}{X}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1235,7 +1237,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenrel_as_intersection_openrays" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1243,7 +1245,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalclosedopenrel_smallest_eq_openrayleft">
+<section class="statement lemma helper joins-following-proof" id="intervalclosedopenrel_smallest_eq_openrayleft">
   <div class="statement-head"><div class="statement-title">Lemma 40</div><span class="label-badge">intervalclosedopenrel_smallest_eq_openrayleft</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $a_0$ is a smallest element of $X$ with respect to $R$. <br><span class="kw">Then</span> $\intervalclosedopenrel{R}{X}{a_0}{b} = \openrayleft{R}{X}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1255,7 +1257,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalclosedopenrel_smallest_eq_openrayleft" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>, <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>, <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1263,7 +1265,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalopenclosedrel_largest_eq_openrayright">
+<section class="statement lemma helper joins-following-proof" id="intervalopenclosedrel_largest_eq_openrayright">
   <div class="statement-head"><div class="statement-title">Lemma 41</div><span class="label-badge">intervalopenclosedrel_largest_eq_openrayright</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $b_0$ is a largest element of $X$ with respect to $R$. <br><span class="kw">Then</span> $\intervalopenclosedrel{R}{X}{a}{b_0} = \openrayright{R}{X}{a}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1275,7 +1277,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenclosedrel_largest_eq_openrayright" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>, <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>, <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1283,7 +1285,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="open_rays_subbasis_on">
+<section class="statement lemma helper joins-following-proof" id="open_rays_subbasis_on">
   <div class="statement-head"><div class="statement-title">Lemma 42</div><span class="label-badge">open_rays_subbasis_on</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element. <br><span class="kw">Then</span> $\openRays{R}{X}$ is a subbasis on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1296,7 +1298,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="open_rays_subbasis_on" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \openRays{R}{X}$.<br> $S\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ by <a class="xref" href="current_section_14.html#open_rays" data-preview-label="open_rays">Definition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $\unions{S}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_standard_library_sets.html#unions_subseteq_of_powerset_is_subseteq" data-preview-label="unions_subseteq_of_powerset_is_subseteq">Proposition 159</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $y\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x$ by <a class="xref" href="current_section_14.html#more_than_one_element_has_other" data-preview-label="more_than_one_element_has_other">Lemma 25</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} \unions{S}$.</span></summary>
@@ -1344,7 +1346,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="order_basis_in_finite_intersections">
+<section class="statement lemma helper joins-following-proof" id="order_basis_in_finite_intersections">
   <div class="statement-head"><div class="statement-title">Lemma 43</div><span class="label-badge">order_basis_in_finite_intersections</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Suppose</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\orderBasis{R}{X}$. <br><span class="kw">Then</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{\openRays{R}{X}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1358,7 +1360,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="order_basis_in_finite_intersections" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \openRays{R}{X}$.<br> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{\unions{S}}$ and $((\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}))$ by <a class="xref" href="current_section_14.html#open_rays_subbasis_on" data-preview-label="open_rays_subbasis_on">Lemma 42</a>, <a class="xref" href="current_section_13.html#subbasis_on" data-preview-label="subbasis_on">Definition 24</a>, <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a\mathrel{R}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{R}{X}{a}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $a\mathrel{R}b$ and $B = \intervalopenrel{R}{X}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $F = \{\openrayright{R}{X}{a}, \openrayleft{R}{X}{b}\}$.<br> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} S$ by <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_14.html#open_rays" data-preview-label="open_rays">Definition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_iff" data-preview-label="upair_iff">Proposition 19</a>.<br> $F$ is finite and $F$ is inhabited by <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>. <br><span class="kw">Thus</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ by <a class="xref" href="current_section_14.html#intervalopenrel_as_intersection_openrays" data-preview-label="intervalopenrel_as_intersection_openrays">Lemma 39</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_as_inters" data-preview-label="inter_as_inters">Proposition 64</a>, <a class="xref" href="current_section_13.html#finite_intersections" data-preview-label="finite_intersections">Definition 25</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{R}{X}{a_0}{b}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a_0, b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. a_0\mathrel{R}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x)$ and $B = \intervalclosedopenrel{R}{X}{a_0}{b}$.<br> <span class="kw">Hence</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ by <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_14.html#open_rays" data-preview-label="open_rays">Definition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_cardinality.html#subseteq_finite_is_finite" data-preview-label="subseteq_finite_is_finite">Lemma 1269</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>, <a class="xref" href="current_section_14.html#intervalclosedopenrel_smallest_eq_openrayleft" data-preview-label="intervalclosedopenrel_smallest_eq_openrayleft">Lemma 40</a>, <a class="xref" href="current_section_standard_library_sets.html#inters_singleton" data-preview-label="inters_singleton">Proposition 36</a>, <a class="xref" href="current_section_13.html#finite_intersections" data-preview-label="finite_intersections">Definition 25</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in} X. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{R}{X}{a}{b_0}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a, b_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $(\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in} X. x\mathrel{R}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0)$ and $B = \intervalopenclosedrel{R}{X}{a}{b_0}$.<br> <span class="kw">Therefore</span> $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ by <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_14.html#open_rays" data-preview-label="open_rays">Definition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_cardinality.html#subseteq_finite_is_finite" data-preview-label="subseteq_finite_is_finite">Lemma 1269</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>, <a class="xref" href="current_section_14.html#intervalopenclosedrel_largest_eq_openrayright" data-preview-label="intervalopenclosedrel_largest_eq_openrayright">Lemma 41</a>, <a class="xref" href="current_section_standard_library_sets.html#inters_singleton" data-preview-label="inters_singleton">Proposition 36</a>, <a class="xref" href="current_section_13.html#finite_intersections" data-preview-label="finite_intersections">Definition 25</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1413,7 +1415,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="initial_segment_one">
+<section class="statement lemma helper joins-following-proof" id="initial_segment_one">
   <div class="statement-head"><div class="statement-title">Lemma 44</div><span class="label-badge">initial_segment_one</span></div>
   <div class="statement-body"><p>$\initialSegment{1} = \{1\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1424,7 +1426,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="initial_segment_one" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $x$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{1}$ iff $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\{1\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1434,7 +1436,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturalsplus_lt_succ">
+<section class="statement lemma helper joins-following-proof" id="naturalsplus_lt_succ">
   <div class="statement-head"><div class="statement-title">Lemma 45</div><span class="label-badge">naturalsplus_lt_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $n < n + 1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1446,7 +1448,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturalsplus_lt_succ" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.<br> $0 < 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>.<br> $0 + n < 1 + n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>.<br> $0 + n = n$ and $1 + n = n + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> Follows by <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1459,7 +1461,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="initial_segment_subset_succ">
+<section class="statement lemma joins-following-proof" id="initial_segment_subset_succ">
   <div class="statement-head"><div class="statement-title">Lemma 46</div><span class="label-badge">initial_segment_subset_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $\initialSegment{n}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \initialSegment{n + 1}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1471,7 +1473,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="initial_segment_subset_succ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n + 1}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n}$.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $x \class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $n < n + 1$ by <a class="xref" href="current_section_14.html#naturalsplus_lt_succ" data-preview-label="naturalsplus_lt_succ">Lemma 45</a>.<br> $x < n + 1$ or $x = n + 1$ by <a class="xref" href="current_section_13.html#real_leq_split" data-preview-label="real_leq_split">Lemma 6</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>. <br><span class="kw">Thus</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n + 1}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>.</p></div>
@@ -1493,7 +1495,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="initial_segment_succ_split">
+<section class="statement lemma helper joins-following-proof" id="initial_segment_succ_split">
   <div class="statement-head"><div class="statement-title">Lemma 47</div><span class="label-badge">initial_segment_succ_split</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n + 1}$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n}$ or $x = n + 1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1506,7 +1508,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="initial_segment_succ_split" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_succ_discrete" data-preview-label="real_succ_discrete">Axiom 44</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1514,7 +1516,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="initial_segment_inhabited">
+<section class="statement lemma helper joins-following-proof" id="initial_segment_inhabited">
   <div class="statement-head"><div class="statement-title">Lemma 48</div><span class="label-badge">initial_segment_inhabited</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $\initialSegment{n}$ is inhabited.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1526,7 +1528,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="initial_segment_inhabited" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\initialSegment{n}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1534,7 +1536,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_intersections_open_in_topology">
+<section class="statement lemma helper joins-following-proof" id="finite_intersections_open_in_topology">
   <div class="statement-head"><div class="statement-title">Lemma 49</div><span class="label-badge">finite_intersections_open_in_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T$.<br> <span class="kw">Suppose</span> $F$ is finite and inhabited. <br><span class="kw">Then</span> $\inters{F}\class{latex-symbol-tip latex-symbol-id-in}{\in} T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1548,7 +1550,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_intersections_open_in_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that there exists a bijection from $\initialSegment{k}$ to $F$ by <a class="xref" href="current_section_standard_library_cardinality.html#finite" data-preview-label="finite">Definition 434</a>.<br> <span class="kw kw-bold">Let</span> $A = \{ n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \text{for all $G,g$ such that $g$ is a bijection from $\initialSegment{n}$ to $G$ and $G\subseteq T$ and $G$ is inhabited we have $\inters{G}\in T$} \}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $G,g$ such that $g$ is a bijection from $\initialSegment{1}$ to $G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T$ and $G$ is inhabited we have $\inters{G}\class{latex-symbol-tip latex-symbol-id-in}{\in} T$.</span></summary>
@@ -1673,7 +1675,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="open_rays_subbasis">
+<section class="statement lemma joins-following-proof" id="open_rays_subbasis">
   <div class="statement-head"><div class="statement-title">Lemma 50</div><span class="label-badge">open_rays_subbasis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$. <br><span class="kw">Then</span> $\subbasisTopology{\openRays{R}{X}}{X} = T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1687,7 +1689,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="open_rays_subbasis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \openRays{R}{X}$.<br> <span class="kw kw-bold">Let</span> $B = \orderBasis{R}{X}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \subbasisTopology{S}{X}$.<br> $T = \basisTopology{B}{X}$ by <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $B$ is a basis for $T$ on $X$ by <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $\finiteIntersections{S}$ is a basis for $T_1$ on $X$ by <a class="xref" href="current_section_14.html#open_rays_subbasis_on" data-preview-label="open_rays_subbasis_on">Lemma 42</a>, <a class="xref" href="current_section_13.html#subbasis_finite_intersections_basis" data-preview-label="subbasis_finite_intersections_basis">Lemma 24</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#topology_generated_by_subbasis" data-preview-label="topology_generated_by_subbasis">Definition 26</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,B_2$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $B_2\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_2$ there exists $B_3\class{latex-symbol-tip latex-symbol-id-in}{\in}\finiteIntersections{S}$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_3$ and $B_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B_2$.</span></summary>

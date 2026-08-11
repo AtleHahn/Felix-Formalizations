@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -458,7 +460,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="regular_implies_hausdorff">
+<section class="statement lemma helper joins-following-proof" id="regular_implies_hausdorff">
   <div class="statement-head"><div class="statement-title">Lemma 371</div><span class="label-badge">regular_implies_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is regular with respect to $T$. <br><span class="kw">Then</span> $X$ is Hausdorff with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -470,7 +472,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="regular_implies_hausdorff" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x_1,x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x_2$ there exist $U_1,U_2$ such that $U_1$ is a neighborhood of $x_1$ in $X$ with respect to $T$ and $U_2$ is a neighborhood of $x_2$ in $X$ with respect to $T$ and $U_1$ is disjoint from $U_2$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_31.html#regular_space" data-preview-label="regular_space">Definition 176</a>, <a class="xref" href="current_section_31.html#one_point_closed" data-preview-label="one_point_closed">Definition 175</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>.</p></div>
@@ -490,7 +492,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="normal_implies_regular">
+<section class="statement lemma helper joins-following-proof" id="normal_implies_regular">
   <div class="statement-head"><div class="statement-title">Lemma 372</div><span class="label-badge">normal_implies_regular</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is normal with respect to $T$. <br><span class="kw">Then</span> $X$ is regular with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -502,7 +504,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="normal_implies_regular" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,B$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $B$ is closed in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} B$ there exist $U,V$ such that $U$ is open in $X$ with respect to $T$ and $V$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ and $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V$ and $U$ is disjoint from $V$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_31.html#normal_space" data-preview-label="normal_space">Definition 177</a>, <a class="xref" href="current_section_31.html#one_point_closed" data-preview-label="one_point_closed">Definition 175</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p></div>
@@ -524,7 +526,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="regular_closure_neighborhood">
+<section class="statement lemma joins-following-proof" id="regular_closure_neighborhood">
   <div class="statement-head"><div class="statement-title">Lemma 373</div><span class="label-badge">regular_closure_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is regular with respect to $T$. <br><span class="kw">Then</span> for all $x,U$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $U$ is a neighborhood of $x$ in $X$ with respect to $T$ there exists $V$ such that $V$ is a neighborhood of $x$ in $X$ with respect to $T$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -539,7 +541,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="regular_closure_neighborhood" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ by <a class="xref" href="current_section_31.html#regular_space" data-preview-label="regular_space">Definition 176</a>.<br> <span class="kw kw-bold">Fix</span> $x$.<br> <span class="kw kw-bold">Fix</span> $U$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $U$ is a neighborhood of $x$ in $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $B = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} U$.<br> $U$ is open in $X$ with respect to $T$ and $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> $B$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#double_relative_complement" data-preview-label="double_relative_complement">Proposition 92</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>.<br> <span class="kw kw-bold">Take</span> $U_1,V_1$ such that $U_1$ is open in $X$ with respect to $T$ and $V_1$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U_1$ and $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V_1$ and $U_1$ is disjoint from $V_1$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>, <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_31.html#regular_space" data-preview-label="regular_space">Definition 176</a>.<br> <span class="kw kw-bold">Let</span> $V = U_1$.<br> $V$ is a neighborhood of $x$ in $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>.<br> $V$ is open in $X$ with respect to $T$ and $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> We have $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} V_1$ by <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>.<br> $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} V_1$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#double_relative_complement" data-preview-label="double_relative_complement">Proposition 92</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>.<br> <span class="kw">Hence</span> $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} V_1$ by <a class="xref" href="current_section_17.html#closure_subseteq_closed" data-preview-label="closure_subseteq_closed">Lemma 72</a>.<br> We have $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} V_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_implies_setminus_supseteq" data-preview-label="subseteq_implies_setminus_supseteq">Proposition 99</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> Finally $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} V_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#double_relative_complement" data-preview-label="double_relative_complement">Proposition 92</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -571,7 +573,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="regular_from_closure_neighborhood">
+<section class="statement lemma joins-following-proof" id="regular_from_closure_neighborhood">
   <div class="statement-head"><div class="statement-title">Lemma 374</div><span class="label-badge">regular_from_closure_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> for all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\{x\}$ is closed in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> for all $x,U$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $U$ is a neighborhood of $x$ in $X$ with respect to $T$ there exists $V$ such that $V$ is a neighborhood of $x$ in $X$ with respect to $T$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$. <br><span class="kw">Then</span> $X$ is regular with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -588,7 +590,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="regular_from_closure_neighborhood" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T$ is a topology on $X$.</span></summary>
   <div class="proof-body"><p>Trivial.</p></div>
@@ -652,7 +654,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="normal_closure_neighborhood">
+<section class="statement lemma joins-following-proof" id="normal_closure_neighborhood">
   <div class="statement-head"><div class="statement-title">Lemma 375</div><span class="label-badge">normal_closure_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is normal with respect to $T$. <br><span class="kw">Then</span> for all $A,U$ such that $A$ is closed in $X$ with respect to $T$ and $U$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ there exists $V$ such that $V$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -669,7 +671,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="normal_closure_neighborhood" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $A$.<br> <span class="kw kw-bold">Fix</span> $U$ such that $A$ is closed in $X$ with respect to $T$ and $U$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.<br> <span class="kw kw-bold">Let</span> $B = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} U$.<br> $U\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ and $U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_31.html#normal_space" data-preview-label="normal_space">Definition 177</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> $B$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#double_relative_complement" data-preview-label="double_relative_complement">Proposition 92</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>. <br><span class="kw">Thus</span> $A$ is disjoint from $B$ by <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>.<br> <span class="kw kw-bold">Take</span> $V,W$ such that $V$ is open in $X$ with respect to $T$ and $W$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V$ and $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} W$ and $V$ is disjoint from $W$ by <a class="xref" href="current_section_31.html#normal_space" data-preview-label="normal_space">Definition 177</a>.</p>
 <p>We have $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_31.html#normal_space" data-preview-label="normal_space">Definition 177</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>.<br> We have $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} W$ by <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>.<br> $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} W$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_31.html#normal_space" data-preview-label="normal_space">Definition 177</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#double_relative_complement" data-preview-label="double_relative_complement">Proposition 92</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>.<br> <span class="kw">Hence</span> $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} W$ by <a class="xref" href="current_section_31.html#normal_space" data-preview-label="normal_space">Definition 177</a>, <a class="xref" href="current_section_17.html#closure_subseteq_closed" data-preview-label="closure_subseteq_closed">Lemma 72</a>.<br> We have $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} W\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_implies_setminus_supseteq" data-preview-label="subseteq_implies_setminus_supseteq">Proposition 99</a>. <br><span class="kw">Thus</span> $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#double_relative_complement" data-preview-label="double_relative_complement">Proposition 92</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
@@ -709,7 +711,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="normal_from_closure_neighborhood">
+<section class="statement lemma joins-following-proof" id="normal_from_closure_neighborhood">
   <div class="statement-head"><div class="statement-title">Lemma 376</div><span class="label-badge">normal_from_closure_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> for all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\{x\}$ is closed in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> for all $A,U$ such that $A$ is closed in $X$ with respect to $T$ and $U$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ there exists $V$ such that $V$ is open in $X$ with respect to $T$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} V$ and $\closure{V}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$. <br><span class="kw">Then</span> $X$ is normal with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -728,7 +730,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="normal_from_closure_neighborhood" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T$ is a topology on $X$.</span></summary>
   <div class="proof-body"><p>Trivial.</p></div>
@@ -798,7 +800,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subspace_hausdorff_31">
+<section class="statement lemma joins-following-proof" id="subspace_hausdorff_31">
   <div class="statement-head"><div class="statement-title">Lemma 377</div><span class="label-badge">subspace_hausdorff_31</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $Y$ is a subspace of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is Hausdorff with respect to $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -812,7 +814,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subspace_hausdorff_31" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_17.html#subspace_hausdorff" data-preview-label="subspace_hausdorff">Theorem 14</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -820,7 +822,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_hausdorff_31">
+<section class="statement lemma joins-following-proof" id="product_hausdorff_31">
   <div class="statement-head"><div class="statement-title">Lemma 378</div><span class="label-badge">product_hausdorff_31</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Suppose</span> for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is Hausdorff with respect to $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{X}$ is Hausdorff with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -836,7 +838,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_hausdorff_31" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_19.html#product_hausdorff_product" data-preview-label="product_hausdorff_product">Lemma 113</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -844,7 +846,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subspace_regular">
+<section class="statement lemma joins-following-proof" id="subspace_regular">
   <div class="statement-head"><div class="statement-title">Lemma 379</div><span class="label-badge">subspace_regular</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is regular with respect to $T$.<br> <span class="kw">Assume</span> $Y$ is a subspace of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is regular with respect to $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -858,7 +860,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subspace_regular" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ and $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_31.html#regular_space" data-preview-label="regular_space">Definition 176</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_Y$ is a topology on $Y$.</span></summary>
@@ -914,7 +916,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="product_regular">
+<section class="statement lemma joins-following-proof" id="product_regular">
   <div class="statement-head"><div class="statement-title">Lemma 380</div><span class="label-badge">product_regular</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Suppose</span> for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is regular with respect to $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$. <br><span class="kw">Then</span> $\productFamily{X}$ is regular with respect to $\productTopologyIndexed{T}{X}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -930,7 +932,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_regular" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$.<br> <span class="kw kw-bold">Let</span> $S = \productSubbasis{T}{X}$.<br> For all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_31.html#regular_space" data-preview-label="regular_space">Definition 176</a>.<br> <span class="kw">Hence</span> for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is Hausdorff with respect to $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_31.html#regular_implies_hausdorff" data-preview-label="regular_implies_hausdorff">Lemma 371</a>.<br> <span class="kw">Therefore</span> $\productFamily{X}$ is Hausdorff with respect to $T_0$ by <a class="xref" href="current_section_31.html#product_hausdorff_31" data-preview-label="product_hausdorff_31">Lemma 378</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_0$ is a topology on $\productFamily{X}$.</span></summary>

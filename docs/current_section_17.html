@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -419,7 +421,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="closed_emptyset">
+<section class="statement lemma joins-following-proof" id="closed_emptyset">
   <div class="statement-head"><div class="statement-title">Lemma 63</div><span class="label-badge">closed_emptyset</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -431,7 +433,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_emptyset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset_subseteq" data-preview-label="emptyset_subseteq">Proposition 11</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_emptyset" data-preview-label="setminus_emptyset">Proposition 88</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -439,7 +441,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closed_whole_space">
+<section class="statement lemma joins-following-proof" id="closed_whole_space">
   <div class="statement-head"><div class="statement-title">Lemma 64</div><span class="label-badge">closed_whole_space</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $X$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -451,7 +453,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_whole_space" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_self" data-preview-label="setminus_self">Proposition 90</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -459,7 +461,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closed_inters">
+<section class="statement lemma joins-following-proof" id="closed_inters">
   <div class="statement-head"><div class="statement-title">Lemma 65</div><span class="label-badge">closed_inters</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.<br> <span class="kw">Suppose</span> for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ we have $A$ is closed in $X$ with respect to $T$. <br><span class="kw">Then</span> $\inters{C}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -473,7 +475,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_inters" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\inters{C}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_standard_library_sets.html#unions_subseteq_of_powerset_is_subseteq" data-preview-label="unions_subseteq_of_powerset_is_subseteq">Proposition 159</a>, <a class="xref" href="current_section_standard_library_sets.html#inters" data-preview-label="inters">Definition 349</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $C = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p>We have $\inters{C} = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#inters" data-preview-label="inters">Definition 349</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_emptyset" data-preview-label="unions_emptyset">Proposition 28</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.<br> $\inters{C}$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#closed_emptyset" data-preview-label="closed_emptyset">Lemma 63</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $C \class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p>$C$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw kw-bold">Let</span> $D = \{U\class{latex-symbol-tip latex-symbol-id-in}{\in} T \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} A\class{latex-symbol-tip latex-symbol-id-in}{\in} C. U = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A\}$.</p>
 <details class="proof-block subproof" open>
@@ -584,7 +586,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="complement_eq_implies_eq">
+<section class="statement lemma helper joins-following-proof" id="complement_eq_implies_eq">
   <div class="statement-head"><div class="statement-title">Lemma 66</div><span class="label-badge">complement_eq_implies_eq</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B$. <br><span class="kw">Then</span> $A = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -597,7 +599,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="complement_eq_implies_eq" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_standard_library_sets.html#double_complement" data-preview-label="double_complement">Proposition 109</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -605,7 +607,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closed_finite_unions">
+<section class="statement lemma joins-following-proof" id="closed_finite_unions">
   <div class="statement-head"><div class="statement-title">Lemma 67</div><span class="label-badge">closed_finite_unions</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$.<br> <span class="kw">Suppose</span> $F$ is finite.<br> <span class="kw">Suppose</span> for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $A$ is closed in $X$ with respect to $T$. <br><span class="kw">Then</span> $\unions{F}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -620,7 +622,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_finite_unions" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $F = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p>We have $\unions{F}$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#unions_emptyset" data-preview-label="unions_emptyset">Proposition 28</a>, <a class="xref" href="current_section_17.html#closed_emptyset" data-preview-label="closed_emptyset">Lemma 63</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $F \class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p><span class="kw kw-bold">Let</span> $G = \{U\class{latex-symbol-tip latex-symbol-id-in}{\in} T \mid \class{latex-symbol-tip latex-symbol-id-exists}{\exists} A\class{latex-symbol-tip latex-symbol-id-in}{\in} F. U = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A\}$.<br> $G$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\unions{F}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\inters{G}$.</span></summary>
@@ -816,7 +818,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="closed_in_subspace_iff">
+<section class="statement theorem joins-following-proof" id="closed_in_subspace_iff">
   <div class="statement-head"><div class="statement-title">Theorem 3</div><span class="label-badge">closed_in_subspace_iff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $Y$ is a subspace of $X$ with respect to $T$. <br><span class="kw">Then</span> for all $A$ we have $A$ is closed in $Y$ with respect to $\subspaceTopology{T}{Y}$ iff there exists $C$ such that $C$ is closed in $X$ with respect to $T$ and $A = C\inter Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -830,7 +832,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_in_subspace_iff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ and $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$.<br> <span class="kw kw-bold">Fix</span> $A$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $A$ is closed in $Y$ with respect to $T_Y$ then there exists $C$ such that $C$ is closed in $X$ with respect to $T$ and $A = C\inter Y$.</span></summary>
@@ -923,7 +925,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="closed_in_closed_subspace">
+<section class="statement theorem joins-following-proof" id="closed_in_closed_subspace">
   <div class="statement-head"><div class="statement-title">Theorem 4</div><span class="label-badge">closed_in_closed_subspace</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $Y$ is closed in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $A$ is closed in $Y$ with respect to $\subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $A$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -938,7 +940,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_in_closed_subspace" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $C$ such that $C$ is closed in $X$ with respect to $T$ and $A = C\inter Y$ by <a class="xref" href="current_section_17.html#closed_in_subspace_iff" data-preview-label="closed_in_subspace_iff">Theorem 3</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $D = \{C, Y\}$.<br> We have $D\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\pow{X}$ and for all $B$ such that $B\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ we have $B$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#upair_iff" data-preview-label="upair_iff">Proposition 19</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Therefore</span> $A$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#closed_inters" data-preview-label="closed_inters">Lemma 65</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_as_inters" data-preview-label="inter_as_inters">Proposition 64</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -971,7 +973,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="interior_open_in">
+<section class="statement lemma joins-following-proof" id="interior_open_in">
   <div class="statement-head"><div class="statement-title">Lemma 68</div><span class="label-badge">interior_open_in</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\interior{A}{X}{T}$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -983,7 +985,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="interior_open_in" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \{U\class{latex-symbol-tip latex-symbol-id-in}{\in} T \mid U\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A\}$.<br> $\interior{A}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\unions{S}$ by <a class="xref" href="current_section_17.html#interior" data-preview-label="interior">Definition 50</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $\unions{S}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\interior{A}{X}{T}$ by <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_17.html#interior" data-preview-label="interior">Definition 50</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Therefore</span> $\interior{A}{X}{T}$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -995,7 +997,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closure_closed_in">
+<section class="statement lemma joins-following-proof" id="closure_closed_in">
   <div class="statement-head"><div class="statement-title">Lemma 69</div><span class="label-badge">closure_closed_in</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$. <br><span class="kw">Then</span> $\closure{A}{X}{T}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1008,7 +1010,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_closed_in" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $F = \{C\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{X} \mid \text{$C$ is closed in $X$ with respect to $T$ and for all $x\in A$ we have $x\in C$}\}$.<br> $F$ is inhabited by <a class="xref" href="current_section_17.html#closed_whole_space" data-preview-label="closed_whole_space">Lemma 64</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_top" data-preview-label="powerset_top">Proposition 158</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\closure{A}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\inters{F}$.</span></summary>
@@ -1045,7 +1047,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="interior_subseteq">
+<section class="statement lemma joins-following-proof" id="interior_subseteq">
   <div class="statement-head"><div class="statement-title">Lemma 70</div><span class="label-badge">interior_subseteq</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\interior{A}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1057,7 +1059,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="interior_subseteq" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#interior" data-preview-label="interior">Definition 50</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1065,7 +1067,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subseteq_closure">
+<section class="statement lemma joins-following-proof" id="subseteq_closure">
   <div class="statement-head"><div class="statement-title">Lemma 71</div><span class="label-badge">subseteq_closure</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\closure{A}{X}{T}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1078,7 +1080,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_closure" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_17.html#closure" data-preview-label="closure">Definition 51</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1086,7 +1088,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closure_subseteq_closed">
+<section class="statement lemma helper joins-following-proof" id="closure_subseteq_closed">
   <div class="statement-head"><div class="statement-title">Lemma 72</div><span class="label-badge">closure_subseteq_closed</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $C$ is closed in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$. <br><span class="kw">Then</span> $\closure{A}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1101,7 +1103,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closure_subseteq_closed" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#closure" data-preview-label="closure">Definition 51</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1109,7 +1111,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="open_eq_interior">
+<section class="statement lemma joins-following-proof" id="open_eq_interior">
   <div class="statement-head"><div class="statement-title">Lemma 73</div><span class="label-badge">open_eq_interior</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A$ is open in $X$ with respect to $T$. <br><span class="kw">Then</span> $A = \interior{A}{X}{T}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1122,7 +1124,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="open_eq_interior" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\interior{A}{X}{T}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.<br> $A\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.<br> We have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>.<br> <span class="kw">Therefore</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\interior{A}{X}{T}$ by <a class="xref" href="current_section_17.html#interior" data-preview-label="interior">Definition 50</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.</p></div>
@@ -1143,7 +1145,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="closed_eq_closure">
+<section class="statement lemma joins-following-proof" id="closed_eq_closure">
   <div class="statement-head"><div class="statement-title">Lemma 74</div><span class="label-badge">closed_eq_closure</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A$ is closed in $X$ with respect to $T$. <br><span class="kw">Then</span> $A = \closure{A}{X}{T}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1156,7 +1158,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_eq_closure" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_17.html#subseteq_closure" data-preview-label="subseteq_closure">Lemma 71</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_17.html#closure_subseteq_closed" data-preview-label="closure_subseteq_closed">Lemma 72</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1164,7 +1166,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="closure_in_subspace">
+<section class="statement theorem joins-following-proof" id="closure_in_subspace">
   <div class="statement-head"><div class="statement-title">Theorem 5</div><span class="label-badge">closure_in_subspace</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $Y$ is a subspace of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $\closure{A}{Y}{T_Y} = \closure{A}{X}{T}\inter Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1178,7 +1180,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_in_subspace" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ and $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.<br> <span class="kw kw-bold">Let</span> $B = \closure{A}{Y}{T_Y}$.<br> <span class="kw kw-bold">Let</span> $C = \closure{A}{X}{T}$.<br> We have $C\inter Y$ is closed in $Y$ with respect to $T_Y$ by <a class="xref" href="current_section_17.html#closure_closed_in" data-preview-label="closure_closed_in">Lemma 69</a>, <a class="xref" href="current_section_17.html#closed_in_subspace_iff" data-preview-label="closed_in_subspace_iff">Theorem 3</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> We have $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C\inter Y$ by <a class="xref" href="current_section_17.html#subseteq_closure" data-preview-label="subseteq_closure">Lemma 71</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_inter_iff" data-preview-label="subseteq_inter_iff">Proposition 72</a>.<br> $T_Y$ is a topology on $Y$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C\inter Y$.</span></summary>
@@ -1226,7 +1228,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="closure_iff_intersects_open">
+<section class="statement theorem joins-following-proof" id="closure_iff_intersects_open">
   <div class="statement-head"><div class="statement-title">Theorem 6</div><span class="label-badge">closure_iff_intersects_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$ iff for all $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ we have $U$ intersects $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1241,7 +1243,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_iff_intersects_open" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$ then for all $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ we have $U$ intersects $A$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$.<br> <span class="kw kw-bold">Fix</span> $U$ such that $U$ is open in $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$.<br> <span class="kw">Suppose</span> not.<br> We have $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} U$ by <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_comm" data-preview-label="inter_comm">Proposition 65 [Commutativity of intersection]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_setminus" data-preview-label="subseteq_setminus">Proposition 98</a>.<br> <span class="kw">Therefore</span> $X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} U$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_setminus" data-preview-label="setminus_setminus">Proposition 91</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_comm" data-preview-label="inter_comm">Proposition 65 [Commutativity of intersection]</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#pow_iff" data-preview-label="pow_iff">Axiom 12</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_right" data-preview-label="inter_absorb_supseteq_right">Proposition 69</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>. <br><span class="kw">Thus</span> $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} U$ by <a class="xref" href="current_section_17.html#closure_subseteq_closed" data-preview-label="closure_subseteq_closed">Lemma 72</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>.<br> Contradiction.</p></div>
@@ -1293,7 +1295,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="closure_iff_intersects_basis">
+<section class="statement theorem joins-following-proof" id="closure_iff_intersects_basis">
   <div class="statement-head"><div class="statement-title">Theorem 7</div><span class="label-badge">closure_iff_intersects_basis</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $B$ is a basis for $T$ on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$ iff for all $B_1$ such that $B_1\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1$ we have $B_1$ intersects $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1308,7 +1310,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_iff_intersects_basis" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$ then for all $B_1$ such that $B_1\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} B_1$ we have $B_1$ intersects $A$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#basis_elem_open_in_generated" data-preview-label="basis_elem_open_in_generated">Lemma 2</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#closure_iff_intersects_open" data-preview-label="closure_iff_intersects_open">Theorem 6</a>.</p></div>
@@ -1380,7 +1382,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="closure_union_limit_points">
+<section class="statement theorem joins-following-proof" id="closure_union_limit_points">
   <div class="statement-head"><div class="statement-title">Theorem 8</div><span class="label-badge">closure_union_limit_points</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$. <br><span class="kw">Then</span> $\closure{A}{X}{T} = A\union\limitPoints{A}{X}{T}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1393,7 +1395,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closure_union_limit_points" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\union\limitPoints{A}{X}{T}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closure{A}{X}{T}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\union\limitPoints{A}{X}{T}$.<br> We have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ or $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\limitPoints{A}{X}{T}$ by <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.</p>
@@ -1504,7 +1506,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="closed_iff_contains_limit_points">
+<section class="statement corollary joins-following-proof" id="closed_iff_contains_limit_points">
   <div class="statement-head"><div class="statement-title">Corollary 1</div><span class="label-badge">closed_iff_contains_limit_points</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$. <br><span class="kw">Then</span> $A$ is closed in $X$ with respect to $T$ iff $\limitPoints{A}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1517,7 +1519,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="closed_iff_contains_limit_points" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $A$ is closed in $X$ with respect to $T$ then $\limitPoints{A}{X}{T}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#closed_eq_closure" data-preview-label="closed_eq_closure">Lemma 74</a>, <a class="xref" href="current_section_17.html#closure_union_limit_points" data-preview-label="closure_union_limit_points">Theorem 8</a>, <a class="xref" href="current_section_standard_library_sets.html#union_comm" data-preview-label="union_comm">Proposition 41 [Commutativity of union]</a>, <a class="xref" href="current_section_standard_library_sets.html#union_eq_self_implies_subseteq" data-preview-label="union_eq_self_implies_subseteq">Proposition 55</a>.</p></div>
@@ -1555,7 +1557,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="finite_bijection">
+<section class="statement lemma helper joins-following-proof" id="finite_bijection">
   <div class="statement-head"><div class="statement-title">Lemma 75</div><span class="label-badge">finite_bijection</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A$ is finite.<br> <span class="kw">Suppose</span> $f$ is a bijection from $A$ to $B$. <br><span class="kw">Then</span> $B$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1568,7 +1570,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_bijection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $A$ is empty.</div><div class="case-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $b$ we have $b\class{latex-symbol-tip latex-symbol-id-notin}{\notin} B$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $b$.<br> <span class="kw">Suppose</span> not. <br><span class="kw">Then</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$.<br> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{B}$ by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.<br> <span class="kw kw-bold">Take</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $f(a) = b$ by <a class="xref" href="current_section_standard_library_functions.html#surj" data-preview-label="surj">Definition 402</a>.<br> Contradiction.</p></div>
@@ -1620,7 +1622,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="singleton_family_bijection">
+<section class="statement lemma helper joins-following-proof" id="singleton_family_bijection">
   <div class="statement-head"><div class="statement-title">Lemma 76</div><span class="label-badge">singleton_family_bijection</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $S = \{\{x\} \mid x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\}$. <br><span class="kw">Then</span> there exists a bijection from $A$ to $S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1632,7 +1634,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="singleton_family_bijection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $f = \{(x,\{x\}) \mid x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\}$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ there exist $x,y$ such that $w = (x,y)$.<br> For all $x,y,z$ such that $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ and $(x,z)\class{latex-symbol-tip latex-symbol-id-in}{\in} f$ we have $y = z$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Hence</span> $f$ is a function by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.<br> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A}{S}$ by <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_iff" data-preview-label="function_apply_iff">Proposition 349</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.<br> We have $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\surj{A}{S}$ by <a class="xref" href="current_section_standard_library_relations.html#ran_iff" data-preview-label="ran_iff">Proposition 208</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>.<br> <span class="kw">Therefore</span> there exists a bijection from $A$ to $S$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_elim" data-preview-label="singleton_elim">Proposition 21</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_relations.html#injective" data-preview-label="injective">Definition 395</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1647,7 +1649,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="finite_point_set_closed_hausdorff">
+<section class="statement theorem joins-following-proof" id="finite_point_set_closed_hausdorff">
   <div class="statement-head"><div class="statement-title">Theorem 9</div><span class="label-badge">finite_point_set_closed_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $A$ is finite. <br><span class="kw">Then</span> $A$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1661,7 +1663,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="finite_point_set_closed_hausdorff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\{x\}$ is closed in $X$ with respect to $T$.</span></summary>
@@ -1756,7 +1758,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="inter_empty_setminus_singleton_subset_singleton">
+<section class="statement lemma helper joins-following-proof" id="inter_empty_setminus_singleton_subset_singleton">
   <div class="statement-head"><div class="statement-title">Lemma 77</div><span class="label-badge">inter_empty_setminus_singleton_subset_singleton</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $U\inter (A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{x\}) = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> $U\inter A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\{x\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1768,7 +1770,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="inter_empty_setminus_singleton_subset_singleton" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1776,7 +1778,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="limit_point_infinite_neighborhood">
+<section class="statement theorem joins-following-proof" id="limit_point_infinite_neighborhood">
   <div class="statement-head"><div class="statement-title">Theorem 10</div><span class="label-badge">limit_point_infinite_neighborhood</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ satisfies the T-one axiom with respect to $T$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $x$ is a limit point of $A$ in $X$ with respect to $T$ iff for all $U$ such that $U$ is a neighborhood of $x$ in $X$ with respect to $T$ we have $U\inter A$ is infinite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1791,7 +1793,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="limit_point_infinite_neighborhood" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $x$ is a limit point of $A$ in $X$ with respect to $T$ then for all $U$ such that $U$ is a neighborhood of $x$ in $X$ with respect to $T$ we have $U\inter A$ is infinite.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $x$ is a limit point of $A$ in $X$ with respect to $T$.<br> <span class="kw kw-bold">Fix</span> $U$ such that $U$ is a neighborhood of $x$ in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> not.<br> $U\inter A$ is finite.<br> <span class="kw kw-bold">Let</span> $B = U\inter (A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{x\})$.<br> We have $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U\inter A$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_left" data-preview-label="setminus_elim_left">Proposition 86</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_inter_iff" data-preview-label="subseteq_inter_iff">Proposition 72</a>.<br> We have $B$ is finite by <a class="xref" href="current_section_standard_library_cardinality.html#subseteq_finite_is_finite" data-preview-label="subseteq_finite_is_finite">Lemma 1269</a>.<br> $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $T$ is a topology on $X$ and $B$ is closed in $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_17.html#t1_axiom" data-preview-label="t1_axiom">Definition 57</a>.<br> <span class="kw">Therefore</span> $U\inter (X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_17.html#t1_axiom" data-preview-label="t1_axiom">Definition 57</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} B$.<br> We have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U\inter (X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)$ by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>.<br> <span class="kw">Therefore</span> $U\inter (X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)$ is a neighborhood of $x$ in $X$ with respect to $T$ by <a class="xref" href="current_section_17.html#neighborhood" data-preview-label="neighborhood">Definition 53</a>.<br> For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} (U\inter (X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)) \inter (A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{x\})$ we have $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $y\class{latex-symbol-tip latex-symbol-id-notin}{\notin} B$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>.<br> <span class="kw">Hence</span> $U\inter (X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} B)$ does not intersect $A\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{x\}$ by <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> Contradiction by <a class="xref" href="current_section_17.html#limit_point" data-preview-label="limit_point">Definition 54</a>.</p></div>
@@ -1874,7 +1876,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="sequence_limit_unique">
+<section class="statement theorem joins-following-proof" id="sequence_limit_unique">
   <div class="statement-head"><div class="statement-title">Theorem 11</div><span class="label-badge">sequence_limit_unique</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Suppose</span> $s$ is a sequence in $X$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $s$ converges to $x$ in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $s$ converges to $y$ in $X$ with respect to $T$. <br><span class="kw">Then</span> $x = y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1891,7 +1893,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="sequence_limit_unique" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Take</span> $U_1,U_2$ such that $U_1$ is a neighborhood of $x$ in $X$ with respect to $T$ and $U_2$ is a neighborhood of $y$ in $X$ with respect to $T$ and $U_1$ is disjoint from $U_2$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>.<br> <span class="kw kw-bold">Take</span> $N_1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that for all $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ if $N_1\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ then $s(n)\class{latex-symbol-tip latex-symbol-id-in}{\in} U_1$ by <a class="xref" href="current_section_17.html#converges_to" data-preview-label="converges_to">Definition 59</a>.<br> <span class="kw kw-bold">Take</span> $N_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that for all $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ if $N_2\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ then $s(n)\class{latex-symbol-tip latex-symbol-id-in}{\in} U_2$ by <a class="xref" href="current_section_17.html#converges_to" data-preview-label="converges_to">Definition 59</a>.<br> <span class="kw kw-bold">Take</span> $m\class{latex-symbol-tip latex-symbol-id-in}{\in}\{N_1,N_2\}$ such that for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\{N_1,N_2\}$ we have $a\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$ by <a class="xref" href="current_section_standard_library_sets.html#upair_iff" data-preview-label="upair_iff">Proposition 19</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_naturals_maximum" data-preview-label="finite_naturals_maximum">Lemma 1275</a>.<br> We have $N_1\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$ and $N_2\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$ by <a class="xref" href="current_section_standard_library_sets.html#upair_iff" data-preview-label="upair_iff">Proposition 19</a>.<br> <span class="kw">Therefore</span> $s(m)\class{latex-symbol-tip latex-symbol-id-in}{\in} U_1$ and $s(m)\class{latex-symbol-tip latex-symbol-id-in}{\in} U_2$.<br> <span class="kw">Hence</span> $U_1$ intersects $U_2$ by <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>.<br> Contradiction by <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1911,7 +1913,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="openrayright_open_in_order_topology">
+<section class="statement lemma helper joins-following-proof" id="openrayright_open_in_order_topology">
   <div class="statement-head"><div class="statement-title">Lemma 78</div><span class="label-badge">openrayright_open_in_order_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\openrayright{R}{X}{a}$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1926,7 +1928,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="openrayright_open_in_order_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\openrayright{R}{X}{a}\class{latex-symbol-tip latex-symbol-id-in}{\in} \openRays{R}{X}$ and $\openrayright{R}{X}{a}\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ by <a class="xref" href="current_section_14.html#open_rays_subbasis_on" data-preview-label="open_rays_subbasis_on">Lemma 42</a>, <a class="xref" href="current_section_13.html#subbasis_on" data-preview-label="subbasis_on">Definition 24</a>, <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_14.html#open_rays" data-preview-label="open_rays">Definition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_cardinality.html#subseteq_finite_is_finite" data-preview-label="subseteq_finite_is_finite">Lemma 1269</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#inters_singleton" data-preview-label="inters_singleton">Proposition 36</a>, <a class="xref" href="current_section_13.html#finite_intersections" data-preview-label="finite_intersections">Definition 25</a>, <a class="xref" href="current_section_13.html#subbasis_finite_intersections_basis" data-preview-label="subbasis_finite_intersections_basis">Lemma 24</a>, <a class="xref" href="current_section_13.html#basis_elem_open_in_generated" data-preview-label="basis_elem_open_in_generated">Lemma 2</a>, <a class="xref" href="current_section_13.html#topology_generated_by_subbasis" data-preview-label="topology_generated_by_subbasis">Definition 26</a>, <a class="xref" href="current_section_14.html#open_rays_subbasis" data-preview-label="open_rays_subbasis">Lemma 50</a>.<br> <span class="kw">Hence</span> $\openrayright{R}{X}{a}$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1937,7 +1939,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="openrayleft_open_in_order_topology">
+<section class="statement lemma helper joins-following-proof" id="openrayleft_open_in_order_topology">
   <div class="statement-head"><div class="statement-title">Lemma 79</div><span class="label-badge">openrayleft_open_in_order_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\openrayleft{R}{X}{a}$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1952,7 +1954,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="openrayleft_open_in_order_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\openrayleft{R}{X}{a}\class{latex-symbol-tip latex-symbol-id-in}{\in} \openRays{R}{X}$ and $\openrayleft{R}{X}{a}\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ by <a class="xref" href="current_section_14.html#open_rays_subbasis_on" data-preview-label="open_rays_subbasis_on">Lemma 42</a>, <a class="xref" href="current_section_13.html#subbasis_on" data-preview-label="subbasis_on">Definition 24</a>, <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_14.html#open_rays" data-preview-label="open_rays">Definition 39</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#pair_is_finite" data-preview-label="pair_is_finite">Lemma 1265</a>, <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_cardinality.html#subseteq_finite_is_finite" data-preview-label="subseteq_finite_is_finite">Lemma 1269</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_sets.html#inters_singleton" data-preview-label="inters_singleton">Proposition 36</a>, <a class="xref" href="current_section_13.html#finite_intersections" data-preview-label="finite_intersections">Definition 25</a>, <a class="xref" href="current_section_13.html#subbasis_finite_intersections_basis" data-preview-label="subbasis_finite_intersections_basis">Lemma 24</a>, <a class="xref" href="current_section_13.html#basis_elem_open_in_generated" data-preview-label="basis_elem_open_in_generated">Lemma 2</a>, <a class="xref" href="current_section_13.html#topology_generated_by_subbasis" data-preview-label="topology_generated_by_subbasis">Definition 26</a>, <a class="xref" href="current_section_14.html#open_rays_subbasis" data-preview-label="open_rays_subbasis">Lemma 50</a>.<br> <span class="kw">Hence</span> $\openrayleft{R}{X}{a}$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1963,7 +1965,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="order_topology_hausdorff">
+<section class="statement theorem joins-following-proof" id="order_topology_hausdorff">
   <div class="statement-head"><div class="statement-title">Theorem 12</div><span class="label-badge">order_topology_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$. <br><span class="kw">Then</span> $X$ is Hausdorff with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1977,7 +1979,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="order_topology_hausdorff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x_1,x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x_2$ there exist $U_1,U_2$ such that $U_1$ is a neighborhood of $x_1$ in $X$ with respect to $T$ and $U_2$ is a neighborhood of $x_2$ in $X$ with respect to $T$ and $U_1$ is disjoint from $U_2$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x_1$.<br> <span class="kw kw-bold">Fix</span> $x_2$ such that $x_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $x_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x_2$.<br> We have $x_1\mathrel{R}x_2$ or $x_2\mathrel{R}x_1$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>.</p>
@@ -2124,7 +2126,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="product_hausdorff">
+<section class="statement theorem joins-following-proof" id="product_hausdorff">
   <div class="statement-head"><div class="statement-title">Theorem 13</div><span class="label-badge">product_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $Y$ is Hausdorff with respect to $T_1$.<br> <span class="kw kw-bold">Let</span> $T_2 = \productTopology{T}{T_1}{X}{Y}$. <br><span class="kw">Then</span> $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ is Hausdorff with respect to $T_2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2138,7 +2140,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="product_hausdorff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $X$ and $T_1$ is a topology on $Y$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>.<br> $\productBasis{T}{T_1}{X}{Y}$ is a basis on $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_15.html#product_basis_is_basis" data-preview-label="product_basis_is_basis">Lemma 51</a>.<br> We have $T_2$ is a topology on $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ by <a class="xref" href="current_section_15.html#product_basis_is_basis" data-preview-label="product_basis_is_basis">Lemma 51</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_15.html#product_topology" data-preview-label="product_topology">Definition 41</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $p_1,p_2$ such that $p_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ and $p_2\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ and $p_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} p_2$ there exist $U_1,U_2$ such that $U_1$ is a neighborhood of $p_1$ in $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T_2$ and $U_2$ is a neighborhood of $p_2$ in $X\class{latex-symbol-tip latex-symbol-id-times}{\times} Y$ with respect to $T_2$ and $U_1$ is disjoint from $U_2$.</span></summary>
@@ -2234,7 +2236,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="subspace_hausdorff">
+<section class="statement theorem joins-following-proof" id="subspace_hausdorff">
   <div class="statement-head"><div class="statement-title">Theorem 14</div><span class="label-badge">subspace_hausdorff</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Suppose</span> $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $T_1 = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is Hausdorff with respect to $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2248,7 +2250,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subspace_hausdorff" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_1$ is a topology on $Y$ by <a class="xref" href="current_section_17.html#hausdorff" data-preview-label="hausdorff">Definition 56</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $y_1,y_2$ such that $y_1\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $y_2\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $y_1\class{latex-symbol-tip latex-symbol-id-neq}{\neq} y_2$ there exist $V_1,V_2$ such that $V_1$ is a neighborhood of $y_1$ in $Y$ with respect to $T_1$ and $V_2$ is a neighborhood of $y_2$ in $Y$ with respect to $T_1$ and $V_1$ is disjoint from $V_2$.</span></summary>

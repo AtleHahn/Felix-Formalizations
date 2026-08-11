@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -424,7 +426,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="subspace_finer_from_ambient_finer_47">
+<section class="statement lemma helper joins-following-proof" id="subspace_finer_from_ambient_finer_47">
   <div class="statement-head"><div class="statement-title">Lemma 823</div><span class="label-badge">subspace_finer_from_ambient_finer_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T_1$ is finer than $T$ on $X$.<br> <span class="kw">Assume</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$. <br><span class="kw">Then</span> $\subspaceTopology{T_1}{A}$ is finer than $\subspaceTopology{T}{A}$ on $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -437,7 +439,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="subspace_finer_from_ambient_finer_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_12.html#finer_topology" data-preview-label="finer_topology">Definition 8</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_topology" data-preview-label="subspace_topology">Definition 46</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -445,7 +447,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="constant_indexed_product_function_space_47">
+<section class="statement lemma helper joins-following-proof" id="constant_indexed_product_function_space_47">
   <div class="statement-head"><div class="statement-title">Lemma 824</div><span class="label-badge">constant_indexed_product_function_space_47</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $R = \{(a,Y) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$. <br><span class="kw">Then</span> $\productFamily{R} = \funs{X}{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -457,7 +459,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="constant_indexed_product_function_space_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $a,b_1,b_2$ such that $(a,b_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ and $(a,b_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ we have $b_1 = b_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> $R$ is a function on $X$ by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $f$ such that $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\productFamily{R}$ we have $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$.</span></summary>
@@ -488,7 +490,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="equicontinuous_family_continuous_functions_47">
+<section class="statement lemma helper joins-following-proof" id="equicontinuous_family_continuous_functions_47">
   <div class="statement-head"><div class="statement-title">Lemma 825</div><span class="label-badge">equicontinuous_family_continuous_functions_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $H\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\funs{X}{Y}$.<br> <span class="kw">Assume</span> $C$ is the set of continuous functions from $X$ to $Y$ with respect to $T$ and $U$.<br> <span class="kw">Suppose</span> $H$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$. <br><span class="kw">Then</span> $H\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -505,7 +507,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="equicontinuous_family_continuous_functions_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$U$ is a topology on $Y$ by <a class="xref" href="current_section_20.html#metric_topology" data-preview-label="metric_topology">Definition 82</a>, <a class="xref" href="current_section_20.html#metric_basis_is_basis" data-preview-label="metric_basis_is_basis">Lemma 119</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $h$ such that $h\class{latex-symbol-tip latex-symbol-id-in}{\in} H$ we have $h\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.</span></summary>
@@ -562,7 +564,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="constant_indexed_family_47">
+<section class="statement lemma helper joins-following-proof" id="constant_indexed_family_47">
   <div class="statement-head"><div class="statement-title">Lemma 826</div><span class="label-badge">constant_indexed_family_47</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $Q = \{(a,B) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$. <br><span class="kw">Then</span> $Q$ is a function and $\dom{Q} = X$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{Q}{a} = B$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -576,7 +578,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="constant_indexed_family_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $a,b_1,b_2$ such that $(a,b_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} Q$ and $(a,b_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} Q$ we have $b_1 = b_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$Q$ is a function and $\dom{Q} = X$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{Q}{a} = B$.</span></summary>
@@ -595,7 +597,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="indexed_product_subspace_finer_47">
+<section class="statement lemma helper joins-following-proof" id="indexed_product_subspace_finer_47">
   <div class="statement-head"><div class="statement-title">Lemma 827</div><span class="label-badge">indexed_product_subspace_finer_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $U$ is a topology on $Y$.<br> <span class="kw kw-bold">Let</span> $R = \{(a,Y) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $S = \{(a,U) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw">Assume</span> $A$ is a function on $X$.<br> <span class="kw">Assume</span> $X$ is inhabited.<br> <span class="kw">Assume</span> for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{A}{a}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$.<br> <span class="kw kw-bold">Let</span> $T_1 = \{(a,\subspaceTopology{U}{\apply{A}{a}}) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $P = \productFamily{A}$.<br> <span class="kw kw-bold">Let</span> $T_P = \productTopologyIndexed{T_1}{A}$.<br> <span class="kw kw-bold">Let</span> $T_0 = \subspaceTopology{\productTopologyIndexed{S}{R}}{P}$. <br><span class="kw">Then</span> $T_P$ is finer than $T_0$ on $P$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -616,7 +618,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="indexed_product_subspace_finer_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$R$ is a function and $\dom{R} = X$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{R}{a} = Y$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_47.html#constant_indexed_family_47" data-preview-label="constant_indexed_family_47">Lemma 826</a>.</p></div>
@@ -755,7 +757,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="constant_indexed_product_topology_is_pointwise_47">
+<section class="statement lemma helper joins-following-proof" id="constant_indexed_product_topology_is_pointwise_47">
   <div class="statement-head"><div class="statement-title">Lemma 828</div><span class="label-badge">constant_indexed_product_topology_is_pointwise_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $U$ is a topology on $Y$.<br> <span class="kw">Assume</span> $X$ is inhabited.<br> <span class="kw kw-bold">Let</span> $R = \{(a,Y) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $S = \{(a,U) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \productTopologyIndexed{S}{R}$. <br><span class="kw">Then</span> $T_1$ is the topology of pointwise convergence on functions from $X$ to $Y$ with respect to $U$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -771,7 +773,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="constant_indexed_product_topology_is_pointwise_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a function and $\dom{R} = X$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{R}{a} = Y$ by <a class="xref" href="current_section_47.html#constant_indexed_family_47" data-preview-label="constant_indexed_family_47">Lemma 826</a>.<br> $S$ is a function and $\dom{S} = X$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{S}{a} = U$ by <a class="xref" href="current_section_47.html#constant_indexed_family_47" data-preview-label="constant_indexed_family_47">Lemma 826</a>.<br> <span class="kw kw-bold">Let</span> $P = \productSubbasis{S}{R}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A$ if $A\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ then there exist $x,V$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ and $V\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ and $A$ is the point-open set at $x$ with value set $V$ from $X$ to $Y$.</span></summary>
@@ -890,7 +892,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="compactness_from_finer_topology_47">
+<section class="statement lemma helper joins-following-proof" id="compactness_from_finer_topology_47">
   <div class="statement-head"><div class="statement-title">Lemma 829</div><span class="label-badge">compactness_from_finer_topology_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T_1$ is finer than $T$ on $X$.<br> <span class="kw">Suppose</span> $X$ is compact with respect to $T_1$. <br><span class="kw">Then</span> $X$ is compact with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -903,7 +905,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="compactness_from_finer_topology_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_12.html#finer_topology" data-preview-label="finer_topology">Definition 8</a>, <a class="xref" href="current_section_26.html#open_covering" data-preview-label="open_covering">Definition 146</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_26.html#compact" data-preview-label="compact">Definition 147</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -911,7 +913,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="constant_indexed_projection_apply_47">
+<section class="statement lemma helper joins-following-proof" id="constant_indexed_projection_apply_47">
   <div class="statement-head"><div class="statement-title">Lemma 830</div><span class="label-badge">constant_indexed_projection_apply_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw kw-bold">Let</span> $R = \{(x,Y) \mid x\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw">Assume</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$. <br><span class="kw">Then</span> $\apply{\piIndex{R}{a}}{f} = f(a)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -925,7 +927,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="constant_indexed_projection_apply_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_47.html#constant_indexed_family_47" data-preview-label="constant_indexed_family_47">Lemma 826</a>, <a class="xref" href="current_section_47.html#constant_indexed_product_function_space_47" data-preview-label="constant_indexed_product_function_space_47">Lemma 824</a>, <a class="xref" href="current_section_19.html#projection_map_indexed_function" data-preview-label="projection_map_indexed_function">Lemma 116</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_19.html#projection_map_indexed" data-preview-label="projection_map_indexed">Definition 70</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -933,7 +935,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="pointwise_closure_equicontinuous_47">
+<section class="statement lemma helper joins-following-proof" id="pointwise_closure_equicontinuous_47">
   <div class="statement-head"><div class="statement-title">Lemma 831</div><span class="label-badge">pointwise_closure_equicontinuous_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $T_1$ is the topology of pointwise convergence on functions from $X$ to $Y$ with respect to $U$.<br> <span class="kw">Assume</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\funs{X}{Y}$.<br> <span class="kw">Suppose</span> $F$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw kw-bold">Let</span> $G = \closure{F}{\funs{X}{Y}}{T_1}$. <br><span class="kw">Then</span> $G$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -951,7 +953,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="pointwise_closure_equicontinuous_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_1$ is a topology on $\funs{X}{Y}$ by <a class="xref" href="current_section_46.html#pointwise_convergence_topology" data-preview-label="pointwise_convergence_topology">Definition 265</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $G$ is equicontinuous at $x_0$ from $X$ to $Y$ with respect to $T$ and $d$.</span></summary>
@@ -1039,7 +1041,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="coordinatewise_product_closure_equicontinuous_47">
+<section class="statement lemma helper joins-following-proof" id="coordinatewise_product_closure_equicontinuous_47">
   <div class="statement-head"><div class="statement-title">Lemma 832</div><span class="label-badge">coordinatewise_product_closure_equicontinuous_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $A$ is a function on $X$.<br> <span class="kw">Assume</span> for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{A}{a}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$.<br> <span class="kw kw-bold">Let</span> $T_A = \{(a,\subspaceTopology{U}{\apply{A}{a}}) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $P = \productFamily{A}$.<br> <span class="kw kw-bold">Let</span> $T_P = \productTopologyIndexed{T_A}{A}$.<br> <span class="kw">Assume</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} P$.<br> <span class="kw">Suppose</span> $F$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw kw-bold">Let</span> $G = \closure{F}{P}{T_P}$. <br><span class="kw">Then</span> $G$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1061,7 +1063,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="coordinatewise_product_closure_equicontinuous_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $a,b_1,b_2$ such that $(a,b_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} T_A$ and $(a,b_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} T_A$ we have $b_1 = b_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_A$ is a function and $\dom{T_A} = X$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{T_A}{a} = \subspaceTopology{U}{\apply{A}{a}}$.</span></summary>
@@ -1339,7 +1341,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="indexed_product_subset_function_space_47">
+<section class="statement lemma helper joins-following-proof" id="indexed_product_subset_function_space_47">
   <div class="statement-head"><div class="statement-title">Lemma 833</div><span class="label-badge">indexed_product_subset_function_space_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $A$ is a function on $X$.<br> <span class="kw">Assume</span> for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{A}{a}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$.<br> <span class="kw kw-bold">Let</span> $P = \productFamily{A}$. <br><span class="kw">Then</span> $P\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\funs{X}{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1353,7 +1355,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="indexed_product_subset_function_space_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_19.html#indexed_product" data-preview-label="indexed_product">Definition 67</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1361,7 +1363,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="equicontinuous_product_topology_finer_than_compact_convergence_47">
+<section class="statement lemma helper joins-following-proof" id="equicontinuous_product_topology_finer_than_compact_convergence_47">
   <div class="statement-head"><div class="statement-title">Lemma 834</div><span class="label-badge">equicontinuous_product_topology_finer_than_compact_convergence_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is inhabited.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Assume</span> $A$ is a function on $X$.<br> <span class="kw">Assume</span> for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\apply{A}{a}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$.<br> <span class="kw kw-bold">Let</span> $T_A = \{(a,\subspaceTopology{U}{\apply{A}{a}}) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $P = \productFamily{A}$.<br> <span class="kw kw-bold">Let</span> $T_P = \productTopologyIndexed{T_A}{A}$.<br> <span class="kw">Assume</span> $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} P$.<br> <span class="kw">Suppose</span> $G$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$. <br><span class="kw">Then</span> $\subspaceTopology{T_P}{G}$ is finer than $\subspaceTopology{T_0}{G}$ on $G$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1384,7 +1386,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="equicontinuous_product_topology_finer_than_compact_convergence_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $F = \funs{X}{Y}$.<br> <span class="kw kw-bold">Let</span> $R = \{(a,Y) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $S = \{(a,U) \mid a\class{latex-symbol-tip latex-symbol-id-in}{\in} X\}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \productTopologyIndexed{S}{R}$.<br> $U$ is a topology on $Y$ by <a class="xref" href="current_section_20.html#metric_topology" data-preview-label="metric_topology">Definition 82</a>, <a class="xref" href="current_section_20.html#metric_basis_is_basis" data-preview-label="metric_basis_is_basis">Lemma 119</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.<br> $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} F$ by <a class="xref" href="current_section_47.html#indexed_product_subset_function_space_47" data-preview-label="indexed_product_subset_function_space_47">Lemma 833</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.<br> $T_1$ is the topology of pointwise convergence on functions from $X$ to $Y$ with respect to $U$ by <a class="xref" href="current_section_47.html#constant_indexed_product_topology_is_pointwise_47" data-preview-label="constant_indexed_product_topology_is_pointwise_47">Lemma 828</a>.<br> $T_P$ is finer than $\subspaceTopology{T_1}{P}$ on $P$ by <a class="xref" href="current_section_47.html#indexed_product_subspace_finer_47" data-preview-label="indexed_product_subspace_finer_47">Lemma 827</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_P$ is a topology on $P$ and $\subspaceTopology{T_1}{P}$ is a topology on $P$.</span></summary>
@@ -1825,7 +1827,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="ascoli_general_compact_containment">
+<section class="statement theorem joins-following-proof" id="ascoli_general_compact_containment">
   <div class="statement-head"><div class="statement-title">Theorem 130</div><span class="label-badge">ascoli_general_compact_containment</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw">Assume</span> $C$ is the set of continuous functions from $X$ to $Y$ with respect to $T$ and $\metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Assume</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.<br> <span class="kw">Suppose</span> $F$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Suppose</span> $F$ has pointwise compact closure from $X$ to $Y$ with respect to $d$. <br><span class="kw">Then</span> there exists $G$ such that $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ and $G$ is compact with respect to $\subspaceTopology{T_0}{G}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1846,7 +1848,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ascoli_general_compact_containment" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\funs{X}{Y}$ by <a class="xref" href="current_section_43.html#continuous_function_set" data-preview-label="continuous_function_set">Definition 245</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $X = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p><span class="kw kw-bold">Let</span> $G = F$.</p>
 <details class="proof-block subproof" open>
@@ -2111,7 +2113,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="restriction_graph_typed_function_47">
+<section class="statement lemma helper joins-following-proof" id="restriction_graph_typed_function_47">
   <div class="statement-head"><div class="statement-title">Lemma 838</div><span class="label-badge">restriction_graph_typed_function_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw kw-bold">Let</span> $F = \funs{X}{Y}$.<br> <span class="kw kw-bold">Let</span> $F_A = \funs{A}{Y}$.<br> <span class="kw kw-bold">Let</span> $r = \{(f,\restrl{f}{A}) \mid f\class{latex-symbol-tip latex-symbol-id-in}{\in} F\}$. <br><span class="kw">Then</span> $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{F}{F_A}$ and $\dom{r} = F$ and for all $f\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $r(f) = \restrl{f}{A}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2126,7 +2128,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="restriction_graph_typed_function_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>For all $f,g_1,g_2$ such that $(f,g_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} r$ and $(f,g_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} r$ we have $g_1 = g_2$ by <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> For all $w\class{latex-symbol-tip latex-symbol-id-in}{\in} r$ there exist $f,g$ such that $w = (f,g)$.<br> $r$ is a function by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$r\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{F}{F_A}$ and $\dom{r} = F$ and for all $f\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $r(f) = \restrl{f}{A}$.</span></summary>
@@ -2145,7 +2147,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="restriction_map_continuous_compact_convergence_47">
+<section class="statement lemma helper joins-following-proof" id="restriction_map_continuous_compact_convergence_47">
   <div class="statement-head"><div class="statement-title">Lemma 839</div><span class="label-badge">restriction_map_continuous_compact_convergence_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $A$ is a subspace of $X$ with respect to $T$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T}{A}$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Assume</span> $T_1$ is the topology of compact convergence on functions from $A$ to $Y$ with respect to $T_A$ and $d$.<br> <span class="kw kw-bold">Let</span> $r = \{(f,\restrl{f}{A}) \mid f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}\}$. <br><span class="kw">Then</span> $r$ is continuous from $\funs{X}{Y}$ to $\funs{A}{Y}$ with respect to $T_0$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2163,7 +2165,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="restriction_map_continuous_compact_convergence_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $F = \funs{X}{Y}$.<br> <span class="kw kw-bold">Let</span> $F_A = \funs{A}{Y}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$r\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{F}{F_A}$ and $\dom{r} = F$ and for all $f\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $r(f) = \restrl{f}{A}$.</span></summary>
@@ -2260,7 +2262,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="restriction_map_continuous_uniform_metric_47">
+<section class="statement lemma helper joins-following-proof" id="restriction_map_continuous_uniform_metric_47">
   <div class="statement-head"><div class="statement-title">Lemma 840</div><span class="label-badge">restriction_map_continuous_uniform_metric_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $A$ is a compact subspace of $X$ with respect to $T$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-rho}{\rho}$ is the uniform metric on functions from $A$ to $Y$ with respect to $d$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw kw-bold">Let</span> $r = \{(f,\restrl{f}{A}) \mid f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}\}$. <br><span class="kw">Then</span> $r$ is continuous from $\funs{X}{Y}$ to $\funs{A}{Y}$ with respect to $T_0$ and $\metricTopology{\class{latex-symbol-tip latex-symbol-id-rho}{\rho}}{\funs{A}{Y}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2278,7 +2280,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="restriction_map_continuous_uniform_metric_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $F = \funs{X}{Y}$.<br> <span class="kw kw-bold">Let</span> $F_A = \funs{A}{Y}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \metricTopology{\class{latex-symbol-tip latex-symbol-id-rho}{\rho}}{F_A}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$r\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{F}{F_A}$ and $\dom{r} = F$ and for all $f\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $r(f) = \restrl{f}{A}$.</span></summary>
@@ -2354,7 +2356,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="ascoli_general_compact_containment_implies_equicontinuous">
+<section class="statement theorem joins-following-proof" id="ascoli_general_compact_containment_implies_equicontinuous">
   <div class="statement-head"><div class="statement-title">Theorem 131</div><span class="label-badge">ascoli_general_compact_containment_implies_equicontinuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is locally compact with respect to $T$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw">Assume</span> $C$ is the set of continuous functions from $X$ to $Y$ with respect to $T$ and $\metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Assume</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.<br> <span class="kw">Suppose</span> there exists $G$ such that $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ and $G$ is compact with respect to $\subspaceTopology{T_0}{G}$. <br><span class="kw">Then</span> $F$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2376,7 +2378,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ascoli_general_compact_containment_implies_equicontinuous" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> <span class="kw kw-bold">Let</span> $F_X = \funs{X}{Y}$.<br> <span class="kw kw-bold">Take</span> $G$ such that $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ and $G$ is compact with respect to $\subspaceTopology{T_0}{G}$.<br> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\funs{X}{Y}$ by <a class="xref" href="current_section_43.html#continuous_function_set" data-preview-label="continuous_function_set">Definition 245</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $G$ is equicontinuous at $a$ from $X$ to $Y$ with respect to $T$ and $d$.</span></summary>
@@ -2514,7 +2516,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="ascoli_general_compact_containment_implies_pointwise_compact_closure">
+<section class="statement theorem joins-following-proof" id="ascoli_general_compact_containment_implies_pointwise_compact_closure">
   <div class="statement-head"><div class="statement-title">Theorem 132</div><span class="label-badge">ascoli_general_compact_containment_implies_pointwise_compact_closure</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is locally compact with respect to $T$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw">Assume</span> $C$ is the set of continuous functions from $X$ to $Y$ with respect to $T$ and $\metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Assume</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.<br> <span class="kw">Suppose</span> there exists $G$ such that $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ and $G$ is compact with respect to $\subspaceTopology{T_0}{G}$. <br><span class="kw">Then</span> $F$ has pointwise compact closure from $X$ to $Y$ with respect to $d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2536,7 +2538,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ascoli_general_compact_containment_implies_pointwise_compact_closure" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $U = \metricTopology{d}{Y}$.<br> $C\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\funs{X}{Y}$ by <a class="xref" href="current_section_43.html#continuous_function_set" data-preview-label="continuous_function_set">Definition 245</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw kw-bold">Take</span> $G$ such that $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$ and $G$ is compact with respect to $\subspaceTopology{T_0}{G}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $A$ such that $A = \{\apply{f}{a} \mid f\class{latex-symbol-tip latex-symbol-id-in}{\in} F\}$ and $\closure{A}{Y}{U}$ is compact with respect to $\subspaceTopology{U}{\closure{A}{Y}{U}}$.</span></summary>
@@ -2646,7 +2648,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="compact_contained_family_equicontinuous_47">
+<section class="statement lemma helper joins-following-proof" id="compact_contained_family_equicontinuous_47">
   <div class="statement-head"><div class="statement-title">Lemma 841</div><span class="label-badge">compact_contained_family_equicontinuous_47</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is locally compact with respect to $T$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $d$ is a metric on $Y$.<br> <span class="kw">Assume</span> $C$ is the set of continuous functions from $X$ to $Y$ with respect to $T$ and $\metricTopology{d}{Y}$.<br> <span class="kw">Assume</span> $T_0$ is the topology of compact convergence on functions from $X$ to $Y$ with respect to $T$ and $d$.<br> <span class="kw">Assume</span> $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.<br> <span class="kw">Suppose</span> $G$ is compact with respect to $\subspaceTopology{T_0}{G}$. <br><span class="kw">Then</span> $G$ is equicontinuous from $X$ to $Y$ with respect to $T$ and $d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2665,7 +2667,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="compact_contained_family_equicontinuous_47" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_47.html#ascoli_general_compact_containment_implies_equicontinuous" data-preview-label="ascoli_general_compact_containment_implies_equicontinuous">Theorem 131</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}

@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -435,7 +437,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="component_relation_binary">
+<section class="statement lemma helper joins-following-proof" id="component_relation_binary">
   <div class="statement-head"><div class="statement-title">Lemma 252</div><span class="label-badge">component_relation_binary</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\componentRelation{T}{X}$ is a binary relation on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -447,7 +449,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="component_relation_binary" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -455,7 +457,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="component_relation_reflexive">
+<section class="statement lemma helper joins-following-proof" id="component_relation_reflexive">
   <div class="statement-head"><div class="statement-title">Lemma 253</div><span class="label-badge">component_relation_reflexive</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\componentRelation{T}{X}$ is reflexive on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -467,7 +469,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="component_relation_reflexive" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $x\mathrel{\componentRelation{T}{X}}x$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw kw-bold">Let</span> $A = \{x\}$.<br> We have $A$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_subset_intro" data-preview-label="singleton_subset_intro">Proposition 25</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
@@ -501,7 +503,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="component_relation_symmetric">
+<section class="statement lemma helper joins-following-proof" id="component_relation_symmetric">
   <div class="statement-head"><div class="statement-title">Lemma 254</div><span class="label-badge">component_relation_symmetric</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\componentRelation{T}{X}$ is symmetric.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -513,7 +515,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="component_relation_symmetric" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_standard_library_relations.html#symmetric" data-preview-label="symmetric">Definition 380 [Symmetry]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -521,7 +523,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="component_relation_transitive">
+<section class="statement lemma helper joins-following-proof" id="component_relation_transitive">
   <div class="statement-head"><div class="statement-title">Lemma 255</div><span class="label-badge">component_relation_transitive</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\componentRelation{T}{X}$ is transitive.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -533,7 +535,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="component_relation_transitive" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,y,z$ such that $x\mathrel{\componentRelation{T}{X}}y$ and $y\mathrel{\componentRelation{T}{X}}z$ we have $x\mathrel{\componentRelation{T}{X}}z$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x$.<br> <span class="kw kw-bold">Fix</span> $y$.<br> <span class="kw kw-bold">Fix</span> $z$.<br> <span class="kw">Assume</span> $x\mathrel{\componentRelation{T}{X}}y$ and $y\mathrel{\componentRelation{T}{X}}z$.<br> <span class="kw kw-bold">Take</span> $A$ such that $A$ is a subspace of $X$ with respect to $T$ and $\fst{(x,y)}\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $\snd{(x,y)}\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $A$ is connected with respect to $\subspaceTopology{T}{A}$ by <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.<br> <span class="kw kw-bold">Take</span> $B$ such that $B$ is a subspace of $X$ with respect to $T$ and $\fst{(y,z)}\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $\snd{(y,z)}\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $B$ is connected with respect to $\subspaceTopology{T}{B}$ by <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>.<br> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $z\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.<br> <span class="kw kw-bold">Let</span> $M = \{A,B\}$.<br> $M\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#upair_intro_left" data-preview-label="upair_intro_left">Proposition 16</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.</p>
@@ -587,7 +589,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="component_relation_equivalence">
+<section class="statement lemma helper joins-following-proof" id="component_relation_equivalence">
   <div class="statement-head"><div class="statement-title">Lemma 256</div><span class="label-badge">component_relation_equivalence</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\componentRelation{T}{X}$ is an equivalence on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -599,7 +601,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="component_relation_equivalence" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#component_relation_binary" data-preview-label="component_relation_binary">Lemma 252</a>, <a class="xref" href="current_section_25.html#component_relation_reflexive" data-preview-label="component_relation_reflexive">Lemma 253</a>, <a class="xref" href="current_section_25.html#component_relation_transitive" data-preview-label="component_relation_transitive">Lemma 255</a>, <a class="xref" href="current_section_25.html#component_relation_symmetric" data-preview-label="component_relation_symmetric">Lemma 254</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -607,7 +609,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="component_connected">
+<section class="statement theorem joins-following-proof" id="component_connected">
   <div class="statement-head"><div class="statement-title">Theorem 42</div><span class="label-badge">component_connected</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $C$ is a component of $X$ with respect to $T$. <br><span class="kw">Then</span> $C$ is connected with respect to $\subspaceTopology{T}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -620,7 +622,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="component_connected" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $C = \equivalenceClass{\componentRelation{T}{X}}{x}$ by <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.<br> <span class="kw kw-bold">Let</span> $M = \{A\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{X} \mid \text{$x\in A$ and $A$ is connected with respect to $\subspaceTopology{T}{A}$}\}$.<br> <span class="kw kw-bold">Take</span> $A$ such that $A$ is a subspace of $X$ with respect to $T$ and $\fst{(x,x)}\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $\snd{(x,x)}\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $A$ is connected with respect to $\subspaceTopology{T}{A}$ by <a class="xref" href="current_section_25.html#component_relation_reflexive" data-preview-label="component_relation_reflexive">Lemma 253</a>, <a class="xref" href="current_section_standard_library_relations.html#reflexive_on" data-preview-label="reflexive_on">Definition 377</a>, <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>.<br> <span class="kw">Therefore</span> $M\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} M$ we have $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $A$ is connected with respect to $\subspaceTopology{T}{A}$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</span></summary>
@@ -685,7 +687,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="components_disjoint">
+<section class="statement theorem joins-following-proof" id="components_disjoint">
   <div class="statement-head"><div class="statement-title">Theorem 43</div><span class="label-badge">components_disjoint</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $C$ is a component of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $D$ is a component of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-neq}{\neq} D$. <br><span class="kw">Then</span> $C$ is disjoint from $D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -700,7 +702,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="components_disjoint" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $C = \equivalenceClass{\componentRelation{T}{X}}{x}$ by <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.<br> <span class="kw kw-bold">Take</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $D = \equivalenceClass{\componentRelation{T}{X}}{y}$ by <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.<br> We have $C$ is disjoint from $D$ by <a class="xref" href="current_section_25.html#component_relation_equivalence" data-preview-label="component_relation_equivalence">Lemma 256</a>, <a class="xref" href="current_section_standard_library_relations.html#equivalenceon_equivclasses_diseq_implies_disjoint" data-preview-label="equivalenceon_equivclasses_diseq_implies_disjoint">Corollary 23</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -711,7 +713,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="components_cover">
+<section class="statement theorem joins-following-proof" id="components_cover">
   <div class="statement-head"><div class="statement-title">Theorem 44</div><span class="label-badge">components_cover</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $C$ such that $C$ is a component of $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -724,7 +726,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="components_cover" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#component_relation_equivalence" data-preview-label="component_relation_equivalence">Lemma 256</a>, <a class="xref" href="current_section_standard_library_relations.html#equivclasses_inhabited_equivalenceon" data-preview-label="equivclasses_inhabited_equivalenceon">Proposition 320</a>, <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -732,7 +734,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="connected_subspace_single_component">
+<section class="statement theorem joins-following-proof" id="connected_subspace_single_component">
   <div class="statement-head"><div class="statement-title">Theorem 45</div><span class="label-badge">connected_subspace_single_component</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $A$ is connected with respect to $\subspaceTopology{T}{A}$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> for all $C,D$ such that $C$ is a component of $X$ with respect to $T$ and $D$ is a component of $X$ with respect to $T$ and $A$ intersects $C$ and $A$ intersects $D$ we have $C = D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -751,7 +753,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="connected_subspace_single_component" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $C$.<br> <span class="kw kw-bold">Fix</span> $D$ such that $C$ is a component of $X$ with respect to $T$ and $D$ is a component of $X$ with respect to $T$ and $A$ intersects $C$ and $A$ intersects $D$.<br> <span class="kw kw-bold">Take</span> $x,y$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter C$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter D$ by <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw">Therefore</span> $(x,y)\class{latex-symbol-tip latex-symbol-id-in}{\in} \componentRelation{T}{X}$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>.<br> <span class="kw kw-bold">Take</span> $c\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $C = \equivalenceClass{\componentRelation{T}{X}}{c}$ by <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.<br> <span class="kw kw-bold">Take</span> $d\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $D = \equivalenceClass{\componentRelation{T}{X}}{d}$ by <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.<br> <span class="kw">Therefore</span> $C = D$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_relations.html#downward_closure_iff" data-preview-label="downward_closure_iff">Proposition 253</a>, <a class="xref" href="current_section_25.html#component_relation_symmetric" data-preview-label="component_relation_symmetric">Lemma 254</a>, <a class="xref" href="current_section_25.html#component_relation_transitive" data-preview-label="component_relation_transitive">Lemma 255</a>, <a class="xref" href="current_section_standard_library_relations.html#symmetric" data-preview-label="symmetric">Definition 380 [Symmetry]</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_25.html#component_relation_equivalence" data-preview-label="component_relation_equivalence">Lemma 256</a>, <a class="xref" href="current_section_standard_library_relations.html#equiv_iff_equivclasses_eq" data-preview-label="equiv_iff_equivclasses_eq">Proposition 323</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -795,7 +797,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="reals_has_smaller">
+<section class="statement lemma helper joins-following-proof" id="reals_has_smaller">
   <div class="statement-head"><div class="statement-title">Lemma 257</div><span class="label-badge">reals_has_smaller</span></div>
   <div class="statement-body"><p>For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $b < a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -806,7 +808,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="reals_has_smaller" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_neg" data-preview-label="real_lt_neg">Proposition 465</a>, <a class="xref" href="current_section_13.html#real_neg_zero" data-preview-label="real_neg_zero">Lemma 9</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -814,7 +816,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="reals_has_larger">
+<section class="statement lemma helper joins-following-proof" id="reals_has_larger">
   <div class="statement-head"><div class="statement-title">Lemma 258</div><span class="label-badge">reals_has_larger</span></div>
   <div class="statement-body"><p>For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $a < b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -825,7 +827,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="reals_has_larger" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -833,7 +835,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalopenrel_real_eq_intervalopen">
+<section class="statement lemma helper joins-following-proof" id="intervalopenrel_real_eq_intervalopen">
   <div class="statement-head"><div class="statement-title">Lemma 259</div><span class="label-badge">intervalopenrel_real_eq_intervalopen</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\intervalopenrel{\realOrderRel}{\reals}{a}{b} = \intervalopen{a}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -845,7 +847,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenrel_real_eq_intervalopen" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_24.html#real_order_relation_elim" data-preview-label="real_order_relation_elim">Lemma 246</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#intervalopen" data-preview-label="intervalopen">Definition 421</a>, <a class="xref" href="current_section_24.html#real_order_relation_intro" data-preview-label="real_order_relation_intro">Lemma 245</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -853,7 +855,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="order_basis_reals_standard">
+<section class="statement lemma helper joins-following-proof" id="order_basis_reals_standard">
   <div class="statement-head"><div class="statement-title">Lemma 260</div><span class="label-badge">order_basis_reals_standard</span></div>
   <div class="statement-body"><p>$\orderBasis{\realOrderRel}{\reals} = \standardBasisR$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -864,7 +866,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="order_basis_reals_standard" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $B$ such that $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\orderBasis{\realOrderRel}{\reals}$ we have $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\standardBasisR$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $B$ such that $B\class{latex-symbol-tip latex-symbol-id-in}{\in}\orderBasis{\realOrderRel}{\reals}$.<br> We have $(\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a, b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. a\mathrel{\realOrderRel}b \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenrel{\realOrderRel}{\reals}{a}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} a_0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. a_0\mathrel{\realOrderRel}x \class{latex-symbol-tip latex-symbol-id-lor}{\lor} a_0 = x) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalclosedopenrel{\realOrderRel}{\reals}{a_0}{b}) \class{latex-symbol-tip latex-symbol-id-lor}{\lor} (\class{latex-symbol-tip latex-symbol-id-exists}{\exists} a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. \class{latex-symbol-tip latex-symbol-id-exists}{\exists} b_0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. (\class{latex-symbol-tip latex-symbol-id-forall}{\forall} x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals. x\mathrel{\realOrderRel}b_0 \class{latex-symbol-tip latex-symbol-id-lor}{\lor} x = b_0) \class{latex-symbol-tip latex-symbol-id-land}{\land} B = \intervalopenclosedrel{\realOrderRel}{\reals}{a}{b_0})$ by <a class="xref" href="current_section_14.html#order_basis" data-preview-label="order_basis">Definition 33</a>.</p>
@@ -961,7 +963,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_order_topology_eq_standard">
+<section class="statement lemma helper joins-following-proof" id="real_order_topology_eq_standard">
   <div class="statement-head"><div class="statement-title">Lemma 261</div><span class="label-badge">real_order_topology_eq_standard</span></div>
   <div class="statement-body"><p>$\realOrderTopology = \standardTopologyR$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -972,7 +974,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_order_topology_eq_standard" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_24.html#real_order_topology" data-preview-label="real_order_topology">Definition 133</a>, <a class="xref" href="current_section_13.html#standard_topology_reals" data-preview-label="standard_topology_reals">Definition 18</a>, <a class="xref" href="current_section_25.html#order_basis_reals_standard" data-preview-label="order_basis_reals_standard">Lemma 260</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -980,7 +982,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedrayright_complement_openrayleft">
+<section class="statement lemma helper joins-following-proof" id="closedrayright_complement_openrayleft">
   <div class="statement-head"><div class="statement-title">Lemma 262</div><span class="label-badge">closedrayright_complement_openrayleft</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\closedrayright{R}{X}{a} = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \openrayleft{R}{X}{a}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -993,7 +995,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedrayright_complement_openrayleft" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closedrayright{R}{X}{a}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \openrayleft{R}{X}{a}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closedrayright{R}{X}{a}$.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_14.html#closedray_right" data-preview-label="closedray_right">Definition 37</a>.<br> $a\mathrel{R}x$ or $x = a$ by <a class="xref" href="current_section_14.html#closedray_right" data-preview-label="closedray_right">Definition 37</a>.</p>
@@ -1053,7 +1055,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedrayleft_complement_openrayright">
+<section class="statement lemma helper joins-following-proof" id="closedrayleft_complement_openrayright">
   <div class="statement-head"><div class="statement-title">Lemma 263</div><span class="label-badge">closedrayleft_complement_openrayright</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\closedrayleft{R}{X}{a} = X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \openrayright{R}{X}{a}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1066,7 +1068,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedrayleft_complement_openrayright" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closedrayleft{R}{X}{a}$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} \openrayright{R}{X}{a}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\closedrayleft{R}{X}{a}$.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_14.html#closedray_left" data-preview-label="closedray_left">Definition 38</a>.<br> $x\mathrel{R}a$ or $x = a$ by <a class="xref" href="current_section_14.html#closedray_left" data-preview-label="closedray_left">Definition 38</a>.</p>
@@ -1126,7 +1128,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedrayright_closed_in_order_topology">
+<section class="statement lemma helper joins-following-proof" id="closedrayright_closed_in_order_topology">
   <div class="statement-head"><div class="statement-title">Lemma 264</div><span class="label-badge">closedrayright_closed_in_order_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\closedrayright{R}{X}{a}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1141,7 +1143,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedrayright_closed_in_order_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#openrayleft_open_in_order_topology" data-preview-label="openrayleft_open_in_order_topology">Lemma 79</a>, <a class="xref" href="current_section_14.html#closedray_right" data-preview-label="closedray_right">Definition 37</a>, <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_25.html#closedrayright_complement_openrayleft" data-preview-label="closedrayright_complement_openrayleft">Lemma 262</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_setminus" data-preview-label="setminus_setminus">Proposition 91</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1149,7 +1151,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedrayleft_closed_in_order_topology">
+<section class="statement lemma helper joins-following-proof" id="closedrayleft_closed_in_order_topology">
   <div class="statement-head"><div class="statement-title">Lemma 265</div><span class="label-badge">closedrayleft_closed_in_order_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\closedrayleft{R}{X}{a}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1164,7 +1166,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedrayleft_closed_in_order_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_17.html#openrayright_open_in_order_topology" data-preview-label="openrayright_open_in_order_topology">Lemma 78</a>, <a class="xref" href="current_section_14.html#closedray_left" data-preview-label="closedray_left">Definition 38</a>, <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_25.html#closedrayleft_complement_openrayright" data-preview-label="closedrayleft_complement_openrayright">Lemma 263</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_setminus" data-preview-label="setminus_setminus">Proposition 91</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_17.html#closed_in" data-preview-label="closed_in">Definition 49</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1172,7 +1174,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalclosedrel_closed_in_order_topology">
+<section class="statement lemma helper joins-following-proof" id="intervalclosedrel_closed_in_order_topology">
   <div class="statement-head"><div class="statement-title">Lemma 266</div><span class="label-badge">intervalclosedrel_closed_in_order_topology</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has more than one element.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\intervalclosedrel{R}{X}{a}{b}$ is closed in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1188,7 +1190,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalclosedrel_closed_in_order_topology" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \closedrayright{R}{X}{a}$.<br> <span class="kw kw-bold">Let</span> $B = \closedrayleft{R}{X}{b}$.<br> $T$ is a topology on $X$ by <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$A$ is closed in $X$ with respect to $T$.</span></summary>
@@ -1274,7 +1276,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_reverse">
+<section class="statement lemma helper joins-following-proof" id="path_reverse">
   <div class="statement-head"><div class="statement-title">Lemma 267</div><span class="label-badge">path_reverse</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $f$ is a path in $X$ from $x$ to $y$ with respect to $T$. <br><span class="kw">Then</span> there exists $g$ such that $g$ is a path in $X$ from $y$ to $x$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1287,7 +1289,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_reverse" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $a\mathrel{\realOrderRel} b$ and $f$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ to $X$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $T$ and $f(a) = x$ and $f(b) = y$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{\realOrderRel}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_I = \subspaceTopology{\realOrderTopology}{I}$.<br> $\realOrderTopology$ is a topology on $\reals$ by <a class="xref" href="current_section_13.html#standard_basis_is_basis" data-preview-label="standard_basis_is_basis">Lemma 18</a>, <a class="xref" href="current_section_13.html#standard_topology_reals" data-preview-label="standard_topology_reals">Definition 18</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_25.html#real_order_topology_eq_standard" data-preview-label="real_order_topology_eq_standard">Lemma 261</a>.<br> $I$ is a subspace of $\reals$ with respect to $\realOrderTopology$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $T_I$ is a topology on $I$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $c_0 = a + b$.<br> $c_0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> <span class="kw kw-bold">Let</span> $k = \{(t,c_0) \mid t\class{latex-symbol-tip latex-symbol-id-in}{\in} I\}$.<br> $k$ is a function from $I$ to $\reals$ by <a class="xref" href="current_section_23.html#constant_map_function" data-preview-label="constant_map_function">Lemma 234</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $t\class{latex-symbol-tip latex-symbol-id-in}{\in} I$ we have $k(t) = c_0$.</span></summary>
@@ -1551,7 +1553,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_add_sub_cancel_right">
+<section class="statement lemma helper joins-following-proof" id="real_add_sub_cancel_right">
   <div class="statement-head"><div class="statement-title">Lemma 268</div><span class="label-badge">real_add_sub_cancel_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $b + (a - b) = a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1563,7 +1565,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_add_sub_cancel_right" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\neg{b}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.<br> $a - b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> $b + (a - b) = (a - b) + b$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> $a - b = a + \neg{b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>.<br> We have $b + (a - b) = (a + \neg{b}) + b$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_eq_subst" data-preview-label="real_add_eq_subst">Proposition 437</a>.<br> $(a + \neg{b}) + b = a + (\neg{b} + b)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>.<br> $\neg{b} + b = 0$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> <span class="kw">Hence</span> $b + (a - b) = a + 0$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_eq_subst" data-preview-label="real_add_eq_subst">Proposition 437</a>.<br> <span class="kw">Therefore</span> $b + (a - b) = a$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1579,7 +1581,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_add_sub_sub_cancel">
+<section class="statement lemma helper joins-following-proof" id="real_add_sub_sub_cancel">
   <div class="statement-head"><div class="statement-title">Lemma 269</div><span class="label-badge">real_add_sub_sub_cancel</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $d\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $(b + (d - c)) + (c - b) = d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1591,7 +1593,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_add_sub_sub_cancel" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\neg{c}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $\neg{b}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.<br> $d - c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> $c - b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> $b + (d - c) = (d - c) + b$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> <span class="kw">Hence</span> $(b + (d - c)) + (c - b) = (d - c) + (b + (c - b))$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_eq_subst" data-preview-label="real_add_eq_subst">Proposition 437</a>.<br> $b + (c - b) = c$ by <a class="xref" href="current_section_25.html#real_add_sub_cancel_right" data-preview-label="real_add_sub_cancel_right">Lemma 268</a>.<br> We have $(b + (d - c)) + (c - b) = (d - c) + c$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_eq_subst" data-preview-label="real_add_eq_subst">Proposition 437</a>.<br> $(d - c) + c = c + (d - c)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> <span class="kw">Hence</span> $(b + (d - c)) + (c - b) = d$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_eq_subst" data-preview-label="real_add_eq_subst">Proposition 437</a>, <a class="xref" href="current_section_25.html#real_add_sub_cancel_right" data-preview-label="real_add_sub_cancel_right">Lemma 268</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1607,7 +1609,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_concatenation">
+<section class="statement lemma helper joins-following-proof" id="path_concatenation">
   <div class="statement-head"><div class="statement-title">Lemma 270</div><span class="label-badge">path_concatenation</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $f$ is a path in $X$ from $x$ to $y$ with respect to $T$.<br> <span class="kw">Suppose</span> $g$ is a path in $X$ from $y$ to $z$ with respect to $T$. <br><span class="kw">Then</span> there exists $h$ such that $h$ is a path in $X$ from $x$ to $z$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1621,7 +1623,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_concatenation" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $a\mathrel{\realOrderRel} b$ and $f$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ to $X$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $T$ and $f(a) = x$ and $f(b) = y$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.<br> <span class="kw kw-bold">Let</span> $I_1 = \intervalclosedrel{\realOrderRel}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \subspaceTopology{\realOrderTopology}{I_1}$.<br> <span class="kw kw-bold">Take</span> $c,d\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $c\mathrel{\realOrderRel} d$ and $g$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{c}{d}$ to $X$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{c}{d}}$ and $T$ and $g(c) = y$ and $g(d) = z$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.<br> <span class="kw kw-bold">Let</span> $I_2 = \intervalclosedrel{\realOrderRel}{\reals}{c}{d}$.<br> <span class="kw kw-bold">Let</span> $T_2 = \subspaceTopology{\realOrderTopology}{I_2}$.<br> <span class="kw kw-bold">Let</span> $s = c - b$.<br> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> $\neg{b}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.<br> $s\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> <span class="kw kw-bold">Let</span> $e = b + (d - c)$.<br> $\neg{c}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.<br> $d - c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> <span class="kw">Hence</span> $e\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> <span class="kw kw-bold">Let</span> $I_3 = \intervalclosedrel{\realOrderRel}{\reals}{b}{e}$.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{\realOrderRel}{\reals}{a}{e}$.<br> <span class="kw kw-bold">Let</span> $T_I = \subspaceTopology{\realOrderTopology}{I}$.<br> <span class="kw kw-bold">Let</span> $T_3 = \subspaceTopology{\realOrderTopology}{I_3}$.<br> $\realOrderTopology$ is a topology on $\reals$ by <a class="xref" href="current_section_13.html#standard_basis_is_basis" data-preview-label="standard_basis_is_basis">Lemma 18</a>, <a class="xref" href="current_section_13.html#standard_topology_reals" data-preview-label="standard_topology_reals">Definition 18</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_25.html#real_order_topology_eq_standard" data-preview-label="real_order_topology_eq_standard">Lemma 261</a>.<br> $I$ is a subspace of $\reals$ with respect to $\realOrderTopology$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $T_I$ is a topology on $I$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $I_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $I_2\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $I_3\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> <span class="kw">Hence</span> $I_1$ is a subspace of $\reals$ with respect to $\realOrderTopology$ and $I_2$ is a subspace of $\reals$ with respect to $\realOrderTopology$ and $I_3$ is a subspace of $\reals$ with respect to $\realOrderTopology$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw">Therefore</span> $T_1$ is a topology on $I_1$ and $T_2$ is a topology on $I_2$ and $T_3$ is a topology on $I_3$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $k = \{(t,s) \mid t\class{latex-symbol-tip latex-symbol-id-in}{\in} I_3\}$.<br> $k$ is a function from $I_3$ to $\reals$ by <a class="xref" href="current_section_23.html#constant_map_function" data-preview-label="constant_map_function">Lemma 234</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $t\class{latex-symbol-tip latex-symbol-id-in}{\in} I_3$ we have $k(t) = s$.</span></summary>
@@ -2137,7 +2139,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_relation_binary">
+<section class="statement lemma helper joins-following-proof" id="path_relation_binary">
   <div class="statement-head"><div class="statement-title">Lemma 271</div><span class="label-badge">path_relation_binary</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\pathRelation{T}{X}$ is a binary relation on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2149,7 +2151,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_relation_binary" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2157,7 +2159,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_relation_reflexive">
+<section class="statement lemma helper joins-following-proof" id="path_relation_reflexive">
   <div class="statement-head"><div class="statement-title">Lemma 272</div><span class="label-badge">path_relation_reflexive</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\pathRelation{T}{X}$ is reflexive on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2169,7 +2171,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_relation_reflexive" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $x\mathrel{\pathRelation{T}{X}}x$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> We have $0\mathrel{\realOrderRel}1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_24.html#real_order_relation_intro" data-preview-label="real_order_relation_intro">Lemma 245</a>.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{\realOrderRel}{\reals}{0}{1}$.<br> <span class="kw kw-bold">Let</span> $T_I = \subspaceTopology{\realOrderTopology}{I}$.<br> For all $t$ such that $t\class{latex-symbol-tip latex-symbol-id-in}{\in} I$ we have $t\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>.<br> <span class="kw">Hence</span> $I\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $\realOrderTopology$ is a topology on $\reals$ by <a class="xref" href="current_section_13.html#standard_basis_is_basis" data-preview-label="standard_basis_is_basis">Lemma 18</a>, <a class="xref" href="current_section_13.html#standard_topology_reals" data-preview-label="standard_topology_reals">Definition 18</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_25.html#real_order_topology_eq_standard" data-preview-label="real_order_topology_eq_standard">Lemma 261</a>.<br> <span class="kw">Therefore</span> $I$ is a subspace of $\reals$ with respect to $\realOrderTopology$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw">Hence</span> $T_I$ is a topology on $I$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $f = \{(t,x) \mid t\class{latex-symbol-tip latex-symbol-id-in}{\in} I\}$.<br> $f$ is a function from $I$ to $X$ by <a class="xref" href="current_section_23.html#constant_map_function" data-preview-label="constant_map_function">Lemma 234</a>.</p>
@@ -2212,7 +2214,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_relation_symmetric">
+<section class="statement lemma helper joins-following-proof" id="path_relation_symmetric">
   <div class="statement-head"><div class="statement-title">Lemma 273</div><span class="label-badge">path_relation_symmetric</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\pathRelation{T}{X}$ is symmetric.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2224,7 +2226,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_relation_symmetric" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_25.html#path_reverse" data-preview-label="path_reverse">Lemma 267</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_relations.html#symmetric" data-preview-label="symmetric">Definition 380 [Symmetry]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2232,7 +2234,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_relation_transitive">
+<section class="statement lemma helper joins-following-proof" id="path_relation_transitive">
   <div class="statement-head"><div class="statement-title">Lemma 274</div><span class="label-badge">path_relation_transitive</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\pathRelation{T}{X}$ is transitive.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2244,7 +2246,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_relation_transitive" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_25.html#path_concatenation" data-preview-label="path_concatenation">Lemma 270</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2252,7 +2254,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_relation_equivalence">
+<section class="statement lemma helper joins-following-proof" id="path_relation_equivalence">
   <div class="statement-head"><div class="statement-title">Lemma 275</div><span class="label-badge">path_relation_equivalence</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $\pathRelation{T}{X}$ is an equivalence on $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2264,7 +2266,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_relation_equivalence" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#path_relation_binary" data-preview-label="path_relation_binary">Lemma 271</a>, <a class="xref" href="current_section_25.html#path_relation_reflexive" data-preview-label="path_relation_reflexive">Lemma 272</a>, <a class="xref" href="current_section_25.html#path_relation_transitive" data-preview-label="path_relation_transitive">Lemma 274</a>, <a class="xref" href="current_section_25.html#path_relation_symmetric" data-preview-label="path_relation_symmetric">Lemma 273</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2272,7 +2274,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_in_subspace_implies_path_in_superspace">
+<section class="statement lemma helper joins-following-proof" id="path_in_subspace_implies_path_in_superspace">
   <div class="statement-head"><div class="statement-title">Lemma 276</div><span class="label-badge">path_in_subspace_implies_path_in_superspace</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $f$ is a path in $A$ from $x$ to $y$ with respect to $\subspaceTopology{T}{A}$. <br><span class="kw">Then</span> there exists $g$ such that $g$ is a path in $X$ from $x$ to $y$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2286,7 +2288,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_in_subspace_implies_path_in_superspace" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $a\mathrel{\realOrderRel} b$ and $f$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ to $A$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $\subspaceTopology{T}{A}$ and $f(a) = x$ and $f(b) = y$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{\realOrderRel}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_I = \subspaceTopology{\realOrderTopology}{I}$.<br> <span class="kw kw-bold">Let</span> $j = \identity{A}$.<br> $j$ is continuous from $A$ to $X$ with respect to $\subspaceTopology{T}{A}$ and $T$ by <a class="xref" href="current_section_18.html#inclusion_continuous" data-preview-label="inclusion_continuous">Lemma 89</a>.<br> <span class="kw kw-bold">Let</span> $g = j\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$.<br> $j$ is composable with $f$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $g$ is continuous from $I$ to $X$ with respect to $T_I$ and $T$ by <a class="xref" href="current_section_18.html#continuous_composite" data-preview-label="continuous_composite">Lemma 90</a>.<br> $g(a) = x$ and $g(b) = y$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_functions.html#circ_apply" data-preview-label="circ_apply">Proposition 373</a>, <a class="xref" href="current_section_standard_library_functions.html#id_apply" data-preview-label="id_apply">Proposition 405</a>.<br> $g$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ to $X$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $T$.<br> $g$ is a path in $X$ from $x$ to $y$ with respect to $T$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">There exists a function $h$ such that $h$ is a path in $X$ from $x$ to $y$ with respect to $T$.</span></summary>
@@ -2322,7 +2324,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="union_path_connected_common_point">
+<section class="statement lemma helper joins-following-proof" id="union_path_connected_common_point">
   <div class="statement-head"><div class="statement-title">Lemma 277</div><span class="label-badge">union_path_connected_common_point</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $M\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} M$ we have $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Assume</span> for all $A$ such that $A\class{latex-symbol-tip latex-symbol-id-in}{\in} M$ we have $A$ is path connected with respect to $\subspaceTopology{T}{A}$.<br> <span class="kw">Assume</span> $\inters{M}\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> $\unions{M}$ is path connected with respect to $\subspaceTopology{T}{\unions{M}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2339,7 +2341,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="union_path_connected_common_point" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $U = \unions{M}$.<br> <span class="kw kw-bold">Let</span> $T_U = \subspaceTopology{T}{U}$.<br> $U$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $T_U$ is a topology on $U$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,y\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ there exists $h$ such that $h$ is a path in $U$ from $x$ to $y$ with respect to $T_U$.</span></summary>
@@ -2415,7 +2417,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="path_initial_segment">
+<section class="statement lemma helper joins-following-proof" id="path_initial_segment">
   <div class="statement-head"><div class="statement-title">Lemma 278</div><span class="label-badge">path_initial_segment</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $f$ is a path in $X$ from $x$ to $y$ with respect to $T$.<br> <span class="kw">Suppose</span> $t\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{f}$. <br><span class="kw">Then</span> there exists $g$ such that $g$ is a path in $X$ from $x$ to $f(t)$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2429,7 +2431,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="path_initial_segment" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $a\mathrel{\realOrderRel} b$ and $f$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ to $X$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $T$ and $f(a) = x$ and $f(b) = y$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{\realOrderRel}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_I = \subspaceTopology{\realOrderTopology}{I}$.<br> $\dom{f} = I$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $t\class{latex-symbol-tip latex-symbol-id-in}{\in} I$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $f$ is a function by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $t = a$.</div><div class="case-body"><p>$f(t) = x$.<br> $(x,x)\class{latex-symbol-tip latex-symbol-id-in}{\in}\pathRelation{T}{X}$ by <a class="xref" href="current_section_25.html#path_relation_reflexive" data-preview-label="path_relation_reflexive">Lemma 272</a>, <a class="xref" href="current_section_standard_library_relations.html#reflexive_on" data-preview-label="reflexive_on">Definition 377</a>.<br> <span class="kw kw-bold">Take</span> $g$ such that $g$ is a path in $X$ from $x$ to $x$ with respect to $T$ by <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.<br> $g$ is a path in $X$ from $x$ to $f(t)$ with respect to $T$.</p>
 <details class="proof-block subproof" open>
@@ -2528,7 +2530,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="path_component_path_connected">
+<section class="statement theorem joins-following-proof" id="path_component_path_connected">
   <div class="statement-head"><div class="statement-title">Theorem 46</div><span class="label-badge">path_component_path_connected</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $C$ is a path component of $X$ with respect to $T$. <br><span class="kw">Then</span> $C$ is path connected with respect to $\subspaceTopology{T}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2541,7 +2543,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="path_component_path_connected" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $C = \equivalenceClass{\pathRelation{T}{X}}{x}$ by <a class="xref" href="current_section_25.html#path_component" data-preview-label="path_component">Definition 140</a>.<br> $C$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_relations.html#downward_closure_iff" data-preview-label="downward_closure_iff">Proposition 253</a>, <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $T_C = \subspaceTopology{T}{C}$.<br> $T_C$ is a topology on $C$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $y,z\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ there exists $h$ such that $h$ is a path in $C$ from $y$ to $z$ with respect to $T_C$.</span></summary>
@@ -2605,7 +2607,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="path_components_disjoint">
+<section class="statement theorem joins-following-proof" id="path_components_disjoint">
   <div class="statement-head"><div class="statement-title">Theorem 47</div><span class="label-badge">path_components_disjoint</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $C$ is a path component of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $D$ is a path component of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $C\class{latex-symbol-tip latex-symbol-id-neq}{\neq} D$. <br><span class="kw">Then</span> $C$ is disjoint from $D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2620,7 +2622,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="path_components_disjoint" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_25.html#path_component" data-preview-label="path_component">Definition 140</a>, <a class="xref" href="current_section_25.html#path_relation_equivalence" data-preview-label="path_relation_equivalence">Lemma 275</a>, <a class="xref" href="current_section_standard_library_relations.html#equivalenceon_equivclasses_diseq_implies_disjoint" data-preview-label="equivalenceon_equivclasses_diseq_implies_disjoint">Corollary 23</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2628,7 +2630,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="path_components_cover">
+<section class="statement theorem joins-following-proof" id="path_components_cover">
   <div class="statement-head"><div class="statement-title">Theorem 48</div><span class="label-badge">path_components_cover</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $C$ such that $C$ is a path component of $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2641,7 +2643,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="path_components_cover" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> Follows by <a class="xref" href="current_section_25.html#path_relation_equivalence" data-preview-label="path_relation_equivalence">Lemma 275</a>, <a class="xref" href="current_section_standard_library_relations.html#equivclasses_inhabited_equivalenceon" data-preview-label="equivclasses_inhabited_equivalenceon">Proposition 320</a>, <a class="xref" href="current_section_25.html#path_component" data-preview-label="path_component">Definition 140</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2650,7 +2652,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="path_connected_subspace_single_component">
+<section class="statement theorem joins-following-proof" id="path_connected_subspace_single_component">
   <div class="statement-head"><div class="statement-title">Theorem 49</div><span class="label-badge">path_connected_subspace_single_component</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $A$ is a subspace of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $A$ is path connected with respect to $\subspaceTopology{T}{A}$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> for all $C,D$ such that $C$ is a path component of $X$ with respect to $T$ and $D$ is a path component of $X$ with respect to $T$ and $A$ intersects $C$ and $A$ intersects $D$ we have $C = D$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2669,7 +2671,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="path_connected_subspace_single_component" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $C$.<br> <span class="kw kw-bold">Fix</span> $D$ such that $C$ is a path component of $X$ with respect to $T$ and $D$ is a path component of $X$ with respect to $T$ and $A$ intersects $C$ and $A$ intersects $D$.<br> <span class="kw kw-bold">Take</span> $x$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter C$ by <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw kw-bold">Take</span> $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} A\inter D$ by <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>.<br> <span class="kw kw-bold">Take</span> $f$ such that $f$ is a path in $A$ from $x$ to $y$ with respect to $\subspaceTopology{T}{A}$ by <a class="xref" href="current_section_24.html#path_connected" data-preview-label="path_connected">Definition 136</a>.<br> <span class="kw kw-bold">Take</span> $f_1$ such that $f_1$ is a path in $X$ from $x$ to $y$ with respect to $T$ by <a class="xref" href="current_section_25.html#path_in_subspace_implies_path_in_superspace" data-preview-label="path_in_subspace_implies_path_in_superspace">Lemma 276</a>.<br> $x\mathrel{\pathRelation{T}{X}}y$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>.<br> <span class="kw kw-bold">Take</span> $c\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $C = \equivalenceClass{\pathRelation{T}{X}}{c}$ by <a class="xref" href="current_section_25.html#path_component" data-preview-label="path_component">Definition 140</a>.<br> <span class="kw kw-bold">Take</span> $d\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $D = \equivalenceClass{\pathRelation{T}{X}}{d}$ by <a class="xref" href="current_section_25.html#path_component" data-preview-label="path_component">Definition 140</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} \downward{\pathRelation{T}{X}}{c}$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} \downward{\pathRelation{T}{X}}{d}$.<br> $C = D$ by <a class="xref" href="current_section_standard_library_relations.html#downward_closure_iff" data-preview-label="downward_closure_iff">Proposition 253</a>, <a class="xref" href="current_section_25.html#path_relation_symmetric" data-preview-label="path_relation_symmetric">Lemma 273</a>, <a class="xref" href="current_section_25.html#path_relation_transitive" data-preview-label="path_relation_transitive">Lemma 274</a>, <a class="xref" href="current_section_standard_library_relations.html#symmetric" data-preview-label="symmetric">Definition 380 [Symmetry]</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_25.html#path_relation_equivalence" data-preview-label="path_relation_equivalence">Lemma 275</a>, <a class="xref" href="current_section_standard_library_relations.html#equiv_iff_equivclasses_eq" data-preview-label="equiv_iff_equivclasses_eq">Proposition 323</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2746,7 +2748,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="locally_connected_iff_components_open">
+<section class="statement theorem joins-following-proof" id="locally_connected_iff_components_open">
   <div class="statement-head"><div class="statement-title">Theorem 50</div><span class="label-badge">locally_connected_iff_components_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $X$ is locally connected with respect to $T$ iff for all $U$ such that $U$ is open in $X$ with respect to $T$ for all $C$ such that $C$ is a component of $U$ with respect to $\subspaceTopology{T}{U}$ we have $C$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2761,7 +2763,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="locally_connected_iff_components_open" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $X$ is locally connected with respect to $T$ then for all $U$ such that $U$ is open in $X$ with respect to $T$ for all $C$ such that $C$ is a component of $U$ with respect to $\subspaceTopology{T}{U}$ we have $C$ is open in $X$ with respect to $T$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $X$ is locally connected with respect to $T$.<br> <span class="kw kw-bold">Fix</span> $U$ such that $U$ is open in $X$ with respect to $T$.<br> $U$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $T_U = \subspaceTopology{T}{U}$.<br> $T_U$ is a topology on $U$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Fix</span> $C$ such that $C$ is a component of $U$ with respect to $\subspaceTopology{T}{U}$.<br> $C$ is a component of $U$ with respect to $T_U$.</p>
@@ -2916,7 +2918,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="locally_path_connected_iff_components_open">
+<section class="statement theorem joins-following-proof" id="locally_path_connected_iff_components_open">
   <div class="statement-head"><div class="statement-title">Theorem 51</div><span class="label-badge">locally_path_connected_iff_components_open</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$. <br><span class="kw">Then</span> $X$ is locally path connected with respect to $T$ iff for all $U$ such that $U$ is open in $X$ with respect to $T$ for all $C$ such that $C$ is a path component of $U$ with respect to $\subspaceTopology{T}{U}$ we have $C$ is open in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2931,7 +2933,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="locally_path_connected_iff_components_open" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $X$ is locally path connected with respect to $T$ then for all $U$ such that $U$ is open in $X$ with respect to $T$ for all $C$ such that $C$ is a path component of $U$ with respect to $\subspaceTopology{T}{U}$ we have $C$ is open in $X$ with respect to $T$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $X$ is locally path connected with respect to $T$.<br> <span class="kw kw-bold">Fix</span> $U$ such that $U$ is open in $X$ with respect to $T$.<br> $U$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $T_U = \subspaceTopology{T}{U}$.<br> $T_U$ is a topology on $U$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Fix</span> $C$ such that $C$ is a path component of $U$ with respect to $\subspaceTopology{T}{U}$.<br> $C$ is a path component of $U$ with respect to $T_U$.</p>
@@ -3086,7 +3088,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="path_component_subset_component">
+<section class="statement theorem joins-following-proof" id="path_component_subset_component">
   <div class="statement-head"><div class="statement-title">Theorem 52</div><span class="label-badge">path_component_subset_component</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $P$ is a path component of $X$ with respect to $T$. <br><span class="kw">Then</span> there exists $C$ such that $C$ is a component of $X$ with respect to $T$ and $P\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3099,7 +3101,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="path_component_subset_component" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $P = \equivalenceClass{\pathRelation{T}{X}}{x}$ by <a class="xref" href="current_section_25.html#path_component" data-preview-label="path_component">Definition 140</a>.<br> For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ we have $(y,x)\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times} X$ and there exists $f$ such that $f$ is a path in $X$ from $\fst{(y,x)}$ to $\snd{(y,x)}$ with respect to $T$ by <a class="xref" href="current_section_standard_library_relations.html#downward_closure_iff" data-preview-label="downward_closure_iff">Proposition 253</a>, <a class="xref" href="current_section_25.html#path_relation" data-preview-label="path_relation">Definition 139</a>.<br> $P$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $T_P = \subspaceTopology{T}{P}$.<br> $T_P$ is a topology on $P$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $P$ is connected with respect to $T_P$ by <a class="xref" href="current_section_25.html#path_component_path_connected" data-preview-label="path_component_path_connected">Theorem 46</a>, <a class="xref" href="current_section_24.html#path_connected_implies_connected" data-preview-label="path_connected_implies_connected">Theorem 41</a>.<br> <span class="kw kw-bold">Take</span> $D$ such that $D$ is a component of $X$ with respect to $T$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_25.html#components_cover" data-preview-label="components_cover">Theorem 44</a>.<br> For all $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} P$ we have $y\class{latex-symbol-tip latex-symbol-id-in}{\in} D$ by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_25.html#components_cover" data-preview-label="components_cover">Theorem 44</a>, <a class="xref" href="current_section_25.html#path_relation_equivalence" data-preview-label="path_relation_equivalence">Lemma 275</a>, <a class="xref" href="current_section_standard_library_relations.html#equivclasses_inhabited_equivalenceon" data-preview-label="equivclasses_inhabited_equivalenceon">Proposition 320</a>, <a class="xref" href="current_section_standard_library_sets.html#inter" data-preview-label="inter">Definition 350</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_17.html#intersects" data-preview-label="intersects">Definition 52</a>, <a class="xref" href="current_section_25.html#connected_subspace_single_component" data-preview-label="connected_subspace_single_component">Theorem 45</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">There exists $C$ such that $C$ is a component of $X$ with respect to $T$ and $P\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} C$.</span></summary>
@@ -3129,7 +3131,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="components_equal_path_components_locally_path_connected">
+<section class="statement theorem joins-following-proof" id="components_equal_path_components_locally_path_connected">
   <div class="statement-head"><div class="statement-title">Theorem 53</div><span class="label-badge">components_equal_path_components_locally_path_connected</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Suppose</span> $X$ is locally path connected with respect to $T$. <br><span class="kw">Then</span> for all $C$ such that $C$ is a component of $X$ with respect to $T$ there exists $P$ such that $P$ is a path component of $X$ with respect to $T$ and $C = P$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3143,7 +3145,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="components_equal_path_components_locally_path_connected" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $C$ such that $C$ is a component of $X$ with respect to $T$.<br> <span class="kw kw-bold">Take</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $C = \equivalenceClass{\componentRelation{T}{X}}{x}$ by <a class="xref" href="current_section_25.html#component" data-preview-label="component">Definition 138</a>.<br> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ by <a class="xref" href="current_section_25.html#component_relation_equivalence" data-preview-label="component_relation_equivalence">Lemma 256</a>, <a class="xref" href="current_section_standard_library_relations.html#equivclasses_inhabited_equivalenceon" data-preview-label="equivclasses_inhabited_equivalenceon">Proposition 320</a>.<br> $C$ is a subspace of $X$ with respect to $T$ by <a class="xref" href="current_section_standard_library_relations.html#downward_closure_iff" data-preview-label="downward_closure_iff">Proposition 253</a>, <a class="xref" href="current_section_25.html#component_relation" data-preview-label="component_relation">Definition 137</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> <span class="kw kw-bold">Let</span> $T_X = \subspaceTopology{T}{X}$.<br> $T_X$ is a topology on $X$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T_X$.</span></summary>

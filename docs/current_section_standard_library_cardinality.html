@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -419,7 +421,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="emptyset_is_finite">
+<section class="statement lemma joins-following-proof" id="emptyset_is_finite">
   <div class="statement-head"><div class="statement-title">Lemma 1260</div><span class="label-badge">emptyset_is_finite</span></div>
   <div class="statement-body"><p>$\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -430,7 +432,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="emptyset_is_finite" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#finite" data-preview-label="finite">Definition 434</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -438,7 +440,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="initial_segment_one_library">
+<section class="statement lemma helper joins-following-proof" id="initial_segment_one_library">
   <div class="statement-head"><div class="statement-title">Lemma 1261</div><span class="label-badge">initial_segment_one_library</span></div>
   <div class="statement-body"><p>$\initialSegment{1} = \{1\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -449,7 +451,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="initial_segment_one_library" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -457,7 +459,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="initial_segment_succ">
+<section class="statement lemma helper joins-following-proof" id="initial_segment_succ">
   <div class="statement-head"><div class="statement-title">Lemma 1262</div><span class="label-badge">initial_segment_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $\initialSegment{n+1} = \cons{n+1}{\initialSegment{n}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -469,7 +471,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="initial_segment_succ" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_subseteq_intro" data-preview-label="cons_subseteq_intro">Proposition 123</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_succ_discrete" data-preview-label="real_succ_discrete">Axiom 44</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -477,7 +479,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="bijection_cons">
+<section class="statement lemma helper joins-following-proof" id="bijection_cons">
   <div class="statement-head"><div class="statement-title">Lemma 1263</div><span class="label-badge">bijection_cons</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{A}{B}$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-notin}{\notin} A$ and $b\class{latex-symbol-tip latex-symbol-id-notin}{\notin} B$. <br><span class="kw">Then</span> $\cons{(a,b)}{f}\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{\cons{a}{A}}{\cons{b}{B}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -490,7 +492,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="bijection_cons" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_functions.html#function_rightunique" data-preview-label="function_rightunique">Proposition 345</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_cons" data-preview-label="dom_cons">Proposition 204</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_cons" data-preview-label="ran_cons">Proposition 213</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>, <a class="xref" href="current_section_standard_library_relations.html#injective" data-preview-label="injective">Definition 395</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -498,7 +500,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_cons">
+<section class="statement lemma helper joins-following-proof" id="finite_cons">
   <div class="statement-head"><div class="statement-title">Lemma 1264</div><span class="label-badge">finite_cons</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $X$ is finite. <br><span class="kw">Then</span> $\cons{x}{X}$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -510,7 +512,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_cons" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#cons_absorb" data-preview-label="cons_absorb">Proposition 134</a>, <a class="xref" href="current_section_standard_library_functions.html#id_elem_bijections" data-preview-label="id_elem_bijections">Proposition 408</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#bijection_cons" data-preview-label="bijection_cons">Lemma 1263</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_one_library" data-preview-label="initial_segment_one_library">Lemma 1261</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite" data-preview-label="finite">Definition 434</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_succ" data-preview-label="initial_segment_succ">Lemma 1262</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -518,7 +520,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="pair_is_finite">
+<section class="statement lemma joins-following-proof" id="pair_is_finite">
   <div class="statement-head"><div class="statement-title">Lemma 1265</div><span class="label-badge">pair_is_finite</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> that $x$ is a set and assume that $y$ is a set. <br><span class="kw">Then</span> $\{x,y\}$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -530,7 +532,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="pair_is_finite" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#emptyset_is_finite" data-preview-label="emptyset_is_finite">Lemma 1260</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_cons" data-preview-label="finite_cons">Lemma 1264</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -538,7 +540,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="initial_segment_last_fresh">
+<section class="statement lemma helper joins-following-proof" id="initial_segment_last_fresh">
   <div class="statement-head"><div class="statement-title">Lemma 1266</div><span class="label-badge">initial_segment_last_fresh</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $n+1\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\initialSegment{n}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -550,7 +552,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="initial_segment_last_fresh" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -558,7 +560,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="bijection_remove_last">
+<section class="statement lemma helper joins-following-proof" id="bijection_remove_last">
   <div class="statement-head"><div class="statement-title">Lemma 1267</div><span class="label-badge">bijection_remove_last</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{\initialSegment{n+1}}{Y}$. <br><span class="kw">Then</span> $\restrl{f}{\initialSegment{n}}\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{\initialSegment{n}}{Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{f(n+1)\}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -571,7 +573,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="bijection_remove_last" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $g=\restrl{f}{\initialSegment{n}}$.<br> $f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>.<br> $f$ is injective by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.<br> $\dom{f}=\initialSegment{n+1}$ by <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>.<br> $\ran{f}=Y$ by <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>.<br> $g$ is a function by <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>, <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_is_function" data-preview-label="restrl_of_function_is_function">Proposition 383</a>.<br> $\dom{g}=\initialSegment{n}$ by <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_succ" data-preview-label="initial_segment_succ">Lemma 1262</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_cons_self" data-preview-label="subseteq_cons_self">Corollary 19</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_of_restrl_eq_inter" data-preview-label="dom_of_restrl_eq_inter">Corollary 21</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>.</p>
 <p>$\ran{g}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{f(n+1)\}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_iff" data-preview-label="ran_iff">Proposition 208</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_iff" data-preview-label="restrl_iff">Proposition 262</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_succ" data-preview-label="initial_segment_succ">Lemma 1262</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_left" data-preview-label="cons_left">Proposition 14</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#injective" data-preview-label="injective">Definition 395</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_last_fresh" data-preview-label="initial_segment_last_fresh">Lemma 1266</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>.</p>
 <p>$Y\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus}\{f(n+1)\}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\ran{g}$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_right" data-preview-label="setminus_elim_right">Proposition 87</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_elim_left" data-preview-label="setminus_elim_left">Proposition 86</a>, <a class="xref" href="current_section_standard_library_functions.html#fun_ran_iff" data-preview-label="fun_ran_iff">Proposition 352</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_succ" data-preview-label="initial_segment_succ">Lemma 1262</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_iff" data-preview-label="restrl_iff">Proposition 262</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_surj_iff" data-preview-label="funs_surj_iff">Corollary 26</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_injective" data-preview-label="restrl_injective">Proposition 340</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>.</p><details class="latex-source">
@@ -592,7 +594,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_induction">
+<section class="statement lemma helper joins-following-proof" id="finite_induction">
   <div class="statement-head"><div class="statement-title">Lemma 1268</div><span class="label-badge">finite_induction</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $X$ is finite.<br> <span class="kw">Suppose</span> $\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.<br> <span class="kw">Suppose</span> for all $Y,y$ such that $Y\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $\cons{y}{Y}\class{latex-symbol-tip latex-symbol-id-in}{\in} C$. <br><span class="kw">Then</span> $X\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -606,7 +608,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_induction" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $X=\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p><span class="kw">Then</span> $X\class{latex-symbol-tip latex-symbol-id-in}{\in} C$.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $X\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p><span class="kw kw-bold">Let</span> $S=\{n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\mid \text{for all $Y,f$ such that $Y\subseteq X$ and $f\in\bijections{\initialSegment{n}}{Y}$ we have $Y\in C$}\}$.<br> For all $n\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ we have $n+1\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ by <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_succ" data-preview-label="initial_segment_succ">Lemma 1262</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_left" data-preview-label="cons_left">Proposition 14</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_cardinality.html#bijection_remove_last" data-preview-label="bijection_remove_last">Lemma 1267</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_remove" data-preview-label="cons_remove">Proposition 135</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>.</p>
 <p><span class="kw kw-bold">Take</span> $n,f$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\bijections{\initialSegment{n}}{X}$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite" data-preview-label="finite">Definition 434</a>. <br><span class="kw">Thus</span> $X\class{latex-symbol-tip latex-symbol-id-in}{\in} C$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_functions.html#bijection_is_function" data-preview-label="bijection_is_function">Proposition 390</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections_dom" data-preview-label="bijections_dom">Proposition 391</a>, <a class="xref" href="current_section_standard_library_functions.html#bijections" data-preview-label="bijections">Definition 403</a>, <a class="xref" href="current_section_standard_library_functions.html#ran_of_surj" data-preview-label="ran_of_surj">Corollary 25</a>, <a class="xref" href="current_section_standard_library_cardinality.html#initial_segment_one_library" data-preview-label="initial_segment_one_library">Lemma 1261</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_functions.html#fun_ran_iff" data-preview-label="fun_ran_iff">Proposition 352</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff_inhabited_subsingleton" data-preview-label="singleton_iff_inhabited_subsingleton">Proposition 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_induction" data-preview-label="real_naturals_induction">Proposition 445</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_refl" data-preview-label="subseteq_refl">Proposition 2</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -637,7 +639,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subseteq_finite_is_finite">
+<section class="statement lemma joins-following-proof" id="subseteq_finite_is_finite">
   <div class="statement-head"><div class="statement-title">Lemma 1269</div><span class="label-badge">subseteq_finite_is_finite</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.<br> <span class="kw">Suppose</span> $B$ is finite. <br><span class="kw">Then</span> $A$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -650,7 +652,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_finite_is_finite" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $C=\{Y\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{B}\mid \text{for all $D$ such that $D\subseteq Y$ we have $D$ is finite}\}$. <br><span class="kw">Thus</span> $A$ is finite by <a class="xref" href="current_section_standard_library_sets.html#powerset_bottom" data-preview-label="powerset_bottom">Proposition 157</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_emptyset_iff" data-preview-label="subseteq_emptyset_iff">Proposition 12</a>, <a class="xref" href="current_section_standard_library_cardinality.html#emptyset_is_finite" data-preview-label="emptyset_is_finite">Lemma 1260</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_subseteq_intro" data-preview-label="cons_subseteq_intro">Proposition 123</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_cons_elim" data-preview-label="subseteq_cons_elim">Proposition 129</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_cons" data-preview-label="finite_cons">Lemma 1264</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_remove" data-preview-label="cons_remove">Proposition 135</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_induction" data-preview-label="finite_induction">Lemma 1268</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -659,7 +661,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="union_of_finite_is_finite">
+<section class="statement lemma joins-following-proof" id="union_of_finite_is_finite">
   <div class="statement-head"><div class="statement-title">Lemma 1270</div><span class="label-badge">union_of_finite_is_finite</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A$ is finite and $B$ is finite. <br><span class="kw">Then</span> $A\union B$ is finite.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -671,7 +673,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_of_finite_is_finite" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $C=\{Y\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}\mid \text{$Y\union B$ is finite}\}$. <br><span class="kw">Thus</span> $A\union B$ is finite by <a class="xref" href="current_section_standard_library_sets.html#powerset_bottom" data-preview-label="powerset_bottom">Proposition 157</a>, <a class="xref" href="current_section_standard_library_sets.html#union_comm" data-preview-label="union_comm">Proposition 41 [Commutativity of union]</a>, <a class="xref" href="current_section_standard_library_sets.html#union_emptyset" data-preview-label="union_emptyset">Proposition 49</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_subseteq_intro" data-preview-label="cons_subseteq_intro">Proposition 123</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_cons" data-preview-label="finite_cons">Lemma 1264</a>, <a class="xref" href="current_section_standard_library_sets.html#union_cons" data-preview-label="union_cons">Proposition 57</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_induction" data-preview-label="finite_induction">Lemma 1268</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -690,7 +692,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="maximum_cons">
+<section class="statement lemma helper joins-following-proof" id="maximum_cons">
   <div class="statement-head"><div class="statement-title">Lemma 1271</div><span class="label-badge">maximum_cons</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.<br> <span class="kw">Suppose</span> $m$ is a maximum of $Y$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> there exists $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\cons{x}{Y}$ such that $p$ is a maximum of $\cons{x}{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -704,7 +706,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="maximum_cons" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_right" data-preview-label="cons_right">Proposition 15</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_left" data-preview-label="cons_left">Proposition 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -712,7 +714,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="finite_real_maximum">
+<section class="statement lemma joins-following-proof" id="finite_real_maximum">
   <div class="statement-head"><div class="statement-title">Lemma 1272</div><span class="label-badge">finite_real_maximum</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.<br> <span class="kw">Suppose</span> $A$ is finite.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $m$ is a maximum of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -726,7 +728,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="finite_real_maximum" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $C=\{Y\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}\mid \text{$Y=\emptyset$ or there exists $m\in Y$ such that $m$ is a maximum of $Y$}\}$. <br><span class="kw">Thus</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $m$ is a maximum of $A$ by <a class="xref" href="current_section_standard_library_sets.html#powerset_bottom" data-preview-label="powerset_bottom">Proposition 157</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_subseteq_intro" data-preview-label="cons_subseteq_intro">Proposition 123</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_left" data-preview-label="cons_left">Proposition 14</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_cardinality.html#maximum_cons" data-preview-label="maximum_cons">Lemma 1271</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_induction" data-preview-label="finite_induction">Lemma 1268</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -735,7 +737,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="minimum_cons">
+<section class="statement lemma helper joins-following-proof" id="minimum_cons">
   <div class="statement-head"><div class="statement-title">Lemma 1273</div><span class="label-badge">minimum_cons</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.<br> <span class="kw">Suppose</span> $m$ is a minimum of $Y$.<br> <span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> there exists $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\cons{x}{Y}$ such that $p$ is a minimum of $\cons{x}{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -749,7 +751,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="minimum_cons" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_minimum" data-preview-label="real_minimum">Definition 419</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_right" data-preview-label="cons_right">Proposition 15</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_iff" data-preview-label="cons_iff">Axiom 3</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_left" data-preview-label="cons_left">Proposition 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -757,7 +759,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="finite_real_minimum">
+<section class="statement lemma joins-following-proof" id="finite_real_minimum">
   <div class="statement-head"><div class="statement-title">Lemma 1274</div><span class="label-badge">finite_real_minimum</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.<br> <span class="kw">Suppose</span> $A$ is finite.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $m$ is a minimum of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -771,7 +773,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="finite_real_minimum" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $C=\{Y\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{A}\mid \text{$Y=\emptyset$ or there exists $m\in Y$ such that $m$ is a minimum of $Y$}\}$. <br><span class="kw">Thus</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $m$ is a minimum of $A$ by <a class="xref" href="current_section_standard_library_sets.html#powerset_bottom" data-preview-label="powerset_bottom">Proposition 157</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_subseteq_intro" data-preview-label="cons_subseteq_intro">Proposition 123</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_intro" data-preview-label="powerset_intro">Proposition 155</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_sets.html#cons_left" data-preview-label="cons_left">Proposition 14</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_minimum" data-preview-label="real_minimum">Definition 419</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_cardinality.html#minimum_cons" data-preview-label="minimum_cons">Lemma 1273</a>, <a class="xref" href="current_section_standard_library_cardinality.html#finite_induction" data-preview-label="finite_induction">Lemma 1268</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -780,7 +782,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="finite_naturals_maximum">
+<section class="statement lemma joins-following-proof" id="finite_naturals_maximum">
   <div class="statement-head"><div class="statement-title">Lemma 1275</div><span class="label-badge">finite_naturals_maximum</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$.<br> <span class="kw">Suppose</span> $A$ is finite.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -794,7 +796,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="finite_naturals_maximum" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#finite_real_maximum" data-preview-label="finite_real_maximum">Lemma 1272</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -812,7 +814,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="emptyset_is_countable">
+<section class="statement lemma joins-following-proof" id="emptyset_is_countable">
   <div class="statement-head"><div class="statement-title">Lemma 1276</div><span class="label-badge">emptyset_is_countable</span></div>
   <div class="statement-body"><p>$\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ is countable.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -823,7 +825,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="emptyset_is_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#codom_of_emptyset_can_be_anything" data-preview-label="codom_of_emptyset_can_be_anything">Proposition 370</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_emptyset" data-preview-label="dom_emptyset">Proposition 201</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_cardinality.html#countable" data-preview-label="countable">Definition 435</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -831,7 +833,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="inj_restrl">
+<section class="statement lemma helper joins-following-proof" id="inj_restrl">
   <div class="statement-head"><div class="statement-title">Lemma 1277</div><span class="label-badge">inj_restrl</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{B}{C}$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$. <br><span class="kw">Then</span> $\restrl{f}{A}\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -844,7 +846,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="inj_restrl" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_is_function" data-preview-label="restrl_of_function_is_function">Proposition 383</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_of_restrl_eq_inter" data-preview-label="dom_of_restrl_eq_inter">Corollary 21</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_absorb_supseteq_left" data-preview-label="inter_absorb_supseteq_left">Proposition 70</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_dom" data-preview-label="restrl_dom">Proposition 269</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_functions.html#restrl_of_function_apply" data-preview-label="restrl_of_function_apply">Proposition 384</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_functions.html#injective_function" data-preview-label="injective_function">Proposition 386</a>, <a class="xref" href="current_section_standard_library_relations.html#restrl_injective" data-preview-label="restrl_injective">Proposition 340</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -852,7 +854,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="subseteq_countable_is_countable">
+<section class="statement lemma joins-following-proof" id="subseteq_countable_is_countable">
   <div class="statement-head"><div class="statement-title">Lemma 1278</div><span class="label-badge">subseteq_countable_is_countable</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.<br> <span class="kw">Suppose</span> $B$ is countable. <br><span class="kw">Then</span> $A$ is countable.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -865,7 +867,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="subseteq_countable_is_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#countable" data-preview-label="countable">Definition 435</a>, <a class="xref" href="current_section_standard_library_cardinality.html#inj_restrl" data-preview-label="inj_restrl">Lemma 1277</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -873,7 +875,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturals_subset_reals">
+<section class="statement lemma helper joins-following-proof" id="naturals_subset_reals">
   <div class="statement-head"><div class="statement-title">Lemma 1279</div><span class="label-badge">naturals_subset_reals</span></div>
   <div class="statement-body"><p>$\naturals\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -884,7 +886,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturals_subset_reals" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -892,7 +894,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="double_natural">
+<section class="statement lemma helper joins-following-proof" id="double_natural">
   <div class="statement-head"><div class="statement-title">Lemma 1280</div><span class="label-badge">double_natural</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $2\rmul n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -904,7 +906,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="double_natural" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S=\{k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\mid \text{$2\rmul k\in\naturalsPlus$}\}$.<br> For all $k\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ we have $k+1\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>. <br><span class="kw">Thus</span> $2\rmul n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_induction" data-preview-label="real_naturals_induction">Proposition 445</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -914,7 +916,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="double_succ_natural">
+<section class="statement lemma helper joins-following-proof" id="double_succ_natural">
   <div class="statement-head"><div class="statement-title">Lemma 1281</div><span class="label-badge">double_succ_natural</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $(2\rmul n)+1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -926,7 +928,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="double_succ_natural" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#double_natural" data-preview-label="double_natural">Lemma 1280</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -934,7 +936,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="double_injective">
+<section class="statement lemma helper joins-following-proof" id="double_injective">
   <div class="statement-head"><div class="statement-title">Lemma 1282</div><span class="label-badge">double_injective</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $m,n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $2\rmul m=2\rmul n$. <br><span class="kw">Then</span> $m=n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -947,7 +949,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="double_injective" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#naturals_subset_reals" data-preview-label="naturals_subset_reals">Lemma 1279</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_cancel" data-preview-label="real_mul_cancel">Proposition 443</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -955,7 +957,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="natural_succ_leq">
+<section class="statement lemma helper joins-following-proof" id="natural_succ_leq">
   <div class="statement-head"><div class="statement-title">Lemma 1283</div><span class="label-badge">natural_succ_leq</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n,m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $n < m$. <br><span class="kw">Then</span> $n+1\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -968,7 +970,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="natural_succ_leq" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#naturals_subset_reals" data-preview-label="naturals_subset_reals">Lemma 1279</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_succ_discrete" data-preview-label="real_succ_discrete">Axiom 44</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -976,7 +978,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="double_succ_lt_next_double">
+<section class="statement lemma helper joins-following-proof" id="double_succ_lt_next_double">
   <div class="statement-head"><div class="statement-title">Lemma 1284</div><span class="label-badge">double_succ_lt_next_double</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $(2\rmul n)+1 < 2\rmul(n+1)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -988,7 +990,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="double_succ_lt_next_double" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#naturals_subset_reals" data-preview-label="naturals_subset_reals">Lemma 1279</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -996,7 +998,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="double_lt_double_succ">
+<section class="statement lemma helper joins-following-proof" id="double_lt_double_succ">
   <div class="statement-head"><div class="statement-title">Lemma 1285</div><span class="label-badge">double_lt_double_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $2\rmul n < (2\rmul n)+1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1008,7 +1010,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="double_lt_double_succ" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#naturals_subset_reals" data-preview-label="naturals_subset_reals">Lemma 1279</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1016,7 +1018,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="double_neq_double_succ">
+<section class="statement lemma helper joins-following-proof" id="double_neq_double_succ">
   <div class="statement-head"><div class="statement-title">Lemma 1286</div><span class="label-badge">double_neq_double_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $m,n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $2\rmul m\class{latex-symbol-tip latex-symbol-id-neq}{\neq}(2\rmul n)+1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1028,7 +1030,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="double_neq_double_succ" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_cardinality.html#naturals_subset_reals" data-preview-label="naturals_subset_reals">Lemma 1279</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_lt_double_succ" data-preview-label="double_lt_double_succ">Lemma 1285</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_cardinality.html#natural_succ_leq" data-preview-label="natural_succ_leq">Lemma 1283</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_succ_lt_next_double" data-preview-label="double_succ_lt_next_double">Lemma 1284</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1036,7 +1038,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="even_code_injection">
+<section class="statement lemma helper joins-following-proof" id="even_code_injection">
   <div class="statement-head"><div class="statement-title">Lemma 1287</div><span class="label-badge">even_code_injection</span></div>
   <div class="statement-body"><p>There exists $e\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturals}{\naturals}$ such that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $e(n)=2\rmul n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1048,7 +1050,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="even_code_injection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $e=\{(n,2\rmul n)\mid n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals\}$.<br> <span class="kw">Hence</span> there exists $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturals}{\naturals}$ such that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $q(n)=2\rmul n$ by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_natural" data-preview-label="double_natural">Lemma 1280</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_injective" data-preview-label="double_injective">Lemma 1282</a>, <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1058,7 +1060,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="odd_code_injection">
+<section class="statement lemma helper joins-following-proof" id="odd_code_injection">
   <div class="statement-head"><div class="statement-title">Lemma 1288</div><span class="label-badge">odd_code_injection</span></div>
   <div class="statement-body"><p>There exists $o\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturals}{\naturals}$ such that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $o(n)=(2\rmul n)+1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1070,7 +1072,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="odd_code_injection" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $o=\{(n,(2\rmul n)+1)\mid n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals\}$.<br> $o$ is a function by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>.<br> <span class="kw">Hence</span> there exists $q\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturals}{\naturals}$ such that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $q(n)=(2\rmul n)+1$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_iff" data-preview-label="dom_iff">Proposition 199</a>, <a class="xref" href="current_section_standard_library_sets.html#pair_eq_iff" data-preview-label="pair_eq_iff">Axiom 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_antisymmetric" data-preview-label="subseteq_antisymmetric">Proposition 3</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_intro" data-preview-label="function_apply_intro">Proposition 346</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_succ_natural" data-preview-label="double_succ_natural">Lemma 1281</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>, <a class="xref" href="current_section_standard_library_cardinality.html#naturals_subset_reals" data-preview-label="naturals_subset_reals">Lemma 1279</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_cancel" data-preview-label="real_add_cancel">Proposition 438</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_injective" data-preview-label="double_injective">Lemma 1282</a>, <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1081,7 +1083,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="union_inj_disjoint">
+<section class="statement lemma helper joins-following-proof" id="union_inj_disjoint">
   <div class="statement-head"><div class="statement-title">Lemma 1289</div><span class="label-badge">union_inj_disjoint</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A}{C}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{B}{C}$.<br> <span class="kw">Suppose</span> $A\inter B=\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $\ran{f}\inter\ran{g}=\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> $f\union g\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A\union B}{C}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1094,7 +1096,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="union_inj_disjoint" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f$ and $g$ are functions by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> $\dom{f}=A$ and $\dom{g}=B$ by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> $f$ and $g$ are injective by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#injective_function" data-preview-label="injective_function">Proposition 386</a>.<br> <span class="kw kw-bold">Let</span> $h=f\union g$.<br> $h$ is a function by <a class="xref" href="current_section_standard_library_relations.html#union_relations_is_relation" data-preview-label="union_relations_is_relation">Proposition 180</a>, <a class="xref" href="current_section_standard_library_relations.html#rightunique" data-preview-label="rightunique">Definition 396</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_relations.html#dom_intro" data-preview-label="dom_intro">Proposition 200</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.<br> <span class="kw">Hence</span> $h\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{A\union B}{C}$ by <a class="xref" href="current_section_standard_library_relations.html#dom_union" data-preview-label="dom_union">Proposition 205</a>, <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_union" data-preview-label="ran_union">Proposition 214</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#elem_subseteq" data-preview-label="elem_subseteq">Proposition 4</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_intro" data-preview-label="funs_intro">Proposition 358</a>.<br> $h$ is injective by <a class="xref" href="current_section_standard_library_relations.html#injective" data-preview-label="injective">Definition 395</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_relations.html#ran_intro" data-preview-label="ran_intro">Proposition 209</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_intro" data-preview-label="inter_intro">Proposition 61</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>. <br><span class="kw">Thus</span> $h\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A\union B}{C}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#injective_function" data-preview-label="injective_function">Proposition 386</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1109,7 +1111,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="union_of_countable_is_countable">
+<section class="statement lemma joins-following-proof" id="union_of_countable_is_countable">
   <div class="statement-head"><div class="statement-title">Lemma 1290</div><span class="label-badge">union_of_countable_is_countable</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A$ is countable and $B$ is countable. <br><span class="kw">Then</span> $A\union B$ is countable.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1121,7 +1123,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="union_of_countable_is_countable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $f,g$ such that $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A}{\naturals}$ and $g\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{B}{\naturals}$ by <a class="xref" href="current_section_standard_library_cardinality.html#countable" data-preview-label="countable">Definition 435</a>.<br> <span class="kw kw-bold">Take</span> $e\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturals}{\naturals}$ such that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $e(n)=2\rmul n$ by <a class="xref" href="current_section_standard_library_cardinality.html#even_code_injection" data-preview-label="even_code_injection">Lemma 1287</a>.<br> <span class="kw kw-bold">Take</span> $o\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{\naturals}{\naturals}$ such that for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $o(n)=(2\rmul n)+1$ by <a class="xref" href="current_section_standard_library_cardinality.html#odd_code_injection" data-preview-label="odd_code_injection">Lemma 1288</a>.<br> <span class="kw kw-bold">Let</span> $r=\restrl{g}{B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A}$.<br> $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A}{\naturals}$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_subseteq" data-preview-label="setminus_subseteq">Proposition 97</a>, <a class="xref" href="current_section_standard_library_cardinality.html#inj_restrl" data-preview-label="inj_restrl">Lemma 1277</a>.<br> <span class="kw kw-bold">Let</span> $F=e\class{latex-symbol-tip latex-symbol-id-circ}{\circ} f$.<br> <span class="kw kw-bold">Let</span> $G=o\class{latex-symbol-tip latex-symbol-id-circ}{\circ} r$.<br> $F\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A}{\naturals}$ and $G\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A}{\naturals}$ by <a class="xref" href="current_section_standard_library_functions.html#inj_circ" data-preview-label="inj_circ">Proposition 387</a>.<br> $\ran{F}\inter\ran{G}=\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>, <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_left" data-preview-label="inter_elim_left">Proposition 62</a>, <a class="xref" href="current_section_standard_library_sets.html#inter_elim_right" data-preview-label="inter_elim_right">Proposition 63</a>, <a class="xref" href="current_section_standard_library_functions.html#fun_ran_iff" data-preview-label="fun_ran_iff">Proposition 352</a>, <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>, <a class="xref" href="current_section_standard_library_functions.html#circ_apply" data-preview-label="circ_apply">Proposition 373</a>, <a class="xref" href="current_section_standard_library_cardinality.html#double_neq_double_succ" data-preview-label="double_neq_double_succ">Lemma 1286</a>. <br><span class="kw">Thus</span> $F\union G\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{A\union(B\class{latex-symbol-tip latex-symbol-id-setminus}{\setminus} A)}{\naturals}$ by <a class="xref" href="current_section_standard_library_sets.html#setminus_disjoint" data-preview-label="setminus_disjoint">Proposition 106</a>, <a class="xref" href="current_section_standard_library_cardinality.html#union_inj_disjoint" data-preview-label="union_inj_disjoint">Lemma 1289</a>.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus" data-preview-label="setminus">Definition 351</a>, <a class="xref" href="current_section_standard_library_cardinality.html#countable" data-preview-label="countable">Definition 435</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}

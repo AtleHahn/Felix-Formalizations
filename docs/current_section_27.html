@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -420,7 +422,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="immediate_successor_interval">
+<section class="statement lemma helper joins-following-proof" id="immediate_successor_interval">
   <div class="statement-head"><div class="statement-title">Lemma 287</div><span class="label-badge">immediate_successor_interval</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is asymmetric.<br> <span class="kw">Suppose</span> $y$ is an immediate successor of $x$ in $X$ with respect to $R$.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{R}{X}{x}{y}$. <br><span class="kw">Then</span> $I = \{x,y\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -434,7 +436,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="immediate_successor_interval" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_27.html#immediate_successor" data-preview-label="immediate_successor">Definition 148</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -442,7 +444,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="no_immediate_successor_between">
+<section class="statement lemma helper joins-following-proof" id="no_immediate_successor_between">
   <div class="statement-head"><div class="statement-title">Lemma 288</div><span class="label-badge">no_immediate_successor_between</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $x\mathrel{R}y$.<br> <span class="kw">Suppose</span> it is wrong that $y$ is an immediate successor of $x$ in $X$ with respect to $R$. <br><span class="kw">Then</span> there exists $z\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $x\mathrel{R}z$ and $z\mathrel{R}y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -457,7 +459,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="no_immediate_successor_between" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $I = \intervalclosedrel{R}{X}{x}{y}$.<br> <span class="kw">Suppose</span> not.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\{x,y\}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} I$.</span></summary>
@@ -514,7 +516,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="ordered_closed_interval_compact">
+<section class="statement theorem joins-following-proof" id="ordered_closed_interval_compact">
   <div class="statement-head"><div class="statement-title">Theorem 60</div><span class="label-badge">ordered_closed_interval_compact</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Assume</span> $X$ has the least upper bound property with respect to $R$.<br> <span class="kw">Assume</span> $T$ is the order topology on $X$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $a\mathrel{R}b$ or $a = b$.<br> <span class="kw kw-bold">Let</span> $Y = \intervalclosedrel{R}{X}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is compact with respect to $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -533,7 +535,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="ordered_closed_interval_compact" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$R$ is transitive and $R$ is asymmetric and $R$ is connex on $X$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>.</p></div>
@@ -1520,7 +1522,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="real_closed_interval_compact">
+<section class="statement corollary joins-following-proof" id="real_closed_interval_compact">
   <div class="statement-head"><div class="statement-title">Corollary 3</div><span class="label-badge">real_closed_interval_compact</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a < b$ or $a = b$.<br> <span class="kw kw-bold">Let</span> $R = \realOrderRel$.<br> <span class="kw kw-bold">Let</span> $T = \realOrderTopology$.<br> <span class="kw kw-bold">Let</span> $Y = \intervalclosedrel{R}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is compact with respect to $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1538,7 +1540,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_closed_interval_compact" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $X = \reals$.<br> $R$ is a simple order relation on $X$ and $X$ has the least upper bound property with respect to $R$ and $X$ has more than one element by <a class="xref" href="current_section_24.html#real_order_relation_simple" data-preview-label="real_order_relation_simple">Lemma 247</a>, <a class="xref" href="current_section_24.html#reals_linear_continuum" data-preview-label="reals_linear_continuum">Lemma 251</a>, <a class="xref" href="current_section_24.html#linear_continuum" data-preview-label="linear_continuum">Definition 131</a>.<br> $Y$ is compact with respect to $T_Y$ by <a class="xref" href="current_section_24.html#real_order_topology" data-preview-label="real_order_topology">Definition 133</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_24.html#real_order_relation_intro" data-preview-label="real_order_relation_intro">Lemma 245</a>, <a class="xref" href="current_section_27.html#ordered_closed_interval_compact" data-preview-label="ordered_closed_interval_compact">Theorem 60</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1550,7 +1552,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_four_sum_bound">
+<section class="statement lemma helper joins-following-proof" id="real_four_sum_bound">
   <div class="statement-head"><div class="statement-title">Lemma 289</div><span class="label-badge">real_four_sum_bound</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $r_1,r_2,r_3,r_4,M_0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $r_1 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} 1$ and $r_4 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} 1$ and $r_2 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} M_0$ and $r_3 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} M_0$. <br><span class="kw">Then</span> $(r_1 + r_2) + (r_3 + r_4) \class{latex-symbol-tip latex-symbol-id-leq}{\leq} (M_0 + 1) + (M_0 + 1)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1563,7 +1565,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_four_sum_bound" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r_2 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r_3 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $M_0 + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> $r_1 + r_2\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r_3 + r_4\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r_4 + r_3\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $(r_1 + r_2) + (r_3 + r_4)\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $(M_0 + 1) + (r_3 + r_4)\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $(r_3 + r_4) + (M_0 + 1)\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $(M_0 + 1) + (M_0 + 1)\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> $r_1 + r_2 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} 1 + r_2$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> $1 + r_2 = r_2 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> $r_2 + 1 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} M_0 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> <span class="kw">Hence</span> $r_1 + r_2 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} M_0 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>.<br> $r_4 + r_3 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} 1 + r_3$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> $r_4 + r_3 = r_3 + r_4$ and $1 + r_3 = r_3 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> $r_3 + 1 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} M_0 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> <span class="kw">Hence</span> $r_3 + r_4 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} M_0 + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>. <br><span class="kw">Thus</span> $(r_1 + r_2) + (r_3 + r_4) \class{latex-symbol-tip latex-symbol-id-leq}{\leq} (M_0 + 1) + (r_3 + r_4)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> $(M_0 + 1) + (r_3 + r_4) = (r_3 + r_4) + (M_0 + 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.<br> $(r_3 + r_4) + (M_0 + 1) \class{latex-symbol-tip latex-symbol-id-leq}{\leq} (M_0 + 1) + (M_0 + 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> <span class="kw">Therefore</span> $(r_1 + r_2) + (r_3 + r_4) \class{latex-symbol-tip latex-symbol-id-leq}{\leq} (M_0 + 1) + (M_0 + 1)$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1590,7 +1592,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_intervalclosed_compact_standard">
+<section class="statement lemma helper joins-following-proof" id="real_intervalclosed_compact_standard">
   <div class="statement-head"><div class="statement-title">Lemma 290</div><span class="label-badge">real_intervalclosed_compact_standard</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} b$.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosed{a}{b}$. <br><span class="kw">Then</span> $I$ is compact with respect to $\subspaceTopology{\standardTopologyR}{I}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1605,7 +1607,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_intervalclosed_compact_standard" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $R = \realOrderRel$.<br> <span class="kw kw-bold">Let</span> $J = \intervalclosedrel{R}{\reals}{a}{b}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} I$ we have $x\class{latex-symbol-tip latex-symbol-id-in}{\in} J$.</span></summary>
@@ -1640,7 +1642,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="projection_map_indexed_continuous">
+<section class="statement lemma helper joins-following-proof" id="projection_map_indexed_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 291</div><span class="label-badge">projection_map_indexed_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $X$ is a function.<br> <span class="kw">Assume</span> $T$ is a function.<br> <span class="kw">Assume</span> $\dom{T} = \dom{X}$.<br> <span class="kw">Assume</span> $\dom{X}$ is inhabited.<br> <span class="kw">Assume</span> that for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is a topology on $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.<br> <span class="kw kw-bold">Let</span> $T_0 = \productTopologyIndexed{T}{X}$. <br><span class="kw">Then</span> for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ is continuous from $\productFamily{X}$ to $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ with respect to $T_0$ and $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1658,7 +1660,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="projection_map_indexed_continuous" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T_0$ is a topology on $\productFamily{X}$ by <a class="xref" href="current_section_19.html#product_subbasis_is_subbasis" data-preview-label="product_subbasis_is_subbasis">Lemma 101</a>, <a class="xref" href="current_section_19.html#product_subbasis_finite_intersections_basis" data-preview-label="product_subbasis_finite_intersections_basis">Lemma 102</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>, <a class="xref" href="current_section_13.html#basis_for_topology" data-preview-label="basis_for_topology">Definition 15</a>.<br> <span class="kw kw-bold">Let</span> $j = \identity{\productFamily{X}}$.<br> $j\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{\productFamily{X}}{\productFamily{X}}$ and $j$ is continuous from $\productFamily{X}$ to $\productFamily{X}$ with respect to $T_0$ and $T_0$ by <a class="xref" href="current_section_standard_library_functions.html#id_elem_funs" data-preview-label="id_elem_funs">Proposition 406</a>, <a class="xref" href="current_section_23.html#identity_continuous" data-preview-label="identity_continuous">Lemma 233</a>.<br> <span class="kw">Therefore</span> for all $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$ we have $\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-circ}{\circ} j$ is continuous from $\productFamily{X}$ to $\apply{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ with respect to $T_0$ and $\apply{T}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}$ by <a class="xref" href="current_section_19.html#continuous_map_into_indexed_product" data-preview-label="continuous_map_into_indexed_product">Lemma 118</a>.<br> <span class="kw kw-bold">Fix</span> $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}$ such that $\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{X}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x,z$ we have $x\mathrel{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}\class{latex-symbol-tip latex-symbol-id-circ}{\circ} j} z$ iff $x\mathrel{\piIndex{X}{\class{latex-symbol-tip latex-symbol-id-alpha}{\alpha}}} z$.</span></summary>
@@ -1718,7 +1720,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="continuous_eq_subst">
+<section class="statement lemma helper joins-following-proof" id="continuous_eq_subst">
   <div class="statement-head"><div class="statement-title">Lemma 292</div><span class="label-badge">continuous_eq_subst</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $f,g$ be functions.<br> <span class="kw">Suppose</span> $f = g$.<br> <span class="kw">Suppose</span> $g$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1732,7 +1734,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="continuous_eq_subst" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1740,7 +1742,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="continuous_eq_codomain">
+<section class="statement lemma helper joins-following-proof" id="continuous_eq_codomain">
   <div class="statement-head"><div class="statement-title">Lemma 293</div><span class="label-badge">continuous_eq_codomain</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $Y = Y_2$.<br> <span class="kw">Suppose</span> $T_1 = T_2$.<br> <span class="kw">Suppose</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$. <br><span class="kw">Then</span> $f$ is continuous from $X$ to $Y_2$ with respect to $T$ and $T_2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1754,7 +1756,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="continuous_eq_codomain" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Trivial.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1762,7 +1764,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="finite_indexed_product_compact_property_succ">
+<section class="statement lemma joins-following-proof" id="finite_indexed_product_compact_property_succ">
   <div class="statement-head"><div class="statement-title">Lemma 294</div><span class="label-badge">finite_indexed_product_compact_property_succ</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw">Assume</span> $\finiteIndexedProductCompactProp{k}$. <br><span class="kw">Then</span> $\finiteIndexedProductCompactProp{k + 1}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1775,7 +1777,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="finite_indexed_product_compact_property_succ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $Y_1,T_1$ such that $Y_1$ is a function and $T_1$ is a function and $\dom{Y_1} = \initialSegment{k + 1}$ and $\dom{T_1} = \initialSegment{k + 1}$ and for all $i\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{Y_1}$ we have $\apply{T_1}{i}$ is a topology on $\apply{Y_1}{i}$ and $\apply{Y_1}{i}$ is compact with respect to $\apply{T_1}{i}$, we have $\productFamily{Y_1}$ is compact with respect to $\productTopologyIndexed{T_1}{Y_1}$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $Y_1$.<br> <span class="kw kw-bold">Fix</span> $T_1$.<br> <span class="kw">Assume</span> $Y_1$ is a function.<br> <span class="kw">Assume</span> $T_1$ is a function.<br> <span class="kw">Assume</span> $\dom{Y_1} = \initialSegment{k + 1}$.<br> <span class="kw">Assume</span> $\dom{T_1} = \initialSegment{k + 1}$.<br> <span class="kw">Assume</span> that for all $i\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{Y_1}$ we have $\apply{T_1}{i}$ is a topology on $\apply{Y_1}{i}$ and $\apply{Y_1}{i}$ is compact with respect to $\apply{T_1}{i}$.<br> <span class="kw kw-bold">Let</span> $J_1 = \initialSegment{k}$.<br> <span class="kw kw-bold">Let</span> $J = \initialSegment{k + 1}$.<br> For all $i$ such that $i\class{latex-symbol-tip latex-symbol-id-in}{\in} J_1$ we have $i\class{latex-symbol-tip latex-symbol-id-in}{\in} J$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#initial_segment_naturalsplus" data-preview-label="initial_segment_naturalsplus">Definition 429</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_20.html#real_lt_imp_leq" data-preview-label="real_lt_imp_leq">Lemma 156</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>.<br> <span class="kw">Hence</span> $J_1\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} J$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $k + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $k + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>. <br><span class="kw">Thus</span> $k < k + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>.</p>
@@ -2499,7 +2501,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="compact_indexed_product_initial_segment">
+<section class="statement lemma helper joins-following-proof" id="compact_indexed_product_initial_segment">
   <div class="statement-head"><div class="statement-title">Lemma 295</div><span class="label-badge">compact_indexed_product_initial_segment</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw kw-bold">Let</span> $J = \initialSegment{n}$.<br> <span class="kw">Assume</span> $Y$ is a function.<br> <span class="kw">Assume</span> $T_Y$ is a function.<br> <span class="kw">Assume</span> $\dom{Y} = J$.<br> <span class="kw">Assume</span> $\dom{T_Y} = J$.<br> <span class="kw">Assume</span> that for all $i\class{latex-symbol-tip latex-symbol-id-in}{\in} J$ we have $\apply{T_Y}{i}$ is a topology on $\apply{Y}{i}$.<br> <span class="kw">Assume</span> that for all $i\class{latex-symbol-tip latex-symbol-id-in}{\in} J$ we have $\apply{Y}{i}$ is compact with respect to $\apply{T_Y}{i}$. <br><span class="kw">Then</span> $\productFamily{Y}$ is compact with respect to $\productTopologyIndexed{T_Y}{Y}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2518,7 +2520,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="compact_indexed_product_initial_segment" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \finiteIndexedProductCompactProp{m}\}$.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</span></summary>
@@ -2719,7 +2721,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="square_metric_topology_equals_euclidean">
+<section class="statement lemma helper joins-following-proof" id="square_metric_topology_equals_euclidean">
   <div class="statement-head"><div class="statement-title">Lemma 296</div><span class="label-badge">square_metric_topology_equals_euclidean</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw kw-bold">Let</span> $J = \initialSegment{n}$.<br> <span class="kw kw-bold">Let</span> $X = \realsPower{J}$.<br> <span class="kw kw-bold">Let</span> $T_E = \metricTopology{\euclideanMetric{n}}{X}$.<br> <span class="kw kw-bold">Let</span> $T_S = \metricTopology{\squareMetric{n}}{X}$. <br><span class="kw">Then</span> $T_E = T_S$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2735,7 +2737,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="square_metric_topology_equals_euclidean" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $X_0 = X$.<br> <span class="kw kw-bold">Let</span> $d = \euclideanMetric{n}$.<br> <span class="kw kw-bold">Let</span> $d_1 = \squareMetric{n}$.<br> $d$ is a metric on $X_0$ and $d_1$ is a metric on $X_0$ by <a class="xref" href="current_section_20.html#euclidean_metric_is_metric" data-preview-label="euclidean_metric_is_metric">Theorem 18</a>, <a class="xref" href="current_section_20.html#square_metric_is_metric" data-preview-label="square_metric_is_metric">Lemma 175</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X_0$ we have for all $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ there exists $\class{latex-symbol-tip latex-symbol-id-delta}{\delta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $0 < \class{latex-symbol-tip latex-symbol-id-delta}{\delta}$ and $\metricBall{d}{X_0}{x}{\class{latex-symbol-tip latex-symbol-id-delta}{\delta}} \class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \metricBall{d_1}{X_0}{x}{\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}}$.</span></summary>
@@ -2831,7 +2833,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="reals_standard_indexed_families_data">
+<section class="statement lemma helper joins-following-proof" id="reals_standard_indexed_families_data">
   <div class="statement-head"><div class="statement-title">Lemma 297</div><span class="label-badge">reals_standard_indexed_families_data</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw kw-bold">Let</span> $J = \initialSegment{n}$.<br> <span class="kw kw-bold">Let</span> $X_1 = \{(i,\reals) \mid i\class{latex-symbol-tip latex-symbol-id-in}{\in} J\}$.<br> <span class="kw kw-bold">Let</span> $T_1 = \{(i,\standardTopologyR) \mid i\class{latex-symbol-tip latex-symbol-id-in}{\in} J\}$. <br><span class="kw">Then</span> $X_1$ is a function and $T_1$ is a function and $\dom{X_1} = J$ and $\dom{T_1} = J$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2846,7 +2848,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="reals_standard_indexed_families_data" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $i,y_1,y_2$ such that $(i,y_1)\class{latex-symbol-tip latex-symbol-id-in}{\in} X_1$ and $(i,y_2)\class{latex-symbol-tip latex-symbol-id-in}{\in} X_1$ we have $y_1 = y_2$.</span></summary>
   <div class="proof-body"><p>Trivial.</p></div>
@@ -2900,7 +2902,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="compact_reals_power_iff_closed_bounded">
+<section class="statement theorem joins-following-proof" id="compact_reals_power_iff_closed_bounded">
   <div class="statement-head"><div class="statement-title">Theorem 61</div><span class="label-badge">compact_reals_power_iff_closed_bounded</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw kw-bold">Let</span> $J = \initialSegment{n}$.<br> <span class="kw kw-bold">Let</span> $X = \realsPower{J}$.<br> <span class="kw kw-bold">Let</span> $d = \euclideanMetric{n}$.<br> <span class="kw kw-bold">Let</span> $\class{latex-symbol-tip latex-symbol-id-rho}{\rho} = \squareMetric{n}$.<br> <span class="kw kw-bold">Let</span> $T = \metricTopology{\class{latex-symbol-tip latex-symbol-id-rho}{\rho}}{X}$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T}{A}$. <br><span class="kw">Then</span> $A$ is compact with respect to $T_A$ iff $A$ is closed in $X$ with respect to $T$ and $A$ is bounded in $X$ with respect to $d$ or $A$ is bounded in $X$ with respect to $\class{latex-symbol-tip latex-symbol-id-rho}{\rho}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2921,7 +2923,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="compact_reals_power_iff_closed_bounded" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $X_0 = X$.<br> <span class="kw kw-bold">Let</span> $d_1 = \class{latex-symbol-tip latex-symbol-id-rho}{\rho}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $A$ is compact with respect to $T_A$ then $A$ is closed in $X$ with respect to $T$ and $A$ is bounded in $X$ with respect to $d$ or $A$ is bounded in $X$ with respect to $\class{latex-symbol-tip latex-symbol-id-rho}{\rho}$.</span></summary>
@@ -3894,7 +3896,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_inhabited_largest_element">
+<section class="statement lemma helper joins-following-proof" id="finite_inhabited_largest_element">
   <div class="statement-head"><div class="statement-title">Lemma 298</div><span class="label-badge">finite_inhabited_largest_element</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $F$ is finite.<br> <span class="kw">Suppose</span> $F$ is inhabited. <br><span class="kw">Then</span> there exists $b$ such that $b$ is a largest element of $F$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3909,7 +3911,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_inhabited_largest_element" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that there exists a bijection from $\initialSegment{k}$ to $F$ by <a class="xref" href="current_section_standard_library_cardinality.html#finite" data-preview-label="finite">Definition 434</a>.<br> <span class="kw kw-bold">Take</span> $f$ such that $f$ is a bijection from $\initialSegment{k}$ to $F$.<br> <span class="kw kw-bold">Let</span> $A = \{ n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \text{for all $G,g$ such that $g$ is a bijection from $\initialSegment{n}$ to $G$ and $G\subseteq X$ and $G$ is inhabited there exists $b$ such that $b$ is a largest element of $G$ with respect to $R$}\}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $G,g$ such that $g$ is a bijection from $\initialSegment{1}$ to $G$ and $G\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $G$ is inhabited we have there exists $b$ such that $b$ is a largest element of $G$ with respect to $R$.</span></summary>
@@ -4078,7 +4080,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_inhabited_smallest_element">
+<section class="statement lemma helper joins-following-proof" id="finite_inhabited_smallest_element">
   <div class="statement-head"><div class="statement-title">Lemma 299</div><span class="label-badge">finite_inhabited_smallest_element</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is a simple order relation on $X$.<br> <span class="kw">Suppose</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $F$ is finite.<br> <span class="kw">Suppose</span> $F$ is inhabited. <br><span class="kw">Then</span> there exists $a$ such that $a$ is a smallest element of $F$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -4093,7 +4095,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_inhabited_smallest_element" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \converse{R}$.<br> $S$ is a simple order relation on $X$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#converse_type" data-preview-label="converse_type">Proposition 190</a>, <a class="xref" href="current_section_standard_library_relations.html#converse_iff" data-preview-label="converse_iff">Proposition 186</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_relations.html#asymmetric" data-preview-label="asymmetric">Definition 381</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>.<br> <span class="kw kw-bold">Take</span> $a$ such that $a$ is a largest element of $F$ with respect to $S$ by <a class="xref" href="current_section_27.html#finite_inhabited_largest_element" data-preview-label="finite_inhabited_largest_element">Lemma 298</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $x\mathrel{S}a$ or $x = a$ by <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>.<br> For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $a\mathrel{R}x$ or $a = x$ by <a class="xref" href="current_section_standard_library_relations.html#converse_iff" data-preview-label="converse_iff">Proposition 186</a>.<br> $a$ is a smallest element of $F$ with respect to $R$ by <a class="xref" href="current_section_14.html#largest_element" data-preview-label="largest_element">Definition 28</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#smallest_element" data-preview-label="smallest_element">Definition 444</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -4108,7 +4110,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="extreme_value_theorem">
+<section class="statement theorem joins-following-proof" id="extreme_value_theorem">
   <div class="statement-head"><div class="statement-title">Theorem 62</div><span class="label-badge">extreme_value_theorem</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T_X$ is a topology on $X$.<br> <span class="kw">Assume</span> $T_Y$ is the order topology on $Y$ with respect to $R$.<br> <span class="kw">Suppose</span> $f$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $X$ is compact with respect to $T_X$.<br> <span class="kw">Suppose</span> $X\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> there exist $c,d\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $\apply{f}{c}$ is a smallest element of $\img{f}{X}$ with respect to $R$ and $\apply{f}{d}$ is a largest element of $\img{f}{X}$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -4126,7 +4128,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="extreme_value_theorem" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \img{f}{X}$.<br> <span class="kw kw-bold">Let</span> $T_A = \subspaceTopology{T_Y}{A}$.<br> $A$ is compact with respect to $T_A$ by <a class="xref" href="current_section_26.html#continuous_image_compact" data-preview-label="continuous_image_compact">Theorem 56</a>.<br> $T_Y = \basisTopology{\orderBasis{R}{Y}}{Y}$ and $R$ is a simple order relation on $Y$ and $Y$ has more than one element by <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>.<br> $T_Y$ is a topology on $Y$ by <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>.<br> $f$ is a function to $Y$ and $\dom{f} = X$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_standard_library_relations.html#img_dom" data-preview-label="img_dom">Proposition 238</a>, <a class="xref" href="current_section_standard_library_functions.html#function_to_ran" data-preview-label="function_to_ran">Proposition 354</a>.<br> $A$ is a subspace of $Y$ with respect to $T_Y$ by <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>.<br> $A$ is inhabited by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>, <a class="xref" href="current_section_standard_library_functions.html#function_apply_elim" data-preview-label="function_apply_elim">Proposition 348</a>, <a class="xref" href="current_section_standard_library_relations.html#img_iff" data-preview-label="img_iff">Proposition 235</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">There exists $M$ such that $M$ is a largest element of $A$ with respect to $R$.</span></summary>
@@ -4299,7 +4301,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="point_set_distance_continuous">
+<section class="statement lemma helper joins-following-proof" id="point_set_distance_continuous">
   <div class="statement-head"><div class="statement-title">Lemma 300</div><span class="label-badge">point_set_distance_continuous</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $d$ is a metric on $X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$.<br> <span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw kw-bold">Let</span> $T = \metricTopology{d}{X}$. <br><span class="kw">Then</span> there exists $f$ such that $f$ is a function from $X$ to $\reals$ and for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $f(x)$ is the distance from $x$ to $A$ in $X$ with respect to $d$ and $f$ is continuous from $X$ to $\reals$ with respect to $T$ and $\standardTopologyR$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -4317,7 +4319,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="point_set_distance_continuous" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $R = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times}\reals \mid \text{there exists $x\in X$ such that there exists $r\in\reals$ such that $w = (x,r)$ and $r$ is the distance from $x$ to $A$ in $X$ with respect to $d$}\}$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ there exist $x,r$ such that $w = (x,r)$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $r$ such that $x\mathrel{R} r$.</span></summary>
@@ -4587,7 +4589,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <p>from §27 Item 6: Lebesgue number lemma</p>
-<section class="statement lemma" id="lebesgue_number_lemma">
+<section class="statement lemma joins-following-proof" id="lebesgue_number_lemma">
   <div class="statement-head"><div class="statement-title">Lemma 301</div><span class="label-badge">lebesgue_number_lemma</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $d$ is a metric on $X$.<br> <span class="kw kw-bold">Let</span> $T = \metricTopology{d}{X}$.<br> <span class="kw">Suppose</span> $A$ is an open covering of $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $X\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw">Suppose</span> $X$ is compact with respect to $T$. <br><span class="kw">Then</span> there exists $\class{latex-symbol-tip latex-symbol-id-delta}{\delta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $0 < \class{latex-symbol-tip latex-symbol-id-delta}{\delta}$ and for all $B$ such that $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and for all $x,y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ we have $d((x,y)) < \class{latex-symbol-tip latex-symbol-id-delta}{\delta}$ there exists $U\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $B\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -4606,7 +4608,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="lebesgue_number_lemma" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $x_0$ such that $x_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw kw-bold">Take</span> $U_0\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $x_0\class{latex-symbol-tip latex-symbol-id-in}{\in} U_0$ by <a class="xref" href="current_section_26.html#open_covering" data-preview-label="open_covering">Definition 146</a>, <a class="xref" href="current_section_26.html#covering" data-preview-label="covering">Definition 145</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#unions_iff" data-preview-label="unions_iff">Axiom 4</a>.<br> <span class="kw kw-bold">Let</span> $R = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in} X\class{latex-symbol-tip latex-symbol-id-times}{\times}\pow{X} \mid \text{there exists $x\in X$ such that there exists $D\in\pow{X}$ such that there exists $\delta\in\reals$ such that there exists $U\in A$ such that $w = (x,D)$ and $0 &lt; \delta$ and $D = \metricBall{d}{X}{x}{\delta}$ and $\metricBall{d}{X}{x}{\delta + \delta} \subseteq U$}\}$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ there exist $x,D$ such that $w = (x,D)$.<br> $R$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ there exists $D$ such that $x\mathrel{R}D$.</span></summary>
@@ -5013,7 +5015,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="uniform_continuity_theorem">
+<section class="statement theorem joins-following-proof" id="uniform_continuity_theorem">
   <div class="statement-head"><div class="statement-title">Theorem 63</div><span class="label-badge">uniform_continuity_theorem</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $d_X$ is a metric on $X$.<br> <span class="kw">Suppose</span> $d_Y$ is a metric on $Y$.<br> <span class="kw kw-bold">Let</span> $T_X = \metricTopology{d_X}{X}$.<br> <span class="kw kw-bold">Let</span> $T_Y = \metricTopology{d_Y}{Y}$.<br> <span class="kw">Suppose</span> $f$ is continuous from $X$ to $Y$ with respect to $T_X$ and $T_Y$.<br> <span class="kw">Suppose</span> $X$ is compact with respect to $T_X$. <br><span class="kw">Then</span> $f$ is uniformly continuous from $X$ to $Y$ with respect to $d_X$ and $d_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5030,7 +5032,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="uniform_continuity_theorem" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ there exists $\class{latex-symbol-tip latex-symbol-id-delta}{\delta}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $0 < \class{latex-symbol-tip latex-symbol-id-delta}{\delta}$ and for all $x_0,x_1\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $d_X((x_0,x_1)) < \class{latex-symbol-tip latex-symbol-id-delta}{\delta}$ we have $d_Y((\apply{f}{x_0},\apply{f}{x_1})) < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$.</span></summary>
@@ -5419,7 +5421,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="open_set_shrink_away_point">
+<section class="statement lemma helper joins-following-proof" id="open_set_shrink_away_point">
   <div class="statement-head"><div class="statement-title">Lemma 302</div><span class="label-badge">open_set_shrink_away_point</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $U$ is open in $X$ with respect to $T$.<br> <span class="kw">Assume</span> $U\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw">Assume</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Assume</span> for all $z\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $z$ is not an isolated point of $X$ with respect to $T$. <br><span class="kw">Then</span> there exists $V$ such that $V$ is open in $X$ with respect to $T$ and $V\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ and $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\closure{V}{X}{T}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5440,7 +5442,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="open_set_shrink_away_point" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">There exists $y$ such that $y\class{latex-symbol-tip latex-symbol-id-in}{\in} U$ and $y\class{latex-symbol-tip latex-symbol-id-neq}{\neq} x$.</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} U$.</div><div class="case-body"><p><span class="kw">Suppose</span> not.</p>
@@ -5555,7 +5557,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="countable_nonempty_surj_naturals">
+<section class="statement lemma helper joins-following-proof" id="countable_nonempty_surj_naturals">
   <div class="statement-head"><div class="statement-title">Lemma 303</div><span class="label-badge">countable_nonempty_surj_naturals</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $X$ is countable.<br> <span class="kw">Suppose</span> $X\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> there exists $g$ such that $g$ is a surjection from $\naturals$ to $X$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5568,7 +5570,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="countable_nonempty_surj_naturals" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $f$ such that $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\inj{X}{\naturals}$ by <a class="xref" href="current_section_standard_library_cardinality.html#countable" data-preview-label="countable">Definition 435</a>.<br> $f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{\naturals}$ and for all $x,y\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $f(x) = f(y)$ we have $x = y$ by <a class="xref" href="current_section_standard_library_functions.html#inj" data-preview-label="inj">Definition 401</a>.<br> <span class="kw">Hence</span> $f$ is a function by <a class="xref" href="current_section_standard_library_functions.html#funs_is_function" data-preview-label="funs_is_function">Proposition 356</a>.<br> <span class="kw">Therefore</span> $f$ is a function from $X$ to $\naturals$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> <span class="kw kw-bold">Take</span> $x_0$ such that $x_0\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw kw-bold">Let</span> $A = \img{f}{X}$.<br> <span class="kw kw-bold">Let</span> $R_1 = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals\class{latex-symbol-tip latex-symbol-id-times}{\times} X \mid \text{$\fst{w}\in A$ and $f(\snd{w}) = \fst{w}$}\}$.<br> <span class="kw kw-bold">Let</span> $R_2 = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals\class{latex-symbol-tip latex-symbol-id-times}{\times} X \mid \text{$\fst{w}\notin A$ and $\snd{w} = x_0$}\}$.<br> <span class="kw kw-bold">Let</span> $R = R_1\union R_2$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$R_1$ is a relation.</span></summary>
@@ -5705,7 +5707,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="naturals_subseteq_reals">
+<section class="statement lemma helper joins-following-proof" id="naturals_subseteq_reals">
   <div class="statement-head"><div class="statement-title">Lemma 304</div><span class="label-badge">naturals_subseteq_reals</span></div>
   <div class="statement-body"><p>$\naturals\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5716,7 +5718,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="naturals_subseteq_reals" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ we have $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $n$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ or $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.</p>
@@ -5755,7 +5757,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="natural_comparability">
+<section class="statement lemma helper joins-following-proof" id="natural_comparability">
   <div class="statement-head"><div class="statement-title">Lemma 305</div><span class="label-badge">natural_comparability</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $m$ is a natural number.<br> <span class="kw">Suppose</span> $n$ is a natural number. <br><span class="kw">Then</span> $m < n$ or $n < m$ or $m = n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5768,7 +5770,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="natural_comparability" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$m\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_27.html#naturals_subseteq_reals" data-preview-label="naturals_subseteq_reals">Lemma 304</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>. <br><span class="kw">Thus</span> $m < n$ or $n < m$ or $m = n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -5777,7 +5779,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="finite_inhabited_naturals_largest">
+<section class="statement lemma helper joins-following-proof" id="finite_inhabited_naturals_largest">
   <div class="statement-head"><div class="statement-title">Lemma 306</div><span class="label-badge">finite_inhabited_naturals_largest</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturals$.<br> <span class="kw">Suppose</span> $F$ is finite.<br> <span class="kw">Suppose</span> $F$ is inhabited. <br><span class="kw">Then</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ such that for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $a\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5791,7 +5793,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="finite_inhabited_naturals_largest" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$F\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_27.html#naturals_subseteq_reals" data-preview-label="naturals_subseteq_reals">Lemma 304</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.<br> $F\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_24.html#inhabited_nonempty" data-preview-label="inhabited_nonempty">Lemma 248</a>.<br> <span class="kw kw-bold">Take</span> $m\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ such that $m$ is a maximum of $F$ by <a class="xref" href="current_section_standard_library_cardinality.html#finite_real_maximum" data-preview-label="finite_real_maximum">Lemma 1272</a>. <br><span class="kw">Thus</span> for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} F$ we have $a\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -5822,7 +5824,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="zero_in_naturals">
+<section class="statement lemma helper joins-following-proof" id="zero_in_naturals">
   <div class="statement-head"><div class="statement-title">Lemma 307</div><span class="label-badge">zero_in_naturals</span></div>
   <div class="statement-body"><p>$0\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5833,7 +5835,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="zero_in_naturals" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$0\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_intro" data-preview-label="singleton_intro">Proposition 20</a>.<br> <span class="kw">Hence</span> $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\union\{0\}$ by <a class="xref" href="current_section_standard_library_sets.html#union_intro_right" data-preview-label="union_intro_right">Proposition 39</a>. <br><span class="kw">Thus</span> $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -5843,7 +5845,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="naturals_closed_successor">
+<section class="statement lemma joins-following-proof" id="naturals_closed_successor">
   <div class="statement-head"><div class="statement-title">Lemma 308</div><span class="label-badge">naturals_closed_successor</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5855,7 +5857,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="naturals_closed_successor" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ or $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</div><div class="case-body"><p>$n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>.<br> <span class="kw">Hence</span> $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\union\{0\}$ by <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>. <br><span class="kw">Thus</span> $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $n\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\naturalsPlus$.</div><div class="case-body"><p>$n = 0$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>.<br> $0 + 1 = 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>. <br><span class="kw">Thus</span> $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>.<br> <span class="kw">Hence</span> $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus\union\{0\}$ by <a class="xref" href="current_section_standard_library_sets.html#union_intro_left" data-preview-label="union_intro_left">Proposition 38</a>.<br> <span class="kw">Therefore</span> $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5891,7 +5893,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="natural_nonnegative">
+<section class="statement lemma joins-following-proof" id="natural_nonnegative">
   <div class="statement-head"><div class="statement-title">Lemma 309</div><span class="label-badge">natural_nonnegative</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $0\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5903,7 +5905,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="natural_nonnegative" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ or $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</div><div class="case-body"><p>$1 < n$ or $1 = n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>.<br> $0 < 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>.<br> <span class="kw">Hence</span> $0 < n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>. <br><span class="kw">Thus</span> $0\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ by <a class="xref" href="current_section_20.html#real_lt_imp_leq" data-preview-label="real_lt_imp_leq">Lemma 156</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $n\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\naturalsPlus$.</div><div class="case-body"><p>$n = 0$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>. <br><span class="kw">Thus</span> $0\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5937,7 +5939,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="natural_lt_successor">
+<section class="statement lemma joins-following-proof" id="natural_lt_successor">
   <div class="statement-head"><div class="statement-title">Lemma 310</div><span class="label-badge">natural_lt_successor</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$. <br><span class="kw">Then</span> $n < n + 1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5949,7 +5951,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="natural_lt_successor" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$n\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_27.html#naturals_subseteq_reals" data-preview-label="naturals_subseteq_reals">Lemma 304</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.<br> $0 < 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>.<br> $0 + n < 1 + n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>.<br> $0 + n = n$ and $1 + n = n + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>. <br><span class="kw">Thus</span> $n < n + 1$ by <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -5962,7 +5964,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="natural_lt_successor_split">
+<section class="statement lemma joins-following-proof" id="natural_lt_successor_split">
   <div class="statement-head"><div class="statement-title">Lemma 311</div><span class="label-badge">natural_lt_successor_split</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $k < n + 1$. <br><span class="kw">Then</span> $k < n$ or $k = n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -5975,7 +5977,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="natural_lt_successor_split" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ or $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.<br> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ or $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#naturals" data-preview-label="naturals">Definition 426</a>, <a class="xref" href="current_section_standard_library_sets.html#union_iff" data-preview-label="union_iff">Axiom 5</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</div><div class="case-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</div><div class="case-body"><p>$k < n$ or $k = n$ or $k = n + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_succ_discrete" data-preview-label="real_succ_discrete">Axiom 44</a>. <br><span class="kw">Thus</span> $k < n$ or $k = n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $k\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\naturalsPlus$.</div><div class="case-body"><p>$k = 0$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>.<br> $0\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ by <a class="xref" href="current_section_27.html#natural_nonnegative" data-preview-label="natural_nonnegative">Lemma 309</a>.<br> $0\class{latex-symbol-tip latex-symbol-id-neq}{\neq} n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.<br> <span class="kw">Hence</span> $0 < n$ by <a class="xref" href="current_section_13.html#real_leq_split" data-preview-label="real_leq_split">Lemma 6</a>. <br><span class="kw">Thus</span> $k < n$.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6095,7 +6097,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="natural_successor_leq">
+<section class="statement lemma joins-following-proof" id="natural_successor_leq">
   <div class="statement-head"><div class="statement-title">Lemma 312</div><span class="label-badge">natural_successor_leq</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $k < n$. <br><span class="kw">Then</span> $k + 1\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6108,7 +6110,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="natural_successor_leq" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$k + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_27.html#naturals_closed_successor" data-preview-label="naturals_closed_successor">Lemma 308</a>.<br> $k + 1 < n$ or $n < k + 1$ or $k + 1 = n$ by <a class="xref" href="current_section_27.html#natural_comparability" data-preview-label="natural_comparability">Lemma 305</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">It is wrong that $n < k + 1$.</span></summary>
@@ -6131,7 +6133,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="natural_leq_successor_split">
+<section class="statement lemma joins-following-proof" id="natural_leq_successor_split">
   <div class="statement-head"><div class="statement-title">Lemma 313</div><span class="label-badge">natural_leq_successor_split</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n + 1$. <br><span class="kw">Then</span> $k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$ or $k = n + 1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6144,7 +6146,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="natural_leq_successor_split" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$k < n + 1$ or $k = n + 1$ by <a class="xref" href="current_section_13.html#real_leq_split" data-preview-label="real_leq_split">Lemma 6</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $k = n + 1$.</div><div class="case-body"><p>Trivial.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $k\class{latex-symbol-tip latex-symbol-id-neq}{\neq} n + 1$.</div><div class="case-body"><p>$k < n$ or $k = n$ by <a class="xref" href="current_section_27.html#natural_lt_successor_split" data-preview-label="natural_lt_successor_split">Lemma 311</a>.<br> <span class="kw">Hence</span> $k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6170,7 +6172,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="natural_segment_zero">
+<section class="statement lemma joins-following-proof" id="natural_segment_zero">
   <div class="statement-head"><div class="statement-title">Lemma 314</div><span class="label-badge">natural_segment_zero</span></div>
   <div class="statement-body"><p>$\{k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} 0\} = \{0\}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6181,7 +6183,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="natural_segment_zero" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $I = \{k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} 0\}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $k\class{latex-symbol-tip latex-symbol-id-in}{\in} I$ we have $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\{0\}$.</span></summary>
@@ -6216,7 +6218,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="shrinking_sequence_exists">
+<section class="statement lemma helper joins-following-proof" id="shrinking_sequence_exists">
   <div class="statement-head"><div class="statement-title">Lemma 315</div><span class="label-badge">shrinking_sequence_exists</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw">Suppose</span> $g$ is a function from $\naturals$ to $X$.<br> <span class="kw">Suppose</span> for all $U,x$ such that $U$ is open in $X$ with respect to $T$ and $U\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $c((U,x))$ is open in $X$ with respect to $T$ and $c((U,x))\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $c((U,x))\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} U$ and $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\closure{c((U,x))}{X}{T}$. <br><span class="kw">Then</span> for all $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ there exists $s$ such that $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6240,7 +6242,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="shrinking_sequence_exists" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Fix</span> $m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw kw-bold">Let</span> $A = \{n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid \text{there exists $s$ such that $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$}\}$.<br> $X\class{latex-symbol-tip latex-symbol-id-in}{\in} T$ by <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>.<br> <span class="kw">Hence</span> $X$ is open in $X$ with respect to $T$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>.<br> $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_27.html#zero_in_naturals" data-preview-label="zero_in_naturals">Lemma 307</a>.<br> $0\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{g}$ by <a class="xref" href="current_section_standard_library_functions.html#funs" data-preview-label="funs">Definition 400</a>.<br> <span class="kw">Therefore</span> $g(0)\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ by <a class="xref" href="current_section_standard_library_functions.html#funs_type_apply" data-preview-label="funs_type_apply">Proposition 361</a>.<br> <span class="kw kw-bold">Let</span> $V = c((X,g(0)))$.<br> $V$ is open in $X$ with respect to $T$ and $V\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $V\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} X$ and $g(0)\class{latex-symbol-tip latex-symbol-id-notin}{\notin}\closure{V}{X}{T}$ by assumption.<br> <span class="kw kw-bold">Let</span> $s_0 = \{(0,V)\}$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} s_0$ there exist $x, y$ such that $w = (x,y)$ by <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> <span class="kw">Hence</span> $s_0$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $a,b,b'$ such that $(a,b)\class{latex-symbol-tip latex-symbol-id-in}{\in} s_0$ and $(a,b')\class{latex-symbol-tip latex-symbol-id-in}{\in} s_0$ we have $b = b'$.</span></summary>
@@ -6733,7 +6735,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="shrinking_sequence_restriction">
+<section class="statement lemma helper joins-following-proof" id="shrinking_sequence_restriction">
   <div class="statement-head"><div class="statement-title">Lemma 316</div><span class="label-badge">shrinking_sequence_restriction</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $s$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$.<br> <span class="kw kw-bold">Let</span> $I = \{k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} n\}$. <br><span class="kw">Then</span> $\restrl{s}{I}$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6748,7 +6750,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="shrinking_sequence_restriction" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$ by <a class="xref" href="current_section_27.html#shrinking_sequence_upto" data-preview-label="shrinking_sequence_upto">Definition 156</a>.<br> <span class="kw kw-bold">Let</span> $J = \{k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid k\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m\}$.<br> $s$ is a function by <a class="xref" href="current_section_27.html#shrinking_sequence_upto" data-preview-label="shrinking_sequence_upto">Definition 156</a>.<br> For all $k$ we have $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\dom{s}$ iff $k\class{latex-symbol-tip latex-symbol-id-in}{\in} J$ by <a class="xref" href="current_section_27.html#shrinking_sequence_upto" data-preview-label="shrinking_sequence_upto">Definition 156</a>.<br> <span class="kw">Hence</span> $\dom{s} = J$ by <a class="xref" href="current_section_standard_library_sets.html#setext" data-preview-label="setext">Axiom 1 [Set extensionality]</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$I\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} J$.</span></summary>
@@ -6845,7 +6847,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="shrinking_sequence_unique">
+<section class="statement lemma helper joins-following-proof" id="shrinking_sequence_unique">
   <div class="statement-head"><div class="statement-title">Lemma 317</div><span class="label-badge">shrinking_sequence_unique</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $s$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $t$ is a shrinking sequence up to $n$ for $g$ and $c$ in $X$ with respect to $T$. <br><span class="kw">Then</span> $s = t$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -6858,7 +6860,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="shrinking_sequence_unique" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid \text{for all $s_0,t_0$ such that $s_0$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$ and $t_0$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$ we have $s_0 = t_0$}\}$.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturals$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$0\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</span></summary>
@@ -7116,7 +7118,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="shrinking_sequence_terms_nested">
+<section class="statement lemma helper joins-following-proof" id="shrinking_sequence_terms_nested">
   <div class="statement-head"><div class="statement-title">Lemma 318</div><span class="label-badge">shrinking_sequence_terms_nested</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $s$ is a shrinking sequence up to $m$ for $g$ and $c$ in $X$ with respect to $T$.<br> <span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals$.<br> <span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$. <br><span class="kw">Then</span> $s(m)\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} s(n)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -7130,7 +7132,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="shrinking_sequence_terms_nested" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturals \mid \text{for all $s_0,n_0$ we have if $s_0$ is a shrinking sequence up to $k$ for $g$ and $c$ in $X$ with respect to $T$ and $n_0\in\naturals$ and $n_0\leq k$ then $s_0(k)\subseteq s_0(n_0)$}\}$.<br> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturals$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$0\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</span></summary>
@@ -7293,7 +7295,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="compact_hausdorff_no_isolated_uncountable">
+<section class="statement theorem joins-following-proof" id="compact_hausdorff_no_isolated_uncountable">
   <div class="statement-head"><div class="statement-title">Theorem 64</div><span class="label-badge">compact_hausdorff_no_isolated_uncountable</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is compact with respect to $T$.<br> <span class="kw">Assume</span> $X$ is Hausdorff with respect to $T$.<br> <span class="kw">Assume</span> $X\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw">Suppose</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ we have $x$ is not an isolated point of $X$ with respect to $T$. <br><span class="kw">Then</span> $X$ is not countable.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -7309,7 +7311,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="compact_hausdorff_no_isolated_uncountable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Take</span> $g$ such that $g$ is a surjection from $\naturals$ to $X$ by <a class="xref" href="current_section_27.html#countable_nonempty_surj_naturals" data-preview-label="countable_nonempty_surj_naturals">Lemma 303</a>.<br> $g$ is a function from $\naturals$ to $X$ by <a class="xref" href="current_section_standard_library_functions.html#surj_to_fun" data-preview-label="surj_to_fun">Lemma 1230</a>.</p>
 <p><span class="kw kw-bold">Let</span> $D = \{p\class{latex-symbol-tip latex-symbol-id-in}{\in}\pow{X}\class{latex-symbol-tip latex-symbol-id-times}{\times} X \mid \text{$\fst{p}$ is open in $X$ with respect to $T$ and $\fst{p}\neq\emptyset$}\}$.<br> <span class="kw kw-bold">Let</span> $R = \{w\class{latex-symbol-tip latex-symbol-id-in}{\in} D\class{latex-symbol-tip latex-symbol-id-times}{\times}\pow{X} \mid \text{there exist $p,V$ such that $p\in D$ and $V\in\pow{X}$ and $w = (p,V)$ and $V$ is open in $X$ with respect to $T$ and $V\neq\emptyset$ and $V\subseteq\fst{p}$ and $\snd{p}\notin\closure{V}{X}{T}$}\}$.<br> For all $w$ such that $w\class{latex-symbol-tip latex-symbol-id-in}{\in} R$ there exist $p,V$ such that $w = (p,V)$ by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.<br> <span class="kw">Hence</span> $R$ is a relation by <a class="xref" href="current_section_standard_library_relations.html#relation" data-preview-label="relation">Definition 357</a>.</p>
 <details class="proof-block subproof" open>
@@ -7593,7 +7595,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="real_closed_interval_uncountable">
+<section class="statement corollary joins-following-proof" id="real_closed_interval_uncountable">
   <div class="statement-head"><div class="statement-title">Corollary 4</div><span class="label-badge">real_closed_interval_uncountable</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a < b$.<br> <span class="kw kw-bold">Let</span> $R = \realOrderRel$.<br> <span class="kw kw-bold">Let</span> $T = \realOrderTopology$.<br> <span class="kw kw-bold">Let</span> $Y = \intervalclosedrel{R}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is not countable.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -7611,7 +7613,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_closed_interval_uncountable" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $\reals$ and $\reals$ is a linear continuum with respect to $\realOrderRel$ by <a class="xref" href="current_section_24.html#real_order_relation_simple" data-preview-label="real_order_relation_simple">Lemma 247</a>, <a class="xref" href="current_section_24.html#reals_linear_continuum" data-preview-label="reals_linear_continuum">Lemma 251</a>.<br> $\reals$ has more than one element by <a class="xref" href="current_section_24.html#linear_continuum" data-preview-label="linear_continuum">Definition 131</a>.<br> $T$ is the order topology on $\reals$ with respect to $R$ and $T$ is a topology on $\reals$ by <a class="xref" href="current_section_24.html#real_order_topology" data-preview-label="real_order_topology">Definition 133</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>.</p>
 <p>$a\mathrel{R}b$ by <a class="xref" href="current_section_24.html#real_order_relation_intro" data-preview-label="real_order_relation_intro">Lemma 245</a>.<br> $a\class{latex-symbol-tip latex-symbol-id-neq}{\neq} b$ by <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>.<br> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>.<br> $Y$ has more than one element by <a class="xref" href="current_section_14.html#more_than_one_element" data-preview-label="more_than_one_element">Definition 27</a>.<br> $Y\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.</p>
 <p>$Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>

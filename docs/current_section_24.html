@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -461,7 +463,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="intervalopenrel_convex">
+<section class="statement lemma helper joins-following-proof" id="intervalopenrel_convex">
   <div class="statement-head"><div class="statement-title">Lemma 235</div><span class="label-badge">intervalopenrel_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\intervalopenrel{R}{X}{a}{b}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -474,7 +476,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenrel_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopen_rel" data-preview-label="intervalopen_rel">Definition 29</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -482,7 +484,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalopenclosedrel_convex">
+<section class="statement lemma helper joins-following-proof" id="intervalopenclosedrel_convex">
   <div class="statement-head"><div class="statement-title">Lemma 236</div><span class="label-badge">intervalopenclosedrel_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\intervalopenclosedrel{R}{X}{a}{b}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -495,7 +497,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalopenclosedrel_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalopenclosed_rel" data-preview-label="intervalopenclosed_rel">Definition 30</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -503,7 +505,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalclosedopenrel_convex">
+<section class="statement lemma helper joins-following-proof" id="intervalclosedopenrel_convex">
   <div class="statement-head"><div class="statement-title">Lemma 237</div><span class="label-badge">intervalclosedopenrel_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\intervalclosedopenrel{R}{X}{a}{b}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -516,7 +518,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalclosedopenrel_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalclosedopen_rel" data-preview-label="intervalclosedopen_rel">Definition 31</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -524,7 +526,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="intervalclosedrel_convex">
+<section class="statement lemma helper joins-following-proof" id="intervalclosedrel_convex">
   <div class="statement-head"><div class="statement-title">Lemma 238</div><span class="label-badge">intervalclosedrel_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\intervalclosedrel{R}{X}{a}{b}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -537,7 +539,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="intervalclosedrel_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -545,7 +547,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="openrayright_convex">
+<section class="statement lemma helper joins-following-proof" id="openrayright_convex">
   <div class="statement-head"><div class="statement-title">Lemma 239</div><span class="label-badge">openrayright_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\openrayright{R}{X}{a}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -558,7 +560,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="openrayright_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#openray_right" data-preview-label="openray_right">Definition 35</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -566,7 +568,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="openrayleft_convex">
+<section class="statement lemma helper joins-following-proof" id="openrayleft_convex">
   <div class="statement-head"><div class="statement-title">Lemma 240</div><span class="label-badge">openrayleft_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\openrayleft{R}{X}{a}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -579,7 +581,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="openrayleft_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#openray_left" data-preview-label="openray_left">Definition 36</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -587,7 +589,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedrayright_convex">
+<section class="statement lemma helper joins-following-proof" id="closedrayright_convex">
   <div class="statement-head"><div class="statement-title">Lemma 241</div><span class="label-badge">closedrayright_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\closedrayright{R}{X}{a}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -600,7 +602,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedrayright_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#closedray_right" data-preview-label="closedray_right">Definition 37</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -608,7 +610,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="closedrayleft_convex">
+<section class="statement lemma helper joins-following-proof" id="closedrayleft_convex">
   <div class="statement-head"><div class="statement-title">Lemma 242</div><span class="label-badge">closedrayleft_convex</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $R$ is transitive.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$. <br><span class="kw">Then</span> $\closedrayleft{R}{X}{a}$ is convex in $X$ with respect to $R$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -621,7 +623,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="closedrayleft_convex" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_14.html#closedray_left" data-preview-label="closedray_left">Definition 38</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -629,7 +631,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="convex_separation_contradiction">
+<section class="statement lemma helper joins-following-proof" id="convex_separation_contradiction">
   <div class="statement-head"><div class="statement-title">Lemma 243</div><span class="label-badge">convex_separation_contradiction</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is the order topology on $L$ with respect to $R$.<br> <span class="kw">Assume</span> $L$ is a linear continuum with respect to $R$.<br> <span class="kw">Suppose</span> $Y$ is convex in $L$ with respect to $R$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$.<br> <span class="kw">Suppose</span> $Y$ is separated by $A$ and $B$ with respect to $T_Y$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ and $a\mathrel{R}b$.<br> Contradiction.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -646,7 +648,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="convex_separation_contradiction" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$R$ is a simple order relation on $L$ by <a class="xref" href="current_section_24.html#linear_continuum" data-preview-label="linear_continuum">Definition 131</a>.<br> $R$ is transitive and $R$ is asymmetric and $R$ is connex on $L$ by <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>.<br> $L$ has more than one element and $L$ has the least upper bound property with respect to $R$ by <a class="xref" href="current_section_24.html#linear_continuum" data-preview-label="linear_continuum">Definition 131</a>.<br> $Y\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} L$ by <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.</p>
 <p>$T = \basisTopology{\orderBasis{R}{L}}{L}$ and $\orderBasis{R}{L}$ is a basis on $L$ by <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>.<br> $T$ is a topology on $L$ by <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>.<br> $T_Y$ is a topology on $Y$ by <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>.<br> $A$ is open in $Y$ with respect to $T_Y$ and $B$ is open in $Y$ with respect to $T_Y$ by <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>.<br> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$ and $a\class{latex-symbol-tip latex-symbol-id-in}{\in} L$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in} L$ by <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>.</p>
 <p><span class="kw kw-bold">Let</span> $I = \intervalclosedrel{R}{L}{a}{b}$.<br> $I\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} Y$ by <a class="xref" href="current_section_14.html#intervalclosed_rel" data-preview-label="intervalclosed_rel">Definition 32</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.<br> $I\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} L$ by <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>.</p>
@@ -1388,7 +1390,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="convex_connected_linear_continuum">
+<section class="statement lemma helper joins-following-proof" id="convex_connected_linear_continuum">
   <div class="statement-head"><div class="statement-title">Lemma 244</div><span class="label-badge">convex_connected_linear_continuum</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is the order topology on $L$ with respect to $R$.<br> <span class="kw">Assume</span> $L$ is a linear continuum with respect to $R$.<br> <span class="kw">Suppose</span> $Y$ is convex in $L$ with respect to $R$.<br> <span class="kw kw-bold">Let</span> $T_Y = \subspaceTopology{T}{Y}$. <br><span class="kw">Then</span> $Y$ is connected with respect to $T_Y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1403,7 +1405,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="convex_connected_linear_continuum" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Take</span> $A,B$ such that $Y$ is separated by $A$ and $B$ with respect to $T_Y$.<br> <span class="kw kw-bold">Take</span> $a,b$ such that $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>.<br> $a\mathrel{R}b$ or $b\mathrel{R}a$ by <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_left" data-preview-label="union_upper_left">Proposition 46</a>, <a class="xref" href="current_section_standard_library_sets.html#union_upper_right" data-preview-label="union_upper_right">Proposition 47</a>, <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#disjoint" data-preview-label="disjoint">Definition 348</a>, <a class="xref" href="current_section_24.html#linear_continuum" data-preview-label="linear_continuum">Definition 131</a>, <a class="xref" href="current_section_standard_library_axiom_of_choice_and_consequences.html#simple_order_relation" data-preview-label="simple_order_relation">Definition 443</a>, <a class="xref" href="current_section_standard_library_relations.html#connex" data-preview-label="connex">Definition 385</a>.<br> Contradiction by <a class="xref" href="current_section_24.html#convex_separation_contradiction" data-preview-label="convex_separation_contradiction">Lemma 243</a>, <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>, <a class="xref" href="current_section_standard_library_sets.html#disjoint_symmetric" data-preview-label="disjoint_symmetric">Proposition 13</a>, <a class="xref" href="current_section_standard_library_sets.html#union_comm" data-preview-label="union_comm">Proposition 41 [Commutativity of union]</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1416,7 +1418,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="linear_continuum_connected">
+<section class="statement theorem joins-following-proof" id="linear_continuum_connected">
   <div class="statement-head"><div class="statement-title">Theorem 39</div><span class="label-badge">linear_continuum_connected</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is the order topology on $L$ with respect to $R$.<br> <span class="kw">Assume</span> $L$ is a linear continuum with respect to $R$. <br><span class="kw">Then</span> $L$ is connected with respect to $T$ and for all $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in} L$ if $a\mathrel{R}b$ then $\intervalopenrel{R}{L}{a}{b}$ is connected with respect to $\subspaceTopology{T}{\intervalopenrel{R}{L}{a}{b}}$ and $\intervalopenclosedrel{R}{L}{a}{b}$ is connected with respect to $\subspaceTopology{T}{\intervalopenclosedrel{R}{L}{a}{b}}$ and $\intervalclosedopenrel{R}{L}{a}{b}$ is connected with respect to $\subspaceTopology{T}{\intervalclosedopenrel{R}{L}{a}{b}}$ and $\intervalclosedrel{R}{L}{a}{b}$ is connected with respect to $\subspaceTopology{T}{\intervalclosedrel{R}{L}{a}{b}}$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} L$ we have $\openrayright{R}{L}{a}$ is connected with respect to $\subspaceTopology{T}{\openrayright{R}{L}{a}}$ and $\openrayleft{R}{L}{a}$ is connected with respect to $\subspaceTopology{T}{\openrayleft{R}{L}{a}}$ and $\closedrayright{R}{L}{a}$ is connected with respect to $\subspaceTopology{T}{\closedrayright{R}{L}{a}}$ and $\closedrayleft{R}{L}{a}$ is connected with respect to $\subspaceTopology{T}{\closedrayleft{R}{L}{a}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1439,7 +1441,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="linear_continuum_connected" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$T$ is a topology on $L$ by <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_14.html#order_basis_is_basis" data-preview-label="order_basis_is_basis">Lemma 38</a>, <a class="xref" href="current_section_13.html#basis_topology_is_topology" data-preview-label="basis_topology_is_topology">Lemma 1</a>.<br> <span class="kw kw-bold">Let</span> $T_L = \subspaceTopology{T}{L}$.<br> $L$ is connected with respect to $T_L$ by <a class="xref" href="current_section_16.html#convex_in" data-preview-label="convex_in">Definition 48</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_24.html#convex_connected_linear_continuum" data-preview-label="convex_connected_linear_continuum">Lemma 244</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$T_L\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} T$.</span></summary>
@@ -1531,7 +1533,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma helper" id="real_order_relation_intro">
+<section class="statement lemma helper joins-following-proof" id="real_order_relation_intro">
   <div class="statement-head"><div class="statement-title">Lemma 245</div><span class="label-badge">real_order_relation_intro</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a < b$. <br><span class="kw">Then</span> $a\mathrel{\realOrderRel} b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1543,7 +1545,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_order_relation_intro" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#times_tuple_intro" data-preview-label="times_tuple_intro">Proposition 115</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>, <a class="xref" href="current_section_24.html#real_order_relation" data-preview-label="real_order_relation">Definition 132</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1551,7 +1553,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_order_relation_elim">
+<section class="statement lemma helper joins-following-proof" id="real_order_relation_elim">
   <div class="statement-head"><div class="statement-title">Lemma 246</div><span class="label-badge">real_order_relation_elim</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\mathrel{\realOrderRel} b$. <br><span class="kw">Then</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a < b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1563,7 +1565,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_order_relation_elim" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_24.html#real_order_relation" data-preview-label="real_order_relation">Definition 132</a>, <a class="xref" href="current_section_standard_library_sets.html#times_tuple_elim" data-preview-label="times_tuple_elim">Proposition 114</a>, <a class="xref" href="current_section_standard_library_sets.html#fst_eq" data-preview-label="fst_eq">Axiom 10</a>, <a class="xref" href="current_section_standard_library_sets.html#snd_eq" data-preview-label="snd_eq">Axiom 11</a>, <a class="xref" href="current_section_13.html#real_lt_subst_left" data-preview-label="real_lt_subst_left">Lemma 7</a>, <a class="xref" href="current_section_13.html#real_lt_subst_right" data-preview-label="real_lt_subst_right">Lemma 8</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1571,7 +1573,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_order_relation_simple">
+<section class="statement lemma helper joins-following-proof" id="real_order_relation_simple">
   <div class="statement-head"><div class="statement-title">Lemma 247</div><span class="label-badge">real_order_relation_simple</span></div>
   <div class="statement-body"><p>$\realOrderRel$ is a simple order relation on $\reals$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1582,7 +1584,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_order_relation_simple" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\realOrderRel$ is transitive.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_24.html#real_order_relation_elim" data-preview-label="real_order_relation_elim">Lemma 246</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_24.html#real_order_relation_intro" data-preview-label="real_order_relation_intro">Lemma 245</a>, <a class="xref" href="current_section_standard_library_relations.html#transitive" data-preview-label="transitive">Definition 382 [Transitivity]</a>.</p></div>
@@ -1607,7 +1609,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="inhabited_nonempty">
+<section class="statement lemma helper joins-following-proof" id="inhabited_nonempty">
   <div class="statement-head"><div class="statement-title">Lemma 248</div><span class="label-badge">inhabited_nonempty</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A$ is inhabited. <br><span class="kw">Then</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1619,7 +1621,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="inhabited_nonempty" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $a$ such that $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.<br> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_standard_library_sets.html#emptyset" data-preview-label="emptyset">Axiom 2</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1628,7 +1630,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_order_upper_bound_is_real_upper_bound">
+<section class="statement lemma helper joins-following-proof" id="real_order_upper_bound_is_real_upper_bound">
   <div class="statement-head"><div class="statement-title">Lemma 249</div><span class="label-badge">real_order_upper_bound_is_real_upper_bound</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.<br> <span class="kw">Suppose</span> $u$ is an upper bound of $A$ in $\reals$ with respect to $\realOrderRel$. <br><span class="kw">Then</span> $u$ is an upper bound of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1641,7 +1643,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_order_upper_bound_is_real_upper_bound" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$u\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_24.html#upper_bound_rel" data-preview-label="upper_bound_rel">Definition 128</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} u$.</span></summary>
@@ -1662,7 +1664,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="real_supremum_is_order_least_upper_bound">
+<section class="statement lemma helper joins-following-proof" id="real_supremum_is_order_least_upper_bound">
   <div class="statement-head"><div class="statement-title">Lemma 250</div><span class="label-badge">real_supremum_is_order_least_upper_bound</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$.<br> <span class="kw">Suppose</span> $c$ is a supremum of $A$. <br><span class="kw">Then</span> $c$ is a least upper bound of $A$ in $\reals$ with respect to $\realOrderRel$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1675,7 +1677,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="real_supremum_is_order_least_upper_bound" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$c$ is an upper bound of $A$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>.<br> $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $a\mathrel{\realOrderRel} c$ or $a = c$.</span></summary>
@@ -1716,7 +1718,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma helper" id="reals_linear_continuum">
+<section class="statement lemma helper joins-following-proof" id="reals_linear_continuum">
   <div class="statement-head"><div class="statement-title">Lemma 251</div><span class="label-badge">reals_linear_continuum</span></div>
   <div class="statement-body"><p>$\reals$ is a linear continuum with respect to $\realOrderRel$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1727,7 +1729,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block helper-proof" data-proof-for="reals_linear_continuum" data-proof-helper="true" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$\realOrderRel$ is a simple order relation on $\reals$.</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_24.html#real_order_relation_simple" data-preview-label="real_order_relation_simple">Lemma 247</a>.</p></div>
@@ -1786,7 +1788,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement corollary" id="reals_connected">
+<section class="statement corollary joins-following-proof" id="reals_connected">
   <div class="statement-head"><div class="statement-title">Corollary 2</div><span class="label-badge">reals_connected</span></div>
   <div class="statement-body"><p>$\reals$ is connected with respect to $\realOrderTopology$ and for all $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ if $a\mathrel{\realOrderRel} b$ then $\intervalopenrel{\realOrderRel}{\reals}{a}{b}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\intervalopenrel{\realOrderRel}{\reals}{a}{b}}$ and $\intervalopenclosedrel{\realOrderRel}{\reals}{a}{b}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\intervalopenclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $\intervalclosedopenrel{\realOrderRel}{\reals}{a}{b}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedopenrel{\realOrderRel}{\reals}{a}{b}}$ and $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ we have $\openrayright{\realOrderRel}{\reals}{a}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\openrayright{\realOrderRel}{\reals}{a}}$ and $\openrayleft{\realOrderRel}{\reals}{a}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\openrayleft{\realOrderRel}{\reals}{a}}$ and $\closedrayright{\realOrderRel}{\reals}{a}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\closedrayright{\realOrderRel}{\reals}{a}}$ and $\closedrayleft{\realOrderRel}{\reals}{a}$ is connected with respect to $\subspaceTopology{\realOrderTopology}{\closedrayleft{\realOrderRel}{\reals}{a}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1807,7 +1809,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="reals_connected" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_24.html#reals_linear_continuum" data-preview-label="reals_linear_continuum">Lemma 251</a>, <a class="xref" href="current_section_24.html#linear_continuum" data-preview-label="linear_continuum">Definition 131</a>, <a class="xref" href="current_section_24.html#real_order_topology" data-preview-label="real_order_topology">Definition 133</a>, <a class="xref" href="current_section_14.html#order_topology" data-preview-label="order_topology">Definition 34</a>, <a class="xref" href="current_section_24.html#linear_continuum_connected" data-preview-label="linear_continuum_connected">Theorem 39</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1815,7 +1817,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="intermediate_value_theorem">
+<section class="statement theorem joins-following-proof" id="intermediate_value_theorem">
   <div class="statement-head"><div class="statement-title">Theorem 40</div><span class="label-badge">intermediate_value_theorem</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $f$ is continuous from $X$ to $Y$ with respect to $T$ and $T_1$.<br> <span class="kw">Assume</span> $X$ is connected with respect to $T$.<br> <span class="kw">Assume</span> $R$ is a simple order relation on $Y$.<br> <span class="kw">Assume</span> $Y$ has more than one element.<br> <span class="kw">Assume</span> $T_1$ is the order topology on $Y$ with respect to $R$.<br> <span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $b\class{latex-symbol-tip latex-symbol-id-in}{\in} X$.<br> <span class="kw">Suppose</span> $r\class{latex-symbol-tip latex-symbol-id-in}{\in} Y$.<br> <span class="kw">Suppose</span> $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\betweenrel{R}{Y}{f(a)}{f(b)}$. <br><span class="kw">Then</span> there exists $c\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $f(c) = r$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1835,7 +1837,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="intermediate_value_theorem" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$f\class{latex-symbol-tip latex-symbol-id-in}{\in}\funs{X}{Y}$ and $f$ is a function by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_elim" data-preview-label="funs_elim">Proposition 359</a>.<br> $T$ is a topology on $X$ and $T_1$ is a topology on $Y$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>.<br> <span class="kw kw-bold">Let</span> $Z = \img{f}{X}$.<br> <span class="kw kw-bold">Let</span> $T_Z = \subspaceTopology{T_1}{Z}$.<br> $Z$ is connected with respect to $T_Z$ and $Z$ is a subspace of $Y$ with respect to $T_1$ and $T_Z$ is a topology on $Z$ by <a class="xref" href="current_section_23.html#connected_image_continuous" data-preview-label="connected_image_continuous">Theorem 37</a>, <a class="xref" href="current_section_standard_library_functions.html#funs_ran" data-preview-label="funs_ran">Proposition 363</a>, <a class="xref" href="current_section_standard_library_relations.html#img_subseteq_ran" data-preview-label="img_subseteq_ran">Proposition 237</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq_transitive" data-preview-label="subseteq_transitive">Proposition 6</a>, <a class="xref" href="current_section_16.html#subspace_of" data-preview-label="subspace_of">Definition 47</a>, <a class="xref" href="current_section_16.html#subspace_topology_is_topology" data-preview-label="subspace_topology_is_topology">Lemma 56</a>.<br> <span class="kw">Suppose</span> not.<br> There exists no $c\class{latex-symbol-tip latex-symbol-id-in}{\in} X$ such that $f(c) = r$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$r\class{latex-symbol-tip latex-symbol-id-notin}{\notin} Z$.</span></summary>
@@ -1957,7 +1959,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{definition}</code></pre>
 </details></div>
 </section>
-<section class="statement theorem" id="path_connected_implies_connected">
+<section class="statement theorem joins-following-proof" id="path_connected_implies_connected">
   <div class="statement-head"><div class="statement-title">Theorem 41</div><span class="label-badge">path_connected_implies_connected</span></div>
   <div class="statement-body"><p><span class="kw">Assume</span> $T$ is a topology on $X$.<br> <span class="kw">Assume</span> $X$ is path connected with respect to $T$. <br><span class="kw">Then</span> $X$ is connected with respect to $T$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1970,7 +1972,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="path_connected_implies_connected" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Take</span> $A,B$ such that $X$ is separated by $A$ and $B$ with respect to $T$.<br> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $B\class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ by <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>.<br> <span class="kw kw-bold">Take</span> $x,y$ such that $x\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in} B$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>.<br> <span class="kw kw-bold">Take</span> $f$ such that $f$ is a path in $X$ from $x$ to $y$ with respect to $T$ by <a class="xref" href="current_section_23.html#separation" data-preview-label="separation">Definition 126</a>, <a class="xref" href="current_section_12.html#open_in" data-preview-label="open_in">Definition 3</a>, <a class="xref" href="current_section_12.html#topology_on" data-preview-label="topology_on">Definition 1</a>, <a class="xref" href="current_section_standard_library_sets.html#powerset_elim" data-preview-label="powerset_elim">Proposition 156</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_24.html#path_connected" data-preview-label="path_connected">Definition 136</a>.<br> <span class="kw kw-bold">Take</span> $a,b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ such that $a\mathrel{\realOrderRel} b$ and $f$ is continuous from $\intervalclosedrel{\realOrderRel}{\reals}{a}{b}$ to $X$ with respect to $\subspaceTopology{\realOrderTopology}{\intervalclosedrel{\realOrderRel}{\reals}{a}{b}}$ and $T$ and $f(a) = x$ and $f(b) = y$ by <a class="xref" href="current_section_24.html#path_in_space" data-preview-label="path_in_space">Definition 135</a>.<br> <span class="kw kw-bold">Let</span> $I = \intervalclosedrel{\realOrderRel}{\reals}{a}{b}$.<br> <span class="kw kw-bold">Let</span> $T_I = \subspaceTopology{\realOrderTopology}{I}$.<br> $I$ is connected with respect to $T_I$ by <a class="xref" href="current_section_18.html#continuous" data-preview-label="continuous">Definition 60</a>, <a class="xref" href="current_section_24.html#reals_connected" data-preview-label="reals_connected">Corollary 2</a>.<br> <span class="kw kw-bold">Let</span> $Z = \img{f}{I}$.<br> <span class="kw kw-bold">Let</span> $T_Z = \subspaceTopology{T}{Z}$.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$Z\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} A$ or $Z\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} B$.</span></summary>

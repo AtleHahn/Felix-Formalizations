@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -419,7 +421,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{abbreviation}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="regularity_aux">
+<section class="statement lemma joins-following-proof" id="regularity_aux">
   <div class="statement-head"><div class="statement-title">Lemma 1232</div><span class="label-badge">regularity_aux</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A$ be a set.<br> For all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $b\notmeets A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -432,7 +434,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="regularity_aux" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a\notmeets A$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $b$ such that $b = a$.<br> Straightforward.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a\meets A$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a'$ such that $a'\class{latex-symbol-tip latex-symbol-id-in}{\in} a, A$.<br> There exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $b\notmeets A$.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{byCase}
@@ -459,7 +461,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="regularity">
+<section class="statement proposition joins-following-proof" id="regularity">
   <div class="statement-head"><div class="statement-title">Proposition 409 [Regularity]</div><span class="label-badge">regularity</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A$ be an inhabited set. <br><span class="kw">Then</span> there exists a \in-minimal element of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -472,7 +474,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="regularity" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_regularity.html#regularity_aux" data-preview-label="regularity_aux">Lemma 1232</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -480,7 +482,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement theorem" id="foundation">
+<section class="statement theorem joins-following-proof" id="foundation">
   <div class="statement-head"><div class="statement-title">Theorem 144 [Foundation]</div><span class="label-badge">foundation</span></div>
   <div class="statement-body"><p><span class="kw kw-bold">Let</span> $A$ be a set. <br><span class="kw">Then</span> $A = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ or there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} a$ we have $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -493,7 +495,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="foundation" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $A = \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p>Follows by assumption.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $A \class{latex-symbol-tip latex-symbol-id-neq}{\neq}\class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $a$ such that $a$ is a \in-minimal element of $A$ by <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_standard_library_regularity.html#regularity" data-preview-label="regularity">Proposition 409 [Regularity]</a>. <br><span class="kw">Then</span> for all $x\class{latex-symbol-tip latex-symbol-id-in}{\in} a$ we have $x\class{latex-symbol-tip latex-symbol-id-notin}{\notin} A$.<br> Follows by assumption.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{byCase}
@@ -520,7 +522,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <p>.</p>
-<section class="statement proposition" id="in_irrefl">
+<section class="statement proposition joins-following-proof" id="in_irrefl">
   <div class="statement-head"><div class="statement-title">Proposition 410</div><span class="label-badge">in_irrefl</span></div>
   <div class="statement-body"><p>For all sets $A$ we have $A\not\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -531,7 +533,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="in_irrefl" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Straightforward.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -540,7 +542,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="in_asymmetric">
+<section class="statement proposition joins-following-proof" id="in_asymmetric">
   <div class="statement-head"><div class="statement-title">Proposition 411</div><span class="label-badge">in_asymmetric</span></div>
   <div class="statement-body"><p>For all sets $a, b$ such that $a\class{latex-symbol-tip latex-symbol-id-in}{\in} b$ we have $b\class{latex-symbol-tip latex-symbol-id-notin}{\notin} a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -551,7 +553,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="in_asymmetric" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Straightforward.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -642,7 +644,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="suc_injective">
+<section class="statement proposition joins-following-proof" id="suc_injective">
   <div class="statement-head"><div class="statement-title">Proposition 419</div><span class="label-badge">suc_injective</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $\suc{x} = \suc{y}$. <br><span class="kw">Then</span> $x = y$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -653,7 +655,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="suc_injective" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> $\suc{x}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \suc{y}$.<br> <span class="kw">Hence</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\suc{y}$. <br><span class="kw">Then</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in} y$.<br> $\suc{y}\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq} \suc{x}$.<br> <span class="kw">Hence</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\suc{x}$. <br><span class="kw">Then</span> $y\class{latex-symbol-tip latex-symbol-id-in}{\in} x$.<br> Contradiction.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -698,7 +700,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="suc_next_subset">
+<section class="statement proposition joins-following-proof" id="suc_next_subset">
   <div class="statement-head"><div class="statement-title">Proposition 423</div><span class="label-badge">suc_next_subset</span></div>
   <div class="statement-body"><p>There exists no $z$ such that $x\class{latex-symbol-tip latex-symbol-id-subset}{\subset} z\class{latex-symbol-tip latex-symbol-id-subset}{\subset} \suc{x}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -709,7 +711,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="suc_next_subset" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_regularity.html#suc" data-preview-label="suc">Definition 406</a>, <a class="xref" href="current_section_standard_library_sets.html#subset" data-preview-label="subset">Definition 347</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_sets.html#subset_witness" data-preview-label="subset_witness">Proposition 9</a>, <a class="xref" href="current_section_standard_library_regularity.html#suc_elim" data-preview-label="suc_elim">Proposition 414</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}

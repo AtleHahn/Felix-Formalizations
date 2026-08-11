@@ -25,7 +25,8 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 button { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; cursor:pointer; }
 button.is-active { background:#eef3ff; border-color:#c8d5ff; color:#1f3ea3; }
 select { background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
-.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.statement { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
+.statement.joins-following-proof { margin-bottom:0pt; }
 .statement-head { display:flex; justify-content:space-between; gap:12px; align-items:center; padding:7px 18px; border-bottom:1px solid var(--border); }
 .statement-title { color:var(--accent); font-weight:700; font-size:16.2px; }
 .label-badge { color:var(--accent); background:#eef3ff; border-radius:999px; padding:3px 10px; font-size:12.6px; }
@@ -40,8 +41,9 @@ ol.enumerate-list { margin:0 0 6px 24px; padding-left:18px; }
 ol.enumerate-list > li { margin:0 0 6px; }
 ol.enumerate-list > li:last-child { margin-bottom:0; }
 ol.enumerate-list ol.enumerate-list { margin-top:6px; margin-bottom:0; }
-.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18px; overflow:hidden; }
+.proof-block { background:var(--panel); border:1px solid var(--border); border-radius:18px; margin:0 0 18pt; overflow:hidden; }
 .proof-block > summary { list-style:none; cursor:pointer; padding:7px 18px; font-weight:700; font-size:14.4px; color:#475467; border-bottom:1px solid transparent; }
+.proof-label { color:#c62828; }
 .proof-block[open] > summary { border-bottom-color:var(--border); }
 .proof-block > summary::-webkit-details-marker { display:none; }
 .proof-body { padding:7px 18px; line-height:1.6; font-size:14.4px; overflow-x:auto; }
@@ -1358,7 +1360,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_add_cancel">
+<section class="statement proposition joins-following-proof" id="real_add_cancel">
   <div class="statement-head"><div class="statement-title">Proposition 438</div><span class="label-badge">real_add_cancel</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a + c = b + c$. <br><span class="kw">Then</span> $a = b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1370,7 +1372,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_add_cancel" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1389,7 +1391,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_neg_as_mul">
+<section class="statement proposition joins-following-proof" id="real_neg_as_mul">
   <div class="statement-head"><div class="statement-title">Proposition 440</div><span class="label-badge">real_neg_as_mul</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\neg{a} = \neg{1} \rmul a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1401,7 +1403,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_neg_as_mul" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse_unique" data-preview-label="real_add_inverse_unique">Proposition 435</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1409,7 +1411,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_neg_neg">
+<section class="statement proposition joins-following-proof" id="real_neg_neg">
   <div class="statement-head"><div class="statement-title">Proposition 441</div><span class="label-badge">real_neg_neg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\neg{(\neg{a})} = a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1421,7 +1423,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_neg_neg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse_unique" data-preview-label="real_add_inverse_unique">Proposition 435</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1429,7 +1431,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_mul_unit_left_nonzero">
+<section class="statement lemma joins-following-proof" id="real_mul_unit_left_nonzero">
   <div class="statement-head"><div class="statement-title">Lemma 1233</div><span class="label-badge">real_mul_unit_left_nonzero</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a \rmul b = 1$. <br><span class="kw">Then</span> $a \class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1441,7 +1443,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_unit_left_nonzero" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1449,7 +1451,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_inv_inv">
+<section class="statement proposition joins-following-proof" id="real_inv_inv">
   <div class="statement-head"><div class="statement-title">Proposition 442</div><span class="label-badge">real_inv_inv</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a\class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$. <br><span class="kw">Then</span> $\inv{\inv{a}} = a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1461,7 +1463,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_inv_inv" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_unit_left_nonzero" data-preview-label="real_mul_unit_left_nonzero">Lemma 1233</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse_unique" data-preview-label="real_mul_inverse_unique">Proposition 436</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1469,7 +1471,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_mul_cancel">
+<section class="statement proposition joins-following-proof" id="real_mul_cancel">
   <div class="statement-head"><div class="statement-title">Proposition 443</div><span class="label-badge">real_mul_cancel</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a\class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a \rmul b = a \rmul c$. <br><span class="kw">Then</span> $b = c$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1481,7 +1483,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_cancel" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_assoc" data-preview-label="real_mul_assoc">Axiom 19</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1489,7 +1491,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_mul_zero_product">
+<section class="statement proposition joins-following-proof" id="real_mul_zero_product">
   <div class="statement-head"><div class="statement-title">Proposition 444</div><span class="label-badge">real_mul_zero_product</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a \rmul b = 0$. <br><span class="kw">Then</span> $a = 0$ or $b = 0$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1501,7 +1503,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_zero_product" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_assoc" data-preview-label="real_mul_assoc">Axiom 19</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1509,7 +1511,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_right_distrib">
+<section class="statement lemma joins-following-proof" id="real_right_distrib">
   <div class="statement-head"><div class="statement-title">Lemma 1234</div><span class="label-badge">real_right_distrib</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $(a + b) \rmul c = (a \rmul c) + (b \rmul c)$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1521,7 +1523,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_right_distrib" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1529,7 +1531,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_mul_neg_right">
+<section class="statement lemma joins-following-proof" id="real_mul_neg_right">
   <div class="statement-head"><div class="statement-title">Lemma 1235</div><span class="label-badge">real_mul_neg_right</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $a \rmul \neg{b} = \neg{(a \rmul b)}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1541,7 +1543,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_neg_right" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_as_mul" data-preview-label="real_neg_as_mul">Proposition 440</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_assoc" data-preview-label="real_mul_assoc">Axiom 19</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1549,7 +1551,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_add_regroup">
+<section class="statement lemma joins-following-proof" id="real_add_regroup">
   <div class="statement-head"><div class="statement-title">Lemma 1236</div><span class="label-badge">real_add_regroup</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $z\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $w\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $(x + y) + (z + w) = (x + (y + z)) + w$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1561,7 +1563,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_add_regroup" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1624,7 +1626,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_diff_squares">
+<section class="statement proposition joins-following-proof" id="real_diff_squares">
   <div class="statement-head"><div class="statement-title">Proposition 447</div><span class="label-badge">real_diff_squares</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $(a + b) \rmul (a - b) = \exp{a}{2} - \exp{b}{2}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1636,7 +1638,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_diff_squares" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $(a + b) \rmul (a - b) = ((a \rmul a) + 0) + \neg{(b \rmul b)}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_right_distrib" data-preview-label="real_right_distrib">Lemma 1234</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_regroup" data-preview-label="real_add_regroup">Lemma 1236</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>. <br><span class="kw">Thus</span> $(a + b) \rmul (a - b) = \exp{a}{2} - \exp{b}{2}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_succ" data-preview-label="real_pow_succ">Axiom 50</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_one" data-preview-label="real_pow_one">Axiom 49</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1656,7 +1658,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="lemma_6_eq_3_times_2">
+<section class="statement lemma joins-following-proof" id="lemma_6_eq_3_times_2">
   <div class="statement-head"><div class="statement-title">Lemma 1241</div><span class="label-badge">lemma_6_eq_3_times_2</span></div>
   <div class="statement-body"><p>$6 = 3 \rmul 2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1667,7 +1669,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="lemma_6_eq_3_times_2" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$1\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> $2\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> $3\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_3" data-preview-label="def_of_3">Axiom 25</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.<br> We have $3 \rmul 2 = 3 + 3$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_distrib" data-preview-label="real_distrib">Axiom 23</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>.<br> We have $3 + 3 = 6$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_3" data-preview-label="def_of_3">Axiom 25</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_4" data-preview-label="def_of_4">Axiom 26</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_5" data-preview-label="def_of_5">Axiom 27</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_6" data-preview-label="def_of_6">Axiom 28</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>. <br><span class="kw">Thus</span> $6 = 3 \rmul 2$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1681,7 +1683,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </details>
 <h5 class="tex-subsubsection">Results involving the order relation (but no absolute values)</h5>
-<section class="statement proposition" id="real_pos_add">
+<section class="statement proposition joins-following-proof" id="real_pos_add">
   <div class="statement-head"><div class="statement-title">Proposition 448</div><span class="label-badge">real_pos_add</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a$ is positive and $b$ is positive. <br><span class="kw">Then</span> $a + b$ is positive.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1693,7 +1695,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_pos_add" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1701,7 +1703,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_neg_add">
+<section class="statement proposition joins-following-proof" id="real_neg_add">
   <div class="statement-head"><div class="statement-title">Proposition 449</div><span class="label-badge">real_neg_add</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a$ is negative and $b$ is negative. <br><span class="kw">Then</span> $a + b$ is negative.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1713,7 +1715,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_neg_add" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1721,7 +1723,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_lt_add_two">
+<section class="statement proposition joins-following-proof" id="real_lt_add_two">
   <div class="statement-head"><div class="statement-title">Proposition 450</div><span class="label-badge">real_lt_add_two</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $d\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a < b$ and $c < d$. <br><span class="kw">Then</span> $a + c < b + d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1733,7 +1735,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_lt_add_two" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1741,7 +1743,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_pos_imp_neg">
+<section class="statement proposition joins-following-proof" id="real_pos_imp_neg">
   <div class="statement-head"><div class="statement-title">Proposition 451</div><span class="label-badge">real_pos_imp_neg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a > 0$. <br><span class="kw">Then</span> $\neg{a} < 0$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1753,7 +1755,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_pos_imp_neg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1761,7 +1763,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_neg_imp_pos">
+<section class="statement proposition joins-following-proof" id="real_neg_imp_pos">
   <div class="statement-head"><div class="statement-title">Proposition 452</div><span class="label-badge">real_neg_imp_pos</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $\neg{a} < 0$. <br><span class="kw">Then</span> $a > 0$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1773,7 +1775,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_neg_imp_pos" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1781,7 +1783,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_lt_mul_pos_two">
+<section class="statement proposition joins-following-proof" id="real_lt_mul_pos_two">
   <div class="statement-head"><div class="statement-title">Proposition 453</div><span class="label-badge">real_lt_mul_pos_two</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $d\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a$ is positive and $b$ is positive and $c$ is positive and $d$ is positive.<br> <span class="kw">Suppose</span> $a < b$ and $c < d$. <br><span class="kw">Then</span> $a \rmul c < b \rmul d$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1795,7 +1797,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_lt_mul_pos_two" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1803,7 +1805,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_mul_pos_pos">
+<section class="statement lemma joins-following-proof" id="real_mul_pos_pos">
   <div class="statement-head"><div class="statement-title">Lemma 1242</div><span class="label-badge">real_mul_pos_pos</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a$ is positive and $b$ is positive. <br><span class="kw">Then</span> $a \rmul b$ is positive.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1815,7 +1817,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_pos_pos" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1823,7 +1825,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_mul_pos_neg">
+<section class="statement lemma joins-following-proof" id="real_mul_pos_neg">
   <div class="statement-head"><div class="statement-title">Lemma 1243</div><span class="label-badge">real_mul_pos_neg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a$ is positive and $b$ is negative. <br><span class="kw">Then</span> $a \rmul b$ is negative.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1835,7 +1837,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_pos_neg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_imp_pos" data-preview-label="real_neg_imp_pos">Proposition 452</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_pos_pos" data-preview-label="real_mul_pos_pos">Lemma 1242</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_imp_neg" data-preview-label="real_pos_imp_neg">Proposition 451</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1843,7 +1845,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_mul_neg_neg">
+<section class="statement lemma joins-following-proof" id="real_mul_neg_neg">
   <div class="statement-head"><div class="statement-title">Lemma 1244</div><span class="label-badge">real_mul_neg_neg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a$ is negative and $b$ is negative. <br><span class="kw">Then</span> $a \rmul b$ is positive.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1855,7 +1857,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_neg_neg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_imp_pos" data-preview-label="real_neg_imp_pos">Proposition 452</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_pos_pos" data-preview-label="real_mul_pos_pos">Lemma 1242</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -1940,7 +1942,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_mul_neg_opposite_sign_rev">
+<section class="statement proposition joins-following-proof" id="real_mul_neg_opposite_sign_rev">
   <div class="statement-head"><div class="statement-title">Proposition 459</div><span class="label-badge">real_mul_neg_opposite_sign_rev</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a \rmul b < 0$. <br><span class="kw">Then</span> either $a < 0$ and $0 < b$ or $b < 0$ and $0 < a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1952,7 +1954,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_mul_neg_opposite_sign_rev" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not. <br><span class="kw">Thus</span> $a \rmul b \class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_nonzero" data-preview-label="real_neg_nonzero">Lemma 1246</a>.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $0 < a$ and $0 < b$.</div><div class="case-body"><p>Contradiction by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_pos_pos_gt" data-preview-label="real_mul_pos_pos_gt">Proposition 454</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $0 < a$ and $b < 0$.</div><div class="case-body"><p>Contradiction.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a < 0$ and $b < 0$.</div><div class="case-body"><p>Contradiction by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_neg_gt" data-preview-label="real_mul_neg_neg_gt">Proposition 455</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a < 0$ and $0 < b$.</div><div class="case-body"><p>Contradiction.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1985,7 +1987,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_pos_lt_iff_sq_lt">
+<section class="statement proposition joins-following-proof" id="real_pos_lt_iff_sq_lt">
   <div class="statement-head"><div class="statement-title">Proposition 460</div><span class="label-badge">real_pos_lt_iff_sq_lt</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a$ is positive and $b$ is positive. <br><span class="kw">Then</span> $a < b$ iff $\exp{a}{2} < \exp{b}{2}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -1997,7 +1999,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_pos_lt_iff_sq_lt" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $a < b$ then $\exp{a}{2} < \exp{b}{2}$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $a < b$. <br><span class="kw">Thus</span> $(b - a) \rmul (a + b) > 0$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_add" data-preview-label="real_pos_add">Proposition 448</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_pos_pos_gt" data-preview-label="real_mul_pos_pos_gt">Proposition 454</a>.<br> <span class="kw">Hence</span> $(a + b) \rmul (b - a) = \exp{b}{2} - \exp{a}{2}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_diff_squares" data-preview-label="real_diff_squares">Proposition 447</a>.<br> <span class="kw">Therefore</span> $\exp{b}{2} - \exp{a}{2} > 0$.<br> We have $\exp{a}{2} = a \rmul a$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_succ" data-preview-label="real_pow_succ">Axiom 50</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_one" data-preview-label="real_pow_one">Axiom 49</a>.<br> <span class="kw">Hence</span> $\exp{a}{2}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.<br> We have $\exp{b}{2} = b \rmul b$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_succ" data-preview-label="real_pow_succ">Axiom 50</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_one" data-preview-label="real_pow_one">Axiom 49</a>.<br> <span class="kw">Hence</span> $\exp{b}{2}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.<br> We have $\exp{a}{2} < \exp{b}{2}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>.</p></div>
@@ -2177,7 +2179,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_lt_mul_neg">
+<section class="statement proposition joins-following-proof" id="real_lt_mul_neg">
   <div class="statement-head"><div class="statement-title">Proposition 466</div><span class="label-badge">real_lt_mul_neg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $c\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$.<br> <span class="kw">Suppose</span> $a < b$ and $c < 0$. <br><span class="kw">Then</span> $b \rmul c < a \rmul c$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2190,7 +2192,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_lt_mul_neg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_neg" data-preview-label="real_lt_neg">Proposition 465</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2198,7 +2200,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_supremum_unique">
+<section class="statement proposition joins-following-proof" id="real_supremum_unique">
   <div class="statement-head"><div class="statement-title">Proposition 467</div><span class="label-badge">real_supremum_unique</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is a supremum of $A$ and $q$ is a supremum of $A$. <br><span class="kw">Then</span> $p = q$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2210,7 +2212,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_supremum_unique" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2218,7 +2220,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_infimum_unique">
+<section class="statement proposition joins-following-proof" id="real_infimum_unique">
   <div class="statement-head"><div class="statement-title">Proposition 468</div><span class="label-badge">real_infimum_unique</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $p$ is an infimum of $A$ and $q$ is an infimum of $A$. <br><span class="kw">Then</span> $p = q$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2230,7 +2232,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_infimum_unique" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_infimum" data-preview-label="real_infimum">Definition 417</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lower_bound" data-preview-label="real_lower_bound">Definition 413</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2238,7 +2240,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_maximum_is_supremum">
+<section class="statement proposition joins-following-proof" id="real_maximum_is_supremum">
   <div class="statement-head"><div class="statement-title">Proposition 469</div><span class="label-badge">real_maximum_is_supremum</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ and $m$ is a maximum of $A$. <br><span class="kw">Then</span> $m$ is a supremum of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2250,7 +2252,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_maximum_is_supremum" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2258,7 +2260,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_supremum_in_set_is_maximum">
+<section class="statement proposition joins-following-proof" id="real_supremum_in_set_is_maximum">
   <div class="statement-head"><div class="statement-title">Proposition 470</div><span class="label-badge">real_supremum_in_set_is_maximum</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ and $p$ is a supremum of $A$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $p$ is a maximum of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2270,7 +2272,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_supremum_in_set_is_maximum" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum" data-preview-label="real_maximum">Definition 418</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2278,7 +2280,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_maximum_eq_supremum">
+<section class="statement proposition joins-following-proof" id="real_maximum_eq_supremum">
   <div class="statement-head"><div class="statement-title">Proposition 471</div><span class="label-badge">real_maximum_eq_supremum</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ and $m$ is a maximum of $A$.<br> <span class="kw">Suppose</span> $p$ is a supremum of $A$ and $p\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> $m = p$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2291,7 +2293,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_maximum_eq_supremum" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_maximum_is_supremum" data-preview-label="real_maximum_is_supremum">Proposition 469</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum_unique" data-preview-label="real_supremum_unique">Proposition 467</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2299,7 +2301,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_supremum_characterization">
+<section class="statement proposition joins-following-proof" id="real_supremum_characterization">
   <div class="statement-head"><div class="statement-title">Proposition 472</div><span class="label-badge">real_supremum_characterization</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ and $A$ is bounded above and $b$ is an upper bound of $A$. <br><span class="kw">Then</span> $b$ is a supremum of $A$ iff for all $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ such that $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $b - \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} < a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2311,7 +2313,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_supremum_characterization" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">If $b$ is a supremum of $A$ then for all $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ such that $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$ there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $b - \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon} < a$.</span></summary>
   <div class="proof-body"><p><span class="kw">Assume</span> $b$ is a supremum of $A$.<br> <span class="kw kw-bold">Fix</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$.<br> <span class="kw">Assume</span> $\class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 < \class{latex-symbol-tip latex-symbol-id-epsilon}{\epsilon}$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub_pos_lt" data-preview-label="real_sub_pos_lt">Lemma 1252</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.</p></div>
@@ -2337,7 +2339,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_infimum_exists">
+<section class="statement proposition joins-following-proof" id="real_infimum_exists">
   <div class="statement-head"><div class="statement-title">Proposition 473</div><span class="label-badge">real_infimum_exists</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\reals$ and $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$ and $A$ is bounded below. <br><span class="kw">Then</span> there exists $p$ such that $p$ is an infimum of $A$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2349,7 +2351,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_infimum_exists" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $L = \{ x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals \mid \text{$x$ is a lower bound of $A$}\}$.<br> <span class="kw kw-bold">Take</span> $l$ such that $l$ is a lower bound of $A$. <br><span class="kw">Thus</span> $L\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw kw-bold">Take</span> $a$ such that $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lower_bound" data-preview-label="real_lower_bound">Definition 413</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_bounded_above" data-preview-label="real_bounded_above">Definition 412</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_completeness_axiom" data-preview-label="real_completeness_axiom">Axiom 40</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_infimum" data-preview-label="real_infimum">Definition 417</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2361,7 +2363,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_archimedean_property">
+<section class="statement proposition joins-following-proof" id="real_archimedean_property">
   <div class="statement-head"><div class="statement-title">Proposition 474</div><span class="label-badge">real_archimedean_property</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x < n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2373,7 +2375,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_archimedean_property" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw">Suppose</span> not.<br> <span class="kw kw-bold">Let</span> $A = \naturalsPlus$.<br> $1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>. <br><span class="kw">Thus</span> $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw kw-bold">Take</span> $p$ such that $p$ is a supremum of $A$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_bounded_above" data-preview-label="real_bounded_above">Definition 412</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_completeness_axiom" data-preview-label="real_completeness_axiom">Axiom 40</a>.<br> <span class="kw kw-bold">Take</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $p - 1 < n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_bounded_above" data-preview-label="real_bounded_above">Definition 412</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum_characterization" data-preview-label="real_supremum_characterization">Proposition 472</a>.<br> Contradiction by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_supremum" data-preview-label="real_supremum">Definition 416</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_upper_bound" data-preview-label="real_upper_bound">Definition 411</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_asym" data-preview-label="real_lt_asym">Axiom 35</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2387,7 +2389,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_generalized_archimedean_property">
+<section class="statement proposition joins-following-proof" id="real_generalized_archimedean_property">
   <div class="statement-head"><div class="statement-title">Proposition 475</div><span class="label-badge">real_generalized_archimedean_property</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> there exist $k, n$ such that $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ and $k < x$ and $x < n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2399,7 +2401,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_generalized_archimedean_property" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_archimedean_property" data-preview-label="real_archimedean_property">Proposition 474</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_neg" data-preview-label="real_lt_neg">Proposition 465</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2407,7 +2409,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_small_reciprocal">
+<section class="statement proposition joins-following-proof" id="real_small_reciprocal">
   <div class="statement-head"><div class="statement-title">Proposition 476</div><span class="label-badge">real_small_reciprocal</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $x$ is positive. <br><span class="kw">Then</span> there exists $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < x$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2419,7 +2421,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_small_reciprocal" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Take</span> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $\inv{x} < N$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_archimedean_property" data-preview-label="real_archimedean_property">Proposition 474</a>. <br><span class="kw">Thus</span> $0 < 1 / N$ and $1 / N < x$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_inv_pos" data-preview-label="real_inv_pos">Proposition 463</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_assoc" data-preview-label="real_mul_assoc">Axiom 19</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2427,7 +2429,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_naturals_split_succ">
+<section class="statement lemma joins-following-proof" id="real_naturals_split_succ">
   <div class="statement-head"><div class="statement-title">Lemma 1253</div><span class="label-badge">real_naturals_split_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.<br> <span class="kw">Suppose</span> there exists $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} n + 1$.<br> <span class="kw">Suppose</span> it is wrong that $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$. <br><span class="kw">Then</span> there exists $b\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that $b \class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2441,7 +2443,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_naturals_split_succ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_succ_discrete" data-preview-label="real_succ_discrete">Axiom 44</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2461,7 +2463,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement lemma" id="real_naturals_minimum_at_succ">
+<section class="statement lemma joins-following-proof" id="real_naturals_minimum_at_succ">
   <div class="statement-head"><div class="statement-title">Lemma 1255</div><span class="label-badge">real_naturals_minimum_at_succ</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$ and $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $n + 1\class{latex-symbol-tip latex-symbol-id-in}{\in} A$.<br> <span class="kw">Suppose</span> for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have it is wrong that $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} n$. <br><span class="kw">Then</span> for all $b\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $n + 1 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} b$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2474,7 +2476,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_naturals_minimum_at_succ" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_leq_succ_elim" data-preview-label="real_naturals_leq_succ_elim">Lemma 1254</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2482,7 +2484,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_naturals_least_element">
+<section class="statement proposition joins-following-proof" id="real_naturals_least_element">
   <div class="statement-head"><div class="statement-title">Proposition 477</div><span class="label-badge">real_naturals_least_element</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $A\class{latex-symbol-tip latex-symbol-id-subseteq}{\subseteq}\naturalsPlus$ and $A\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$. <br><span class="kw">Then</span> there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ such that for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} A$ we have $m \class{latex-symbol-tip latex-symbol-id-leq}{\leq} a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2494,7 +2496,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_naturals_least_element" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \{ n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \text{if there exists $a\in A$ such that $a \leq n$ then there exists $m\in A$ such that for all $a\in A$ we have $m \leq a$}\}$.<br> Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_split_succ" data-preview-label="real_naturals_split_succ">Lemma 1253</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_minimum_at_succ" data-preview-label="real_naturals_minimum_at_succ">Lemma 1255</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_induction" data-preview-label="real_naturals_induction">Proposition 445</a>, <a class="xref" href="current_section_standard_library_sets.html#nonempty_inhabited" data-preview-label="nonempty_inhabited">Proposition 10</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2502,7 +2504,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_naturals_predecessor">
+<section class="statement lemma joins-following-proof" id="real_naturals_predecessor">
   <div class="statement-head"><div class="statement-title">Lemma 1256</div><span class="label-badge">real_naturals_predecessor</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$. <br><span class="kw">Then</span> $n = 1$ or there exists $m\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $n = m + 1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2514,7 +2516,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_naturals_predecessor" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $A = \{ n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid \text{$n = 1$ or there exists $m\in\naturalsPlus$ such that $n = m + 1$}\}$.<br> Follows by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_closed_succ" data-preview-label="real_naturals_closed_succ">Axiom 45</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_induction" data-preview-label="real_naturals_induction">Proposition 445</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -2522,7 +2524,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_consecutive_integers_nonneg">
+<section class="statement lemma joins-following-proof" id="real_consecutive_integers_nonneg">
   <div class="statement-head"><div class="statement-title">Lemma 1257</div><span class="label-badge">real_consecutive_integers_nonneg</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$. <br><span class="kw">Then</span> there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ such that $n \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < n + 1$ and either $n = 0$ or $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2534,7 +2536,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_consecutive_integers_nonneg" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p><span class="kw kw-bold">Let</span> $S = \{ n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid x < n\}$.<br> <span class="kw kw-bold">Take</span> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $x < N$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_archimedean_property" data-preview-label="real_archimedean_property">Proposition 474</a>. <br><span class="kw">Thus</span> $S\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw kw-bold">Take</span> $m\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ such that for all $a\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ we have $m \class{latex-symbol-tip latex-symbol-id-leq}{\leq} a$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_least_element" data-preview-label="real_naturals_least_element">Proposition 477</a>. <br><span class="kw">Thus</span> $x < m$.</p>
 <div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $m = 1$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $n$ such that $n = 0$.<br> $n \class{latex-symbol-tip latex-symbol-id-in}{\in} \reals$.<br> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>. <br><span class="kw">Thus</span> $x < n + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.<br> <span class="kw">Hence</span> there exists $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ such that $k \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < k + 1$ and either $k = 0$ or $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $m \class{latex-symbol-tip latex-symbol-id-neq}{\neq} 1$.</div><div class="case-body"><p><span class="kw kw-bold">Take</span> $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $m = p + 1$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_predecessor" data-preview-label="real_naturals_predecessor">Lemma 1256</a>. <br><span class="kw">Thus</span> it is wrong that $x < p$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_antisym" data-preview-label="real_leq_antisym">Lemma 1250</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_irreflexive" data-preview-label="real_lt_irreflexive">Axiom 39</a>.<br> <span class="kw kw-bold">Take</span> $n$ such that $n = p$.<br> $n \class{latex-symbol-tip latex-symbol-id-in}{\in} \reals$.<br> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>. <br><span class="kw">Thus</span> $n \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trichotomy" data-preview-label="real_lt_trichotomy">Axiom 34</a>.<br> <span class="kw">Therefore</span> there exists $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ such that $k \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < k + 1$ and either $k = 0$ or $k\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2582,7 +2584,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_consecutive_integers">
+<section class="statement proposition joins-following-proof" id="real_consecutive_integers">
   <div class="statement-head"><div class="statement-title">Proposition 478</div><span class="label-badge">real_consecutive_integers</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $x\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> there exists $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ such that $n \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$ and $x < n + 1$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2594,7 +2596,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_consecutive_integers" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $0 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} x$.</div><div class="case-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_consecutive_integers_nonneg" data-preview-label="real_consecutive_integers_nonneg">Lemma 1257</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $x < 0$.</div><div class="case-body"><p><span class="kw kw-bold">Let</span> $y = \neg{x}$.<br> $y\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>. <br><span class="kw">Thus</span> $0 < y$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse_unique" data-preview-label="real_add_inverse_unique">Proposition 435</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_neg" data-preview-label="real_lt_neg">Proposition 465</a>.<br> <span class="kw kw-bold">Take</span> $t$ such that $t\class{latex-symbol-tip latex-symbol-id-in}{\in}\integers$ and $t \class{latex-symbol-tip latex-symbol-id-leq}{\leq} y$ and $y < t + 1$ and either $t = 0$ or $t\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_consecutive_integers_nonneg" data-preview-label="real_consecutive_integers_nonneg">Lemma 1257</a>.<br> <span class="kw">Hence</span> $t\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$t + 1\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$.</span></summary>
@@ -2689,7 +2691,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement lemma" id="real_rationals_nonneg_interval">
+<section class="statement lemma joins-following-proof" id="real_rationals_nonneg_interval">
   <div class="statement-head"><div class="statement-title">Lemma 1258</div><span class="label-badge">real_rationals_nonneg_interval</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $0 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} a$ and $a < b$. <br><span class="kw">Then</span> there exist $n, N$ such that $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ and $n / N\class{latex-symbol-tip latex-symbol-id-in}{\in}\intervalopen{a}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2701,7 +2703,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_rationals_nonneg_interval" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$0 < b - a$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_imp_pos_diff" data-preview-label="real_lt_imp_pos_diff">Lemma 1251</a>.<br> <span class="kw kw-bold">Take</span> $N\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $0 < 1 / N$ and $1 / N < b - a$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_small_reciprocal" data-preview-label="real_small_reciprocal">Proposition 476</a>. <br><span class="kw">Thus</span> $0 < N$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>.<br> <span class="kw">Hence</span> $N\class{latex-symbol-tip latex-symbol-id-neq}{\neq} 0$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>.<br> <span class="kw">Therefore</span> $0 < \inv{N}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_inv_pos" data-preview-label="real_inv_pos">Proposition 463</a>.<br> <span class="kw kw-bold">Let</span> $S = \{ n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus \mid a < n / N\}$.<br> <span class="kw kw-bold">Take</span> $n\class{latex-symbol-tip latex-symbol-id-in}{\in}\naturalsPlus$ such that $a \rmul N < n$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_archimedean_property" data-preview-label="real_archimedean_property">Proposition 474</a>.<br> $(a \rmul N) \rmul \inv{N} < n \rmul \inv{N}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_mul_pos" data-preview-label="real_lt_mul_pos">Axiom 38</a>. <br><span class="kw">Thus</span> $a < n / N$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_assoc" data-preview-label="real_mul_assoc">Axiom 19</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>.<br> <span class="kw">Hence</span> $S\class{latex-symbol-tip latex-symbol-id-neq}{\neq} \class{latex-symbol-tip latex-symbol-id-emptyset}{\emptyset}$.<br> <span class="kw kw-bold">Take</span> $k\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ such that for all $m\class{latex-symbol-tip latex-symbol-id-in}{\in} S$ we have $k \class{latex-symbol-tip latex-symbol-id-leq}{\leq} m$ by <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_least_element" data-preview-label="real_naturals_least_element">Proposition 477</a>.<br> <span class="kw kw-bold">Let</span> $p = k / N$.<br> We have $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.<br> We have $a + 1 / N < b$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_add" data-preview-label="real_lt_add">Axiom 37</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.</p>
 <details class="proof-block subproof" open>
   <summary><span class="subproof-label claim-label">Claim:</span> <span class="subproof-goal">$p < b$.</span></summary>
@@ -2784,7 +2786,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_rational_open_interval">
+<section class="statement proposition joins-following-proof" id="real_rational_open_interval">
   <div class="statement-head"><div class="statement-title">Proposition 479</div><span class="label-badge">real_rational_open_interval</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $a < b$. <br><span class="kw">Then</span> there exists $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\rationals$ such that $p\class{latex-symbol-tip latex-symbol-id-in}{\in}\intervalopen{a}{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2796,7 +2798,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_rational_open_interval" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $0 < b$.</div><div class="case-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a < 0$.</div><div class="case-body"><p>There exists $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\rationals$ such that $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\intervalopen{a}{b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_inverse" data-preview-label="real_mul_inverse">Axiom 22</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_div" data-preview-label="real_div">Definition 410</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_rationals" data-preview-label="real_rationals">Definition 428</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#intervalopen" data-preview-label="intervalopen">Definition 421</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $0 \class{latex-symbol-tip latex-symbol-id-leq}{\leq} a$.</div><div class="case-body"><p>There exists $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\rationals$ such that $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\intervalopen{a}{b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_rationals_nonneg_interval" data-preview-label="real_rationals_nonneg_interval">Lemma 1258</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_integers" data-preview-label="real_integers">Definition 427</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_naturals_subset_reals" data-preview-label="real_naturals_subset_reals">Axiom 41</a>, <a class="xref" href="current_section_standard_library_sets.html#subseteq" data-preview-label="subseteq">Definition 346</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_ident" data-preview-label="real_mul_ident">Axiom 21</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_zero_lt_one" data-preview-label="real_zero_lt_one">Proposition 462</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_leq_naturalsplus" data-preview-label="real_one_leq_naturalsplus">Axiom 43</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_lt_trans" data-preview-label="real_lt_trans">Axiom 36</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pos_nonzero" data-preview-label="real_pos_nonzero">Lemma 1245</a>, <a class="xref" href="current_section_standard_library_sets.html#singleton_iff" data-preview-label="singleton_iff">Proposition 22</a>, <a class="xref" href="current_section_standard_library_sets.html#setminus_intro" data-preview-label="setminus_intro">Proposition 85</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_rationals" data-preview-label="real_rationals">Definition 428</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{byCase}
@@ -2910,7 +2912,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{lemma}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_abs_mul">
+<section class="statement proposition joins-following-proof" id="real_abs_mul">
   <div class="statement-head"><div class="statement-title">Proposition 483</div><span class="label-badge">real_abs_mul</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\abs{a \rmul b} = \abs{a} \rmul \abs{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2922,7 +2924,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_abs_mul" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><div class="bycase"><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a \class{latex-symbol-tip latex-symbol-id-geq}{\geq} 0$ and $b \class{latex-symbol-tip latex-symbol-id-geq}{\geq} 0$.</div><div class="case-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_nonneg" data-preview-label="real_abs_nonneg">Axiom 47</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_pos_pos_gt" data-preview-label="real_mul_pos_pos_gt">Proposition 454</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a \class{latex-symbol-tip latex-symbol-id-geq}{\geq} 0$ and $b < 0$.</div><div class="case-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_nonneg" data-preview-label="real_abs_nonneg">Axiom 47</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_neg" data-preview-label="real_abs_neg">Axiom 48</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_opposite_sign_right" data-preview-label="real_mul_neg_opposite_sign_right">Proposition 458</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a < 0$ and $b \class{latex-symbol-tip latex-symbol-id-geq}{\geq} 0$.</div><div class="case-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_nonneg" data-preview-label="real_abs_nonneg">Axiom 47</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_neg" data-preview-label="real_abs_neg">Axiom 48</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_zero" data-preview-label="real_mul_zero">Proposition 439</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_opposite_sign_left" data-preview-label="real_mul_neg_opposite_sign_left">Proposition 457</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.</p></div></section><section class="case-item"><div class="case-head"><span class="kw kw-bold kw-case">Case.</span> $a < 0$ and $b < 0$.</div><div class="case-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_neg" data-preview-label="real_abs_neg">Axiom 48</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_nonneg" data-preview-label="real_abs_nonneg">Axiom 47</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_neg_gt" data-preview-label="real_mul_neg_neg_gt">Proposition 455</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_neg_right" data-preview-label="real_mul_neg_right">Lemma 1235</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_comm" data-preview-label="real_mul_comm">Axiom 20</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_neg" data-preview-label="real_neg_neg">Proposition 441</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>.</p></div></section><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{byCase}
@@ -2964,7 +2966,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_abs_square">
+<section class="statement proposition joins-following-proof" id="real_abs_square">
   <div class="statement-head"><div class="statement-title">Proposition 485</div><span class="label-badge">real_abs_square</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\exp{\abs{a}}{2} = \exp{a}{2}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -2976,7 +2978,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_abs_square" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#def_of_2" data-preview-label="def_of_2">Axiom 24</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_mul" data-preview-label="real_abs_mul">Proposition 483</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_in_reals" data-preview-label="real_abs_in_reals">Lemma 1259</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_nonnegative" data-preview-label="real_abs_nonnegative">Proposition 480</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_nonneg" data-preview-label="real_abs_nonneg">Axiom 47</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sq_nonnegative" data-preview-label="real_sq_nonnegative">Proposition 461</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_one_in_naturals" data-preview-label="real_one_in_naturals">Axiom 42</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_succ" data-preview-label="real_pow_succ">Axiom 50</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_pow_one" data-preview-label="real_pow_one">Axiom 49</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_mul_closed" data-preview-label="real_mul_closed">Axiom 14</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3042,7 +3044,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proposition}</code></pre>
 </details></div>
 </section>
-<section class="statement proposition" id="real_abs_sub_leq_imp_left_bound">
+<section class="statement proposition joins-following-proof" id="real_abs_sub_leq_imp_left_bound">
   <div class="statement-head"><div class="statement-title">Proposition 491</div><span class="label-badge">real_abs_sub_leq_imp_left_bound</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r$ is nonnegative.<br> <span class="kw">Suppose</span> $\abs{a - b} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} r$. <br><span class="kw">Then</span> $b - r \class{latex-symbol-tip latex-symbol-id-leq}{\leq} a$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3055,7 +3057,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_abs_sub_leq_imp_left_bound" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_leq_imp_left_bound" data-preview-label="real_abs_leq_imp_left_bound">Proposition 489</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3063,7 +3065,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_abs_sub_leq_imp_right_bound">
+<section class="statement proposition joins-following-proof" id="real_abs_sub_leq_imp_right_bound">
   <div class="statement-head"><div class="statement-title">Proposition 492</div><span class="label-badge">real_abs_sub_leq_imp_right_bound</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $r$ is nonnegative.<br> <span class="kw">Suppose</span> $\abs{a - b} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} r$. <br><span class="kw">Then</span> $a \class{latex-symbol-tip latex-symbol-id-leq}{\leq} b + r$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3076,7 +3078,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_abs_sub_leq_imp_right_bound" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>Follows by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_leq_imp_right_bound" data-preview-label="real_abs_leq_imp_right_bound">Proposition 488</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3084,7 +3086,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_triangle_inequality">
+<section class="statement proposition joins-following-proof" id="real_triangle_inequality">
   <div class="statement-head"><div class="statement-title">Proposition 493</div><span class="label-badge">real_triangle_inequality</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\abs{a + b} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{a} + \abs{b}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3096,7 +3098,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_triangle_inequality" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>We have $\neg{(a + b)} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{a} + \abs{b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_in_reals" data-preview-label="real_abs_in_reals">Lemma 1259</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_leq_abs" data-preview-label="real_neg_leq_abs">Proposition 487</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_neg_addition" data-preview-label="real_neg_addition">Lemma 1237</a>.<br> <span class="kw">Hence</span> $\abs{a + b} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{a} + \abs{b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_in_reals" data-preview-label="real_abs_in_reals">Lemma 1259</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_abs" data-preview-label="real_leq_abs">Proposition 486</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_trans" data-preview-label="real_leq_trans">Lemma 1248</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_leq_if_pm_leq" data-preview-label="real_abs_leq_if_pm_leq">Proposition 484</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
@@ -3105,7 +3107,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 \end{proof}</code></pre>
 </details></div>
 </details>
-<section class="statement proposition" id="real_reverse_triangle_inequality">
+<section class="statement proposition joins-following-proof" id="real_reverse_triangle_inequality">
   <div class="statement-head"><div class="statement-title">Proposition 494</div><span class="label-badge">real_reverse_triangle_inequality</span></div>
   <div class="statement-body"><p><span class="kw">Suppose</span> $a\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ and $b\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$. <br><span class="kw">Then</span> $\abs{a - b} \class{latex-symbol-tip latex-symbol-id-geq}{\geq} \abs{\abs{a} - \abs{b}}$.</p><details class="latex-source">
   <summary>LaTeX source</summary>
@@ -3117,7 +3119,7 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
 </details></div>
 </section>
 <details class="proof-block" data-proof-for="real_reverse_triangle_inequality" data-proof-helper="false" open>
-  <summary>Proof</summary>
+  <summary><span class="proof-label">Proof</span></summary>
   <div class="proof-body"><p>$\abs{a}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_in_reals" data-preview-label="real_abs_in_reals">Lemma 1259</a>.<br> Now $\abs{b}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_in_reals" data-preview-label="real_abs_in_reals">Lemma 1259</a>.<br> $\abs{a - b}\class{latex-symbol-tip latex-symbol-id-in}{\in}\reals$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_in_reals" data-preview-label="real_abs_in_reals">Lemma 1259</a>.<br> $\abs{b - a} = \abs{a - b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_sub_swap" data-preview-label="real_abs_sub_swap">Proposition 482</a>.<br> $\abs{(a - b) + b} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{a - b} + \abs{b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_triangle_inequality" data-preview-label="real_triangle_inequality">Proposition 493</a>.<br> $\abs{(b - a) + a} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{b - a} + \abs{a}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_triangle_inequality" data-preview-label="real_triangle_inequality">Proposition 493</a>. <br><span class="kw">Thus</span> $\abs{b} + \neg{\abs{a}} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{b - a}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>.<br> <span class="kw">Therefore</span> $\abs{\abs{a} - \abs{b}} \class{latex-symbol-tip latex-symbol-id-leq}{\leq} \abs{a - b}$ by <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub" data-preview-label="real_sub">Definition 409</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_assoc" data-preview-label="real_add_assoc">Axiom 15</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_inverse" data-preview-label="real_add_inverse">Axiom 18</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_comm" data-preview-label="real_add_comm">Axiom 16</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_ident" data-preview-label="real_add_ident">Axiom 17</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_add_closed" data-preview-label="real_add_closed">Axiom 13</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_leq_add" data-preview-label="real_leq_add">Lemma 1249</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_sub_swap" data-preview-label="real_abs_sub_swap">Proposition 482</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_sub_swap_neg" data-preview-label="real_sub_swap_neg">Lemma 1239</a>, <a class="xref" href="current_section_standard_library_the_real_numbers.html#real_abs_leq_if_pm_leq" data-preview-label="real_abs_leq_if_pm_leq">Proposition 484</a>.</p><details class="latex-source">
   <summary>LaTeX source</summary>
   <pre><code>\begin{proof}
