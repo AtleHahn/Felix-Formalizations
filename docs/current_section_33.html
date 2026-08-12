@@ -19,6 +19,14 @@ h1 { margin:0 0 12px; font-size:25.2px; }
 .toolbar { display:flex; gap:10px; margin:0 0 18px; align-items:center; flex-wrap:wrap; }
 .toolbar-field { display:flex; align-items:center; gap:8px; min-width:0; }
 .toolbar-label { color:#475467; font-size:14px; font-weight:600; }
+.source-search { display:flex; align-items:center; gap:8px; min-width:min(420px, 100%); }
+.source-search-control { display:flex; flex:1 1 260px; flex-direction:column; gap:3px; min-width:180px; }
+.source-search-input { width:100%; background:#fff; border:1px solid var(--border); border-radius:14px; padding:10px 14px; font:inherit; color:inherit; }
+.source-search-shortcut { color:var(--muted); font-size:11.5px; padding-left:4px; }
+.search-status { flex:1 1 100%; min-height:20px; color:var(--muted); font-size:13px; }
+.search-status.warning { color:#b54708; font-weight:600; }
+.search-status.error { color:#b42318; font-weight:600; }
+.source-search-highlight { background:#fde047; color:inherit; border-radius:3px; padding:0 2px; }
 .tex-section { margin:24px 0 12px; font-size:21px; color:var(--accent); }
 .tex-subsection { margin:20px 0 10px; font-size:18px; color:#344054; }
 .tex-subsubsection { margin:16px 0 8px; font-size:16px; color:#475467; }
@@ -128,11 +136,15 @@ window.MathJax = {
       if (window.initSymbolTooltips) {
         window.initSymbolTooltips();
       }
+      if (window.applySourceSearchHighlight) {
+        window.applySourceSearchHighlight();
+      }
     })
   },
   options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
 };
 </script>
+<script src="current.source_search.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body class="hide-raw">
@@ -408,6 +420,15 @@ zeroVector	argc=1	fallback	\operatorname{ZeroVector}\left(#1\right)</code>
         </select>
       </div>
       <button id="toggleRaw">Make raw code available</button>
+      <form id="sourceSearchForm" class="source-search" role="search">
+        <label class="toolbar-label" for="sourceSearchInput">LaTeX source</label>
+        <div class="source-search-control">
+          <input id="sourceSearchInput" class="source-search-input" type="search" placeholder="Search exact text" autocomplete="off" />
+          <span class="source-search-shortcut">Shortcut: Ctrl+Shift+F</span>
+        </div>
+        <button type="submit">Search</button>
+      </form>
+      <div id="sourceSearchStatus" class="search-status" role="status" aria-live="polite"></div>
     </div>
     <h3 class="tex-section" data-section-label="§33 The Urysohn Lemma">§33 The Urysohn Lemma</h3>
 <section class="statement definition helper" id="unit_rationals">
@@ -5864,6 +5885,16 @@ const detailsEls = () => Array.from(document.querySelectorAll('.proof-block'));
 const proofViewSelect = document.getElementById('proofView');
 const helperViewSelect = document.getElementById('helperView');
 const toggleRawBtn = document.getElementById('toggleRaw');
+const sourceSearchForm = document.getElementById('sourceSearchForm');
+const sourceSearchInput = document.getElementById('sourceSearchInput');
+const sourceSearchStatus = document.getElementById('sourceSearchStatus');
+document.addEventListener('keydown', (event) => {
+  if (event.ctrlKey && event.shiftKey && !event.altKey && event.key.toLowerCase() === 'f') {
+    event.preventDefault();
+    sourceSearchInput.focus();
+    sourceSearchInput.select();
+  }
+});
 const proofDepth = (el) => {
   let depth = 0;
   let parent = el.parentElement ? el.parentElement.closest('.proof-block') : null;
@@ -5890,6 +5921,267 @@ const setRawVisibility = (show) => {
   toggleRawBtn.textContent = show ? 'Hide raw code' : 'Make raw code available';
   toggleRawBtn.classList.toggle('is-active', show);
 };
+const setSourceSearchStatus = (message, kind = '') => {
+  sourceSearchStatus.textContent = message;
+  sourceSearchStatus.className = `search-status${kind ? ` ${kind}` : ''}`;
+};
+const sourceSearchTargetHref = (entry, term, mode) => {
+  const filename = window.symbolAnchorToFile ? window.symbolAnchorToFile[entry.anchor] : null;
+  const targetUrl = filename
+    ? new URL(filename, window.location.href)
+    : new URL(window.location.href);
+  targetUrl.searchParams.set('source-highlight', term);
+  targetUrl.searchParams.set('source-highlight-mode', mode);
+  targetUrl.searchParams.set('source-highlight-scope', entry.source_scope || 'statement');
+  targetUrl.hash = entry.anchor;
+  return targetUrl.href;
+};
+const labelContainsSearchTerm = (label, term) => {
+  let offset = label.indexOf(term);
+  while (offset !== -1) {
+    if (offset === 0 || !/[A-Za-z0-9]/.test(label[offset - 1])) {
+      return true;
+    }
+    offset = label.indexOf(term, offset + 1);
+  }
+  return false;
+};
+sourceSearchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const enteredQuery = sourceSearchInput.value;
+  if (!enteredQuery) {
+    setSourceSearchStatus('Enter text to search for.', 'error');
+    return;
+  }
+  const query = enteredQuery.startsWith('\\') || enteredQuery.startsWith('$')
+    ? enteredQuery
+    : ` ${enteredQuery}`;
+  const searchData = window.latexSourceSearchData;
+  if (!searchData || typeof searchData.source !== 'string' || !Array.isArray(searchData.blocks)) {
+    setSourceSearchStatus('The LaTeX source search index is unavailable.', 'error');
+    return;
+  }
+  const labelBlock = searchData.blocks.reduce((earliest, entry) => {
+    if (
+      !entry.label
+      || !labelContainsSearchTerm(entry.label, enteredQuery)
+      || (earliest && entry.start >= earliest.start)
+    ) {
+      return earliest;
+    }
+    return entry;
+  }, null);
+  const firstMatchStart = searchData.source.indexOf(query);
+  if (firstMatchStart === -1 && !labelBlock) {
+    setSourceSearchStatus(`Not found in ${searchData.source_name || 'the LaTeX source'}.`, 'error');
+    return;
+  }
+  let matchStart = firstMatchStart;
+  let block = null;
+  let highlightMode = 'text';
+  while (matchStart !== -1) {
+    const matchEnd = matchStart + query.length;
+    block = searchData.blocks.find(entry => matchStart >= entry.start && matchEnd <= entry.end) || null;
+    if (block) {
+      break;
+    }
+    matchStart = searchData.source.indexOf(query, matchStart + 1);
+  }
+  if (labelBlock && !block) {
+    block = labelBlock;
+    matchStart = labelBlock.start;
+    highlightMode = 'label';
+  }
+  if (!block) {
+    const firstMatchEnd = firstMatchStart + query.length;
+    let sameSectionBlocks = searchData.blocks;
+    if (Array.isArray(searchData.sections)) {
+      const sectionIndex = searchData.sections.findIndex(
+        section => firstMatchStart >= section.start && firstMatchEnd <= section.end,
+      );
+      sameSectionBlocks = sectionIndex === -1
+        ? []
+        : searchData.blocks.filter(entry => entry.section === sectionIndex);
+    }
+    const precedingBlock = sameSectionBlocks.reduce((latest, entry) => {
+      if (entry.end > firstMatchStart || (latest && entry.end <= latest.end)) {
+        return latest;
+      }
+      return entry;
+    }, null);
+    const succeedingBlock = sameSectionBlocks.reduce((earliest, entry) => {
+      if (entry.start < firstMatchEnd || (earliest && entry.start >= earliest.start)) {
+        return earliest;
+      }
+      return entry;
+    }, null);
+    const nearbyBlock = precedingBlock || succeedingBlock;
+    if (!nearbyBlock) {
+      setSourceSearchStatus('');
+      return;
+    }
+    setSourceSearchStatus('');
+    window.location.href = sourceSearchTargetHref(nearbyBlock, query, 'outside');
+    return;
+  }
+  const labelText = block.label ? ` (${block.label})` : '';
+  if (block.expected_introduction) {
+    setSourceSearchStatus(`Found in ${block.title}${labelText}. Opening result.`);
+  } else {
+    setSourceSearchStatus(
+      `Warning: the first occurrence is in ${block.title}${labelText}, not in a definition, abbreviation, or axiom. Opening result.`,
+      'warning',
+    );
+  }
+  const highlightTerm = highlightMode === 'label' ? enteredQuery : query;
+  window.location.href = sourceSearchTargetHref(block, highlightTerm, highlightMode);
+});
+let sourceSearchHighlightApplied = false;
+const highlightFirstVisibleText = (root, term, includeRawSource = false) => {
+  if (!root || !term) {
+    return null;
+  }
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+    acceptNode: (node) => {
+      const parent = node.parentElement;
+      if (
+        !node.data
+        || !parent
+        || parent.closest('.sidebar, .toolbar, script, style, mjx-container')
+        || (!includeRawSource && parent.closest('.latex-source, pre, code'))
+        || parent.closest('.source-search-highlight')
+      ) {
+        return NodeFilter.FILTER_REJECT;
+      }
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  let textNode = walker.nextNode();
+  while (textNode) {
+    const offset = textNode.data.indexOf(term);
+    if (offset !== -1) {
+      const leadingSpace = term.startsWith(' ') ? 1 : 0;
+      const highlightedTerm = term.slice(leadingSpace);
+      const matchedNode = textNode.splitText(offset + leadingSpace);
+      matchedNode.splitText(highlightedTerm.length);
+      const mark = document.createElement('mark');
+      mark.className = 'source-search-highlight';
+      mark.textContent = matchedNode.data;
+      matchedNode.replaceWith(mark);
+      return mark;
+    }
+    textNode = walker.nextNode();
+  }
+  return null;
+};
+const sourceSearchProofsFor = (anchor) => Array.from(
+  document.querySelectorAll('main.content .proof-block[data-proof-for]'),
+).filter(proof => proof.dataset.proofFor === anchor);
+const applySourceSearchHighlight = () => {
+  if (sourceSearchHighlightApplied) {
+    return;
+  }
+  const params = new URLSearchParams(window.location.search);
+  const term = params.get('source-highlight');
+  if (!term || !window.location.hash) {
+    return;
+  }
+  const anchor = decodeURIComponent(window.location.hash.slice(1));
+  const anchorTarget = document.getElementById(anchor);
+  const statement = anchorTarget && anchorTarget.matches('main.content .statement')
+    ? anchorTarget
+    : null;
+  const proofs = sourceSearchProofsFor(anchor);
+  const scope = params.get('source-highlight-scope') || 'statement';
+  const mode = params.get('source-highlight-mode') || 'text';
+  const mainContent = document.querySelector('main.content');
+  let outsideRoots = [];
+  if (mode === 'outside' && mainContent) {
+    let sectionHeading = statement ? statement.previousElementSibling : null;
+    while (sectionHeading && !sectionHeading.matches('.tex-section')) {
+      sectionHeading = sectionHeading.previousElementSibling;
+    }
+    if (sectionHeading) {
+      let sectionNode = sectionHeading;
+      while (sectionNode && (sectionNode === sectionHeading || !sectionNode.matches('.tex-section'))) {
+        outsideRoots.push(sectionNode);
+        sectionNode = sectionNode.nextElementSibling;
+      }
+    } else {
+      outsideRoots = Array.from(mainContent.children).filter(
+        child => !child.matches('h1, .subtitle, .nav-links, .toolbar'),
+      );
+    }
+  }
+  const roots = mode === 'outside'
+    ? outsideRoots
+    : (scope === 'proof' && proofs.length
+      ? proofs
+      : (statement ? [statement] : proofs));
+  if (!roots.length) {
+    return;
+  }
+  if (roots.some(root => root.closest('.sidebar'))) {
+    return;
+  }
+  sourceSearchHighlightApplied = true;
+  if (mode !== 'outside') {
+    roots.forEach(root => {
+      if (root.matches('details')) {
+        root.open = true;
+      }
+      root.querySelectorAll('details.proof-block').forEach(proof => {
+        proof.open = true;
+      });
+    });
+  }
+
+  let highlighted = null;
+  if (mode === 'label' && statement) {
+    highlighted = highlightFirstVisibleText(statement.querySelector('.label-badge'), term);
+  } else if (mode === 'outside') {
+    for (const root of outsideRoots) {
+      highlighted = highlightFirstVisibleText(root, term);
+      if (highlighted) {
+        break;
+      }
+    }
+  } else if (mode === 'text') {
+    for (const root of roots) {
+      const textRoot = root.matches('.statement')
+        ? root.querySelector(':scope > .statement-body')
+        : root.querySelector(':scope > .proof-body');
+      highlighted = highlightFirstVisibleText(textRoot || root, term);
+      if (highlighted) {
+        break;
+      }
+    }
+  }
+
+  if (!highlighted && mode === 'text') {
+    for (const root of roots) {
+      const rawSource = root.matches('.statement')
+        ? root.querySelector(':scope > .statement-body > .latex-source code')
+        : root.querySelector(':scope > .proof-body > .latex-source code');
+      if (!rawSource || !rawSource.textContent.includes(term)) {
+        continue;
+      }
+      setRawVisibility(true);
+      const rawSourceDetails = rawSource.closest('details.latex-source');
+      if (rawSourceDetails) {
+        rawSourceDetails.open = true;
+      }
+      highlighted = highlightFirstVisibleText(rawSource, term, true);
+      if (highlighted) {
+        break;
+      }
+    }
+  }
+
+  const scrollTarget = highlighted || roots[0];
+  window.setTimeout(() => scrollTarget.scrollIntoView({ block: 'center', behavior: 'smooth' }), 0);
+};
+window.applySourceSearchHighlight = applySourceSearchHighlight;
 const helperItemVisible = (env, isHelper, mode) => {
   if (!isHelper) {
     return true;
@@ -6232,10 +6524,14 @@ const initSymbolTooltips = () => {
 window.initSymbolTooltips = initSymbolTooltips;
 if (window.mathJaxTypesetDone) {
   initSymbolTooltips();
+  applySourceSearchHighlight();
 }
 window.addEventListener('load', () => {
   if (!window.mathJaxTypesetDone) {
     window.setTimeout(initSymbolTooltips, 0);
+    if (!window.MathJax?.typesetPromise) {
+      window.setTimeout(applySourceSearchHighlight, 0);
+    }
   }
 });
 window.addEventListener('scroll', () => {
