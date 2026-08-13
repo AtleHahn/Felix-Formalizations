@@ -519,7 +519,7 @@ The $\operatorname{\textsf{cons}}$ operation is determined by the following axio
     $\{A,B\}$ is inhabited.
     Thus for all $c$ we have $c\in\inters{\{A,B\}}$ iff $c\in A\inter B$
         by \cref{inters_iff_forall,inter,upair_iff}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by \cref{setext}.  
 \end{proof}
 
 
@@ -672,7 +672,7 @@ The $\operatorname{\textsf{cons}}$ operation is determined by the following axio
     $A\union B$ is inhabited.
     Thus for all $c$ we have $c\in\inters{A\union B}$ iff $c\in(\inters{A})\inter\inters{B}$
         by \cref{inter,union_iff,inters_iff_forall}.
-    Follows by \hyperref[setext]{set extensionality}. % We only need the actual setext axiom here, not the tactic.
+    Follows by \cref{setext}. % We only need the actual setext axiom here, not the tactic.
 \end{proof}
 
 \subsection{Set difference}
@@ -1065,7 +1065,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
     $\cons{a}{B}$ is inhabited.
     Thus for all $c$ we have $c\in\inters{\cons{a}{B}}$ iff $c\in a\inter \inters{B}$
         by \cref{inters_iff_forall,cons_iff,inter}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}\subsection{Symmetric difference}
 
 
@@ -1559,7 +1559,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
 \begin{proof}
     For all $w$ we have $w\in\converse{B\times A}$ iff $w\in A\times B$
         by \cref{converse_relation,times,times_elem_is_tuple,times_tuple_elim}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}
 
 \begin{proposition}\label{converse_emptyset}
@@ -1601,7 +1601,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
     $\converse{R}\union\converse{S}$ is a relation by \cref{converse_is_relation,union_relations_is_relation}.
     For all $a,b$ we have $(a,b)\in\converse{(R\union S)}$ iff $(a,b)\in\converse{R}\union\converse{S}$
         by \cref{union_iff,converse_iff}.
-    Follows by \hyperref[relext]{extensionality}.
+    Follows by \cref{relext}.
 \end{proof}
 
 \begin{proposition}\label{converse_inter}
@@ -1612,7 +1612,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
     $\converse{R}\inter\converse{S}$ is a relation by \cref{converse_is_relation,inter_relations_is_relation}.
     For all $a,b$ we have $(a,b)\in\converse{(R\inter S)}$ iff $(a,b)\in\converse{R}\inter\converse{S}$
         by \cref{inter,converse_iff}.
-    Follows by \hyperref[relext]{extensionality}.
+    Follows by \cref{relext}.
 \end{proof}
 
 \begin{proposition}\label{converse_setminus}
@@ -1622,7 +1622,7 @@ There are primitive projections $\fst{}$ and $\snd{}$ that satisfy the following
     $\converse{(R\setminus S)}$ is a relation by \cref{converse_is_relation}.
     $\converse{R}\setminus\converse{S}$ is a relation by \cref{converse_is_relation,setminus_relations_is_relation}.
     For all $a,b$ we have $(a,b)\in\converse{(R\setminus S)}$ iff $(a,b)\in\converse{R}\setminus\converse{S}$.
-    Follows by \hyperref[relext]{extensionality}.
+    Follows by \cref{relext}.
 \end{proof}
 
 
@@ -2083,7 +2083,7 @@ This lets us use the same symbol for composition of functions.
         by \cref{circ_iff}.
     Now $(T\circ S)\circ R$ is a relation and $T\circ (S\circ R)$ is a relation by
         \cref{circ_is_relation}.
-    Follows by \hyperref[relext]{relation extensionality}.
+    Follows by \cref{relext}.
 \end{proof}
 
 \begin{proposition}\label{circ_converse_intro_tuple}
@@ -2160,7 +2160,7 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}
     For all $a$ we have $a\in R\inter (X\times \ran{R})$ iff $a\in \restrl{R}{X}$
         by \cref{inter,restrl,ran_iff,times_elem_is_tuple,times_tuple_intro}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}
 
 \begin{corollary}%
@@ -2179,7 +2179,7 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}
     For all $w$ we have $w\in\restrl{\restrl{R}{U}}{V}$ iff $w\in\restrl{R}{V}$
         by \cref{restrl,subseteq}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}
 
 \begin{proposition}\label{restrl_by_dom}
@@ -2189,7 +2189,7 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}
     For all $w$ we have $w\in\restrl{R}{\dom{R}}$ iff $w\in R$
         by \cref{dom,restrl,relation}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}
 
 \begin{proposition}\label{restrl_dom}
@@ -2232,7 +2232,7 @@ This lets us use the same symbol for composition of functions.
 \begin{proof}
     For all $b$ we have $b\in\img{\restrl{R}{X}}{A}$ iff $b\in \img{R}{X\inter A}$
         by \cref{restrl_iff,img_iff,inter}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}
 
 
@@ -2622,7 +2622,7 @@ This lets us use the same symbol for composition of functions.
 \end{proposition}
 \begin{proof}
     $c\mathrel{R} a\mathrel{R}b$.
-    Thus $c\mathrel{R} b$ by \hyperref[transitive]{transitivity}.
+    Thus $c\mathrel{R} b$ by \cref{transitive}.
 \end{proof}
 
 \begin{proposition}\label{transitive_downward_subseteq}
@@ -2730,8 +2730,8 @@ This lets us use the same symbol for composition of functions.
 \end{lemma}
 \begin{proof}
     $\lt[X]$ is transitive.
-    Thus $a\mathrel{\lt[X]} c\mathrel{\lt[X]} d$ by \hyperref[transitive]{transitivity}.
-    Hence $a\mathrel{\lt[X]} d$ by \hyperref[transitive]{transitivity}.
+    Thus $a\mathrel{\lt[X]} c\mathrel{\lt[X]} d$ by \cref{transitive}.
+    Hence $a\mathrel{\lt[X]} d$ by \cref{transitive}.
 \end{proof}
 
 \begin{proposition}\label{subseteqrel_is_quasiorder}
@@ -2849,10 +2849,10 @@ This lets us use the same symbol for composition of functions.
     Then $c\mathrel{E} a$ and
          $c\mathrel{E} b$.
     $E$ is symmetric.
-    Thus $a\mathrel{E} c$ by \hyperref[symmetric]{symmetry}.
+    Thus $a\mathrel{E} c$ by \cref{symmetric}.
     $E$ is transitive.
-    Thus $a\mathrel{E} b$ by \hyperref[transitive]{transitivity}.
-    Then $b\mathrel{E} a$ by \hyperref[symmetric]{symmetry}.
+    Thus $a\mathrel{E} b$ by \cref{transitive}.
+    Then $b\mathrel{E} a$ by \cref{symmetric}.
     Thus $a\in \equivalenceClass{E}{b}$ and $b\in \equivalenceClass{E}{a}$
         by \cref{downward_closure_iff}.
     Hence $\equivalenceClass{E}{a}\subseteq \equivalenceClass{E}{b}\subseteq \equivalenceClass{E}{a}$
@@ -3084,8 +3084,8 @@ This lets us use the same symbol for composition of functions.
         Then $a\mathrel{E}c$ and $b\mathrel{E}c$
             by \cref{downward_closure_iff}.
         $E$ is symmetric and transitive.
-        Thus $c\mathrel{E}b$ by \hyperref[symmetric]{symmetry}.
-        Hence $a\mathrel{E}b$ by \hyperref[transitive]{transitivity}.
+        Thus $c\mathrel{E}b$ by \cref{symmetric}.
+        Hence $a\mathrel{E}b$ by \cref{transitive}.
     \end{subproof}
     Show if $a\mathrel{E}b$ then
         $a\mathrel{\equivfrompartition{\quotient{A}{E}}{A}}b$.
@@ -3301,7 +3301,7 @@ This lets us use the same symbol for composition of functions.
     Then $b = b'$.
 \end{proposition}
 \begin{proof}
-    Follows by \hyperref[rightunique]{right-uniqueness}.
+    Follows by \cref{rightunique}.
 \end{proof}
 
 \begin{proposition}\label{function_apply_intro}
@@ -3314,7 +3314,7 @@ This lets us use the same symbol for composition of functions.
     $B = \{b'\in\ran{f}\mid (a,b')\in f \}$ by \cref{img_singleton}.
     $b\in\ran{f}$.
     For all $b'\in  B$ we have $(a, b')\in f$.
-    For all $b', b''\in  B$ we have $b' = b''$ by \hyperref[rightunique]{right-uniqueness}.
+    For all $b', b''\in  B$ we have $b' = b''$ by \cref{rightunique}.
     Then $B = \{b\}$ by \cref{singleton_iff_inhabited_subsingleton}.
     Then $\unions{B} = b$.
     Thus $f(a) = b$ by \cref{apply}.
@@ -3686,7 +3686,7 @@ This lets us use the same symbol for composition of functions.
     For all $c$ we have $c\in\img{g}{\img{f}{A}}$
         iff $c\in\img{g\circ f}{A}$
         by \cref{circ_iff,img_iff}.
-    Follows by \hyperref[setext]{extensionality}.
+    Follows by\cref{setext}.
 \end{proof}
 
 \begin{proposition}\label{funs_circ}
@@ -4110,7 +4110,7 @@ This lets us use the same symbol for composition of functions.
     Consider a surjection $f$ from $A$ to $\pow{A}$.
     Let $B = \{a \in A \mid a\notin f(a)\}$.
     Then $B\in\pow{A}$.
-    There exists $a'\in A$ such that $f(a') = B$ by \hyperref[surj]{the definition of surjectivity}.
+    There exists $a'\in A$ such that $f(a') = B$ by \cref{surj}.
     Now $a' \in B$ iff $a' \notin f(a') = B$.
     Contradiction.
 \end{proof}
@@ -6364,7 +6364,7 @@ By contrast, the symbol "\rless" is a built-in symbol in Naproche-ZF.
     Follows by \cref{generated_well_ordering,foundational_ordering,simple_order_relation,smallest_element,well_order_relation}.
 \end{proof}
 
-\import{naprochelibrary.tex}
+\import{naprochelibrary_version6m.tex}
 
 \section{§12 Topological Spaces}
 
